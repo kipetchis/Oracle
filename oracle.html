@@ -668,6 +668,10 @@
     .account-sync-status{font-size:.65rem;color:var(--text-muted);text-align:center;}
     .account-close{background:none;border:none;color:var(--text-muted);font-size:.6rem;font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-top:8px;}
   </style>
+  <!-- Firebase SDK (chargement statique fiable) -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 </head>
 <body>
 
@@ -919,40 +923,28 @@
 
 <script>
 // ── FIREBASE SDK ──────────────────────────────────────────────────────────
-// Firebase loaded dynamically so app works even if CDN unreachable
-let initializeApp, getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
-    signInWithPopup, GoogleAuthProvider, signOut, onAuthStateChanged, sendPasswordResetEmail,
-    getFirestore, doc, setDoc, getDoc;
-
+// Firebase chargé via scripts statiques dans <head> (compat mode)
 let fbApp=null, fbAuth=null, fbDb=null, googleProvider=null;
 let _fbCurrentUser=null, _authMode='register', _isFirebaseConfigured=false;
 
 async function loadFirebase() {
   try {
-    const app  = await import('https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js');
-    const auth = await import('https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js');
-    const db   = await import('https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js');
-    initializeApp = app.initializeApp;
-    getAuth = auth.getAuth; createUserWithEmailAndPassword = auth.createUserWithEmailAndPassword;
-    signInWithEmailAndPassword = auth.signInWithEmailAndPassword;
-    signInWithPopup = auth.signInWithPopup; GoogleAuthProvider = auth.GoogleAuthProvider;
-    signOut = auth.signOut; onAuthStateChanged = auth.onAuthStateChanged;
-    sendPasswordResetEmail = auth.sendPasswordResetEmail;
-    getFirestore = db.getFirestore; doc = db.doc; setDoc = db.setDoc; getDoc = db.getDoc;
-    // Init Firebase app
-    fbApp  = initializeApp(FIREBASE_CONFIG);
-    fbAuth = getAuth(fbApp);
-    fbDb   = getFirestore(fbApp);
-    googleProvider = new GoogleAuthProvider();
+    if(typeof firebase === 'undefined') {
+      console.warn('Firebase SDK non disponible');
+      return false;
+    }
+    fbApp  = firebase.initializeApp(FIREBASE_CONFIG);
+    fbAuth = firebase.auth();
+    fbDb   = firebase.firestore();
+    googleProvider = new firebase.auth.GoogleAuthProvider();
     _isFirebaseConfigured = true;
-    // Trigger auth listener
-    onAuthStateChanged(fbAuth, async (user) => {
+    // Auth state listener
+    fbAuth.onAuthStateChanged(async (user) => {
       if(user){
         _fbCurrentUser=user;
         await loadFromCloud(user.uid);
         if(state.lang) applyI18n();
         applyPlanetSkin(state.activePlanet);
-  syncMuteBtn();
         updateFavBadge();
         if(lang) initDailyBanner();
         updateUserBadge(user);
@@ -973,17 +965,6 @@ async function loadFirebase() {
   }
 }
 
-// ── FIREBASE CONFIG ───────────────────────────────────────────────────────
-const FIREBASE_CONFIG = {
-  apiKey:            "AIzaSyCLag6Sggmy7brtOD5LDv_gQid3pMW90wg",
-  authDomain:        "oracle-360d6.firebaseapp.com",
-  projectId:         "oracle-360d6",
-  storageBucket:     "oracle-360d6.firebasestorage.app",
-  messagingSenderId: "160038588661",
-  appId:             "1:160038588661:web:fe50c75d30cc214fe9f5bc"
-};
-
-// Firebase initialized inside loadFirebase()
 
 // ── HAPTIC ────────────────────────────────────────────────────────────────
 function haptic(s='light'){if(!navigator.vibrate)return;const p={light:[10],medium:[20],celebration:[20,30,20,30,40]};navigator.vibrate(p[s]||[10]);}
@@ -3935,8 +3916,8 @@ async function handleAuthSubmit(){
   if(!email||!password){setAuthError(fr?'Remplis tous les champs.':'Please fill in all fields.');return;}
   if(password.length<6){setAuthError(fr?'Mot de passe trop court (min. 6 caractères).':'Password too short (min. 6 characters).');return;}
   try{
-    if(_authMode==='register'){await createUserWithEmailAndPassword(fbAuth,email,password);}
-    else{await signInWithEmailAndPassword(fbAuth,email,password);}
+    if(_authMode==='register'){await fbAuth.createUserWithEmailAndPassword(email,password);}
+    else{await fbAuth.signInWithEmailAndPassword(email,password);}
   }catch(err){
     const fr2=lang==='fr';
     const msgs={
@@ -3955,7 +3936,7 @@ async function handleAuthSubmit(){
 async function handleGoogleSignIn(){
   haptic('light');
   document.getElementById('authError').textContent='';
-  try{await signInWithPopup(fbAuth,googleProvider);}
+  try{await fbAuth.signInWithPopup(googleProvider);}
   catch(err){if(err.code!=='auth/popup-closed-by-user')setAuthError(lang==='fr'?'Connexion Google échouée.':'Google sign-in failed.');}
 }
 
@@ -3964,13 +3945,13 @@ async function handleForgot(){
   const email=document.getElementById('authEmail').value.trim();
   const fr=lang==='fr';
   if(!email){setAuthError(fr?"Entre ton email d'abord.":'Enter your email first.');return;}
-  try{await sendPasswordResetEmail(fbAuth,email);showToast(fr?'✓ Email de réinitialisation envoyé':'✓ Reset email sent');}
+  try{await fbAuth.sendPasswordResetEmail(email);showToast(fr?'✓ Email de réinitialisation envoyé':'✓ Reset email sent');}
   catch(e){setAuthError(fr?'Email introuvable.':'Email not found.');}
 }
 
 async function handleSignOut(){
   haptic('light');
-  try{await signOut(fbAuth);closeAccountPanel();showToast(lang==='fr'?'Déconnecté':'Signed out');}
+  try{await fbAuth.signOut();closeAccountPanel();showToast(lang==='fr'?'Déconnecté':'Signed out');}
   catch(e){}
 }
 
@@ -4037,6 +4018,51 @@ function syncMuteBtn(){
   btn.classList.toggle('muted', state.muted);
 }
 window.toggleMute = toggleMute;
+
+
+// ── CLOUD SYNC ────────────────────────────────────────────────────────────
+async function saveToCloud(uid) {
+  if(!fbDb || !uid) return;
+  try {
+    await fbDb.collection('users').doc(uid).set({
+      state: JSON.stringify(state),
+      updatedAt: new Date().toISOString()
+    });
+  } catch(e) { console.warn('Save cloud error:', e.message); }
+}
+
+async function loadFromCloud(uid) {
+  if(!fbDb || !uid) return;
+  try {
+    const doc = await fbDb.collection('users').doc(uid).get();
+    if(doc.exists) {
+      const data = doc.data();
+      if(data.state) {
+        const cloudState = JSON.parse(data.state);
+        // Merge: keep local favs + unlocked + read combined with cloud
+        state = Object.assign({}, state, cloudState);
+        saveState();
+      }
+    }
+  } catch(e) { console.warn('Load cloud error:', e.message); }
+}
+
+// Debounced auto-save (3s after any state change)
+let _cloudSaveTimer = null;
+function scheduleCloudSave() {
+  if(!_fbCurrentUser) return;
+  clearTimeout(_cloudSaveTimer);
+  _cloudSaveTimer = setTimeout(() => saveToCloud(_fbCurrentUser.uid), 3000);
+}
+
+function forceSyncNow() {
+  haptic('light');
+  if(!_fbCurrentUser) return;
+  saveToCloud(_fbCurrentUser.uid).then(() => {
+    const el = document.getElementById('accountSyncStatus');
+    if(el) { el.textContent = '✓ Synchronisé'; setTimeout(()=>el.textContent='',2000); }
+  });
+}
 
 </script>
 
