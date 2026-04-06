@@ -918,38 +918,47 @@
   <button class="celebration-btn" onclick="haptic();closeCelebration()" id="celebBtn">Continuer</button>
 </div>
 
-<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-app-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-auth-compat.js"></script>
-<script src="https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore-compat.js"></script>
-
 <script>
 // ── FIREBASE SDK ──────────────────────────────────────────────────────────
 // Firebase chargé via scripts statiques dans <head> (compat mode)
 let fbApp=null, fbAuth=null, fbDb=null, googleProvider=null;
 let _fbCurrentUser=null, _authMode='register', _isFirebaseConfigured=false;
 
-function loadFirebase() {
+async function loadFirebase() {
   try {
-    if(!firebase.apps.length) {
-      fbApp = firebase.initializeApp(FIREBASE_CONFIG);
-    } else {
-      fbApp = firebase.app();
-    }
-    fbAuth = firebase.auth();
-    fbDb   = firebase.firestore();
-    googleProvider = new firebase.auth.GoogleAuthProvider();
+    const app  = await import('https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js');
+    const auth = await import('https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js');
+    const db   = await import('https://www.gstatic.com/firebasejs/11.0.1/firebase-firestore.js');
+    const { initializeApp } = app;
+    const { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
+            signInWithRedirect, signInWithPopup, GoogleAuthProvider, signOut,
+            onAuthStateChanged, sendPasswordResetEmail, getRedirectResult } = auth;
+    const { getFirestore, doc, setDoc, getDoc } = db;
+
+    fbApp  = initializeApp(FIREBASE_CONFIG);
+    fbAuth = getAuth(fbApp);
+    fbDb   = getFirestore(fbApp);
+    googleProvider = new GoogleAuthProvider();
     _isFirebaseConfigured = true;
-    console.log('Firebase initialisé avec succès');
+
+    // Expose auth functions for use in handleAuthSubmit etc
+    window._fbSignIn     = (e,p) => signInWithEmailAndPassword(fbAuth,e,p);
+    window._fbRegister   = (e,p) => createUserWithEmailAndPassword(fbAuth,e,p);
+    window._fbGoogleAuth = ()    => signInWithRedirect(fbAuth, googleProvider);
+    window._fbSignOut    = ()    => signOut(fbAuth);
+    window._fbResetPwd   = (e)   => sendPasswordResetEmail(fbAuth,e);
+    window._fbGetRedirect = ()   => getRedirectResult(fbAuth);
 
     // Handle Google redirect result
-    fbAuth.getRedirectResult().then(result => {
-      if(result && result.user) console.log('Redirect OK:', result.user.email);
-    }).catch(e => console.warn('Redirect result:', e.message));
+    try {
+      const result = await getRedirectResult(fbAuth);
+      if(result && result.user) console.log('Google redirect OK:', result.user.email);
+    } catch(e) { console.warn('Redirect result:', e.message); }
 
     // Auth state listener
-    fbAuth.onAuthStateChanged(async (user) => {
+    onAuthStateChanged(fbAuth, async (user) => {
       if(user){
-        _fbCurrentUser = user;
+        _fbCurrentUser=user;
         await loadFromCloud(user.uid);
         if(state.lang) applyI18n();
         applyPlanetSkin(state.activePlanet);
@@ -958,14 +967,13 @@ function loadFirebase() {
         updateUserBadge(user);
         hideAuthScreen();
       } else {
-        _fbCurrentUser = null;
+        _fbCurrentUser=null;
         updateUserBadge(null);
       }
     });
 
-    // Show login button
     const lb = document.getElementById('loginBtn');
-    if(lb) lb.style.display = 'flex';
+    if(lb) lb.style.display='flex';
     return true;
   } catch(e) {
     console.warn('Firebase unavailable:', e.message);
@@ -3924,10 +3932,10 @@ async function handleAuthSubmit(){
   const fr=lang==='fr';
   if(!email||!password){setAuthError(fr?'Remplis tous les champs.':'Please fill in all fields.');return;}
   if(password.length<6){setAuthError(fr?'Mot de passe trop court (min. 6 caractères).':'Password too short (min. 6 characters).');return;}
-  if(!fbAuth){setAuthError(lang==='fr'?'Service indisponible, réessaie.':'Service unavailable, please retry.');return;}
+  if(!window._fbSignIn){setAuthError(lang==='fr'?'Service indisponible, réessaie.':'Service unavailable, please retry.');return;}
   try{
-    if(_authMode==='register'){await fbAuth.createUserWithEmailAndPassword(email,password);}
-    else{await fbAuth.signInWithEmailAndPassword(email,password);}
+    if(_authMode==='register'){await window._fbRegister(email,password);}
+    else{await window._fbSignIn(email,password);}
   }catch(err){
     const fr2=lang==='fr';
     const msgs={
@@ -3948,8 +3956,8 @@ async function handleGoogleSignIn(){
   haptic('light');
   document.getElementById('authError').textContent='';
   try{
-    // Use redirect on mobile (more reliable than popup)
-    await fbAuth.signInWithRedirect(googleProvider);
+    if(!window._fbGoogleAuth){setAuthError(lang==='fr'?'Service indisponible.':'Service unavailable.');return;}
+    await window._fbGoogleAuth();
   }
   catch(err){if(err.code!=='auth/popup-closed-by-user')setAuthError(lang==='fr'?'Connexion Google échouée.':'Google sign-in failed.');}
 }
@@ -3959,7 +3967,7 @@ async function handleForgot(){
   const email=document.getElementById('authEmail').value.trim();
   const fr=lang==='fr';
   if(!email){setAuthError(fr?"Entre ton email d'abord.":'Enter your email first.');return;}
-  try{await fbAuth.sendPasswordResetEmail(email);showToast(fr?'✓ Email de réinitialisation envoyé':'✓ Reset email sent');}
+  try{await window._fbResetPwd(email);showToast(fr?'✓ Email de réinitialisation envoyé':'✓ Reset email sent');}
   catch(e){setAuthError(fr?'Email introuvable.':'Email not found.');}
 }
 
