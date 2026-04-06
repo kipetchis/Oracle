@@ -668,10 +668,10 @@
     .account-sync-status{font-size:.65rem;color:var(--text-muted);text-align:center;}
     .account-close{background:none;border:none;color:var(--text-muted);font-size:.6rem;font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-top:8px;}
   </style>
-  <!-- Firebase SDK compat (v9 stable) -->
-  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.0/firebase-firestore-compat.js"></script>
+  <!-- Firebase SDK compat -->
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
 </head>
 <body>
 
@@ -935,15 +935,18 @@ async function loadFirebase() {
       await new Promise(r => setTimeout(r, 100));
       attempts++;
     }
+    console.log('Firebase typeof:', typeof firebase, 'attempts:', attempts);
     if(typeof firebase === 'undefined') {
       console.warn('Firebase SDK non disponible');
       return false;
     }
-    fbApp  = firebase.initializeApp(FIREBASE_CONFIG);
-    fbAuth = firebase.auth();
-    fbDb   = firebase.firestore();
+    console.log('Firebase apps:', firebase.apps.length);
+    fbApp  = firebase.apps.length ? firebase.app() : firebase.initializeApp(FIREBASE_CONFIG);
+    fbAuth = firebase.auth(fbApp);
+    fbDb   = firebase.firestore(fbApp);
     googleProvider = new firebase.auth.GoogleAuthProvider();
     _isFirebaseConfigured = true;
+    console.log('Firebase initialized OK, auth:', !!fbAuth);
     // Handle Google redirect result
     try {
       const result = await fbAuth.getRedirectResult();
