@@ -2312,6 +2312,9 @@ function setLang(l){
   updateFavBadge();
   if(state.premium) hideBanner();
   setTimeout(() => { initDailyBanner(); if(state.notifEnabled) scheduleNotif();
+    // Show login button by default; Firebase will update it once loaded
+    const _lb = document.getElementById('loginBtn');
+    if(_lb) _lb.style.display='flex';
     if(typeof loadFirebase==='function' && !window._fbInitDone){
       window._fbInitDone=true; loadFirebase();
     }
