@@ -643,6 +643,30 @@
       pointer-events: none;
       z-index: 2;
     }
+    /* ── AUTH SCREEN ─────────────────────────────────────────────────────── */
+    .auth-screen{position:fixed;inset:0;z-index:9999;background:rgba(8,8,18,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;gap:12px;overflow-y:auto;}
+    .auth-screen.hidden{display:none;}
+    .auth-logo{font-size:48px;margin-bottom:4px;}
+    .auth-title{font-family:'Cormorant Garamond',serif;font-size:2rem;letter-spacing:.2em;color:var(--text);}
+    .auth-sub{font-size:.78rem;color:var(--text-muted);text-align:center;line-height:1.6;max-width:320px;}
+    .auth-form{width:100%;max-width:320px;display:flex;flex-direction:column;gap:10px;margin-top:8px;}
+    .auth-input{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:13px 16px;color:var(--text);font-size:.9rem;font-family:inherit;outline:none;transition:border .2s;}
+    .auth-input:focus{border-color:rgba(255,255,255,.3);}
+    .auth-btn{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);border-radius:10px;padding:13px;color:var(--text);font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:background .2s;}
+    .auth-btn:active{background:rgba(255,255,255,.18);}
+    .auth-btn.primary{background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.3);}
+    .auth-google-btn{display:flex;align-items:center;justify-content:center;gap:10px;background:white;color:#333;border:none;border-radius:10px;padding:13px;font-size:.75rem;font-weight:600;cursor:pointer;}
+    .auth-switch{font-size:.68rem;color:var(--text-muted);cursor:pointer;text-decoration:underline;margin-top:4px;text-align:center;}
+    .auth-forgot{font-size:.62rem;color:var(--text-muted);cursor:pointer;text-align:right;margin-top:-4px;}
+    .auth-skip{background:none;border:none;color:var(--text-muted);font-size:.6rem;font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-top:16px;opacity:.5;}
+    .auth-error{color:#ff6b6b;font-size:.72rem;text-align:center;min-height:18px;}
+    /* ── ACCOUNT PANEL ────────────────────────────────────────────────────── */
+    .account-panel{position:fixed;inset:0;z-index:9998;background:rgba(8,8,18,.97);display:none;flex-direction:column;align-items:center;justify-content:center;padding:32px 24px;gap:16px;}
+    .account-panel.open{display:flex;}
+    .account-email{font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.1em;color:var(--text-muted);}
+    .account-btn{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.12);border-radius:10px;padding:12px 24px;color:var(--text);font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;width:100%;max-width:280px;}
+    .account-sync-status{font-size:.65rem;color:var(--text-muted);text-align:center;}
+    .account-close{background:none;border:none;color:var(--text-muted);font-size:.6rem;font-family:'Space Mono',monospace;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;margin-top:8px;}
   </style>
 </head>
 <body>
