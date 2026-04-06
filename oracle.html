@@ -944,6 +944,12 @@ async function loadFirebase() {
     fbDb   = firebase.firestore();
     googleProvider = new firebase.auth.GoogleAuthProvider();
     _isFirebaseConfigured = true;
+    // Handle Google redirect result
+    try {
+      const result = await fbAuth.getRedirectResult();
+      if(result && result.user) console.log('Redirect sign-in OK:', result.user.email);
+    } catch(e) { console.warn('Redirect result:', e.message); }
+
     // Auth state listener
     fbAuth.onAuthStateChanged(async (user) => {
       if(user){
@@ -3921,6 +3927,7 @@ async function handleAuthSubmit(){
   const fr=lang==='fr';
   if(!email||!password){setAuthError(fr?'Remplis tous les champs.':'Please fill in all fields.');return;}
   if(password.length<6){setAuthError(fr?'Mot de passe trop court (min. 6 caractères).':'Password too short (min. 6 characters).');return;}
+  if(!fbAuth){setAuthError(lang==='fr'?'Service indisponible, réessaie.':'Service unavailable, please retry.');return;}
   try{
     if(_authMode==='register'){await fbAuth.createUserWithEmailAndPassword(email,password);}
     else{await fbAuth.signInWithEmailAndPassword(email,password);}
@@ -3935,14 +3942,18 @@ async function handleAuthSubmit(){
       'auth/network-request-failed':fr2?'Erreur réseau.':'Network error.',
       'auth/invalid-credential':fr2?'Identifiants incorrects.':'Invalid credentials.',
     };
-    setAuthError(msgs[err.code]||(fr2?'Erreur : '+err.code:'Error: '+err.code));
+    console.error('Auth error:', err);
+    setAuthError(msgs[err.code]||(fr2?'Erreur : '+(err.message||err.code||'inconnue'):'Error: '+(err.message||err.code||'unknown')));
   }
 }
 
 async function handleGoogleSignIn(){
   haptic('light');
   document.getElementById('authError').textContent='';
-  try{await fbAuth.signInWithPopup(googleProvider);}
+  try{
+    // Use redirect on mobile (more reliable than popup)
+    await fbAuth.signInWithRedirect(googleProvider);
+  }
   catch(err){if(err.code!=='auth/popup-closed-by-user')setAuthError(lang==='fr'?'Connexion Google échouée.':'Google sign-in failed.');}
 }
 
