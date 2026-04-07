@@ -1,0 +1,28 @@
+{
+  "name": "Oracle",
+  "short_name": "Oracle",
+  "description": "Le monde a quelque chose à te dire — faits, anecdotes et curiosités du monde entier.",
+  "start_url": "/Oracle/oracle.html",
+  "scope": "/Oracle/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#08080f",
+  "theme_color": "#08080f",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [],
+  "categories": ["education", "entertainment"]
+}
