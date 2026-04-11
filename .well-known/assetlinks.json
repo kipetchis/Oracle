@@ -1,0 +1,8 @@
+[{
+      "relation": ["delegate_permission/common.handle_all_urls"],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "io.github.kipetchis.twa",
+        "sha256_cert_fingerprints": ["89:EF:71:D2:AC:BB:06:81:C1:82:47:5C:59:5E:8D:1A:E0:6B:07:03:01:E3:E5:69:FA:BE:7A:E6:68:CB:6A:8C"]
+      }
+    }]
