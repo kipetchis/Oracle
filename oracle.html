@@ -709,8 +709,11 @@
     <p class="hint" id="hintText">touche l'orbe pour révéler</p>
   </div>  <!-- AD BANNER -->
   <div class="ad-banner" id="adBanner">
-    <span class="ad-banner-label">Ad</span>
-    <span class="ad-banner-content" id="adContent">AdMob Banner · 320×50</span>
+    <ins class="adsbygoogle"
+         style="display:inline-block;width:320px;height:50px"
+         data-ad-client="ca-app-pub-9988745537721305"
+         data-ad-slot="5872332879"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
     <button class="ad-remove-btn" onclick="openPremium()" id="adRemoveBtn">⭐ Go Premium</button>
   </div>
 </div>
@@ -3465,8 +3468,8 @@ function updateUserBadge(user){
     badge.style.display='flex';
     loginBtn.style.display='none';
     const name=user.displayName||user.email||'?';
-    document.getElementById('userBadgeAvatar').textContent=name[0].toUpperCase();
-    document.getElementById('userBadgeName').textContent=name.split('@')[0].substring(0,12);
+    const uba=document.getElementById('userBadgeAvatar'); if(uba) uba.textContent=name[0].toUpperCase();
+    const ubn=document.getElementById('userBadgeName'); if(ubn) ubn.textContent=name.split('@')[0].substring(0,12);
   } else {
     badge.style.display='none';
     loginBtn.style.display='flex';
@@ -3800,8 +3803,8 @@ function updateUserBadge(user){
     badge.style.display='flex';
     loginBtn.style.display='none';
     const name=user.displayName||user.email||'?';
-    document.getElementById('userBadgeAvatar').textContent=name[0].toUpperCase();
-    document.getElementById('userBadgeName').textContent=name.split('@')[0].substring(0,12);
+    const uba=document.getElementById('userBadgeAvatar'); if(uba) uba.textContent=name[0].toUpperCase();
+    const ubn=document.getElementById('userBadgeName'); if(ubn) ubn.textContent=name.split('@')[0].substring(0,12);
   } else {
     badge.style.display='none';
     loginBtn.style.display='flex';
@@ -3823,28 +3826,28 @@ function applyAuthI18n(){
     :'Create an account to save your progress<br>and find your curiosities on all your devices.';
   document.getElementById('authEmail').placeholder='Email';
   document.getElementById('authPassword').placeholder=fr?'Mot de passe':'Password';
-  document.getElementById('authForgot').textContent=fr?'Mot de passe oublié ?':'Forgot password?';
-  document.getElementById('authMainBtn').textContent=_authMode==='register'
+  if(document.getElementById('authForgot')) document.getElementById('authForgot').textContent=fr?'Mot de passe oublié ?':'Forgot password?';
+  if(document.getElementById('authMainBtn')) document.getElementById('authMainBtn').textContent=_authMode==='register'
     ?(fr?'Créer un compte':'Create account'):(fr?'Se connecter':'Sign in');
   document.getElementById('authToggle').innerHTML=_authMode==='register'
     ?(fr?'Déjà un compte ? <span>Se connecter</span>':'Already have an account? <span>Sign in</span>')
     :(fr?'Pas encore de compte ? <span>Créer un compte</span>':"Don't have an account? <span>Sign up</span>");
-  document.getElementById('authDivider').textContent=fr?'ou':'or';
-  document.querySelector('.auth-skip').textContent=fr?'Continuer sans compte →':'Continue without account →';
+  if(document.getElementById('authDivider')) document.getElementById('authDivider').textContent=fr?'ou':'or';
+  if(document.querySelector('.auth-skip')) document.querySelector('.auth-skip').textContent=fr?'Continuer sans compte →':'Continue without account →';
 }
 
 function toggleAuthMode(){
   haptic('light');
   _authMode=_authMode==='register'?'login':'register';
   applyAuthI18n();
-  document.getElementById('authError').textContent='';
+  if(document.getElementById('authError')) document.getElementById('authError').textContent='';
 }
 
-function setAuthError(msg){ document.getElementById('authError').textContent=msg; }
+function setAuthError(msg){ const ae=document.getElementById('authError'); if(ae) ae.textContent=msg; }
 
 async function handleAuthSubmit(){
   haptic('light');
-  document.getElementById('authError').textContent='';
+  if(document.getElementById('authError')) document.getElementById('authError').textContent='';
   const email=document.getElementById('authEmail').value.trim();
   const password=document.getElementById('authPassword').value;
   const fr=lang==='fr';
@@ -3872,7 +3875,7 @@ async function handleAuthSubmit(){
 
 async function handleGoogleSignIn(){
   haptic('light');
-  document.getElementById('authError').textContent='';
+  if(document.getElementById('authError')) document.getElementById('authError').textContent='';
   try{
     if(!window._fbGoogleAuth){setAuthError(lang==='fr'?'Service indisponible.':'Service unavailable.');return;}
     await window._fbGoogleAuth();
@@ -3911,11 +3914,11 @@ function openAccountPanel(){
   if(!_fbCurrentUser){showAuthScreen();return;}
   const user=_fbCurrentUser;
   const name=user.displayName||user.email||'?';
-  document.getElementById('accountPanelTitle').textContent=lang==='fr'?'⬡ Mon compte':'⬡ My account';
-  document.getElementById('accountAvatarBig').textContent=name[0].toUpperCase();
-  document.getElementById('accountEmailDisplay').textContent=user.email;
-  document.getElementById('accountSyncBtn').textContent=lang==='fr'?'↑ Synchroniser maintenant':'↑ Sync now';
-  document.getElementById('accountSignOutBtn').textContent=lang==='fr'?'Déconnexion':'Sign out';
+  const apt=document.getElementById('accountPanelTitle'); if(apt) apt.textContent=lang==='fr'?'⬡ Mon compte':'⬡ My account';
+  const aab=document.getElementById('accountAvatarBig'); if(aab) aab.textContent=name[0].toUpperCase();
+  const aed=document.getElementById('accountEmailDisplay'); if(aed) aed.textContent=user.email;
+  const asb=document.getElementById('accountSyncBtn'); if(asb) asb.textContent=lang==='fr'?'↑ Synchroniser maintenant':'↑ Sync now';
+  const aso=document.getElementById('accountSignOutBtn'); if(aso) aso.textContent=lang==='fr'?'Déconnexion':'Sign out';
   document.getElementById('accountPanel').classList.add('open');
 }
 function closeAccountPanel(){ document.getElementById('accountPanel').classList.remove('open'); }
