@@ -2288,7 +2288,7 @@ function applyI18n(){
   document.getElementById('premiumBtn').textContent=t.premiumBtn;
   document.getElementById('premiumCloseBtn').textContent=t.premiumClose;
   document.getElementById('adRemoveBtn').textContent=t.adRemoveBtn;
-  document.getElementById('adContent').textContent=lang==='fr'?'Publicité · AdMob Banner':'Advertisement · AdMob Banner';
+  (document.getElementById('adContent')||{}).textContent=lang==='fr'?'Publicité · AdMob Banner':'Advertisement · AdMob Banner';
 }
 
 // Check if lang already chosen
@@ -3826,28 +3826,28 @@ function applyAuthI18n(){
     :'Create an account to save your progress<br>and find your curiosities on all your devices.';
   document.getElementById('authEmail').placeholder='Email';
   document.getElementById('authPassword').placeholder=fr?'Mot de passe':'Password';
-  if(document.getElementById('authForgot')) document.getElementById('authForgot').textContent=fr?'Mot de passe oublié ?':'Forgot password?';
-  if(document.getElementById('authMainBtn')) document.getElementById('authMainBtn').textContent=_authMode==='register'
+  if(document.getElementById('authForgot')) (document.getElementById('authForgot')||{}).textContent=fr?'Mot de passe oublié ?':'Forgot password?';
+  if(document.getElementById('authMainBtn')) (document.getElementById('authMainBtn')||{}).textContent=_authMode==='register'
     ?(fr?'Créer un compte':'Create account'):(fr?'Se connecter':'Sign in');
   document.getElementById('authToggle').innerHTML=_authMode==='register'
     ?(fr?'Déjà un compte ? <span>Se connecter</span>':'Already have an account? <span>Sign in</span>')
     :(fr?'Pas encore de compte ? <span>Créer un compte</span>':"Don't have an account? <span>Sign up</span>");
-  if(document.getElementById('authDivider')) document.getElementById('authDivider').textContent=fr?'ou':'or';
-  if(document.querySelector('.auth-skip')) document.querySelector('.auth-skip').textContent=fr?'Continuer sans compte →':'Continue without account →';
+  if(document.getElementById('authDivider')) (document.getElementById('authDivider')||{}).textContent=fr?'ou':'or';
+  if(document.querySelector('.auth-skip')) (document.querySelector('.auth-skip')||{}).textContent=fr?'Continuer sans compte →':'Continue without account →';
 }
 
 function toggleAuthMode(){
   haptic('light');
   _authMode=_authMode==='register'?'login':'register';
   applyAuthI18n();
-  if(document.getElementById('authError')) document.getElementById('authError').textContent='';
+  if(document.getElementById('authError')) (document.getElementById('authError')||{}).textContent='';
 }
 
 function setAuthError(msg){ const ae=document.getElementById('authError'); if(ae) ae.textContent=msg; }
 
 async function handleAuthSubmit(){
   haptic('light');
-  if(document.getElementById('authError')) document.getElementById('authError').textContent='';
+  if(document.getElementById('authError')) (document.getElementById('authError')||{}).textContent='';
   const email=document.getElementById('authEmail').value.trim();
   const password=document.getElementById('authPassword').value;
   const fr=lang==='fr';
@@ -3875,7 +3875,7 @@ async function handleAuthSubmit(){
 
 async function handleGoogleSignIn(){
   haptic('light');
-  if(document.getElementById('authError')) document.getElementById('authError').textContent='';
+  if(document.getElementById('authError')) (document.getElementById('authError')||{}).textContent='';
   try{
     if(!window._fbGoogleAuth){setAuthError(lang==='fr'?'Service indisponible.':'Service unavailable.');return;}
     await window._fbGoogleAuth();
