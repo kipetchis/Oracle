@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <link rel="manifest" href="/Oracle/manifest.json">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
   <meta name="theme-color" content="#08080f">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
   <meta name="theme-color" content="#050a12"/>
@@ -339,10 +339,21 @@
     .daily-limit-screen{position:fixed;inset:0;z-index:18;background:rgba(5,10,18,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;opacity:0;pointer-events:none;transition:opacity .4s;}
     .daily-limit-screen.active{opacity:1;pointer-events:all;}
     .daily-limit-icon{font-size:52px;margin-bottom:16px;animation:celebBounce .5s ease;}
-    .daily-limit-title{font-size:clamp(1.3rem,4.5vw,1.7rem);font-weight:300;letter-spacing:.05em;margin-bottom:10px;text-align:center;}
-    .daily-limit-sub{font-style:italic;color:var(--text-muted);font-size:.95rem;text-align:center;line-height:1.7;margin-bottom:20px;max-width:360px;}
+    .daily-limit-title{font-size:clamp(1.3rem,4.5vw,1.7rem);font-weight:300;letter-spacing:.05em;margin-bottom:10px;text-align:center;font-family:'Montserrat',sans-serif;color:#ffffff;}
+    .daily-limit-sub{font-style:italic;color:var(--text-muted);font-size:.95rem;text-align:center;line-height:1.7;margin-bottom:20px;max-width:360px;font-family:'Montserrat',sans-serif;color:#ffffff;}
     .daily-limit-timer{font-family:'Space Mono',monospace;font-size:1.8rem;letter-spacing:.1em;color:#c084fc;margin-bottom:4px;}
     .daily-limit-timer-label{font-family:'Space Mono',monospace;font-size:.48rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted);margin-bottom:24px;}
+    .dl-close-btn{position:absolute;top:20px;right:20px;background:none;border:none;color:rgba(255,255,255,.5);font-size:1.2rem;cursor:pointer;padding:8px;border-radius:50%;transition:color .2s;}
+    .dl-close-btn:hover{color:#fff;}
+    .dl-stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;width:100%;max-width:360px;margin:16px 0;}
+    .dl-stat-item{background:rgba(255,255,255,.05);border-radius:12px;padding:12px 8px;text-align:center;}
+    .dl-stat-val{font-size:1.4rem;font-weight:600;color:#fff;font-family:'Montserrat',sans-serif;}
+    .dl-stat-label{font-size:.65rem;color:rgba(255,255,255,.5);margin-top:3px;font-family:'Montserrat',sans-serif;letter-spacing:.05em;}
+    .dl-ach-section{width:100%;max-width:360px;margin:8px 0 16px;}
+    .dl-ach-title{font-size:.8rem;color:rgba(255,255,255,.5);font-family:'Montserrat',sans-serif;letter-spacing:.1em;margin-bottom:8px;}
+    .dl-ach-grid{display:flex;flex-wrap:wrap;gap:6px;}
+    .dl-ach-item{font-size:1.4rem;opacity:.3;transition:opacity .2s;}
+    .dl-ach-item.unlocked{opacity:1;}
     .daily-limit-btns{display:flex;flex-direction:column;gap:10px;width:100%;max-width:280px;}
     .daily-limit-favs-btn{font-family:'Space Mono',monospace;font-size:.54rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--text);padding:12px;border-radius:12px;cursor:pointer;transition:background .2s;}
     .daily-limit-favs-btn:hover{background:rgba(255,255,255,.1);}
@@ -711,11 +722,22 @@
 
 <!-- LIMITE QUOTIDIENNE -->
 <div class="daily-limit-screen" id="dailyLimitScreen">
+  <button class="dl-close-btn" onclick="haptic();closeDailyLimit()" aria-label="Fermer">✕</button>
   <div class="daily-limit-icon">🌙</div>
   <div class="daily-limit-title" id="dlTitle">À demain !</div>
   <div class="daily-limit-sub" id="dlSub">Tu as lu tous tes faits du jour. L'Oracle se repose… et revient demain avec de nouvelles curiosités.</div>
   <div class="daily-limit-timer" id="dlTimer">--:--:--</div>
   <div class="daily-limit-timer-label" id="dlTimerLabel">avant le prochain lot</div>
+
+  <!-- Stats inline -->
+  <div class="dl-stats-grid" id="dlStatsGrid"></div>
+
+  <!-- Succès inline -->
+  <div class="dl-ach-section">
+    <div class="dl-ach-title" id="dlAchTitle">🏆 Succès</div>
+    <div class="dl-ach-grid" id="dlAchGrid"></div>
+  </div>
+
   <div class="daily-limit-btns">
     <button class="daily-limit-favs-btn" onclick="haptic();closeDailyLimit();openPanel('favs')" id="dlFavsBtn">♡ Relire mes favoris</button>
     <button class="daily-limit-premium-btn" onclick="haptic();closeDailyLimit();openPremium()" id="dlPremiumBtn">⭐ Premium — faits illimités</button>
@@ -2539,8 +2561,42 @@ function openPanel(type){
 const DAILY_LIMIT = 5;
 let _dlTimerInterval = null;
 
+
+function renderDailyLimitStats() {
+  const t = T[lang];
+  const total = state.read.total || 0;
+  const streak = state.streak || 0;
+  const qCorrect = state.quizCorrect || 0;
+  const qTotal = state.quizTotal || 0;
+  const pct = qTotal > 0 ? Math.round(qCorrect/qTotal*100) : 0;
+  const favCount = (state.favs||[]).length;
+  const planetsCount = (state.unlockedPlanets||['earth']).length;
+
+  // Stats grid
+  const sg = document.getElementById('dlStatsGrid');
+  if(sg) sg.innerHTML = `
+    <div class="dl-stat-item"><div class="dl-stat-val">${total}</div><div class="dl-stat-label">${lang==='fr'?'FAITS LUS':'FACTS READ'}</div></div>
+    <div class="dl-stat-item"><div class="dl-stat-val">${streak}</div><div class="dl-stat-label">${lang==='fr'?'JOURS D\'AFFILÉE':'DAY STREAK'}</div></div>
+    <div class="dl-stat-item"><div class="dl-stat-val">${pct}%</div><div class="dl-stat-label">${lang==='fr'?'AU QUIZ':'QUIZ SCORE'}</div></div>
+    <div class="dl-stat-item"><div class="dl-stat-val">${favCount}</div><div class="dl-stat-label">${lang==='fr'?'FAVORIS':'FAVORITES'}</div></div>
+    <div class="dl-stat-item"><div class="dl-stat-val">${planetsCount}</div><div class="dl-stat-label">${lang==='fr'?'PLANÈTES':'PLANETS'}</div></div>
+    <div class="dl-stat-item"><div class="dl-stat-val">${state.shares||0}</div><div class="dl-stat-label">${lang==='fr'?'PARTAGES':'SHARES'}</div></div>
+  `;
+
+  // Achievements
+  const ag = document.getElementById('dlAchGrid');
+  if(ag && typeof ACHI !== 'undefined') {
+    const items = Object.entries(ACHI).slice(0,12).map(([id,a])=>{
+      const unlocked = (state.unlocked||[]).includes(id);
+      return `<span class="dl-ach-item${unlocked?' unlocked':''}" title="${a.n}">${a.icon||'⬡'}</span>`;
+    }).join('');
+    ag.innerHTML = items;
+  }
+}
+
 function showDailyLimit(){
   history.pushState({screen:'dailyLimit'}, '');
+  renderDailyLimitStats();
   haptic('heavy');
   const t = T[lang];
   document.getElementById('dlTitle').textContent = lang==='fr' ? 'À demain !' : 'See you tomorrow!';
