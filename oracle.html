@@ -689,7 +689,7 @@
       <div class="icon-btn" onclick="haptic();openPremium()" title="Premium" style="font-size:12px">⭐</div>
       <div class="icon-btn" onclick="haptic();openStats()" title="Statistiques" style="font-size:13px">📊</div>
       <div class="icon-btn" id="favBtn" onclick="haptic();openPanel('favs')" title="Favoris">♡<span class="badge" id="favBadge" style="display:none">0</span></div>
-      <div class="icon-btn" onclick="haptic();openPanel('history')" title="Historique">📖</div>
+
       <div class="icon-btn" onclick="haptic();openPanel('achievements')" title="Succès">⬡</div>
     </div>
   </div>
@@ -4185,7 +4185,11 @@ window.addEventListener('popstate', function(e) {
 
 <script>
 if('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('/Oracle/sw.js').catch(()=>{});
+  // Unregister old SW to force cache refresh, then re-register
+  navigator.serviceWorker.getRegistrations().then(regs => {
+    regs.forEach(r => r.unregister());
+    navigator.serviceWorker.register('/Oracle/sw.js').catch(()=>{});
+  });
 }
 </script>
 </body>
