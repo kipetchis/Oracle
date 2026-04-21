@@ -336,7 +336,7 @@
     .card-source-text{font-family:'Space Mono',monospace;font-size:.44rem;color:var(--text-muted);opacity:.7;}
 
     /* ── LIMITE QUOTIDIENNE ── */
-    .daily-limit-screen{position:fixed;inset:0;z-index:18;background:rgba(5,10,18,.97);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:32px;opacity:0;pointer-events:none;transition:opacity .4s;}
+    .daily-limit-screen{position:fixed;inset:0;z-index:18;background:rgba(5,10,18,.97);display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding:48px 24px 32px;overflow-y:auto;opacity:0;pointer-events:none;transition:opacity .4s;}
     .daily-limit-screen.active{opacity:1;pointer-events:all;}
     .daily-limit-icon{font-size:52px;margin-bottom:16px;animation:celebBounce .5s ease;}
     .daily-limit-title{font-size:clamp(1.3rem,4.5vw,1.7rem);font-weight:300;letter-spacing:.05em;margin-bottom:10px;text-align:center;font-family:'Montserrat',sans-serif;color:#ffffff;}
@@ -541,9 +541,15 @@
     .panel-body::-webkit-scrollbar{width:3px;}
     .panel-body::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:2px;}
     .fav-empty{font-style:italic;color:var(--text-muted);font-size:.9rem;text-align:center;margin-top:36px;line-height:1.7;}
+    .fav-tabs{display:flex;gap:0;border-bottom:1px solid rgba(255,255,255,.08);width:100%;}
+    .fav-tab{flex:1;padding:10px;background:none;border:none;color:rgba(255,255,255,.4);font-family:'Montserrat',sans-serif;font-size:.75rem;letter-spacing:.08em;cursor:pointer;transition:all .2s;border-bottom:2px solid transparent;}
+    .fav-tab.active{color:#fff;border-bottom:2px solid rgba(192,132,252,.7);}
     .fav-item{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:11px;padding:12px 14px;margin-bottom:9px;position:relative;}
     .fav-item-badge{font-family:'Space Mono',monospace;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px;display:flex;align-items:center;gap:5px;}
     .fav-item-text{font-size:.9rem;line-height:1.6;font-weight:300;padding-right:22px;}
+    .fav-item-actions{display:flex;align-items:center;gap:8px;margin-top:8px;}
+    .fav-share-btn{font-size:.6rem;font-family:'Space Mono',monospace;letter-spacing:.08em;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--text);padding:5px 10px;border-radius:8px;cursor:pointer;transition:background .2s;}
+    .fav-share-btn:hover{background:rgba(255,255,255,.12);}
     .fav-remove{position:absolute;top:9px;right:10px;background:none;border:none;color:var(--text-muted);font-size:13px;cursor:pointer;opacity:.5;}
     .ach-section-title{font-family:'Space Mono',monospace;font-size:.52rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted);margin:18px 0 8px;opacity:.6;}
     .ach-section-title:first-child{margin-top:0;}
@@ -683,6 +689,7 @@
       <div class="icon-btn" onclick="haptic();openPremium()" title="Premium" style="font-size:12px">⭐</div>
       <div class="icon-btn" onclick="haptic();openStats()" title="Statistiques" style="font-size:13px">📊</div>
       <div class="icon-btn" id="favBtn" onclick="haptic();openPanel('favs')" title="Favoris">♡<span class="badge" id="favBadge" style="display:none">0</span></div>
+      <div class="icon-btn" onclick="haptic();openPanel('history')" title="Historique">📖</div>
       <div class="icon-btn" onclick="haptic();openPanel('achievements')" title="Succès">⬡</div>
     </div>
   </div>
@@ -739,7 +746,8 @@
   </div>
 
   <div class="daily-limit-btns">
-    <button class="daily-limit-favs-btn" onclick="haptic();closeDailyLimit();openPanel('favs')" id="dlFavsBtn">♡ Relire mes favoris</button>
+    <button class="daily-limit-favs-btn" onclick="haptic();closeDailyLimit();openPanel('favs');switchFavTab('favs')" id="dlFavsBtn">♡ Relire mes favoris</button>
+    <button class="daily-limit-favs-btn" onclick="haptic();closeDailyLimit();openPanel('favs');switchFavTab('history')" id="dlHistoryBtn">📖 Faits découverts</button>
     <button class="daily-limit-premium-btn" onclick="haptic();closeDailyLimit();openPremium()" id="dlPremiumBtn">⭐ Premium — faits illimités</button>
   </div>
 </div>
@@ -893,8 +901,22 @@
 
 <!-- PANELS -->
 <div class="panel-overlay" id="panelFavs">
-  <div class="panel-header"><span class="panel-title" id="favPanelTitle">♡ Favoris</span><button class="close-btn" onclick="haptic();closePanel('favs')">×</button></div>
+  <div class="panel-header">
+    <span class="panel-title" id="favPanelTitle">♡ Favoris</span>
+    <button class="close-btn" onclick="haptic();closePanel('favs')">×</button>
+  </div>
+  <div class="fav-tabs">
+    <button class="fav-tab active" id="tabFavs" onclick="switchFavTab('favs')">♡ Favoris</button>
+    <button class="fav-tab" id="tabHistory" onclick="switchFavTab('history')">📖 Déjà lus</button>
+  </div>
   <div class="panel-body" id="favsList"></div>
+  <div class="panel-body" id="historyListInline" style="display:none"></div>
+</div>
+
+<!-- HISTORY PANEL -->
+<div class="panel" id="panelHistory">
+  <div class="panel-header"><span class="panel-title" id="historyPanelTitle">📖 Historique</span><button class="close-btn" onclick="haptic();closePanel('history')">×</button></div>
+  <div class="panel-body" id="historyList"></div>
 </div>
 <div class="panel-overlay" id="panelAchievements">
   <div class="panel-header"><span class="panel-title" id="achPanelTitle">⬡ Succès</span><button class="close-btn" onclick="haptic();closePanel('achievements')">×</button></div>
@@ -2237,7 +2259,7 @@ const buildPlanets=(lang)=>[
 // ── STATE ─────────────────────────────────────────────────────────────────
 function loadState(){
   try{const s=localStorage.getItem('oracle_v7');if(s)return JSON.parse(s);}catch(e){}
-  return{favs:[],read:{},unlocked:[],streak:1,lastDate:null,shares:0,activePlanet:'earth',unlockedPlanets:['earth'],lang:null,premium:false,notifEnabled:false,lastDailyDate:null,quizTotal:0,quizCorrect:0,muted:false,dailyCount:0,dailyCountDate:null};
+  return{favs:[],read:{},history:[],unlocked:[],streak:1,lastDate:null,shares:0,activePlanet:'earth',unlockedPlanets:['earth'],lang:null,premium:false,notifEnabled:false,lastDailyDate:null,quizTotal:0,quizCorrect:0,muted:false,dailyCount:0,dailyCountDate:null};
 }
 function saveState(){try{localStorage.setItem('oracle_v7',JSON.stringify(state));}catch(e){}}
 let state=loadState();
@@ -2417,7 +2439,13 @@ function showFact(){
   ['lit','cat-science','cat-positive','cat-fun','cat-history','cat-space','cat-animals','cat-body','cat-arts','cat-inventions','cat-world','cat-language','cat-food','cat-sports','cat-celebrities','cat-fiction','cat-gaming','cat-cinema','cat-music']
     .forEach(c=>orb.classList.remove(c));
   card.classList.remove('visible');
-  state.read[currentFact.cat]=(state.read[currentFact.cat]||0)+1;state.read.total=(state.read.total||0)+1;state.dailyCount=(state.dailyCount||0)+1;saveState();
+  state.read[currentFact.cat]=(state.read[currentFact.cat]||0)+1;state.read.total=(state.read.total||0)+1;state.dailyCount=(state.dailyCount||0)+1;
+  if(!state.history) state.history=[];
+  if(!state.history.some(h=>h.id===currentFact.id)){
+    state.history.unshift({id:currentFact.id,cat:currentFact.cat,label:(T[lang].catLabels||{})[currentFact.cat]||currentFact.cat,text:currentFact.text,date:new Date().toLocaleDateString(lang==='fr'?'fr-FR':'en-US')});
+    if(state.history.length>50) state.history.pop();
+  }
+  saveState();
   const isFav=state.favs.some(f=>f.id===currentFact.id);
   const icon=CAT_ICONS[currentFact.cat]||'✦';
   const catLabel=t.catLabels[currentFact.cat]||'';
@@ -2505,10 +2533,64 @@ function toggleFav(){
 }
 function updateFavBadge(){const b=document.getElementById('favBadge'),n=state.favs.length;b.style.display=n>0?'flex':'none';b.textContent=n;}
 
+function shareFav(text, cat) {
+  // Temporarily set currentFact to this fav for sharing
+  const _prev = currentFact;
+  currentFact = {text, cat, source: ''};
+  openShare();
+  currentFact = _prev;
+}
+
+function renderHistory(){
+  const elOld=document.getElementById('historyList');
+  const el=document.getElementById('historyListInline')||elOld;
+  if(!el) return;
+  if(!state.history||!state.history.length){
+    el.innerHTML=`<p class="fav-empty">${lang==='fr'?'Aucun fait lu pour le moment.':'No facts read yet.'}</p>`;
+    return;
+  }
+  el.innerHTML=state.history.map((f,i)=>`
+    <div class="fav-item">
+      <div class="fav-item-badge badge-${f.cat}"><span class="badge-dot"></span><span>${CAT_ICONS[f.cat]||''} ${f.label||''}</span><span style="margin-left:auto;font-size:.6rem;opacity:.4">${f.date||''}</span></div>
+      <p class="fav-item-text">${f.text}</p>
+      <div class="fav-item-actions">
+        <button class="fav-share-btn" onclick="haptic();shareFav('${f.text.replace(/'/g,"\'")}','${f.cat}')">↗ ${lang==='fr'?'Partager':'Share'}</button>
+      </div>
+    </div>`).join('');
+}
+
+function switchFavTab(tab){
+  const tabFavs = document.getElementById('tabFavs');
+  const tabHist = document.getElementById('tabHistory');
+  const favsList = document.getElementById('favsList');
+  const histList = document.getElementById('historyListInline');
+  if(tab==='favs'){
+    if(tabFavs) tabFavs.classList.add('active');
+    if(tabHist) tabHist.classList.remove('active');
+    if(favsList) favsList.style.display='';
+    if(histList) histList.style.display='none';
+    renderFavs();
+  } else {
+    if(tabHist) tabHist.classList.add('active');
+    if(tabFavs) tabFavs.classList.remove('active');
+    if(favsList) favsList.style.display='none';
+    if(histList) histList.style.display='';
+    renderHistory();
+  }
+}
+
 function renderFavs(){
   const el=document.getElementById('favsList');
   if(!state.favs.length){el.innerHTML=`<p class="fav-empty">${T[lang].favEmpty.replace('\n','<br>')}</p>`;return;}
-  el.innerHTML=state.favs.map((f,i)=>`<div class="fav-item"><div class="fav-item-badge badge-${f.cat}"><span class="badge-dot"></span><span>${CAT_ICONS[f.cat]||''} ${f.label||''}</span></div><p class="fav-item-text">${f.text}</p><button class="fav-remove" onclick="removeFav(${i})">✕</button></div>`).join('');
+  el.innerHTML=state.favs.map((f,i)=>`
+    <div class="fav-item">
+      <div class="fav-item-badge badge-${f.cat}"><span class="badge-dot"></span><span>${CAT_ICONS[f.cat]||''} ${f.label||''}</span></div>
+      <p class="fav-item-text">${f.text}</p>
+      <div class="fav-item-actions">
+        <button class="fav-share-btn" onclick="haptic();shareFav('${f.text.replace(/'/g,"\'")}','${f.cat}')">↗ ${lang==='fr'?'Partager':'Share'}</button>
+        <button class="fav-remove" onclick="removeFav(${i})">✕</button>
+      </div>
+    </div>`).join('');
 }
 function removeFav(i){haptic('light');state.favs.splice(i,1);saveState();updateFavBadge();renderFavs();}
 
@@ -2555,6 +2637,7 @@ function spawnConfetti(container){
 
 function openPanel(type){
   if(type==='favs'){renderFavs();document.getElementById('panelFavs').classList.add('open');}
+  else if(type==='history'){renderHistory();document.getElementById('panelHistory').classList.add('open');}
   else{renderAchievements();document.getElementById('panelAchievements').classList.add('open');}
 }
 // ── LIMITE QUOTIDIENNE ────────────────────────────────────────────────────
@@ -2585,10 +2668,11 @@ function renderDailyLimitStats() {
 
   // Achievements
   const ag = document.getElementById('dlAchGrid');
-  if(ag && typeof ACHI !== 'undefined') {
-    const items = Object.entries(ACHI).slice(0,12).map(([id,a])=>{
-      const unlocked = (state.unlocked||[]).includes(id);
-      return `<span class="dl-ach-item${unlocked?' unlocked':''}" title="${a.n}">${a.icon||'⬡'}</span>`;
+  if(ag) {
+    const achDefs = buildAchDef(lang);
+    const items = achDefs.slice(0,18).map(a=>{
+      const unlocked = (state.unlocked||[]).includes(a.id);
+      return `<span class="dl-ach-item${unlocked?' unlocked':''}" title="${a.name}">${a.icon||'⬡'}</span>`;
     }).join('');
     ag.innerHTML = items;
   }
@@ -4053,6 +4137,25 @@ function forceSyncNow() {
     if(el) { el.textContent = '✓ Synchronisé'; setTimeout(()=>el.textContent='',2000); }
   });
 }
+// ── BACK BUTTON HANDLER ─────────────────────────────────────────
+window.addEventListener('popstate', function(e) {
+  // If daily limit screen is active, close it instead of quitting
+  const dl = document.getElementById('dailyLimitScreen');
+  if (dl && dl.classList.contains('active')) {
+    closeDailyLimit();
+    return;
+  }
+  // If any panel is open, close it
+  const panels = ['favPanel','statsPanel','sharePanel','planetPanel','premiumPanel','quizPanel'];
+  for (const id of panels) {
+    const el = document.getElementById(id);
+    if (el && (el.classList.contains('active') || el.style.display === 'flex')) {
+      el.classList.remove('active');
+      el.style.display = 'none';
+      return;
+    }
+  }
+});
 
 </script>
 
@@ -4079,26 +4182,6 @@ function forceSyncNow() {
 </div>
 
 
-
-// ── BACK BUTTON HANDLER ─────────────────────────────────────────
-window.addEventListener('popstate', function(e) {
-  // If daily limit screen is active, close it instead of quitting
-  const dl = document.getElementById('dailyLimitScreen');
-  if (dl && dl.classList.contains('active')) {
-    closeDailyLimit();
-    return;
-  }
-  // If any panel is open, close it
-  const panels = ['favPanel','statsPanel','sharePanel','planetPanel','premiumPanel','quizPanel'];
-  for (const id of panels) {
-    const el = document.getElementById(id);
-    if (el && (el.classList.contains('active') || el.style.display === 'flex')) {
-      el.classList.remove('active');
-      el.style.display = 'none';
-      return;
-    }
-  }
-});
 
 <script>
 if('serviceWorker' in navigator) {
