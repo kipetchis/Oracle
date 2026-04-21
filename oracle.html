@@ -405,13 +405,15 @@
     .stat-lbl{font-family:'Space Mono',monospace;font-size:.44rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-top:4px;}
     /* Category breakdown */
     .stats-section-title{font-family:'Space Mono',monospace;font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);margin:18px 0 10px;opacity:.6;}
-    .cat-bars{display:flex;flex-direction:column;gap:8px;}
-    .cat-bar-row{display:flex;align-items:center;gap:10px;}
-    .cat-bar-icon{font-size:16px;flex-shrink:0;width:20px;text-align:center;}
-    .cat-bar-name{font-family:'Space Mono',monospace;font-size:.48rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);width:80px;flex-shrink:0;}
-    .cat-bar-track{flex:1;height:6px;background:rgba(255,255,255,.07);border-radius:3px;overflow:hidden;}
+    .cat-bars{display:flex;flex-direction:column;gap:14px;}
+    .cat-bar-row{display:flex;flex-direction:column;gap:5px;}
+    .cat-bar-header{display:flex;align-items:center;justify-content:space-between;gap:8px;}
+    .cat-bar-left{display:flex;align-items:center;gap:7px;}
+    .cat-bar-icon{font-size:15px;flex-shrink:0;}
+    .cat-bar-name{font-family:'Space Mono',monospace;font-size:.5rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);}
+    .cat-bar-track{width:100%;height:5px;background:rgba(255,255,255,.07);border-radius:3px;overflow:hidden;}
     .cat-bar-fill{height:100%;border-radius:3px;transition:width .8s ease;}
-    .cat-bar-count{font-family:'Space Mono',monospace;font-size:.48rem;color:var(--text-muted);width:24px;text-align:right;flex-shrink:0;}
+    .cat-bar-count{font-family:'Space Mono',monospace;font-size:.48rem;color:var(--text-muted);flex-shrink:0;}
     /* Quiz score */
     .stats-quiz-row{display:flex;align-items:center;gap:12px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;padding:14px 16px;margin-top:8px;}
     .stats-quiz-icon{font-size:24px;}
@@ -541,6 +543,23 @@
     .panel-body::-webkit-scrollbar{width:3px;}
     .panel-body::-webkit-scrollbar-thumb{background:rgba(255,255,255,.1);border-radius:2px;}
     .fav-empty{font-style:italic;color:var(--text-muted);font-size:.9rem;text-align:center;margin-top:36px;line-height:1.7;}
+    /* Vue catégories */
+    .cat-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:2px 0;}
+    .cat-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:13px 12px;cursor:pointer;transition:background .2s,border-color .2s;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center;}
+    .cat-card:hover{background:rgba(255,255,255,.09);border-color:rgba(255,255,255,.18);}
+    .cat-card-icon{font-size:22px;line-height:1;}
+    .cat-card-name{font-family:'Space Mono',monospace;font-size:.48rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);line-height:1.4;}
+    .cat-card-count{font-family:'Space Mono',monospace;font-size:.55rem;color:rgba(255,255,255,.6);background:rgba(255,255,255,.07);border-radius:20px;padding:2px 8px;}
+    .cat-back-btn{display:flex;align-items:center;gap:7px;background:none;border:none;color:var(--text-muted);font-family:'Space Mono',monospace;font-size:.52rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;padding:0 0 14px 0;transition:color .2s;}
+    .cat-back-btn:hover{color:var(--text);}
+    /* Message pool épuisé */
+    .pool-exhausted{position:fixed;inset:0;z-index:25;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(5,10,18,.96);backdrop-filter:blur(12px);opacity:0;pointer-events:none;transition:opacity .35s;}
+    .pool-exhausted.active{opacity:1;pointer-events:all;}
+    .pool-exhausted-icon{font-size:52px;margin-bottom:16px;}
+    .pool-exhausted-title{font-family:'Space Mono',monospace;font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--text-muted);margin-bottom:12px;}
+    .pool-exhausted-msg{font-style:italic;font-size:1rem;color:var(--text);text-align:center;padding:0 32px;line-height:1.7;margin-bottom:28px;}
+    .pool-exhausted-btn{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:var(--text);padding:11px 24px;border-radius:40px;cursor:pointer;transition:background .2s;}
+    .pool-exhausted-btn:hover{background:rgba(255,255,255,.14);}
     .fav-tabs{display:flex;gap:0;border-bottom:1px solid rgba(255,255,255,.08);width:100%;}
     .fav-tab{flex:1;padding:10px;background:none;border:none;color:rgba(255,255,255,.4);font-family:'Montserrat',sans-serif;font-size:.75rem;letter-spacing:.08em;cursor:pointer;transition:all .2s;border-bottom:2px solid transparent;}
     .fav-tab.active{color:#fff;border-bottom:2px solid rgba(192,132,252,.7);}
@@ -578,6 +597,76 @@
     .celebration-btn{font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.2em;text-transform:uppercase;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:var(--text);padding:11px 24px;border-radius:40px;cursor:pointer;}
     .confetti-piece{position:absolute;border-radius:2px;animation:confettiFall linear forwards;pointer-events:none;}
     @keyframes confettiFall{0%{transform:translateY(-20px) rotate(0deg);opacity:1;}100%{transform:translateY(100vh) rotate(720deg);opacity:0;}}
+
+
+    /* ── COMÈTE QUIZ ── */
+    @keyframes cometFly {
+      0%   { transform: translate(var(--cx0), var(--cy0)) rotate(var(--cangle)) scale(1); opacity:0; }
+      5%   { opacity:1; }
+      92%  { opacity:1; }
+      100% { transform: translate(var(--cx1), var(--cy1)) rotate(var(--cangle)) scale(.8); opacity:0; }
+    }
+    @keyframes cometTailPulse {
+      0%,100% { opacity:.7; }
+      50%      { opacity:1; }
+    }
+    @keyframes cometGlowPulse {
+      0%,100% { box-shadow: 0 0 18px 6px rgba(192,132,252,.7), 0 0 40px 14px rgba(192,132,252,.35); }
+      50%      { box-shadow: 0 0 28px 10px rgba(192,132,252,.95), 0 0 70px 24px rgba(192,132,252,.5); }
+    }
+    .comet-wrapper {
+      position: fixed;
+      z-index: 30;
+      pointer-events: none;
+      top: 0; left: 0;
+      will-change: transform, opacity;
+      animation: cometFly var(--cdur, 15s) cubic-bezier(.22,.68,0,1.2) forwards;
+    }
+    .comet-wrapper.clickable { pointer-events: all; cursor: pointer; }
+    .comet-body {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .comet-tail {
+      width: 60px;
+      height: 3px;
+      border-radius: 2px 0 0 2px;
+      background: linear-gradient(to right, transparent, rgba(192,132,252,.5), rgba(255,255,255,.6));
+      animation: cometTailPulse 1s ease-in-out infinite;
+      margin-right: -2px;
+    }
+    .comet-head {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 35% 35%, #fff 0%, #c084fc 45%, #7c3aed 100%);
+      animation: cometGlowPulse 1.2s ease-in-out infinite;
+      flex-shrink: 0;
+      position: relative;
+    }
+    .comet-head::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(192,132,252,.4) 0%, transparent 70%);
+    }
+    .comet-label {
+      position: absolute;
+      bottom: -22px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-family: 'Space Mono', monospace;
+      font-size: .42rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: rgba(192,132,252,.9);
+      white-space: nowrap;
+      text-shadow: 0 0 8px rgba(192,132,252,.8);
+      animation: cometTailPulse 1s ease-in-out infinite;
+    }
 
     /* ── QUIZ ── */
     .quiz-overlay{position:fixed;inset:0;z-index:18;background:rgba(5,10,18,.98);backdrop-filter:blur(14px);display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24px;opacity:0;pointer-events:none;transition:opacity .35s;}
@@ -1084,6 +1173,26 @@ const SOURCES = {
   'u8': {n:'Whitelaw & Cooke, Toxicon 1988', u:'https://doi.org/10.1016/0041-0101(88)90175-3'},
   'u9': {n:'ADA — American Dental Association', u:'https://www.ada.org/'},
   'u10': {n:'Physics Education Journal', u:'https://iopscience.iop.org/journal/0031-9120'},
+  'u11': {n:'Smithsonian Magazine', u:'https://www.smithsonianmag.com/smart-news/the-dot-above-the-letters-i-and-j-has-a-name-180952246/'},
+  'u12': {n:'Journal of Comparative Psychology', u:'https://doi.org/10.1037/a0024802'},
+  'u13': {n:'Nature — Savile et al. 2022', u:'https://doi.org/10.1038/s41586-022-04601-8'},
+  'u14': {n:'CNRS / Inserm — Prix Ig Nobel 2014', u:'https://www.improbable.com/ig/winners/'},
+  'u15': {n:'Royal Society Open Science — Yin et al. 2021', u:'https://doi.org/10.1098/rsos.201125'},
+  'u16': {n:'Guinness World Records', u:'https://www.guinnessworldrecords.com/world-records/loudest-animal-(relative-to-body-size)'},
+  'u17': {n:'Journal of Experimental Biology — Patek et al. 2004', u:'https://doi.org/10.1242/jeb.00994'},
+  'u18': {n:'New Scientist — Bains 2004', u:'https://www.newscientist.com/'},
+  'u19': {n:'Nature — Bhattacharyya et al. 2005', u:'https://doi.org/10.1038/nature03866'},
+  'u20': {n:'American Chemical Society — Petrich 2013', u:'https://doi.org/10.1021/jz302099v'},
+  'p11': {n:'OMS — Rapport paludisme 2024', u:'https://www.who.int/teams/global-malaria-programme/reports/world-malaria-report-2024'},
+  'p12': {n:'IRENA — Renewable Power Generation Costs 2023', u:'https://www.irena.org/Publications/2024/Sep/Renewable-Power-Generation-Costs-in-2023'},
+  'p13': {n:'IUCN — Humpback whale status', u:'https://www.iucnredlist.org/species/13006/218439660'},
+  'p14': {n:'Our World in Data — Poverty 2024', u:'https://ourworldindata.org/extreme-poverty'},
+  'p15': {n:'WHO — Smallpox eradication', u:'https://www.who.int/health-topics/smallpox'},
+  'p16': {n:'Nature — Global forest watch 2024', u:'https://www.globalforestwatch.org/'},
+  'p17': {n:'UNICEF — Access to clean water 2023', u:'https://data.unicef.org/topic/water-and-sanitation/drinking-water/'},
+  'p18': {n:'IEA — Electric Vehicles 2024', u:'https://www.iea.org/reports/global-ev-outlook-2024'},
+  'p19': {n:'Science — Grooten & Almond 2018 / WWF', u:'https://www.worldwildlife.org/pages/living-planet-report-2018'},
+  'p20': {n:'ONU — Élimination de l\'extrême pauvreté 2023', u:'https://www.un.org/sustainabledevelopment/poverty/'},
   'h1': {n:'Fondation Napoléon', u:'https://www.napoleon.org/'},
   'h2': {n:'Oxford University Press — Chronology of Ancient Egypt', u:'https://global.oup.com/'},
   'h3': {n:'Byzantium & Modern Greek Studies', u:'https://doi.org/10.1017/S0307013100001069'},
@@ -1462,6 +1571,16 @@ const FACTS_FR=[
   {id:'p8',cat:'positive',text:"Des chercheurs britanniques ont réussi en 2025 à ralentir la progression de la maladie de Huntington grâce à la thérapie génique."},
   {id:'p9',cat:'positive',text:"La France a créé en 2025 la plus grande aire marine protégée de la planète, en Polynésie française."},
   {id:'p10',cat:'positive',text:"Le taux de mortalité infantile mondiale a chuté de 60 % depuis 1990, sauvant des millions de vies chaque année."},
+  {id:'p11',cat:'positive',text:"Le paludisme a été réduit de 76 % dans les pays les plus touchés grâce aux moustiquaires imprégnées et aux antipaludéens — épargnant plus de 7 millions de vies depuis 2000."},
+  {id:'p12',cat:'positive',text:"Le coût de l'énergie solaire a chuté de 90 % en dix ans. En 2023, c'est la source d'électricité la moins chère de l'histoire de l'humanité dans la plupart des régions du monde."},
+  {id:'p13',cat:'positive',text:"La baleine à bosse, autrefois au bord de l'extinction à cause de la chasse commerciale, est désormais classée « préoccupation mineure » par l'UICN — sa population mondiale a rebondi de plus de 93 %."},
+  {id:'p14',cat:'positive',text:"En 1990, 36 % de la population mondiale vivait dans l'extrême pauvreté. En 2024, ce chiffre est tombé sous les 9 % — une réduction sans précédent dans l'histoire humaine."},
+  {id:'p15',cat:'positive',text:"La variole a été officiellement éradiquée en 1980 grâce à une campagne de vaccination mondiale coordonnée par l'OMS — c'est la seule maladie humaine jamais totalement éliminée par l'action humaine."},
+  {id:'p16',cat:'positive',text:"Le couvert forestier mondial a augmenté dans certaines régions d'Europe et d'Asie grâce aux efforts de reboisement — la France a gagné 30 % de forêt supplémentaire depuis 1950."},
+  {id:'p17',cat:'positive',text:"En 2023, 73 % de la population mondiale a accès à de l'eau potable gérée en toute sécurité — contre seulement 59 % en 2000, représentant plus d'un milliard de personnes supplémentaires."},
+  {id:'p18',cat:'positive',text:"Les ventes mondiales de véhicules électriques ont dépassé 14 millions d'unités en 2023, représentant 18 % des voitures neuves vendues — une multiplication par 60 en moins de dix ans."},
+  {id:'p19',cat:'positive',text:"Le nombre d'espèces animales sauvages suivies par le WWF a augmenté de 4 % depuis 2020 dans les zones protégées, grâce aux efforts de conservation ciblés sur les espèces menacées prioritaires."},
+  {id:'p20',cat:'positive',text:"La proportion de la population mondiale souffrant de la faim a été réduite de moitié depuis les années 1990. En 2023, l'ONU estime qu'un million d'enfants de moins ont souffert de malnutrition sévère qu'en 2020."},
   {id:'u1',cat:'fun',text:"Les bananes sont naturellement radioactives. Il faudrait en manger dix milliards d'un coup pour atteindre une dose dangereuse — et tu mourrais d'autre chose avant."},
   {id:'u2',cat:'fun',text:"Une blatte peut survivre une semaine entière après avoir été décapitée — elle ne meurt pas de perdre la tête, mais de soif, sans bouche pour boire."},
   {id:'u3',cat:'fun',text:"La lettre J est la seule absente du tableau périodique des éléments chimiques."},
@@ -1472,6 +1591,16 @@ const FACTS_FR=[
   {id:'u8',cat:'fun',text:"Le venin de la pieuvre à anneaux bleus peut tuer 26 personnes adultes en quelques minutes — et il n'existe aucun antidote."},
   {id:'u9',cat:'fun',text:"Il y a environ 100 milliards de bactéries dans ta bouche en ce moment, et 25 000 germes sur chaque centimètre carré de ton téléphone."},
   {id:'u10',cat:'fun',text:"Un iceberg contient plus d'énergie thermique totale qu'une allumette allumée — parce que l'énergie dépend de la masse, pas de la température."},
+  {id:'u11',cat:'fun',text:"Le point qui surmonte les lettres i et j a un nom : le « tittle ». Sans lui, ces lettres seraient confondues avec d'autres dans les manuscrits médiévaux."},
+  {id:'u12',cat:'fun',text:"Les chimpanzés sont meilleurs que les humains pour mémoriser des suites de chiffres affichées pendant une fraction de seconde — leur mémoire photographique de travail surpasse la nôtre."},
+  {id:'u13',cat:'fun',text:"Des scientifiques ont créé en 2022 un enzyme capable de dégrader le plastique PET en quelques heures, là où la nature met des siècles."},
+  {id:'u14',cat:'fun',text:"Des chercheurs ont démontré que les chats reconnaissent leur propre prénom — mais choisissent délibérément de ne pas répondre à l'appel de leur maître, contrairement aux chiens."},
+  {id:'u15',cat:'fun',text:"Un groupe de flamants roses est appelé une « flamboyance ». Ces oiseaux sont naturellement blancs : leur couleur rose provient des pigments caroténoïdes contenus dans les crevettes et algues qu'ils mangent."},
+  {id:'u16',cat:'fun',text:"Le poisson-pistolet émet des clics à 160 décibels pour assommer ses proies — le son le plus fort produit par un animal par rapport à sa taille dans tout le règne animal."},
+  {id:'u17',cat:'fun',text:"La crevette mante peut frapper avec une force équivalente à une balle de pistolet à 23 m/s — ses coups créent des bulles de cavitation qui atteignent 4 000 °C à l'impact."},
+  {id:'u18',cat:'fun',text:"Le pet d'un hareng leur sert à communiquer : ils expulsent des bulles par l'anus pour maintenir le contact avec leurs congénères dans l'obscurité. Cette découverte a valu à ses auteurs le prix Ig Nobel."},
+  {id:'u19',cat:'fun',text:"Le nombril humain abrite en moyenne 67 espèces de bactéries différentes. Dans un cas documenté, des chercheurs ont trouvé une bactérie jusqu'alors répertoriée uniquement au Japon — chez un homme n'y ayant jamais mis les pieds."},
+  {id:'u20',cat:'fun',text:"La vitesse à laquelle un homard fuit un prédateur est plus rapide que celle à laquelle il nage normalement — il se propulse à reculons en battant de la queue à une vitesse pouvant dépasser 5 mètres par seconde."},
   {id:'h1',cat:'history',text:"Les Romains utilisaient de l'urine humaine comme dentifrice et pour blanchir leurs vêtements — l'ammoniaque qu'elle contient est effectivement un détachant naturel."},
   {id:'h2',cat:'history',text:"Cléopâtre a vécu plus près de nous dans le temps que de la construction des pyramides de Gizeh — elle en était séparée de 2 500 ans, nous de seulement 2 000 ans."},
   {id:'h3',cat:'history',text:"Le feu grégeois, arme secrète de l'Empire Byzantin, brûlait même sur l'eau — sa composition exacte reste un mystère non élucidé à ce jour."},
@@ -1580,7 +1709,7 @@ const FACTS_FR=[
   {id:'sp07',cat:'sports',text:"Au tout début du basket-ball, on jouait avec des paniers à pêches fermés — il fallait arrêter le jeu pour récupérer le ballon avec une échelle après chaque panier."},
   {id:'sp08',cat:'sports',text:"Les médailles d'or olympiques actuelles sont composées à 92,5 % d'argent pur et seulement plaquées or."},
   {id:'sp09',cat:'sports',text:"Le record de vitesse d'un volant de badminton est de 493 km/h — frappé lors d'un smash en compétition."},
-  {id:'sp10',cat:'sports',text:"Le premier marathon olympique en 1896 a été remporté par un berger grec, Spyridon Louis, qui s'est arrêté en chemin pour boire un verre de vin offert par des spectateurs."},
+  {id:'spo10',cat:'sports',text:"Le premier marathon olympique en 1896 a été remporté par un berger grec, Spyridon Louis, qui s'est arrêté en chemin pour boire un verre de vin offert par des spectateurs."},
 
   // ─ CÉLÉBRITÉS ─
   {id:'cel1',cat:'celebrities',text:"Avant d'être acteur, Christopher Walken a travaillé comme dompteur de lions dans un cirque itinérant."},
@@ -1837,6 +1966,16 @@ const FACTS_EN=[
   {id:'p8',cat:'positive',text:"France created the world's largest marine protected area in 2025, in French Polynesia."},
   {id:'p9',cat:'positive',text:"The global child mortality rate has fallen by 60% since 1990, saving millions of lives every year."},
   {id:'p10',cat:'positive',text:"Deforestation slowed in every region of the world in 2025, according to a United Nations report."},
+  {id:'p11',cat:'positive',text:"Malaria has been reduced by 76% in the most affected countries thanks to insecticide-treated nets and antimalarials — sparing more than 7 million lives since 2000."},
+  {id:'p12',cat:'positive',text:"The cost of solar energy fell by 90% in ten years. In 2023, it became the cheapest source of electricity in human history in most regions of the world."},
+  {id:'p13',cat:'positive',text:"The humpback whale, once on the brink of extinction due to commercial whaling, is now classified as 'least concern' by the IUCN — its global population has rebounded by more than 93%."},
+  {id:'p14',cat:'positive',text:"In 1990, 36% of the world's population lived in extreme poverty. By 2024, that figure had fallen below 9% — an unprecedented reduction in human history."},
+  {id:'p15',cat:'positive',text:"Smallpox was officially eradicated in 1980 through a global vaccination campaign coordinated by the WHO — it is the only human disease ever fully eliminated by human action."},
+  {id:'p16',cat:'positive',text:"Global forest cover has grown in parts of Europe and Asia thanks to reforestation efforts — France has gained 30% more forest since 1950."},
+  {id:'p17',cat:'positive',text:"In 2023, 73% of the world's population had access to safely managed drinking water — up from 59% in 2000, representing more than one billion additional people."},
+  {id:'p18',cat:'positive',text:"Global electric vehicle sales exceeded 14 million units in 2023, representing 18% of new cars sold — a 60-fold increase in less than ten years."},
+  {id:'p19',cat:'positive',text:"The number of wild animal species tracked by WWF increased by 4% since 2020 in protected areas, thanks to targeted conservation efforts focused on priority threatened species."},
+  {id:'p20',cat:'positive',text:"The proportion of the world's population suffering from hunger has been halved since the 1990s. In 2023, the UN estimates that one million fewer children suffered from severe malnutrition than in 2020."},
   {id:'u1',cat:'fun',text:"Bananas are naturally radioactive. You'd have to eat ten billion at once to reach a dangerous dose — and you'd die of something else first."},
   {id:'u2',cat:'fun',text:"A cockroach can survive an entire week after being decapitated — it doesn't die from losing its head, but from thirst, with no mouth to drink."},
   {id:'u3',cat:'fun',text:"The letter J is the only one absent from the periodic table of chemical elements."},
@@ -1847,6 +1986,16 @@ const FACTS_EN=[
   {id:'u8',cat:'fun',text:"The venom of the blue-ringed octopus can kill 26 adult humans in minutes — and there is no antidote."},
   {id:'u9',cat:'fun',text:"There are around 100 billion bacteria in your mouth right now, and 25,000 germs on every square centimetre of your phone."},
   {id:'u10',cat:'fun',text:"An iceberg contains more total thermal energy than a lit match — because energy depends on mass, not temperature."},
+  {id:'u11',cat:'fun',text:"The dot above the letters i and j has a name: the 'tittle'. Without it, these letters would be confused with others in medieval manuscripts."},
+  {id:'u12',cat:'fun',text:"Chimpanzees outperform humans at memorising sequences of numbers displayed for a fraction of a second — their short-term photographic memory surpasses ours."},
+  {id:'u13',cat:'fun',text:"Scientists created in 2022 an enzyme capable of breaking down PET plastic within hours — a process that takes nature centuries."},
+  {id:'u14',cat:'fun',text:"Researchers have shown that cats recognise their own name — but deliberately choose not to respond when called by their owner, unlike dogs."},
+  {id:'u15',cat:'fun',text:"A group of flamingos is called a 'flamboyance'. These birds are naturally white: their pink colour comes from carotenoid pigments in the shrimp and algae they eat."},
+  {id:'u16',cat:'fun',text:"The pistol shrimp emits clicks at 160 decibels to stun its prey — the loudest sound produced by any animal relative to its body size in the entire animal kingdom."},
+  {id:'u17',cat:'fun',text:"The mantis shrimp can strike with a force equivalent to a bullet at 23 m/s — its blows create cavitation bubbles that reach 4,000°C on impact."},
+  {id:'u18',cat:'fun',text:"Herring use flatulence to communicate: they expel bubbles through their anus to stay in contact with each other in the dark. This discovery earned its authors the Ig Nobel Prize."},
+  {id:'u19',cat:'fun',text:"The human belly button hosts an average of 67 different species of bacteria. In one documented case, researchers found a bacterium previously recorded only in Japan — in a man who had never been there."},
+  {id:'u20',cat:'fun',text:"A lobster flees predators faster than it normally swims — it propels itself backwards by flapping its tail at speeds that can exceed 5 metres per second."},
   {id:'h1',cat:'history',text:"Romans used human urine as mouthwash and to bleach their clothes — the ammonia it contains is indeed an effective cleaning agent."},
   {id:'h2',cat:'history',text:"Cleopatra lived closer to us in time than to the construction of the Great Pyramid — she was 2,500 years away from it, we're only 2,000."},
   {id:'h3',cat:'history',text:"Greek fire, the Byzantine Empire's secret weapon, burned even on water — its exact composition remains an unsolved mystery to this day."},
@@ -1955,7 +2104,7 @@ const FACTS_EN=[
   {id:'sp07',cat:'sports',text:"In the very early days of basketball, closed peach baskets were used — play had to stop after every basket so someone could climb a ladder to retrieve the ball."},
   {id:'sp08',cat:'sports',text:"Olympic gold medals today are 92.5% pure silver and merely gold-plated — the last solid gold medal was awarded at the 1912 Games."},
   {id:'sp09',cat:'sports',text:"The world speed record for a badminton shuttlecock is 493 km/h — struck during a competition smash, making it the fastest sports projectile on Earth."},
-  {id:'sp10',cat:'sports',text:"The very first Olympic marathon in 1896 was won by a Greek shepherd, Spyridon Louis, who stopped along the way to drink a glass of wine offered by spectators."},
+  {id:'spo10',cat:'sports',text:"The very first Olympic marathon in 1896 was won by a Greek shepherd, Spyridon Louis, who stopped along the way to drink a glass of wine offered by spectators."},
 
   // ─ CELEBRITIES ─
   {id:'cel1',cat:'celebrities',text:"Before becoming an actor, Christopher Walken worked as a lion tamer in a travelling circus."},
@@ -2418,7 +2567,38 @@ function activatePremium(){
 // ── DECK ──────────────────────────────────────────────────────────────────
 function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
 let deck=[], deckIdx=0, currentFact=null;
-function initDeck(){deck=shuffle(FACTS);deckIdx=0;}
+
+function getSeenIds(){
+  if(!state.history) return new Set();
+  return new Set(state.history.map(h=>h.id));
+}
+
+function buildUnseenDeck(){
+  const seen=getSeenIds();
+  const unseen=FACTS.filter(f=>!seen.has(f.id));
+  return shuffle(unseen.length>0 ? unseen : FACTS);
+}
+
+function initDeck(){deck=buildUnseenDeck();deckIdx=0;}
+
+function showPoolExhausted(){
+  const isFr=lang==='fr';
+  document.getElementById('peTitle').textContent=isFr?'Tu as tout découvert !':'You\'ve seen it all!';
+  document.getElementById('peMsg').textContent=isFr
+    ?`Bravo ! Tu as découvert les ${FACTS.length} faits de l'Oracle. Recommencer depuis le début ?`
+    :`Congrats! You've discovered all ${FACTS.length} Oracle facts. Start again from the beginning?`;
+  document.getElementById('peBtn').textContent=isFr?'Recommencer':'Start over';
+  document.getElementById('poolExhaustedScreen').classList.add('active');
+}
+
+function confirmPoolReset(){
+  document.getElementById('poolExhaustedScreen').classList.remove('active');
+  // Vider l'historique pour réinitialiser le pool, garder les favs
+  state.history=[];
+  saveState();
+  deck=shuffle(FACTS);deckIdx=0;
+  showFact();
+}
 
 // ── SHOW FACT ─────────────────────────────────────────────────────────────
 function showFact(){
@@ -2430,8 +2610,17 @@ function showFact(){
     const LIMIT=5;
     if(state.dailyCount>=LIMIT){showDailyLimit();return;}
   }
-  if(!deck.length)initDeck();
-  if(deckIdx>=deck.length){deck=shuffle(FACTS);deckIdx=0;}
+  // ── Rebuild unseen deck if needed ──
+  if(!deck.length||deckIdx>=deck.length){
+    const seen=getSeenIds();
+    const remaining=FACTS.filter(f=>!seen.has(f.id));
+    if(remaining.length===0){
+      // Tous les faits ont été vus → message spécial
+      showPoolExhausted();
+      return;
+    }
+    deck=shuffle(remaining);deckIdx=0;
+  }
   currentFact=deck[deckIdx++];
   const t=T[lang];
   const orb=document.getElementById('orb'),card=document.getElementById('card'),label=document.getElementById('orbLabel');
@@ -2549,14 +2738,63 @@ function renderHistory(){
     el.innerHTML=`<p class="fav-empty">${lang==='fr'?'Aucun fait lu pour le moment.':'No facts read yet.'}</p>`;
     return;
   }
-  el.innerHTML=state.history.map((f,i)=>`
-    <div class="fav-item">
-      <div class="fav-item-badge badge-${f.cat}"><span class="badge-dot"></span><span>${CAT_ICONS[f.cat]||''} ${f.label||''}</span><span style="margin-left:auto;font-size:.6rem;opacity:.4">${f.date||''}</span></div>
-      <p class="fav-item-text">${f.text}</p>
-      <div class="fav-item-actions">
-        <button class="fav-share-btn" onclick="haptic();shareFav('${f.text.replace(/'/g,"\'")}','${f.cat}')">↗ ${lang==='fr'?'Partager':'Share'}</button>
-      </div>
-    </div>`).join('');
+  renderCatGrid(el, state.history, 'history');
+}
+
+function renderCatGrid(el, items, mode){
+  // Grouper par catégorie
+  const groups={};
+  items.forEach(f=>{
+    if(!groups[f.cat]) groups[f.cat]=[];
+    groups[f.cat].push(f);
+  });
+  const cats=Object.keys(groups);
+  const catLabels=T[lang].catLabels||{};
+  el.innerHTML=`<div class="cat-grid">${cats.map(cat=>{
+    const count=groups[cat].length;
+    const icon=CAT_ICONS[cat]||'✦';
+    const rawLabel=catLabels[cat]||cat;
+    const label=rawLabel.replace('✦ ','');
+    return`<div class="cat-card" onclick="openCatFacts('${cat}','${mode}')">
+      <div class="cat-card-icon">${icon}</div>
+      <div class="cat-card-name">${label}</div>
+      <div class="cat-card-count">${count}</div>
+    </div>`;
+  }).join('')}</div>`;
+}
+
+function openCatFacts(cat, mode){
+  const items = mode==='favs' ? state.favs : (state.history||[]);
+  const filtered = items.filter(f=>f.cat===cat);
+  const catLabels=T[lang].catLabels||{};
+  const label=(catLabels[cat]||cat).replace('✦ ','');
+  const icon=CAT_ICONS[cat]||'✦';
+  const isFavMode = mode==='favs';
+
+  // Quel conteneur afficher ?
+  const elId = mode==='favs' ? 'favsList' : 'historyListInline';
+  const el = document.getElementById(elId);
+  if(!el) return;
+
+  el.innerHTML=`
+    <button class="cat-back-btn" onclick="renderCatView('${mode}')">← ${lang==='fr'?'Catégories':'Categories'}</button>
+    <div style="margin-bottom:10px;font-family:'Space Mono',monospace;font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)">${icon} ${label}</div>
+    ${filtered.map((f,i)=>{
+      const origIdx = items.indexOf(f);
+      return`<div class="fav-item">
+        ${isFavMode?'':`<div class="fav-item-badge badge-${f.cat}"><span class="badge-dot"></span><span style="margin-left:auto;font-size:.6rem;opacity:.4">${f.date||''}</span></div>`}
+        <p class="fav-item-text">${f.text}</p>
+        <div class="fav-item-actions">
+          <button class="fav-share-btn" onclick="haptic();shareFav('${f.text.replace(/'/g,"\\'")}','${f.cat}')">↗ ${lang==='fr'?'Partager':'Share'}</button>
+          ${isFavMode?`<button class="fav-remove" onclick="removeFavAndRefresh(${origIdx},'${cat}')">✕</button>`:''}
+        </div>
+      </div>`;
+    }).join('')}`;
+}
+
+function renderCatView(mode){
+  if(mode==='favs') renderFavs();
+  else renderHistory();
 }
 
 function switchFavTab(tab){
@@ -2581,18 +2819,21 @@ function switchFavTab(tab){
 
 function renderFavs(){
   const el=document.getElementById('favsList');
+  if(!el) return;
   if(!state.favs.length){el.innerHTML=`<p class="fav-empty">${T[lang].favEmpty.replace('\n','<br>')}</p>`;return;}
-  el.innerHTML=state.favs.map((f,i)=>`
-    <div class="fav-item">
-      <div class="fav-item-badge badge-${f.cat}"><span class="badge-dot"></span><span>${CAT_ICONS[f.cat]||''} ${f.label||''}</span></div>
-      <p class="fav-item-text">${f.text}</p>
-      <div class="fav-item-actions">
-        <button class="fav-share-btn" onclick="haptic();shareFav('${f.text.replace(/'/g,"\'")}','${f.cat}')">↗ ${lang==='fr'?'Partager':'Share'}</button>
-        <button class="fav-remove" onclick="removeFav(${i})">✕</button>
-      </div>
-    </div>`).join('');
+  renderCatGrid(el, state.favs, 'favs');
 }
 function removeFav(i){haptic('light');state.favs.splice(i,1);saveState();updateFavBadge();renderFavs();}
+function removeFavAndRefresh(i, cat){
+  haptic('light');
+  state.favs.splice(i,1);
+  saveState();
+  updateFavBadge();
+  // Rester dans la vue catégorie si elle a encore des faits, sinon retour grille
+  const remaining=state.favs.filter(f=>f.cat===cat);
+  if(remaining.length>0) openCatFacts(cat,'favs');
+  else renderFavs();
+}
 
 // ── ACHIEVEMENTS ──────────────────────────────────────────────────────────
 function getProgress(ach){
@@ -2980,11 +3221,16 @@ function renderStats() {
       ${catKeys.map(k => {
         const count = state.read[k] || 0;
         const pct = Math.round((count / maxCat) * 100);
+        const fullLabel = (t.catLabels[k]||'').replace('✦ ','');
         return `<div class="cat-bar-row">
-          <div class="cat-bar-icon">${CAT_ICONS[k]}</div>
-          <div class="cat-bar-name">${(t.catLabels[k]||'').replace('✦ ','').slice(0,10)}</div>
+          <div class="cat-bar-header">
+            <div class="cat-bar-left">
+              <div class="cat-bar-icon">${CAT_ICONS[k]}</div>
+              <div class="cat-bar-name">${fullLabel}</div>
+            </div>
+            <div class="cat-bar-count">${count}</div>
+          </div>
           <div class="cat-bar-track"><div class="cat-bar-fill" style="width:${pct}%;background:${catColors[k]||'#fff'}"></div></div>
-          <div class="cat-bar-count">${count}</div>
         </div>`;
       }).join('')}
     </div>
@@ -3333,33 +3579,88 @@ function getThematicFact(date) {
 }
 
 // ── QUIZ ──────────────────────────────────────────────────────────────────
-const QUIZ_INTERVAL = 10; // show quiz every N facts
-let factsReadSinceQuiz = 0;
 let quizSession = { questions:[], current:0, answers:[] };
 
-// Quiz question bank — built from facts already in memory
-// Questions are generated at runtime from the facts array
-function buildQuizQuestions(factsList, count=5) {
-  // Pick random facts that have quiz data embedded
-  const pool = QUIZ_DB[lang] || QUIZ_DB['fr'];
-  const shuffled = shuffle([...pool]);
-  return shuffled.slice(0, Math.min(count, shuffled.length));
-}
+// ── COMET QUIZ SYSTEM ─────────────────────────────────────────────────────
+const QUIZ_INTERVALS = [5, 10, 15];
+let factsReadSinceQuiz = 0;
+let _nextQuizInterval = QUIZ_INTERVALS[Math.floor(Math.random()*QUIZ_INTERVALS.length)];
+let _cometEl = null;
+let _cometTimeout = null;
 
-// Trigger quiz check after each fact
 function maybeShowQuiz() {
   factsReadSinceQuiz++;
-  if (factsReadSinceQuiz >= QUIZ_INTERVAL) {
+  if (factsReadSinceQuiz >= _nextQuizInterval) {
     factsReadSinceQuiz = 0;
-    setTimeout(() => startQuiz(), 800);
+    _nextQuizInterval = QUIZ_INTERVALS[Math.floor(Math.random()*QUIZ_INTERVALS.length)];
+    setTimeout(() => launchComet(), 600);
   }
+}
+
+function launchComet() {
+  if (_cometEl) dismissComet();
+  const W = window.innerWidth, H = window.innerHeight;
+  const side = Math.floor(Math.random()*4);
+  const spread = (max) => 80 + Math.random()*(max-160);
+  let x0,y0,x1,y1;
+  if      (side===0){x0=spread(W);y0=-30;   x1=spread(W);y1=H+30;}
+  else if (side===1){x0=W+30;    y0=spread(H);x1=-100;  y1=spread(H);}
+  else if (side===2){x0=spread(W);y0=H+30;  x1=spread(W);y1=-30;}
+  else             {x0=-100;     y0=spread(H);x1=W+30;  y1=spread(H);}
+  const angle = Math.atan2(y1-y0, x1-x0)*180/Math.PI;
+  const lbl = lang==='fr' ? '✦ Quiz' : '✦ Quiz';
+  const el = document.createElement('div');
+  el.className = 'comet-wrapper clickable';
+  el.style.setProperty('--cx0', x0+'px');
+  el.style.setProperty('--cy0', y0+'px');
+  el.style.setProperty('--cx1', x1+'px');
+  el.style.setProperty('--cy1', y1+'px');
+  el.style.setProperty('--cangle', angle+'deg');
+  el.innerHTML = `<div class="comet-body" style="transform:rotate(${angle}deg)">
+    <div class="comet-tail"></div>
+    <div class="comet-head"><div class="comet-label" style="transform:translateX(-50%) rotate(${-angle}deg)">${lbl}</div></div>
+  </div>`;
+  el.addEventListener('click', ()=>{ dismissComet(); startQuiz(); });
+  document.body.appendChild(el);
+  _cometEl = el;
+  playCometSound();
+  _cometTimeout = setTimeout(()=>dismissComet(), 15200);
+}
+
+function dismissComet() {
+  if (_cometTimeout){clearTimeout(_cometTimeout);_cometTimeout=null;}
+  if (_cometEl){_cometEl.remove();_cometEl=null;}
+}
+
+function playCometSound() {
+  if (state && state.muted) return;
+  try {
+    const c = new (window.AudioContext||window.webkitAudioContext)();
+    const now = c.currentTime;
+    [[880,.16],[1108,.10],[1480,.07],[2200,.04]].forEach(([freq,vol],i)=>{
+      const g=c.createGain();g.connect(c.destination);
+      g.gain.setValueAtTime(0,now+i*.05);
+      g.gain.linearRampToValueAtTime(vol,now+i*.05+.07);
+      g.gain.exponentialRampToValueAtTime(.001,now+i*.05+1.3);
+      const o=c.createOscillator();o.type='sine';
+      o.frequency.setValueAtTime(freq,now);
+      o.frequency.linearRampToValueAtTime(freq*1.2,now+1.3);
+      o.connect(g);o.start(now+i*.05);o.stop(now+i*.05+1.4);
+    });
+    const bl=c.sampleRate*.7,buf=c.createBuffer(1,bl,c.sampleRate),d=buf.getChannelData(0);
+    for(let i=0;i<bl;i++)d[i]=(Math.random()*2-1)*.012;
+    const ns=c.createBufferSource();ns.buffer=buf;
+    const ng=c.createGain();ng.gain.setValueAtTime(.5,now);ng.gain.exponentialRampToValueAtTime(.001,now+.7);
+    const nf=c.createBiquadFilter();nf.type='bandpass';nf.frequency.value=4200;nf.Q.value=2.5;
+    ns.connect(nf);nf.connect(ng);ng.connect(c.destination);ns.start(now);
+  } catch(e){}
 }
 
 function startQuiz() {
   const pool = QUIZ_DB[lang] || QUIZ_DB['fr'];
-  if (!pool || pool.length < 3) return;
-  const questions = shuffle([...pool]).slice(0, 5);
-  quizSession = { questions, current: 0, answers: [] };
+  if (!pool || !pool.length) return;
+  const questions = shuffle([...pool]).slice(0, Math.min(5, pool.length));
+  quizSession = { questions, current:0, answers:[] };
   renderQuizQuestion();
   document.getElementById('quizOverlay').classList.add('active');
   document.getElementById('quizQuestionView').style.display = 'flex';
@@ -3502,6 +3803,7 @@ function showQuizResult() {
 
 function closeQuiz() {
   document.getElementById('quizOverlay').classList.remove('active');
+  dismissComet();
 }
 
 // ── QUIZ DATABASE ─────────────────────────────────────────────────────────
@@ -4139,6 +4441,14 @@ function forceSyncNow() {
 }
 // ── BACK BUTTON HANDLER ─────────────────────────────────────────
 window.addEventListener('popstate', function(e) {
+  // Si comète visible, la rejeter
+  if (_cometEl) { dismissComet(); return; }
+  // Si pool épuisé affiché, le fermer
+  const pe = document.getElementById('poolExhaustedScreen');
+  if (pe && pe.classList.contains('active')) {
+    pe.classList.remove('active');
+    return;
+  }
   // If daily limit screen is active, close it instead of quitting
   const dl = document.getElementById('dailyLimitScreen');
   if (dl && dl.classList.contains('active')) {
@@ -4181,11 +4491,16 @@ window.addEventListener('popstate', function(e) {
   </div>
 </div>
 
-
+<!-- POOL ÉPUISÉ -->
+<div class="pool-exhausted" id="poolExhaustedScreen">
+  <div class="pool-exhausted-icon">🌌</div>
+  <div class="pool-exhausted-title" id="peTitle">Oracle complet</div>
+  <div class="pool-exhausted-msg" id="peMsg">Tu as découvert tous les faits disponibles. L'Oracle recommence son cycle depuis le début.</div>
+  <button class="pool-exhausted-btn" id="peBtn" onclick="confirmPoolReset()">Recommencer</button>
+</div>
 
 <script>
 if('serviceWorker' in navigator) {
-  // Unregister old SW to force cache refresh, then re-register
   navigator.serviceWorker.getRegistrations().then(regs => {
     regs.forEach(r => r.unregister());
     navigator.serviceWorker.register('/Oracle/sw.js').catch(()=>{});
