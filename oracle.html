@@ -4919,6 +4919,7 @@ function toggleMute(){
   state.muted = !state.muted;
   saveState();
   syncMuteBtn();
+  if(window._syncAmbientMute) window._syncAmbientMute();
 }
 function syncMuteBtn(){
   const btn = document.getElementById('muteBtn');
