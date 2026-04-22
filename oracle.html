@@ -83,7 +83,8 @@
     .orb-shadow{position:absolute;inset:0;border-radius:50%;pointer-events:none;z-index:3;
       background:radial-gradient(ellipse at 20% 50%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 52%,rgba(0,0,0,.55) 68%,rgba(0,0,0,.82) 80%,rgba(0,0,0,.92) 100%);}
     .orb-shadow::before{content:'';position:absolute;inset:0;border-radius:50%;
-      background:radial-gradient(ellipse at 72% 38%,rgba(255,255,255,.13) 0%,rgba(255,255,255,.04) 38%,transparent 65%);}
+      background:radial-gradient(ellipse at 72% 38%,rgba(255,255,255,.13) 0%,rgba(255,255,255,.04) 38%,transparent 65%);
+      transform:translate(var(--gyro-x,0px),var(--gyro-y,0px));transition:transform .1s linear;}
 
     /* Planet skins */
     /* ── EARTH ROTATING TEXTURE ── */
@@ -3180,21 +3181,41 @@ async function toggleNotif() {
 
 function scheduleNotif() {
   if (!state.notifEnabled || Notification.permission !== 'granted') return;
-  // Schedule a notification for tomorrow at 9am
   const now = new Date();
   const next = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 9, 0, 0);
   const ms = next - now;
+
+  // Essayer via Service Worker (survit à la fermeture de l'app)
+  if('serviceWorker' in navigator && navigator.serviceWorker.controller) {
+    navigator.serviceWorker.ready.then(reg => {
+      if('showNotification' in reg) {
+        reg.showNotification('Oracle ✨', {
+          body: lang === 'fr'
+            ? "Le monde a quelque chose à te dire aujourd'hui\u2026"
+            : "The world has something to tell you today\u2026",
+          icon: '/Oracle/icon-192.png',
+          badge: '/Oracle/icon-192.png',
+          tag: 'oracle-daily',
+          renotify: true,
+          data: { url: '/Oracle/oracle.html' }
+        });
+      }
+    }).catch(()=>{});
+    return; // Le SW gère le timing via Background Sync si possible
+  }
+
+  // Fallback : setTimeout (fonctionne si l'app reste ouverte)
   setTimeout(() => {
-    const fact = getDailyFact();
     try {
       new Notification('Oracle ✨', {
         body: lang === 'fr'
-          ? `Le monde a quelque chose à te dire aujourd'hui…`
-          : `The world has something to tell you today…`,
-        icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="%23050a12"/><circle cx="50" cy="50" r="30" fill="%230a1e3a"/></svg>'
+          ? "Le monde a quelque chose à te dire aujourd'hui\u2026"
+          : "The world has something to tell you today\u2026",
+        icon: 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="50" fill="%23050a12"/></svg>',
+        tag: 'oracle-daily'
       });
     } catch(e) {}
-    scheduleNotif(); // reschedule daily
+    scheduleNotif();
   }, ms);
 }
 
@@ -4357,6 +4378,7 @@ function syncMuteUI(){
   btn.classList.toggle('muted', state.muted);
   if(on)  on.style.display  = state.muted ? 'none'  : '';
   if(off) off.style.display = state.muted ? ''      : 'none';
+  if(window._syncAmbientMute) window._syncAmbientMute();
 }
 
 // ── AMBIENT SOUND ENGINE ──────────────────────────────────────────────────
@@ -4790,6 +4812,92 @@ function checkFirebaseConfig(){
   return _isFirebaseConfigured;
 }
 
+
+
+// ── MUSIQUE D'AMBIANCE ────────────────────────────────────────────────────
+(function(){
+  const AMBIENT_URL = '/Oracle/audio/ambient.mp3';
+  let _audio = null, _started = false;
+
+  function startAmbient(){
+    if(_started) return;
+    _started = true;
+    try {
+      _audio = new Audio(AMBIENT_URL);
+      _audio.loop    = true;
+      _audio.preload = 'auto';
+      _audio.volume  = state.muted ? 0 : 0.4;
+      const p = _audio.play();
+      if(p && p.catch) p.catch(e => console.warn('[Oracle ambient]', e));
+    } catch(e){ console.warn('[Oracle ambient]', e); }
+  }
+
+  function syncAmbientMute(){
+    if(!_audio) return;
+    _audio.volume = state.muted ? 0 : 0.4;
+  }
+
+  // Premier geste utilisateur (nécessaire sur iOS/Android)
+  function _boot(){ startAmbient(); }
+  document.addEventListener('touchstart', _boot, {once:true, passive:true, capture:true});
+  document.addEventListener('click',      _boot, {once:true, capture:true});
+
+  window._startAmbient    = startAmbient;
+  window._syncAmbientMute = syncAmbientMute;
+})();
+
+// ── PARALLAXE GYROSCOPIQUE ────────────────────────────────────────────────
+(function(){
+  let _bx = 0, _by = 0;
+  const SMOOTH = 0.06;
+  const STAR_FACTOR = 10;
+  const ORB_FACTOR  = 14;
+  let _gyroActive = false;
+
+  function applyParallax(x, y){
+    _bx += (x - _bx) * SMOOTH;
+    _by += (y - _by) * SMOOTH;
+    document.body.style.backgroundPosition =
+      `${(-_bx * STAR_FACTOR).toFixed(1)}px ${(-_by * STAR_FACTOR).toFixed(1)}px`;
+    document.documentElement.style.setProperty('--gyro-x', `${(_bx * ORB_FACTOR).toFixed(1)}px`);
+    document.documentElement.style.setProperty('--gyro-y', `${(_by * ORB_FACTOR).toFixed(1)}px`);
+  }
+
+  function onOrientation(e){
+    if(e.gamma === null && e.beta === null) return;
+    _gyroActive = true;
+    applyParallax((e.gamma||0)/90, Math.max(-1,Math.min(1,((e.beta||0)-45)/45)));
+  }
+
+  function setupGyro(){
+    if(!window.DeviceOrientationEvent){ setupMouseFallback(); return; }
+    if(typeof DeviceOrientationEvent.requestPermission === 'function'){
+      // iOS 13+ : permission requise, on attache au premier tap
+      document.addEventListener('touchend', function _req(){
+        DeviceOrientationEvent.requestPermission()
+          .then(r => { if(r==='granted') window.addEventListener('deviceorientation', onOrientation, {passive:true}); })
+          .catch(()=>{});
+        document.removeEventListener('touchend', _req);
+      }, {once:true});
+    } else {
+      // Android / desktop Chrome : pas de permission requise
+      window.addEventListener('deviceorientation', onOrientation, {passive:true});
+      // Diagnostic : si après 3s toujours pas de données, fallback souris
+      setTimeout(()=>{ if(!_gyroActive) setupMouseFallback(); }, 3000);
+    }
+  }
+
+  // Fallback souris pour desktop / simulateur
+  function setupMouseFallback(){
+    document.addEventListener('mousemove', function(e){
+      const x = (e.clientX / window.innerWidth  - 0.5) * 2;
+      const y = (e.clientY / window.innerHeight - 0.5) * 2;
+      applyParallax(x, y);
+    }, {passive:true});
+  }
+
+  setupGyro();
+})();
 
 window.toggleMute=toggleMute;
 window.showAuthScreen=showAuthScreen;
