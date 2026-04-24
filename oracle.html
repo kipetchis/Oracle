@@ -1082,7 +1082,7 @@ const T={
     planets:{
       earth:{name:'Terre',cond:'Par défaut',unlockDesc:'Ta planète de départ. Toujours disponible.'},
       moon:{name:'Lune',cond:'Atteindre 50 faits lus',unlockDesc:"Tu as consulté l'Oracle 50 fois. La Lune est à toi."},
-      mars:{name:'Mars',cond:"3 jours de suite",unlockDesc:"3 jours de curiosité d'affilée. Mars t'appartient."},
+      mars:{name:'Mars',cond:"7 jours de suite",unlockDesc:"7 jours de curiosité d'affilée. Mars t'appartient."},
       saturn:{name:'Saturne',cond:'Partager 5 faits',unlockDesc:"5 partages dans le cosmos. Saturne t'accueille."},
       sun:{name:'Soleil',cond:'Tous les succès de catégorie',unlockDesc:"Tu es devenu l'Oracle lui-même."}
     },
@@ -1129,7 +1129,7 @@ const T={
     planets:{
       earth:{name:'Earth',cond:'Default',unlockDesc:'Your starting planet. Always available.'},
       moon:{name:'Moon',cond:'Read 50 facts',unlockDesc:"You've consulted the Oracle 50 times. The Moon is yours."},
-      mars:{name:'Mars',cond:'3 days in a row',unlockDesc:"3 days of curiosity in a row. Mars belongs to you."},
+      mars:{name:'Mars',cond:'7 days in a row',unlockDesc:"7 days of curiosity in a row. Mars belongs to you."},
       saturn:{name:'Saturn',cond:'Share 5 facts',unlockDesc:"5 shares across the cosmos. Saturn welcomes you."},
       sun:{name:'Sun',cond:'All category achievements',unlockDesc:"You have become the Oracle itself."}
     },
@@ -2410,7 +2410,7 @@ const buildAchDef=(lang)=>{
 const buildPlanets=(lang)=>[
   {id:'earth',emoji:'🌍',cssClass:'planet-earth',previewClass:'p-earth',check:()=>true,progress:()=>({val:1,max:1,label:''})},
   {id:'moon',emoji:'🌙',cssClass:'planet-moon',previewClass:'p-moon',check:(s)=>(s.read.total||0)>=50,progress:(s)=>({val:Math.min(s.read.total||0,50),max:50,label:`${Math.min(s.read.total||0,50)} / 50`,fillClass:'pf-moon'})},
-  {id:'mars',emoji:'🔴',cssClass:'planet-mars',previewClass:'p-mars',check:(s)=>(s.streak||1)>=3,progress:(s)=>({val:Math.min(s.streak||1,3),max:3,label:`${Math.min(s.streak||1,3)} / 3`,fillClass:'pf-mars'})},
+  {id:'mars',emoji:'🔴',cssClass:'planet-mars',previewClass:'p-mars',check:(s)=>(s.streak||1)>=7,progress:(s)=>({val:Math.min(s.streak||1,7),max:7,label:`${Math.min(s.streak||1,7)} / 7`,fillClass:'pf-mars'})},
   {id:'saturn',emoji:'🪐',cssClass:'planet-saturn',previewClass:'p-saturn',check:(s)=>(s.shares||0)>=5,progress:(s)=>({val:Math.min(s.shares||0,5),max:5,label:`${Math.min(s.shares||0,5)} / 5`,fillClass:'pf-saturn'})},
   {id:'sun',emoji:'☀️',cssClass:'planet-sun',previewClass:'p-sun',check:(s)=>CAT_ACH_IDS.every(id=>s.unlocked.includes(id)),progress:(s)=>{const d=CAT_ACH_IDS.filter(id=>s.unlocked.includes(id)).length;return{val:d,max:CAT_ACH_IDS.length,label:`${d} / ${CAT_ACH_IDS.length}`,fillClass:'pf-sun'};}},
 ];
@@ -2985,11 +2985,12 @@ function getDailyFact() {
     const text = lang === 'fr' ? entry.fr : entry.en;
     return { id: entry.id, cat: entry.cat, text: text, _ephemeris: true, _ephem_src: entry.src };
   }
-  // Fallback: tirage déterministe dans les faits existants
-  const allFacts = lang === 'fr' ? FACTS_FR : FACTS_EN;
-  const seed = today.getFullYear() * 10000 + (today.getMonth()+1) * 100 + today.getDate();
-  const idx = seed % allFacts.length;
-  return allFacts[idx];
+  // Fallback année bissextile non-bissextile : utiliser le 28 février
+  const fallback = EPHEMERIS['02-28'];
+  if (fallback) {
+    const text = lang === 'fr' ? fallback.fr : fallback.en;
+    return { id: fallback.id, cat: fallback.cat, text: text, _ephemeris: true, _ephem_src: fallback.src };
+  }
 }
 
 function getTodayStr() {
@@ -3252,8 +3253,8 @@ function renderStats() {
   const maxCat = Math.max(1, ...catKeys.map(k => state.read[k] || 0));
 
   const labels = lang === 'fr'
-    ? {facts:'Faits lus', favs:'Favoris', shares:'Partages', achiev:'Succès', streak:'Série actuelle', jours:'jours', quizLbl:'Quiz', quizSub:'réponses correctes', catLbl:'Par catégorie', noQuiz:'Aucun quiz joué encore'}
-    : {facts:'Facts read', favs:'Favourites', shares:'Shares', achiev:'Achievements', streak:'Current streak', jours:'days', quizLbl:'Quiz', quizSub:'correct answers', catLbl:'By category', noQuiz:'No quiz played yet'};
+    ? {facts:'Faits lus', favs:'Favoris', shares:'Partages', achiev:'Succès', streak:'Série actuelle', jours:'jours', quizLbl:'Quiz', quizSub:'réponses correctes', catLbl:'Par catégorie', noQuiz:'Aucun quiz joué encore', ephemLbl:'Éphémérides lus'}
+    : {facts:'Facts read', favs:'Favourites', shares:'Shares', achiev:'Achievements', streak:'Current streak', jours:'days', quizLbl:'Quiz', quizSub:'correct answers', catLbl:'By category', noQuiz:'No quiz played yet', ephemLbl:'Daily facts read'};
 
   el.innerHTML = `
     <!-- Streak highlight -->
@@ -3285,7 +3286,11 @@ function renderStats() {
         <div class="stat-val">${unlockCount}</div>
         <div class="stat-lbl">${labels.achiev}</div>
       </div>
-      <div class="stat-card" style="grid-column:span 2">
+      <div class="stat-card">
+        <div class="stat-val">📅 ${state.ephemRead||0}</div>
+        <div class="stat-lbl">${labels.ephemLbl}</div>
+      </div>
+      <div class="stat-card">
         <div class="stat-val" style="font-size:clamp(1.2rem,4vw,1.6rem)">${quizTotal > 0 ? `${quizCorrect}/${quizTotal}` : '—'}</div>
         <div class="stat-lbl">${labels.quizLbl} · ${quizTotal > 0 ? labels.quizSub : labels.noQuiz}</div>
       </div>
