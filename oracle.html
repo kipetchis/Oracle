@@ -431,6 +431,24 @@
     .stats-streak-val{font-size:clamp(1.8rem,6vw,2.4rem);font-weight:300;}
     .stats-streak-lbl{font-family:'Space Mono',monospace;font-size:.5rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted);}
 
+    /* CURIOSITY PROFILE */
+    .profile-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:18px;padding:20px 18px;margin-bottom:20px;position:relative;overflow:hidden;}
+    .profile-card::before{content:'';position:absolute;inset:0;border-radius:18px;opacity:.08;pointer-events:none;}
+    .profile-locked{display:flex;flex-direction:column;align-items:center;gap:8px;padding:10px 0;opacity:.5;}
+    .profile-locked-icon{font-size:2rem;}
+    .profile-locked-lbl{font-family:'Space Mono',monospace;font-size:.48rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);text-align:center;}
+    .profile-header{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+    .profile-emoji{font-size:2.6rem;line-height:1;filter:drop-shadow(0 0 8px currentColor);}
+    .profile-title-block{flex:1;}
+    .profile-label{font-family:'Space Mono',monospace;font-size:.44rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted);margin-bottom:4px;}
+    .profile-name{font-family:'Playfair Display',serif;font-size:clamp(1.1rem,4vw,1.4rem);font-weight:400;font-style:italic;letter-spacing:.02em;}
+    .profile-desc{font-size:.88rem;color:var(--text-muted);line-height:1.55;margin-bottom:14px;font-style:italic;}
+    .profile-top-cats{display:flex;gap:7px;flex-wrap:wrap;}
+    .profile-cat-chip{display:flex;align-items:center;gap:5px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:20px;padding:4px 10px;}
+    .profile-cat-chip-icon{font-size:12px;}
+    .profile-cat-chip-name{font-family:'Space Mono',monospace;font-size:.42rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);}
+    .profile-section-title{font-family:'Space Mono',monospace;font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);margin:0 0 10px;opacity:.6;}
+
     /* LANGUAGE PICKER */
     .lang-screen{position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;padding:40px;}
     .lang-screen.hidden{display:none;}
@@ -3587,6 +3605,62 @@ function scheduleNotif() {
 }
 
 // ── STATS ─────────────────────────────────────────────────────────────────
+// ── CURIOSITY PROFILE ─────────────────────────────────────────────────────
+function getCuriosityProfile() {
+  const catColors = {
+    science:'#00c2ff',positive:'#39ff8f',fun:'#ff9f3f',history:'#e0a060',
+    space:'#c084fc',animals:'#f472b6',body:'#fb7185',arts:'#f59e0b',
+    inventions:'#34d399',world:'#22d3ee',language:'#a78bfa',food:'#f87171',
+    sports:'#86efac',celebrities:'#ffd700',fiction:'#a0c4ff',gaming:'#ff6b9d',
+    cinema:'#e879f9',music:'#4ade80'
+  };
+  // Score = faits lus × 1 + favoris × 2
+  const scores = {};
+  const catKeys = Object.keys(CAT_ICONS);
+  catKeys.forEach(k => {
+    const readScore = state.read[k] || 0;
+    const favScore = (state.favs || []).filter(f => f.cat === k).length * 2;
+    scores[k] = readScore + favScore;
+  });
+  const total = Object.values(scores).reduce((a,b) => a+b, 0);
+  // Top 3 catégories
+  const sorted = catKeys.filter(k => scores[k] > 0).sort((a,b) => scores[b]-scores[a]);
+  const top3 = sorted.slice(0, 3);
+
+  // Profils : [catégories dominantes, emoji, nomFR, nomEN, descFR, descEN]
+  const PROFILES = [
+    { cats:['space','science'],       emoji:'🔭', fr:'Explorateur de l\'Infini',   en:'Explorer of the Infinite',  descFr:'Tu regardes les étoiles et questionnes l\'univers. La curiosité scientifique est ta boussole.', descEn:'You gaze at the stars and question the universe. Scientific curiosity is your compass.' },
+    { cats:['science','body','inventions'], emoji:'🧬', fr:'L\'Esprit Scientifique', en:'The Scientific Mind',      descFr:'Tu dissèques le monde pour mieux le comprendre. Les mécanismes cachés te fascinent.', descEn:'You dissect the world to understand it better. Hidden mechanisms fascinate you.' },
+    { cats:['arts','cinema','music'],  emoji:'🎭', fr:'L\'Âme Artistique',          en:'The Artistic Soul',         descFr:'Tu ressens avant de réfléchir. La beauté sous toutes ses formes est ton territoire.', descEn:'You feel before you think. Beauty in all its forms is your territory.' },
+    { cats:['world','language','history'], emoji:'🌍', fr:'Citoyen du Monde',       en:'Citizen of the World',      descFr:'Les frontières n\'existent pas pour toi. Les cultures et l\'Histoire sont tes passions.', descEn:'Borders don\'t exist for you. Cultures and History are your passions.' },
+    { cats:['animals','body'],         emoji:'🐾', fr:'L\'Ami des Bêtes',           en:'Friend of All Creatures',   descFr:'Le vivant te touche profondément. Tu vois le monde avec bienveillance et émerveillement.', descEn:'Living things move you deeply. You see the world with kindness and wonder.' },
+    { cats:['gaming','fiction','cinema'], emoji:'🎮', fr:'Le Geek Érudit',          en:'The Cultured Geek',         descFr:'Tu habites autant les mondes imaginaires que le réel. La culture pop est une porte vers la réflexion.', descEn:'You inhabit imaginary worlds as much as the real one. Pop culture is a gateway to deeper thinking.' },
+    { cats:['food','world'],           emoji:'🍽️', fr:'Le Gastronome',             en:'The Connoisseur',           descFr:'Tu sais que chaque plat raconte une histoire. La table est un lieu de connaissance autant que de plaisir.', descEn:'You know every dish tells a story. The table is a place of knowledge as much as pleasure.' },
+    { cats:['sports','celebrities'],   emoji:'🏆', fr:'L\'Esprit de Champion',      en:'The Champion Spirit',       descFr:'Tu vibres pour les exploits humains. La performance et le dépassement de soi t\'inspirent.', descEn:'You thrive on human achievements. Performance and self-surpassing inspire you.' },
+    { cats:['positive','fun'],         emoji:'✨', fr:'Le Rayon de Soleil',         en:'The Ray of Sunshine',       descFr:'Tu choisis la lumière. Les anecdotes joyeuses et les surprises positives sont ta marque de fabrique.', descEn:'You choose the light. Joyful anecdotes and positive surprises are your signature.' },
+  ];
+
+  // Calcul du profil le plus proche via overlap du top3
+  let bestProfile = null;
+  let bestScore = -1;
+  PROFILES.forEach(p => {
+    let overlap = 0;
+    top3.forEach((cat, idx) => {
+      if (p.cats.includes(cat)) overlap += (3 - idx); // pondération rang
+    });
+    if (overlap > bestScore) { bestScore = overlap; bestProfile = p; }
+  });
+
+  // Fallback : Oracle Universel si tout équilibré ou aucun match
+  if (!bestProfile || bestScore === 0) {
+    bestProfile = { emoji:'🌌', fr:'L\'Oracle Universel', en:'The Universal Oracle',
+      descFr:'Tout t\'intéresse, rien ne t\'échappe. Tu es l\'incarnation même de la curiosité sans frontières.',
+      descEn:'Everything interests you, nothing escapes you. You are the very embodiment of boundless curiosity.' };
+  }
+
+  return { profile: bestProfile, top3, scores, catColors };
+}
+
 function openStats() {
   renderStats();
   document.getElementById('statsOverlay').classList.add('open');
@@ -3619,10 +3693,49 @@ function renderStats() {
   const maxCat = Math.max(1, ...catKeys.map(k => state.read[k] || 0));
 
   const labels = lang === 'fr'
-    ? {facts:'Faits lus', favs:'Favoris', shares:'Partages', achiev:'Succès', streak:'Série actuelle', jours:'jours', quizLbl:'Quiz', quizSub:'réponses correctes', catLbl:'Par catégorie', noQuiz:'Aucun quiz joué encore', ephemLbl:'Éphémérides lus'}
-    : {facts:'Facts read', favs:'Favourites', shares:'Shares', achiev:'Achievements', streak:'Current streak', jours:'days', quizLbl:'Quiz', quizSub:'correct answers', catLbl:'By category', noQuiz:'No quiz played yet', ephemLbl:'Daily facts read'};
+    ? {facts:'Faits lus', favs:'Favoris', shares:'Partages', achiev:'Succès', streak:'Série actuelle', jours:'jours', quizLbl:'Quiz', quizSub:'réponses correctes', catLbl:'Par catégorie', noQuiz:'Aucun quiz joué encore', ephemLbl:'Éphémérides lus',
+       profileLbl:'Ton profil de curiosité', profileLocked:'Lis 10 faits pour découvrir ton profil', profileTop:'Tes univers favoris'}
+    : {facts:'Facts read', favs:'Favourites', shares:'Shares', achiev:'Achievements', streak:'Current streak', jours:'days', quizLbl:'Quiz', quizSub:'correct answers', catLbl:'By category', noQuiz:'No quiz played yet', ephemLbl:'Daily facts read',
+       profileLbl:'Your curiosity profile', profileLocked:'Read 10 facts to reveal your profile', profileTop:'Your favourite worlds'};
+
+  // Profile block
+  let profileHtml = '';
+  if (total < 10) {
+    profileHtml = `
+    <div class="profile-section-title">${labels.profileLbl}</div>
+    <div class="profile-card">
+      <div class="profile-locked">
+        <div class="profile-locked-icon">🔮</div>
+        <div class="profile-locked-lbl">${labels.profileLocked}<br/>(${total}/10)</div>
+      </div>
+    </div>`;
+  } else {
+    const { profile, top3, catColors } = getCuriosityProfile();
+    const profileName = lang === 'fr' ? profile.fr : profile.en;
+    const profileDesc = lang === 'fr' ? profile.descFr : profile.descEn;
+    const chipsHtml = top3.map(k => `
+      <div class="profile-cat-chip" style="border-color:${catColors[k]}33">
+        <span class="profile-cat-chip-icon">${CAT_ICONS[k]}</span>
+        <span class="profile-cat-chip-name" style="color:${catColors[k]}">${(t.catLabels[k]||'').replace('✦ ','')}</span>
+      </div>`).join('');
+    const glowColor = top3[0] ? catColors[top3[0]] : '#c084fc';
+    profileHtml = `
+    <div class="profile-section-title">${labels.profileLbl}</div>
+    <div class="profile-card" style="border-color:${glowColor}33;box-shadow:0 0 28px ${glowColor}0d">
+      <div class="profile-header">
+        <div class="profile-emoji">${profile.emoji}</div>
+        <div class="profile-title-block">
+          <div class="profile-label">${labels.profileLbl}</div>
+          <div class="profile-name" style="color:${glowColor}">${profileName}</div>
+        </div>
+      </div>
+      <div class="profile-desc">${profileDesc}</div>
+      ${top3.length ? `<div class="profile-label" style="margin-bottom:8px">${labels.profileTop}</div><div class="profile-top-cats">${chipsHtml}</div>` : ''}
+    </div>`;
+  }
 
   el.innerHTML = `
+    ${profileHtml}
     <!-- Streak highlight -->
     <div class="stats-streak">
       <div class="stats-streak-flame">🔥</div>
