@@ -544,16 +544,11 @@
     .share-fact-preview::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1em;background:linear-gradient(transparent,#0d1525);}
     .share-copy-btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;padding:11px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:11px;cursor:pointer;margin-bottom:16px;font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text);transition:background .2s;}
     .share-copy-btn.copied{background:rgba(57,255,143,.12);border-color:rgba(57,255,143,.3);color:#39ff8f;}
-    .share-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;}
-    .share-app{display:flex;flex-direction:column;align-items:center;gap:6px;cursor:pointer;padding:7px 3px;border-radius:11px;transition:background .15s;}
-    .share-app:active{background:rgba(255,255,255,.1);}
-    .share-app-icon{width:46px;height:46px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;box-shadow:0 2px 8px rgba(0,0,0,.35);}
-    .share-app-name{font-family:'Space Mono',monospace;font-size:.44rem;letter-spacing:.08em;text-transform:uppercase;color:var(--text-muted);text-align:center;}
-    .icon-whatsapp{background:#25D366;}.icon-messenger{background:linear-gradient(135deg,#0084ff,#a334fa);}
-    .icon-instagram{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);}
-    .icon-facebook{background:#1877F2;}.icon-tiktok{background:#010101;border:1px solid rgba(255,255,255,.15);}
-    .icon-snapchat{background:#FFFC00;}.icon-twitter{background:#000;border:1px solid rgba(255,255,255,.15);}
-    .icon-telegram{background:#229ED9;}
+    .share-grid{display:none;}
+    .share-app{display:none;}
+    .share-app-icon{display:none;}
+    .share-app-name{display:none;}
+    .icon-whatsapp,.icon-messenger,.icon-instagram,.icon-facebook,.icon-tiktok,.icon-snapchat,.icon-twitter,.icon-telegram{display:none;}
     .share-close{display:block;width:100%;padding:11px;margin-top:14px;background:none;border:1px solid rgba(255,255,255,.08);border-radius:11px;font-family:'Space Mono',monospace;font-size:.58rem;letter-spacing:.16em;text-transform:uppercase;color:var(--text-muted);cursor:pointer;}
 
     /* TOAST */
@@ -937,87 +932,10 @@
   <div class="share-title" id="shareTitle">Partager ce fait</div>
   <div class="share-fact-preview" id="sharePreview"></div>
   <button class="share-img-btn" id="shareImgBtn" onclick="shareAsImage()">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-    <span id="shareImgLabel">Partager en image</span>
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12v8a2 2 0 002 2h12a2 2 0 002-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>
+    <span id="shareImgLabel">Partager</span>
   </button>
   <button class="share-copy-btn" id="copyBtn" onclick="copyFact()"><span>📋</span><span id="copyLabel">Copier le texte</span></button>
-  <div class="share-grid">
-    <!-- WhatsApp -->
-    <div class="share-app" onclick="shareTo('whatsapp')">
-      <div class="share-app-icon icon-whatsapp">
-        <svg viewBox="0 0 32 32" width="26" height="26" fill="white">
-          <path d="M16 2C8.268 2 2 8.268 2 16c0 2.774.742 5.372 2.035 7.61L2 30l6.583-1.723A13.95 13.95 0 0016 30c7.732 0 14-6.268 14-14S23.732 2 16 2zm7.25 19.47c-.31.87-1.53 1.59-2.51 1.8-.67.14-1.55.25-4.5-1.08-3.77-1.65-6.2-5.5-6.39-5.75-.18-.25-1.52-2.02-1.52-3.85s.96-2.73 1.3-3.1c.34-.37.74-.46 1-.46.24 0 .48.002.69.01.22.01.52-.08.81.62.31.72 1.05 2.57 1.14 2.76.09.19.15.41.03.66-.12.25-.18.4-.36.62-.18.22-.38.49-.54.66-.18.19-.37.4-.16.78.21.38.94 1.55 2.02 2.51 1.39 1.24 2.56 1.62 2.94 1.8.38.18.6.15.82-.09.22-.24.94-1.1 1.19-1.48.25-.38.5-.31.84-.19.34.12 2.16 1.02 2.53 1.2.37.18.62.27.71.42.09.15.09.87-.22 1.74z"/>
-        </svg>
-      </div>
-      <span class="share-app-name">WhatsApp</span>
-    </div>
-    <!-- Messenger -->
-    <div class="share-app" onclick="shareTo('messenger')">
-      <div class="share-app-icon icon-messenger">
-        <svg viewBox="0 0 32 32" width="26" height="26" fill="white">
-          <path d="M16 2C8.268 2 2 7.925 2 15.19c0 3.868 1.612 7.338 4.22 9.862V30l4.862-2.665A14.8 14.8 0 0016 27.38c7.732 0 14-5.924 14-12.19S23.732 2 16 2zm1.39 16.41l-3.57-3.808-6.97 3.808 7.668-8.136 3.656 3.807 6.885-3.807-7.67 8.136z"/>
-        </svg>
-      </div>
-      <span class="share-app-name">Messenger</span>
-    </div>
-    <!-- Instagram -->
-    <div class="share-app" onclick="shareTo('instagram')">
-      <div class="share-app-icon icon-instagram">
-        <svg viewBox="0 0 24 24" width="24" height="24" fill="white">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="none" stroke="white" stroke-width="2"/>
-          <circle cx="12" cy="12" r="4.5" fill="none" stroke="white" stroke-width="2"/>
-          <circle cx="17.5" cy="6.5" r="1.2" fill="white"/>
-        </svg>
-      </div>
-      <span class="share-app-name">Instagram</span>
-    </div>
-    <!-- Facebook -->
-    <div class="share-app" onclick="shareTo('facebook')">
-      <div class="share-app-icon icon-facebook">
-        <svg viewBox="0 0 32 32" width="26" height="26" fill="white">
-          <path d="M29 16c0-7.18-5.82-13-13-13S3 8.82 3 16c0 6.49 4.75 11.87 10.97 12.85V19.89H10.9V16h3.07v-2.66c0-3.03 1.8-4.7 4.56-4.7 1.32 0 2.7.24 2.7.24v2.97h-1.52c-1.5 0-1.97.93-1.97 1.89V16h3.35l-.53 3.89h-2.82v8.96C24.25 27.87 29 22.49 29 16z"/>
-        </svg>
-      </div>
-      <span class="share-app-name">Facebook</span>
-    </div>
-    <!-- TikTok -->
-    <div class="share-app" onclick="shareTo('tiktok')">
-      <div class="share-app-icon icon-tiktok">
-        <svg viewBox="0 0 32 32" width="24" height="24" fill="white">
-          <path d="M27.2 8.56a7.22 7.22 0 01-5.6-6.32V2h-5.14v19.78a4.3 4.3 0 01-4.3 3.73 4.3 4.3 0 01-4.3-4.3 4.3 4.3 0 014.3-4.3c.42 0 .82.06 1.2.16V11.9a9.44 9.44 0 00-1.2-.08A9.43 9.43 0 003 21.25 9.43 9.43 0 0012.43 30.7a9.43 9.43 0 009.42-9.43V11.5a12.17 12.17 0 007.15 2.27V8.63a7.25 7.25 0 01-1.8-.07z"/>
-        </svg>
-      </div>
-      <span class="share-app-name">TikTok</span>
-    </div>
-    <!-- Snapchat -->
-    <div class="share-app" onclick="shareTo('snapchat')">
-      <div class="share-app-icon icon-snapchat">
-        <svg viewBox="39 1.75 163 175" width="26" height="26" xmlns="http://www.w3.org/2000/svg">
-          <path d="m140.612 173.906c13.937 0 24.366-10.263 24.366-10.263c.916-.766 1.958-1.499 1.958-1.499c8.344-5.481 21.87-1.53 21.87-1.53c4.915 1.164 5.057-2.549 5.057-2.549l.379-4.207c.359-4.125 6.699-4.081 6.699-4.081c8.349-.327 11.864-3.746 13.312-6.158c1.554-2.313-1.383-2.967-1.383-2.967c-20.147-5.625-29.922-24.747-29.922-24.747c-4.551-7.989 1.686-11.22 1.686-11.22c1.686-1.19 9.944-3.91 9.944-3.91c6.815-2.733 4.551-7.479 4.551-7.479c-2.528-5.101-8.427-1.7-8.427-1.7c-2.789 1.48-4.888 1.359-4.888 1.359c-4.659.089-5.219-.909-5.219-.909l.16-22.125c0-20.233-17.846-36.635-39.86-36.635h-.382c-22.015 0-39.86 16.402-39.86 36.635l.16 22.125s-.56.998-5.219.909c0 0-2.099.121-4.888-1.359c0 0-5.898-3.4-8.427 1.7c0 0-2.266 4.746 4.551 7.479c0 0 8.259 2.72 9.944 3.91c0 0 6.237 3.23 1.686 11.22c0 0-9.773 19.122-29.921 24.747c0 0-2.938.653-1.382 2.967c1.448 2.412 4.964 5.831 13.31 6.158c0 0 6.341-.044 6.7 4.081l.38 4.207s.142 3.713 5.056 2.549c0 0 13.526-3.951 21.869 1.53c0 0 1.043.733 1.96 1.499c0 0 10.429 10.263 24.366 10.263z" fill="white" stroke="#1a1a1a" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.555"/>
-        </svg>
-      </div>
-      <span class="share-app-name">Snapchat</span>
-    </div>
-    <!-- X (Twitter) -->
-    <div class="share-app" onclick="shareTo('twitter')">
-      <div class="share-app-icon icon-twitter">
-        <svg viewBox="0 0 32 32" width="22" height="22" fill="white">
-          <path d="M24.32 3h4.41l-9.64 11.02L30 29H21.54l-6.95-9.09L6.9 29H2.48l10.31-11.79L2 3h8.67l6.28 8.3L24.32 3zm-1.55 23.4h2.44L9.38 5.5H6.77l16 20.9z"/>
-        </svg>
-      </div>
-      <span class="share-app-name">X</span>
-    </div>
-    <!-- Telegram -->
-    <div class="share-app" onclick="shareTo('telegram')">
-      <div class="share-app-icon icon-telegram">
-        <svg viewBox="0 0 32 32" width="26" height="26" fill="white">
-          <path d="M16 2C8.268 2 2 8.268 2 16s6.268 14 14 14 14-6.268 14-14S23.732 2 16 2zm6.87 9.63l-2.36 11.12c-.17.77-.63 1.05-1.27.65l-3.5-2.58-1.69 1.63c-.19.19-.34.34-.7.34l.25-3.56 6.47-5.85c.28-.25-.06-.39-.43-.14l-7.99 5.03-3.44-1.07c-.75-.23-.76-.75.16-1.11l13.44-5.18c.62-.23 1.17.15.96 1.11l.1-.39z"/>
-        </svg>
-      </div>
-      <span class="share-app-name">Telegram</span>
-    </div>
-  </div>
-  </div>
   <button class="share-close" onclick="closeShare()" id="shareCloseBtn">Fermer</button>
 </div>
 <div class="toast" id="toast"></div>
@@ -3098,7 +3016,9 @@ function openShare(){
   const btn=document.getElementById('copyBtn');
   btn.classList.remove('copied');btn.innerHTML=`<span>📋</span><span id="copyLabel">${T[lang].copyLabel}</span>`;
   const imgLbl=document.getElementById('shareImgLabel');
-  if(imgLbl) imgLbl.textContent = lang==='fr' ? 'Partager en image' : 'Share as image';
+  if(imgLbl) imgLbl.textContent = lang==='fr' ? 'Partager' : 'Share';
+  document.getElementById('shareTitle').textContent = lang==='fr' ? 'Partager ce fait' : 'Share this fact';
+  document.getElementById('shareCloseBtn').textContent = lang==='fr' ? 'Fermer' : 'Close';
   document.getElementById('shareOverlay').classList.add('open');
   document.getElementById('shareSheet').classList.add('open');
 }
@@ -3677,6 +3597,7 @@ function shareDailyFact() {
   // Override copyFact & shareTo to use daily fact text
   window._shareText = raw + '\n\n' + tag;
   window._shareRaw  = raw;
+  window._shareCat  = fact.cat || 'positive';
   // Close daily overlay then open share sheet
   closeDailyOverlay();
   setTimeout(() => {
