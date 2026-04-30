@@ -76,7 +76,9 @@
     .orb-wrapper{position:relative;width:var(--orb-size);height:var(--orb-size);margin-bottom:24px;cursor:pointer;flex-shrink:0;}
     .orb-ring{position:absolute;inset:-16px;border-radius:50%;border:1px solid rgba(255,255,255,.07);animation:ringRotate 18s linear infinite;}
     .orb-ring::before{content:'';position:absolute;top:5px;left:50%;transform:translateX(-50%);width:5px;height:5px;border-radius:50%;background:rgba(255,255,255,.4);}
-    .orb-wrapper.planet-saturn .orb-ring{inset:-8px;border-width:2px;border-color:rgba(205,180,120,.35);animation:ringRotate 12s linear infinite;}
+    .orb-wrapper.planet-saturn .orb-ring{inset:-30px -50px;border-width:0;border-color:transparent;border-radius:50%;animation:none;overflow:visible;pointer-events:none;}
+    .orb-wrapper.planet-saturn .orb-ring::before{content:'';position:absolute;top:50%;left:50%;width:240%;height:60%;transform:translate(-50%,-50%) rotateX(75deg) rotateZ(-15deg);border-radius:50%;border:none;background:transparent;box-shadow:0 0 0 8px rgba(210,185,120,.22),0 0 0 14px rgba(195,165,100,.14),0 0 0 22px rgba(180,150,80,.08),0 0 0 30px rgba(160,130,60,.04);pointer-events:none;animation:saturnRingGlow 8s ease-in-out infinite;}
+    @keyframes saturnRingGlow{0%,100%{opacity:.85;}50%{opacity:1;}}
     @keyframes ringRotate{to{transform:rotate(360deg);}}
     .orb{position:absolute;inset:0;border-radius:50%;transition:box-shadow .4s ease,transform .15s ease;animation:orbPulse 4s ease-in-out infinite;}
     /* ── OMBRE PLANÈTE (arc sur la gauche) ── */
@@ -3179,34 +3181,72 @@ async function shareAsImage() {
   haptic('light');
 
   const canvas = generateShareCard(text, catKey);
-  const btn = document.getElementById('shareImgBtn');
   const lbl = document.getElementById('shareImgLabel');
+  if (lbl) lbl.textContent = lang === 'fr' ? '⏳ Génération…' : '⏳ Generating…';
 
   try {
-    canvas.toBlob(async (blob) => {
-      if (!blob) { showToast('Erreur lors de la génération'); return; }
-      const file = new File([blob], 'oracle-fact.png', { type: 'image/png' });
-      // Try native share with file
-      if (navigator.canShare && navigator.canShare({ files: [file] })) {
-        try {
-          await navigator.share({ files: [file], title: 'Oracle', text: text });
-          state.shares = (state.shares || 0) + 1; saveState();
-          setTimeout(() => { checkAchievements(); checkPlanetUnlocks(); }, 200);
-          closeShare(); return;
-        } catch(e) { if (e.name === 'AbortError') return; }
+    const blob = await new Promise((resolve, reject) => {
+      canvas.toBlob(b => b ? resolve(b) : reject('no blob'), 'image/png');
+    });
+
+    const file = new File([blob], 'oracle-fact.png', { type: 'image/png' });
+    let shared = false;
+
+    // 1) Try native share with file
+    if (navigator.canShare && navigator.canShare({ files: [file] })) {
+      try {
+        await navigator.share({ files: [file], title: 'Oracle' });
+        shared = true;
+      } catch(e) {
+        if (e.name === 'AbortError') { _resetShareBtn(); return; }
       }
-      // Fallback: download
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement('a');
-      a.href = url; a.download = 'oracle-fact.png'; a.click();
-      setTimeout(() => URL.revokeObjectURL(url), 2000);
-      if (lbl) { lbl.textContent = lang === 'fr' ? '✓ Image téléchargée' : '✓ Image saved'; }
-      setTimeout(() => { if (lbl) lbl.textContent = lang === 'fr' ? 'Partager en image' : 'Share as image'; }, 2500);
-      state.shares = (state.shares || 0) + 1; saveState();
-    }, 'image/png');
+    }
+
+    // 2) If file share failed, try share with just text (keeps share sheet open for user)
+    if (!shared && navigator.share) {
+      try {
+        // Download the image first so user has it
+        _downloadBlob(blob);
+        const tag = lang === 'fr'
+          ? '✨ Découvert avec Oracle — l\'app des curiosités du monde\nkipetchis.github.io/Oracle/oracle.html'
+          : '✨ Discovered with Oracle — the world curiosity app\nkipetchis.github.io/Oracle/oracle.html';
+        await navigator.share({ title: 'Oracle', text: text + '\n\n' + tag });
+        shared = true;
+      } catch(e) {
+        if (e.name === 'AbortError') { _resetShareBtn(); return; }
+      }
+    }
+
+    // 3) Final fallback: download only
+    if (!shared) {
+      _downloadBlob(blob);
+    }
+
+    // Count share
+    state.shares = (state.shares || 0) + 1; saveState();
+    setTimeout(() => { checkAchievements(); checkPlanetUnlocks(); }, 200);
+
+    if (lbl) { lbl.textContent = lang === 'fr' ? '✓ Partagé' : '✓ Shared'; }
+    setTimeout(() => { _resetShareBtn(); }, 2500);
+
   } catch(e) {
-    showToast('Erreur lors de la génération');
+    showToast(lang === 'fr' ? 'Erreur lors de la génération' : 'Error generating image');
+    _resetShareBtn();
   }
+}
+
+function _downloadBlob(blob) {
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url; a.download = 'oracle-fact.png';
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(() => URL.revokeObjectURL(url), 3000);
+  showToast(lang === 'fr' ? '📥 Image sauvegardée' : '📥 Image saved');
+}
+
+function _resetShareBtn() {
+  const lbl = document.getElementById('shareImgLabel');
+  if (lbl) lbl.textContent = lang === 'fr' ? 'Partager' : 'Share';
 }
 
 function closeShare(){document.getElementById('shareOverlay').classList.remove('open');document.getElementById('shareSheet').classList.remove('open');window._shareText=null;window._shareRaw=null;window._shareCat=null;}
