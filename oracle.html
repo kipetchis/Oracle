@@ -1093,7 +1093,7 @@ const T={
       moon:{name:'Lune',cond:'Atteindre 50 faits lus',unlockDesc:"Tu as consulté l'Oracle 50 fois. La Lune est à toi."},
       mars:{name:'Mars',cond:"7 jours de suite",unlockDesc:"7 jours de curiosité d'affilée. Mars t'appartient."},
       saturn:{name:'Saturne',cond:'Partager 5 faits',unlockDesc:"5 partages dans le cosmos. Saturne t'accueille."},
-      neptune:{name:'Neptune',cond:'Score 50+ au mini-jeu',unlockDesc:"Rencontre du 3ᵉ type. Neptune t'ouvre ses portes."},
+      neptune:{name:'Neptune',cond:'Collecter 5 fragments',unlockDesc:"Rencontre du 3ᵉ type. Neptune t'ouvre ses portes."},
       sun:{name:'Soleil',cond:'Tous les succès de catégorie',unlockDesc:"Tu es devenu l'Oracle lui-même."}
     },
     achGroups:{
@@ -1138,7 +1138,7 @@ const T={
       moon:{name:'Moon',cond:'Read 50 facts',unlockDesc:"You've consulted the Oracle 50 times. The Moon is yours."},
       mars:{name:'Mars',cond:'7 days in a row',unlockDesc:"7 days of curiosity in a row. Mars belongs to you."},
       saturn:{name:'Saturn',cond:'Share 5 facts',unlockDesc:"5 shares across the cosmos. Saturn welcomes you."},
-      neptune:{name:'Neptune',cond:'Score 50+ in mini-game',unlockDesc:"Close encounter of the third kind. Neptune opens its gates."},
+      neptune:{name:'Neptune',cond:'Collect 5 fragments',unlockDesc:"Close encounter of the third kind. Neptune opens its gates."},
       sun:{name:'Sun',cond:'All category achievements',unlockDesc:"You have become the Oracle itself."}
     },
     achGroups:{
@@ -2778,7 +2778,7 @@ const buildAchDef=(lang)=>{
     {id:'planet_moon',icon:'🌙',name:lang==='fr'?'Habitant de la Lune':'Moon dweller',desc:lang==='fr'?'Débloquer la Lune':'Unlock the Moon',type:'planet',target:'moon',group:g.planets},
     {id:'planet_mars',icon:'🔴',name:lang==='fr'?'Conquistador de Mars':'Mars conquistador',desc:lang==='fr'?'Débloquer Mars':'Unlock Mars',type:'planet',target:'mars',group:g.planets},
     {id:'planet_saturn',icon:'🪐',name:lang==='fr'?'Seigneur de Saturne':'Lord of Saturn',desc:lang==='fr'?'Débloquer Saturne':'Unlock Saturn',type:'planet',target:'saturn',group:g.planets},
-    {id:'planet_neptune',icon:'🛸',name:lang==='fr'?'Rencontre du 3ᵉ type':'Close Encounter',desc:lang==='fr'?'Débloquer Neptune via le mini-jeu':'Unlock Neptune via the space game',type:'planet',target:'neptune',group:g.planets},
+    {id:'planet_neptune',icon:'🛸',name:lang==='fr'?'Rencontre du 3ᵉ type':'Close Encounter',desc:lang==='fr'?'Collecter 5 fragments de planète':'Collect 5 planet fragments',type:'planet',target:'neptune',group:g.planets},
     {id:'planet_sun',icon:'☀️',name:lang==='fr'?"L'Oracle Solaire":'The Solar Oracle',desc:lang==='fr'?'Débloquer le Soleil':'Unlock the Sun',type:'planet',target:'sun',group:g.planets},
     {id:'ephem_1',icon:'📅',name:lang==='fr'?'Premier Éphéméride':'First Ephemeris',desc:lang==='fr'?'Lire ton premier fait du jour':'Read your first daily fact',type:'ephem',target:1,group:g.planets},
     {id:'ephem_7',icon:'🗓️',name:lang==='fr'?"Semaine d'Oracle":'Oracle Week',desc:lang==='fr'?'Lire 7 éphémérides':'Read 7 daily facts',type:'ephem',target:7,group:g.planets},
@@ -2791,14 +2791,14 @@ const buildPlanets=(lang)=>[
   {id:'moon',emoji:'🌙',cssClass:'planet-moon',previewClass:'p-moon',check:(s)=>(s.read.total||0)>=50,progress:(s)=>({val:Math.min(s.read.total||0,50),max:50,label:`${Math.min(s.read.total||0,50)} / 50`,fillClass:'pf-moon'})},
   {id:'mars',emoji:'🔴',cssClass:'planet-mars',previewClass:'p-mars',check:(s)=>(s.streak||1)>=7,progress:(s)=>({val:Math.min(s.streak||1,7),max:7,label:`${Math.min(s.streak||1,7)} / 7`,fillClass:'pf-mars'})},
   {id:'saturn',emoji:'🪐',cssClass:'planet-saturn',previewClass:'p-saturn',check:(s)=>(s.shares||0)>=5,progress:(s)=>({val:Math.min(s.shares||0,5),max:5,label:`${Math.min(s.shares||0,5)} / 5`,fillClass:'pf-saturn'})},
-  {id:'neptune',emoji:'🛸',cssClass:'planet-neptune',previewClass:'p-neptune',check:(s)=>(s.gamesPlayed||0)>=1&&(s.gameHighScore||0)>=50,progress:(s)=>({val:Math.min(s.gameHighScore||0,50),max:50,label:`${Math.min(s.gameHighScore||0,50)} / 50`,fillClass:'pf-neptune'})},
+  {id:'neptune',emoji:'🛸',cssClass:'planet-neptune',previewClass:'p-neptune',check:(s)=>(s.planetFragments||0)>=5,progress:(s)=>({val:Math.min(s.planetFragments||0,5),max:5,label:`${Math.min(s.planetFragments||0,5)} / 5 🧩`,fillClass:'pf-neptune'})},
   {id:'sun',emoji:'☀️',cssClass:'planet-sun',previewClass:'p-sun',check:(s)=>CAT_ACH_IDS.every(id=>s.unlocked.includes(id)),progress:(s)=>{const d=CAT_ACH_IDS.filter(id=>s.unlocked.includes(id)).length;return{val:d,max:CAT_ACH_IDS.length,label:`${d} / ${CAT_ACH_IDS.length}`,fillClass:'pf-sun'};}},
 ];
 
 // ── STATE ─────────────────────────────────────────────────────────────────
 function loadState(){
   try{const s=localStorage.getItem('oracle_v7');if(s)return JSON.parse(s);}catch(e){}
-  return{favs:[],read:{},history:[],unlocked:[],streak:1,lastDate:null,shares:0,activePlanet:'earth',unlockedPlanets:['earth'],lang:null,notifEnabled:false,lastDailyDate:null,quizTotal:0,quizCorrect:0,muted:false,dailyCount:0,dailyCountDate:null};
+  return{favs:[],read:{},history:[],unlocked:[],streak:1,lastDate:null,shares:0,activePlanet:'earth',unlockedPlanets:['earth'],lang:null,notifEnabled:false,lastDailyDate:null,quizTotal:0,quizCorrect:0,muted:false,dailyCount:0,dailyCountDate:null,planetFragments:0};
 }
 function saveState(){try{localStorage.setItem('oracle_v7',JSON.stringify(state));}catch(e){}}
 let state=loadState();
@@ -5047,6 +5047,12 @@ function endSpaceGame(survived) {
   canvas.removeEventListener('mousedown', _gameMouse);
   canvas.removeEventListener('mousemove', _gameMouse);
 
+  // Fragment logic: 50+ stars = 1 fragment (max 5)
+  const earnedFragment = score >= 50 && (state.planetFragments || 0) < 5;
+  if (earnedFragment) {
+    state.planetFragments = (state.planetFragments || 0) + 1;
+  }
+
   // Draw game over screen
   ctx.fillStyle = 'rgba(3,6,16,.85)';
   ctx.fillRect(0, 0, W, H);
@@ -5057,19 +5063,33 @@ function endSpaceGame(survived) {
   const title = survived
     ? (lang==='fr' ? '🛸 Mission accomplie !' : '🛸 Mission complete!')
     : (lang==='fr' ? '💥 Collision !' : '💥 Collision!');
-  ctx.fillText(title, W/2, H*0.35);
+  ctx.fillText(title, W/2, H*0.28);
 
   ctx.fillStyle = '#ffd700';
   ctx.font = '600 48px Montserrat, sans-serif';
-  ctx.fillText('⭐ ' + score, W/2, H*0.48);
+  ctx.fillText('⭐ ' + score, W/2, H*0.40);
 
-  const bonus = survived ? score : Math.floor(score * 0.5);
-  ctx.fillStyle = 'rgba(255,255,255,.6)';
-  ctx.font = '400 18px Montserrat, sans-serif';
-  const bonusText = lang==='fr'
-    ? (survived ? 'Score bonus conservé !' : 'Score réduit de moitié…')
-    : (survived ? 'Full bonus kept!' : 'Score halved…');
-  ctx.fillText(bonusText, W/2, H*0.56);
+  // Fragment feedback
+  const frags = state.planetFragments || 0;
+  if (earnedFragment) {
+    ctx.fillStyle = '#c084fc';
+    ctx.font = 'bold 22px Montserrat, sans-serif';
+    ctx.fillText(lang==='fr' ? '🧩 +1 Fragment de planète !' : '🧩 +1 Planet fragment!', W/2, H*0.50);
+    ctx.fillStyle = 'rgba(192,132,252,.7)';
+    ctx.font = '400 16px Montserrat, sans-serif';
+    ctx.fillText(frags + ' / 5 ' + (lang==='fr' ? 'fragments' : 'fragments'), W/2, H*0.55);
+  } else if (frags >= 5) {
+    ctx.fillStyle = '#6bff6b';
+    ctx.font = '400 18px Montserrat, sans-serif';
+    ctx.fillText(lang==='fr' ? '🪐 Neptune déjà débloquée !' : '🪐 Neptune already unlocked!', W/2, H*0.52);
+  } else {
+    ctx.fillStyle = 'rgba(255,255,255,.5)';
+    ctx.font = '400 16px Montserrat, sans-serif';
+    const needed = lang==='fr'
+      ? `🧩 ${frags}/5 fragments — 50⭐ pour le prochain`
+      : `🧩 ${frags}/5 fragments — 50⭐ for the next one`;
+    ctx.fillText(needed, W/2, H*0.52);
+  }
 
   // Save game score to state
   state.gameHighScore = Math.max(state.gameHighScore || 0, score);
