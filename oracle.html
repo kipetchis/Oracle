@@ -491,8 +491,13 @@
     /* Big numbers row */
     .stats-numbers{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:20px;}
     .stat-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:14px;padding:14px 10px;text-align:center;}
+    .stat-card.stat-link{cursor:pointer;border:1px solid rgba(192,132,252,.18);transition:background .2s,border-color .2s;}
+    .stat-card.stat-link:active{background:rgba(192,132,252,.12);border-color:rgba(192,132,252,.4);}
     .stat-val{font-size:clamp(1.6rem,5vw,2rem);font-weight:300;letter-spacing:.02em;}
     .stat-lbl{font-family:'Space Mono',monospace;font-size:.44rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-top:4px;}
+    .hist-fav-btn{background:none;border:none;color:rgba(255,255,255,.35);font-size:1.1rem;cursor:pointer;padding:4px 8px;transition:color .2s,transform .15s;}
+    .hist-fav-btn:active{transform:scale(1.25);}
+    .hist-fav-btn.is-fav{color:#f472b6;}
     /* Category breakdown */
     .stats-section-title{font-family:'Space Mono',monospace;font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);margin:18px 0 10px;opacity:.6;}
     .cat-bars{display:flex;flex-direction:column;gap:14px;}
@@ -1074,9 +1079,11 @@
   <div class="fav-tabs">
     <button class="fav-tab active" id="tabFavs" onclick="switchFavTab('favs')">♡ Favoris</button>
     <button class="fav-tab" id="tabHistory" onclick="switchFavTab('history')">📖 Déjà lus</button>
+    <button class="fav-tab" id="tabEphem" onclick="switchFavTab('ephem')">📅 Éphémérides</button>
   </div>
   <div class="panel-body" id="favsList"></div>
   <div class="panel-body" id="historyListInline" style="display:none"></div>
+  <div class="panel-body" id="ephemListInline" style="display:none"></div>
 </div>
 
 <!-- HISTORY PANEL -->
@@ -3257,7 +3264,7 @@ const buildPlanets=(lang)=>[
 // ── STATE ─────────────────────────────────────────────────────────────────
 function loadState(){
   try{const s=localStorage.getItem('oracle_v7');if(s)return JSON.parse(s);}catch(e){}
-  return{favs:[],read:{},history:[],unlocked:[],streak:1,lastDate:null,shares:0,activePlanet:'earth',unlockedPlanets:['earth'],lang:null,notifEnabled:false,lastDailyDate:null,quizTotal:0,quizCorrect:0,muted:false,dailyCount:0,dailyCountDate:null,planetFragments:0,ephemRead:0,secretTaps:0};
+  return{favs:[],read:{},history:[],unlocked:[],streak:1,lastDate:null,shares:0,activePlanet:'earth',unlockedPlanets:['earth'],lang:null,notifEnabled:false,lastDailyDate:null,quizTotal:0,quizCorrect:0,muted:false,dailyCount:0,dailyCountDate:null,planetFragments:0,ephemRead:0,secretTaps:0,ephemHistory:[]};
 }
 function saveState(){try{localStorage.setItem('oracle_v7',JSON.stringify(state));}catch(e){}}
 let state=loadState();
@@ -3847,11 +3854,14 @@ function openCatFacts(cat, mode){
     <div style="margin-bottom:10px;font-family:'Space Mono',monospace;font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)">${icon} ${label}</div>
     ${filtered.map((f,i)=>{
       const origIdx = items.indexOf(f);
+      const safeText=f.text.replace(/'/g,"\\'").replace(/"/g,'&quot;');
+      const isFav=state.favs.some(fv=>fv.id===f.id);
       return`<div class="fav-item">
         ${isFavMode?'':`<div class="fav-item-badge badge-${f.cat}"><span class="badge-dot"></span><span style="margin-left:auto;font-size:.6rem;opacity:.4">${f.date||''}</span></div>`}
         <p class="fav-item-text">${f.text}</p>
         <div class="fav-item-actions">
-          <button class="fav-share-btn" onclick="haptic();shareFav('${f.text.replace(/'/g,"\\'")}','${f.cat}')">↗ ${lang==='fr'?'Partager':'Share'}</button>
+          ${!isFavMode?`<button class="hist-fav-btn ${isFav?'is-fav':''}" onclick="haptic();toggleHistFav('${f.id}','${f.cat}','${safeText}');openCatFacts('${cat}','${mode}')">${isFav?'♥':'♡'}</button>`:''}
+          <button class="fav-share-btn" onclick="haptic();shareFav('${safeText}','${f.cat}')">↗ ${lang==='fr'?'Partager':'Share'}</button>
           ${isFavMode?`<button class="fav-remove" onclick="removeFavAndRefresh(${origIdx},'${cat}')">✕</button>`:''}
         </div>
       </div>`;
@@ -3866,20 +3876,29 @@ function renderCatView(mode){
 function switchFavTab(tab){
   const tabFavs = document.getElementById('tabFavs');
   const tabHist = document.getElementById('tabHistory');
+  const tabEphem = document.getElementById('tabEphem');
   const favsList = document.getElementById('favsList');
   const histList = document.getElementById('historyListInline');
+  const ephemList = document.getElementById('ephemListInline');
+  // Reset all tabs
+  if(tabFavs) tabFavs.classList.remove('active');
+  if(tabHist) tabHist.classList.remove('active');
+  if(tabEphem) tabEphem.classList.remove('active');
+  if(favsList) favsList.style.display='none';
+  if(histList) histList.style.display='none';
+  if(ephemList) ephemList.style.display='none';
   if(tab==='favs'){
     if(tabFavs) tabFavs.classList.add('active');
-    if(tabHist) tabHist.classList.remove('active');
     if(favsList) favsList.style.display='';
-    if(histList) histList.style.display='none';
     renderFavs();
-  } else {
+  } else if(tab==='history'){
     if(tabHist) tabHist.classList.add('active');
-    if(tabFavs) tabFavs.classList.remove('active');
-    if(favsList) favsList.style.display='none';
     if(histList) histList.style.display='';
     renderHistory();
+  } else if(tab==='ephem'){
+    if(tabEphem) tabEphem.classList.add('active');
+    if(ephemList) ephemList.style.display='';
+    renderEphemHistory();
   }
 }
 
@@ -3899,6 +3918,43 @@ function removeFavAndRefresh(i, cat){
   const remaining=state.favs.filter(f=>f.cat===cat);
   if(remaining.length>0) openCatFacts(cat,'favs');
   else renderFavs();
+}
+
+// ── EPHEMERIDES HISTORY ──────────────────────────────────────────────────
+function renderEphemHistory(){
+  const el=document.getElementById('ephemListInline');
+  if(!el) return;
+  if(!state.ephemHistory) state.ephemHistory=[];
+  if(!state.ephemHistory.length){
+    el.innerHTML=`<p class="fav-empty">${lang==='fr'?'Aucune éphéméride lue pour le moment.<br>Ouvre le fait du jour chaque matin !':'No daily facts read yet.<br>Open the fact of the day each morning!'}</p>`;
+    return;
+  }
+  el.innerHTML=state.ephemHistory.map(f=>{
+    const isFav=state.favs.some(fv=>fv.id===f.id);
+    const safeText=f.text.replace(/'/g,"\\'").replace(/"/g,'&quot;');
+    return`<div class="fav-item">
+      <div class="fav-item-badge"><span class="badge-dot"></span><span style="margin-left:auto;font-size:.6rem;opacity:.4">${f.date||''}</span></div>
+      <p class="fav-item-text">${f.text}</p>
+      <div class="fav-item-actions">
+        <button class="hist-fav-btn ${isFav?'is-fav':''}" onclick="haptic();toggleHistFav('${f.id}','${f.cat||'positive'}','${safeText}');renderEphemHistory()">${isFav?'♥':'♡'}</button>
+        <button class="fav-share-btn" onclick="haptic();shareFav('${safeText}','${f.cat||'positive'}')">↗ ${lang==='fr'?'Partager':'Share'}</button>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+// ── TOGGLE FAV FROM HISTORY ──────────────────────────────────────────────
+function toggleHistFav(id, cat, text){
+  const idx=state.favs.findIndex(f=>f.id===id);
+  if(idx>=0){
+    state.favs.splice(idx,1);
+  } else {
+    const label=(T[lang].catLabels||{})[cat]||cat;
+    state.favs.push({id, cat, label, text});
+    setTimeout(()=>checkAchievements(),200);
+  }
+  saveState();
+  updateFavBadge();
 }
 
 // ── ACHIEVEMENTS ──────────────────────────────────────────────────────────
@@ -4069,18 +4125,25 @@ function initDailyBanner() {
 
 function openDailyOverlay() {
   haptic('light');
-  // Track ephemeris reads for Venus planet
-  state.ephemRead = (state.ephemRead || 0) + 1; saveState();
-  setTimeout(()=>{checkAchievements();checkPlanetUnlocks();},300);
   const fact = getDailyFact();
   const t = T[lang];
-  // Mark daily as seen + compteur éphémérides
-  if(fact._ephemeris && state.lastDailyDate !== getTodayStr()){
-    state.ephemRead = (state.ephemRead||0) + 1;
+  // Track ephemeris reads for Venus planet (only once per day)
+  if(state.lastDailyDate !== getTodayStr()){
+    state.ephemRead = (state.ephemRead || 0) + 1;
+    // Track ephemeris in history
+    if(!state.ephemHistory) state.ephemHistory = [];
+    const displayText = fact._thematic ? fact._thematic.text : fact.text;
+    const cat = fact._thematic ? 'thematic' : fact.cat;
+    const label = fact._thematic ? fact._thematic.label : (t.catLabels[fact.cat]||'');
+    const icon = fact._thematic ? fact._thematic.icon : (CAT_ICONS[fact.cat]||'📅');
+    if(!state.ephemHistory.some(h=>h.id===fact.id)){
+      state.ephemHistory.unshift({id:fact.id, cat, label, icon, text:displayText, date:new Date().toLocaleDateString(lang==='fr'?'fr-FR':'en-US')});
+      if(state.ephemHistory.length>100) state.ephemHistory.pop();
+    }
   }
   state.lastDailyDate = getTodayStr();
   saveState();
-  setTimeout(()=>checkAchievements(),300);
+  setTimeout(()=>{checkAchievements();checkPlanetUnlocks();},300);
   // Hide new dot
   const dot = document.getElementById('dailyNewDot');
   if (dot) dot.style.display = 'none';
@@ -4424,11 +4487,11 @@ function renderStats() {
 
     <!-- Big numbers -->
     <div class="stats-numbers">
-      <div class="stat-card">
+      <div class="stat-card stat-link" onclick="haptic();closeStats();openPanel('favs');switchFavTab('history')">
         <div class="stat-val">${total}</div>
         <div class="stat-lbl">${labels.facts}</div>
       </div>
-      <div class="stat-card">
+      <div class="stat-card stat-link" onclick="haptic();closeStats();openPanel('favs');switchFavTab('favs')">
         <div class="stat-val">${favCount}</div>
         <div class="stat-lbl">${labels.favs}</div>
       </div>
@@ -4438,11 +4501,11 @@ function renderStats() {
       </div>
     </div>
     <div class="stats-numbers" style="margin-top:-8px">
-      <div class="stat-card">
+      <div class="stat-card stat-link" onclick="haptic();closeStats();openPanel('achievements')">
         <div class="stat-val">${unlockCount}</div>
         <div class="stat-lbl">${labels.achiev}</div>
       </div>
-      <div class="stat-card">
+      <div class="stat-card stat-link" onclick="haptic();closeStats();openPanel('favs');switchFavTab('ephem')">
         <div class="stat-val">📅 ${state.ephemRead||0}</div>
         <div class="stat-lbl">${labels.ephemLbl}</div>
       </div>
@@ -6381,6 +6444,27 @@ window.addEventListener('popstate', function(e) {
   }
 });
 
+// ── PLUTO EASTER EGG (tap header 10 times) ──────────────────────────
+(function(){
+  let _plutTaps=0, _plutTimer=null;
+  const hdr=document.getElementById('headerTitle');
+  if(!hdr) return;
+  hdr.addEventListener('click',function(){
+    _plutTaps++;
+    if(_plutTimer) clearTimeout(_plutTimer);
+    _plutTimer=setTimeout(()=>{_plutTaps=0;},5000);
+    if(_plutTaps>=10){
+      _plutTaps=0;
+      if((state.secretTaps||0)<10){
+        state.secretTaps=(state.secretTaps||0)+10;
+        saveState();
+        showToast(lang==='fr'?'💀 Pluton se souvient…':'💀 Pluto remembers…');
+        setTimeout(()=>{checkAchievements();checkPlanetUnlocks();},500);
+      }
+    }
+  });
+})();
+
 </script>
 
 <!-- QUIZ -->
@@ -6422,27 +6506,6 @@ window.addEventListener('popstate', function(e) {
   <button class="pool-exhausted-btn" id="peBtn" onclick="confirmPoolReset()">Recommencer</button>
 </div>
 
-
-// ── PLUTO EASTER EGG (tap header 10 times) ──────────────────────────
-(function(){
-  let _plutTaps=0, _plutTimer=null;
-  const hdr=document.getElementById('headerTitle');
-  if(!hdr) return;
-  hdr.addEventListener('click',function(){
-    _plutTaps++;
-    if(_plutTimer) clearTimeout(_plutTimer);
-    _plutTimer=setTimeout(()=>{_plutTaps=0;},3000);
-    if(_plutTaps>=10){
-      _plutTaps=0;
-      if((state.secretTaps||0)<10){
-        state.secretTaps=(state.secretTaps||0)+10;
-        saveState();
-        showToast(lang==='fr'?'💀 Pluton se souvient…':'💀 Pluto remembers…');
-        setTimeout(()=>{checkAchievements();checkPlanetUnlocks();},500);
-      }
-    }
-  });
-})();
 
 <script>
 if('serviceWorker' in navigator) {
