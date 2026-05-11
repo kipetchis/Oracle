@@ -1,11 +1,15 @@
-[{
-  "relation": ["delegate_permission/common.handle_all_urls"],
-  "target": {
-    "namespace": "android_app",
-    "package_name": "com.kipetchis.oracle",
-    "sha256_cert_fingerprints": [
-      "D7:04:36:FB:C3:32:00:4D:7F:12:6E:E6:08:5E:2A:02:1A:35:BD:AA:59:9E:2C:85:F5:DB:E5:D7:1E:36:56:95",
-      "45:6E:10:EF:95:05:9C:27:DD:E4:77:17:39:FE:6C:8D:34:C2:B8:59:BB:DA:38:FC:88:FD:51:E2:C0:8E:3C:29"
-    ]
+[
+  {
+    "relation": [
+      "delegate_permission/common.handle_all_urls",
+      "delegate_permission/common.get_login_creds"
+    ],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.kipetchis.oracle",
+      "sha256_cert_fingerprints": [
+        "D7:04:36:FB:C3:32:00:4D:7F:12:6E:E6:08:5E:2A:02:1A:35:BD:AA:59:9E:2C:85:F5:DB:E5:D7:1E:36:56:95"
+      ]
+    }
   }
-}]
+]
