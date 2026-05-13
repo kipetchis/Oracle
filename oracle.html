@@ -97,6 +97,23 @@
     .auth-signout-btn{margin-top:16px;background:transparent;border:1px solid rgba(255,255,255,.15);color:var(--text-muted);border-radius:10px;padding:8px 20px;font-size:.8rem;cursor:pointer;font-family:'Montserrat',sans-serif;}
     .auth-sync-status{margin-top:12px;font-size:.72rem;color:var(--text-muted);opacity:.7;}
     .user-avatar-btn{padding:2px !important;}
+
+    /* ── SUPPORT SECTION ── */
+    .support-section{margin-top:20px;}
+    .support-divider{height:1px;background:rgba(255,255,255,.08);margin-bottom:18px;}
+    .support-title{font-family:'Playfair Display',serif;font-size:1rem;color:var(--text);margin-bottom:4px;}
+    .support-desc{font-size:.75rem;color:var(--text-muted);margin-bottom:14px;line-height:1.4;}
+    .support-links{display:flex;flex-direction:column;gap:8px;}
+    .support-btn{display:flex;align-items:center;gap:10px;padding:10px 16px;border-radius:12px;text-decoration:none;font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:500;transition:transform .15s,opacity .15s;border:1px solid rgba(255,255,255,.1);}
+    .support-btn:active{transform:scale(.97);}
+    .support-icon{font-size:1.1rem;}
+    .support-bmc{background:rgba(255,200,50,.1);color:#ffdd57;}
+    .support-paypal{background:rgba(0,112,210,.1);color:#6db3f2;}
+    .support-tipeee{background:rgba(232,76,94,.1);color:#f47b8a;}
+
+    /* ── PREMIUM BADGE ── */
+    .premium-badge{display:inline-flex;align-items:center;gap:4px;background:linear-gradient(135deg,rgba(255,200,50,.2),rgba(255,150,0,.15));color:#ffd700;font-size:.7rem;font-weight:600;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,200,50,.25);font-family:'Montserrat',sans-serif;letter-spacing:.03em;}
+    .premium-label{font-size:.75rem;color:#ffd700;margin-top:6px;opacity:.8;}
     .orb{position:absolute;inset:0;border-radius:50%;transition:box-shadow .4s ease,transform .15s ease;animation:orbPulse 4s ease-in-out infinite;}
     /* ── OMBRE PLANÈTE (arc sur la gauche) ── */
     .orb-shadow{position:absolute;inset:0;border-radius:50%;pointer-events:none;z-index:3;
@@ -992,10 +1009,29 @@
         <div class="auth-user-info">
           <img id="authUserPhoto" src="" alt=""/>
           <span class="auth-name" id="authUserName"></span>
+          <span class="premium-badge" id="premiumBadge" style="display:none;">⭐ Premium</span>
           <span class="auth-email" id="authUserEmail"></span>
         </div>
         <div class="auth-sync-status" id="authSyncStatus">✓ Données synchronisées</div>
+        <div class="premium-label" id="premiumLabel" style="display:none;">∞ Faits illimités débloqués</div>
         <button class="auth-signout-btn" onclick="signOutUser()">Se déconnecter</button>
+      </div>
+      <!-- Support section (always visible) -->
+      <div class="support-section">
+        <div class="support-divider"></div>
+        <p class="support-title">☕ Soutenir Oracle</p>
+        <p class="support-desc">Si Oracle te plaît, tu peux soutenir son développement !</p>
+        <div class="support-links">
+          <a href="https://buymeacoffee.com/Kip3tchis" target="_blank" rel="noopener" class="support-btn support-bmc">
+            <span class="support-icon">☕</span> Buy me a Coffee
+          </a>
+          <a href="https://paypal.me/kip3tchis" target="_blank" rel="noopener" class="support-btn support-paypal">
+            <span class="support-icon">💙</span> PayPal
+          </a>
+          <a href="https://fr.tipeee.com/kip3tchis/" target="_blank" rel="noopener" class="support-btn support-tipeee">
+            <span class="support-icon">❤️</span> Tipeee
+          </a>
+        </div>
       </div>
     </div>
   </div>
@@ -3441,6 +3477,13 @@ function openAuthPanel(){
 function closeAuthPanel(){
   document.getElementById('authOverlay').classList.remove('open');
 }
+
+function updatePremiumBadge(){
+  const badge = document.getElementById('premiumBadge');
+  if(badge) badge.style.display = state.premium ? 'inline-flex' : 'none';
+  const label = document.getElementById('premiumLabel');
+  if(label) label.style.display = state.premium ? 'block' : 'none';
+}
 let state=loadState();
 if(!state.unlockedPlanets)state.unlockedPlanets=['earth'];
 if(!state.activePlanet)state.activePlanet='earth';
@@ -3613,8 +3656,8 @@ function confirmPoolReset(){
 // ── SHOW FACT ─────────────────────────────────────────────────────────────
 function showFact(){
   haptic('medium');
-  // ── Daily limit check ──
-  if(true){
+  // ── Daily limit check (skip for premium users) ──
+  if(!state.premium){
     const today=getTodayStr();
     if(state.dailyCountDate!==today){state.dailyCount=0;state.dailyCountDate=today;saveState();}
     const LIMIT=5;
@@ -3679,13 +3722,13 @@ function showFact(){
       </div>`;
     card.classList.add('visible');
     // Show remaining facts for today
-    if(true){
+    if(!state.premium){
       const rem = Math.max(0, DAILY_LIMIT - (state.dailyCount||0));
       label.textContent = rem > 0
         ? (lang==='fr' ? `Encore (${rem})` : `Again (${rem})`)
         : (lang==='fr' ? 'Terminé' : 'Done');
     } else {
-      label.textContent=t.orbAgain;
+      label.textContent = lang==='fr' ? '∞ Illimité' : '∞ Unlimited';
     }
     setTimeout(()=>{checkAchievements();checkPlanetUnlocks();maybeShowQuiz();maybeShowUfo();},400);
   },120);
@@ -6756,6 +6799,16 @@ if('serviceWorker' in navigator) {
         _fbUser = user;
         updateAuthUI();
         if(user){
+          // Check premium status from Firestore (separate from state)
+          fbDb.collection('users').doc(user.uid).get().then(function(doc){
+            if(doc.exists && doc.data().premium === true){
+              state.premium = true;
+            } else {
+              state.premium = false;
+            }
+            updatePremiumBadge();
+          }).catch(function(){});
+
           loadFromFirestore().then(function(cloudState){
             if(cloudState){
               var merged = mergeStates(state, cloudState);
@@ -6768,6 +6821,9 @@ if('serviceWorker' in navigator) {
               syncToFirestore();
             }
           });
+        } else {
+          state.premium = false;
+          updatePremiumBadge();
         }
       });
 
