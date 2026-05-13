@@ -3387,8 +3387,15 @@ function mergeStates(local, cloud){
 // ── AUTH FUNCTIONS ────────────────────────────────────────────────────────
 function signInWithGoogle(){
   if(!fbAuth) return;
-  const provider = new firebase.auth.GoogleAuthProvider();
-  fbAuth.signInWithRedirect(provider);
+  var provider = new firebase.auth.GoogleAuthProvider();
+  fbAuth.signInWithPopup(provider).catch(function(e){
+    console.warn('Google sign-in error:', e.code, e.message);
+    if(e.code === 'auth/popup-blocked'){
+      showToast(lang==='fr'?'Autorise les popups pour te connecter':'Allow popups to sign in');
+    } else {
+      showToast(lang==='fr'?'Erreur de connexion':'Sign-in error');
+    }
+  });
 }
 
 function signOutUser(){
@@ -6737,7 +6744,7 @@ if('serviceWorker' in navigator) {
         }
       });
 
-      fbAuth.getRedirectResult().catch(function(e){ console.warn('Redirect error:', e); });
+      
       console.log('Firebase initialized OK');
     } catch(e) { console.warn('Firebase init error:', e); }
   }
