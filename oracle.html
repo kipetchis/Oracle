@@ -6600,32 +6600,59 @@ function forceSyncNow() {
   });
 }
 // ── BACK BUTTON HANDLER ─────────────────────────────────────────
+var _backPressCount = 0;
+var _backPressTimer = null;
+
 window.addEventListener('popstate', function(e) {
   // Si comète visible, la rejeter
-  if (_cometEl) { dismissComet(); return; }
+  if (_cometEl) { dismissComet(); _backPressCount=0; history.pushState({screen:'app'}, ''); return; }
+  // Auth overlay
+  const ao = document.getElementById('authOverlay');
+  if (ao && ao.classList.contains('open')) { closeAuthPanel(); _backPressCount=0; history.pushState({screen:'app'}, ''); return; }
+  // Quiz overlay
+  const qo = document.getElementById('quizOverlay');
+  if (qo && qo.classList.contains('active')) { qo.classList.remove('active'); _backPressCount=0; history.pushState({screen:'app'}, ''); return; }
+  // Daily overlay
+  const dov = document.getElementById('dailyOverlay');
+  if (dov && dov.classList.contains('active')) { dov.classList.remove('active'); _backPressCount=0; history.pushState({screen:'app'}, ''); return; }
   // Si pool épuisé affiché, le fermer
   const pe = document.getElementById('poolExhaustedScreen');
-  if (pe && pe.classList.contains('active')) {
-    pe.classList.remove('active');
-    return;
-  }
+  if (pe && pe.classList.contains('active')) { pe.classList.remove('active'); _backPressCount=0; history.pushState({screen:'app'}, ''); return; }
   // If daily limit screen is active, close it instead of quitting
   const dl = document.getElementById('dailyLimitScreen');
-  if (dl && dl.classList.contains('active')) {
-    closeDailyLimit();
-    return;
-  }
+  if (dl && dl.classList.contains('active')) { closeDailyLimit(); _backPressCount=0; history.pushState({screen:'app'}, ''); return; }
   // If any panel is open, close it
-  const panels = ['favPanel','statsPanel','sharePanel','planetPanel','quizPanel'];
+  const panels = ['panelFavs','panelHistory','panelAchievements','statsPanel','sharePanel','planetPanel'];
   for (const id of panels) {
     const el = document.getElementById(id);
-    if (el && (el.classList.contains('active') || el.style.display === 'flex')) {
+    if (el && (el.classList.contains('open') || el.classList.contains('active') || el.style.display === 'flex')) {
+      el.classList.remove('open');
       el.classList.remove('active');
       el.style.display = 'none';
+      _backPressCount=0;
+      history.pushState({screen:'app'}, '');
       return;
     }
   }
+  // Nothing to close — double back to exit
+  _backPressCount++;
+  if(_backPressCount >= 2){
+    // Let the user leave
+    _backPressCount = 0;
+    if(confirm(lang==='fr'?'Quitter Oracle ?':'Leave Oracle?')){
+      window.history.back();
+      return;
+    }
+  }
+  // First back — show toast and re-push
+  showToast(lang==='fr'?'↩ Glisse encore pour quitter':'↩ Swipe again to exit');
+  history.pushState({screen:'app'}, '');
+  if(_backPressTimer) clearTimeout(_backPressTimer);
+  _backPressTimer = setTimeout(function(){ _backPressCount = 0; }, 2500);
 });
+
+// Initial history entry to prevent first back gesture from exiting
+history.pushState({screen:'app'}, '');
 
 // ── PLUTO EASTER EGG (tap header 10 times) ──────────────────────────
 (function(){
