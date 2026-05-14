@@ -62,6 +62,7 @@
 
     /* SCENE */
     .scene{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 24px 16px;overflow:hidden;}
+    .scene.dd-open{overflow-y:auto;justify-content:flex-start;padding-top:16px;}
     .header{text-align:center;margin-bottom:20px;opacity:.85;}
     .header h1{font-size:clamp(1.4rem,4.5vw,1.9rem);font-weight:400;letter-spacing:.35em;text-transform:uppercase;font-family:'Playfair Display',serif;}
     .header p{font-style:italic;font-size:clamp(.75rem,2.2vw,.9rem);color:var(--text-muted);margin-top:3px;letter-spacing:.1em;font-family:'Playfair Display',serif;font-weight:400;}
@@ -2656,7 +2657,7 @@ const DEEP_DIVES = {
   'f8':{fr:["L'assiette en plomb des Européens se dissolvait au contact de l'acidité de la tomate, provoquant un empoisonnement.","La tomate est originaire d'Amérique du Sud et n'est arrivée en Europe qu'au XVIe siècle.","Techniquement, la tomate est un fruit — mais la Cour suprême américaine l'a classée comme légume en 1893."],en:["Europeans' lead plates dissolved on contact with tomato acid, causing poisoning.","Tomatoes originated in South America and didn't reach Europe until the 16th century.","Technically, the tomato is a fruit — but the US Supreme Court classified it as a vegetable in 1893."]},
   'f9':{fr:["Les fortune cookies sont totalement inconnus en Chine — les Chinois sont souvent surpris de les voir dans les restaurants américains.","Un boulanger japonais de San Francisco, Makoto Hagiwara, les a popularisés au début du XXe siècle.","Trois milliards de fortune cookies sont produits chaque année — presque uniquement pour le marché américain."],en:["Fortune cookies are completely unknown in China — Chinese people are often surprised to see them in American restaurants.","A Japanese baker in San Francisco, Makoto Hagiwara, popularized them in the early 20th century.","3 billion fortune cookies are produced each year — almost exclusively for the American market."]},
   'f10':{fr:["Le chocolat blanc est composé de beurre de cacao, de sucre et de lait — sans pâte de cacao.","Il a été inventé par Nestlé en Suisse dans les années 1930 pour utiliser les surplus de beurre de cacao.","Techniquement, certains pays ne l'autorisent pas à porter le nom « chocolat » sur l'emballage."],en:["White chocolate is made of cocoa butter, sugar, and milk — no cocoa paste.","It was invented by Nestlé in Switzerland in the 1930s to use surplus cocoa butter.","Technically, some countries don't allow it to be labeled 'chocolate' on packaging."]},
-  'f11':{fr:["Le poivre noir est le fruit séché d'une plante grimpante tropicale originaire d'Inde.","Alaric Ier, roi des Wisigoths, a exigé 3 000 livres de poivre comme rançon pour lever le siège de Rome en 408.","Le poivre active les récepteurs TRPV1 — les mêmes que la capsaïcine du piment — mais de manière beaucoup plus douce."],en:["Black pepper is the dried fruit of a tropical climbing plant native to India.","Alaric I, king of the Visigoths, demanded 3,000 pounds of pepper as ransom to lift the siege of Rome in 408.","Pepper activates TRPV1 receptors — the same as chili capsaicin — but much more mildly."]},
+  'f11':{fr:["Le miel ne se périme pas grâce à sa faible teneur en eau et son pH acide qui empêchent les bactéries de proliférer.","Les abeilles ajoutent une enzyme (glucose oxydase) qui produit du peroxyde d'hydrogène — un antiseptique naturel.","Les Égyptiens utilisaient le miel pour embaumer les morts et soigner les blessures — ses propriétés antibactériennes sont confirmées par la science moderne."],en:["Honey doesn't spoil thanks to its low water content and acidic pH that prevent bacteria from growing.","Bees add an enzyme (glucose oxidase) that produces hydrogen peroxide — a natural antiseptic.","Egyptians used honey for embalming the dead and treating wounds — its antibacterial properties are confirmed by modern science."]},
   'f12':{fr:["La famille des Rosacées comprend plus de 3 000 espèces et est l'une des plus importantes pour l'alimentation humaine.","Les amandes sont aussi des Rosacées — le fruit est en réalité le noyau d'un fruit ressemblant à une pêche.","Les roses elles-mêmes sont comestibles — l'eau de rose est utilisée dans la cuisine du Moyen-Orient depuis des millénaires."],en:["The Rosaceae family includes over 3,000 species and is one of the most important for human food.","Almonds are also Rosaceae — the nut is actually the pit of a peach-like fruit.","Roses themselves are edible — rosewater has been used in Middle Eastern cuisine for millennia."]},
   'f13':{fr:["La pollinisation manuelle est nécessaire car l'abeille native du Mexique, seule capable de polliniser naturellement la vanille, n'existe pas ailleurs.","La vanille est la deuxième épice la plus chère au monde après le safran.","Madagascar produit environ 80 % de la vanille mondiale — son prix peut dépasser celui de l'argent au kilo."],en:["Manual pollination is needed because the native Mexican bee, the only one capable of naturally pollinating vanilla, doesn't exist elsewhere.","Vanilla is the second most expensive spice after saffron.","Madagascar produces about 80% of the world's vanilla — its price can exceed silver per kilo."]},
   'f14':{fr:["Ferrero achète environ un quart de la production mondiale de noisettes, principalement en Turquie.","L'usine principale d'Alba, en Italie, produit environ 365 000 tonnes de Nutella par an.","Le Nutella a été inspiré par la tradition piémontaise du « gianduja » — un mélange chocolat-noisette du XIXe siècle."],en:["Ferrero buys about a quarter of the world's hazelnut production, mainly from Turkey.","The main factory in Alba, Italy produces about 365,000 tons of Nutella per year.","Nutella was inspired by the Piedmontese tradition of 'gianduja' — a 19th-century chocolate-hazelnut blend."]},
@@ -3344,7 +3345,7 @@ const FACTS_FR=[
   {id:'l20',cat:'language',text:"Le langage des signes n'est pas universel. Chaque pays a sa propre langue des signes — la LSF en France et l'ASL aux États-Unis sont très différentes l'une de l'autre."},
 
   // ── GASTRONOMIE (f11→f20) ─────────────────────────────────────────────
-  {id:'f11',cat:'food',text:"Le poivre noir était si précieux au Moyen Âge qu'il servait de monnaie d'échange et que les loyers pouvaient être payés en grains de poivre."},
+  {id:'f11',cat:'food',text:"Le miel est le seul aliment qui ne se périme jamais : du miel vieux de 3 000 ans retrouvé dans des tombes égyptiennes était encore parfaitement comestible."},
   {id:'f12',cat:'food',text:"Les pommes font partie de la famille des roses, tout comme les poires, cerises, abricots et amandes. La famille des Rosacées regroupe de nombreux fruits comestibles."},
   {id:'f13',cat:'food',text:"La vanille est l'orchidée la plus cultivée au monde. Chaque fleur doit être pollinisée à la main en dehors du Mexique, car seule une abeille locale peut le faire naturellement."},
   {id:'f14',cat:'food',text:"Le Nutella utilise environ 25 % de la production mondiale de noisettes. La marque Ferrero est le plus grand acheteur de noisettes sur la planète."},
@@ -3892,7 +3893,7 @@ const FACTS_EN=[
   {id:'l19',cat:'language',text:"The Korean alphabet (hangul) was created in 1443 by King Sejong the Great so that common people could easily read and write."},
   {id:'l20',cat:'language',text:"Sign language is not universal. French Sign Language and American Sign Language are very different from each other."},
   // ── FOOD (f11→f20)
-  {id:'f11',cat:'food',text:"Black pepper was so precious in the Middle Ages that it served as currency, and rents could be paid in peppercorns."},
+  {id:'f11',cat:'food',text:"Honey is the only food that never spoils: 3,000-year-old honey found in Egyptian tombs was still perfectly edible."},
   {id:'f12',cat:'food',text:"Apples belong to the rose family, as do pears, cherries, apricots and almonds. The Rosaceae family includes many edible fruits."},
   {id:'f13',cat:'food',text:"Vanilla is the most cultivated orchid in the world. Outside Mexico, each flower must be hand-pollinated, as only a local bee can do it naturally."},
   {id:'f14',cat:'food',text:"Nutella uses about 25% of the world's hazelnut supply. Ferrero is the single largest buyer of hazelnuts on the planet."},
@@ -4513,6 +4514,7 @@ function confirmPoolReset(){
 // ── SHOW FACT ─────────────────────────────────────────────────────────────
 function showFact(){
   haptic('medium');
+  const scene=document.querySelector('.scene');if(scene)scene.classList.remove('dd-open');
   // ── Daily limit check (skip for premium users) ──
   if(!state.premium){
     const today=getTodayStr();
@@ -4835,11 +4837,19 @@ function _resetShareBtn() {
 }
 
 function closeShare(){document.getElementById('shareOverlay').classList.remove('open');document.getElementById('shareSheet').classList.remove('open');window._shareText=null;window._shareRaw=null;window._shareCat=null;}
+async function copyToClipboard(text){
+  if(navigator.clipboard&&navigator.clipboard.writeText){try{await navigator.clipboard.writeText(text);return true;}catch(e){}}
+  if(window.ClipboardItem){try{await navigator.clipboard.write([new ClipboardItem({'text/plain':new Blob([text],{type:'text/plain'})})]);return true;}catch(e){}}
+  try{const ta=document.createElement('textarea');ta.value=text;ta.setAttribute('readonly','');ta.style.cssText='position:fixed;left:-9999px;top:-9999px;opacity:0';document.body.appendChild(ta);const sel=document.getSelection();const range=document.createRange();range.selectNodeContents(ta);sel.removeAllRanges();sel.addRange(range);ta.setSelectionRange(0,text.length);const ok=document.execCommand('copy');document.body.removeChild(ta);if(ok)return true;}catch(e){}
+  return false;
+}
 async function copyFact(){
   haptic('light');const text=buildShareText();
-  try{await navigator.clipboard.writeText(text);}catch(e){const ta=document.createElement('textarea');ta.value=text;ta.style.cssText='position:fixed;opacity:0';document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);}
-  const btn=document.getElementById('copyBtn');btn.classList.add('copied');btn.innerHTML=`<span>✓</span><span>${T[lang].copiedLabel}</span>`;
-  showToast(T[lang].toastCopied);
+  let ok=await copyToClipboard(text);
+  if(!ok){try{window.prompt(lang==='fr'?'Copie ce texte :':'Copy this text:',text);ok=true;}catch(e){}}
+  const btn=document.getElementById('copyBtn');
+  if(ok){btn.classList.add('copied');btn.innerHTML=`<span>✓</span><span>${T[lang].copiedLabel}</span>`;showToast(T[lang].toastCopied);}
+  else{showToast(lang==='fr'?'Maintiens le texte pour copier':'Long-press text to copy');}
 }
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400);}
 function shareTo(platform){
@@ -4847,7 +4857,7 @@ function shareTo(platform){
   const text=encodeURIComponent(buildShareText()),raw=buildShareText();
   state.shares=(state.shares||0)+1;saveState();setTimeout(()=>{checkAchievements();checkPlanetUnlocks();},200);
   const urls={whatsapp:`https://wa.me/?text=${text}`,facebook:`https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Foracle-app.com&quote=${text}`,twitter:`https://twitter.com/intent/tweet?text=${text}`,telegram:`https://t.me/share/url?url=https%3A%2F%2Foracle-app.com&text=${text}`};
-  if(platform==='instagram'||platform==='tiktok'||platform==='snapchat'){navigator.clipboard.writeText(raw).catch(()=>{});showToast(T[lang].toastCopied);closeShare();return;}
+  if(platform==='instagram'||platform==='tiktok'||platform==='snapchat'){copyToClipboard(raw);showToast(T[lang].toastCopied);closeShare();return;}
   if(platform==='messenger'){window.location.href=`fb-messenger://share?link=https%3A%2F%2Foracle-app.com`;setTimeout(()=>window.open(`https://www.facebook.com/dialog/send?link=https%3A%2F%2Foracle-app.com&app_id=966242223397117&redirect_uri=https%3A%2F%2Foracle-app.com`,'_blank'),1500);closeShare();return;}
   if(urls[platform]){window.open(urls[platform],'_blank');closeShare();}
 }
@@ -4870,11 +4880,14 @@ function showDeepDive(){
   const btn = document.getElementById('deepDiveBtn');
   if(!container) return;
   if(btn) btn.style.display = 'none';
+  const scene = document.querySelector('.scene');
+  if(scene) scene.classList.add('dd-open');
   container.style.display = 'block';
   container.innerHTML = `
     <div class="dd-header">${lang==='fr'?'🔎 Pour aller plus loin…':'🔎 Dig deeper…'}</div>
     ${items.map((item,i) => `<div class="dd-item" style="animation-delay:${i*0.15}s"><span class="dd-bullet">✦</span><span class="dd-text">${item}</span></div>`).join('')}
   `;
+  setTimeout(()=>container.scrollIntoView({behavior:'smooth',block:'start'}),100);
 }
 
 function showInlineDeepDive(btn, factId){
@@ -4890,6 +4903,7 @@ function showInlineDeepDive(btn, factId){
     <div class="dd-header">${lang==='fr'?'🔎 Pour aller plus loin…':'🔎 Dig deeper…'}</div>
     ${items.map((item,i) => `<div class="dd-item" style="animation-delay:${i*0.15}s"><span class="dd-bullet">✦</span><span class="dd-text">${item}</span></div>`).join('')}
   `;
+  setTimeout(()=>container.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
 }
 
 // ── FAVS ──────────────────────────────────────────────────────────────────
