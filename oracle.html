@@ -4881,6 +4881,21 @@ function showDeepDive(){
   `;
 }
 
+function showInlineDeepDive(btn, factId){
+  const data = DEEP_DIVES[factId];
+  if(!data) return;
+  const items = lang==='fr' ? data.fr : data.en;
+  if(!items || !items.length) return;
+  const container = btn.nextElementSibling;
+  if(!container) return;
+  btn.style.display = 'none';
+  container.style.display = 'block';
+  container.innerHTML = `
+    <div class="dd-header">${lang==='fr'?'🔎 Pour aller plus loin…':'🔎 Dig deeper…'}</div>
+    ${items.map((item,i) => `<div class="dd-item" style="animation-delay:${i*0.15}s"><span class="dd-bullet">✦</span><span class="dd-text">${item}</span></div>`).join('')}
+  `;
+}
+
 // ── FAVS ──────────────────────────────────────────────────────────────────
 function toggleFav(){
   haptic('light');if(!currentFact)return;
@@ -4967,6 +4982,7 @@ function openCatFacts(cat, mode){
       return`<div class="fav-item">
         ${isFavMode?'':`<div class="fav-item-badge badge-${f.cat}"><span class="badge-dot"></span><span style="margin-left:auto;font-size:.6rem;opacity:.4">${f.date||''}</span></div>`}
         <p class="fav-item-text">${f.text}</p>
+        ${DEEP_DIVES[f.id]?`<button class="deep-dive-btn" onclick="haptic('light');showInlineDeepDive(this,'${f.id}')"><span class="dd-icon">🔎</span> ${lang==='fr'?'Creuser le sujet':'Dig deeper'}</button><div class="deep-dive-container" style="display:none;"></div>`:''}
         <div class="fav-item-actions">
           ${!isFavMode?`<button class="hist-fav-btn ${isFav?'is-fav':''}" onclick="haptic();toggleHistFav('${f.id}','${f.cat}','${safeText}');openCatFacts('${cat}','${mode}')">${isFav?'♥':'♡'}</button>`:''}
           <button class="fav-share-btn" onclick="haptic();shareFav('${safeText}','${f.cat}')">↗ ${lang==='fr'?'Partager':'Share'}</button>
@@ -5043,6 +5059,7 @@ function renderEphemHistory(){
     return`<div class="fav-item">
       <div class="fav-item-badge"><span class="badge-dot"></span><span style="margin-left:auto;font-size:.6rem;opacity:.4">${f.date||''}</span></div>
       <p class="fav-item-text">${f.text}</p>
+      ${DEEP_DIVES[f.id]?`<button class="deep-dive-btn" onclick="haptic('light');showInlineDeepDive(this,'${f.id}')"><span class="dd-icon">🔎</span> ${lang==='fr'?'Creuser le sujet':'Dig deeper'}</button><div class="deep-dive-container" style="display:none;"></div>`:''}
       <div class="fav-item-actions">
         <button class="hist-fav-btn ${isFav?'is-fav':''}" onclick="haptic();toggleHistFav('${f.id}','${f.cat||'positive'}','${safeText}');renderEphemHistory()">${isFav?'♥':'♡'}</button>
         <button class="fav-share-btn" onclick="haptic();shareFav('${safeText}','${f.cat||'positive'}')">↗ ${lang==='fr'?'Partager':'Share'}</button>
