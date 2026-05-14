@@ -62,7 +62,7 @@
 
     /* SCENE */
     .scene{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 24px 16px;overflow:hidden;}
-    .scene.dd-open{overflow-y:auto;justify-content:flex-start;padding-top:16px;}
+    .card.dd-open{overflow-y:auto;max-height:calc(100vh - 160px);}
     .header{text-align:center;margin-bottom:20px;opacity:.85;}
     .header h1{font-size:clamp(1.4rem,4.5vw,1.9rem);font-weight:400;letter-spacing:.35em;text-transform:uppercase;font-family:'Playfair Display',serif;}
     .header p{font-style:italic;font-size:clamp(.75rem,2.2vw,.9rem);color:var(--text-muted);margin-top:3px;letter-spacing:.1em;font-family:'Playfair Display',serif;font-weight:400;}
@@ -4514,7 +4514,7 @@ function confirmPoolReset(){
 // ── SHOW FACT ─────────────────────────────────────────────────────────────
 function showFact(){
   haptic('medium');
-  const scene=document.querySelector('.scene');if(scene)scene.classList.remove('dd-open');
+  const ddCard=document.querySelector('.card.dd-open');if(ddCard)ddCard.classList.remove('dd-open');
   // ── Daily limit check (skip for premium users) ──
   if(!state.premium){
     const today=getTodayStr();
@@ -4880,14 +4880,14 @@ function showDeepDive(){
   const btn = document.getElementById('deepDiveBtn');
   if(!container) return;
   if(btn) btn.style.display = 'none';
-  const scene = document.querySelector('.scene');
-  if(scene) scene.classList.add('dd-open');
+  const card = container.closest('.card');
+  if(card) card.classList.add('dd-open');
   container.style.display = 'block';
   container.innerHTML = `
     <div class="dd-header">${lang==='fr'?'🔎 Pour aller plus loin…':'🔎 Dig deeper…'}</div>
     ${items.map((item,i) => `<div class="dd-item" style="animation-delay:${i*0.15}s"><span class="dd-bullet">✦</span><span class="dd-text">${item}</span></div>`).join('')}
   `;
-  setTimeout(()=>container.scrollIntoView({behavior:'smooth',block:'start'}),100);
+  setTimeout(()=>{if(card)card.scrollTop=card.scrollHeight;},100);
 }
 
 function showInlineDeepDive(btn, factId){
