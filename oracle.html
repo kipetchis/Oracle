@@ -21,7 +21,7 @@
       --glow-world:#22d3ee;--glow-language:#a78bfa;--glow-food:#f87171;
       --glow-sports:#86efac;
       --text:#e8e0d0;--text-muted:#7a7060;--orb-size:min(44vw,200px);
-      --ad-h:56px;
+
     }
     html,body{height:100%;background:var(--bg);color:var(--text);font-family:'Montserrat',sans-serif;overflow:hidden;user-select:none;-webkit-tap-highlight-color:transparent;}
     body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:0;
@@ -39,11 +39,7 @@
 
     .app{position:relative;z-index:1;height:100dvh;display:flex;flex-direction:column;}
 
-    /* AD BANNER */
-    .ad-banner{flex-shrink:0;height:var(--ad-h);background:rgba(255,255,255,.03);border-top:1px solid rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;gap:10px;order:10;}
-    .ad-banner.hidden{display:none;}
-    .ad-banner-label{font-family:'Space Mono',monospace;font-size:.48rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text-muted);opacity:.5;}
-    .ad-banner-content{font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.1em;color:var(--text-muted);opacity:.6;}
+
 
     /* TOP BAR */
     .topbar{display:flex;align-items:center;justify-content:space-between;padding:14px 20px 0;flex-shrink:0;}
@@ -1075,14 +1071,7 @@
     </div>
     <div class="card" id="card"><p class="card-empty" id="cardEmpty">L'oracle attend ta question silencieuse…</p></div>
     <p class="hint" id="hintText">touche l'orbe pour révéler</p>
-  </div>  <!-- AD BANNER -->
-  <div class="ad-banner" id="adBanner">
-    <ins class="adsbygoogle"
-         style="display:inline-block;width:320px;height:50px"
-         data-ad-client="ca-app-pub-9988745537721305"
-         data-ad-slot="5872332879"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-  </div>
+  </div>  <!-- AD BANNER removed -->
 </div>
 
 <!-- LIMITE QUOTIDIENNE -->
@@ -4413,7 +4402,6 @@ function applyI18n(){
   if(document.getElementById('perk1')) document.getElementById('perk1').textContent=t.perk1;
   if(document.getElementById('perk2')) document.getElementById('perk2').textContent=t.perk2;
   if(document.getElementById('perk3')) document.getElementById('perk3').textContent=t.perk3;
-  (document.getElementById('adContent')||{}).textContent=lang==='fr'?'Publicité · AdMob Banner':'Advertisement · AdMob Banner';
 }
 
 // Check if lang already chosen
@@ -4503,8 +4491,6 @@ function selectPlanet(id){
   const orb=document.getElementById('orb');orb.style.transform='scale(.92)';setTimeout(()=>{orb.style.transform='';},150);
 }
 
-// ── PREMIUM ───────────────────────────────────────────────────────────────
-function hideBanner(){document.getElementById('adBanner').classList.add('hidden');}
 
 // ── DECK ──────────────────────────────────────────────────────────────────
 function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]];}return a;}
