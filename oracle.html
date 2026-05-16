@@ -126,6 +126,10 @@
     .dd-text{font-size:.78rem;color:var(--text-muted);line-height:1.5;}
     @keyframes ddFadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
     .orb{position:absolute;inset:0;border-radius:50%;transition:box-shadow .4s ease,transform .15s ease;animation:orbPulse 4s ease-in-out infinite;}
+    @keyframes planetOut{0%{opacity:1;transform:scale(1);}100%{opacity:0;transform:scale(.7);}}
+    @keyframes planetIn{0%{opacity:0;transform:scale(1.15);}100%{opacity:1;transform:scale(1);}}
+    .orb-wrapper.planet-exit{animation:planetOut .25s ease-in forwards;pointer-events:none;}
+    .orb-wrapper.planet-enter{animation:planetIn .3s ease-out forwards;}
     /* ── OMBRE PLANÈTE (arc sur la gauche) ── */
     .orb-shadow{position:absolute;inset:0;border-radius:50%;pointer-events:none;z-index:3;
       background:radial-gradient(ellipse at 20% 50%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 52%,rgba(0,0,0,.55) 68%,rgba(0,0,0,.82) 80%,rgba(0,0,0,.92) 100%);}
@@ -4416,14 +4420,30 @@ function applyI18n(){
 if(state.lang){setLang(state.lang);}
 
 // ── PLANET SYSTEM ─────────────────────────────────────────────────────────
-function applyPlanetSkin(planetId){
+function applyPlanetSkin(planetId, animate){
   const orb=document.getElementById('orb');
-  ['planet-earth','planet-mercury','planet-venus','planet-moon','planet-mars','planet-jupiter','planet-saturn','planet-neptune','planet-uranus','planet-pluto','planet-pangaea','planet-sun'].forEach(c=>orb.classList.remove(c));
-  const p=PLANETS.find(x=>x.id===planetId);
-  if(p)orb.classList.add(p.cssClass);
-  const pt=T[lang].planets[planetId];
-  document.getElementById('planetIndicatorEmoji').textContent=p?p.emoji:'🌍';
-  document.getElementById('planetIndicatorName').textContent=pt?pt.name:'';
+  const wrapper=orb.closest('.orb-wrapper')||orb.parentElement;
+  const allPlanetClasses=['planet-earth','planet-mercury','planet-venus','planet-moon','planet-mars','planet-jupiter','planet-saturn','planet-neptune','planet-uranus','planet-pluto','planet-pangaea','planet-sun'];
+  function doSwap(){
+    allPlanetClasses.forEach(c=>orb.classList.remove(c));
+    const p=PLANETS.find(x=>x.id===planetId);
+    if(p)orb.classList.add(p.cssClass);
+    const pt=T[lang].planets[planetId];
+    document.getElementById('planetIndicatorEmoji').textContent=p?p.emoji:'🌍';
+    document.getElementById('planetIndicatorName').textContent=pt?pt.name:'';
+  }
+  if(animate){
+    wrapper.classList.remove('planet-enter');
+    wrapper.classList.add('planet-exit');
+    setTimeout(()=>{
+      doSwap();
+      wrapper.classList.remove('planet-exit');
+      wrapper.classList.add('planet-enter');
+      setTimeout(()=>wrapper.classList.remove('planet-enter'),320);
+    },260);
+  } else {
+    doSwap();
+  }
 }
 
 function checkPlanetUnlocks(){
@@ -4479,7 +4499,7 @@ function renderPlanetPanel(){
 }
 
 function selectPlanet(id){
-  haptic('medium');state.activePlanet=id;saveState();applyPlanetSkin(id);renderPlanetPanel();
+  haptic('medium');state.activePlanet=id;saveState();applyPlanetSkin(id,true);renderPlanetPanel();
   const orb=document.getElementById('orb');orb.style.transform='scale(.92)';setTimeout(()=>{orb.style.transform='';},150);
 }
 
@@ -6199,6 +6219,7 @@ function quizAnswer(choiceIdx) {
   if(nextBtn) nextBtn.style.display='block';
   const q = quizSession.questions[quizSession.current];
   const correct = choiceIdx === q.answer;
+  haptic(correct ? 'celebration' : 'light');
   quizSession.answers.push(correct);
   // Track global quiz stats
   state.quizTotal = (state.quizTotal || 0) + 1;
@@ -6766,6 +6787,7 @@ function endSpaceGame(survived) {
   const earnedFragment = score >= 50 && (state.planetFragments || 0) < 5;
   if (earnedFragment) {
     state.planetFragments = (state.planetFragments || 0) + 1;
+    haptic('celebration');
   }
 
   // Draw game over screen
