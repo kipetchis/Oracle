@@ -4380,9 +4380,7 @@ function setLang(l){
   applyPlanetSkin(state.activePlanet);
   updateFavBadge();
   setTimeout(() => { initDailyBanner(); if(state.notifEnabled) scheduleNotif();
-    // Debug: ?unlock=pangaea to force unlock
-    const _dbg = new URLSearchParams(window.location.search).get('unlock');
-    if(_dbg==='pangaea'){state.read=state.read||{};state.read.dinosaurs=20;state.read.total=(state.read.total||0);if(!state.unlockedPlanets.includes('pangaea'))state.unlockedPlanets.push('pangaea');state.activePlanet='pangaea';saveState();applyPlanetSkin('pangaea');showToast('🦕 Pangée débloquée !');}
+
     // Show login button by default; Firebase will update it once loaded
     const _lb = document.getElementById('loginBtn');
     if(_lb) _lb.style.display='flex';
