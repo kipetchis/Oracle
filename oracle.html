@@ -498,6 +498,21 @@
     .daily-limit-favs-btn:hover{background:rgba(255,255,255,.1);}
 
     .hint{margin-top:14px;font-family:'Space Mono',monospace;font-size:.55rem;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);opacity:.5;flex-shrink:0;padding-bottom:6px;}
+    /* EXPLORE */
+    .explore-row{margin-top:8px;flex-shrink:0;}
+    .explore-btn{background:rgba(192,132,252,.12);border:1px solid rgba(192,132,252,.3);color:rgba(255,255,255,.8);font-family:'Space Mono',monospace;font-size:.65rem;letter-spacing:.1em;padding:6px 18px;border-radius:20px;cursor:pointer;transition:all .2s;}
+    .explore-btn:hover,.explore-btn:active{background:rgba(192,132,252,.22);border-color:rgba(192,132,252,.5);}
+    .explore-btn.cat-active{background:rgba(0,194,255,.18);border-color:rgba(0,194,255,.5);color:#fff;}
+    .explore-panel{position:fixed;inset:0;background:var(--bg);z-index:200;display:none;flex-direction:column;overflow:hidden;}
+    .explore-panel.open{display:flex;}
+    .explore-grid{flex:1;overflow-y:auto;padding:12px;display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;-webkit-overflow-scrolling:touch;}
+    .explore-cat-card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 10px;text-align:center;cursor:pointer;transition:all .2s;display:flex;flex-direction:column;align-items:center;gap:6px;}
+    .explore-cat-card:hover,.explore-cat-card:active{background:rgba(192,132,252,.12);border-color:rgba(192,132,252,.3);}
+    .explore-cat-card .ecc-icon{font-size:1.6rem;}
+    .explore-cat-card .ecc-name{font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:600;color:rgba(255,255,255,.85);}
+    .explore-cat-card .ecc-progress{font-family:'Space Mono',monospace;font-size:.55rem;color:var(--text-muted);letter-spacing:.05em;}
+    .explore-cat-card .ecc-bar{width:100%;height:3px;background:rgba(255,255,255,.06);border-radius:2px;overflow:hidden;}
+    .explore-cat-card .ecc-bar-fill{height:100%;background:linear-gradient(90deg,var(--glow-space),var(--glow-purple));border-radius:2px;transition:width .3s;}
 
     /* ── FAIT DU JOUR ── */
     .daily-banner{width:100%;max-width:400px;background:linear-gradient(135deg,rgba(192,132,252,.12),rgba(0,194,255,.08));border:1px solid rgba(192,132,252,.25);border-radius:14px;padding:12px 14px;margin-bottom:16px;cursor:pointer;transition:all .2s;position:relative;flex-shrink:0;}
@@ -1070,8 +1085,17 @@
       <div class="orb-label" id="orbLabel">Appuie</div>
     </div>
     <div class="card" id="card"><p class="card-empty" id="cardEmpty">L'oracle attend ta question silencieuse…</p></div>
+    <div class="explore-row" id="exploreRow">
+      <button class="explore-btn" id="exploreBtn" onclick="haptic();toggleExplore()">🧭 <span id="exploreBtnLabel">Explorer</span></button>
+    </div>
     <p class="hint" id="hintText">touche l'orbe pour révéler</p>
   </div>  <!-- AD BANNER removed -->
+</div>
+
+<!-- EXPLORE PANEL -->
+<div class="explore-panel" id="explorePanel">
+  <div class="panel-header"><span class="panel-title" id="explorePanelTitle">🧭 Explorer une catégorie</span><button class="close-btn" onclick="haptic();closeExplorePanel()">×</button></div>
+  <div class="explore-grid" id="exploreGrid"></div>
 </div>
 
 <!-- LIMITE QUOTIDIENNE -->
@@ -1225,6 +1249,7 @@ const T={
   fr:{
     headerSub:"Le monde a quelque chose à te dire",
     orbPress:"Appuie", orbAgain:"Encore",
+    exploreBtn:"Explorer", explorePanelTitle:"🧭 Explorer une catégorie", exploreProgress:function(n){return n+' / 20 lus';},
     hint:"touche l'orbe pour révéler",
     cardEmpty:"L'oracle attend ta question silencieuse…",
     favTitle:"♡ Favoris", achTitle:"⬡ Succès",
@@ -1280,6 +1305,7 @@ const T={
   en:{
     headerSub:"The world has something to tell you",
     orbPress:"Tap", orbAgain:"Again",
+    exploreBtn:"Explore", explorePanelTitle:"🧭 Explore a category", exploreProgress:function(n){return n+' / 20 read';},
     hint:"touch the orb to reveal",
     cardEmpty:"The oracle awaits your silent question…",
     favTitle:"♡ Favorites", achTitle:"⬡ Achievements",
@@ -4389,6 +4415,8 @@ function applyI18n(){
   document.getElementById('orbLabel').textContent=t.orbPress;
   document.getElementById('hintText').textContent=t.hint;
   document.getElementById('cardEmpty').textContent=t.cardEmpty;
+  document.getElementById('exploreBtnLabel').textContent=t.exploreBtn;
+  document.getElementById('explorePanelTitle').textContent=t.explorePanelTitle;
   document.getElementById('favPanelTitle').textContent=t.favTitle;
   document.getElementById('achPanelTitle').textContent=t.achTitle;
   document.getElementById('shareTitle').textContent=t.shareTitle;
@@ -4530,6 +4558,7 @@ function confirmPoolReset(){
 }
 
 // ── SHOW FACT ─────────────────────────────────────────────────────────────
+let exploreCat = null; // temporary category filter, reset after each fact
 function showFact(){
   haptic('medium');
   const ddCard=document.querySelector('.card.dd-open');if(ddCard)ddCard.classList.remove('dd-open');
@@ -4541,17 +4570,25 @@ function showFact(){
     if(state.dailyCount>=LIMIT){showDailyLimit();return;}
   }
   // ── Rebuild unseen deck if needed ──
-  if(!deck.length||deckIdx>=deck.length){
+  if(exploreCat){
+    // Explore mode: pick from chosen category, unseen first
+    const seen=getSeenIds();
+    let pool=FACTS.filter(f=>f.cat===exploreCat&&!seen.has(f.id));
+    if(pool.length===0) pool=FACTS.filter(f=>f.cat===exploreCat); // all seen → allow repeats
+    if(pool.length===0){resetExploreBtn();return;}
+    currentFact=shuffle(pool)[0];
+  } else if(!deck.length||deckIdx>=deck.length){
     const seen=getSeenIds();
     const remaining=FACTS.filter(f=>!seen.has(f.id));
     if(remaining.length===0){
-      // Tous les faits ont été vus → message spécial
       showPoolExhausted();
       return;
     }
     deck=shuffle(remaining);deckIdx=0;
+    currentFact=deck[deckIdx++];
+  } else {
+    currentFact=deck[deckIdx++];
   }
-  currentFact=deck[deckIdx++];
   const t=T[lang];
   const orb=document.getElementById('orb'),card=document.getElementById('card'),label=document.getElementById('orbLabel');
   const r=document.createElement('div');r.className='ripple';orb.appendChild(r);setTimeout(()=>r.remove(),850);
@@ -4611,6 +4648,62 @@ function showFact(){
     }
     setTimeout(()=>{checkAchievements();checkPlanetUnlocks();maybeShowQuiz();maybeShowUfo();},400);
   },120);
+}
+
+// ── EXPLORE MODE ──────────────────────────────────────────────────────────
+
+function toggleExplore(){
+  if(exploreCat){
+    resetExploreBtn();
+    showToast(lang==='fr'?'🎲 Retour en aléatoire':'🎲 Back to random');
+  } else {
+    openExplorePanel();
+  }
+}
+
+function openExplorePanel(){
+  renderExploreGrid();
+  document.getElementById('explorePanel').classList.add('open');
+}
+function closeExplorePanel(){
+  document.getElementById('explorePanel').classList.remove('open');
+}
+
+function renderExploreGrid(){
+  const t=T[lang];
+  const cats=Object.keys(t.catLabels);
+  const grid=document.getElementById('exploreGrid');
+  grid.innerHTML=cats.map(cat=>{
+    const icon=CAT_ICONS[cat]||'✦';
+    const name=t.catLabels[cat];
+    const readCount=Math.min(state.read[cat]||0,20);
+    const pct=Math.round(readCount/20*100);
+    return `<div class="explore-cat-card" onclick="haptic('medium');pickExplore('${cat}')">
+      <span class="ecc-icon">${icon}</span>
+      <span class="ecc-name">${name}</span>
+      <span class="ecc-progress">${t.exploreProgress(readCount)}</span>
+      <div class="ecc-bar"><div class="ecc-bar-fill" style="width:${pct}%"></div></div>
+    </div>`;
+  }).join('');
+}
+
+function pickExplore(cat){
+  exploreCat=cat;
+  closeExplorePanel();
+  // Update button to show selected category
+  const btn=document.getElementById('exploreBtn');
+  const icon=CAT_ICONS[cat]||'✦';
+  const name=T[lang].catLabels[cat];
+  btn.innerHTML=`${icon} <span id="exploreBtnLabel">${name}</span>`;
+  btn.classList.add('cat-active');
+  showToast(lang==='fr'?`🧭 Prochain fait : ${name}`:`🧭 Next fact: ${name}`);
+}
+
+function resetExploreBtn(){
+  exploreCat=null;
+  const btn=document.getElementById('exploreBtn');
+  btn.innerHTML=`🧭 <span id="exploreBtnLabel">${T[lang].exploreBtn}</span>`;
+  btn.classList.remove('cat-active');
 }
 
 // ── SHARE ─────────────────────────────────────────────────────────────────
@@ -7656,6 +7749,11 @@ function checkFirebaseConfig(){
 })();
 
 window.showAuthScreen=showAuthScreen;
+window.openExplorePanel=openExplorePanel;
+window.closeExplorePanel=closeExplorePanel;
+window.pickExplore=pickExplore;
+window.resetExploreBtn=resetExploreBtn;
+window.toggleExplore=toggleExplore;
 window.hideAuthScreen=hideAuthScreen;
 window.skipAuth=skipAuth;
 window.toggleAuthMode=toggleAuthMode;
@@ -7740,7 +7838,7 @@ window.addEventListener('popstate', function(e) {
   const dl = document.getElementById('dailyLimitScreen');
   if (dl && dl.classList.contains('active')) { closeDailyLimit(); _backPressCount=0; history.pushState({screen:'app'}, ''); return; }
   // If any panel is open, close it
-  const panels = ['panelFavs','panelHistory','panelAchievements','statsPanel','sharePanel','planetPanel'];
+  const panels = ['explorePanel','panelFavs','panelHistory','panelAchievements','statsPanel','sharePanel','planetPanel'];
   for (const id of panels) {
     const el = document.getElementById(id);
     if (el && (el.classList.contains('open') || el.classList.contains('active') || el.style.display === 'flex')) {
