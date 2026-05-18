@@ -979,7 +979,7 @@
     }
     /* ── ONBOARDING ──────────────────────────────────────────── */
     .onboarding{position:fixed;inset:0;z-index:55;background:var(--bg);display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;opacity:1;transition:opacity .5s;}
-    .onboarding.hidden{opacity:0;pointer-events:none;}
+    .onboarding.hidden{display:none;}
     .onboarding-slides{position:relative;width:100%;max-width:400px;height:380px;overflow:hidden;}
     .onboarding-slide{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:24px 32px;text-align:center;opacity:0;transform:translateX(60px);transition:all .45s cubic-bezier(.4,0,.2,1);pointer-events:none;}
     .onboarding-slide.active{opacity:1;transform:translateX(0);pointer-events:auto;}
@@ -1002,42 +1002,7 @@
 <body>
 
 <!-- LANGUAGE PICKER -->
-<!-- ONBOARDING -->
-<div class="onboarding hidden" id="onboarding">
-  <button class="onboarding-skip" id="obSkip" onclick="finishOnboarding()">Passer</button>
-  <div class="onboarding-slides" id="obSlides">
-    <div class="onboarding-slide active" data-ob="0">
-      <div class="onboarding-emoji">🔮</div>
-      <div class="onboarding-title" data-ob-title="0"></div>
-      <div class="onboarding-desc" data-ob-desc="0"></div>
-    </div>
-    <div class="onboarding-slide" data-ob="1">
-      <div class="onboarding-emoji">🪐</div>
-      <div class="onboarding-title" data-ob-title="1"></div>
-      <div class="onboarding-desc" data-ob-desc="1"></div>
-    </div>
-    <div class="onboarding-slide" data-ob="2">
-      <div class="onboarding-emoji">🧭</div>
-      <div class="onboarding-title" data-ob-title="2"></div>
-      <div class="onboarding-desc" data-ob-desc="2"></div>
-    </div>
-    <div class="onboarding-slide" data-ob="3">
-      <div class="onboarding-emoji">✨</div>
-      <div class="onboarding-title" data-ob-title="3"></div>
-      <div class="onboarding-desc" data-ob-desc="3"></div>
-    </div>
-  </div>
-  <div class="onboarding-dots" id="obDots">
-    <div class="onboarding-dot active" data-dot="0"></div>
-    <div class="onboarding-dot" data-dot="1"></div>
-    <div class="onboarding-dot" data-dot="2"></div>
-    <div class="onboarding-dot" data-dot="3"></div>
-  </div>
-  <div class="onboarding-nav">
-    <button class="onboarding-btn" id="obPrev" onclick="obNav(-1)" style="visibility:hidden">←</button>
-    <button class="onboarding-btn primary" id="obNext" onclick="obNav(1)"></button>
-  </div>
-</div>
+<!-- ONBOARDING (created dynamically by JS for new users only) -->
 
 <div class="lang-screen" id="langScreen">
   <div class="lang-title">Oracle</div>
@@ -5784,21 +5749,48 @@ const OB_SLIDES = {
 let _obIdx = 0;
 
 function showOnboarding(){
-  const ob = document.getElementById('onboarding');
   const slides = OB_SLIDES[lang]||OB_SLIDES.en;
-  // Fill text
-  slides.forEach((s,i)=>{
-    const t=document.querySelector(`[data-ob-title="${i}"]`);
-    const d=document.querySelector(`[data-ob-desc="${i}"]`);
-    if(t) t.textContent=s.title;
-    if(d) d.textContent=s.desc;
-  });
-  // Set button labels
-  document.getElementById('obNext').textContent=lang==='fr'?'Suivant →':'Next →';
-  document.getElementById('obSkip').textContent=lang==='fr'?'Passer':'Skip';
+  const emojis = ['🔮','🪐','🧭','✨'];
+  const skipLabel = lang==='fr'?'Passer':'Skip';
+  const nextLabel = lang==='fr'?'Suivant →':'Next →';
+
+  // Build onboarding DOM
+  const ob = document.createElement('div');
+  ob.className = 'onboarding';
+  ob.id = 'onboarding';
+  ob.innerHTML = `
+    <button class="onboarding-skip" id="obSkip" onclick="finishOnboarding()">${skipLabel}</button>
+    <div class="onboarding-slides" id="obSlides">
+      ${slides.map((s,i)=>`
+        <div class="onboarding-slide ${i===0?'active':''}" data-ob="${i}">
+          <div class="onboarding-emoji">${emojis[i]}</div>
+          <div class="onboarding-title">${s.title}</div>
+          <div class="onboarding-desc">${s.desc}</div>
+        </div>
+      `).join('')}
+    </div>
+    <div class="onboarding-dots" id="obDots">
+      ${slides.map((_,i)=>`<div class="onboarding-dot ${i===0?'active':''}" data-dot="${i}"></div>`).join('')}
+    </div>
+    <div class="onboarding-nav">
+      <button class="onboarding-btn" id="obPrev" onclick="obNav(-1)" style="visibility:hidden">←</button>
+      <button class="onboarding-btn primary" id="obNext" onclick="obNav(1)">${nextLabel}</button>
+    </div>
+  `;
+  document.body.appendChild(ob);
+
+  // Swipe support
+  let _sx=0,_sy=0;
+  ob.addEventListener('touchstart',e=>{_sx=e.touches[0].clientX;_sy=e.touches[0].clientY;},{passive:true});
+  ob.addEventListener('touchend',e=>{
+    const dx=e.changedTouches[0].clientX-_sx;
+    const dy=e.changedTouches[0].clientY-_sy;
+    if(Math.abs(dx)>50 && Math.abs(dx)>Math.abs(dy)){
+      if(dx<0) obNav(1); else obNav(-1);
+    }
+  },{passive:true});
+
   _obIdx=0;
-  _obUpdateSlide();
-  ob.classList.remove('hidden');
 }
 
 function obNav(dir){
@@ -5843,24 +5835,11 @@ function finishOnboarding(){
   haptic();
   state.onboarded=true; saveState();
   const ob=document.getElementById('onboarding');
-  ob.classList.add('hidden');
-  setTimeout(()=>{ob.remove(); _finishLangSetup();},500);
+  ob.style.transition='opacity .4s';
+  ob.style.opacity='0';
+  ob.style.pointerEvents='none';
+  setTimeout(()=>{ob.remove(); _finishLangSetup();},450);
 }
-
-// Swipe support for onboarding
-(function(){
-  let _sx=0,_sy=0;
-  const el=document.getElementById('onboarding');
-  if(!el) return;
-  el.addEventListener('touchstart',e=>{_sx=e.touches[0].clientX;_sy=e.touches[0].clientY;},{passive:true});
-  el.addEventListener('touchend',e=>{
-    const dx=e.changedTouches[0].clientX-_sx;
-    const dy=e.changedTouches[0].clientY-_sy;
-    if(Math.abs(dx)>50 && Math.abs(dx)>Math.abs(dy)){
-      if(dx<0) obNav(1); else obNav(-1);
-    }
-  },{passive:true});
-})();
 
 function applyI18n(){
   const t=T[lang];
@@ -5886,7 +5865,11 @@ function applyI18n(){
 }
 
 // Check if lang already chosen
-if(state.lang){setLang(state.lang);}
+if(state.lang){
+  // Existing users: mark as onboarded if not already
+  if(!state.onboarded){ state.onboarded=true; saveState(); }
+  setLang(state.lang);
+}
 
 // ── PLANET SYSTEM ─────────────────────────────────────────────────────────
 function applyPlanetSkin(planetId, animate){
@@ -5969,6 +5952,7 @@ function renderPlanetPanel(){
 
 function selectPlanet(id){
   haptic('medium');state.activePlanet=id;saveState();applyPlanetSkin(id,true);renderPlanetPanel();
+  if(window._switchAmbient) window._switchAmbient(id);
   const orb=document.getElementById('orb');orb.style.transform='scale(.92)';setTimeout(()=>{orb.style.transform='';},150);
 }
 
@@ -9130,42 +9114,104 @@ function checkFirebaseConfig(){
 
 
 
-// ── MUSIQUE D'AMBIANCE ────────────────────────────────────────────────────
+// ── MUSIQUE D'AMBIANCE PAR PLANÈTE ────────────────────────────────────────
 (function(){
-  const AMBIENT_URL = '/Oracle/audio/ambient.mp3';
-  let _audio = null, _started = false;
+  const AMBIENT_BASE = '/Oracle/audio/';
+  const AMBIENT_MAP = {
+    earth:'ambient-earth.mp3', mars:'ambient-mars.mp3', jupiter:'ambient-jupiter.mp3',
+    saturn:'ambient-saturn.mp3', neptune:'ambient-neptune.mp3', venus:'ambient-venus.mp3',
+    mercury:'ambient-mercury.mp3', pluto:'ambient-pluto.mp3', sun:'ambient-sun.mp3',
+    moon:'ambient-moon.mp3', nebula:'ambient-nebula.mp3', pangaea:'ambient-pangaea.mp3'
+  };
+  const VOL = 0.4, FADE_MS = 1500, FADE_STEP = 30;
+  let _current = null, _currentPlanet = null, _started = false;
 
-  function startAmbient(){
-    if(_started) return;
+  function _createAudio(planet){
+    const file = AMBIENT_MAP[planet] || AMBIENT_MAP.earth;
+    const a = new Audio(AMBIENT_BASE + file);
+    a.loop = true;
+    a.preload = 'auto';
+    a.volume = 0;
+    return a;
+  }
+
+  function _fadeIn(audio, targetVol, cb){
+    let v = 0;
+    const step = targetVol / (FADE_MS / FADE_STEP);
+    const iv = setInterval(() => {
+      v = Math.min(targetVol, v + step);
+      audio.volume = v;
+      if(v >= targetVol){ clearInterval(iv); if(cb) cb(); }
+    }, FADE_STEP);
+    return iv;
+  }
+
+  function _fadeOut(audio, cb){
+    if(!audio){ if(cb) cb(); return; }
+    let v = audio.volume;
+    const step = v / (FADE_MS / FADE_STEP);
+    const iv = setInterval(() => {
+      v = Math.max(0, v - step);
+      audio.volume = v;
+      if(v <= 0){
+        clearInterval(iv);
+        audio.pause();
+        audio.currentTime = 0;
+        if(cb) cb();
+      }
+    }, FADE_STEP);
+    return iv;
+  }
+
+  function startAmbient(planet){
+    planet = planet || state.activePlanet || 'earth';
+    if(_started && _currentPlanet === planet) return;
     _started = true;
+    _switchTo(planet);
+  }
+
+  function _switchTo(planet){
+    if(_currentPlanet === planet && _current) return;
+    const vol = state.mutedAmbient ? 0 : VOL;
     try {
-      _audio = new Audio(AMBIENT_URL);
-      _audio.loop    = true;
-      _audio.preload = 'auto';
-      _audio.volume  = state.mutedAmbient ? 0 : 0.4;
-      const p = _audio.play();
+      const next = _createAudio(planet);
+      const p = next.play();
       if(p && p.catch) p.catch(e => console.warn('[Oracle ambient]', e));
+      if(_current){
+        const old = _current;
+        _fadeOut(old);
+        if(vol > 0) _fadeIn(next, vol); else next.volume = 0;
+      } else {
+        if(vol > 0) _fadeIn(next, vol); else next.volume = 0;
+      }
+      _current = next;
+      _currentPlanet = planet;
     } catch(e){ console.warn('[Oracle ambient]', e); }
   }
 
+  function switchAmbient(planet){
+    if(!_started) return; // Will start on first gesture
+    _switchTo(planet);
+  }
+
   function syncAmbientMute(){
-    if(!_audio) return;
-    _audio.volume = state.mutedAmbient ? 0 : 0.4;
+    if(!_current) return;
+    _current.volume = state.mutedAmbient ? 0 : VOL;
   }
 
   // Premier geste utilisateur (nécessaire sur iOS/Android)
-  function _boot(){ startAmbient(); }
+  function _boot(){ startAmbient(state.activePlanet || 'earth'); }
   document.addEventListener('touchstart', _boot, {once:true, passive:true, capture:true});
   document.addEventListener('click',      _boot, {once:true, capture:true});
 
   // Pause audio quand l'app passe en arrière-plan, reprend au retour
   document.addEventListener('visibilitychange', function(){
-    if(!_audio) return;
+    if(!_current) return;
     if(document.hidden){
-      _audio.pause();
+      _current.pause();
     } else {
       if(!state.mutedAmbient){
-        const p = _audio.play();
+        const p = _current.play();
         if(p && p.catch) p.catch(e => console.warn('[Oracle ambient resume]', e));
       }
     }
@@ -9173,11 +9219,12 @@ function checkFirebaseConfig(){
 
   // Sécurité supplémentaire : pagehide (fermeture onglet / navigation)
   window.addEventListener('pagehide', function(){
-    if(_audio){ _audio.pause(); _audio.currentTime = 0; }
+    if(_current){ _current.pause(); _current.currentTime = 0; }
   });
 
   window._startAmbient    = startAmbient;
   window._syncAmbientMute = syncAmbientMute;
+  window._switchAmbient   = switchAmbient;
 })();
 
 // ── PARALLAXE GYROSCOPIQUE ────────────────────────────────────────────────
