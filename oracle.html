@@ -95,7 +95,13 @@
     .planet-indicator:hover{background:rgba(255,255,255,.09);}
     .planet-indicator-emoji{font-size:13px;line-height:1;}
     .planet-indicator-name{font-family:'Space Mono',monospace;font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);}
-    .topbar-actions{display:flex;gap:7px;}
+    .topbar-actions{display:flex;gap:7px;position:relative;}
+    .sound-menu{position:absolute;top:48px;right:0;background:var(--panel-bg,#0a0f1a);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:8px 4px;display:none;flex-direction:column;gap:2px;z-index:40;min-width:160px;box-shadow:0 8px 24px rgba(0,0,0,.4);backdrop-filter:blur(12px);}
+    .sound-menu.open{display:flex;}
+    .sound-menu-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;cursor:pointer;font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text);transition:background .15s;white-space:nowrap;}
+    .sound-menu-item:hover{background:rgba(255,255,255,.06);}
+    .sound-menu-item .smi-icon{font-size:1rem;width:22px;text-align:center;}
+    .sound-menu-item .smi-status{margin-left:auto;font-size:.5rem;opacity:.5;}
     .icon-btn.muted { opacity: .45; }
     #muteBtn { font-size: 15px; transition: opacity .2s; }
     .icon-btn{position:relative;width:34px;height:34px;border-radius:50%;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:background .2s;font-size:14px;}
@@ -586,13 +592,6 @@
     .daily-fav-btn{font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:.18em;text-transform:uppercase;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--text-muted);padding:10px 18px;border-radius:40px;cursor:pointer;transition:all .2s;}
     .daily-fav-btn:hover{background:rgba(255,255,255,.12);}
     .daily-fav-btn.active{background:rgba(251,113,133,.12);border-color:rgba(251,113,133,.35);color:#fb7185;}
-    .daily-notif-row{display:flex;align-items:center;gap:10px;margin-top:20px;padding:12px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:12px;max-width:360px;width:100%;}
-    .daily-notif-text{font-style:italic;font-size:.82rem;color:var(--text-muted);flex:1;line-height:1.4;}
-    .daily-notif-btn{font-family:'Space Mono',monospace;font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;background:none;border:1px solid rgba(255,255,255,.15);color:var(--text);padding:6px 12px;border-radius:20px;cursor:pointer;white-space:nowrap;transition:all .2s;flex-shrink:0;}
-    .daily-notif-btn:hover{background:rgba(255,255,255,.08);}
-    .daily-notif-btn.enabled{border-color:#39ff8f;color:#39ff8f;}
-    .notif-time-picker{font-family:'Space Mono',monospace;font-size:.75rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.15);color:var(--text);padding:5px 8px;border-radius:8px;outline:none;flex-shrink:0;color-scheme:dark;}
-    .notif-time-picker:disabled{opacity:.3;}
 
     /* ── STATS ── */
     .stats-overlay{position:fixed;inset:0;z-index:10;background:rgba(5,10,18,.92);backdrop-filter:blur(10px);display:flex;flex-direction:column;transform:translateY(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);}
@@ -1069,7 +1068,6 @@
 <div class="app" id="mainApp" style="display:none">
   <div class="topbar">
     <div class="topbar-left">
-      <span class="topbar-title">Oracle</span>
       <div class="planet-indicator" id="planetIndicator" onclick="haptic();openPlanetPanel()">
         <span class="planet-indicator-emoji" id="planetIndicatorEmoji">🌍</span>
         <span class="planet-indicator-name" id="planetIndicatorName">Terre</span>
@@ -1077,8 +1075,23 @@
     </div>
     <div class="topbar-actions">
       <div class="icon-btn" id="themeToggle" onclick="toggleTheme()" title="Thème">🌙</div>
-      <div class="icon-btn" id="muteAmbiBtn" onclick="toggleAmbientMute()" title="Ambiance">🎵</div>
-      <div class="icon-btn" id="muteSfxBtn" onclick="toggleSfxMute()" title="Sons">🔔</div>
+      <div class="icon-btn" id="soundToggleBtn" onclick="haptic();toggleSoundMenu()" title="Audio">🔊</div>
+      <div class="sound-menu" id="soundMenu">
+        <div class="sound-menu-item" onclick="haptic();toggleAmbientFromMenu()">
+          <span class="smi-icon">🎵</span>
+          <span id="smiMusicLabel">Musique</span>
+          <span class="smi-status" id="smiMusicStatus">ON</span>
+        </div>
+        <div class="sound-menu-item" onclick="haptic();toggleSfxFromMenu()">
+          <span class="smi-icon">🔔</span>
+          <span id="smiSfxLabel">Sons</span>
+          <span class="smi-status" id="smiSfxStatus">ON</span>
+        </div>
+        <div class="sound-menu-item" onclick="haptic();toggleAllAudio()">
+          <span class="smi-icon">🔇</span>
+          <span id="smiAllLabel">Tout couper</span>
+        </div>
+      </div>
       <div class="icon-btn" onclick="haptic();openStats()" title="Statistiques" style="font-size:13px">📊</div>
       <div class="icon-btn" id="favBtn" onclick="haptic();openPanel('favs')" title="Favoris">♡<span class="badge" id="favBadge" style="display:none">0</span></div>
 
@@ -1207,11 +1220,6 @@
     </div>
     <button class="deep-dive-btn" id="dailyDdBtn" onclick="showDailyDeepDive(this)" style="display:none"><span class="dd-icon">🔎</span> <span id="dailyDdLabel">Creuser le sujet</span></button>
     <div class="deep-dive-container" id="dailyDdContainer" style="display:none"></div>
-    <div class="daily-notif-row" id="notifRow">
-      <div class="daily-notif-text" id="dailyNotifText">Rappel quotidien</div>
-      <input type="time" id="notifTimePicker" class="notif-time-picker" value="09:00" onchange="setNotifTime(this.value)">
-      <button class="daily-notif-btn" id="dailyNotifBtn" onclick="toggleNotif()">🔔 Activer</button>
-    </div>
   </div>
 </div>
 
@@ -5596,7 +5604,7 @@ const buildPlanets=(lang)=>[
 // ── STATE ─────────────────────────────────────────────────────────────────
 function loadState(){
   try{const s=localStorage.getItem('oracle_v7');if(s)return JSON.parse(s);}catch(e){}
-  return{favs:[],read:{},history:[],unlocked:[],streak:1,lastDate:null,shares:0,activePlanet:'earth',unlockedPlanets:['earth'],lang:null,notifEnabled:false,notifTime:'09:00',lastDailyDate:null,quizTotal:0,quizCorrect:0,muted:false,mutedAmbient:false,mutedSfx:false,dailyCount:0,dailyCountDate:null,planetFragments:0,ephemRead:0,secretTaps:0,ephemHistory:[]};
+  return{favs:[],read:{},history:[],unlocked:[],streak:1,lastDate:null,shares:0,activePlanet:'earth',unlockedPlanets:['earth'],lang:null,lastDailyDate:null,quizTotal:0,quizCorrect:0,muted:false,mutedAmbient:false,mutedSfx:false,dailyCount:0,dailyCountDate:null,planetFragments:0,ephemRead:0,secretTaps:0,ephemHistory:[]};
 }
 function saveState(){
   try{localStorage.setItem('oracle_v7',JSON.stringify(state));}catch(e){}
@@ -5767,7 +5775,7 @@ function _finishLangSetup(){
   applyI18n();
   applyPlanetSkin(state.activePlanet);
   updateFavBadge();
-  setTimeout(() => { initDailyBanner(); if(state.notifEnabled) scheduleNotif();
+  setTimeout(() => { initDailyBanner(); 
 
     // Show login button by default; Firebase will update it once loaded
     const _lb = document.getElementById('loginBtn');
@@ -6921,7 +6929,6 @@ function openDailyOverlay() {
   } else {
     dailySrcEl.style.display = 'none';
   }
-  updateNotifBtn();
 
   // Bouton favori
   _updateDailyFavBtn(fact);
@@ -7027,103 +7034,6 @@ function shareDailyFact() {
     document.getElementById('shareOverlay').classList.add('open');
     document.getElementById('shareSheet').classList.add('open');
   }, 200);
-}
-
-// ── NOTIFICATIONS ─────────────────────────────────────────────────────────
-let _notifTimer = null;
-
-function updateNotifBtn() {
-  const btn = document.getElementById('dailyNotifBtn');
-  const picker = document.getElementById('notifTimePicker');
-  const txt = document.getElementById('dailyNotifText');
-  if (!btn) return;
-  const enabled = state.notifEnabled;
-  btn.textContent = enabled
-    ? (lang === 'fr' ? '✓ Activé' : '✓ Enabled')
-    : (lang === 'fr' ? '🔔 Activer' : '🔔 Enable');
-  btn.className = 'daily-notif-btn' + (enabled ? ' enabled' : '');
-  if (picker) {
-    picker.value = state.notifTime || '09:00';
-    picker.disabled = !enabled;
-  }
-  if (txt) {
-    if (enabled) {
-      const t = state.notifTime || '09:00';
-      txt.textContent = lang === 'fr' ? `Rappel à ${t}` : `Reminder at ${t}`;
-    } else {
-      txt.textContent = lang === 'fr' ? 'Rappel quotidien' : 'Daily reminder';
-    }
-  }
-}
-
-function setNotifTime(val) {
-  state.notifTime = val;
-  saveState();
-  updateNotifBtn();
-  if (state.notifEnabled) scheduleNotif();
-}
-
-async function toggleNotif() {
-  haptic('light');
-  if (state.notifEnabled) {
-    state.notifEnabled = false;
-    if (_notifTimer) { clearTimeout(_notifTimer); _notifTimer = null; }
-    saveState();
-    updateNotifBtn();
-    showToast(lang === 'fr' ? 'Rappels désactivés' : 'Reminders disabled');
-    return;
-  }
-  if (!('Notification' in window)) {
-    showToast(lang === 'fr' ? 'Notifications non supportées sur ce navigateur' : 'Notifications not supported here');
-    return;
-  }
-  const perm = await Notification.requestPermission();
-  if (perm === 'granted') {
-    state.notifEnabled = true;
-    if (!state.notifTime) state.notifTime = '09:00';
-    saveState();
-    updateNotifBtn();
-    scheduleNotif();
-    showToast(lang === 'fr' ? `🔔 Rappel programmé à ${state.notifTime}` : `🔔 Reminder set for ${state.notifTime}`);
-  } else {
-    showToast(lang === 'fr' ? 'Permission refusée' : 'Permission denied');
-  }
-}
-
-function scheduleNotif() {
-  if (_notifTimer) { clearTimeout(_notifTimer); _notifTimer = null; }
-  if (!state.notifEnabled || Notification.permission !== 'granted') return;
-  const time = state.notifTime || '09:00';
-  const [h, m] = time.split(':').map(Number);
-  const now = new Date();
-  let next = new Date(now.getFullYear(), now.getMonth(), now.getDate(), h, m, 0);
-  if (next <= now) next.setDate(next.getDate() + 1);
-  const ms = next - now;
-
-  _notifTimer = setTimeout(() => {
-    fireNotif();
-    // Schedule next day
-    scheduleNotif();
-  }, ms);
-}
-
-function fireNotif() {
-  const body = lang === 'fr'
-    ? "Le monde a quelque chose à te dire aujourd\u2019hui\u2026"
-    : "The world has something to tell you today\u2026";
-  if ('serviceWorker' in navigator && navigator.serviceWorker.controller) {
-    navigator.serviceWorker.ready.then(reg => {
-      if ('showNotification' in reg) {
-        reg.showNotification('Oracle ✨', {
-          body, icon: '/Oracle/icon-192.png', badge: '/Oracle/icon-192.png',
-          tag: 'oracle-daily', renotify: true,
-          data: { url: '/Oracle/oracle.html' }
-        });
-      }
-    }).catch(() => {});
-  } else {
-    try { new Notification('Oracle ✨', { body, tag: 'oracle-daily' }); } catch(e) {}
-  }
 }
 
 // ── STATS ─────────────────────────────────────────────────────────────────
@@ -8608,23 +8518,72 @@ function toggleTheme(){
 })();
 
 function toggleAmbientMute(){
-  haptic('light');
   state.mutedAmbient = !state.mutedAmbient;
   saveState();
   syncSoundUI();
   if(window._syncAmbientMute) window._syncAmbientMute();
 }
 function toggleSfxMute(){
-  haptic('light');
   state.mutedSfx = !state.mutedSfx;
   saveState();
   syncSoundUI();
 }
+
+// ── SOUND MENU ────────────────────────────────────────────────────────────
+function toggleSoundMenu(){
+  const menu = document.getElementById('soundMenu');
+  if(!menu) return;
+  const isOpen = menu.classList.toggle('open');
+  if(isOpen) updateSoundMenu();
+}
+
+function closeSoundMenu(){
+  const menu = document.getElementById('soundMenu');
+  if(menu) menu.classList.remove('open');
+}
+
+function updateSoundMenu(){
+  const musicSt = document.getElementById('smiMusicStatus');
+  const sfxSt = document.getElementById('smiSfxStatus');
+  const allLabel = document.getElementById('smiAllLabel');
+  const btn = document.getElementById('soundToggleBtn');
+  if(musicSt) musicSt.textContent = state.mutedAmbient ? 'OFF' : 'ON';
+  if(sfxSt) sfxSt.textContent = state.mutedSfx ? 'OFF' : 'ON';
+  const allMuted = state.mutedAmbient && state.mutedSfx;
+  if(allLabel) allLabel.textContent = allMuted ? (lang==='fr'?'Tout activer':'Enable all') : (lang==='fr'?'Tout couper':'Mute all');
+  if(btn) btn.textContent = allMuted ? '🔇' : (state.mutedAmbient || state.mutedSfx) ? '🔉' : '🔊';
+}
+
+function toggleAmbientFromMenu(){
+  toggleAmbientMute();
+  updateSoundMenu();
+}
+
+function toggleSfxFromMenu(){
+  toggleSfxMute();
+  updateSoundMenu();
+}
+
+function toggleAllAudio(){
+  const allMuted = state.mutedAmbient && state.mutedSfx;
+  state.mutedAmbient = !allMuted;
+  state.mutedSfx = !allMuted;
+  saveState();
+  syncSoundUI();
+  if(window._syncAmbientMute) window._syncAmbientMute();
+  updateSoundMenu();
+  showToast(allMuted ? (lang==='fr'?'Audio activé':'Audio enabled') : (lang==='fr'?'Audio coupé':'Audio muted'));
+}
+
+// Close sound menu when tapping elsewhere
+document.addEventListener('click', function(e){
+  if(!e.target.closest('#soundToggleBtn') && !e.target.closest('#soundMenu')){
+    closeSoundMenu();
+  }
+}, true);
+
 function syncSoundUI(){
-  const ambi = document.getElementById('muteAmbiBtn');
-  const sfx = document.getElementById('muteSfxBtn');
-  if(ambi){ ambi.textContent = state.mutedAmbient ? '🎵' : '🎵'; ambi.classList.toggle('muted', state.mutedAmbient); ambi.title = state.mutedAmbient ? (lang==='fr'?'Ambiance coupée':'Ambiance off') : (lang==='fr'?'Ambiance':'Ambiance'); }
-  if(sfx){ sfx.textContent = state.mutedSfx ? '🔕' : '🔔'; sfx.classList.toggle('muted', state.mutedSfx); sfx.title = state.mutedSfx ? (lang==='fr'?'Sons coupés':'Sounds off') : (lang==='fr'?'Sons':'Sounds'); }
+  updateSoundMenu();
 }
 
 // ── AMBIENT SOUND ENGINE ──────────────────────────────────────────────────
