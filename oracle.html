@@ -6018,8 +6018,11 @@ function shuffle(arr){const a=[...arr];for(let i=a.length-1;i>0;i--){const j=Mat
 let deck=[], deckIdx=0, currentFact=null;
 
 function getSeenIds(){
-  if(!state.seenIds || !state.seenIds.length) return new Set();
-  return new Set(state.seenIds);
+  const ids = new Set(state.seenIds || []);
+  // Backward compat: also mark history & favs as seen
+  if(state.history) state.history.forEach(h => ids.add(h.id));
+  if(state.favs) state.favs.forEach(f => ids.add(f.id));
+  return ids;
 }
 
 function buildUnseenDeck(){
@@ -6070,16 +6073,29 @@ function showFact(){
     if(pool.length===0) pool=FACTS.filter(f=>f.cat===exploreCat); // all seen → allow repeats
     if(pool.length===0){resetExploreBtn();return;}
     currentFact=shuffle(pool)[0];
-  } else if(!deck.length||deckIdx>=deck.length){
+  } else {
+    // Normal mode: always pick from unseen facts
     const seen=getSeenIds();
-    const remaining=FACTS.filter(f=>!seen.has(f.id));
-    if(remaining.length===0){
+    const unseen=FACTS.filter(f=>!seen.has(f.id));
+    if(unseen.length===0){
       showPoolExhausted();
       return;
     }
-    deck=shuffle(remaining);deckIdx=0;
-    currentFact=deck[deckIdx++];
-  } else {
+    if(!deck.length || deckIdx>=deck.length){
+      // Rebuild deck from unseen only
+      deck=shuffle(unseen);
+      deckIdx=0;
+    }
+    // Double-check current pick isn't already seen (deck might be stale)
+    while(deckIdx < deck.length && seen.has(deck[deckIdx].id)){
+      deckIdx++;
+    }
+    if(deckIdx >= deck.length){
+      // All remaining in deck were seen, rebuild
+      const freshUnseen=FACTS.filter(f=>!getSeenIds().has(f.id));
+      if(freshUnseen.length===0){ showPoolExhausted(); return; }
+      deck=shuffle(freshUnseen); deckIdx=0;
+    }
     currentFact=deck[deckIdx++];
   }
   const t=T[lang];
