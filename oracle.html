@@ -7828,7 +7828,7 @@ function closeQuiz() {
 }
 
 // ── UFO MINI-GAME ────────────────────────────────────────────────────────
-const UFO_INTERVALS = [20, 30, 40];
+const UFO_INTERVALS = [10, 20, 30];
 let factsReadSinceUfo = 0;
 let _nextUfoInterval = UFO_INTERVALS[Math.floor(Math.random()*UFO_INTERVALS.length)];
 let _ufoEl = null;
@@ -9437,7 +9437,48 @@ function checkFirebaseConfig(){
     }, {passive:true});
   }
 
-  setupGyro();
+  // Fallback tactile pour mobile sans gyroscope (WebView / Bubblewrap)
+  function setupTouchFallback(){
+    let _startX = 0, _startY = 0, _active = false;
+    document.addEventListener('touchstart', function(e){
+      if(e.touches.length !== 1) return;
+      _startX = e.touches[0].clientX;
+      _startY = e.touches[0].clientY;
+      _active = true;
+    }, {passive:true});
+    document.addEventListener('touchmove', function(e){
+      if(!_active || e.touches.length !== 1) return;
+      const dx = (e.touches[0].clientX - _startX) / window.innerWidth * 2;
+      const dy = (e.touches[0].clientY - _startY) / window.innerHeight * 2;
+      applyParallax(
+        Math.max(-1, Math.min(1, dx)),
+        Math.max(-1, Math.min(1, dy))
+      );
+    }, {passive:true});
+    document.addEventListener('touchend', function(){ _active = false; applyParallax(0,0); }, {passive:true});
+  }
+
+  function setupFallback(){
+    if('ontouchstart' in window) setupTouchFallback();
+    else setupMouseFallback();
+  }
+
+  function setupGyroFixed(){
+    if(!window.DeviceOrientationEvent){ setupFallback(); return; }
+    if(typeof DeviceOrientationEvent.requestPermission === 'function'){
+      document.addEventListener('touchend', function _req(){
+        DeviceOrientationEvent.requestPermission()
+          .then(r => { if(r==='granted') window.addEventListener('deviceorientation', onOrientation, {passive:true}); else setupTouchFallback(); })
+          .catch(()=>{ setupTouchFallback(); });
+        document.removeEventListener('touchend', _req);
+      }, {once:true});
+    } else {
+      window.addEventListener('deviceorientation', onOrientation, {passive:true});
+      setTimeout(()=>{ if(!_gyroActive) setupFallback(); }, 3000);
+    }
+  }
+
+  setupGyroFixed();
 })();
 
 window.showAuthScreen=showAuthScreen;
