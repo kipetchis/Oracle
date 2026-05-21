@@ -174,10 +174,10 @@
     .dd-text{font-size:.78rem;color:var(--text-muted);line-height:1.5;}
     @keyframes ddFadeIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
     .orb{position:absolute;inset:0;border-radius:50%;transition:box-shadow .4s ease,transform .15s ease;animation:orbPulse 4s ease-in-out infinite;}
-    @keyframes planetOut{0%{opacity:1;transform:scale(1);}100%{opacity:0;transform:scale(.7);}}
-    @keyframes planetIn{0%{opacity:0;transform:scale(1.15);}100%{opacity:1;transform:scale(1);}}
-    .orb-wrapper.planet-exit{animation:planetOut .25s ease-in forwards;pointer-events:none;}
-    .orb-wrapper.planet-enter{animation:planetIn .3s ease-out forwards;}
+    @keyframes planetOut{0%{opacity:1;transform:rotateY(0deg) scale(1);}50%{opacity:0;transform:rotateY(180deg) scale(.85);}100%{opacity:0;transform:rotateY(180deg) scale(.85);}}
+    @keyframes planetIn{0%{opacity:0;transform:rotateY(180deg) scale(.85);}50%{opacity:1;transform:rotateY(360deg) scale(1);}100%{opacity:1;transform:rotateY(360deg) scale(1);}}
+    .orb-wrapper.planet-exit{animation:planetOut .4s ease-in forwards;pointer-events:none;}
+    .orb-wrapper.planet-enter{animation:planetIn .4s ease-out forwards;}
     /* ── OMBRE PLANÈTE (arc sur la gauche) ── */
     .orb-shadow{position:absolute;inset:0;border-radius:50%;pointer-events:none;z-index:3;
       background:radial-gradient(ellipse at 20% 50%,rgba(0,0,0,0) 30%,rgba(0,0,0,0) 52%,rgba(0,0,0,.55) 68%,rgba(0,0,0,.82) 80%,rgba(0,0,0,.92) 100%);}
@@ -1093,7 +1093,7 @@
         </div>
       </div>
       <div class="icon-btn" onclick="haptic();openStats()" title="Statistiques" style="font-size:13px">📊</div>
-      <div class="icon-btn" id="favBtn" onclick="haptic();openPanel('favs')" title="Favoris">♡<span class="badge" id="favBadge" style="display:none">0</span></div>
+      <div class="icon-btn" id="favBtn" onclick="haptic();openPanel('favs')" title="Favoris">♡</div>
 
       <div class="icon-btn" onclick="haptic();openPanel('achievements')" title="Succès">⬡</div>
       <div class="icon-btn user-avatar-btn" id="userAvatarBtn" onclick="haptic();openAuthPanel()" title="Compte">
@@ -5947,8 +5947,8 @@ function applyPlanetSkin(planetId, animate){
       doSwap();
       wrapper.classList.remove('planet-exit');
       wrapper.classList.add('planet-enter');
-      setTimeout(()=>wrapper.classList.remove('planet-enter'),320);
-    },260);
+      setTimeout(()=>wrapper.classList.remove('planet-enter'),420);
+    },420);
   } else {
     doSwap();
   }
@@ -6546,7 +6546,7 @@ function toggleFav(){
   else{state.favs.push({id:currentFact.id,cat:currentFact.cat,label:T[lang].catLabels[currentFact.cat],text:currentFact.text});if(btn){btn.innerHTML=`<span class="a-icon">♥</span><span class="a-label">${t.favBtn}</span>`;btn.classList.add('fav-active');}setTimeout(()=>checkAchievements(),200);}
   saveState();updateFavBadge();
 }
-function updateFavBadge(){const b=document.getElementById('favBadge'),n=state.favs.length;b.style.display=n>0?'flex':'none';b.textContent=n;}
+function updateFavBadge(){}
 
 function updateAllUI(){
   try{
