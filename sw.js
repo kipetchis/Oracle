@@ -1,8 +1,14 @@
-const VERSION = 'oracle-v2';
+const VERSION = 'oracle-v3';
 
 // Fichiers critiques à pré-cacher à l'installation
 const PRECACHE = [
   '/Oracle/oracle.html',
+  '/Oracle/js/data/facts-fr.js',
+  '/Oracle/js/data/facts-en.js',
+  '/Oracle/js/data/ephemeris.js',
+  '/Oracle/js/data/sources.js',
+  '/Oracle/js/data/deep-dives.js',
+  '/Oracle/js/app.js',
   '/Oracle/audio/ambient-earth.mp3',
   '/Oracle/audio/ambient-mars.mp3',
   '/Oracle/audio/ambient-jupiter.mp3',
@@ -60,8 +66,8 @@ self.addEventListener('fetch', e => {
     return;
   }
 
-  // oracle.html → network-first (toujours servir la dernière version si possible)
-  if (url.pathname.endsWith('oracle.html')) {
+  // oracle.html et fichiers JS → network-first (toujours servir la dernière version si possible)
+  if (url.pathname.endsWith('oracle.html') || url.pathname.endsWith('.js') && url.pathname.startsWith('/Oracle/js/')) {
     e.respondWith(
       fetch(e.request).then(res => {
         const clone = res.clone();
