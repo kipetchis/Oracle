@@ -600,3 +600,6 @@ function toggleSfxMute(){
   saveState();
   syncSoundUI();
 }
+// Expose to window for onclick handlers
+window.toggleAmbientMute = toggleAmbientMute;
+window.toggleSfxMute = toggleSfxMute;
