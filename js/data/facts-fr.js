@@ -510,7 +510,7 @@ const FACTS_FR=[
   {id:'law14',cat:'laws',text:"En Suède, il est illégal de repeindre sa maison sans autorisation du gouvernement — même la couleur doit être approuvée."},
   {id:'law15',cat:'laws',text:"Au Portugal, il est interdit d'uriner dans la mer — une loi rarement appliquée mais techniquement en vigueur."},
   {id:'law16',cat:'laws',text:"En Finlande, toute amende de circulation est proportionnelle au revenu — un millionnaire finlandais a reçu une amende de 100 000 € pour excès de vitesse."},
-  {id:'law17',cat:'laws',text:"En Alabama, il est illégal de porter un faux moustache à l'église si elle provoque des rires — une loi toujours en vigueur."},
+  {id:'law17',cat:'laws',text:"En Alabama, il est illégal de porter une fausse moustache à l'église si elle provoque des rires — une loi toujours en vigueur."},
   {id:'law18',cat:'laws',text:"Au Bhoutan, la vente de tabac est totalement interdite depuis 2004 — c'est le premier pays au monde à l'avoir fait."},
   {id:'law19',cat:'laws',text:"En Turquie, un homme de 65 ans ou plus peut légalement refuser de faire la queue — le respect des aînés est inscrit dans la loi."},
   {id:'law20',cat:'laws',text:"En Nouvelle-Zélande, tout citoyen a le droit de refuser le survol de sa propriété par un drone — une loi sur la vie privée très stricte."},
