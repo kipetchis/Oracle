@@ -1,4 +1,4 @@
-const VERSION = 'oracle-v5';
+const VERSION = 'oracle-v6';
 
 // Fichiers critiques à pré-cacher à l'installation
 const PRECACHE = [
@@ -90,8 +90,10 @@ self.addEventListener('fetch', e => {
       caches.match(e.request).then(cached => {
         if (cached) return cached;
         return fetch(e.request).then(res => {
-          const clone = res.clone();
-          caches.open(VERSION).then(c => c.put(e.request, clone));
+          if (res.status === 200) {
+            const clone = res.clone();
+            caches.open(VERSION).then(c => c.put(e.request, clone));
+          }
           return res;
         });
       })
