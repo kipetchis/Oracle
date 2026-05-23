@@ -1935,5 +1935,3 @@ window.openAccountPanel=openAccountPanel;
 window.closeAccountPanel=closeAccountPanel;
 window.forceSyncNow=forceSyncNow;
 window.updateUserBadge=updateUserBadge;
-window.toggleAmbientMute=toggleAmbientMute;
-window.toggleSfxMute=toggleSfxMute;
