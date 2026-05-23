@@ -82,8 +82,38 @@ function playCometSound() {
 function startQuiz() {
   const pool = QUIZ_DB[lang] || QUIZ_DB['fr'];
   if (!pool || !pool.length) return;
-  const questions = shuffle([...pool]).slice(0, Math.min(5, pool.length));
-  quizSession = { questions, current:0, answers:[] };
+
+  // Init tracking if needed
+  if (!state.quizAnswered) state.quizAnswered = [];
+
+  // Separate unseen from seen questions (by index)
+  const unseen = [];
+  const seen = [];
+  pool.forEach((q, i) => {
+    if (state.quizAnswered.includes(i)) seen.push({...q, _idx: i});
+    else unseen.push({...q, _idx: i});
+  });
+
+  // Prioritize unseen; if fewer than 5 unseen, fill with seen
+  let picked;
+  if (unseen.length >= 5) {
+    picked = shuffle(unseen).slice(0, 5);
+  } else {
+    picked = [...shuffle(unseen), ...shuffle(seen)].slice(0, 5);
+  }
+
+  // If all questions have been seen, reset the tracker
+  if (unseen.length === 0) {
+    state.quizAnswered = [];
+  }
+
+  // Track these questions as answered
+  picked.forEach(q => {
+    if (!state.quizAnswered.includes(q._idx)) state.quizAnswered.push(q._idx);
+  });
+  saveState();
+
+  quizSession = { questions: picked, current:0, answers:[] };
   renderQuizQuestion();
   document.getElementById('quizOverlay').classList.add('active');
   document.getElementById('quizQuestionView').style.display = 'flex';
@@ -303,6 +333,7 @@ function playUfoSound() {
 // ── QUIZ DATABASE ─────────────────────────────────────────────────────────
 const QUIZ_DB = {
   fr: [
+    // ── Existants ──
     {question:"Quelle est la température approximative d'un éclair ?",choices:["Environ 6 000 °C","Environ 30 000 °C","Environ 300 °C"],answer:1},
     {question:"Quelle proportion de la masse de ton corps est de la poussière d'étoile ?",choices:["Environ 40 %","Environ 70 %","Environ 93 %"],answer:2},
     {question:"Où est produite la moitié de l'oxygène que l'on respire ?",choices:["Dans les forêts tropicales","Dans les océans","Dans les prairies"],answer:1},
@@ -343,8 +374,91 @@ const QUIZ_DB = {
     {question:"Pourquoi l'Islande n'a-t-elle pas de moustiques ?",choices:["Il y fait trop froid","Le climat et la géologie ne le permettent pas","Ils ont été éradiqués"],answer:1},
     {question:"Comment Cleopâtre se situait-elle dans le temps ?",choices:["Plus près des pyramides que de nous","Aussi loin des pyramides que de nous","Plus proche de nous que des pyramides"],answer:2},
     {question:"Comment les gladiateurs romains étaient-ils principalement nourris ?",choices:["De viande rouge","D'orge et de légumineuses","De poisson"],answer:1},
+    // ── Nouvelles questions ──
+    {question:"Combien de neurones le cerveau humain contient-il environ ?",choices:["8 milliards","86 milliards","860 milliards"],answer:1},
+    {question:"Quel pourcentage de l'ADN humain est identique à celui du chimpanzé ?",choices:["85 %","92 %","98,7 %"],answer:2},
+    {question:"Combien de bactéries vivent dans le corps humain ?",choices:["Autant que de cellules humaines","10 fois moins","100 fois plus"],answer:0},
+    {question:"Quel est l'os le plus solide du corps humain ?",choices:["Le crâne","Le fémur","Le tibia"],answer:1},
+    {question:"Combien de fois le cœur humain bat-il en moyenne par jour ?",choices:["50 000 fois","100 000 fois","200 000 fois"],answer:1},
+    {question:"Quelle fraction de l'univers observable est constituée de matière visible ?",choices:["Environ 50 %","Environ 27 %","Environ 5 %"],answer:2},
+    {question:"Combien de temps met la lumière du Soleil pour atteindre la Terre ?",choices:["30 secondes","8 minutes","1 heure"],answer:1},
+    {question:"Quelle est la montagne la plus haute du système solaire ?",choices:["Everest terrestre","Olympus Mons sur Mars","Maxwell Montes sur Vénus"],answer:1},
+    {question:"Quel est l'endroit le plus profond de l'océan ?",choices:["La fosse de Porto Rico","La fosse des Mariannes","La fosse de Java"],answer:1},
+    {question:"Combien de litres de sang le cœur pompe-t-il par jour ?",choices:["1 000 litres","7 500 litres","20 000 litres"],answer:1},
+    {question:"Quelle est la durée de vie moyenne d'un globule rouge ?",choices:["30 jours","120 jours","365 jours"],answer:1},
+    {question:"Quel est l'animal le plus rapide du monde ?",choices:["Le guépard","Le faucon pèlerin","Le voilier"],answer:1},
+    {question:"Combien de langues sont parlées dans le monde aujourd'hui ?",choices:["Environ 2 000","Environ 7 000","Environ 12 000"],answer:1},
+    {question:"Quel pays a le plus de volcans actifs ?",choices:["Le Japon","L'Indonésie","L'Islande"],answer:1},
+    {question:"Quelle est la vitesse de rotation de la Terre à l'équateur ?",choices:["500 km/h","1 670 km/h","3 200 km/h"],answer:1},
+    {question:"Combien d'eau y a-t-il sur Terre au total ?",choices:["140 millions de km³","1,4 milliard de km³","14 milliards de km³"],answer:1},
+    {question:"Quelle proportion de l'eau terrestre est douce ?",choices:["2,5 %","10 %","25 %"],answer:0},
+    {question:"Quel animal produit le son le plus fort ?",choices:["L'éléphant","La crevette-pistolet","La baleine bleue"],answer:2},
+    {question:"Combien d'étoiles sont visibles à l'œil nu par nuit claire ?",choices:["Environ 500","Environ 3 000","Environ 10 000"],answer:1},
+    {question:"À quelle fréquence les cellules de l'estomac se renouvellent-elles ?",choices:["Tous les 2-4 jours","Tous les 30 jours","Tous les 6 mois"],answer:0},
+    {question:"Quel est l'élément chimique le plus abondant dans l'univers ?",choices:["L'oxygène","Le carbone","L'hydrogène"],answer:2},
+    {question:"Combien pèse environ un nuage de taille moyenne ?",choices:["100 kg","100 tonnes","500 000 kg"],answer:2},
+    {question:"Quel sens les requins utilisent-ils pour détecter les champs électriques ?",choices:["L'olfaction","L'électroréception","L'écholocation"],answer:1},
+    {question:"Quelle civilisation a inventé le zéro en mathématiques ?",choices:["Les Grecs","Les Mayas","Les Indiens"],answer:2},
+    {question:"Combien de muscles faut-il pour faire un sourire ?",choices:["6","12","26"],answer:1},
+    {question:"Quel est le désert le plus grand du monde ?",choices:["Le Sahara","L'Antarctique","Le désert d'Arabie"],answer:1},
+    {question:"Combien de temps un photon met-il pour traverser le Soleil ?",choices:["8 minutes","170 000 ans","1 million d'années"],answer:1},
+    {question:"Quel pourcentage du cerveau est composé d'eau ?",choices:["50 %","60 %","75 %"],answer:2},
+    {question:"Quelle est la température au centre de la Terre ?",choices:["2 000 °C","5 500 °C","10 000 °C"],answer:1},
+    {question:"Quel est l'organe le plus gros du corps humain ?",choices:["Le foie","Les poumons","La peau"],answer:2},
+    {question:"Combien de litres d'air respirons-nous par jour ?",choices:["5 000 litres","11 000 litres","25 000 litres"],answer:1},
+    {question:"Quel insecte peut porter 50 fois son poids ?",choices:["L'abeille","La fourmi","Le scarabée rhinocéros"],answer:2},
+    {question:"En combien de temps la Station spatiale fait-elle le tour de la Terre ?",choices:["45 minutes","90 minutes","3 heures"],answer:1},
+    {question:"Quelle planète a les vents les plus rapides du système solaire ?",choices:["Jupiter","Saturne","Neptune"],answer:2},
+    {question:"Combien d'espèces vivantes sont estimées sur Terre ?",choices:["2 millions","8,7 millions","50 millions"],answer:1},
+    {question:"Quel est le matériau naturel le plus dur ?",choices:["Le diamant","Le graphène","La lonsdaleïte"],answer:2},
+    {question:"Combien de fois cligne-t-on des yeux par jour ?",choices:["5 000 fois","15 000 à 20 000 fois","50 000 fois"],answer:1},
+    {question:"De quoi sont principalement composés les anneaux de Saturne ?",choices:["De roches","De glace","De gaz"],answer:1},
+    {question:"Quel mammifère peut voler ?",choices:["L'écureuil volant","La chauve-souris","Le colugo"],answer:1},
+    {question:"Combien de tremblements de terre se produisent chaque année sur Terre ?",choices:["5 000","50 000","500 000"],answer:2},
+    // ── Nouvelles questions (lot 3) ──
+    {question:"Quel est le seul continent sans désert ?",choices:["L'Antarctique","L'Europe","L'Océanie"],answer:1},
+    {question:"Combien d'os un bébé humain possède-t-il à la naissance ?",choices:["206","270","300"],answer:2},
+    {question:"Quel est le fleuve le plus long du monde ?",choices:["L'Amazone","Le Nil","Le Yangtsé"],answer:1},
+    {question:"Quelle est la seule planète qui tourne dans le sens inverse des autres ?",choices:["Uranus","Vénus","Mercure"],answer:1},
+    {question:"Combien de temps un humain peut-il survivre sans dormir avant des effets graves ?",choices:["3 jours","7 jours","11 jours"],answer:2},
+    {question:"Quel pourcentage de la surface terrestre est couvert par les océans ?",choices:["55 %","71 %","85 %"],answer:1},
+    {question:"Quelle est la substance la plus abondante dans le corps humain ?",choices:["Les protéines","L'eau","Les graisses"],answer:1},
+    {question:"Quel animal a le cerveau le plus gros par rapport à son corps ?",choices:["Le dauphin","La fourmi","L'humain"],answer:1},
+    {question:"Combien de fois par minute un colibri bat-il des ailes ?",choices:["200 fois","1 200 fois","4 800 fois"],answer:2},
+    {question:"Quelle est la vitesse du son dans l'air à 20°C ?",choices:["343 m/s","500 m/s","1 200 m/s"],answer:0},
+    {question:"Quel métal est liquide à température ambiante ?",choices:["Le gallium","Le mercure","Le césium"],answer:1},
+    {question:"Combien de planètes naines reconnues y a-t-il dans le système solaire ?",choices:["3","5","8"],answer:1},
+    {question:"Quel est l'animal terrestre le plus lent du monde ?",choices:["La tortue géante","Le paresseux à trois doigts","Le koala"],answer:1},
+    {question:"À quelle profondeur commence la zone abyssale de l'océan ?",choices:["1 000 m","4 000 m","8 000 m"],answer:1},
+    {question:"Quelle est la durée moyenne d'un rêve ?",choices:["5 à 20 minutes","1 à 2 heures","30 secondes"],answer:0},
+    {question:"Quel pays possède le plus de lacs naturels au monde ?",choices:["La Finlande","Le Canada","La Russie"],answer:1},
+    {question:"Combien de muscles le corps humain possède-t-il environ ?",choices:["206","400","640"],answer:2},
+    {question:"Quelle est la galaxie la plus proche de la Voie lactée ?",choices:["Andromède","Le Grand Nuage de Magellan","La galaxie du Triangle"],answer:0},
+    {question:"Quel est le point le plus éloigné du centre de la Terre ?",choices:["Le sommet de l'Everest","Le sommet du Chimborazo","Le sommet du K2"],answer:1},
+    {question:"Combien de temps met la Lune pour faire le tour de la Terre ?",choices:["14 jours","27,3 jours","31 jours"],answer:1},
+    {question:"Quel animal peut régénérer son cœur ?",choices:["L'étoile de mer","Le poisson-zèbre","La salamandre"],answer:1},
+    {question:"Quelle est la température la plus froide jamais enregistrée sur Terre ?",choices:["-71,2 °C","-89,2 °C","-104 °C"],answer:1},
+    {question:"Combien de satellites artificiels orbitent autour de la Terre ?",choices:["Environ 3 000","Environ 10 000","Plus de 30 000"],answer:1},
+    {question:"Quel est le plus vieil arbre vivant connu ?",choices:["Un séquoia géant","Un pin Bristlecone","Un baobab"],answer:1},
+    {question:"Combien de litres de salive produit-on en moyenne dans une vie ?",choices:["5 000 litres","25 000 litres","35 000 litres"],answer:2},
+    {question:"Quelle est la vitesse maximale d'un guépard ?",choices:["90 km/h","112 km/h","130 km/h"],answer:1},
+    {question:"Quel pourcentage de l'ADN humain est partagé avec la banane ?",choices:["30 %","50 %","60 %"],answer:2},
+    {question:"Combien de volcans actifs y a-t-il sous les océans ?",choices:["Environ 500","Environ 5 000","Plus d'un million"],answer:2},
+    {question:"Quelle est la plus grande structure vivante visible depuis l'espace ?",choices:["La forêt amazonienne","La Grande Barrière de corail","Les mangroves du Sundarbans"],answer:1},
+    {question:"Quel est le métal le plus léger ?",choices:["L'aluminium","Le titane","Le lithium"],answer:2},
+    {question:"Combien de cellules le corps humain perd-il par seconde ?",choices:["3 000","50 000","3,8 millions"],answer:2},
+    {question:"Quelle est la plus petite unité de matière chimiquement identifiable ?",choices:["Le proton","L'atome","L'électron"],answer:1},
+    {question:"Quel est le seul mammifère venimeux ?",choices:["Le vampire","L'ornithorynque","La musaraigne"],answer:1},
+    {question:"Combien de tonnes de poussière cosmique tombent sur Terre chaque jour ?",choices:["1 tonne","50 tonnes","100 tonnes"],answer:1},
+    {question:"Quelle est la pression atmosphérique à la surface de Vénus ?",choices:["2 fois celle de la Terre","50 fois celle de la Terre","92 fois celle de la Terre"],answer:2},
+    {question:"Quel pourcentage de l'océan reste inexploré ?",choices:["40 %","60 %","80 %"],answer:2},
+    {question:"Combien d'atomes composent une cellule humaine en moyenne ?",choices:["1 million","100 milliards","100 000 milliards"],answer:2},
+    {question:"Quel est l'animal qui a la plus longue gestation ?",choices:["La baleine bleue","L'éléphant d'Afrique","La salamandre alpine"],answer:2},
+    {question:"À quelle température le fer fond-il ?",choices:["1 064 °C","1 538 °C","2 862 °C"],answer:1},
+    {question:"Combien de goûts fondamentaux la langue peut-elle distinguer ?",choices:["4","5","7"],answer:1},
   ],
   en: [
+    // ── Existing ──
     {question:"What is the approximate temperature of a lightning bolt?",choices:["Around 6,000 °C","Around 30,000 °C","Around 300 °C"],answer:1},
     {question:"What proportion of your body mass is stardust?",choices:["About 40%","About 70%","About 93%"],answer:2},
     {question:"Where is half the oxygen we breathe produced?",choices:["In tropical forests","In the oceans","In grasslands"],answer:1},
@@ -385,6 +499,88 @@ const QUIZ_DB = {
     {question:"How were Roman gladiators mainly fed?",choices:["Red meat","Barley and legumes","Fish"],answer:1},
     {question:"What did the Frisbie Pie Company inspire?",choices:["The boomerang","The Frisbee","The hula hoop"],answer:1},
     {question:"What does 'OK' originally stand for?",choices:["'All Correct' spelled correctly","'Oll Korrect', a deliberate misspelling","A military abbreviation"],answer:1},
+    // ── New questions ──
+    {question:"How many neurons does the human brain contain approximately?",choices:["8 billion","86 billion","860 billion"],answer:1},
+    {question:"What percentage of human DNA is identical to a chimpanzee's?",choices:["85%","92%","98.7%"],answer:2},
+    {question:"How many bacteria live in the human body?",choices:["About the same as human cells","10 times fewer","100 times more"],answer:0},
+    {question:"What is the strongest bone in the human body?",choices:["The skull","The femur","The tibia"],answer:1},
+    {question:"How many times does the human heart beat on average per day?",choices:["50,000 times","100,000 times","200,000 times"],answer:1},
+    {question:"What fraction of the observable universe is made of visible matter?",choices:["About 50%","About 27%","About 5%"],answer:2},
+    {question:"How long does sunlight take to reach Earth?",choices:["30 seconds","8 minutes","1 hour"],answer:1},
+    {question:"What is the tallest mountain in the solar system?",choices:["Earth's Everest","Olympus Mons on Mars","Maxwell Montes on Venus"],answer:1},
+    {question:"What is the deepest point in the ocean?",choices:["Puerto Rico Trench","Mariana Trench","Java Trench"],answer:1},
+    {question:"How many litres of blood does the heart pump per day?",choices:["1,000 litres","7,500 litres","20,000 litres"],answer:1},
+    {question:"What is the average lifespan of a red blood cell?",choices:["30 days","120 days","365 days"],answer:1},
+    {question:"What is the fastest animal in the world?",choices:["The cheetah","The peregrine falcon","The sailfish"],answer:1},
+    {question:"How many languages are spoken in the world today?",choices:["About 2,000","About 7,000","About 12,000"],answer:1},
+    {question:"Which country has the most active volcanoes?",choices:["Japan","Indonesia","Iceland"],answer:1},
+    {question:"What is Earth's rotation speed at the equator?",choices:["500 km/h","1,670 km/h","3,200 km/h"],answer:1},
+    {question:"How much water is there on Earth in total?",choices:["140 million km³","1.4 billion km³","14 billion km³"],answer:1},
+    {question:"What proportion of Earth's water is freshwater?",choices:["2.5%","10%","25%"],answer:0},
+    {question:"Which animal produces the loudest sound?",choices:["The elephant","The pistol shrimp","The blue whale"],answer:2},
+    {question:"How many stars are visible to the naked eye on a clear night?",choices:["About 500","About 3,000","About 10,000"],answer:1},
+    {question:"How often do stomach cells renew themselves?",choices:["Every 2-4 days","Every 30 days","Every 6 months"],answer:0},
+    {question:"What is the most abundant chemical element in the universe?",choices:["Oxygen","Carbon","Hydrogen"],answer:2},
+    {question:"How much does an average cloud weigh?",choices:["100 kg","100 tonnes","500,000 kg"],answer:2},
+    {question:"Which sense do sharks use to detect electric fields?",choices:["Smell","Electroreception","Echolocation"],answer:1},
+    {question:"Which civilisation invented the mathematical zero?",choices:["The Greeks","The Maya","The Indians"],answer:2},
+    {question:"How many muscles does it take to smile?",choices:["6","12","26"],answer:1},
+    {question:"What is the largest desert in the world?",choices:["The Sahara","Antarctica","The Arabian Desert"],answer:1},
+    {question:"How long does a photon take to cross the Sun?",choices:["8 minutes","170,000 years","1 million years"],answer:1},
+    {question:"What percentage of the brain is water?",choices:["50%","60%","75%"],answer:2},
+    {question:"What is the temperature at Earth's core?",choices:["2,000 °C","5,500 °C","10,000 °C"],answer:1},
+    {question:"What is the largest organ in the human body?",choices:["The liver","The lungs","The skin"],answer:2},
+    {question:"How many litres of air do we breathe per day?",choices:["5,000 litres","11,000 litres","25,000 litres"],answer:1},
+    {question:"Which insect can carry 50 times its own weight?",choices:["The bee","The ant","The rhinoceros beetle"],answer:2},
+    {question:"How long does the ISS take to orbit Earth?",choices:["45 minutes","90 minutes","3 hours"],answer:1},
+    {question:"Which planet has the fastest winds in the solar system?",choices:["Jupiter","Saturn","Neptune"],answer:2},
+    {question:"How many living species are estimated on Earth?",choices:["2 million","8.7 million","50 million"],answer:1},
+    {question:"What is the hardest natural material?",choices:["Diamond","Graphene","Lonsdaleite"],answer:2},
+    {question:"How many times do we blink per day?",choices:["5,000 times","15,000 to 20,000 times","50,000 times"],answer:1},
+    {question:"What are Saturn's rings mainly made of?",choices:["Rock","Ice","Gas"],answer:1},
+    {question:"Which mammal can fly?",choices:["The flying squirrel","The bat","The colugo"],answer:1},
+    {question:"How many earthquakes occur on Earth each year?",choices:["5,000","50,000","500,000"],answer:2},
+    // ── New questions (batch 3) ──
+    {question:"Which is the only continent without a desert?",choices:["Antarctica","Europe","Oceania"],answer:1},
+    {question:"How many bones does a newborn baby have?",choices:["206","270","300"],answer:2},
+    {question:"What is the longest river in the world?",choices:["The Amazon","The Nile","The Yangtze"],answer:1},
+    {question:"Which is the only planet that rotates in the opposite direction?",choices:["Uranus","Venus","Mercury"],answer:1},
+    {question:"How long can a human survive without sleep before severe effects?",choices:["3 days","7 days","11 days"],answer:2},
+    {question:"What percentage of Earth's surface is covered by oceans?",choices:["55%","71%","85%"],answer:1},
+    {question:"What is the most abundant substance in the human body?",choices:["Proteins","Water","Fat"],answer:1},
+    {question:"Which animal has the largest brain relative to its body?",choices:["The dolphin","The ant","The human"],answer:1},
+    {question:"How many times per minute does a hummingbird flap its wings?",choices:["200 times","1,200 times","4,800 times"],answer:2},
+    {question:"What is the speed of sound in air at 20°C?",choices:["343 m/s","500 m/s","1,200 m/s"],answer:0},
+    {question:"Which metal is liquid at room temperature?",choices:["Gallium","Mercury","Caesium"],answer:1},
+    {question:"How many recognised dwarf planets are there in the solar system?",choices:["3","5","8"],answer:1},
+    {question:"What is the slowest land animal in the world?",choices:["The giant tortoise","The three-toed sloth","The koala"],answer:1},
+    {question:"At what depth does the abyssal zone of the ocean begin?",choices:["1,000 m","4,000 m","8,000 m"],answer:1},
+    {question:"What is the average duration of a dream?",choices:["5 to 20 minutes","1 to 2 hours","30 seconds"],answer:0},
+    {question:"Which country has the most natural lakes in the world?",choices:["Finland","Canada","Russia"],answer:1},
+    {question:"How many muscles does the human body have approximately?",choices:["206","400","640"],answer:2},
+    {question:"What is the closest galaxy to the Milky Way?",choices:["Andromeda","The Large Magellanic Cloud","The Triangulum Galaxy"],answer:0},
+    {question:"What is the farthest point from Earth's centre?",choices:["The summit of Everest","The summit of Chimborazo","The summit of K2"],answer:1},
+    {question:"How long does it take the Moon to orbit the Earth?",choices:["14 days","27.3 days","31 days"],answer:1},
+    {question:"Which animal can regenerate its heart?",choices:["The starfish","The zebrafish","The salamander"],answer:1},
+    {question:"What is the coldest temperature ever recorded on Earth?",choices:["-71.2 °C","-89.2 °C","-104 °C"],answer:1},
+    {question:"How many artificial satellites orbit the Earth?",choices:["About 3,000","About 10,000","More than 30,000"],answer:1},
+    {question:"What is the oldest known living tree?",choices:["A giant sequoia","A Bristlecone pine","A baobab"],answer:1},
+    {question:"How many litres of saliva do we produce in a lifetime on average?",choices:["5,000 litres","25,000 litres","35,000 litres"],answer:2},
+    {question:"What is a cheetah's top speed?",choices:["90 km/h","112 km/h","130 km/h"],answer:1},
+    {question:"What percentage of human DNA is shared with a banana?",choices:["30%","50%","60%"],answer:2},
+    {question:"How many active volcanoes are there under the oceans?",choices:["About 500","About 5,000","Over one million"],answer:2},
+    {question:"What is the largest living structure visible from space?",choices:["The Amazon rainforest","The Great Barrier Reef","The Sundarbans mangroves"],answer:1},
+    {question:"What is the lightest metal?",choices:["Aluminium","Titanium","Lithium"],answer:2},
+    {question:"How many cells does the human body lose per second?",choices:["3,000","50,000","3.8 million"],answer:2},
+    {question:"What is the smallest chemically identifiable unit of matter?",choices:["The proton","The atom","The electron"],answer:1},
+    {question:"What is the only venomous mammal?",choices:["The vampire bat","The platypus","The shrew"],answer:1},
+    {question:"How many tonnes of cosmic dust fall on Earth each day?",choices:["1 tonne","50 tonnes","100 tonnes"],answer:1},
+    {question:"What is the atmospheric pressure on Venus's surface?",choices:["2 times Earth's","50 times Earth's","92 times Earth's"],answer:2},
+    {question:"What percentage of the ocean remains unexplored?",choices:["40%","60%","80%"],answer:2},
+    {question:"How many atoms make up an average human cell?",choices:["1 million","100 billion","100 trillion"],answer:2},
+    {question:"Which animal has the longest gestation period?",choices:["The blue whale","The African elephant","The alpine salamander"],answer:2},
+    {question:"At what temperature does iron melt?",choices:["1,064 °C","1,538 °C","2,862 °C"],answer:1},
+    {question:"How many fundamental tastes can the tongue distinguish?",choices:["4","5","7"],answer:1},
   ]
 };
 
