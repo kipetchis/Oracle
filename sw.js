@@ -1,4 +1,4 @@
-const VERSION = 'oracle-v3';
+const VERSION = 'oracle-v4';
 
 // Fichiers critiques à pré-cacher à l'installation
 const PRECACHE = [
@@ -9,6 +9,12 @@ const PRECACHE = [
   '/Oracle/js/data/sources.js',
   '/Oracle/js/data/deep-dives.js',
   '/Oracle/js/app.js',
+  '/Oracle/js/features/thematic-days.js',
+  '/Oracle/js/features/share.js',
+  '/Oracle/js/features/audio.js',
+  '/Oracle/js/features/quiz.js',
+  '/Oracle/js/features/space-game.js',
+  '/Oracle/js/features/starfield.js',
   '/Oracle/audio/ambient-earth.mp3',
   '/Oracle/audio/ambient-mars.mp3',
   '/Oracle/audio/ambient-jupiter.mp3',
