@@ -804,7 +804,7 @@ function showFact(){
         <button class="action-btn" onclick="shareNative()">
           <span class="a-icon">↗</span><span class="a-label">${t.shareBtn}</span>
         </button>
-        <span class="counter">${t.counter(deckIdx,FACTS.length)}</span>
+        <span class="counter">${t.counter(state.read.total||0,FACTS.length)}</span>
       </div>
       ${DEEP_DIVES[currentFact.id] ? `<button class="deep-dive-btn" id="deepDiveBtn" onclick="showDeepDive()"><span class="dd-icon">🔎</span> ${lang==='fr'?'Creuser le sujet':'Dig deeper'}</button>` : ''}
       <div class="deep-dive-container" id="deepDiveContainer" style="display:none;"></div>`;
