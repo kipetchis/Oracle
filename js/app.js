@@ -809,6 +809,7 @@ function showFact(){
       ${DEEP_DIVES[currentFact.id] ? `<button class="deep-dive-btn" id="deepDiveBtn" onclick="showDeepDive()"><span class="dd-icon">🔎</span> ${lang==='fr'?'Creuser le sujet':'Dig deeper'}</button>` : ''}
       <div class="deep-dive-container" id="deepDiveContainer" style="display:none;"></div>`;
     card.classList.add('visible');
+    setTimeout(()=>card.scrollIntoView({behavior:'smooth',block:'nearest'}),200);
     // Show remaining facts for today
     if(!state.premium){
       const rem = Math.max(0, DAILY_LIMIT - (state.dailyCount||0));
@@ -844,6 +845,7 @@ function closeExplorePanel(){
 function renderExploreGrid(){
   const t=T[lang];
   const cats=Object.keys(t.catLabels);
+  cats.sort((a,b)=>t.catLabels[a].localeCompare(t.catLabels[b], lang));
   const grid=document.getElementById('exploreGrid');
   grid.innerHTML=cats.map(cat=>{
     const icon=CAT_ICONS[cat]||'✦';
@@ -966,6 +968,7 @@ function renderCatGrid(el, items, mode){
   });
   const cats=Object.keys(groups);
   const catLabels=T[lang].catLabels||{};
+  cats.sort((a,b)=>(catLabels[a]||a).localeCompare(catLabels[b]||b, lang));
   el.innerHTML=`<div class="cat-grid">${cats.map(cat=>{
     const count=groups[cat].length;
     const icon=CAT_ICONS[cat]||'✦';
