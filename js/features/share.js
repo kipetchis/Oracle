@@ -4,10 +4,10 @@
 // ── SHARE ─────────────────────────────────────────────────────────────────
 function buildShareText(){if(window._shareText){const t=window._shareText;return t;}if(!currentFact)return'';return`${currentFact.text}\n\n${T[lang].shareTag}`;}
 function openShare(){
-  if(!currentFact)return;haptic('light');
-  window._shareRaw = currentFact.text;
-  window._shareCat = currentFact.cat;
-  document.getElementById('sharePreview').textContent=currentFact.text;
+  if(!currentFact&&!window._shareRaw)return;haptic('light');
+  if(!window._shareRaw) window._shareRaw = currentFact.text;
+  if(!window._shareCat) window._shareCat = currentFact.cat;
+  document.getElementById('sharePreview').textContent=window._shareRaw;
   const btn=document.getElementById('copyBtn');
   btn.classList.remove('copied');btn.innerHTML=`<span>📋</span><span id="copyLabel">${T[lang].copyLabel}</span>`;
   const imgLbl=document.getElementById('shareImgLabel');
