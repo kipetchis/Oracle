@@ -157,7 +157,7 @@ function generateShareCard(text, catKey) {
   // --- URL + branding ---
   ctx.fillStyle = 'rgba(255,255,255,0.3)';
   ctx.font = '400 26px Montserrat, sans-serif';
-  ctx.fillText('kipetchis.github.io/Oracle', SIZE / 2, SIZE - 90);
+  ctx.fillText(lang === 'fr' ? 'Oracle — disponible sur Google Play' : 'Oracle — available on Google Play', SIZE / 2, SIZE - 90);
 
   ctx.fillStyle = glowColor + '66';
   ctx.font = 'italic 300 24px Montserrat, sans-serif';
