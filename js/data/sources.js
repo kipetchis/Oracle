@@ -743,7 +743,7 @@ const SOURCES = {
   'dino27': {n:'PNAS — End-Cretaceous Extinction',u:'https://doi.org/10.1073/pnas.1317065111'},
   'dino28': {n:'Nature — Dreadnoughtus',u:'https://doi.org/10.1038/s41598-019-44017-5'},
   'dino29': {n:'Smithsonian — Marine Reptiles vs Dinosaurs',u:'https://naturalhistory.si.edu/'},
-  'dino30': {n:'PLOS ONE — Carnotaurus Arms',u:'https://doi.org/10.1371/journal.pone.0240474'}
+  'dino30': {n:'PLOS ONE — Carnotaurus Arms',u:'https://doi.org/10.1371/journal.pone.0240474'},
 
   // ── RELIGION SOURCES (rel1 → rel30) ──
   'rel1': {title:"Vatican City State — Official Website", url:"https://www.vaticanstate.va/"},
