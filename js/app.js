@@ -1039,6 +1039,116 @@ function renderCatView(mode){
   else renderHistory();
 }
 
+// ── RECHERCHE DANS FAVORIS/HISTORIQUE/ÉPHÉMÉRIDES ────────────────────────
+ 
+var _favSearchActive = false;
+ 
+function injectSearchBar(){
+  var panel = document.getElementById('panelFavs');
+  if(!panel || document.getElementById('favSearchBar')) return;
+  var tabs = panel.querySelector('.fav-tabs');
+  if(!tabs) return;
+  var bar = document.createElement('div');
+  bar.id = 'favSearchBar';
+  bar.style.cssText = 'padding:10px 16px 6px;';
+  bar.innerHTML = '<div style="display:flex;align-items:center;background:var(--card-bg,#0d1b2a);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:8px 12px;gap:8px;">'
+    + '<span style="opacity:.5;font-size:.9rem;">🔍</span>'
+    + '<input id="favSearchInput" type="text" placeholder="' + (lang==='fr'?'Rechercher un fait…':'Search a fact…') + '" style="flex:1;background:none;border:none;outline:none;color:var(--text);font-size:.85rem;font-family:inherit;" oninput="onFavSearch(this.value)">'
+    + '<span id="favSearchClear" onclick="clearFavSearch()" style="cursor:pointer;opacity:.4;font-size:.8rem;display:none;">✕</span>'
+    + '</div>';
+  tabs.parentNode.insertBefore(bar, tabs.nextSibling);
+}
+ 
+function onFavSearch(query){
+  var clear = document.getElementById('favSearchClear');
+  if(clear) clear.style.display = query.length > 0 ? 'block' : 'none';
+  if(query.length < 2){
+    // Trop court → affichage normal
+    exitFavSearch();
+    return;
+  }
+  _favSearchActive = true;
+  var q = query.toLowerCase();
+  // Chercher dans favoris + historique + éphémérides
+  var results = [];
+  var seen = {};
+  var allItems = [].concat(
+    (state.favs||[]).map(function(f){return {id:f.id,cat:f.cat,text:f.text,date:f.date,src:'fav'};}),
+    (state.history||[]).map(function(f){return {id:f.id,cat:f.cat,text:f.text,date:f.date,src:'history'};}),
+    (state.ephemHistory||[]).map(function(f){return {id:f.id,cat:f.cat||'positive',text:f.text,date:f.date,src:'ephem'};})
+  );
+  allItems.forEach(function(f){
+    if(!seen[f.id] && f.text && f.text.toLowerCase().indexOf(q) >= 0){
+      seen[f.id] = true;
+      results.push(f);
+    }
+  });
+  renderSearchResults(results, query);
+}
+ 
+function renderSearchResults(results, query){
+  // Masquer les tabs et listes normales
+  var tabs = document.querySelector('#panelFavs .fav-tabs');
+  if(tabs) tabs.style.display = 'none';
+  ['favsList','historyListInline','ephemListInline'].forEach(function(id){
+    var el = document.getElementById(id);
+    if(el) el.style.display = 'none';
+  });
+  // Conteneur résultats
+  var container = document.getElementById('favSearchResults');
+  if(!container){
+    container = document.createElement('div');
+    container.id = 'favSearchResults';
+    var bar = document.getElementById('favSearchBar');
+    if(bar) bar.parentNode.insertBefore(container, bar.nextSibling);
+  }
+  if(!results.length){
+    container.innerHTML = '<p class="fav-empty">' + (lang==='fr'?'Aucun résultat pour « '+query+' »':'No results for "'+query+'"') + '</p>';
+    return;
+  }
+  var catLabels = T[lang].catLabels||{};
+  container.innerHTML = '<div style="padding:6px 16px 4px;font-family:\'Space Mono\',monospace;font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)">'
+    + results.length + (lang==='fr'?' résultat(s)':' result(s)') + '</div>'
+    + results.map(function(f){
+      var icon = CAT_ICONS[f.cat]||'✦';
+      var label = (catLabels[f.cat]||'').replace('✦ ','');
+      var isFav = state.favs.some(function(fv){return fv.id===f.id;});
+      var safeText = f.text.replace(/'/g,"\\'").replace(/"/g,'&quot;');
+      return '<div class="fav-item">'
+        + '<div class="fav-item-badge badge-'+f.cat+'"><span class="badge-dot"></span><span style="margin-left:4px;font-size:.6rem;opacity:.6">'+icon+' '+label+'</span><span style="margin-left:auto;font-size:.6rem;opacity:.4">'+(f.date||'')+'</span></div>'
+        + '<p class="fav-item-text">'+f.text+'</p>'
+        + (DEEP_DIVES[f.id]?'<button class="deep-dive-btn" onclick="haptic(\'light\');showInlineDeepDive(this,\''+f.id+'\')"><span class="dd-icon">🔎</span> '+(lang==='fr'?'Creuser le sujet':'Dig deeper')+'</button><div class="deep-dive-container" style="display:none;"></div>':'')
+        + '<div class="fav-item-actions">'
+        + '<button class="hist-fav-btn '+(isFav?'is-fav':'')+'" onclick="haptic();toggleHistFav(\''+f.id+'\',\''+f.cat+'\',\''+safeText+'\')">'+( isFav?'♥':'♡')+'</button>'
+        + '<button class="fav-share-btn" onclick="haptic();shareFav(\''+safeText+'\',\''+f.cat+'\')">↗ '+(lang==='fr'?'Partager':'Share')+'</button>'
+        + '</div></div>';
+    }).join('');
+}
+ 
+function clearFavSearch(){
+  var input = document.getElementById('favSearchInput');
+  if(input) input.value = '';
+  var clear = document.getElementById('favSearchClear');
+  if(clear) clear.style.display = 'none';
+  exitFavSearch();
+}
+ 
+function exitFavSearch(){
+  _favSearchActive = false;
+  var container = document.getElementById('favSearchResults');
+  if(container) container.remove();
+  // Réafficher les tabs
+  var tabs = document.querySelector('#panelFavs .fav-tabs');
+  if(tabs) tabs.style.display = '';
+  // Réafficher le bon onglet
+  var tabFavs = document.getElementById('tabFavs');
+  var tabHist = document.getElementById('tabHistory');
+  var tabEphem = document.getElementById('tabEphem');
+  if(tabEphem && tabEphem.classList.contains('active')) switchFavTab('ephem');
+  else if(tabHist && tabHist.classList.contains('active')) switchFavTab('history');
+  else switchFavTab('favs');
+}
+
 function switchFavTab(tab){
   const tabFavs = document.getElementById('tabFavs');
   const tabHist = document.getElementById('tabHistory');
@@ -1167,7 +1277,7 @@ function spawnConfetti(container){
 }
 
 function openPanel(type){
-  if(type==='favs'){renderFavs();document.getElementById('panelFavs').classList.add('open');}
+  if(type==='favs'){renderFavs();document.getElementById('panelFavs').classList.add('open');injectSearchBar();}
   else if(type==='history'){renderHistory();document.getElementById('panelHistory').classList.add('open');}
   else{renderAchievements();document.getElementById('panelAchievements').classList.add('open');}
 }
