@@ -869,7 +869,7 @@ const FACTS_FR=[
   {id:'dino27',cat:'dinosaurs',text:"L'extinction des dinosaures a aussi éliminé 75 % de toutes les espèces vivantes sur Terre — pas seulement les reptiles géants."},
   {id:'dino28',cat:'dinosaurs',text:"Le Dreadnoughtus, découvert en Argentine, est l'un des plus gros dinosaures dont on a retrouvé un squelette relativement complet — environ 65 tonnes."},
   {id:'dino29',cat:'dinosaurs',text:"Les dinosaures marins n'existaient pas — les plésiosaures et mosasaures étaient des reptiles marins, pas des dinosaures au sens scientifique."},
-  {id:'dino30',cat:'dinosaurs',text:"Le Carnotaurus avait des bras encore plus petits que le T-Rex — à peine plus longs qu'une main humaine sur un corps de 8 mètres."}
+  {id:'dino30',cat:'dinosaurs',text:"Le Carnotaurus avait des bras encore plus petits que le T-Rex — à peine plus longs qu'une main humaine sur un corps de 8 mètres."},
 
   // ── RELIGION (rel1 → rel30) ──
   {id:'rel1', cat:'religion', text:"Le Vatican est le plus petit État du monde (0,44 km²), mais il possède son propre système postal, sa gare et même une équipe de football."},
