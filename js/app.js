@@ -426,6 +426,15 @@ function setLang(l){
   _finishLangSetup();
 }
 
+function switchLang(l){
+  lang=l; state.lang=l; saveState();
+  FACTS=l==='fr'?FACTS_FR:FACTS_EN;
+  ACH_DEF=buildAchDef(l);
+  PLANETS=buildPlanets(l);
+  applyI18n();
+  applyPlanetSkin(state.activePlanet);
+}
+
 function _finishLangSetup(){
   document.getElementById('mainApp').style.display='flex';
   applyI18n();
@@ -1645,17 +1654,15 @@ function renderStats() {
         </div>`;
       }).join('')}
     </div>
-}).join('')}
-    </div>
 
     <!-- Language -->
     <div class="stats-section-title" style="margin-top:24px">${lang==='fr'?'Langue':'Language'}</div>
     <div class="stats-numbers">
-      <div class="stat-card" onclick="haptic();setLang('fr');closeStats();setTimeout(openStats,300)" style="cursor:pointer;${lang==='fr'?'border:1px solid var(--accent);':''}">
+      <div class="stat-card" onclick="haptic();switchLang('fr');closeStats();setTimeout(openStats,300)" style="cursor:pointer;${lang==='fr'?'border:1px solid var(--accent);':''}">
         <div class="stat-val">🇫🇷</div>
         <div class="stat-lbl">Français</div>
       </div>
-      <div class="stat-card" onclick="haptic();setLang('en');closeStats();setTimeout(openStats,300)" style="cursor:pointer;${lang==='en'?'border:1px solid var(--accent);':''}">
+      <div class="stat-card" onclick="haptic();switchLang('en');closeStats();setTimeout(openStats,300)" style="cursor:pointer;${lang==='en'?'border:1px solid var(--accent);':''}">
         <div class="stat-val">🇬🇧</div>
         <div class="stat-lbl">English</div>
       </div>
