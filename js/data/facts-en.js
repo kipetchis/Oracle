@@ -859,7 +859,7 @@ const FACTS_EN=[
   {id:'dino27',cat:'dinosaurs',text:"The dinosaur extinction also wiped out 75% of all species on Earth — not just the giant reptiles."},
   {id:'dino28',cat:'dinosaurs',text:"Dreadnoughtus, discovered in Argentina, is one of the largest dinosaurs with a relatively complete skeleton — about 65 tons."},
   {id:'dino29',cat:'dinosaurs',text:"Marine dinosaurs didn't exist — plesiosaurs and mosasaurs were marine reptiles, not scientifically dinosaurs."},
-  {id:'dino30',cat:'dinosaurs',text:"Carnotaurus had arms even smaller than T. rex — barely longer than a human hand on an 8-meter body."}
+  {id:'dino30',cat:'dinosaurs',text:"Carnotaurus had arms even smaller than T. rex — barely longer than a human hand on an 8-meter body."},
 
   // ── RELIGION (rel1 → rel30) ──
  {id:'rel1', cat:'religion', text:"Vatican City is the smallest country in the world (0.44 km²), yet it has its own postal system, railway station, and even a football team."},
