@@ -431,6 +431,7 @@ function switchLang(l){
     FACTS=l==='fr'?FACTS_FR:FACTS_EN;
     ACH_DEF=buildAchDef(l);
     PLANETS=buildPlanets(l);
+    deck=[];deckIdx=0;
     // Met à jour le fait affiché
     if(currentFact){
         var f=FACTS.find(function(x){return x.id===currentFact.id;});
