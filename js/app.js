@@ -10,7 +10,7 @@ const CAT_ICONS={
   world:'🗺️', language:'📖', food:'🍽️', sports:'🏆',
   celebrities:'🌟', fiction:'📚', gaming:'🎮', cinema:'🎬', music:'🎵',
   mythology:'🏛️', psychology:'🧠', oceans:'🌊', records:'🏅',
-  quotes:'💬', laws:'⚖️', tales:'🐉', dinosaurs:'🦕'
+  quotes:'💬', laws:'⚖️', tales:'🐉', dinosaurs:'🦕', religion:'🕊️'
 };
 
 // ── I18N ──────────────────────────────────────────────────────────────────
@@ -42,7 +42,7 @@ const T={
       world:'✦ Monde & Curiosités', language:'✦ Mots & Langages', food:'✦ Cuisine & Saveurs', sports:'✦ Sports & Défis',
       celebrities:'✦ Célébrités', fiction:'✦ Fictions & Littérature', gaming:'✦ Jeux Vidéo', cinema:'✦ Cinéma', music:'✦ Musique',
       mythology:'✦ Mythologie', psychology:'✦ Psychologie', oceans:'✦ Océans & Abysses', records:'✦ Records & Extrêmes',
-      quotes:'✦ Citations célèbres', laws:'✦ Lois insolites', tales:'✦ Contes & Légendes', dinosaurs:'✦ Dinosaures'
+      quotes:'✦ Citations célèbres', laws:'✦ Lois insolites', tales:'✦ Contes & Légendes', dinosaurs:'✦ Dinosaures', religion:'✦ Religions & Spiritualité'
     },
     planets:{
       mercury:{name:'Mercure',cond:'Lire 20 faits',unlockDesc:"Rapide comme Mercure. 20 faits lus, la planète la plus proche du Soleil est à toi."},
@@ -56,6 +56,7 @@ const T={
       neptune:{name:'Neptune',cond:'Collecter 5 fragments',unlockDesc:"Rencontre du 3ᵉ type. Neptune t'ouvre ses portes."},
       pluto:{name:'Pluton',cond:'???',unlockDesc:"Tu as trouvé le secret. Pluton, la planète oubliée, se souvient de toi."},
       pangaea:{name:'Pangée',cond:'Lire tous les faits Dinosaures',unlockDesc:"Un supercontinent oublié renaît. La Pangée, berceau des dinosaures, se dévoile."},
+      earthnight:{name:'Terre de nuit',cond:'Lire 20 faits Religions',unlockDesc:"Les lumières de l'humanité brillent dans la nuit. La Terre se révèle sous un nouveau jour."},
       sun:{name:'Soleil',cond:'Tous les succès de catégorie',unlockDesc:"Tu es devenu l'Oracle lui-même."}
     },
     achGroups:{
@@ -67,7 +68,7 @@ const T={
       collection:'✦ Collection', sharing:'✦ Partage', fidelity:'✦ Fidélité', planets:'✦ Planètes',
       celebrities:'✦ Célébrités', fiction:'✦ Fictions', gaming:'✦ Jeux Vidéo', cinema_g:'✦ Cinéma', music_g:'✦ Musique',
       mythology_g:'✦ Mythologie', psychology_g:'✦ Psychologie', oceans_g:'✦ Océans', records_g:'✦ Records',
-      quotes_g:'✦ Citations', laws_g:'✦ Lois insolites', tales_g:'✦ Contes & Légendes', dinosaurs_g:'✦ Dinosaures'
+      quotes_g:'✦ Citations', laws_g:'✦ Lois insolites', tales_g:'✦ Contes & Légendes', dinosaurs_g:'✦ Dinosaures', religion_g:'✦ Religions'
     },
     shareTag:"✨ Découvert avec Oracle — l'app des curiosités du monde"
   },
@@ -98,7 +99,7 @@ const T={
       world:'✦ World & Curiosities', language:'✦ Words & Languages', food:'✦ Food & Flavors', sports:'✦ Sports & Challenges',
       celebrities:'✦ Celebrities', fiction:'✦ Fiction & Literature', gaming:'✦ Video Games', cinema:'✦ Cinema', music:'✦ Music',
       mythology:'✦ Mythology', psychology:'✦ Psychology', oceans:'✦ Oceans & Abyss', records:'✦ Records & Extremes',
-      quotes:'✦ Famous Quotes', laws:'✦ Weird Laws', tales:'✦ Tales & Legends', dinosaurs:'✦ Dinosaurs'
+      quotes:'✦ Famous Quotes', laws:'✦ Weird Laws', tales:'✦ Tales & Legends', dinosaurs:'✦ Dinosaurs', religion:'✦ Religions & Spirituality'
     },
     planets:{
       mercury:{name:'Mercury',cond:'Read 20 facts',unlockDesc:"Swift as Mercury. 20 facts read, the closest planet to the Sun is yours."},
@@ -112,6 +113,7 @@ const T={
       neptune:{name:'Neptune',cond:'Collect 5 fragments',unlockDesc:"Close encounter of the third kind. Neptune opens its gates."},
       pluto:{name:'Pluto',cond:'???',unlockDesc:"You found the secret. Pluto, the forgotten planet, remembers you."},
       pangaea:{name:'Pangaea',cond:'Read all Dinosaur facts',unlockDesc:"A forgotten supercontinent reborn. Pangaea, cradle of dinosaurs, reveals itself."},
+      earthnight:{name:'Night Earth',cond:'Read 20 Religion facts',unlockDesc:"Humanity's lights shine through the darkness. Earth reveals itself in a new light."},
       sun:{name:'Sun',cond:'All category achievements',unlockDesc:"You have become the Oracle itself."}
     },
     achGroups:{
@@ -123,7 +125,7 @@ const T={
       collection:'✦ Collection', sharing:'✦ Sharing', fidelity:'✦ Loyalty', planets:'✦ Planets',
       celebrities:'✦ Celebrities', fiction:'✦ Fiction', gaming:'✦ Gaming', cinema_g:'✦ Cinema', music_g:'✦ Music',
       mythology_g:'✦ Mythology', psychology_g:'✦ Psychology', oceans_g:'✦ Oceans', records_g:'✦ Records',
-      quotes_g:'✦ Quotes', laws_g:'✦ Weird Laws', tales_g:'✦ Tales & Legends', dinosaurs_g:'✦ Dinosaurs'
+      quotes_g:'✦ Quotes', laws_g:'✦ Weird Laws', tales_g:'✦ Tales & Legends', dinosaurs_g:'✦ Dinosaurs', religion_g:'✦ Religions'
     },
     shareTag:"✨ Discovered with Oracle — the curiosity app"
   }
@@ -132,7 +134,7 @@ const T={
 // Data is loaded from external files in js/data/*.js before this main script.
 
 // ── ACHIEVEMENTS DEFINITIONS ──────────────────────────────────────────────
-const CAT_ACH_IDS=['sci_5','sci_10','pos_5','pos_10','fun_5','fun_10','hist_5','hist_10','space_5','space_10','anim_5','anim_10','body_5','body_10','arts_5','arts_10','inv_5','inv_10','world_5','world_10','lang_5','lang_10','food_5','food_10','sport_5','sport_10','cel_5','cel_10','fic_5','fic_10','gam_5','gam_10','cin_5','cin_10','mus_5','mus_10','myth_5','myth_10','psy_5','psy_10','ocean_5','ocean_10','rec_5','rec_10','quote_5','quote_10','law_5','law_10','tale_5','tale_10','dino_5','dino_10'];
+const CAT_ACH_IDS=['sci_5','sci_10','pos_5','pos_10','fun_5','fun_10','hist_5','hist_10','space_5','space_10','anim_5','anim_10','body_5','body_10','arts_5','arts_10','inv_5','inv_10','world_5','world_10','lang_5','lang_10','food_5','food_10','sport_5','sport_10','cel_5','cel_10','fic_5','fic_10','gam_5','gam_10','cin_5','cin_10','mus_5','mus_10','myth_5','myth_10','psy_5','psy_10','ocean_5','ocean_10','rec_5','rec_10','quote_5','quote_10','law_5','law_10','tale_5','tale_10','dino_5','dino_10','rel_5','rel_10'];
 
 const buildAchDef=(lang)=>{
   const L=T[lang];
@@ -217,6 +219,9 @@ const buildAchDef=(lang)=>{
     // ─ Dinosaures
     {id:'dino_5',icon:'🦕',name:lang==='fr'?'Apprenti paléontologue':'Dino apprentice',desc:lang==='fr'?'Lire 5 faits Dinosaures':'Read 5 Dinosaur facts',type:'dinosaurs',target:5,group:g.dinosaurs_g},
     {id:'dino_10',icon:'🦖',name:lang==='fr'?'Roi du Jurassique':'Jurassic king',desc:lang==='fr'?'Lire 10 faits Dinosaures':'Read 10 Dinosaur facts',type:'dinosaurs',target:10,group:g.dinosaurs_g},
+    // ─ Religions
+    {id:'rel_5',icon:'🕊️',name:lang==='fr'?'Apprenti spirituel':'Spiritual apprentice',desc:lang==='fr'?'Lire 5 faits Religions':'Read 5 Religion facts',type:'religion',target:5,group:g.religion_g},
+    {id:'rel_10',icon:'🙏',name:lang==='fr'?'Érudit des croyances':'Belief scholar',desc:lang==='fr'?'Lire 10 faits Religions':'Read 10 Religion facts',type:'religion',target:10,group:g.religion_g},
     // ─ Planètes
     {id:'planet_mercury',icon:'☿️',name:lang==='fr'?'Messager de Mercure':'Mercury Messenger',desc:lang==='fr'?'Débloquer Mercure':'Unlock Mercury',type:'planet',target:'mercury',group:g.planets},
     {id:'planet_venus',icon:'♀️',name:lang==='fr'?'Étoile du berger':'Morning Star',desc:lang==='fr'?'Débloquer Vénus':'Unlock Venus',type:'planet',target:'venus',group:g.planets},
@@ -224,6 +229,7 @@ const buildAchDef=(lang)=>{
     {id:'planet_uranus',icon:'🔵',name:lang==='fr'?'Sage d\'Uranus':'Sage of Uranus',desc:lang==='fr'?'Débloquer Uranus':'Unlock Uranus',type:'planet',target:'uranus',group:g.planets},
     {id:'planet_pluto',icon:'💀',name:lang==='fr'?'Fantôme de Pluton':'Ghost of Pluto',desc:lang==='fr'?'Débloquer Pluton':'Unlock Pluto',type:'planet',target:'pluto',group:g.planets},
     {id:'planet_pangaea',icon:'🦕',name:lang==='fr'?'Monde perdu':'Lost World',desc:lang==='fr'?'Débloquer la Pangée':'Unlock Pangaea',type:'planet',target:'pangaea',group:g.planets},
+    {id:'planet_earthnight',icon:'🌃',name:lang==='fr'?'Veilleur nocturne':'Night Watcher',desc:lang==='fr'?'Débloquer la Terre de nuit':'Unlock Night Earth',type:'planet',target:'earthnight',group:g.planets},
     {id:'planet_moon',icon:'🌙',name:lang==='fr'?'Habitant de la Lune':'Moon dweller',desc:lang==='fr'?'Débloquer la Lune':'Unlock the Moon',type:'planet',target:'moon',group:g.planets},
     {id:'planet_mars',icon:'🔴',name:lang==='fr'?'Conquistador de Mars':'Mars conquistador',desc:lang==='fr'?'Débloquer Mars':'Unlock Mars',type:'planet',target:'mars',group:g.planets},
     {id:'planet_saturn',icon:'🪐',name:lang==='fr'?'Seigneur de Saturne':'Lord of Saturn',desc:lang==='fr'?'Débloquer Saturne':'Unlock Saturn',type:'planet',target:'saturn',group:g.planets},
@@ -247,6 +253,7 @@ const buildPlanets=(lang)=>[
   {id:'neptune',emoji:'🛸',cssClass:'planet-neptune',previewClass:'p-neptune',check:(s)=>(s.planetFragments||0)>=5,progress:(s)=>({val:Math.min(s.planetFragments||0,5),max:5,label:`${Math.min(s.planetFragments||0,5)} / 5 🧩`,fillClass:'pf-neptune'})},
   {id:'pluto',emoji:'💀',cssClass:'planet-pluto',previewClass:'p-pluto',check:(s)=>(s.secretTaps||0)>=10,progress:(s)=>({val:Math.min(s.secretTaps||0,10),max:10,label:(s.secretTaps||0)>=10?'???':'???',fillClass:'pf-pluto'})},
   {id:'pangaea',emoji:'🦕',cssClass:'planet-pangaea',previewClass:'p-pangaea',check:(s)=>(s.read.dinosaurs||0)>=20,progress:(s)=>({val:Math.min(s.read.dinosaurs||0,20),max:20,label:`${Math.min(s.read.dinosaurs||0,20)} / 20`,fillClass:'pf-pangaea'})},
+  {id:'earthnight',emoji:'🌃',cssClass:'planet-earthnight',previewClass:'p-earthnight',check:(s)=>(s.read.religion||0)>=20,progress:(s)=>({val:Math.min(s.read.religion||0,20),max:20,label:`${Math.min(s.read.religion||0,20)} / 20`,fillClass:'pf-earthnight'})},
   {id:'sun',emoji:'☀️',cssClass:'planet-sun',previewClass:'p-sun',check:(s)=>CAT_ACH_IDS.every(id=>s.unlocked.includes(id)),progress:(s)=>{const d=CAT_ACH_IDS.filter(id=>s.unlocked.includes(id)).length;return{val:d,max:CAT_ACH_IDS.length,label:`${d} / ${CAT_ACH_IDS.length}`,fillClass:'pf-sun'};}},
 ];
 
@@ -580,7 +587,7 @@ if(state.lang){
 function applyPlanetSkin(planetId, animate){
   const orb=document.getElementById('orb');
   const wrapper=orb.closest('.orb-wrapper')||orb.parentElement;
-  const allPlanetClasses=['planet-earth','planet-mercury','planet-venus','planet-moon','planet-mars','planet-jupiter','planet-saturn','planet-neptune','planet-uranus','planet-pluto','planet-pangaea','planet-sun'];
+  const allPlanetClasses=['planet-earth','planet-mercury','planet-venus','planet-moon','planet-mars','planet-jupiter','planet-saturn','planet-neptune','planet-uranus','planet-pluto','planet-pangaea','planet-earthnight','planet-sun'];
   function doSwap(){
     allPlanetClasses.forEach(c=>orb.classList.remove(c));
     const p=PLANETS.find(x=>x.id===planetId);
@@ -893,8 +900,7 @@ function showDeepDive(){
   if(!container) return;
   if(btn) btn.style.display = 'none';
   const card = container.closest('.card');
-  if(card) card.classList.add('dd-open');
-  container.style.display = 'block';
+if(card) { card.classList.add('dd-open'); card.style.maxHeight='70vh'; card.style.overflowY='auto'; }  container.style.display = 'block';
   container.innerHTML = `
     <div class="dd-header">${lang==='fr'?'🔎 Pour aller plus loin…':'🔎 Dig deeper…'}</div>
     ${items.map((item,i) => `<div class="dd-item" style="animation-delay:${i*0.15}s"><span class="dd-bullet">✦</span><span class="dd-text">${item}</span></div>`).join('')}
@@ -1227,8 +1233,10 @@ function startDlTimer(){
   _dlTimerInterval=setInterval(update,1000);
 }
 
-function closePanel(type){document.getElementById(type==='favs'?'panelFavs':'panelAchievements').classList.remove('open');}
-
+function closePanel(type){
+  const id = type==='favs' ? 'panelFavs' : type==='history' ? 'panelHistory' : 'panelAchievements';
+  document.getElementById(id).classList.remove('open');
+}
 // ── FAIT DU JOUR ──────────────────────────────────────────────────────────
 // Pick a deterministic daily fact based on today's date
 function getDailyFact() {
@@ -1478,6 +1486,7 @@ function getCuriosityProfile() {
     { cats:['food','world'],           emoji:'🍽️', fr:'Le Gastronome',             en:'The Connoisseur',           descFr:'Tu sais que chaque plat raconte une histoire. La table est un lieu de connaissance autant que de plaisir.', descEn:'You know every dish tells a story. The table is a place of knowledge as much as pleasure.' },
     { cats:['sports','celebrities'],   emoji:'🏆', fr:'L\'Esprit de Champion',      en:'The Champion Spirit',       descFr:'Tu vibres pour les exploits humains. La performance et le dépassement de soi t\'inspirent.', descEn:'You thrive on human achievements. Performance and self-surpassing inspire you.' },
     { cats:['positive','fun'],         emoji:'✨', fr:'Le Rayon de Soleil',         en:'The Ray of Sunshine',       descFr:'Tu choisis la lumière. Les anecdotes joyeuses et les surprises positives sont ta marque de fabrique.', descEn:'You choose the light. Joyful anecdotes and positive surprises are your signature.' },
+    { cats:['religion','mythology','quotes'], emoji:'🕊️', fr:'Le Chercheur de Sens',      en:'The Seeker of Meaning',     descFr:'Tu explores les grandes questions de l\'humanité. Foi, mythes et sagesse éclairent ton chemin.', descEn:'You explore humanity\'s great questions. Faith, myths and wisdom light your path.' },
   ];
 
   // Calcul du profil le plus proche via overlap du top3
