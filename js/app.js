@@ -1658,11 +1658,11 @@ function renderStats() {
     <!-- Language -->
     <div class="stats-section-title" style="margin-top:24px">${lang==='fr'?'Langue':'Language'}</div>
     <div class="stats-numbers">
-      <div class="stat-card" onclick="haptic();switchLang('fr');closeStats();setTimeout(openStats,300)" style="cursor:pointer;${lang==='fr'?'border:1px solid var(--accent);':''}">
+      <div class="stat-card" onclick="haptic();switchLang('fr');renderStats()" style="cursor:pointer;${lang==='fr'?'border:1px solid var(--accent);':''}">
         <div class="stat-val">🇫🇷</div>
         <div class="stat-lbl">Français</div>
       </div>
-      <div class="stat-card" onclick="haptic();switchLang('en');closeStats();setTimeout(openStats,300)" style="cursor:pointer;${lang==='en'?'border:1px solid var(--accent);':''}">
+      <div class="stat-card" onclick="haptic();switchLang('en');renderStats()" style="cursor:pointer;${lang==='en'?'border:1px solid var(--accent);':''}">
         <div class="stat-val">🇬🇧</div>
         <div class="stat-lbl">English</div>
       </div>
