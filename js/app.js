@@ -403,7 +403,10 @@ if(!state.activePlanet)state.activePlanet='earth';
   if(!state.lastDate){state.lastDate=today;saveState();return;}
   if(state.lastDate===today)return;
   const y=new Date();y.setDate(y.getDate()-1);
-  state.streak=(state.lastDate===y.toDateString())?(state.streak||1)+1:1;
+  const y2=new Date();y2.setDate(y2.getDate()-2);
+  state.streak=(state.lastDate===y.toDateString())?(state.streak||1)+1
+              :(state.lastDate===y2.toDateString())?(state.streak||1)
+              :1;
   state.lastDate=today;saveState();
 })();
 
