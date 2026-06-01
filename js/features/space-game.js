@@ -422,8 +422,8 @@ function endSpaceGame(survived) {
   ctx.fillStyle = survived ? '#6bff6b' : '#ff6b6b';
   ctx.font = 'bold 32px Montserrat, sans-serif';
   const title = survived
-    ? (lang==='fr' ? '🛸 Mission accomplie !' : '🛸 Mission complete!')
-    : (lang==='fr' ? '💥 Collision !' : '💥 Collision!');
+    ? (lang==='fr' ? '🛸 Mission accomplie !' : lang==='es' ? '🛸 ¡Misión cumplida!' : '🛸 Mission complete!')
+    : (lang==='fr' ? '💥 Collision !' : lang==='es' ? '💥 ¡Colisión!' : '💥 Collision!');
   ctx.fillText(title, W/2, H*0.28);
 
   ctx.fillStyle = '#ffd700';
@@ -435,19 +435,20 @@ function endSpaceGame(survived) {
   if (earnedFragment) {
     ctx.fillStyle = '#c084fc';
     ctx.font = 'bold 22px Montserrat, sans-serif';
-    ctx.fillText(lang==='fr' ? '🧩 +1 Fragment de planète !' : '🧩 +1 Planet fragment!', W/2, H*0.50);
+    ctx.fillText(lang==='fr' ? '🧩 +1 Fragment de planète !' : lang==='es' ? '🧩 +1 ¡Fragmento de planeta!' : '🧩 +1 Planet fragment!', W/2, H*0.50);
     ctx.fillStyle = 'rgba(192,132,252,.7)';
     ctx.font = '400 16px Montserrat, sans-serif';
-    ctx.fillText(frags + ' / 5 ' + (lang==='fr' ? 'fragments' : 'fragments'), W/2, H*0.55);
+    ctx.fillText(frags + ' / 5 ' + (lang==='fr' ? 'fragments' : lang==='es' ? 'fragmentos' : 'fragments'), W/2, H*0.55);
   } else if (frags >= 5) {
     ctx.fillStyle = '#6bff6b';
     ctx.font = '400 18px Montserrat, sans-serif';
-    ctx.fillText(lang==='fr' ? '🪐 Neptune déjà débloquée !' : '🪐 Neptune already unlocked!', W/2, H*0.52);
+    ctx.fillText(lang==='fr' ? '🪐 Neptune déjà débloquée !' : lang==='es' ? '🪐 ¡Neptuno ya desbloqueado!' : '🪐 Neptune already unlocked!', W/2, H*0.52);
   } else {
     ctx.fillStyle = 'rgba(255,255,255,.5)';
     ctx.font = '400 16px Montserrat, sans-serif';
     const needed = lang==='fr'
       ? `🧩 ${frags}/5 fragments — 50⭐ pour le prochain`
+      : lang==='es' ? `🧩 ${frags}/5 fragmentos — 50⭐ para el siguiente`
       : `🧩 ${frags}/5 fragments — 50⭐ for the next one`;
     ctx.fillText(needed, W/2, H*0.52);
   }
@@ -466,7 +467,7 @@ function endSpaceGame(survived) {
   ctx.fill();
   ctx.fillStyle = '#fff';
   ctx.font = '500 18px Montserrat, sans-serif';
-  ctx.fillText(lang==='fr' ? 'Continuer' : 'Continue', W/2, H*0.65 + 30);
+  ctx.fillText(lang==='fr' ? 'Continuer' : lang==='es' ? 'Continuar' : 'Continue', W/2, H*0.65 + 30);
 
   // Click/tap to close
   function _closeGame(e) {
