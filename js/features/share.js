@@ -2,6 +2,7 @@
 // Share cards, clipboard, native share, social platforms
 // Depends on globals: state, lang, T, haptic(), saveState(), showToast(), CAT_ICONS, currentFact
 // ── SHARE ─────────────────────────────────────────────────────────────────
+function shareText(fr, es, en){return lang==='fr'?fr:lang==='es'?es:en;}
 function buildShareText(){if(window._shareText){const t=window._shareText;return t;}if(!currentFact)return'';return`${currentFact.text}\n\n${T[lang].shareTag}`;}
 function openShare(){
   if(!currentFact&&!window._shareRaw)return;haptic('light');
@@ -11,9 +12,9 @@ function openShare(){
   const btn=document.getElementById('copyBtn');
   btn.classList.remove('copied');btn.innerHTML=`<span>📋</span><span id="copyLabel">${T[lang].copyLabel}</span>`;
   const imgLbl=document.getElementById('shareImgLabel');
-  if(imgLbl) imgLbl.textContent = lang==='fr' ? 'Partager' : 'Share';
-  document.getElementById('shareTitle').textContent = lang==='fr' ? 'Partager ce fait' : 'Share this fact';
-  document.getElementById('shareCloseBtn').textContent = lang==='fr' ? 'Fermer' : 'Close';
+  if(imgLbl) imgLbl.textContent = shareText('Partager','Compartir','Share');
+  document.getElementById('shareTitle').textContent = shareText('Partager ce fait','Compartir este dato','Share this fact');
+  document.getElementById('shareCloseBtn').textContent = shareText('Fermer','Cerrar','Close');
   document.getElementById('shareOverlay').classList.add('open');
   document.getElementById('shareSheet').classList.add('open');
 }
@@ -58,7 +59,8 @@ function generateShareCard(text, catKey) {
     sports:'#86efac',celebrities:'#ffd700',fiction:'#a0c4ff',gaming:'#ff6b9d',
     cinema:'#e879f9',music:'#4ade80',
     mythology:'#d4a574',psychology:'#818cf8',oceans:'#06b6d4',records:'#ef4444',
-    quotes:'#fbbf24',laws:'#94a3b8',tales:'#a78bfa',dinosaurs:'#84cc16'
+    quotes:'#fbbf24',laws:'#94a3b8',tales:'#a78bfa',dinosaurs:'#84cc16',
+    religion:'#facc15'
   };
   const glowColor = catColors[catKey] || '#c084fc';
 
@@ -157,11 +159,11 @@ function generateShareCard(text, catKey) {
   // --- URL + branding ---
   ctx.fillStyle = 'rgba(255,255,255,0.3)';
   ctx.font = '400 26px Montserrat, sans-serif';
-  ctx.fillText(lang === 'fr' ? 'Oracle — disponible sur Google Play' : 'Oracle — available on Google Play', SIZE / 2, SIZE - 90);
+  ctx.fillText(shareText('Oracle — disponible sur Google Play','Oracle — disponible en Google Play','Oracle — available on Google Play'), SIZE / 2, SIZE - 90);
 
   ctx.fillStyle = glowColor + '66';
   ctx.font = 'italic 300 24px Montserrat, sans-serif';
-  ctx.fillText(lang === 'fr' ? '\u2728 Le monde a quelque chose \u00e0 te dire' : '\u2728 The world has something to tell you', SIZE / 2, SIZE - 52);
+  ctx.fillText(shareText('\u2728 Le monde a quelque chose \u00e0 te dire','\u2728 El mundo tiene algo que decirte','\u2728 The world has something to tell you'), SIZE / 2, SIZE - 52);
 
   return canvas;
 }
@@ -175,7 +177,7 @@ async function shareAsImage() {
 
   const canvas = generateShareCard(text, catKey);
   const lbl = document.getElementById('shareImgLabel');
-  if (lbl) lbl.textContent = lang === 'fr' ? '⏳ Génération…' : '⏳ Generating…';
+  if (lbl) lbl.textContent = shareText('⏳ Génération…','⏳ Generando…','⏳ Generating…');
 
   try {
     const blob = await new Promise((resolve, reject) => {
@@ -200,9 +202,11 @@ async function shareAsImage() {
       try {
         // Download the image first so user has it
         _downloadBlob(blob);
-        const tag = lang === 'fr'
-          ? '✨ Découvert avec Oracle — l\'app des curiosités du monde\nkipetchis.github.io/Oracle/oracle.html'
-          : '✨ Discovered with Oracle — the world curiosity app\nkipetchis.github.io/Oracle/oracle.html';
+        const tag = shareText(
+          '✨ Découvert avec Oracle — l\'app des curiosités du monde\nkipetchis.github.io/Oracle/oracle.html',
+          '✨ Descubierto con Oracle — la app de las curiosidades del mundo\nkipetchis.github.io/Oracle/oracle.html',
+          '✨ Discovered with Oracle — the world curiosity app\nkipetchis.github.io/Oracle/oracle.html'
+        );
         await navigator.share({ title: 'Oracle', text: text + '\n\n' + tag });
         shared = true;
       } catch(e) {
@@ -219,11 +223,11 @@ async function shareAsImage() {
     state.shares = (state.shares || 0) + 1; saveState();
     setTimeout(() => { checkAchievements(); checkPlanetUnlocks(); }, 200);
 
-    if (lbl) { lbl.textContent = lang === 'fr' ? '✓ Partagé' : '✓ Shared'; }
+    if (lbl) { lbl.textContent = shareText('✓ Partagé','✓ Compartido','✓ Shared'); }
     setTimeout(() => { _resetShareBtn(); }, 2500);
 
   } catch(e) {
-    showToast(lang === 'fr' ? 'Erreur lors de la génération' : 'Error generating image');
+    showToast(shareText('Erreur lors de la génération','Error al generar la imagen','Error generating image'));
     _resetShareBtn();
   }
 }
@@ -234,12 +238,12 @@ function _downloadBlob(blob) {
   a.href = url; a.download = 'oracle-fact.png';
   document.body.appendChild(a); a.click(); document.body.removeChild(a);
   setTimeout(() => URL.revokeObjectURL(url), 3000);
-  showToast(lang === 'fr' ? '📥 Image sauvegardée' : '📥 Image saved');
+  showToast(shareText('📥 Image sauvegardée','📥 Imagen guardada','📥 Image saved'));
 }
 
 function _resetShareBtn() {
   const lbl = document.getElementById('shareImgLabel');
-  if (lbl) lbl.textContent = lang === 'fr' ? 'Partager' : 'Share';
+  if (lbl) lbl.textContent = shareText('Partager','Compartir','Share');
 }
 
 function closeShare(){document.getElementById('shareOverlay').classList.remove('open');document.getElementById('shareSheet').classList.remove('open');window._shareText=null;window._shareRaw=null;window._shareCat=null;}
@@ -265,10 +269,10 @@ async function copyToClipboard(text){
 async function copyFact(){
   haptic('light');const text=buildShareText();
   let ok=await copyToClipboard(text);
-  if(!ok){try{window.prompt(lang==='fr'?'Copie ce texte :':'Copy this text:',text);ok=true;}catch(e){}}
+  if(!ok){try{window.prompt(shareText('Copie ce texte :','Copia este texto:','Copy this text:'),text);ok=true;}catch(e){}}
   const btn=document.getElementById('copyBtn');
   if(ok){btn.classList.add('copied');btn.innerHTML=`<span>✓</span><span>${T[lang].copiedLabel}</span>`;showToast(T[lang].toastCopied);}
-  else{showToast(lang==='fr'?'Maintiens le texte pour copier':'Long-press text to copy');}
+  else{showToast(shareText('Maintiens le texte pour copier','Mantén pulsado el texto para copiar','Long-press text to copy'));}
 }
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2400);}
 function shareTo(platform){
@@ -284,4 +288,3 @@ async function shareNative(){
   haptic('light');if(!currentFact)return;
   openShare();
 }
-
