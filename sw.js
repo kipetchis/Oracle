@@ -1,10 +1,11 @@
-const VERSION = 'oracle-v40';
+const VERSION = 'oracle-v41';
 
 // Fichiers critiques à pré-cacher à l'installation
 const PRECACHE = [
   '/Oracle/oracle.html',
   '/Oracle/js/data/facts-fr.js',
   '/Oracle/js/data/facts-en.js',
+  '/Oracle/js/data/facts-es.js',
   '/Oracle/js/data/ephemeris.js',
   '/Oracle/js/data/sources.js',
   '/Oracle/js/data/deep-dives.js',
