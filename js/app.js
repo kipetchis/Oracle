@@ -128,6 +128,65 @@ const T={
       quotes_g:'✦ Quotes', laws_g:'✦ Weird Laws', tales_g:'✦ Tales & Legends', dinosaurs_g:'✦ Dinosaurs', religion_g:'✦ Religions'
     },
     shareTag:"✨ Discovered with Oracle — the curiosity app"
+  },
+  es:{
+    headerSub:"El mundo tiene algo que decirte",
+    orbPress:"Toca", orbAgain:"Otra vez",
+    exploreBtn:"Explorar", explorePanelTitle:"🧭 Explorar una categoría", exploreProgress:function(n){return n+' / 20 leídos';},
+    hint:"toca el orbe para revelar",
+    cardEmpty:"El oráculo espera tu pregunta silenciosa…",
+    favTitle:"♡ Favoritos", achTitle:"⬡ Logros",
+    favEmpty:"Aún no tienes favoritos.\nToca ♡ debajo de un dato para guardarlo aquí.",
+    favBtn:"Favorito", shareBtn:"Compartir",
+    shareTitle:"Compartir este dato", copyLabel:"Copiar texto", copiedLabel:"¡Copiado!",
+    shareClose:"Cerrar",
+    toastCopied:"✓ Copiado al portapapeles",
+    celebLabel:"Logro desbloqueado", celebBtn:"Continuar",
+    unlockLabel:"¡Nuevo planeta desbloqueado!", unlockBtn:"Explorar",
+    planetPanelTitle:"⬡ Skins de planeta",
+    planetActive:"Activo", planetUnlocked:"✓ Desbloqueado", planetDefault:"Por defecto",
+    perk1:"Sin anuncios, para siempre",
+    perk2:"Planetas Luna y Marte desbloqueados de inmediato",
+    perk3:"Apoya el desarrollo de Oracle",
+    counter:(i,t)=>`${i} / ${t}`,
+    catLabels:{
+      science:'✦ Ciencia y Naturaleza', positive:'✦ Buenas noticias', fun:'✦ Saber inútil',
+      history:'✦ Historia y Civilizaciones', space:'✦ Espacio y Astronomía', animals:'✦ Animales asombrosos',
+      body:'✦ Cuerpo humano y Medicina', arts:'✦ Arte y Cultura', inventions:'✦ Inventos y ¡Eureka!',
+      world:'✦ Mundo y Curiosidades', language:'✦ Palabras e Idiomas', food:'✦ Cocina y Sabores', sports:'✦ Deportes y Desafíos',
+      celebrities:'✦ Celebridades', fiction:'✦ Ficción y Literatura', gaming:'✦ Videojuegos', cinema:'✦ Cine', music:'✦ Música',
+      mythology:'✦ Mitología', psychology:'✦ Psicología', oceans:'✦ Océanos y Abismos', records:'✦ Récords y Extremos',
+      quotes:'✦ Citas célebres', laws:'✦ Leyes insólitas', tales:'✦ Cuentos y Leyendas', dinosaurs:'✦ Dinosaurios',
+      religion:'✦ Religiones y Espiritualidad'
+    },
+    planets:{
+      mercury:{name:'Mercurio',cond:'Leer 20 datos',unlockDesc:"Rápido como Mercurio. 20 datos leídos, el planeta más cercano al Sol es tuyo."},
+      venus:{name:'Venus',cond:'Leer 30 efemérides',unlockDesc:"30 efemérides consultadas. Venus, la estrella del pastor, brilla para ti."},
+      earth:{name:'Tierra',cond:'Por defecto',unlockDesc:'Tu planeta de inicio. Siempre disponible.'},
+      moon:{name:'Luna',cond:'Leer 50 datos',unlockDesc:"Has consultado el Oráculo 50 veces. La Luna es tuya."},
+      mars:{name:'Marte',cond:'7 días seguidos',unlockDesc:"7 días de curiosidad seguidos. Marte te pertenece."},
+      jupiter:{name:'Júpiter',cond:'1 dato por categoría',unlockDesc:"Un dato en cada categoría. Júpiter, rey de los planetas, te corona."},
+      saturn:{name:'Saturno',cond:'Compartir 5 datos',unlockDesc:"5 compartidos en el cosmos. Saturno te da la bienvenida."},
+      uranus:{name:'Urano',cond:'50 respuestas correctas en el quiz',unlockDesc:"50 respuestas correctas. Urano, el misterioso, revela sus secretos."},
+      neptune:{name:'Neptuno',cond:'Coleccionar 5 fragmentos',unlockDesc:"Encuentro del tercer tipo. Neptuno te abre sus puertas."},
+      pluto:{name:'Plutón',cond:'???',unlockDesc:"Has encontrado el secreto. Plutón, el planeta olvidado, te recuerda."},
+      pangaea:{name:'Pangea',cond:'Leer todos los datos de Dinosaurios',unlockDesc:"Un supercontinente olvidado renace. Pangea, cuna de los dinosaurios, se revela."},
+      earthnight:{name:'Tierra de noche',cond:'Leer 20 datos de Religión',unlockDesc:"Las luces de la humanidad brillan en la oscuridad. La Tierra de noche es tuya."},
+      sun:{name:'Sol',cond:'Todos los logros de categoría',unlockDesc:"Te has convertido en el Oráculo mismo."}
+    },
+    achGroups:{
+      curiosity:'✦ Curiosidad', science:'✦ Ciencia y Naturaleza', positive:'✦ Buenas noticias',
+      fun:'✦ Saber inútil', history:'✦ Historia', space:'✦ Espacio',
+      animals:'✦ Animales asombrosos', body:'✦ Cuerpo humano', arts:'✦ Arte y Cultura',
+      inventions:'✦ Inventos', world:'✦ Curiosidades del mundo',
+      language:'✦ Palabras e Idiomas', food:'✦ Cocina y Sabores', sports:'✦ Deportes',
+      collection:'✦ Colección', sharing:'✦ Compartir', fidelity:'✦ Fidelidad', planets:'✦ Planetas',
+      celebrities:'✦ Celebridades', fiction:'✦ Ficción', gaming:'✦ Videojuegos', cinema_g:'✦ Cine', music_g:'✦ Música',
+      mythology_g:'✦ Mitología', psychology_g:'✦ Psicología', oceans_g:'✦ Océanos', records_g:'✦ Récords',
+      quotes_g:'✦ Citas', laws_g:'✦ Leyes insólitas', tales_g:'✦ Cuentos y Leyendas', dinosaurs_g:'✦ Dinosaurios',
+      religion_g:'✦ Religiones'
+    },
+    shareTag:"✨ Descubierto con Oracle — la app de las curiosidades del mundo"
   }
 };
 
@@ -136,107 +195,94 @@ const T={
 // ── ACHIEVEMENTS DEFINITIONS ──────────────────────────────────────────────
 const CAT_ACH_IDS=['sci_5','sci_10','pos_5','pos_10','fun_5','fun_10','hist_5','hist_10','space_5','space_10','anim_5','anim_10','body_5','body_10','arts_5','arts_10','inv_5','inv_10','world_5','world_10','lang_5','lang_10','food_5','food_10','sport_5','sport_10','cel_5','cel_10','fic_5','fic_10','gam_5','gam_10','cin_5','cin_10','mus_5','mus_10','myth_5','myth_10','psy_5','psy_10','ocean_5','ocean_10','rec_5','rec_10','quote_5','quote_10','law_5','law_10','tale_5','tale_10','dino_5','dino_10','rel_5','rel_10'];
 
+function _t(fr,es,en){return lang==='fr'?fr:lang==='es'?es:en;}
 const buildAchDef=(lang)=>{
   const L=T[lang];
   const g=L.achGroups;
   return[
-    {id:'total_5',icon:'🔭',name:lang==='fr'?'Curieux débutant':'Curious beginner',desc:lang==='fr'?'Lire 5 faits au total':'Read 5 facts total',type:'total',target:5,group:g.curiosity},
-    {id:'total_50',icon:'🌌',name:lang==='fr'?"Esprit ouvert":'Open mind',desc:lang==='fr'?'Lire 50 faits au total':'Read 50 facts total',type:'total',target:50,group:g.curiosity},
-    {id:'total_all',icon:'🪐',name:lang==='fr'?"L'Oracle complet":'The complete Oracle',desc:lang==='fr'?'Lire tous les faits':'Read all facts',type:'total',target:FACTS_FR.length,group:g.curiosity},
-    {id:'sci_5',icon:'🔬',name:lang==='fr'?'Apprenti scientifique':'Science apprentice',desc:lang==='fr'?'Lire 5 faits Science':'Read 5 Science facts',type:'science',target:5,group:g.science},
-    {id:'sci_10',icon:'⚗️',name:lang==='fr'?'Esprit scientifique':'Scientific mind',desc:lang==='fr'?'Lire 10 faits Science':'Read 10 Science facts',type:'science',target:10,group:g.science},
-    {id:'pos_5',icon:'🌱',name:lang==='fr'?'Optimiste':'Optimist',desc:lang==='fr'?'Lire 5 bonnes nouvelles':'Read 5 good news',type:'positive',target:5,group:g.positive},
-    {id:'pos_10',icon:'🌍',name:lang==='fr'?'Citoyen du monde':'World citizen',desc:lang==='fr'?'Lire 10 bonnes nouvelles':'Read 10 good news',type:'positive',target:10,group:g.positive},
-    {id:'fun_5',icon:'🎲',name:lang==='fr'?'Inutilement savant':'Usefully useless',desc:lang==='fr'?'Lire 5 savoirs inutiles':'Read 5 useless facts',type:'fun',target:5,group:g.fun},
-    {id:'fun_10',icon:'🦑',name:lang==='fr'?'Maître du trivial':'Trivia master',desc:lang==='fr'?'Lire 10 savoirs inutiles':'Read 10 useless facts',type:'fun',target:10,group:g.fun},
-    {id:'hist_5',icon:'🏛️',name:lang==='fr'?'Apprenti historien':'History apprentice',desc:lang==='fr'?'Lire 5 faits Histoire':'Read 5 History facts',type:'history',target:5,group:g.history},
-    {id:'hist_10',icon:'📜',name:lang==='fr'?'Chroniqueur':'Chronicler',desc:lang==='fr'?'Lire 10 faits Histoire':'Read 10 History facts',type:'history',target:10,group:g.history},
-    {id:'space_5',icon:'🚀',name:lang==='fr'?'Apprenti cosmonaute':'Space cadet',desc:lang==='fr'?'Lire 5 faits Espace':'Read 5 Space facts',type:'space',target:5,group:g.space},
-    {id:'space_10',icon:'🌠',name:lang==='fr'?'Explorateur stellaire':'Stellar explorer',desc:lang==='fr'?'Lire 10 faits Espace':'Read 10 Space facts',type:'space',target:10,group:g.space},
-    {id:'anim_5',icon:'🐙',name:lang==='fr'?'Ami des bêtes':'Animal friend',desc:lang==='fr'?'Lire 5 faits Animaux':'Read 5 Animal facts',type:'animals',target:5,group:g.animals},
-    {id:'anim_10',icon:'🦋',name:lang==='fr'?'Naturaliste':'Naturalist',desc:lang==='fr'?'Lire 10 faits Animaux':'Read 10 Animal facts',type:'animals',target:10,group:g.animals},
-    {id:'body_5',icon:'🧬',name:lang==='fr'?'Apprenti anatomiste':'Body apprentice',desc:lang==='fr'?'Lire 5 faits Corps humain':'Read 5 Body facts',type:'body',target:5,group:g.body},
-    {id:'body_10',icon:'🫀',name:lang==='fr'?'Médecin de soi-même':'Self doctor',desc:lang==='fr'?'Lire 10 faits Corps humain':'Read 10 Body facts',type:'body',target:10,group:g.body},
-    {id:'arts_5',icon:'🎨',name:lang==='fr'?'Apprenti mécène':'Arts apprentice',desc:lang==='fr'?'Lire 5 faits Arts':'Read 5 Arts facts',type:'arts',target:5,group:g.arts},
-    {id:'arts_10',icon:'🎭',name:lang==='fr'?'Homme de culture':'Cultured person',desc:lang==='fr'?'Lire 10 faits Arts':'Read 10 Arts facts',type:'arts',target:10,group:g.arts},
-    {id:'inv_5',icon:'💡',name:lang==='fr'?'Apprenti inventeur':'Inventor apprentice',desc:lang==='fr'?'Lire 5 faits Inventions':'Read 5 Inventions facts',type:'inventions',target:5,group:g.inventions},
-    {id:'inv_10',icon:'⚙️',name:lang==='fr'?'Génie incompris':'Misunderstood genius',desc:lang==='fr'?'Lire 10 faits Inventions':'Read 10 Inventions facts',type:'inventions',target:10,group:g.inventions},
-    {id:'world_5',icon:'🗺️',name:lang==='fr'?'Explorateur':'Explorer',desc:lang==='fr'?'Lire 5 faits Monde':'Read 5 World facts',type:'world',target:5,group:g.world},
-    {id:'world_10',icon:'🌐',name:lang==='fr'?'Citoyen universel':'Universal citizen',desc:lang==='fr'?'Lire 10 faits Monde':'Read 10 World facts',type:'world',target:10,group:g.world},
-    {id:'lang_5',icon:'📖',name:lang==='fr'?'Apprenti linguiste':'Language apprentice',desc:lang==='fr'?'Lire 5 faits Langages':'Read 5 Language facts',type:'language',target:5,group:g.language},
-    {id:'lang_10',icon:'🗣️',name:lang==='fr'?'Polyglotte du savoir':'Knowledge polyglot',desc:lang==='fr'?'Lire 10 faits Langages':'Read 10 Language facts',type:'language',target:10,group:g.language},
-    {id:'food_5',icon:'🍽️',name:lang==='fr'?'Apprenti gourmet':'Food apprentice',desc:lang==='fr'?'Lire 5 faits Cuisine':'Read 5 Food facts',type:'food',target:5,group:g.food},
-    {id:'food_10',icon:'👨‍🍳',name:lang==='fr'?'Chef étoilé du savoir':'Knowledge chef',desc:lang==='fr'?'Lire 10 faits Cuisine':'Read 10 Food facts',type:'food',target:10,group:g.food},
-    {id:'sport_5',icon:'🏅',name:lang==='fr'?'Apprenti champion':'Sports apprentice',desc:lang==='fr'?'Lire 5 faits Sports':'Read 5 Sports facts',type:'sports',target:5,group:g.sports},
-    {id:'sport_10',icon:'🏆',name:lang==='fr'?'Champion du savoir':'Knowledge champion',desc:lang==='fr'?'Lire 10 faits Sports':'Read 10 Sports facts',type:'sports',target:10,group:g.sports},
-    {id:'fav_1',icon:'⭐',name:lang==='fr'?'Premier coup de cœur':'First favourite',desc:lang==='fr'?'Sauvegarder 1 favori':'Save 1 favourite',type:'fav',target:1,group:g.collection},
-    {id:'fav_5',icon:'💫',name:lang==='fr'?'Collectionneur':'Collector',desc:lang==='fr'?'Sauvegarder 5 favoris':'Save 5 favourites',type:'fav',target:5,group:g.collection},
-    {id:'fav_10',icon:'✨',name:lang==='fr'?'Trésorier de curiosités':'Curiosity keeper',desc:lang==='fr'?'Sauvegarder 10 favoris':'Save 10 favourites',type:'fav',target:10,group:g.collection},
-    {id:'share_1',icon:'📤',name:lang==='fr'?'Première diffusion':'First share',desc:lang==='fr'?'Partager 1 fait':'Share 1 fact',type:'shares',target:1,group:g.sharing},
-    {id:'share_10',icon:'📡',name:lang==='fr'?"Ambassadeur de l'Oracle":'Oracle ambassador',desc:lang==='fr'?'Partager 10 faits':'Share 10 facts',type:'shares',target:10,group:g.sharing},
-    {id:'streak_3',icon:'🔥',name:lang==='fr'?'Rituel de 3 jours':'3-day ritual',desc:lang==='fr'?'Revenir 3 jours de suite':'Return 3 days in a row',type:'streak',target:3,group:g.fidelity},
-    {id:'streak_7',icon:'🌟',name:lang==='fr'?'Rituel hebdomadaire':'Weekly ritual',desc:lang==='fr'?'Revenir 7 jours de suite':'Return 7 days in a row',type:'streak',target:7,group:g.fidelity},
-    // ─ Célébrités
-    {id:'cel_5',icon:'🌟',name:lang==='fr'?'Fan de potins':'Gossip fan',desc:lang==='fr'?'Lire 5 faits Célébrités':'Read 5 Celebrity facts',type:'celebrities',target:5,group:g.celebrities},
-    {id:'cel_10',icon:'🎬',name:lang==='fr'?'Ami des stars':'Star follower',desc:lang==='fr'?'Lire 10 faits Célébrités':'Read 10 Celebrity facts',type:'celebrities',target:10,group:g.celebrities},
-    {id:'cel_all',icon:'🏆',name:lang==='fr'?'Paparazzi':'Paparazzi',desc:lang==='fr'?'Lire tous les faits Célébrités':'Read all Celebrity facts',type:'celebrities',target:20,group:g.celebrities},
-    // ─ Fictions
-    {id:'fic_5',icon:'📚',name:lang==='fr'?'Apprenti lecteur':'Bookworm beginner',desc:lang==='fr'?'Lire 5 faits Fiction':'Read 5 Fiction facts',type:'fiction',target:5,group:g.fiction},
-    {id:'fic_10',icon:'🔖',name:lang==='fr'?'Bibliophile':'Bibliophile',desc:lang==='fr'?'Lire 10 faits Fiction':'Read 10 Fiction facts',type:'fiction',target:10,group:g.fiction},
-    // ─ Jeux Vidéo
-    {id:'gam_5',icon:'🎮',name:lang==='fr'?'Casual gamer':'Casual gamer',desc:lang==='fr'?'Lire 5 faits Jeux Vidéo':'Read 5 Gaming facts',type:'gaming',target:5,group:g.gaming},
-    {id:'gam_10',icon:'🕹️',name:lang==='fr'?'Hardcore gamer':'Hardcore gamer',desc:lang==='fr'?'Lire 10 faits Jeux Vidéo':'Read 10 Gaming facts',type:'gaming',target:10,group:g.gaming},
-    {id:'gam_all',icon:'👾',name:lang==='fr'?'Game Master':'Game Master',desc:lang==='fr'?'Lire tous les faits Jeux Vidéo':'Read all Gaming facts',type:'gaming',target:20,group:g.gaming},
-    // ─ Cinéma
-    {id:'cin_5',icon:'🎬',name:lang==='fr'?'Cinéphile débutant':'Film beginner',desc:lang==='fr'?'Lire 5 faits Cinéma':'Read 5 Cinema facts',type:'cinema',target:5,group:g.cinema_g},
-    {id:'cin_10',icon:'🎞️',name:lang==='fr'?'Cinéaste':'Film buff',desc:lang==='fr'?'Lire 10 faits Cinéma':'Read 10 Cinema facts',type:'cinema',target:10,group:g.cinema_g},
-    // ─ Musique
-    {id:'mus_5',icon:'🎵',name:lang==='fr'?'Mélomane':'Music lover',desc:lang==='fr'?'Lire 5 faits Musique':'Read 5 Music facts',type:'music',target:5,group:g.music_g},
-    {id:'mus_10',icon:'🎸',name:lang==='fr'?'Rockstar du savoir':'Knowledge rockstar',desc:lang==='fr'?'Lire 10 faits Musique':'Read 10 Music facts',type:'music',target:10,group:g.music_g},
-    {id:'mus_all',icon:'🎤',name:lang==='fr'?'Légende musicale':'Musical legend',desc:lang==='fr'?'Lire tous les faits Musique':'Read all Music facts',type:'music',target:18,group:g.music_g},
-
-    // ─ Mythologie
-    {id:'myth_5',icon:'🏛️',name:lang==='fr'?'Apprenti mythologue':'Myth apprentice',desc:lang==='fr'?'Lire 5 faits Mythologie':'Read 5 Mythology facts',type:'mythology',target:5,group:g.mythology_g},
-    {id:'myth_10',icon:'⚡',name:lang==='fr'?'Conteur des dieux':'Storyteller of gods',desc:lang==='fr'?'Lire 10 faits Mythologie':'Read 10 Mythology facts',type:'mythology',target:10,group:g.mythology_g},
-    // ─ Psychologie
-    {id:'psy_5',icon:'🧠',name:lang==='fr'?'Apprenti psy':'Psych apprentice',desc:lang==='fr'?'Lire 5 faits Psychologie':'Read 5 Psychology facts',type:'psychology',target:5,group:g.psychology_g},
-    {id:'psy_10',icon:'🔮',name:lang==='fr'?'Mentaliste':'Mentalist',desc:lang==='fr'?'Lire 10 faits Psychologie':'Read 10 Psychology facts',type:'psychology',target:10,group:g.psychology_g},
-    // ─ Océans
-    {id:'ocean_5',icon:'🌊',name:lang==='fr'?'Marin d\'eau douce':'Freshwater sailor',desc:lang==='fr'?'Lire 5 faits Océans':'Read 5 Ocean facts',type:'oceans',target:5,group:g.oceans_g},
-    {id:'ocean_10',icon:'🐙',name:lang==='fr'?'Explorateur des abysses':'Abyss explorer',desc:lang==='fr'?'Lire 10 faits Océans':'Read 10 Ocean facts',type:'oceans',target:10,group:g.oceans_g},
-    // ─ Records
-    {id:'rec_5',icon:'🏅',name:lang==='fr'?'Chasseur de records':'Record hunter',desc:lang==='fr'?'Lire 5 faits Records':'Read 5 Record facts',type:'records',target:5,group:g.records_g},
-    {id:'rec_10',icon:'🥇',name:lang==='fr'?'Recordman du savoir':'Knowledge recordman',desc:lang==='fr'?'Lire 10 faits Records':'Read 10 Record facts',type:'records',target:10,group:g.records_g},
-    // ─ Citations
-    {id:'quote_5',icon:'💬',name:lang==='fr'?'Apprenti philosophe':'Apprentice philosopher',desc:lang==='fr'?'Lire 5 citations':'Read 5 quotes',type:'quotes',target:5,group:g.quotes_g},
-    {id:'quote_10',icon:'📜',name:lang==='fr'?'Sage parmi les sages':'Wisest of the wise',desc:lang==='fr'?'Lire 10 citations':'Read 10 quotes',type:'quotes',target:10,group:g.quotes_g},
-    // ─ Lois insolites
-    {id:'law_5',icon:'⚖️',name:lang==='fr'?'Apprenti juriste':'Law apprentice',desc:lang==='fr'?'Lire 5 lois insolites':'Read 5 weird laws',type:'laws',target:5,group:g.laws_g},
-    {id:'law_10',icon:'🔨',name:lang==='fr'?'Juge insolite':'Quirky judge',desc:lang==='fr'?'Lire 10 lois insolites':'Read 10 weird laws',type:'laws',target:10,group:g.laws_g},
-    // ─ Contes & Légendes
-    {id:'tale_5',icon:'🐉',name:lang==='fr'?'Apprenti conteur':'Tale apprentice',desc:lang==='fr'?'Lire 5 contes & légendes':'Read 5 tales & legends',type:'tales',target:5,group:g.tales_g},
-    {id:'tale_10',icon:'📖',name:lang==='fr'?'Gardien des légendes':'Legend keeper',desc:lang==='fr'?'Lire 10 contes & légendes':'Read 10 tales & legends',type:'tales',target:10,group:g.tales_g},
-    // ─ Dinosaures
-    {id:'dino_5',icon:'🦕',name:lang==='fr'?'Apprenti paléontologue':'Dino apprentice',desc:lang==='fr'?'Lire 5 faits Dinosaures':'Read 5 Dinosaur facts',type:'dinosaurs',target:5,group:g.dinosaurs_g},
-    {id:'dino_10',icon:'🦖',name:lang==='fr'?'Roi du Jurassique':'Jurassic king',desc:lang==='fr'?'Lire 10 faits Dinosaures':'Read 10 Dinosaur facts',type:'dinosaurs',target:10,group:g.dinosaurs_g},
-    // ─ Religions
-    {id:'rel_5',icon:'🕊️',name:lang==='fr'?'Apprenti spirituel':'Spiritual apprentice',desc:lang==='fr'?'Lire 5 faits Religions':'Read 5 Religion facts',type:'religion',target:5,group:g.religion_g},
-    {id:'rel_10',icon:'🙏',name:lang==='fr'?'Érudit des croyances':'Belief scholar',desc:lang==='fr'?'Lire 10 faits Religions':'Read 10 Religion facts',type:'religion',target:10,group:g.religion_g},
+    {id:'total_5',icon:'🔭',name:_t('Curieux débutant','Curioso principiante','Curious beginner'),desc:_t('Lire 5 faits au total','Leer 5 datos en total','Read 5 facts total'),type:'total',target:5,group:g.curiosity},
+    {id:'total_50',icon:'🌌',name:_t('Esprit ouvert','Mente abierta','Open mind'),desc:_t('Lire 50 faits au total','Leer 50 datos en total','Read 50 facts total'),type:'total',target:50,group:g.curiosity},
+    {id:'total_all',icon:'🪐',name:_t("L'Oracle complet",'El Oráculo completo','The complete Oracle'),desc:_t('Lire tous les faits','Leer todos los datos','Read all facts'),type:'total',target:FACTS_FR.length,group:g.curiosity},
+    {id:'sci_5',icon:'🔬',name:_t('Apprenti scientifique','Aprendiz de científico','Science apprentice'),desc:_t('Lire 5 faits Science','Leer 5 datos de Ciencia','Read 5 Science facts'),type:'science',target:5,group:g.science},
+    {id:'sci_10',icon:'⚗️',name:_t('Esprit scientifique','Mente científica','Scientific mind'),desc:_t('Lire 10 faits Science','Leer 10 datos de Ciencia','Read 10 Science facts'),type:'science',target:10,group:g.science},
+    {id:'pos_5',icon:'🌱',name:_t('Optimiste','Optimista','Optimist'),desc:_t('Lire 5 bonnes nouvelles','Leer 5 buenas noticias','Read 5 good news'),type:'positive',target:5,group:g.positive},
+    {id:'pos_10',icon:'🌍',name:_t('Citoyen du monde','Ciudadano del mundo','World citizen'),desc:_t('Lire 10 bonnes nouvelles','Leer 10 buenas noticias','Read 10 good news'),type:'positive',target:10,group:g.positive},
+    {id:'fun_5',icon:'🎲',name:_t('Inutilement savant','Inútilmente sabio','Usefully useless'),desc:_t('Lire 5 savoirs inutiles','Leer 5 saberes inútiles','Read 5 useless facts'),type:'fun',target:5,group:g.fun},
+    {id:'fun_10',icon:'🦑',name:_t('Maître du trivial','Maestro de lo trivial','Trivia master'),desc:_t('Lire 10 savoirs inutiles','Leer 10 saberes inútiles','Read 10 useless facts'),type:'fun',target:10,group:g.fun},
+    {id:'hist_5',icon:'🏛️',name:_t('Apprenti historien','Aprendiz de historiador','History apprentice'),desc:_t('Lire 5 faits Histoire','Leer 5 datos de Historia','Read 5 History facts'),type:'history',target:5,group:g.history},
+    {id:'hist_10',icon:'📜',name:_t('Chroniqueur','Cronista','Chronicler'),desc:_t('Lire 10 faits Histoire','Leer 10 datos de Historia','Read 10 History facts'),type:'history',target:10,group:g.history},
+    {id:'space_5',icon:'🚀',name:_t('Apprenti cosmonaute','Aprendiz de cosmonauta','Space cadet'),desc:_t('Lire 5 faits Espace','Leer 5 datos de Espacio','Read 5 Space facts'),type:'space',target:5,group:g.space},
+    {id:'space_10',icon:'🌠',name:_t('Explorateur stellaire','Explorador estelar','Stellar explorer'),desc:_t('Lire 10 faits Espace','Leer 10 datos de Espacio','Read 10 Space facts'),type:'space',target:10,group:g.space},
+    {id:'anim_5',icon:'🐙',name:_t('Ami des bêtes','Amigo de los animales','Animal friend'),desc:_t('Lire 5 faits Animaux','Leer 5 datos de Animales','Read 5 Animal facts'),type:'animals',target:5,group:g.animals},
+    {id:'anim_10',icon:'🦋',name:_t('Naturaliste','Naturalista','Naturalist'),desc:_t('Lire 10 faits Animaux','Leer 10 datos de Animales','Read 10 Animal facts'),type:'animals',target:10,group:g.animals},
+    {id:'body_5',icon:'🧬',name:_t('Apprenti anatomiste','Aprendiz de anatomía','Body apprentice'),desc:_t('Lire 5 faits Corps humain','Leer 5 datos del Cuerpo','Read 5 Body facts'),type:'body',target:5,group:g.body},
+    {id:'body_10',icon:'🫀',name:_t('Médecin de soi-même','Doctor de uno mismo','Self doctor'),desc:_t('Lire 10 faits Corps humain','Leer 10 datos del Cuerpo','Read 10 Body facts'),type:'body',target:10,group:g.body},
+    {id:'arts_5',icon:'🎨',name:_t('Apprenti mécène','Aprendiz de mecenas','Arts apprentice'),desc:_t('Lire 5 faits Arts','Leer 5 datos de Arte','Read 5 Arts facts'),type:'arts',target:5,group:g.arts},
+    {id:'arts_10',icon:'🎭',name:_t('Homme de culture','Persona culta','Cultured person'),desc:_t('Lire 10 faits Arts','Leer 10 datos de Arte','Read 10 Arts facts'),type:'arts',target:10,group:g.arts},
+    {id:'inv_5',icon:'💡',name:_t('Apprenti inventeur','Aprendiz de inventor','Inventor apprentice'),desc:_t('Lire 5 faits Inventions','Leer 5 datos de Inventos','Read 5 Inventions facts'),type:'inventions',target:5,group:g.inventions},
+    {id:'inv_10',icon:'⚙️',name:_t('Génie incompris','Genio incomprendido','Misunderstood genius'),desc:_t('Lire 10 faits Inventions','Leer 10 datos de Inventos','Read 10 Inventions facts'),type:'inventions',target:10,group:g.inventions},
+    {id:'world_5',icon:'🗺️',name:_t('Explorateur','Explorador','Explorer'),desc:_t('Lire 5 faits Monde','Leer 5 datos del Mundo','Read 5 World facts'),type:'world',target:5,group:g.world},
+    {id:'world_10',icon:'🌐',name:_t('Citoyen universel','Ciudadano universal','Universal citizen'),desc:_t('Lire 10 faits Monde','Leer 10 datos del Mundo','Read 10 World facts'),type:'world',target:10,group:g.world},
+    {id:'lang_5',icon:'📖',name:_t('Apprenti linguiste','Aprendiz de lingüista','Language apprentice'),desc:_t('Lire 5 faits Langages','Leer 5 datos de Idiomas','Read 5 Language facts'),type:'language',target:5,group:g.language},
+    {id:'lang_10',icon:'🗣️',name:_t('Polyglotte du savoir','Políglota del saber','Knowledge polyglot'),desc:_t('Lire 10 faits Langages','Leer 10 datos de Idiomas','Read 10 Language facts'),type:'language',target:10,group:g.language},
+    {id:'food_5',icon:'🍽️',name:_t('Apprenti gourmet','Aprendiz gourmet','Food apprentice'),desc:_t('Lire 5 faits Cuisine','Leer 5 datos de Cocina','Read 5 Food facts'),type:'food',target:5,group:g.food},
+    {id:'food_10',icon:'👨‍🍳',name:_t('Chef étoilé du savoir','Chef estrellado del saber','Knowledge chef'),desc:_t('Lire 10 faits Cuisine','Leer 10 datos de Cocina','Read 10 Food facts'),type:'food',target:10,group:g.food},
+    {id:'sport_5',icon:'🏅',name:_t('Apprenti champion','Aprendiz de campeón','Sports apprentice'),desc:_t('Lire 5 faits Sports','Leer 5 datos de Deportes','Read 5 Sports facts'),type:'sports',target:5,group:g.sports},
+    {id:'sport_10',icon:'🏆',name:_t('Champion du savoir','Campeón del saber','Knowledge champion'),desc:_t('Lire 10 faits Sports','Leer 10 datos de Deportes','Read 10 Sports facts'),type:'sports',target:10,group:g.sports},
+    {id:'fav_1',icon:'⭐',name:_t('Premier coup de cœur','Primer favorito','First favourite'),desc:_t('Sauvegarder 1 favori','Guardar 1 favorito','Save 1 favourite'),type:'fav',target:1,group:g.collection},
+    {id:'fav_5',icon:'💫',name:_t('Collectionneur','Coleccionista','Collector'),desc:_t('Sauvegarder 5 favoris','Guardar 5 favoritos','Save 5 favourites'),type:'fav',target:5,group:g.collection},
+    {id:'fav_10',icon:'✨',name:_t('Trésorier de curiosités','Tesorero de curiosidades','Curiosity keeper'),desc:_t('Sauvegarder 10 favoris','Guardar 10 favoritos','Save 10 favourites'),type:'fav',target:10,group:g.collection},
+    {id:'share_1',icon:'📤',name:_t('Première diffusion','Primera difusión','First share'),desc:_t('Partager 1 fait','Compartir 1 dato','Share 1 fact'),type:'shares',target:1,group:g.sharing},
+    {id:'share_10',icon:'📡',name:_t("Ambassadeur de l'Oracle",'Embajador del Oráculo','Oracle ambassador'),desc:_t('Partager 10 faits','Compartir 10 datos','Share 10 facts'),type:'shares',target:10,group:g.sharing},
+    {id:'streak_3',icon:'🔥',name:_t('Rituel de 3 jours','Ritual de 3 días','3-day ritual'),desc:_t('Revenir 3 jours de suite','Volver 3 días seguidos','Return 3 days in a row'),type:'streak',target:3,group:g.fidelity},
+    {id:'streak_7',icon:'🌟',name:_t('Rituel hebdomadaire','Ritual semanal','Weekly ritual'),desc:_t('Revenir 7 jours de suite','Volver 7 días seguidos','Return 7 days in a row'),type:'streak',target:7,group:g.fidelity},
+    {id:'cel_5',icon:'🌟',name:_t('Fan de potins','Fan de los chismes','Gossip fan'),desc:_t('Lire 5 faits Célébrités','Leer 5 datos de Celebridades','Read 5 Celebrity facts'),type:'celebrities',target:5,group:g.celebrities},
+    {id:'cel_10',icon:'🎬',name:_t('Ami des stars','Amigo de las estrellas','Star follower'),desc:_t('Lire 10 faits Célébrités','Leer 10 datos de Celebridades','Read 10 Celebrity facts'),type:'celebrities',target:10,group:g.celebrities},
+    {id:'cel_all',icon:'🏆',name:_t('Paparazzi','Paparazzi','Paparazzi'),desc:_t('Lire tous les faits Célébrités','Leer todos los datos de Celebridades','Read all Celebrity facts'),type:'celebrities',target:20,group:g.celebrities},
+    {id:'fic_5',icon:'📚',name:_t('Apprenti lecteur','Aprendiz de lector','Bookworm beginner'),desc:_t('Lire 5 faits Fiction','Leer 5 datos de Ficción','Read 5 Fiction facts'),type:'fiction',target:5,group:g.fiction},
+    {id:'fic_10',icon:'🔖',name:_t('Bibliophile','Bibliófilo','Bibliophile'),desc:_t('Lire 10 faits Fiction','Leer 10 datos de Ficción','Read 10 Fiction facts'),type:'fiction',target:10,group:g.fiction},
+    {id:'gam_5',icon:'🎮',name:_t('Casual gamer','Jugador casual','Casual gamer'),desc:_t('Lire 5 faits Jeux Vidéo','Leer 5 datos de Videojuegos','Read 5 Gaming facts'),type:'gaming',target:5,group:g.gaming},
+    {id:'gam_10',icon:'🕹️',name:_t('Hardcore gamer','Jugador hardcore','Hardcore gamer'),desc:_t('Lire 10 faits Jeux Vidéo','Leer 10 datos de Videojuegos','Read 10 Gaming facts'),type:'gaming',target:10,group:g.gaming},
+    {id:'gam_all',icon:'👾',name:_t('Game Master','Maestro del juego','Game Master'),desc:_t('Lire tous les faits Jeux Vidéo','Leer todos los datos de Videojuegos','Read all Gaming facts'),type:'gaming',target:20,group:g.gaming},
+    {id:'cin_5',icon:'🎬',name:_t('Cinéphile débutant','Cinéfilo principiante','Film beginner'),desc:_t('Lire 5 faits Cinéma','Leer 5 datos de Cine','Read 5 Cinema facts'),type:'cinema',target:5,group:g.cinema_g},
+    {id:'cin_10',icon:'🎞️',name:_t('Cinéaste','Cineasta','Film buff'),desc:_t('Lire 10 faits Cinéma','Leer 10 datos de Cine','Read 10 Cinema facts'),type:'cinema',target:10,group:g.cinema_g},
+    {id:'mus_5',icon:'🎵',name:_t('Mélomane','Melómano','Music lover'),desc:_t('Lire 5 faits Musique','Leer 5 datos de Música','Read 5 Music facts'),type:'music',target:5,group:g.music_g},
+    {id:'mus_10',icon:'🎸',name:_t('Rockstar du savoir','Rockstar del saber','Knowledge rockstar'),desc:_t('Lire 10 faits Musique','Leer 10 datos de Música','Read 10 Music facts'),type:'music',target:10,group:g.music_g},
+    {id:'mus_all',icon:'🎤',name:_t('Légende musicale','Leyenda musical','Musical legend'),desc:_t('Lire tous les faits Musique','Leer todos los datos de Música','Read all Music facts'),type:'music',target:18,group:g.music_g},
+    {id:'myth_5',icon:'🏛️',name:_t('Apprenti mythologue','Aprendiz de mitología','Myth apprentice'),desc:_t('Lire 5 faits Mythologie','Leer 5 datos de Mitología','Read 5 Mythology facts'),type:'mythology',target:5,group:g.mythology_g},
+    {id:'myth_10',icon:'⚡',name:_t('Conteur des dieux','Narrador de dioses','Storyteller of gods'),desc:_t('Lire 10 faits Mythologie','Leer 10 datos de Mitología','Read 10 Mythology facts'),type:'mythology',target:10,group:g.mythology_g},
+    {id:'psy_5',icon:'🧠',name:_t('Apprenti psy','Aprendiz de psicología','Psych apprentice'),desc:_t('Lire 5 faits Psychologie','Leer 5 datos de Psicología','Read 5 Psychology facts'),type:'psychology',target:5,group:g.psychology_g},
+    {id:'psy_10',icon:'🔮',name:_t('Mentaliste','Mentalista','Mentalist'),desc:_t('Lire 10 faits Psychologie','Leer 10 datos de Psicología','Read 10 Psychology facts'),type:'psychology',target:10,group:g.psychology_g},
+    {id:'ocean_5',icon:'🌊',name:_t("Marin d'eau douce",'Marinero de agua dulce','Freshwater sailor'),desc:_t('Lire 5 faits Océans','Leer 5 datos de Océanos','Read 5 Ocean facts'),type:'oceans',target:5,group:g.oceans_g},
+    {id:'ocean_10',icon:'🐙',name:_t('Explorateur des abysses','Explorador de abismos','Abyss explorer'),desc:_t('Lire 10 faits Océans','Leer 10 datos de Océanos','Read 10 Ocean facts'),type:'oceans',target:10,group:g.oceans_g},
+    {id:'rec_5',icon:'🏅',name:_t('Chasseur de records','Cazador de récords','Record hunter'),desc:_t('Lire 5 faits Records','Leer 5 datos de Récords','Read 5 Record facts'),type:'records',target:5,group:g.records_g},
+    {id:'rec_10',icon:'🥇',name:_t('Recordman du savoir','Récordman del saber','Knowledge recordman'),desc:_t('Lire 10 faits Records','Leer 10 datos de Récords','Read 10 Record facts'),type:'records',target:10,group:g.records_g},
+    {id:'quote_5',icon:'💬',name:_t('Apprenti philosophe','Aprendiz de filósofo','Apprentice philosopher'),desc:_t('Lire 5 citations','Leer 5 citas','Read 5 quotes'),type:'quotes',target:5,group:g.quotes_g},
+    {id:'quote_10',icon:'📜',name:_t('Sage parmi les sages','Sabio entre sabios','Wisest of the wise'),desc:_t('Lire 10 citations','Leer 10 citas','Read 10 quotes'),type:'quotes',target:10,group:g.quotes_g},
+    {id:'law_5',icon:'⚖️',name:_t('Apprenti juriste','Aprendiz de jurista','Law apprentice'),desc:_t('Lire 5 lois insolites','Leer 5 leyes insólitas','Read 5 weird laws'),type:'laws',target:5,group:g.laws_g},
+    {id:'law_10',icon:'🔨',name:_t('Juge insolite','Juez insólito','Quirky judge'),desc:_t('Lire 10 lois insolites','Leer 10 leyes insólitas','Read 10 weird laws'),type:'laws',target:10,group:g.laws_g},
+    {id:'tale_5',icon:'🐉',name:_t('Apprenti conteur','Aprendiz de cuentacuentos','Tale apprentice'),desc:_t('Lire 5 contes & légendes','Leer 5 cuentos y leyendas','Read 5 tales & legends'),type:'tales',target:5,group:g.tales_g},
+    {id:'tale_10',icon:'📖',name:_t('Gardien des légendes','Guardián de leyendas','Legend keeper'),desc:_t('Lire 10 contes & légendes','Leer 10 cuentos y leyendas','Read 10 tales & legends'),type:'tales',target:10,group:g.tales_g},
+    {id:'dino_5',icon:'🦕',name:_t('Apprenti paléontologue','Aprendiz de paleontólogo','Dino apprentice'),desc:_t('Lire 5 faits Dinosaures','Leer 5 datos de Dinosaurios','Read 5 Dinosaur facts'),type:'dinosaurs',target:5,group:g.dinosaurs_g},
+    {id:'dino_10',icon:'🦖',name:_t('Roi du Jurassique','Rey del Jurásico','Jurassic king'),desc:_t('Lire 10 faits Dinosaures','Leer 10 datos de Dinosaurios','Read 10 Dinosaur facts'),type:'dinosaurs',target:10,group:g.dinosaurs_g},
+    // ─ Religion
+    {id:'rel_5',icon:'🕊️',name:_t('Apprenti spirituel','Aprendiz espiritual','Spiritual apprentice'),desc:_t('Lire 5 faits Religion','Leer 5 datos de Religión','Read 5 Religion facts'),type:'religion',target:5,group:g.religion_g},
+    {id:'rel_10',icon:'🙏',name:_t('Érudit des croyances','Erudito de creencias','Belief scholar'),desc:_t('Lire 10 faits Religion','Leer 10 datos de Religión','Read 10 Religion facts'),type:'religion',target:10,group:g.religion_g},
     // ─ Planètes
-    {id:'planet_mercury',icon:'☿️',name:lang==='fr'?'Messager de Mercure':'Mercury Messenger',desc:lang==='fr'?'Débloquer Mercure':'Unlock Mercury',type:'planet',target:'mercury',group:g.planets},
-    {id:'planet_venus',icon:'♀️',name:lang==='fr'?'Étoile du berger':'Morning Star',desc:lang==='fr'?'Débloquer Vénus':'Unlock Venus',type:'planet',target:'venus',group:g.planets},
-    {id:'planet_jupiter',icon:'🟠',name:lang==='fr'?'Roi de Jupiter':'King of Jupiter',desc:lang==='fr'?'Débloquer Jupiter':'Unlock Jupiter',type:'planet',target:'jupiter',group:g.planets},
-    {id:'planet_uranus',icon:'🔵',name:lang==='fr'?'Sage d\'Uranus':'Sage of Uranus',desc:lang==='fr'?'Débloquer Uranus':'Unlock Uranus',type:'planet',target:'uranus',group:g.planets},
-    {id:'planet_pluto',icon:'💀',name:lang==='fr'?'Fantôme de Pluton':'Ghost of Pluto',desc:lang==='fr'?'Débloquer Pluton':'Unlock Pluto',type:'planet',target:'pluto',group:g.planets},
-    {id:'planet_pangaea',icon:'🦕',name:lang==='fr'?'Monde perdu':'Lost World',desc:lang==='fr'?'Débloquer la Pangée':'Unlock Pangaea',type:'planet',target:'pangaea',group:g.planets},
-    {id:'planet_earthnight',icon:'🌃',name:lang==='fr'?'Veilleur nocturne':'Night Watcher',desc:lang==='fr'?'Débloquer la Terre de nuit':'Unlock Night Earth',type:'planet',target:'earthnight',group:g.planets},
-    {id:'planet_moon',icon:'🌙',name:lang==='fr'?'Habitant de la Lune':'Moon dweller',desc:lang==='fr'?'Débloquer la Lune':'Unlock the Moon',type:'planet',target:'moon',group:g.planets},
-    {id:'planet_mars',icon:'🔴',name:lang==='fr'?'Conquistador de Mars':'Mars conquistador',desc:lang==='fr'?'Débloquer Mars':'Unlock Mars',type:'planet',target:'mars',group:g.planets},
-    {id:'planet_saturn',icon:'🪐',name:lang==='fr'?'Seigneur de Saturne':'Lord of Saturn',desc:lang==='fr'?'Débloquer Saturne':'Unlock Saturn',type:'planet',target:'saturn',group:g.planets},
-    {id:'planet_neptune',icon:'🛸',name:lang==='fr'?'Rencontre du 3ᵉ type':'Close Encounter',desc:lang==='fr'?'Collecter 5 fragments de planète':'Collect 5 planet fragments',type:'planet',target:'neptune',group:g.planets},
-    {id:'planet_sun',icon:'☀️',name:lang==='fr'?"L'Oracle Solaire":'The Solar Oracle',desc:lang==='fr'?'Débloquer le Soleil':'Unlock the Sun',type:'planet',target:'sun',group:g.planets},
-    {id:'ephem_1',icon:'📅',name:lang==='fr'?'Premier Éphéméride':'First Ephemeris',desc:lang==='fr'?'Lire ton premier fait du jour':'Read your first daily fact',type:'ephem',target:1,group:g.planets},
-    {id:'ephem_7',icon:'🗓️',name:lang==='fr'?"Semaine d'Oracle":'Oracle Week',desc:lang==='fr'?'Lire 7 éphémérides':'Read 7 daily facts',type:'ephem',target:7,group:g.planets},
+    {id:'planet_mercury',icon:'☿️',name:_t('Messager de Mercure','Mensajero de Mercurio','Mercury Messenger'),desc:_t('Débloquer Mercure','Desbloquear Mercurio','Unlock Mercury'),type:'planet',target:'mercury',group:g.planets},
+    {id:'planet_venus',icon:'♀️',name:_t('Étoile du berger','Estrella del pastor','Morning Star'),desc:_t('Débloquer Vénus','Desbloquear Venus','Unlock Venus'),type:'planet',target:'venus',group:g.planets},
+    {id:'planet_jupiter',icon:'🟠',name:_t('Roi de Jupiter','Rey de Júpiter','King of Jupiter'),desc:_t('Débloquer Jupiter','Desbloquear Júpiter','Unlock Jupiter'),type:'planet',target:'jupiter',group:g.planets},
+    {id:'planet_uranus',icon:'🔵',name:_t("Sage d'Uranus",'Sabio de Urano','Sage of Uranus'),desc:_t('Débloquer Uranus','Desbloquear Urano','Unlock Uranus'),type:'planet',target:'uranus',group:g.planets},
+    {id:'planet_pluto',icon:'💀',name:_t('Fantôme de Pluton','Fantasma de Plutón','Ghost of Pluto'),desc:_t('Débloquer Pluton','Desbloquear Plutón','Unlock Pluto'),type:'planet',target:'pluto',group:g.planets},
+    {id:'planet_pangaea',icon:'🦕',name:_t('Monde perdu','Mundo perdido','Lost World'),desc:_t('Débloquer la Pangée','Desbloquear Pangea','Unlock Pangaea'),type:'planet',target:'pangaea',group:g.planets},
+    {id:'planet_earthnight',icon:'🌃',name:_t('Veilleur nocturne','Vigilante nocturno','Night Watcher'),desc:_t('Débloquer la Terre de nuit','Desbloquear la Tierra de noche','Unlock Night Earth'),type:'planet',target:'earthnight',group:g.planets},
+    {id:'planet_moon',icon:'🌙',name:_t('Habitant de la Lune','Habitante de la Luna','Moon dweller'),desc:_t('Débloquer la Lune','Desbloquear la Luna','Unlock the Moon'),type:'planet',target:'moon',group:g.planets},
+    {id:'planet_mars',icon:'🔴',name:_t('Conquistador de Mars','Conquistador de Marte','Mars conquistador'),desc:_t('Débloquer Mars','Desbloquear Marte','Unlock Mars'),type:'planet',target:'mars',group:g.planets},
+    {id:'planet_saturn',icon:'🪐',name:_t('Seigneur de Saturne','Señor de Saturno','Lord of Saturn'),desc:_t('Débloquer Saturne','Desbloquear Saturno','Unlock Saturn'),type:'planet',target:'saturn',group:g.planets},
+    {id:'planet_neptune',icon:'🛸',name:_t('Rencontre du 3ᵉ type','Encuentro del tercer tipo','Close Encounter'),desc:_t('Collecter 5 fragments de planète','Coleccionar 5 fragmentos de planeta','Collect 5 planet fragments'),type:'planet',target:'neptune',group:g.planets},
+    {id:'planet_sun',icon:'☀️',name:_t("L'Oracle Solaire",'El Oráculo Solar','The Solar Oracle'),desc:_t('Débloquer le Soleil','Desbloquear el Sol','Unlock the Sun'),type:'planet',target:'sun',group:g.planets},
+    {id:'ephem_1',icon:'📅',name:_t('Premier Éphéméride','Primera efeméride','First Ephemeris'),desc:_t('Lire ton premier fait du jour','Leer tu primer dato del día','Read your first daily fact'),type:'ephem',target:1,group:g.planets},
+    {id:'ephem_7',icon:'🗓️',name:_t("Semaine d'Oracle",'Semana del Oráculo','Oracle Week'),desc:_t('Lire 7 éphémérides','Leer 7 efemérides','Read 7 daily facts'),type:'ephem',target:7,group:g.planets},
   ];
 };
 
@@ -337,9 +383,9 @@ function signInWithGoogle(){
   fbAuth.signInWithPopup(provider).catch(function(e){
     console.warn('Google sign-in error:', e.code, e.message);
     if(e.code === 'auth/popup-blocked'){
-      showToast(lang==='fr'?'Autorise les popups pour te connecter':'Allow popups to sign in');
+      showToast(_t('Autorise les popups pour te connecter','Permite los popups para iniciar sesión','Allow popups to sign in'));
     } else {
-      showToast(lang==='fr'?'Erreur de connexion':'Sign-in error');
+      showToast(_t('Erreur de connexion','Error de conexión','Sign-in error'));
     }
   });
 }
@@ -349,7 +395,7 @@ function signOutUser(){
   fbAuth.signOut().then(()=>{
     _fbUser = null;
     updateAuthUI();
-    showToast(lang==='fr'?'Déconnecté':'Signed out');
+    showToast(_t('Déconnecté','Desconectado','Signed out'));
     closeAuthPanel();
   });
 }
@@ -415,7 +461,7 @@ let lang='fr', FACTS=FACTS_FR, ACH_DEF=[], PLANETS=[];
 // ── LANGUAGE ──────────────────────────────────────────────────────────────
 function setLang(l){
   lang=l; state.lang=l; saveState();
-  FACTS=l==='fr'?FACTS_FR:FACTS_EN;
+  FACTS=l==='fr'?FACTS_FR:l==='es'?FACTS_ES:FACTS_EN;
   ACH_DEF=buildAchDef(l);
   PLANETS=buildPlanets(l);
   document.getElementById('langScreen').classList.add('hidden');
@@ -431,7 +477,7 @@ function setLang(l){
 
 function switchLang(l){
     lang=l; state.lang=l; saveState();
-    FACTS=l==='fr'?FACTS_FR:FACTS_EN;
+    FACTS=l==='fr'?FACTS_FR:l==='es'?FACTS_ES:FACTS_EN;
     ACH_DEF=buildAchDef(l);
     PLANETS=buildPlanets(l);
     deck=[];deckIdx=0;
@@ -471,6 +517,12 @@ const OB_SLIDES = {
     {title:"Explore the planets",desc:"Unlock new planets by reading, sharing and exploring. Each one transforms your experience."},
     {title:"A universe to discover",desc:"Dozens of categories, hundreds of facts and a daily ephemeris — there's always something to learn."},
     {title:"Ready to begin?",desc:"Touch the orb to reveal your first fact. The universe of knowledge awaits."}
+  ],
+  es:[
+    {title:"Bienvenido a Oracle",desc:"Cada día, el Oráculo te revela datos fascinantes sobre el mundo — ciencia, historia, naturaleza y mucho más."},
+    {title:"Explora los planetas",desc:"Desbloquea nuevos planetas leyendo, compartiendo y explorando. Cada uno transforma tu experiencia."},
+    {title:"Un universo por descubrir",desc:"Decenas de categorías, cientos de datos y una efeméride diaria — siempre hay algo nuevo que aprender."},
+    {title:"¿Listo para empezar?",desc:"Toca el orbe para revelar tu primer dato. El universo del conocimiento se abre ante ti."}
   ]
 };
 
@@ -479,8 +531,8 @@ let _obIdx = 0;
 function showOnboarding(){
   const slides = OB_SLIDES[lang]||OB_SLIDES.en;
   const emojis = ['🔮','🪐','🧭','✨'];
-  const skipLabel = lang==='fr'?'Passer':'Skip';
-  const nextLabel = lang==='fr'?'Suivant →':'Next →';
+  const skipLabel = _t('Passer','Omitir','Skip');
+  const nextLabel = _t('Suivant →','Siguiente →','Next →');
 
   // Build onboarding DOM
   const ob = document.createElement('div');
@@ -556,7 +608,7 @@ function _obUpdateSlide(){
   document.getElementById('obPrev').style.visibility=_obIdx===0?'hidden':'visible';
   // Next button label
   const isLast=_obIdx>=slides.length-1;
-  document.getElementById('obNext').textContent=isLast?(lang==='fr'?"C'est parti 🚀":'Let\'s go 🚀'):(lang==='fr'?'Suivant →':'Next →');
+  document.getElementById('obNext').textContent=isLast?(_t("C'est parti 🚀","¡Vamos! 🚀","Let's go 🚀")):(_t('Suivant →','Siguiente →','Next →'));
 }
 
 function finishOnboarding(){
@@ -797,7 +849,7 @@ function showFact(){
     state.seenIds.push(currentFact.id);
   }
   if(!state.history.some(h=>h.id===currentFact.id)){
-    state.history.unshift({id:currentFact.id,cat:currentFact.cat,label:(T[lang].catLabels||{})[currentFact.cat]||currentFact.cat,text:currentFact.text,date:new Date().toLocaleDateString(lang==='fr'?'fr-FR':'en-US')});
+    state.history.unshift({id:currentFact.id,cat:currentFact.cat,label:(T[lang].catLabels||{})[currentFact.cat]||currentFact.cat,text:currentFact.text,date:new Date().toLocaleDateString(lang==='fr'?'fr-FR':lang==='es'?'es-ES':'en-US')});
     if(state.history.length>50) state.history.pop();
   }
   saveState();
@@ -829,7 +881,7 @@ function showFact(){
         </button>
         <span class="counter">${t.counter(state.read.total||0,FACTS.length)}</span>
       </div>
-      ${DEEP_DIVES[currentFact.id] ? `<button class="deep-dive-btn" id="deepDiveBtn" onclick="showDeepDive()"><span class="dd-icon">🔎</span> ${lang==='fr'?'Creuser le sujet':'Dig deeper'}</button>` : ''}
+      ${DEEP_DIVES[currentFact.id] ? `<button class="deep-dive-btn" id="deepDiveBtn" onclick="showDeepDive()"><span class="dd-icon">🔎</span> ${_t('Creuser le sujet','Profundizar','Dig deeper')}</button>` : ''}
       <div class="deep-dive-container" id="deepDiveContainer" style="display:none;"></div>`;
     card.classList.add('visible');
     setTimeout(()=>card.scrollIntoView({behavior:'smooth',block:'nearest'}),200);
@@ -851,7 +903,7 @@ function showFact(){
 function toggleExplore(){
   if(exploreCat){
     resetExploreBtn();
-    showToast(lang==='fr'?'🎲 Retour en aléatoire':'🎲 Back to random');
+    showToast(_t('🎲 Retour en aléatoire','🎲 Volver a aleatorio','🎲 Back to random'));
   } else {
     openExplorePanel();
   }
@@ -893,7 +945,7 @@ function pickExplore(cat){
   const name=T[lang].catLabels[cat];
   btn.innerHTML=`${icon} <span id="exploreBtnLabel">${name}</span>`;
   btn.classList.add('cat-active');
-  showToast(lang==='fr'?`🧭 Prochain fait : ${name}`:`🧭 Next fact: ${name}`);
+  showToast(_t(`🧭 Prochain fait : ${name}`,`🧭 Próximo dato: ${name}`,`🧭 Next fact: ${name}`));
 }
 
 function resetExploreBtn(){
@@ -909,7 +961,7 @@ function showDeepDive(){
   haptic('light');
   const data = DEEP_DIVES[currentFact.id];
   if(!data) return;
-  const items = lang==='fr' ? data.fr : data.en;
+  const items = lang==='fr' ? data.fr : lang==='es' ? data.es : data.en;
   if(!items || !items.length) return;
   const container = document.getElementById('deepDiveContainer');
   const btn = document.getElementById('deepDiveBtn');
@@ -918,7 +970,7 @@ function showDeepDive(){
   const card = container.closest('.card');
 if(card) { card.classList.add('dd-open'); card.style.maxHeight='70vh'; card.style.overflowY='auto'; }  container.style.display = 'block';
   container.innerHTML = `
-    <div class="dd-header">${lang==='fr'?'🔎 Pour aller plus loin…':'🔎 Dig deeper…'}</div>
+    <div class="dd-header">${_t('🔎 Pour aller plus loin…','🔎 Para saber más…','🔎 Dig deeper…')}</div>
     ${items.map((item,i) => `<div class="dd-item" style="animation-delay:${i*0.15}s"><span class="dd-bullet">✦</span><span class="dd-text">${item}</span></div>`).join('')}
   `;
   setTimeout(()=>{if(card)card.scrollTop=card.scrollHeight;},100);
@@ -927,14 +979,14 @@ if(card) { card.classList.add('dd-open'); card.style.maxHeight='70vh'; card.styl
 function showInlineDeepDive(btn, factId){
   const data = DEEP_DIVES[factId];
   if(!data) return;
-  const items = lang==='fr' ? data.fr : data.en;
+  const items = lang==='fr' ? data.fr : lang==='es' ? data.es : data.en;
   if(!items || !items.length) return;
   const container = btn.nextElementSibling;
   if(!container) return;
   btn.style.display = 'none';
   container.style.display = 'block';
   container.innerHTML = `
-    <div class="dd-header">${lang==='fr'?'🔎 Pour aller plus loin…':'🔎 Dig deeper…'}</div>
+    <div class="dd-header">${_t('🔎 Pour aller plus loin…','🔎 Para saber más…','🔎 Dig deeper…')}</div>
     ${items.map((item,i) => `<div class="dd-item" style="animation-delay:${i*0.15}s"><span class="dd-bullet">✦</span><span class="dd-text">${item}</span></div>`).join('')}
   `;
   setTimeout(()=>container.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
@@ -975,7 +1027,7 @@ function renderHistory(){
   const el=document.getElementById('historyListInline')||elOld;
   if(!el) return;
   if(!state.history||!state.history.length){
-    el.innerHTML=`<p class="fav-empty">${lang==='fr'?'Aucun fait lu pour le moment.':'No facts read yet.'}</p>`;
+    el.innerHTML=`<p class="fav-empty">${_t('Aucun fait lu pour le moment.','Ningún dato leído por ahora.','No facts read yet.')}</p>`;
     return;
   }
   renderCatGrid(el, state.history, 'history');
@@ -1018,7 +1070,7 @@ function openCatFacts(cat, mode){
   if(!el) return;
 
   el.innerHTML=`
-    <button class="cat-back-btn" onclick="renderCatView('${mode}')">← ${lang==='fr'?'Catégories':'Categories'}</button>
+    <button class="cat-back-btn" onclick="renderCatView('${mode}')">← ${_t('Catégories','Categorías','Categories')}</button>
     <div style="margin-bottom:10px;font-family:'Space Mono',monospace;font-size:.52rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text-muted)">${icon} ${label}</div>
     ${filtered.map((f,i)=>{
       const origIdx = items.indexOf(f);
@@ -1027,10 +1079,10 @@ function openCatFacts(cat, mode){
       return`<div class="fav-item">
         ${isFavMode?'':`<div class="fav-item-badge badge-${f.cat}"><span class="badge-dot"></span><span style="margin-left:auto;font-size:.6rem;opacity:.4">${f.date||''}</span></div>`}
         <p class="fav-item-text">${f.text}</p>
-        ${DEEP_DIVES[f.id]?`<button class="deep-dive-btn" onclick="haptic('light');showInlineDeepDive(this,'${f.id}')"><span class="dd-icon">🔎</span> ${lang==='fr'?'Creuser le sujet':'Dig deeper'}</button><div class="deep-dive-container" style="display:none;"></div>`:''}
+        ${DEEP_DIVES[f.id]?`<button class="deep-dive-btn" onclick="haptic('light');showInlineDeepDive(this,'${f.id}')"><span class="dd-icon">🔎</span> ${_t('Creuser le sujet','Profundizar','Dig deeper')}</button><div class="deep-dive-container" style="display:none;"></div>`:''}
         <div class="fav-item-actions">
           ${!isFavMode?`<button class="hist-fav-btn ${isFav?'is-fav':''}" onclick="haptic();toggleHistFav('${f.id}','${f.cat}','${safeText}');openCatFacts('${cat}','${mode}')">${isFav?'♥':'♡'}</button>`:''}
-          <button class="fav-share-btn" onclick="haptic();shareFav('${safeText}','${f.cat}')">↗ ${lang==='fr'?'Partager':'Share'}</button>
+          <button class="fav-share-btn" onclick="haptic();shareFav('${safeText}','${f.cat}')">↗ ${_t('Partager','Compartir','Share')}</button>
           ${isFavMode?`<button class="fav-remove" onclick="removeFavAndRefresh(${origIdx},'${cat}')">✕</button>`:''}
         </div>
       </div>`;
@@ -1120,10 +1172,10 @@ function renderSearchResults(results, query){
       return '<div class="fav-item">'
         + '<div class="fav-item-badge badge-'+f.cat+'"><span class="badge-dot"></span><span style="margin-left:4px;font-size:.6rem;opacity:.6">'+icon+' '+label+'</span><span style="margin-left:auto;font-size:.6rem;opacity:.4">'+(f.date||'')+'</span></div>'
         + '<p class="fav-item-text">'+f.text+'</p>'
-        + (DEEP_DIVES[f.id]?'<button class="deep-dive-btn" onclick="haptic(\'light\');showInlineDeepDive(this,\''+f.id+'\')"><span class="dd-icon">🔎</span> '+(lang==='fr'?'Creuser le sujet':'Dig deeper')+'</button><div class="deep-dive-container" style="display:none;"></div>':'')
+        + (DEEP_DIVES[f.id]?'<button class="deep-dive-btn" onclick="haptic(\'light\');showInlineDeepDive(this,\''+f.id+'\')"><span class="dd-icon">🔎</span> '+(_t('Creuser le sujet','Profundizar','Dig deeper'))+'</button><div class="deep-dive-container" style="display:none;"></div>':'')
         + '<div class="fav-item-actions">'
         + '<button class="hist-fav-btn '+(isFav?'is-fav':'')+'" onclick="haptic();toggleHistFav(\''+f.id+'\',\''+f.cat+'\',\''+safeText+'\')">'+( isFav?'♥':'♡')+'</button>'
-        + '<button class="fav-share-btn" onclick="haptic();shareFav(\''+safeText+'\',\''+f.cat+'\')">↗ '+(lang==='fr'?'Partager':'Share')+'</button>'
+        + '<button class="fav-share-btn" onclick="haptic();shareFav(\''+safeText+'\',\''+f.cat+'\')">↗ '+(_t('Partager','Compartir','Share'))+'</button>'
         + '</div></div>';
     }).join('');
 }
@@ -1205,7 +1257,7 @@ function renderEphemHistory(){
   if(!el) return;
   if(!state.ephemHistory) state.ephemHistory=[];
   if(!state.ephemHistory.length){
-    el.innerHTML=`<p class="fav-empty">${lang==='fr'?'Aucune éphéméride lue pour le moment.<br>Ouvre le fait du jour chaque matin !':'No daily facts read yet.<br>Open the fact of the day each morning!'}</p>`;
+    el.innerHTML=`<p class="fav-empty">${_t('Aucune éphéméride lue pour le moment.<br>Ouvre le fait du jour chaque matin !','Ninguna efeméride leída aún.<br>¡Abre el dato del día cada mañana!','No daily facts read yet.<br>Open the fact of the day each morning!')}</p>`;
     return;
   }
   el.innerHTML=state.ephemHistory.map(f=>{
@@ -1214,10 +1266,10 @@ function renderEphemHistory(){
     return`<div class="fav-item">
       <div class="fav-item-badge"><span class="badge-dot"></span><span style="margin-left:auto;font-size:.6rem;opacity:.4">${f.date||''}</span></div>
       <p class="fav-item-text">${f.text}</p>
-      ${DEEP_DIVES[f.id]?`<button class="deep-dive-btn" onclick="haptic('light');showInlineDeepDive(this,'${f.id}')"><span class="dd-icon">🔎</span> ${lang==='fr'?'Creuser le sujet':'Dig deeper'}</button><div class="deep-dive-container" style="display:none;"></div>`:''}
+      ${DEEP_DIVES[f.id]?`<button class="deep-dive-btn" onclick="haptic('light');showInlineDeepDive(this,'${f.id}')"><span class="dd-icon">🔎</span> ${_t('Creuser le sujet','Profundizar','Dig deeper')}</button><div class="deep-dive-container" style="display:none;"></div>`:''}
       <div class="fav-item-actions">
         <button class="hist-fav-btn ${isFav?'is-fav':''}" onclick="haptic();toggleHistFav('${f.id}','${f.cat||'positive'}','${safeText}');renderEphemHistory()">${isFav?'♥':'♡'}</button>
-        <button class="fav-share-btn" onclick="haptic();shareFav('${safeText}','${f.cat||'positive'}')">↗ ${lang==='fr'?'Partager':'Share'}</button>
+        <button class="fav-share-btn" onclick="haptic();shareFav('${safeText}','${f.cat||'positive'}')">↗ ${_t('Partager','Compartir','Share')}</button>
       </div>
     </div>`;
   }).join('');
@@ -1302,12 +1354,12 @@ function renderDailyLimitStats() {
   // Stats grid
   const sg = document.getElementById('dlStatsGrid');
   if(sg) sg.innerHTML = `
-    <div class="dl-stat-item dl-stat-link" onclick="haptic();closeDailyLimit();openPanel('favs');switchFavTab('history')"><div class="dl-stat-val">${total}</div><div class="dl-stat-label">${lang==='fr'?'FAITS LUS':'FACTS READ'}</div></div>
-    <div class="dl-stat-item"><div class="dl-stat-val">${streak}</div><div class="dl-stat-label">${lang==='fr'?'JOURS D\'AFFILÉE':'DAY STREAK'}</div></div>
-    <div class="dl-stat-item"><div class="dl-stat-val">${pct}%</div><div class="dl-stat-label">${lang==='fr'?'AU QUIZ':'QUIZ SCORE'}</div></div>
-    <div class="dl-stat-item dl-stat-link" onclick="haptic();closeDailyLimit();openPanel('favs');switchFavTab('favs')"><div class="dl-stat-val">${favCount}</div><div class="dl-stat-label">${lang==='fr'?'FAVORIS':'FAVORITES'}</div></div>
-    <div class="dl-stat-item dl-stat-link" onclick="haptic();closeDailyLimit();openPlanetPanel()"><div class="dl-stat-val">${planetsCount}</div><div class="dl-stat-label">${lang==='fr'?'PLANÈTES':'PLANETS'}</div></div>
-    <div class="dl-stat-item"><div class="dl-stat-val">${state.shares||0}</div><div class="dl-stat-label">${lang==='fr'?'PARTAGES':'SHARES'}</div></div>
+    <div class="dl-stat-item dl-stat-link" onclick="haptic();closeDailyLimit();openPanel('favs');switchFavTab('history')"><div class="dl-stat-val">${total}</div><div class="dl-stat-label">${_t('FAITS LUS','DATOS LEÍDOS','FACTS READ')}</div></div>
+    <div class="dl-stat-item"><div class="dl-stat-val">${streak}</div><div class="dl-stat-label">${_t("JOURS D'AFFILÉE",'DÍAS SEGUIDOS','DAY STREAK')}</div></div>
+    <div class="dl-stat-item"><div class="dl-stat-val">${pct}%</div><div class="dl-stat-label">${_t('AU QUIZ','EN EL QUIZ','QUIZ SCORE')}</div></div>
+    <div class="dl-stat-item dl-stat-link" onclick="haptic();closeDailyLimit();openPanel('favs');switchFavTab('favs')"><div class="dl-stat-val">${favCount}</div><div class="dl-stat-label">${_t('FAVORIS','FAVORITOS','FAVORITES')}</div></div>
+    <div class="dl-stat-item dl-stat-link" onclick="haptic();closeDailyLimit();openPlanetPanel()"><div class="dl-stat-val">${planetsCount}</div><div class="dl-stat-label">${_t('PLANÈTES','PLANETAS','PLANETS')}</div></div>
+    <div class="dl-stat-item"><div class="dl-stat-val">${state.shares||0}</div><div class="dl-stat-label">${_t('PARTAGES','COMPARTIDOS','SHARES')}</div></div>
   `;
 
   // Achievements
@@ -1327,12 +1379,14 @@ function showDailyLimit(){
   renderDailyLimitStats();
   haptic('heavy');
   const t = T[lang];
-  document.getElementById('dlTitle').textContent = lang==='fr' ? 'À demain !' : 'See you tomorrow!';
-  document.getElementById('dlSub').textContent = lang==='fr'
-    ? `Tu as découvert tes ${DAILY_LIMIT} curiosités du jour. L'Oracle se repose… et revient demain avec de nouvelles merveilles.`
-    : `You've discovered your ${DAILY_LIMIT} facts for today. The Oracle is resting… and returns tomorrow with new wonders.`;
-  document.getElementById('dlFavsBtn').textContent = lang==='fr' ? '♡ Relire mes favoris' : '♡ Review my favourites';
-  document.getElementById('dlTimerLabel').textContent = lang==='fr' ? 'avant le prochain lot' : 'until the next batch';
+  document.getElementById('dlTitle').textContent = _t('À demain !','¡Hasta mañana!','See you tomorrow!');
+  document.getElementById('dlSub').textContent = _t(
+    `Tu as découvert tes ${DAILY_LIMIT} curiosités du jour...`,
+    `Has descubierto tus ${DAILY_LIMIT} curiosidades del día...`,
+    `You've discovered your ${DAILY_LIMIT} curiosities for today...`
+  );
+  document.getElementById('dlFavsBtn').textContent = _t('♡ Relire mes favoris','♡ Releer mis favoritos','♡ Review my favourites');
+  document.getElementById('dlTimerLabel').textContent = _t('avant le prochain lot','hasta el próximo lote','until the next batch');
   document.getElementById('dailyLimitScreen').classList.add('active');
   startDlTimer();
   setTimeout(flushPendingEndOfDayChecks, 450);
@@ -1374,7 +1428,7 @@ function getDailyFact() {
   const mm = String(today.getMonth()+1).padStart(2,'0');
   const dd = String(today.getDate()).padStart(2,'0');
   const entry = EPHEMERIS[mm + '-' + dd] || EPHEMERIS['01-01'];
-  const text = lang === 'fr' ? entry.fr : entry.en;
+  const text = lang==='fr' ? entry.fr : lang==='es' ? (entry.es||entry.en) : entry.en;
   return { id: entry.id, cat: entry.cat, text: text, _ephemeris: true, _ephem_src: entry.src };
 }
 
@@ -1420,7 +1474,7 @@ function openDailyOverlay() {
     const label = fact._thematic ? fact._thematic.label : (t.catLabels[fact.cat]||'');
     const icon = fact._thematic ? fact._thematic.icon : (CAT_ICONS[fact.cat]||'📅');
     if(!state.ephemHistory.some(h=>h.id===fact.id)){
-      state.ephemHistory.unshift({id:fact.id, cat, label, icon, text:displayText, date:new Date().toLocaleDateString(lang==='fr'?'fr-FR':'en-US')});
+      state.ephemHistory.unshift({id:fact.id, cat, label, icon, text:displayText, date:new Date().toLocaleDateString(lang==='fr'?'fr-FR':lang==='es'?'es-ES':'en-US')});
       if(state.ephemHistory.length>100) state.ephemHistory.pop();
     }
   }
@@ -1475,7 +1529,7 @@ function openDailyOverlay() {
   const ddData = DEEP_DIVES[fact.id];
   if(ddData && ((lang==='fr'?ddData.fr:ddData.en)||[]).length){
     ddBtn.style.display = 'inline-block';
-    ddBtn.innerHTML = `🔎 <span id="dailyDdLabel">${lang==='fr'?'Creuser le sujet':'Dig deeper'}</span>`;
+    ddBtn.innerHTML = `🔎 <span id="dailyDdLabel">${_t('Creuser le sujet','Profundizar','Dig deeper')}</span>`;
   } else {
     ddBtn.style.display = 'none';
   }
@@ -1491,13 +1545,13 @@ function showDailyDeepDive(btn){
   if(!fact) return;
   const data = DEEP_DIVES[fact.id];
   if(!data) return;
-  const items = lang==='fr' ? data.fr : data.en;
+  const items = lang==='fr' ? data.fr : lang==='es' ? data.es : data.en;
   if(!items || !items.length) return;
   btn.style.display = 'none';
   const container = document.getElementById('dailyDdContainer');
   container.style.display = 'block';
   container.innerHTML = `
-    <div class="dd-header">${lang==='fr'?'🔎 Pour aller plus loin…':'🔎 Dig deeper…'}</div>
+    <div class="dd-header">${_t('🔎 Pour aller plus loin…','🔎 Para saber más…','🔎 Dig deeper…')}</div>
     ${items.map((item,i) => `<div class="dd-item" style="animation-delay:${i*0.15}s"><span class="dd-bullet">✦</span><span class="dd-text">${item}</span></div>`).join('')}
   `;
   setTimeout(()=>container.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
@@ -1520,7 +1574,7 @@ function _updateDailyFavBtn(fact) {
   const isFav = state.favs.some(f => f.id === fact.id);
   btn.innerHTML = isFav ? '♥' : '♡';
   btn.classList.toggle('active', isFav);
-  btn.title = isFav ? (lang==='fr'?'Retirer des favoris':'Remove from favourites') : (lang==='fr'?'Ajouter aux favoris':'Add to favourites');
+  btn.title = isFav ? (_t('Retirer des favoris','Quitar de favoritos','Remove from favourites')) : (_t('Ajouter aux favoris','Añadir a favoritos','Add to favourites'));
 }
 
 function toggleDailyFav() {
@@ -1579,7 +1633,7 @@ function getCuriosityProfile() {
     sports:'#86efac',celebrities:'#ffd700',fiction:'#a0c4ff',gaming:'#ff6b9d',
     cinema:'#e879f9',music:'#4ade80',
     mythology:'#d4a574',psychology:'#818cf8',oceans:'#06b6d4',records:'#ef4444',
-    quotes:'#fbbf24',laws:'#94a3b8',tales:'#a78bfa',dinosaurs:'#84cc16'
+    quotes:'#fbbf24',laws:'#94a3b8',tales:'#a78bfa',dinosaurs:'#84cc16',religion:'#b39ddb'
   };
   // Score = faits lus × 1 + favoris × 2
   const scores = {};
@@ -1596,23 +1650,23 @@ function getCuriosityProfile() {
 
   // Profils : [catégories dominantes, emoji, nomFR, nomEN, descFR, descEN]
   const PROFILES = [
-    { cats:['space','science'],       emoji:'🔭', fr:'Explorateur de l\'Infini',   en:'Explorer of the Infinite',  descFr:'Tu regardes les étoiles et questionnes l\'univers. La curiosité scientifique est ta boussole.', descEn:'You gaze at the stars and question the universe. Scientific curiosity is your compass.' },
-    { cats:['science','body','inventions'], emoji:'🧬', fr:'L\'Esprit Scientifique', en:'The Scientific Mind',      descFr:'Tu dissèques le monde pour mieux le comprendre. Les mécanismes cachés te fascinent.', descEn:'You dissect the world to understand it better. Hidden mechanisms fascinate you.' },
-    { cats:['arts','cinema','music'],  emoji:'🎭', fr:'L\'Âme Artistique',          en:'The Artistic Soul',         descFr:'Tu ressens avant de réfléchir. La beauté sous toutes ses formes est ton territoire.', descEn:'You feel before you think. Beauty in all its forms is your territory.' },
-    { cats:['mythology','tales','history'], emoji:'📜', fr:'Le Chroniqueur Éternel',   en:'The Eternal Chronicler',  descFr:'Les mythes et légendes sont ta toile. Tu tisses le fil entre passé et imaginaire.', descEn:'Myths and legends are your canvas. You weave the thread between past and imagination.' },
-    { cats:['psychology','body'],            emoji:'🧠', fr:'L\'Architecte de l\'Esprit', en:'The Mind Architect',       descFr:'Tu scrutes les mécanismes cachés de la pensée. Le cerveau humain est ton terrain de jeu.', descEn:'You probe the hidden mechanisms of thought. The human brain is your playground.' },
-    { cats:['oceans','animals','science'],   emoji:'🌊', fr:'Le Gardien des Profondeurs',  en:'The Guardian of the Deep',  descFr:'Les abysses t\'appellent. Tu plonges là où personne ne va.', descEn:'The abyss calls you. You dive where no one else goes.' },
-    { cats:['dinosaurs','science','space'],  emoji:'🦕', fr:'Le Voyageur du Temps',        en:'The Time Traveler',         descFr:'Du Big Bang aux dinosaures, tu explores les ères révolues avec une curiosité sans limites.', descEn:'From the Big Bang to dinosaurs, you explore bygone eras with boundless curiosity.' },
-    { cats:['quotes','psychology'],          emoji:'💬', fr:'Le Sage Moderne',             en:'The Modern Sage',           descFr:'Les mots des grands esprits guident ta réflexion. Tu cherches la sagesse partout.', descEn:'The words of great minds guide your thinking. You seek wisdom everywhere.' },
-    { cats:['laws','fun'],                   emoji:'⚖️', fr:'L\'Avocat du Diable',         en:'The Devil\'s Advocate',    descFr:'L\'absurde te fascine autant que la logique. Tu trouves de l\'or dans l\'insolite.', descEn:'The absurd fascinates you as much as logic. You find gold in the unusual.' },
-    { cats:['records','sports'],             emoji:'🏅', fr:'Le Chasseur d\'Extrêmes',     en:'The Extreme Hunter',        descFr:'Plus haut, plus fort, plus fou. Les limites humaines sont ton obsession.', descEn:'Higher, stronger, crazier. Human limits are your obsession.' },
-    { cats:['world','language','history'], emoji:'🌍', fr:'Citoyen du Monde',       en:'Citizen of the World',      descFr:'Les frontières n\'existent pas pour toi. Les cultures et l\'Histoire sont tes passions.', descEn:'Borders don\'t exist for you. Cultures and History are your passions.' },
-    { cats:['animals','body'],         emoji:'🐾', fr:'L\'Ami des Bêtes',           en:'Friend of All Creatures',   descFr:'Le vivant te touche profondément. Tu vois le monde avec bienveillance et émerveillement.', descEn:'Living things move you deeply. You see the world with kindness and wonder.' },
-    { cats:['gaming','fiction','cinema'], emoji:'🎮', fr:'Le Geek Érudit',          en:'The Cultured Geek',         descFr:'Tu habites autant les mondes imaginaires que le réel. La culture pop est une porte vers la réflexion.', descEn:'You inhabit imaginary worlds as much as the real one. Pop culture is a gateway to deeper thinking.' },
-    { cats:['food','world'],           emoji:'🍽️', fr:'Le Gastronome',             en:'The Connoisseur',           descFr:'Tu sais que chaque plat raconte une histoire. La table est un lieu de connaissance autant que de plaisir.', descEn:'You know every dish tells a story. The table is a place of knowledge as much as pleasure.' },
-    { cats:['sports','celebrities'],   emoji:'🏆', fr:'L\'Esprit de Champion',      en:'The Champion Spirit',       descFr:'Tu vibres pour les exploits humains. La performance et le dépassement de soi t\'inspirent.', descEn:'You thrive on human achievements. Performance and self-surpassing inspire you.' },
-    { cats:['positive','fun'],         emoji:'✨', fr:'Le Rayon de Soleil',         en:'The Ray of Sunshine',       descFr:'Tu choisis la lumière. Les anecdotes joyeuses et les surprises positives sont ta marque de fabrique.', descEn:'You choose the light. Joyful anecdotes and positive surprises are your signature.' },
-    { cats:['religion','mythology','quotes'], emoji:'🕊️', fr:'Le Chercheur de Sens',      en:'The Seeker of Meaning',     descFr:'Tu explores les grandes questions de l\'humanité. Foi, mythes et sagesse éclairent ton chemin.', descEn:'You explore humanity\'s great questions. Faith, myths and wisdom light your path.' },
+    { cats:['space','science'],       emoji:'🔭', fr:'Explorateur de l\'Infini',   en:'Explorer of the Infinite', es:'Explorador del Infinito',  descFr:'Tu regardes les étoiles et questionnes l\'univers. La curiosité scientifique est ta boussole.', descEn:'You gaze at the stars and question the universe. Scientific curiosity is your compass.', descEs:'Miras las estrellas y cuestionas el universo. La curiosidad científica es tu brújula.' },
+    { cats:['science','body','inventions'], emoji:'🧬', fr:'L\'Esprit Scientifique', en:'The Scientific Mind', es:'La Mente Científica',      descFr:'Tu dissèques le monde pour mieux le comprendre. Les mécanismes cachés te fascinent.', descEn:'You dissect the world to understand it better. Hidden mechanisms fascinate you.', descEs:'Diseccionas el mundo para comprenderlo mejor. Los mecanismos ocultos te fascinan.' },
+    { cats:['arts','cinema','music'],  emoji:'🎭', fr:'L\'Âme Artistique',          en:'The Artistic Soul', es:'El Alma Artística',        descFr:'Tu ressens avant de réfléchir. La beauté sous toutes ses formes est ton territoire.', descEn:'You feel before you think. Beauty in all its forms is your territory.', descEs:'Sientes antes de pensar. La belleza en todas sus formas es tu territorio.' },
+    { cats:['mythology','tales','history'], emoji:'📜', fr:'Le Chroniqueur Éternel',   en:'The Eternal Chronicler', es:'El Cronista Eterno',  descFr:'Les mythes et légendes sont ta toile. Tu tisses le fil entre passé et imaginaire.', descEn:'Myths and legends are your canvas. You weave the thread between past and imagination.', descEs:'Los mitos y leyendas son tu lienzo. Tejes el hilo entre pasado e imaginación.' },
+    { cats:['psychology','body'],            emoji:'🧠', fr:'L\'Architecte de l\'Esprit', en:'The Mind Architect', es:'El Arquitecto de la Mente',       descFr:'Tu scrutes les mécanismes cachés de la pensée. Le cerveau humain est ton terrain de jeu.', descEn:'You probe the hidden mechanisms of thought. The human brain is your playground.', descEs:'Escrutas los mecanismos ocultos del pensamiento. El cerebro humano es tu terreno de juego.' },
+    { cats:['oceans','animals','science'],   emoji:'🌊', fr:'Le Gardien des Profondeurs',  en:'The Guardian of the Deep', es:'El Guardián de las Profundidades',  descFr:'Les abysses t\'appellent. Tu plonges là où personne ne va.', descEn:'The abyss calls you. You dive where no one else goes.', descEs:'Los abismos te llaman. Te sumerges allí donde nadie más va.' },
+    { cats:['dinosaurs','science','space'],  emoji:'🦕', fr:'Le Voyageur du Temps',        en:'The Time Traveler', es:'El Viajero del Tiempo',         descFr:'Du Big Bang aux dinosaures, tu explores les ères révolues avec une curiosité sans limites.', descEn:'From the Big Bang to dinosaurs, you explore bygone eras with boundless curiosity.', descEs:'Del Big Bang a los dinosaurios, exploras eras pasadas con una curiosidad sin límites.' },
+    { cats:['quotes','psychology'],          emoji:'💬', fr:'Le Sage Moderne',             en:'The Modern Sage', es:'El Sabio Moderno',           descFr:'Les mots des grands esprits guident ta réflexion. Tu cherches la sagesse partout.', descEn:'The words of great minds guide your thinking. You seek wisdom everywhere.', descEs:'Las palabras de las grandes mentes guían tu reflexión. Buscas la sabiduría en todas partes.' },
+    { cats:['laws','fun'],                   emoji:'⚖️', fr:'L\'Avocat du Diable',         en:'The Devil\'s Advocate', es:'El Abogado del Diablo',    descFr:'L\'absurde te fascine autant que la logique. Tu trouves de l\'or dans l\'insolite.', descEn:'The absurd fascinates you as much as logic. You find gold in the unusual.', descEs:'Lo absurdo te fascina tanto como la lógica. Encuentras oro en lo insólito.' },
+    { cats:['records','sports'],             emoji:'🏅', fr:'Le Chasseur d\'Extrêmes',     en:'The Extreme Hunter', es:'El Cazador de Extremos',        descFr:'Plus haut, plus fort, plus fou. Les limites humaines sont ton obsession.', descEn:'Higher, stronger, crazier. Human limits are your obsession.', descEs:'Más alto, más fuerte, más loco. Los límites humanos son tu obsesión.' },
+    { cats:['world','language','history'], emoji:'🌍', fr:'Citoyen du Monde',       en:'Citizen of the World', es:'Ciudadano del Mundo',      descFr:'Les frontières n\'existent pas pour toi. Les cultures et l\'Histoire sont tes passions.', descEn:'Borders don\'t exist for you. Cultures and History are your passions.', descEs:'Las fronteras no existen para ti. Las culturas y la historia son tus pasiones.' },
+    { cats:['animals','body'],         emoji:'🐾', fr:'L\'Ami des Bêtes',           en:'Friend of All Creatures', es:'Amigo de los Animales',   descFr:'Le vivant te touche profondément. Tu vois le monde avec bienveillance et émerveillement.', descEn:'Living things move you deeply. You see the world with kindness and wonder.', descEs:'Lo viviente te conmueve profundamente. Ves el mundo con benevolencia y asombro.' },
+    { cats:['gaming','fiction','cinema'], emoji:'🎮', fr:'Le Geek Érudit',          en:'The Cultured Geek', es:'El Geek Erudito',         descFr:'Tu habites autant les mondes imaginaires que le réel. La culture pop est une porte vers la réflexion.', descEn:'You inhabit imaginary worlds as much as the real one. Pop culture is a gateway to deeper thinking.', descEs:'Habitas mundos imaginarios tanto como el real. La cultura pop es una puerta hacia la reflexión.' },
+    { cats:['food','world'],           emoji:'🍽️', fr:'Le Gastronome',             en:'The Connoisseur', es:'El Gastrónomo',           descFr:'Tu sais que chaque plat raconte une histoire. La table est un lieu de connaissance autant que de plaisir.', descEn:'You know every dish tells a story. The table is a place of knowledge as much as pleasure.', descEs:'Sabes que cada plato cuenta una historia. La mesa es un lugar de conocimiento y placer.' },
+    { cats:['sports','celebrities'],   emoji:'🏆', fr:'L\'Esprit de Champion',      en:'The Champion Spirit', es:'Espíritu de Campeón',       descFr:'Tu vibres pour les exploits humains. La performance et le dépassement de soi t\'inspirent.', descEn:'You thrive on human achievements. Performance and self-surpassing inspire you.', descEs:'Vibras por las hazañas humanas. El rendimiento y la superación te inspiran.' },
+    { cats:['positive','fun'],         emoji:'✨', fr:'Le Rayon de Soleil',         en:'The Ray of Sunshine', es:'El Rayo de Sol',       descFr:'Tu choisis la lumière. Les anecdotes joyeuses et les surprises positives sont ta marque de fabrique.', descEn:'You choose the light. Joyful anecdotes and positive surprises are your signature.', descEs:'Eliges la luz. Las anécdotas alegres y las sorpresas positivas son tu sello.' },
+    { cats:['religion','mythology','quotes'], emoji:'🕊️', fr:'Le Chercheur de Sens',      en:'The Seeker of Meaning', es:'El Buscador de Sentido',     descFr:'Tu explores les grandes questions de l\'humanité. Foi, mythes et sagesse éclairent ton chemin.', descEn:'You explore humanity\'s great questions. Faith, myths and wisdom light your path.', descEs:'Exploras las grandes preguntas de la humanidad. Fe, mitos y sabiduría iluminan tu camino.' },
   ];
 
   // Calcul du profil le plus proche via overlap du top3
@@ -1628,9 +1682,8 @@ function getCuriosityProfile() {
 
   // Fallback : Oracle Universel si tout équilibré ou aucun match
   if (!bestProfile || bestScore === 0) {
-    bestProfile = { emoji:'🌌', fr:'L\'Oracle Universel', en:'The Universal Oracle',
-      descFr:'Tout t\'intéresse, rien ne t\'échappe. Tu es l\'incarnation même de la curiosité sans frontières.',
-      descEn:'Everything interests you, nothing escapes you. You are the very embodiment of boundless curiosity.' };
+    bestProfile = { emoji:'🌌', fr:'L\'Oracle Universel', en:'The Universal Oracle', es:'El Oráculo Universal',
+  descFr:'Tout t\'intéresse...', descEn:'Everything interests you...', descEs:'Todo te interesa, nada se te escapa. Eres la encarnación misma de la curiosidad sin fronteras.' };
   }
 
   return { profile: bestProfile, top3, scores, catColors };
@@ -1669,11 +1722,11 @@ function renderStats() {
   const catKeys = Object.keys(CAT_ICONS);
   const maxCat = Math.max(1, ...catKeys.map(k => state.read[k] || 0));
 
-  const labels = lang === 'fr'
-    ? {facts:'Faits lus', favs:'Favoris', shares:'Partages', achiev:'Succès', streak:'Série actuelle', jours:'jours', quizLbl:'Quiz', quizSub:'réponses correctes', catLbl:'Par catégorie', noQuiz:'Aucun quiz joué encore', ephemLbl:'Éphémérides lus',
-       profileLbl:'Ton profil de curiosité', profileLocked:'Lis 10 faits pour découvrir ton profil', profileTop:'Tes univers favoris'}
-    : {facts:'Facts read', favs:'Favourites', shares:'Shares', achiev:'Achievements', streak:'Current streak', jours:'days', quizLbl:'Quiz', quizSub:'correct answers', catLbl:'By category', noQuiz:'No quiz played yet', ephemLbl:'Daily facts read',
-       profileLbl:'Your curiosity profile', profileLocked:'Read 10 facts to reveal your profile', profileTop:'Your favourite worlds'};
+  const labels = lang==='fr'
+          ? {facts:'Faits lus', favs:'Favoris', shares:'Partages', achiev:'Succès', streak:'Série actuelle', jours:'jours', quizLbl:'Quiz', quizSub:'réponses correctes', catLbl:'Par catégorie', noQuiz:'Aucun quiz joué encore', ephemLbl:'Éphémérides lus'}
+          : lang==='es'
+          ? {facts:'Datos leídos', favs:'Favoritos', shares:'Compartidos', achiev:'Logros', streak:'Racha actual', jours:'días', quizLbl:'Quiz', quizSub:'respuestas correctas', catLbl:'Por categoría', noQuiz:'Ningún quiz jugado aún', ephemLbl:'Efemérides leídas'}
+          : {facts:'Facts read', favs:'Favourites', shares:'Shares', achiev:'Achievements', streak:'Current streak', jours:'days', quizLbl:'Quiz', quizSub:'correct answers', catLbl:'By category', noQuiz:'No quiz played yet', ephemLbl:'Daily facts read'};
 
   // Profile block
   let profileHtml = '';
@@ -1688,8 +1741,8 @@ function renderStats() {
     </div>`;
   } else {
     const { profile, top3, catColors } = getCuriosityProfile();
-    const profileName = lang === 'fr' ? profile.fr : profile.en;
-    const profileDesc = lang === 'fr' ? profile.descFr : profile.descEn;
+    const profileName = lang==='fr'?profile.fr:lang==='es'?profile.es:profile.en;
+    const profileDesc = lang==='fr'?profile.descFr:lang==='es'?profile.descEs:profile.descEn;
     const chipsHtml = top3.map(k => `
       <div class="profile-cat-chip" style="border-color:${catColors[k]}33">
         <span class="profile-cat-chip-icon">${CAT_ICONS[k]}</span>
@@ -1773,22 +1826,23 @@ function renderStats() {
     </div>
 
     <!-- Language -->
-    <div class="stats-section-title" style="margin-top:24px">${lang==='fr'?'Langue':'Language'}</div>
+    <div class="stats-section-title" style="margin-top:24px">${lang==='fr'?'Langue':lang==='es'?'Idioma':'Language'}</div>
     <div class="stats-numbers">
       <div class="stat-card" onclick="haptic();switchLang('fr');renderStats();applyI18n()" style="cursor:pointer;${lang==='fr'?'border:1px solid var(--accent);':''}">
         <div class="stat-val">🇫🇷</div>
         <div class="stat-lbl">Français</div>
       </div>
+      <div class="stat-card" onclick="haptic();switchLang('es');renderStats();applyI18n()" style="cursor:pointer;${lang==='es'?'border:1px solid var(--accent);':''}">
+        <div class="stat-val">🇪🇸</div>
+        <div class="stat-lbl">Español</div>
+      </div>
       <div class="stat-card" onclick="haptic();switchLang('en');renderStats();applyI18n()" style="cursor:pointer;${lang==='en'?'border:1px solid var(--accent);':''}">
         <div class="stat-val">🇬🇧</div>
         <div class="stat-lbl">English</div>
       </div>
-    </div>
+   </div>
   `;
 }
-
-
-
 
 // ── THEME TOGGLE ──────────────────────────────────────────────────────────
 function toggleTheme(){
@@ -1874,7 +1928,7 @@ async function handleAuthSubmit(){
   const fr=lang==='fr';
   if(!email||!password){setAuthError(fr?'Remplis tous les champs.':'Please fill in all fields.');return;}
   if(password.length<6){setAuthError(fr?'Mot de passe trop court (min. 6 caractères).':'Password too short (min. 6 characters).');return;}
-  if(!window._fbSignIn){setAuthError(lang==='fr'?'Service indisponible, réessaie.':'Service unavailable, please retry.');return;}
+  if(!window._fbSignIn){setAuthError(_t('Service indisponible, réessaie.','Servicio no disponible, reintenta.','Service unavailable, please retry.'));return;}
   try{
     if(_authMode==='register'){await window._fbRegister(email,password);}
     else{await window._fbSignIn(email,password);}
@@ -1898,10 +1952,10 @@ async function handleGoogleSignIn(){
   haptic('light');
   if(document.getElementById('authError')) (document.getElementById('authError')||{}).textContent='';
   try{
-    if(!window._fbGoogleAuth){setAuthError(lang==='fr'?'Service indisponible.':'Service unavailable.');return;}
+    if(!window._fbGoogleAuth){setAuthError(_t('Service indisponible.','Servicio no disponible.','Service unavailable.'));return;}
     await window._fbGoogleAuth();
   }
-  catch(err){if(err.code!=='auth/popup-closed-by-user')setAuthError(lang==='fr'?'Connexion Google échouée.':'Google sign-in failed.');}
+  catch(err){if(err.code!=='auth/popup-closed-by-user')setAuthError(_t('Connexion Google échouée.','Error en la conexión de Google.','Google sign-in failed.'));}
 }
 
 async function handleForgot(){
@@ -1915,16 +1969,16 @@ async function handleForgot(){
 
 async function handleSignOut(){
   haptic('light');
-  try{await fbAuth.signOut();closeAccountPanel();showToast(lang==='fr'?'Déconnecté':'Signed out');}
+  try{await fbAuth.signOut();closeAccountPanel();showToast(_t('Déconnecté','Desconectado','Signed out'));}
   catch(e){}
 }
 
 async function forceSyncNow(){
   haptic('light');
-  if(!_fbCurrentUser){showToast(lang==='fr'?'Non connecté':'Not signed in');return;}
+  if(!_fbCurrentUser){showToast(_t('Non connecté','No conectado','Not signed in'));return;}
   const s=document.getElementById('accountSyncStatus');
   s.className='account-sync-status pending';
-  s.textContent=lang==='fr'?'↑ Synchronisation...':'↑ Syncing...';
+  s.textContent=_t('↑ Synchronisation...','↑ Sincronizando...','↑ Syncing...');
   await syncToCloud();
   s.className='account-sync-status ok';
   s.textContent=lang==='fr'?'✓ Progression sauvegardée':'✓ Progress saved';
