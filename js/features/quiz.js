@@ -3,6 +3,7 @@
 //                     checkAchievements(), startSpaceGame(), CAT_ICONS
 // ── QUIZ ──────────────────────────────────────────────────────────────────
 let quizSession = { questions:[], current:0, answers:[] };
+function quizText(fr, es, en){return lang==='fr'?fr:lang==='es'?es:en;}
 
 // ── COMET QUIZ SYSTEM ─────────────────────────────────────────────────────
 const QUIZ_INTERVALS = [5, 10, 15];
@@ -31,7 +32,7 @@ function launchComet() {
   else if (side===2){x0=spread(W);y0=H+30;  x1=spread(W);y1=-30;}
   else             {x0=-100;     y0=spread(H);x1=W+30;  y1=spread(H);}
   const angle = Math.atan2(y1-y0, x1-x0)*180/Math.PI;
-  const lbl = lang==='fr' ? '✦ Quiz' : '✦ Quiz';
+  const lbl = '✦ Quiz';
   const el = document.createElement('div');
   el.className = 'comet-wrapper clickable';
   el.style.setProperty('--cx0', x0+'px');
@@ -80,7 +81,7 @@ function playCometSound() {
 }
 
 function startQuiz() {
-  const pool = QUIZ_DB[lang] || QUIZ_DB['fr'];
+  const pool = QUIZ_DB[lang] || QUIZ_DB['en'] || QUIZ_DB['fr'];
   if (!pool || !pool.length) return;
 
   // Init tracking if needed
@@ -128,13 +129,13 @@ function renderQuizQuestion() {
   // Show skip button, hide next button
   const skipBtn = document.getElementById('quizSkipBtn');
   const nextBtn = document.getElementById('quizNextBtn');
-  if(skipBtn) { skipBtn.style.display='block'; skipBtn.textContent = lang==='fr' ? '↪ Passer cette question' : '↪ Skip this question'; }
+  if(skipBtn) { skipBtn.style.display='block'; skipBtn.textContent = quizText('↪ Passer cette question','↪ Saltar esta pregunta','↪ Skip this question'); }
   if(nextBtn) nextBtn.style.display='none';
   const total = questions.length;
 
   // Label
   document.getElementById('quizLabel').textContent =
-    lang === 'fr' ? `Question ${current+1} / ${total}` : `Question ${current+1} / ${total}`;
+    quizText(`Question ${current+1} / ${total}`, `Pregunta ${current+1} / ${total}`, `Question ${current+1} / ${total}`);
 
   // Progress dots
   const prog = document.getElementById('quizProgress');
@@ -162,8 +163,8 @@ function renderQuizQuestion() {
   document.getElementById('quizNextBtn').className = 'quiz-next-btn';
   document.getElementById('quizNextBtn').textContent =
     current < total - 1
-      ? (lang === 'fr' ? 'Question suivante →' : 'Next question →')
-      : (lang === 'fr' ? 'Voir les résultats' : 'See results');
+      ? quizText('Question suivante →','Pregunta siguiente →','Next question →')
+      : quizText('Voir les résultats','Ver resultados','See results');
 }
 
 function quizAnswer(choiceIdx) {
@@ -192,11 +193,11 @@ function quizAnswer(choiceIdx) {
   // Feedback
   const fb = document.getElementById('quizFeedback');
   if (correct) {
-    fb.textContent = lang === 'fr' ? '✓ Bonne réponse !' : '✓ Correct!';
+    fb.textContent = quizText('✓ Bonne réponse !','✓ ¡Correcto!','✓ Correct!');
     fb.className = 'quiz-feedback correct';
     haptic('success');
   } else {
-    fb.textContent = lang === 'fr' ? '✗ Raté !' : '✗ Wrong!';
+    fb.textContent = quizText('✗ Raté !','✗ ¡Fallaste!','✗ Wrong!');
     fb.className = 'quiz-feedback wrong';
     haptic('light');
   }
@@ -240,17 +241,18 @@ function showQuizResult() {
     ).join('');
 
   document.getElementById('quizResultLabel').textContent =
-    lang === 'fr' ? 'Résultats' : 'Results';
+    quizText('Résultats','Resultados','Results');
   document.getElementById('quizResultScore').textContent = `${score} / ${total}`;
 
   const msgs = {
     fr: ['Pas de chance… retente !', 'Pas mal, continue !', 'Bien joué !', 'Excellent !', 'Parfait — tu es l\'Oracle !'],
+    es: ['¡Más suerte la próxima!', 'Nada mal, sigue así.', '¡Bien hecho!', '¡Excelente!', 'Perfecto — ¡eres el Oráculo!'],
     en: ['Better luck next time!', 'Not bad, keep going!', 'Well done!', 'Excellent!', 'Perfect — you are the Oracle!']
   };
   const msgIdx = Math.round((score / total) * 4);
   document.getElementById('quizResultMsg').textContent = (msgs[lang] || msgs.fr)[msgIdx];
   document.getElementById('quizCloseBtn').textContent =
-    lang === 'fr' ? 'Reprendre l\'Oracle' : 'Back to Oracle';
+    quizText('Reprendre l\'Oracle','Volver al Oráculo','Back to Oracle');
 
   if (score === total) haptic('celebration');
 }
@@ -281,7 +283,7 @@ function launchUfo() {
   const W = window.innerWidth, H = window.innerHeight;
   const x0 = -70, y0 = 80 + Math.random()*(H*0.5);
   const x1 = W + 70, y1 = 60 + Math.random()*(H*0.4);
-  const lbl = lang==='fr' ? '🛸 Jouer' : '🛸 Play';
+  const lbl = quizText('🛸 Jouer','🛸 Jugar','🛸 Play');
   const el = document.createElement('div');
   el.className = 'ufo-wrapper clickable';
   el.style.setProperty('--ux0', x0+'px');
@@ -581,10 +583,134 @@ const QUIZ_DB = {
     {question:"Which animal has the longest gestation period?",choices:["The blue whale","The African elephant","The alpine salamander"],answer:2},
     {question:"At what temperature does iron melt?",choices:["1,064 °C","1,538 °C","2,862 °C"],answer:1},
     {question:"How many fundamental tastes can the tongue distinguish?",choices:["4","5","7"],answer:1},
+  ],
+  es: [
+    // ── Existentes ──
+    {question:"¿Cuál es la temperatura aproximada de un rayo?",choices:["Unos 6 000 °C","Unos 30 000 °C","Unos 300 °C"],answer:1},
+    {question:"¿Qué proporción de la masa de tu cuerpo es polvo de estrellas?",choices:["Aproximadamente el 40 %","Aproximadamente el 70 %","Aproximadamente el 93 %"],answer:2},
+    {question:"¿Dónde se produce la mitad del oxígeno que respiramos?",choices:["En los bosques tropicales","En los océanos","En las praderas"],answer:1},
+    {question:"¿Cómo se llaman los tubos de vidrio formados por un rayo en la arena?",choices:["Fulguritas","Piritas","Calcitas"],answer:0},
+    {question:"¿Cuántos árboles hay aproximadamente en la Tierra?",choices:["300 000 millones","3 billones","30 000 millones"],answer:1},
+    {question:"¿Cuántos corazones tiene un pulpo?",choices:["Uno","Dos","Tres"],answer:2},
+    {question:"¿Cuál es el pH del ácido gástrico humano?",choices:["Entre 5 y 6","Entre 1 y 2","Entre 3 y 4"],answer:1},
+    {question:"¿Qué animal puede dormir hasta 3 años?",choices:["El caracol","La tortuga","El oso"],answer:0},
+    {question:"¿De qué color es el oxígeno líquido?",choices:["Incoloro","Rojo","Azul pálido"],answer:2},
+    {question:"¿Qué planeta del sistema solar flotaría en el agua?",choices:["Marte","Saturno","Neptuno"],answer:1},
+    {question:"¿A qué velocidad máxima estableció Usain Bolt su récord de los 100m?",choices:["38,5 km/h","44,7 km/h","51,2 km/h"],answer:1},
+    {question:"¿Cuál es la distancia exacta de un maratón?",choices:["42,195 km","40 km","45 km"],answer:0},
+    {question:"¿Qué deporte se practicó en la Luna?",choices:["Tenis","Golf","Frisbee"],answer:1},
+    {question:"¿En qué año las pelotas de tenis se volvieron amarillas?",choices:["1960","1972","1985"],answer:1},
+    {question:"¿A qué velocidad puede viajar un volante de bádminton?",choices:["320 km/h","493 km/h","250 km/h"],answer:1},
+    {question:"¿De dónde viene la palabra 'robot'?",choices:["Del ruso, que significa 'máquina'","Del checo, que significa 'trabajo forzado'","Del inglés, que significa 'autómata'"],answer:1},
+    {question:"¿Qué significa literalmente la palabra 'salario' en latín?",choices:["Moneda de oro","Ración de sal","Pago mensual"],answer:1},
+    {question:"¿De dónde viene la expresión 'tener morriña'?",choices:["De los mineros de carbón","De los soldados españoles en ultramar","De los pescadores del Cantábrico"],answer:1},
+    {question:"¿Qué porcentaje del vocabulario inglés proviene del francés?",choices:["Más del 30 %","Aproximadamente el 10 %","Aproximadamente el 50 %"],answer:0},
+    {question:"¿Qué significa 'OK' originalmente?",choices:["'All Correct' sin faltas","'Oll Korrect', una falta deliberada","Una abreviatura militar"],answer:1},
+    {question:"¿Puede caducar la miel?",choices:["Sí, después de 10 años","No, nunca caduca","Sí, después de 50 años"],answer:1},
+    {question:"¿De dónde vienen realmente las galletas de la fortuna?",choices:["De China","De Japón","De Estados Unidos"],answer:1},
+    {question:"¿Por qué las zanahorias son naranjas?",choices:["Es su color natural","Los holandeses las seleccionaron así","Una mutación genética espontánea"],answer:1},
+    {question:"¿Qué es técnicamente el chocolate blanco?",choices:["Chocolate muy diluido","Un producto sin cacao sólido","Chocolate con leche decolorado"],answer:1},
+    {question:"¿Por qué los europeos creían que los tomates eran tóxicos?",choices:["Causaban alergias","Su acidez disolvía el plomo de los platos","Un médico publicó un informe falso"],answer:1},
+    {question:"¿Cuántas pirámides hay en Sudán?",choices:["Unas 50","Unas 130","Unas 200"],answer:2},
+    {question:"¿Cuánto duró la guerra entre el Reino Unido y Zanzíbar?",choices:["38 minutos","3 horas","2 días"],answer:0},
+    {question:"¿Quién construyó las pirámides de Egipto?",choices:["Esclavos","Obreros libres y pagados","Prisioneros de guerra"],answer:1},
+    {question:"¿Cómo se compara un día en Venus con su año?",choices:["Un día = la mitad de un año","Un día es más largo que un año","Un día = una décima de un año"],answer:1},
+    {question:"¿A qué huele el espacio según los astronautas?",choices:["A azufre quemado","A frambuesa quemada y ron","A metal caliente"],answer:1},
+    {question:"¿Cuál es el volcán más grande del sistema solar?",choices:["El Mauna Kea","El Olympus Mons en Marte","El Tharsis Tholus"],answer:1},
+    {question:"¿Dónde se inventó el microondas por accidente?",choices:["En un laboratorio de cocina","Junto a un radar","En una central nuclear"],answer:1},
+    {question:"¿De dónde viene el velcro?",choices:["De un descubrimiento militar","De observar cardos enganchados a una chaqueta","De una patente de la NASA"],answer:1},
+    {question:"¿Para qué fue diseñado originalmente el plástico de burbujas?",choices:["Para embalar huevos","Para ser un papel pintado 3D","Para proteger componentes electrónicos"],answer:1},
+    {question:"¿Qué tecnología cotidiana nació de la investigación sobre agujeros negros?",choices:["El GPS","El Bluetooth","El Wi-Fi"],answer:2},
+    {question:"¿Cuántos husos horarios abarca Rusia?",choices:["7","11","14"],answer:1},
+    {question:"¿Cuál es la única bandera nacional no rectangular?",choices:["La de Bután","La de Nepal","La de Sri Lanka"],answer:1},
+    {question:"¿Por qué Islandia no tiene mosquitos?",choices:["Hace demasiado frío","El clima y la geología no lo permiten","Fueron erradicados"],answer:1},
+    {question:"¿Cómo se sitúa Cleopatra en el tiempo?",choices:["Más cerca de las pirámides que de nosotros","Equidistante de ambos","Más cerca de nosotros que de las pirámides"],answer:2},
+    {question:"¿Cómo se alimentaban principalmente los gladiadores romanos?",choices:["Con carne roja","Con cebada y legumbres","Con pescado"],answer:1},
+    // ── Nuevas preguntas ──
+    {question:"¿Cuántas neuronas contiene aproximadamente el cerebro humano?",choices:["8 000 millones","86 000 millones","860 000 millones"],answer:1},
+    {question:"¿Qué porcentaje del ADN humano es idéntico al del chimpancé?",choices:["85 %","92 %","98,7 %"],answer:2},
+    {question:"¿Cuántas bacterias viven en el cuerpo humano?",choices:["Tantas como células humanas","10 veces menos","100 veces más"],answer:0},
+    {question:"¿Cuál es el hueso más resistente del cuerpo humano?",choices:["El cráneo","El fémur","La tibia"],answer:1},
+    {question:"¿Cuántas veces late el corazón humano de media al día?",choices:["50 000 veces","100 000 veces","200 000 veces"],answer:1},
+    {question:"¿Qué fracción del universo observable está hecha de materia visible?",choices:["Aproximadamente el 50 %","Aproximadamente el 27 %","Aproximadamente el 5 %"],answer:2},
+    {question:"¿Cuánto tarda la luz del Sol en llegar a la Tierra?",choices:["30 segundos","8 minutos","1 hora"],answer:1},
+    {question:"¿Cuál es la montaña más alta del sistema solar?",choices:["El Everest terrestre","El Olympus Mons en Marte","El Maxwell Montes en Venus"],answer:1},
+    {question:"¿Cuál es el punto más profundo del océano?",choices:["La fosa de Puerto Rico","La fosa de las Marianas","La fosa de Java"],answer:1},
+    {question:"¿Cuántos litros de sangre bombea el corazón al día?",choices:["1 000 litros","7 500 litros","20 000 litros"],answer:1},
+    {question:"¿Cuál es la vida media de un glóbulo rojo?",choices:["30 días","120 días","365 días"],answer:1},
+    {question:"¿Cuál es el animal más rápido del mundo?",choices:["El guepardo","El halcón peregrino","El pez vela"],answer:1},
+    {question:"¿Cuántas lenguas se hablan en el mundo hoy?",choices:["Unas 2 000","Unas 7 000","Unas 12 000"],answer:1},
+    {question:"¿Qué país tiene más volcanes activos?",choices:["Japón","Indonesia","Islandia"],answer:1},
+    {question:"¿Cuál es la velocidad de rotación de la Tierra en el ecuador?",choices:["500 km/h","1 670 km/h","3 200 km/h"],answer:1},
+    {question:"¿Cuánta agua hay en la Tierra en total?",choices:["140 millones de km³","1 400 millones de km³","14 000 millones de km³"],answer:1},
+    {question:"¿Qué proporción del agua terrestre es dulce?",choices:["2,5 %","10 %","25 %"],answer:0},
+    {question:"¿Qué animal produce el sonido más fuerte?",choices:["El elefante","La gamba pistola","La ballena azul"],answer:2},
+    {question:"¿Cuántas estrellas son visibles a simple vista en una noche despejada?",choices:["Unas 500","Unas 3 000","Unas 10 000"],answer:1},
+    {question:"¿Con qué frecuencia se renuevan las células del estómago?",choices:["Cada 2-4 días","Cada 30 días","Cada 6 meses"],answer:0},
+    {question:"¿Cuál es el elemento químico más abundante del universo?",choices:["El oxígeno","El carbono","El hidrógeno"],answer:2},
+    {question:"¿Cuánto pesa aproximadamente una nube de tamaño medio?",choices:["100 kg","100 toneladas","500 000 kg"],answer:2},
+    {question:"¿Qué sentido usan los tiburones para detectar campos eléctricos?",choices:["El olfato","La electrorrecepción","La ecolocalización"],answer:1},
+    {question:"¿Qué civilización inventó el cero en matemáticas?",choices:["Los griegos","Los mayas","Los indios"],answer:2},
+    {question:"¿Cuántos músculos se necesitan para sonreír?",choices:["6","12","26"],answer:1},
+    {question:"¿Cuál es el desierto más grande del mundo?",choices:["El Sahara","La Antártida","El desierto de Arabia"],answer:1},
+    {question:"¿Cuánto tarda un fotón en atravesar el Sol?",choices:["8 minutos","170 000 años","1 millón de años"],answer:1},
+    {question:"¿Qué porcentaje del cerebro es agua?",choices:["50 %","60 %","75 %"],answer:2},
+    {question:"¿Cuál es la temperatura en el centro de la Tierra?",choices:["2 000 °C","5 500 °C","10 000 °C"],answer:1},
+    {question:"¿Cuál es el órgano más grande del cuerpo humano?",choices:["El hígado","Los pulmones","La piel"],answer:2},
+    {question:"¿Cuántos litros de aire respiramos al día?",choices:["5 000 litros","11 000 litros","25 000 litros"],answer:1},
+    {question:"¿Qué insecto puede cargar 50 veces su peso?",choices:["La abeja","La hormiga","El escarabajo rinoceronte"],answer:2},
+    {question:"¿Cuánto tarda la Estación Espacial en dar la vuelta a la Tierra?",choices:["45 minutos","90 minutos","3 horas"],answer:1},
+    {question:"¿Qué planeta tiene los vientos más rápidos del sistema solar?",choices:["Júpiter","Saturno","Neptuno"],answer:2},
+    {question:"¿Cuántas especies vivas se estiman en la Tierra?",choices:["2 millones","8,7 millones","50 millones"],answer:1},
+    {question:"¿Cuál es el material natural más duro?",choices:["El diamante","El grafeno","La lonsdaleíta"],answer:2},
+    {question:"¿Cuántas veces parpadeamos al día?",choices:["5 000 veces","15 000 a 20 000 veces","50 000 veces"],answer:1},
+    {question:"¿De qué están compuestos principalmente los anillos de Saturno?",choices:["De rocas","De hielo","De gas"],answer:1},
+    {question:"¿Qué mamífero puede volar?",choices:["La ardilla voladora","El murciélago","El colugo"],answer:1},
+    {question:"¿Cuántos terremotos se producen cada año en la Tierra?",choices:["5 000","50 000","500 000"],answer:2},
+    // ── Nuevas preguntas (lote 3) ──
+    {question:"¿Cuál es el único continente sin desierto?",choices:["La Antártida","Europa","Oceanía"],answer:1},
+    {question:"¿Cuántos huesos tiene un bebé humano al nacer?",choices:["206","270","300"],answer:2},
+    {question:"¿Cuál es el río más largo del mundo?",choices:["El Amazonas","El Nilo","El Yangtsé"],answer:1},
+    {question:"¿Cuál es el único planeta que gira en sentido contrario a los demás?",choices:["Urano","Venus","Mercurio"],answer:1},
+    {question:"¿Cuánto tiempo puede sobrevivir un humano sin dormir antes de efectos graves?",choices:["3 días","7 días","11 días"],answer:2},
+    {question:"¿Qué porcentaje de la superficie terrestre está cubierto por océanos?",choices:["55 %","71 %","85 %"],answer:1},
+    {question:"¿Cuál es la sustancia más abundante en el cuerpo humano?",choices:["Las proteínas","El agua","Las grasas"],answer:1},
+    {question:"¿Qué animal tiene el cerebro más grande en relación con su cuerpo?",choices:["El delfín","La hormiga","El humano"],answer:1},
+    {question:"¿Cuántas veces por minuto bate las alas un colibrí?",choices:["200 veces","1 200 veces","4 800 veces"],answer:2},
+    {question:"¿Cuál es la velocidad del sonido en el aire a 20 °C?",choices:["343 m/s","500 m/s","1 200 m/s"],answer:0},
+    {question:"¿Qué metal es líquido a temperatura ambiente?",choices:["El galio","El mercurio","El cesio"],answer:1},
+    {question:"¿Cuántos planetas enanos reconocidos hay en el sistema solar?",choices:["3","5","8"],answer:1},
+    {question:"¿Cuál es el animal terrestre más lento del mundo?",choices:["La tortuga gigante","El perezoso de tres dedos","El koala"],answer:1},
+    {question:"¿A qué profundidad empieza la zona abisal del océano?",choices:["1 000 m","4 000 m","8 000 m"],answer:1},
+    {question:"¿Cuál es la duración media de un sueño?",choices:["5 a 20 minutos","1 a 2 horas","30 segundos"],answer:0},
+    {question:"¿Qué país tiene más lagos naturales del mundo?",choices:["Finlandia","Canadá","Rusia"],answer:1},
+    {question:"¿Cuántos músculos tiene aproximadamente el cuerpo humano?",choices:["206","400","640"],answer:2},
+    {question:"¿Cuál es la galaxia más cercana a la Vía Láctea?",choices:["Andrómeda","La Gran Nube de Magallanes","La galaxia del Triángulo"],answer:0},
+    {question:"¿Cuál es el punto más alejado del centro de la Tierra?",choices:["La cima del Everest","La cima del Chimborazo","La cima del K2"],answer:1},
+    {question:"¿Cuánto tarda la Luna en dar la vuelta a la Tierra?",choices:["14 días","27,3 días","31 días"],answer:1},
+    {question:"¿Qué animal puede regenerar su corazón?",choices:["La estrella de mar","El pez cebra","La salamandra"],answer:1},
+    {question:"¿Cuál es la temperatura más fría jamás registrada en la Tierra?",choices:["-71,2 °C","-89,2 °C","-104 °C"],answer:1},
+    {question:"¿Cuántos satélites artificiales orbitan alrededor de la Tierra?",choices:["Unos 3 000","Unos 10 000","Más de 30 000"],answer:1},
+    {question:"¿Cuál es el árbol vivo más antiguo conocido?",choices:["Una secuoya gigante","Un pino Bristlecone","Un baobab"],answer:1},
+    {question:"¿Cuántos litros de saliva producimos de media en una vida?",choices:["5 000 litros","25 000 litros","35 000 litros"],answer:2},
+    {question:"¿Cuál es la velocidad máxima de un guepardo?",choices:["90 km/h","112 km/h","130 km/h"],answer:1},
+    {question:"¿Qué porcentaje de ADN humano se comparte con el plátano?",choices:["30 %","50 %","60 %"],answer:2},
+    {question:"¿Cuántos volcanes activos hay bajo los océanos?",choices:["Unos 500","Unos 5 000","Más de un millón"],answer:2},
+    {question:"¿Cuál es la mayor estructura viva visible desde el espacio?",choices:["La selva amazónica","La Gran Barrera de Coral","Los manglares de los Sundarbans"],answer:1},
+    {question:"¿Cuál es el metal más ligero?",choices:["El aluminio","El titanio","El litio"],answer:2},
+    {question:"¿Cuántas células pierde el cuerpo humano por segundo?",choices:["3 000","50 000","3,8 millones"],answer:2},
+    {question:"¿Cuál es la unidad más pequeña de materia químicamente identificable?",choices:["El protón","El átomo","El electrón"],answer:1},
+    {question:"¿Cuál es el único mamífero venenoso?",choices:["El murciélago vampiro","El ornitorrinco","La musaraña"],answer:1},
+    {question:"¿Cuántas toneladas de polvo cósmico caen en la Tierra cada día?",choices:["1 tonelada","50 toneladas","100 toneladas"],answer:1},
+    {question:"¿Cuál es la presión atmosférica en la superficie de Venus?",choices:["2 veces la de la Tierra","50 veces la de la Tierra","92 veces la de la Tierra"],answer:2},
+    {question:"¿Qué porcentaje del océano queda por explorar?",choices:["40 %","60 %","80 %"],answer:2},
+    {question:"¿Cuántos átomos componen una célula humana de media?",choices:["1 millón","100 000 millones","100 billones"],answer:2},
+    {question:"¿Qué animal tiene la gestación más larga?",choices:["La ballena azul","El elefante africano","La salamandra alpina"],answer:2},
+    {question:"¿A qué temperatura funde el hierro?",choices:["1 064 °C","1 538 °C","2 862 °C"],answer:1},
+    {question:"¿Cuántos sabores fundamentales puede distinguir la lengua?",choices:["4","5","7"],answer:1},
   ]
+
 };
-
-
 
 
 
