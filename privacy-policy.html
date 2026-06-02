@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Oracle — Politique de confidentialité</title>
+  <title>Oracle — Privacy Policy</title>
   <style>
     body { font-family: Georgia, serif; max-width: 800px; margin: 40px auto; padding: 0 20px; color: #222; line-height: 1.7; }
     h1 { font-size: 1.8rem; margin-bottom: 4px; }
@@ -11,67 +11,179 @@
     p, li { font-size: 0.95rem; }
     .date { color: #666; font-size: 0.85rem; margin-bottom: 2rem; }
     a { color: #1a73e8; }
+    .lang-switch { text-align: right; margin-bottom: 1rem; }
+    .lang-switch button { background: none; border: 1px solid #ccc; border-radius: 4px; padding: 4px 10px; margin-left: 4px; cursor: pointer; font-size: 0.85rem; }
+    .lang-switch button.active { background: #1a73e8; color: #fff; border-color: #1a73e8; }
+    .lang { display: none; }
+    .lang.active { display: block; }
   </style>
 </head>
 <body>
 
-  <h1>Politique de confidentialité — Oracle</h1>
-  <p class="date">Dernière mise à jour : avril 2026</p>
+  <div class="lang-switch">
+    <button onclick="switchLang('fr')" id="btn-fr" class="active">🇫🇷 FR</button>
+    <button onclick="switchLang('en')" id="btn-en">🇬🇧 EN</button>
+    <button onclick="switchLang('es')" id="btn-es">🇪🇸 ES</button>
+  </div>
 
-  <p>Oracle est une application mobile de curiosités et d'anecdotes. Cette politique explique quelles données sont collectées, comment elles sont utilisées, et quels sont vos droits.</p>
+  <!-- FRANÇAIS -->
+  <div id="lang-fr" class="lang active">
+    <h1>Politique de confidentialité — Oracle</h1>
+    <p class="date">Dernière mise à jour : juin 2026</p>
+    <p>Oracle est une application mobile de curiosités et d'anecdotes. Cette politique explique quelles données sont collectées, comment elles sont utilisées, et quels sont vos droits.</p>
+    <h2>1. Données collectées localement</h2>
+    <p>Oracle stocke les données suivantes <strong>uniquement sur votre appareil</strong> via le stockage local (localStorage) :</p>
+    <ul>
+      <li>Vos préférences (langue choisie, planète active)</li>
+      <li>Votre progression (faits lus, favoris, succès débloqués)</li>
+      <li>Votre série quotidienne et vos statistiques de quiz</li>
+    </ul>
+    <p>Ces données ne quittent jamais votre appareil et ne sont transmises à aucun serveur Oracle.</p>
+    <h2>2. Publicité — Google AdMob</h2>
+    <p>La version gratuite d'Oracle affiche des publicités fournies par <strong>Google AdMob</strong>. AdMob peut collecter et utiliser des données pour personnaliser les annonces, notamment :</p>
+    <ul>
+      <li>L'identifiant publicitaire de votre appareil (Android Advertising ID)</li>
+      <li>Des données d'utilisation et de comportement anonymisées</li>
+      <li>Des informations sur votre appareil (modèle, système d'exploitation)</li>
+      <li>Votre adresse IP approximative (pour la géolocalisation des annonces)</li>
+    </ul>
+    <p>Ces données sont collectées et traitées par Google conformément à la <a href="https://policies.google.com/privacy" target="_blank">politique de confidentialité de Google</a>.</p>
+    <p>Vous pouvez désactiver la personnalisation des annonces dans les paramètres Android : <strong>Paramètres → Google → Annonces → Désactiver la personnalisation</strong>.</p>
+    <h2>3. Version Premium</h2>
+    <p>La version Premium supprime toutes les publicités. Les achats intégrés sont gérés par Google Play. Oracle n'a accès à aucune donnée de paiement.</p>
+    <h2>4. Données NON collectées par Oracle</h2>
+    <ul>
+      <li>Nom, prénom, email ou toute information d'identification</li>
+      <li>Données de localisation précise</li>
+      <li>Contacts ou données d'autres applications</li>
+      <li>Données financières</li>
+    </ul>
+    <h2>5. Partage de données</h2>
+    <p>Oracle ne partage aucune donnée personnelle avec des tiers, à l'exception de Google AdMob pour la diffusion des publicités (version gratuite uniquement).</p>
+    <h2>6. Enfants</h2>
+    <p>Oracle est accessible à tous les âges. Les publicités affichées aux utilisateurs de moins de 13 ans sont des annonces non personnalisées.</p>
+    <h2>7. Vos droits (RGPD)</h2>
+    <ul>
+      <li>Vous pouvez supprimer vos données locales en désinstallant l'application</li>
+      <li>Vous pouvez désactiver la personnalisation publicitaire dans les paramètres Android</li>
+      <li>Pour toute demande relative aux données AdMob, consultez les outils de confidentialité Google</li>
+    </ul>
+    <h2>8. Modifications</h2>
+    <p>Cette politique peut être mise à jour en cas d'évolution de l'application. La date sera toujours indiquée en haut de cette page.</p>
+    <h2>9. Contact</h2>
+    <p>Pour toute question : <a href="mailto:contact@oracle-app.com">contact@oracle-app.com</a></p>
+  </div>
 
-  <h2>1. Données collectées localement</h2>
-  <p>Oracle stocke les données suivantes <strong>uniquement sur votre appareil</strong> via le stockage local (localStorage) :</p>
-  <ul>
-    <li>Vos préférences (langue choisie, planète active)</li>
-    <li>Votre progression (faits lus, favoris, succès débloqués)</li>
-    <li>Votre série quotidienne et vos statistiques de quiz</li>
-  </ul>
-  <p>Ces données ne quittent jamais votre appareil et ne sont transmises à aucun serveur Oracle.</p>
+  <!-- ENGLISH -->
+  <div id="lang-en" class="lang">
+    <h1>Privacy Policy — Oracle</h1>
+    <p class="date">Last updated: June 2026</p>
+    <p>Oracle is a mobile app about curiosities and fun facts. This policy explains what data is collected, how it is used, and what your rights are.</p>
+    <h2>1. Data stored locally</h2>
+    <p>Oracle stores the following data <strong>only on your device</strong> via local storage (localStorage):</p>
+    <ul>
+      <li>Your preferences (chosen language, active planet)</li>
+      <li>Your progress (facts read, favorites, achievements unlocked)</li>
+      <li>Your daily streak and quiz statistics</li>
+    </ul>
+    <p>This data never leaves your device and is not transmitted to any Oracle server.</p>
+    <h2>2. Advertising — Google AdMob</h2>
+    <p>The free version of Oracle displays ads provided by <strong>Google AdMob</strong>. AdMob may collect and use data to personalize ads, including:</p>
+    <ul>
+      <li>Your device's advertising identifier (Android Advertising ID)</li>
+      <li>Anonymized usage and behavioral data</li>
+      <li>Device information (model, operating system)</li>
+      <li>Your approximate IP address (for ad geolocation)</li>
+    </ul>
+    <p>This data is collected and processed by Google in accordance with <a href="https://policies.google.com/privacy" target="_blank">Google's Privacy Policy</a>.</p>
+    <p>You can disable ad personalization in Android settings: <strong>Settings → Google → Ads → Opt out of personalization</strong>.</p>
+    <h2>3. Premium version</h2>
+    <p>The Premium version removes all ads. In-app purchases are managed by Google Play. Oracle has no access to any payment data.</p>
+    <h2>4. Data NOT collected by Oracle</h2>
+    <ul>
+      <li>Name, email, or any personally identifiable information</li>
+      <li>Precise location data</li>
+      <li>Contacts or data from other apps</li>
+      <li>Financial data</li>
+    </ul>
+    <h2>5. Data sharing</h2>
+    <p>Oracle does not share any personal data with third parties, except for Google AdMob for ad delivery (free version only).</p>
+    <h2>6. Children</h2>
+    <p>Oracle is suitable for all ages. Ads shown to users under 13 are non-personalized ads.</p>
+    <h2>7. Your rights (GDPR)</h2>
+    <ul>
+      <li>You can delete your local data by uninstalling the app</li>
+      <li>You can disable ad personalization in Android settings</li>
+      <li>For any request regarding AdMob data, please refer to Google's privacy tools</li>
+    </ul>
+    <h2>8. Changes</h2>
+    <p>This policy may be updated as the app evolves. The date will always be indicated at the top of this page.</p>
+    <h2>9. Contact</h2>
+    <p>For any questions: <a href="mailto:contact@oracle-app.com">contact@oracle-app.com</a></p>
+  </div>
 
-  <h2>2. Publicité — Google AdMob</h2>
-  <p>La version gratuite d'Oracle affiche des publicités fournies par <strong>Google AdMob</strong>. AdMob peut collecter et utiliser des données pour personnaliser les annonces, notamment :</p>
-  <ul>
-    <li>L'identifiant publicitaire de votre appareil (Android Advertising ID)</li>
-    <li>Des données d'utilisation et de comportement anonymisées</li>
-    <li>Des informations sur votre appareil (modèle, système d'exploitation)</li>
-    <li>Votre adresse IP approximative (pour la géolocalisation des annonces)</li>
-  </ul>
-  <p>Ces données sont collectées et traitées par Google conformément à la <a href="https://policies.google.com/privacy" target="_blank">politique de confidentialité de Google</a>.</p>
-  <p>Vous pouvez désactiver la personnalisation des annonces dans les paramètres Android : <strong>Paramètres → Google → Annonces → Désactiver la personnalisation</strong>.</p>
-
-  <h2>3. Version Premium</h2>
-  <p>La version Premium supprime toutes les publicités. Les achats intégrés sont gérés par Google Play. Oracle n'a accès à aucune donnée de paiement.</p>
-
-  <h2>4. Données NON collectées par Oracle</h2>
-  <ul>
-    <li>Nom, prénom, email ou toute information d'identification</li>
-    <li>Données de localisation précise</li>
-    <li>Contacts ou données d'autres applications</li>
-    <li>Données financières</li>
-  </ul>
-
-  <h2>5. Partage de données</h2>
-  <p>Oracle ne partage aucune donnée personnelle avec des tiers, à l'exception de Google AdMob pour la diffusion des publicités (version gratuite uniquement).</p>
-
-  <h2>6. Enfants</h2>
-  <p>Oracle est accessible à tous les âges. Les publicités affichées aux utilisateurs de moins de 13 ans sont des annonces non personnalisées.</p>
-
-  <h2>7. Vos droits (RGPD)</h2>
-  <ul>
-    <li>Vous pouvez supprimer vos données locales en désinstallant l'application</li>
-    <li>Vous pouvez désactiver la personnalisation publicitaire dans les paramètres Android</li>
-    <li>Pour toute demande relative aux données AdMob, consultez les outils de confidentialité Google</li>
-  </ul>
-
-  <h2>8. Modifications</h2>
-  <p>Cette politique peut être mise à jour en cas d'évolution de l'application. La date sera toujours indiquée en haut de cette page.</p>
-
-  <h2>9. Contact</h2>
-  <p>Pour toute question : <a href="mailto:contact@oracle-app.com">contact@oracle-app.com</a></p>
+  <!-- ESPAÑOL -->
+  <div id="lang-es" class="lang">
+    <h1>Política de privacidad — Oracle</h1>
+    <p class="date">Última actualización: junio de 2026</p>
+    <p>Oracle es una aplicación móvil de curiosidades y anécdotas. Esta política explica qué datos se recopilan, cómo se utilizan y cuáles son sus derechos.</p>
+    <h2>1. Datos almacenados localmente</h2>
+    <p>Oracle almacena los siguientes datos <strong>únicamente en su dispositivo</strong> mediante almacenamiento local (localStorage):</p>
+    <ul>
+      <li>Sus preferencias (idioma elegido, planeta activo)</li>
+      <li>Su progreso (hechos leídos, favoritos, logros desbloqueados)</li>
+      <li>Su racha diaria y sus estadísticas de quiz</li>
+    </ul>
+    <p>Estos datos nunca salen de su dispositivo y no se transmiten a ningún servidor de Oracle.</p>
+    <h2>2. Publicidad — Google AdMob</h2>
+    <p>La versión gratuita de Oracle muestra anuncios proporcionados por <strong>Google AdMob</strong>. AdMob puede recopilar y utilizar datos para personalizar los anuncios, incluyendo:</p>
+    <ul>
+      <li>El identificador publicitario de su dispositivo (Android Advertising ID)</li>
+      <li>Datos de uso y comportamiento anonimizados</li>
+      <li>Información del dispositivo (modelo, sistema operativo)</li>
+      <li>Su dirección IP aproximada (para la geolocalización de anuncios)</li>
+    </ul>
+    <p>Estos datos son recopilados y procesados por Google de acuerdo con la <a href="https://policies.google.com/privacy" target="_blank">política de privacidad de Google</a>.</p>
+    <p>Puede desactivar la personalización de anuncios en los ajustes de Android: <strong>Ajustes → Google → Anuncios → Desactivar la personalización</strong>.</p>
+    <h2>3. Versión Premium</h2>
+    <p>La versión Premium elimina toda la publicidad. Las compras integradas son gestionadas por Google Play. Oracle no tiene acceso a ningún dato de pago.</p>
+    <h2>4. Datos NO recopilados por Oracle</h2>
+    <ul>
+      <li>Nombre, correo electrónico ni ninguna información de identificación personal</li>
+      <li>Datos de ubicación precisa</li>
+      <li>Contactos ni datos de otras aplicaciones</li>
+      <li>Datos financieros</li>
+    </ul>
+    <h2>5. Compartición de datos</h2>
+    <p>Oracle no comparte ningún dato personal con terceros, a excepción de Google AdMob para la distribución de anuncios (solo en la versión gratuita).</p>
+    <h2>6. Niños</h2>
+    <p>Oracle es apta para todas las edades. Los anuncios mostrados a usuarios menores de 13 años son anuncios no personalizados.</p>
+    <h2>7. Sus derechos (RGPD)</h2>
+    <ul>
+      <li>Puede eliminar sus datos locales desinstalando la aplicación</li>
+      <li>Puede desactivar la personalización publicitaria en los ajustes de Android</li>
+      <li>Para cualquier solicitud relativa a los datos de AdMob, consulte las herramientas de privacidad de Google</li>
+    </ul>
+    <h2>8. Modificaciones</h2>
+    <p>Esta política puede actualizarse en caso de evolución de la aplicación. La fecha siempre se indicará en la parte superior de esta página.</p>
+    <h2>9. Contacto</h2>
+    <p>Para cualquier pregunta: <a href="mailto:contact@oracle-app.com">contact@oracle-app.com</a></p>
+  </div>
 
   <hr style="margin-top:3rem; border:none; border-top:1px solid #ddd;">
-  <p style="color:#888; font-size:0.8rem;">Oracle · Développé par Kipetchis · Hébergé sur GitHub Pages</p>
+  <p style="color:#888; font-size:0.8rem;">Oracle · Developed by Kipetchis · Hosted on GitHub Pages</p>
+
+  <script>
+    function switchLang(l) {
+      document.querySelectorAll('.lang').forEach(function(d) { d.classList.remove('active'); });
+      document.querySelectorAll('.lang-switch button').forEach(function(b) { b.classList.remove('active'); });
+      document.getElementById('lang-' + l).classList.add('active');
+      document.getElementById('btn-' + l).classList.add('active');
+      document.documentElement.lang = l;
+    }
+    var userLang = (navigator.language || '').slice(0, 2);
+    if (['fr', 'en', 'es'].indexOf(userLang) !== -1) switchLang(userLang);
+  </script>
 
 </body>
 </html>
