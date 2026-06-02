@@ -1,14 +1,14 @@
 {
   "name": "Oracle",
   "short_name": "Oracle",
-  "description": "Le monde a quelque chose à te dire — faits, anecdotes et curiosités du monde entier.",
+  "description": "The world has something to tell you — facts, anecdotes and curiosities from around the globe. / El mundo tiene algo que decirte. / Le monde a quelque chose à te dire.",
   "start_url": "/Oracle/oracle.html",
   "scope": "/Oracle/",
   "display": "standalone",
   "orientation": "portrait",
   "background_color": "#08080f",
   "theme_color": "#08080f",
-  "lang": "fr",
+  "lang": "en",
   "icons": [
     {
       "src": "icons/icon-192.png",
