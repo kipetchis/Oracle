@@ -328,7 +328,7 @@ function syncToFirestore(){
       displayName: _fbUser.displayName||''
     },{merge:true}).then(()=>{
       const el=document.getElementById('authSyncStatus');
-      if(el) el.textContent='✓ Données synchronisées';
+      if(el) el.textContent=_t('✓ Données synchronisées','✓ Datos sincronizados','✓ Data synced');
     }).catch(e=>console.warn('Firestore sync error:',e));
   }, 2000);
 }
@@ -759,11 +759,12 @@ function initDeck(){deck=buildUnseenDeck();deckIdx=0;}
 
 function showPoolExhausted(){
   const isFr=lang==='fr';
-  document.getElementById('peTitle').textContent=isFr?'Tu as tout découvert !':'You\'ve seen it all!';
-  document.getElementById('peMsg').textContent=isFr
-    ?`Bravo ! Tu as découvert les ${FACTS.length} faits de l'Oracle. Recommencer depuis le début ?`
-    :`Congrats! You've discovered all ${FACTS.length} Oracle facts. Start again from the beginning?`;
-  document.getElementById('peBtn').textContent=isFr?'Recommencer':'Start over';
+  document.getElementById('peTitle').textContent=_t('Tu as tout découvert !','¡Lo has descubierto todo!',"You've seen it all!");
+  document.getElementById('peMsg').textContent=_t(
+    `Bravo ! Tu as découvert les ${FACTS.length} faits de l'Oracle. Recommencer depuis le début ?`,
+    `¡Enhorabuena! Has descubierto los ${FACTS.length} datos del Oráculo. ¿Empezar de nuevo?`,
+    `Congrats! You've discovered all ${FACTS.length} Oracle facts. Start again from the beginning?`);
+  document.getElementById('peBtn').textContent=_t('Recommencer','Empezar de nuevo','Start over');
   document.getElementById('poolExhaustedScreen').classList.add('active');
 }
 
@@ -889,10 +890,10 @@ function showFact(){
     if(!state.premium){
       const rem = Math.max(0, DAILY_LIMIT - (state.dailyCount||0));
       label.textContent = rem > 0
-        ? (lang==='fr' ? `Encore (${rem})` : `Again (${rem})`)
-        : (lang==='fr' ? 'Terminé' : 'Done');
+        ? (lang==='fr' ? `Encore (${rem})` : lang==='es' ? `Otra vez (${rem})` : `Again (${rem})`)
+        : (lang==='fr' ? 'Terminé' : lang==='es' ? 'Terminado' : 'Done');
     } else {
-      label.textContent = lang==='fr' ? '∞ Illimité' : '∞ Unlimited';
+      label.textContent = lang==='fr' ? '∞ Illimité' : lang==='es' ? '∞ Ilimitado' : '∞ Unlimited';
     }
     setTimeout(()=>runPostFactChecks(deferPostFactChecks),400);
   },120);
@@ -1108,7 +1109,7 @@ function injectSearchBar(){
   bar.style.cssText = 'padding:10px 16px 6px;';
   bar.innerHTML = '<div style="display:flex;align-items:center;background:var(--card-bg,#0d1b2a);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:8px 12px;gap:8px;">'
     + '<span style="opacity:.5;font-size:.9rem;">🔍</span>'
-    + '<input id="favSearchInput" type="text" placeholder="' + (lang==='fr'?'Rechercher un fait…':'Search a fact…') + '" style="flex:1;background:none;border:none;outline:none;color:var(--text);font-size:.85rem;font-family:inherit;" oninput="onFavSearch(this.value)">'
+    + '<input id="favSearchInput" type="text" placeholder="' + (lang==='fr'?'Rechercher un fait…':lang==='es'?'Buscar un dato…':'Search a fact…') + '" style="flex:1;background:none;border:none;outline:none;color:var(--text);font-size:.85rem;font-family:inherit;" oninput="onFavSearch(this.value)">'
     + '<span id="favSearchClear" onclick="clearFavSearch()" style="cursor:pointer;opacity:.4;font-size:.8rem;display:none;">✕</span>'
     + '</div>';
   tabs.parentNode.insertBefore(bar, tabs.nextSibling);
@@ -1158,12 +1159,12 @@ function renderSearchResults(results, query){
     if(bar) bar.parentNode.insertBefore(container, bar.nextSibling);
   }
   if(!results.length){
-    container.innerHTML = '<p class="fav-empty">' + (lang==='fr'?'Aucun résultat pour « '+query+' »':'No results for "'+query+'"') + '</p>';
+    container.innerHTML = '<p class="fav-empty">' + (lang==='fr'?'Aucun résultat pour « '+query+' »':lang==='es'?'Sin resultados para "'+query+'"':'No results for "'+query+'"') + '</p>';
     return;
   }
   var catLabels = T[lang].catLabels||{};
   container.innerHTML = '<div style="padding:6px 16px 4px;font-family:\'Space Mono\',monospace;font-size:.5rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted)">'
-    + results.length + (lang==='fr'?' résultat(s)':' result(s)') + '</div>'
+    + results.length + (lang==='fr'?' résultat(s)':lang==='es'?' resultado(s)':' result(s)') + '</div>'
     + results.map(function(f){
       var icon = CAT_ICONS[f.cat]||'✦';
       var label = (catLabels[f.cat]||'').replace('✦ ','');
@@ -1450,7 +1451,7 @@ function initDailyBanner() {
   const t = T[lang];
   const bannerText = fact._thematic ? fact._thematic.text : fact.text;
   const bannerIcon = fact._thematic ? fact._thematic.icon : (CAT_ICONS[fact.cat] || '📅');
-  const bannerLabel = fact._thematic ? fact._thematic.label : (lang==='fr' ? '✦ Fait du jour' : '✦ Fact of the day');
+  const bannerLabel = fact._thematic ? fact._thematic.label : (lang==='fr' ? '✦ Fait du jour' : lang==='es' ? '✦ Dato del día' : '✦ Fact of the day');
   document.getElementById('dailyBannerText').textContent = bannerText;
   document.getElementById('dailyBannerLabel').textContent = bannerLabel;
   document.getElementById('dailyBannerDate').textContent =
@@ -1527,7 +1528,7 @@ function openDailyOverlay() {
   ddContainer.innerHTML = '';
   ddBtn.style.display = 'inline-block';
   const ddData = DEEP_DIVES[fact.id];
-  if(ddData && ((lang==='fr'?ddData.fr:ddData.en)||[]).length){
+  if(ddData && ((lang==='fr'?ddData.fr:lang==='es'?(ddData.es||ddData.en):ddData.en)||[]).length){
     ddBtn.style.display = 'inline-block';
     ddBtn.innerHTML = `🔎 <span id="dailyDdLabel">${_t('Creuser le sujet','Profundizar','Dig deeper')}</span>`;
   } else {
@@ -1897,19 +1898,20 @@ function skipAuth(){ haptic('light'); hideAuthScreen(); }
 function applyAuthI18n(){
   if(!document.getElementById('authScreen')) return;
   const fr=lang==='fr';
-  document.getElementById('authSub').innerHTML=fr
+  document.getElementById('authSub').innerHTML=lang==='fr'
     ?'Crée un compte pour sauvegarder ta progression<br>et retrouver tes curiosités sur tous tes appareils.'
+    :lang==='es'?'Crea una cuenta para guardar tu progreso<br>y encontrar tus curiosidades en todos tus dispositivos.'
     :'Create an account to save your progress<br>and find your curiosities on all your devices.';
   document.getElementById('authEmail').placeholder='Email';
-  document.getElementById('authPassword').placeholder=fr?'Mot de passe':'Password';
-  if(document.getElementById('authForgot')) (document.getElementById('authForgot')||{}).textContent=fr?'Mot de passe oublié ?':'Forgot password?';
+  document.getElementById('authPassword').placeholder=_t('Mot de passe','Contraseña','Password');
+  if(document.getElementById('authForgot')) (document.getElementById('authForgot')||{}).textContent=_t('Mot de passe oublié ?','¿Contraseña olvidada?','Forgot password?');
   if(document.getElementById('authMainBtn')) (document.getElementById('authMainBtn')||{}).textContent=_authMode==='register'
-    ?(fr?'Créer un compte':'Create account'):(fr?'Se connecter':'Sign in');
+    ?(_t('Créer un compte','Crear cuenta','Create account')):(_t('Se connecter','Iniciar sesión','Sign in'));
   document.getElementById('authToggle').innerHTML=_authMode==='register'
-    ?(fr?'Déjà un compte ? <span>Se connecter</span>':'Already have an account? <span>Sign in</span>')
-    :(fr?'Pas encore de compte ? <span>Créer un compte</span>':"Don't have an account? <span>Sign up</span>");
-  if(document.getElementById('authDivider')) (document.getElementById('authDivider')||{}).textContent=fr?'ou':'or';
-  if(document.querySelector('.auth-skip')) (document.querySelector('.auth-skip')||{}).textContent=fr?'Continuer sans compte →':'Continue without account →';}
+    ?(_t('Déjà un compte ? <span>Se connecter</span>','¿Ya tienes cuenta? <span>Iniciar sesión</span>','Already have an account? <span>Sign in</span>'))
+    :(_t('Pas encore de compte ? <span>Créer un compte</span>','¿No tienes cuenta? <span>Crear cuenta</span>',"Don't have an account? <span>Sign up</span>"));
+  if(document.getElementById('authDivider')) (document.getElementById('authDivider')||{}).textContent=_t('ou','o','or');
+  if(document.querySelector('.auth-skip')) (document.querySelector('.auth-skip')||{}).textContent=_t('Continuer sans compte →','Continuar sin cuenta →','Continue without account →');}
 
 function toggleAuthMode(){
   haptic('light');
@@ -1926,8 +1928,8 @@ async function handleAuthSubmit(){
   const email=document.getElementById('authEmail').value.trim();
   const password=document.getElementById('authPassword').value;
   const fr=lang==='fr';
-  if(!email||!password){setAuthError(fr?'Remplis tous les champs.':'Please fill in all fields.');return;}
-  if(password.length<6){setAuthError(fr?'Mot de passe trop court (min. 6 caractères).':'Password too short (min. 6 characters).');return;}
+  if(!email||!password){setAuthError(_t('Remplis tous les champs.','Rellena todos los campos.','Please fill in all fields.'));return;}
+  if(password.length<6){setAuthError(_t('Mot de passe trop court (min. 6 caractères).','Contraseña muy corta (mín. 6 caracteres).','Password too short (min. 6 characters).'));return;}
   if(!window._fbSignIn){setAuthError(_t('Service indisponible, réessaie.','Servicio no disponible, reintenta.','Service unavailable, please retry.'));return;}
   try{
     if(_authMode==='register'){await window._fbRegister(email,password);}
@@ -1935,16 +1937,16 @@ async function handleAuthSubmit(){
   }catch(err){
     const fr2=lang==='fr';
     const msgs={
-      'auth/email-already-in-use':fr2?'Email déjà utilisé.':'Email already in use.',
-      'auth/user-not-found':fr2?'Compte introuvable.':'Account not found.',
-      'auth/wrong-password':fr2?'Mot de passe incorrect.':'Wrong password.',
-      'auth/invalid-email':fr2?'Email invalide.':'Invalid email.',
-      'auth/too-many-requests':fr2?'Trop de tentatives. Réessaie plus tard.':'Too many attempts. Try again later.',
-      'auth/network-request-failed':fr2?'Erreur réseau.':'Network error.',
-      'auth/invalid-credential':fr2?'Identifiants incorrects.':'Invalid credentials.',
+      'auth/email-already-in-use':_t('Email déjà utilisé.','Email ya en uso.','Email already in use.'),
+      'auth/user-not-found':_t('Compte introuvable.','Cuenta no encontrada.','Account not found.'),
+      'auth/wrong-password':_t('Mot de passe incorrect.','Contraseña incorrecta.','Wrong password.'),
+      'auth/invalid-email':_t('Email invalide.','Email inválido.','Invalid email.'),
+      'auth/too-many-requests':_t('Trop de tentatives. Réessaie plus tard.','Demasiados intentos. Inténtalo más tarde.','Too many attempts. Try again later.'),
+      'auth/network-request-failed':_t('Erreur réseau.','Error de red.','Network error.'),
+      'auth/invalid-credential':_t('Identifiants incorrects.','Credenciales incorrectas.','Invalid credentials.'),
     };
     console.error('Auth error:', err);
-    setAuthError(msgs[err.code]||(fr2?'Erreur : '+(err.message||err.code||'inconnue'):'Error: '+(err.message||err.code||'unknown')));
+    setAuthError(msgs[err.code]||(_t('Erreur : ','Error: ','Error: ')+(err.message||err.code||_t('inconnue','desconocido','unknown'))));
   }
 }
 
@@ -1962,9 +1964,9 @@ async function handleForgot(){
   haptic('light');
   const email=document.getElementById('authEmail').value.trim();
   const fr=lang==='fr';
-  if(!email){setAuthError(fr?"Entre ton email d'abord.":'Enter your email first.');return;}
-  try{await window._fbResetPwd(email);showToast(fr?'✓ Email de réinitialisation envoyé':'✓ Reset email sent');}
-  catch(e){setAuthError(fr?'Email introuvable.':'Email not found.');}
+  if(!email){setAuthError(_t("Entre ton email d'abord.","Introduce tu email primero.",'Enter your email first.'));return;}
+  try{await window._fbResetPwd(email);showToast(_t('✓ Email de réinitialisation envoyé','✓ Email de restablecimiento enviado','✓ Reset email sent'));}
+  catch(e){setAuthError(_t('Email introuvable.','Email no encontrado.','Email not found.'));}
 }
 
 async function handleSignOut(){
@@ -1981,8 +1983,8 @@ async function forceSyncNow(){
   s.textContent=_t('↑ Synchronisation...','↑ Sincronizando...','↑ Syncing...');
   await syncToCloud();
   s.className='account-sync-status ok';
-  s.textContent=lang==='fr'?'✓ Progression sauvegardée':'✓ Progress saved';
-  showToast(lang==='fr'?'✓ Synchronisé':'✓ Synced');
+  s.textContent=_t('✓ Progression sauvegardée','✓ Progreso guardado','✓ Progress saved');
+  showToast(_t('✓ Synchronisé','✓ Sincronizado','✓ Synced'));
 }
 
 function openAccountPanel(){
@@ -1990,11 +1992,11 @@ function openAccountPanel(){
   if(!_fbCurrentUser){showAuthScreen();return;}
   const user=_fbCurrentUser;
   const name=user.displayName||user.email||'?';
-  const apt=document.getElementById('accountPanelTitle'); if(apt) apt.textContent=lang==='fr'?'⬡ Mon compte':'⬡ My account';
+  const apt=document.getElementById('accountPanelTitle'); if(apt) apt.textContent=_t('⬡ Mon compte','⬡ Mi cuenta','⬡ My account');
   const aab=document.getElementById('accountAvatarBig'); if(aab) aab.textContent=name[0].toUpperCase();
   const aed=document.getElementById('accountEmailDisplay'); if(aed) aed.textContent=user.email;
-  const asb=document.getElementById('accountSyncBtn'); if(asb) asb.textContent=lang==='fr'?'↑ Synchroniser maintenant':'↑ Sync now';
-  const aso=document.getElementById('accountSignOutBtn'); if(aso) aso.textContent=lang==='fr'?'Déconnexion':'Sign out';
+  const asb=document.getElementById('accountSyncBtn'); if(asb) asb.textContent=_t('↑ Synchroniser maintenant','↑ Sincronizar ahora','↑ Sync now');
+  const aso=document.getElementById('accountSignOutBtn'); if(aso) aso.textContent=_t('Déconnexion','Cerrar sesión','Sign out');
   document.getElementById('accountPanel').classList.add('open');
 }
 function closeAccountPanel(){ document.getElementById('accountPanel').classList.remove('open'); }
@@ -2086,13 +2088,13 @@ window.addEventListener('popstate', function(e) {
   if(_backPressCount >= 2){
     // Let the user leave
     _backPressCount = 0;
-    if(confirm(lang==='fr'?'Quitter Oracle ?':'Leave Oracle?')){
+    if(confirm(_t('Quitter Oracle ?','¿Salir de Oracle?','Leave Oracle?'))){
       window.history.back();
       return;
     }
   }
   // First back — show toast and re-push
-  showToast(lang==='fr'?'↩ Glisse encore pour quitter':'↩ Swipe again to exit');
+  showToast(_t('↩ Glisse encore pour quitter','↩ Desliza de nuevo para salir','↩ Swipe again to exit'));
   history.pushState({screen:'app'}, '');
   if(_backPressTimer) clearTimeout(_backPressTimer);
   _backPressTimer = setTimeout(function(){ _backPressCount = 0; }, 2500);
@@ -2115,7 +2117,7 @@ history.pushState({screen:'app'}, '');
       if((state.secretTaps||0)<10){
         state.secretTaps=(state.secretTaps||0)+10;
         saveState();
-        showToast(lang==='fr'?'💀 Pluton se souvient…':'💀 Pluto remembers…');
+        showToast(_t('💀 Pluton se souvient…','💀 Plutón recuerda…','💀 Pluto remembers…'));
         setTimeout(()=>{checkAchievements();checkPlanetUnlocks();},500);
       }
     }
