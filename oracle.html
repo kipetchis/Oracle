@@ -103,7 +103,7 @@
     .planet-indicator-emoji{font-size:13px;line-height:1;}
     .planet-indicator-name{font-family:'Space Mono',monospace;font-size:.48rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);}
     .topbar-actions{display:flex;gap:7px;position:relative;}
-    .sound-menu{position:absolute;top:48px;right:0;background:rgba(10,15,26,.97);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:8px 4px;display:none;flex-direction:column;gap:2px;z-index:9000;min-width:160px;box-shadow:0 8px 32px rgba(0,0,0,.6);backdrop-filter:blur(16px);}
+    .sound-menu{position:fixed;top:62px;right:16px;background:rgba(10,15,26,.97);border:1px solid rgba(255,255,255,.15);border-radius:12px;padding:8px 4px;display:none;flex-direction:column;gap:2px;z-index:9000;min-width:160px;box-shadow:0 8px 32px rgba(0,0,0,.6);backdrop-filter:blur(16px);}
     .sound-menu.open{display:flex;}
     .sound-menu-item{display:flex;align-items:center;gap:10px;padding:10px 14px;border-radius:8px;cursor:pointer;font-family:'Space Mono',monospace;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text);transition:background .15s;white-space:nowrap;}
     .sound-menu-item:hover{background:rgba(255,255,255,.06);}
@@ -1066,7 +1066,7 @@
 <!-- ONBOARDING (created dynamically by JS for new users only) -->
 
 <div class="lang-screen" id="langScreen">
-<script>try{if(JSON.parse(localStorage.getItem('oracleState')).lang)document.getElementById('langScreen').style.display='none';}catch(e){}</script>
+<script>try{if(JSON.parse(localStorage.getItem('oracle_v7')).lang)document.getElementById('langScreen').style.display='none';}catch(e){}</script>
   <div class="lang-title">Oracle</div>
   <div class="lang-sub">Choose your language / Choisissez votre langue</div>
   <div class="lang-btns">
@@ -1153,8 +1153,8 @@
       <!-- Support section (always visible) -->
       <div class="support-section">
         <div class="support-divider"></div>
-        <p class="support-title">💜 Soutenir Oracle</p>
-        <p class="support-desc">Si Oracle te plaît, tu peux soutenir son développement !</p>
+        <p class="support-title" id="supportTitle">💜 Soutenir Oracle</p>
+        <p class="support-desc" id="supportDesc">Si Oracle te plaît, tu peux soutenir son développement !</p>
         <div class="support-links">
           <a href="https://paypal.me/kip3tchis" target="_blank" rel="noopener" class="support-btn support-paypal">
             <span class="support-icon">💙</span> PayPal
@@ -1465,5 +1465,78 @@ if('serviceWorker' in navigator) {
   loadNext();
 })();
 </script>
+
+<script>
+// ── I18N patches for HTML labels ──
+(function(){
+  const _smi = {
+    fr:{music:'Musique',sfx:'Sons',mute:'Tout couper'},
+    en:{music:'Music',sfx:'Sounds',mute:'Mute all'},
+    es:{music:'Música',sfx:'Sonidos',mute:'Silenciar todo'}
+  };
+  const _tabs = {
+    fr:{favs:'♡ Favoris',history:'📖 Déjà lus',ephem:'📅 Éphémérides'},
+    en:{favs:'♡ Favorites',history:'📖 Already read',ephem:'📅 Ephemeris'},
+    es:{favs:'♡ Favoritos',history:'📖 Ya leídos',ephem:'📅 Efemérides'}
+  };
+  const _sub = {
+    fr:'Le monde a quelque chose à te dire',
+    en:'The world has something to tell you',
+    es:'El mundo tiene algo que decirte'
+  };
+
+  const _acct = {
+    fr:{premium:'∞ Faits illimités débloqués',support:'💜 Soutenir Oracle',supportDesc:'Si Oracle te plaît, tu peux soutenir son développement !'},
+    en:{premium:'∞ Unlimited facts unlocked',support:'💜 Support Oracle',supportDesc:'If you enjoy Oracle, you can support its development!'},
+    es:{premium:'∞ Datos ilimitados desbloqueados',support:'💜 Apoyar a Oracle',supportDesc:'Si te gusta Oracle, ¡puedes apoyar su desarrollo!'}
+  };
+
+  // Patch switchLang to also update HTML labels
+  const origSwitchLang = window.switchLang;
+  window.switchLang = function(l) {
+    if (origSwitchLang) origSwitchLang(l);
+    const lang = l || (localStorage.getItem('oracle_v7') && JSON.parse(localStorage.getItem('oracle_v7')).lang) || 'fr';
+    const s = _smi[lang] || _smi.fr;
+    const t = _tabs[lang] || _tabs.fr;
+    // Sound menu
+    const ml = document.getElementById('smiMusicLabel'); if(ml) ml.textContent = s.music;
+    const sl = document.getElementById('smiSfxLabel'); if(sl) sl.textContent = s.sfx;
+    const al = document.getElementById('smiAllLabel'); if(al) al.textContent = s.mute;
+    // Tabs
+    const tf = document.getElementById('tabFavs'); if(tf) tf.textContent = t.favs;
+    const th = document.getElementById('tabHistory'); if(th) th.textContent = t.history;
+    const te = document.getElementById('tabEphem'); if(te) te.textContent = t.ephem;
+    // Subtitle
+    const sub = document.querySelector('.header p'); if(sub) sub.textContent = _sub[lang] || _sub.fr;
+    // Account panel
+    const a = _acct[lang] || _acct.fr;
+    const pl = document.getElementById('premiumLabel'); if(pl) pl.textContent = a.premium;
+    const st = document.getElementById('supportTitle'); if(st) st.textContent = a.support;
+    const sd = document.getElementById('supportDesc'); if(sd) sd.textContent = a.supportDesc;
+  };
+
+  // Also run on page load
+  document.addEventListener('DOMContentLoaded', function(){
+    setTimeout(function(){
+      const state = localStorage.getItem('oracle_v7');
+      const lang = state ? JSON.parse(state).lang || 'fr' : 'fr';
+      const s = _smi[lang] || _smi.fr;
+      const t = _tabs[lang] || _tabs.fr;
+      const ml = document.getElementById('smiMusicLabel'); if(ml) ml.textContent = s.music;
+      const sl = document.getElementById('smiSfxLabel'); if(sl) sl.textContent = s.sfx;
+      const al = document.getElementById('smiAllLabel'); if(al) al.textContent = s.mute;
+      const tf = document.getElementById('tabFavs'); if(tf) tf.textContent = t.favs;
+      const th = document.getElementById('tabHistory'); if(th) th.textContent = t.history;
+      const te = document.getElementById('tabEphem'); if(te) te.textContent = t.ephem;
+      const sub = document.querySelector('.header p'); if(sub) sub.textContent = (_sub[lang] || _sub.fr);
+      const a = _acct[lang] || _acct.fr;
+      const pl = document.getElementById('premiumLabel'); if(pl) pl.textContent = a.premium;
+      const st = document.getElementById('supportTitle'); if(st) st.textContent = a.support;
+      const sd = document.getElementById('supportDesc'); if(sd) sd.textContent = a.supportDesc;
+    }, 200);
+  });
+})();
+</script>
+
 </body>
 </html>
