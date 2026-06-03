@@ -651,6 +651,10 @@ if(state.lang){
   // Existing users: mark as onboarded if not already
   if(!state.onboarded){ state.onboarded=true; saveState(); }
   setLang(state.lang);
+} else if(window._pendingLang){
+  // User clicked language before app.js loaded — process now
+  setLang(window._pendingLang);
+  window._pendingLang=null;
 }
 
 // ── PLANET SYSTEM ─────────────────────────────────────────────────────────
