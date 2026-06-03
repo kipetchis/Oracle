@@ -1,4 +1,4 @@
-const VERSION = 'oracle-v47';
+const VERSION = 'oracle-v48';
 
 // Fichiers critiques à pré-cacher à l'installation
 const PRECACHE = [
@@ -30,6 +30,8 @@ const PRECACHE = [
   '/Oracle/audio/ambient-pangaea.mp3'
 ];
 
+const IMAGES_CACHE = 'oracle-images-v1';
+
 // Domaines dont on cache les réponses au vol (Google Fonts)
 const RUNTIME_CACHE_HOSTS = [
   'fonts.googleapis.com',
@@ -44,11 +46,11 @@ self.addEventListener('install', e => {
   self.skipWaiting();
 });
 
-// ── Activation : nettoyage des anciens caches ──
+// ── Activation : nettoyage des anciens caches (sauf images) ──
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== VERSION).map(k => caches.delete(k)))
+      Promise.all(keys.filter(k => k !== VERSION && k !== IMAGES_CACHE).map(k => caches.delete(k)))
     )
   );
   self.clients.claim();
@@ -57,6 +59,22 @@ self.addEventListener('activate', e => {
 // ── Fetch : stratégie selon le type de ressource ──
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
+
+  // Images Wikimedia → cache-first progressif (hors ligne après 1er affichage)
+  if (url.hostname === 'upload.wikimedia.org') {
+    e.respondWith(
+      caches.open(IMAGES_CACHE).then(cache =>
+        cache.match(e.request).then(cached => {
+          if (cached) return cached;
+          return fetch(e.request).then(res => {
+            if (res.ok) cache.put(e.request, res.clone());
+            return res;
+          }).catch(() => new Response('', {status: 404}));
+        })
+      )
+    );
+    return;
+  }
 
   // Google Fonts → cache-first (elles changent jamais)
   if (RUNTIME_CACHE_HOSTS.includes(url.hostname)) {
