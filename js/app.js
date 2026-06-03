@@ -870,9 +870,16 @@ function showFact(){
           <a class="card-source-link" href="${srcData.u}" target="_blank" rel="noopener">${srcData.n}</a>
          </div>`
       : '';
+    // Image optionnelle (éphémérides avec champ img)
+    const _mm=String(new Date().getMonth()+1).padStart(2,'0');
+    const _dd=String(new Date().getDate()).padStart(2,'0');
+    const _epEntry=typeof EPHEMERIS!=='undefined'?EPHEMERIS[_mm+'-'+_dd]:null;
+    const factImg=(_epEntry&&_epEntry.id===currentFact.id&&_epEntry.img)?_epEntry.img:null;
+    const imgHtml=factImg?`<img class="card-img" src="${factImg}" alt="" onload="this.classList.add('loaded')" onerror="this.style.display='none'">`:'';
     card.innerHTML=`
       <span class="card-cat-icon">${icon}</span>
       <div class="card-badge badge-${currentFact.cat}"><span class="badge-dot"></span>${catLabel}</div>
+      ${imgHtml}
       <p class="card-text">${currentFact.text}</p>
       ${srcHtml}
       <div class="card-actions">
@@ -1501,6 +1508,22 @@ function openDailyOverlay() {
   const badgeColor = isThematic ? '#c084fc' : `var(--glow-${fact.cat})`;
   badge.innerHTML = `<span class="badge-dot" style="background:${badgeColor}"></span><span style="color:${badgeColor};font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase">${displayLabel}</span>`;
   document.getElementById('dailyFactText').textContent = displayText;
+
+  // Image éphéméride optionnelle
+  let dailyImgEl=document.getElementById('dailyFactImg');
+  const _ek=String(new Date().getMonth()+1).padStart(2,'0')+'-'+String(new Date().getDate()).padStart(2,'0');
+  const _ee=typeof EPHEMERIS!=='undefined'?EPHEMERIS[_ek]:null;
+  const _di=_ee&&_ee.img?_ee.img:null;
+  if(!dailyImgEl){
+    dailyImgEl=document.createElement('img');
+    dailyImgEl.id='dailyFactImg';dailyImgEl.className='daily-img';dailyImgEl.alt='';
+    dailyImgEl.onerror=function(){this.style.display='none';};
+    dailyImgEl.onload=function(){this.classList.add('loaded');};
+    document.getElementById('dailyFactText').insertAdjacentElement('beforebegin',dailyImgEl);
+  }
+  if(_di){dailyImgEl.src=_di;dailyImgEl.style.display='block';dailyImgEl.classList.remove('loaded');}
+  else{dailyImgEl.style.display='none';}
+
   document.getElementById('dailyShareBtn').textContent = lang === 'fr' ? '↗ Partager' : lang === 'es' ? '↗ Compartir' : '↗ Share';
 
   // Source du fait du jour
