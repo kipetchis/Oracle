@@ -486,6 +486,8 @@ function switchLang(l){
         var f=FACTS.find(function(x){return x.id===currentFact.id;});
         if(f){currentFact.text=f.text;var ct=document.querySelector('.card-text');if(ct)ct.textContent=f.text;}
     }
+    // Refresh all UI labels
+    applyI18n();
 }
 
 function _finishLangSetup(){
@@ -1455,7 +1457,7 @@ function initDailyBanner() {
   document.getElementById('dailyBannerText').textContent = bannerText;
   document.getElementById('dailyBannerLabel').textContent = bannerLabel;
   document.getElementById('dailyBannerDate').textContent =
-    new Date().toLocaleDateString(lang === 'fr' ? 'fr-FR' : 'en-GB', {day:'numeric', month:'short'});
+    new Date().toLocaleDateString(lang === 'fr' ? 'fr-FR' : lang === 'es' ? 'es-ES' : 'en-GB', {day:'numeric', month:'short'});
   const dot = document.getElementById('dailyNewDot');
   if (dot) dot.style.display = 'block';
   banner.style.display = 'flex';
@@ -1487,7 +1489,7 @@ function openDailyOverlay() {
   if (dot) dot.style.display = 'none';
 
   document.getElementById('dailyPanelTitle').textContent =
-    lang === 'fr' ? '✦ Fait du jour' : '✦ Fact of the day';
+    lang === 'fr' ? '✦ Fait du jour' : lang === 'es' ? '✦ Dato del día' : '✦ Fact of the day';
   // Handle thematic day
   const isThematic = !!fact._thematic;
   const displayIcon = isThematic ? fact._thematic.icon : (CAT_ICONS[fact.cat] || '📅');
@@ -1499,7 +1501,7 @@ function openDailyOverlay() {
   const badgeColor = isThematic ? '#c084fc' : `var(--glow-${fact.cat})`;
   badge.innerHTML = `<span class="badge-dot" style="background:${badgeColor}"></span><span style="color:${badgeColor};font-family:'Space Mono',monospace;font-size:.56rem;letter-spacing:.14em;text-transform:uppercase">${displayLabel}</span>`;
   document.getElementById('dailyFactText').textContent = displayText;
-  document.getElementById('dailyShareBtn').textContent = lang === 'fr' ? '↗ Partager' : '↗ Share';
+  document.getElementById('dailyShareBtn').textContent = lang === 'fr' ? '↗ Partager' : lang === 'es' ? '↗ Compartir' : '↗ Share';
 
   // Source du fait du jour
   const dailySrc = displaySrc;
@@ -1710,7 +1712,7 @@ function renderStats() {
   const quizCorrect = state.quizCorrect || 0;
 
   document.getElementById('statsPanelTitle').textContent =
-    lang === 'fr' ? '📊 Statistiques' : '📊 Statistics';
+    lang === 'fr' ? '📊 Statistiques' : lang === 'es' ? '📊 Estadísticas' : '📊 Statistics';
 
   const catColors = {
     science:'#00c2ff',positive:'#39ff8f',fun:'#ff9f3f',history:'#e0a060',
@@ -1724,10 +1726,10 @@ function renderStats() {
   const maxCat = Math.max(1, ...catKeys.map(k => state.read[k] || 0));
 
   const labels = lang==='fr'
-          ? {facts:'Faits lus', favs:'Favoris', shares:'Partages', achiev:'Succès', streak:'Série actuelle', jours:'jours', quizLbl:'Quiz', quizSub:'réponses correctes', catLbl:'Par catégorie', noQuiz:'Aucun quiz joué encore', ephemLbl:'Éphémérides lus'}
+          ? {facts:'Faits lus', favs:'Favoris', shares:'Partages', achiev:'Succès', streak:'Série actuelle', jours:'jours', quizLbl:'Quiz', quizSub:'réponses correctes', catLbl:'Par catégorie', noQuiz:'Aucun quiz joué encore', ephemLbl:'Éphémérides lus', profileLbl:'Profil de curiosité', profileLocked:'Lis encore pour débloquer ton profil', profileTop:'Top catégories'}
           : lang==='es'
-          ? {facts:'Datos leídos', favs:'Favoritos', shares:'Compartidos', achiev:'Logros', streak:'Racha actual', jours:'días', quizLbl:'Quiz', quizSub:'respuestas correctas', catLbl:'Por categoría', noQuiz:'Ningún quiz jugado aún', ephemLbl:'Efemérides leídas'}
-          : {facts:'Facts read', favs:'Favourites', shares:'Shares', achiev:'Achievements', streak:'Current streak', jours:'days', quizLbl:'Quiz', quizSub:'correct answers', catLbl:'By category', noQuiz:'No quiz played yet', ephemLbl:'Daily facts read'};
+          ? {facts:'Datos leídos', favs:'Favoritos', shares:'Compartidos', achiev:'Logros', streak:'Racha actual', jours:'días', quizLbl:'Quiz', quizSub:'respuestas correctas', catLbl:'Por categoría', noQuiz:'Ningún quiz jugado aún', ephemLbl:'Efemérides leídas', profileLbl:'Perfil de curiosidad', profileLocked:'Lee más para desbloquear tu perfil', profileTop:'Top categorías'}
+          : {facts:'Facts read', favs:'Favourites', shares:'Shares', achiev:'Achievements', streak:'Current streak', jours:'days', quizLbl:'Quiz', quizSub:'correct answers', catLbl:'By category', noQuiz:'No quiz played yet', ephemLbl:'Daily facts read', profileLbl:'Curiosity profile', profileLocked:'Read more to unlock your profile', profileTop:'Top categories'};
 
   // Profile block
   let profileHtml = '';
