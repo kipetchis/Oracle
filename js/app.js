@@ -1486,6 +1486,9 @@ function openDailyOverlay() {
   haptic('light');
   const fact = getDailyFact();
   const t = T[lang];
+  // Lookup ephemeris entry for image
+  const _ephKey=String(new Date().getMonth()+1).padStart(2,'0')+'-'+String(new Date().getDate()).padStart(2,'0');
+  const ephemEntry=typeof EPHEMERIS!=='undefined'?EPHEMERIS[_ephKey]:null;
   // Track ephemeris reads for Venus planet (only once per day)
   if(state.lastDailyDate !== getTodayStr()){
     state.ephemRead = (state.ephemRead || 0) + 1;
@@ -1523,9 +1526,7 @@ function openDailyOverlay() {
 
   // Image éphéméride optionnelle
   let dailyImgEl=document.getElementById('dailyFactImg');
-  const _ek=String(new Date().getMonth()+1).padStart(2,'0')+'-'+String(new Date().getDate()).padStart(2,'0');
-  const _ee=typeof EPHEMERIS!=='undefined'?EPHEMERIS[_ek]:null;
-  const _di=_ee&&_ee.img?_ee.img:null;
+  const _di=ephemEntry&&ephemEntry.img?ephemEntry.img:null;
   if(!dailyImgEl){
     dailyImgEl=document.createElement('img');
     dailyImgEl.id='dailyFactImg';dailyImgEl.className='daily-img';dailyImgEl.alt='';
