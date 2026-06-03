@@ -879,6 +879,7 @@ function showFact(){
     const _dd=String(new Date().getDate()).padStart(2,'0');
     const _epEntry=typeof EPHEMERIS!=='undefined'?EPHEMERIS[_mm+'-'+_dd]:null;
     const factImg=(_epEntry&&_epEntry.id===currentFact.id&&_epEntry.img)?_epEntry.img:null;
+    if(factImg) currentFact._img=factImg;
     const imgHtml=factImg?`<img class="card-img" src="${factImg}" alt="" onload="this.classList.add('loaded')" onerror="this.style.display='none'">`:'';
     card.innerHTML=`
       <span class="card-cat-icon">${icon}</span>
@@ -1012,7 +1013,7 @@ function toggleFav(){
   const idx=state.favs.findIndex(f=>f.id===currentFact.id),btn=document.getElementById('favToggle');
   const t=T[lang];
   if(idx>=0){state.favs.splice(idx,1);if(btn){btn.innerHTML=`<span class="a-icon">♡</span><span class="a-label">${t.favBtn}</span>`;btn.classList.remove('fav-active');}}
-  else{state.favs.push({id:currentFact.id,cat:currentFact.cat,label:T[lang].catLabels[currentFact.cat],text:currentFact.text});if(btn){btn.innerHTML=`<span class="a-icon">♥</span><span class="a-label">${t.favBtn}</span>`;btn.classList.add('fav-active');}setTimeout(()=>checkAchievements(),200);}
+  else{state.favs.push({id:currentFact.id,cat:currentFact.cat,label:T[lang].catLabels[currentFact.cat],text:currentFact.text,img:currentFact._img||null});if(btn){btn.innerHTML=`<span class="a-icon">♥</span><span class="a-label">${t.favBtn}</span>`;btn.classList.add('fav-active');}setTimeout(()=>checkAchievements(),200);}
   saveState();updateFavBadge();
 }
 function updateFavBadge(){}
@@ -1090,8 +1091,11 @@ function openCatFacts(cat, mode){
       const origIdx = items.indexOf(f);
       const safeText=f.text.replace(/'/g,"\\'").replace(/"/g,'&quot;');
       const isFav=state.favs.some(fv=>fv.id===f.id);
+      const ephK2=typeof EPHEMERIS!=='undefined'?Object.keys(EPHEMERIS).find(k=>EPHEMERIS[k].id===f.id):null;
+      const fImg2=f.img||(ephK2&&EPHEMERIS[ephK2].img)||null;
       return`<div class="fav-item">
         ${isFavMode?'':`<div class="fav-item-badge badge-${f.cat}"><span class="badge-dot"></span><span style="margin-left:auto;font-size:.6rem;opacity:.4">${f.date||''}</span></div>`}
+        ${fImg2?`<img class="card-img loaded" src="${fImg2}" alt="" onerror="this.style.display='none'" style="margin-top:8px">`:''}
         <p class="fav-item-text">${f.text}</p>
         ${DEEP_DIVES[f.id]?`<button class="deep-dive-btn" onclick="haptic('light');showInlineDeepDive(this,'${f.id}')"><span class="dd-icon">🔎</span> ${_t('Creuser le sujet','Profundizar','Dig deeper')}</button><div class="deep-dive-container" style="display:none;"></div>`:''}
         <div class="fav-item-actions">
@@ -1277,8 +1281,11 @@ function renderEphemHistory(){
   el.innerHTML=state.ephemHistory.map(f=>{
     const isFav=state.favs.some(fv=>fv.id===f.id);
     const safeText=f.text.replace(/'/g,"\\'").replace(/"/g,'&quot;');
+    const ephK=Object.keys(EPHEMERIS||{}).find(k=>EPHEMERIS[k].id===f.id);
+    const fImg=f.img||(ephK&&EPHEMERIS[ephK].img)||null;
     return`<div class="fav-item">
       <div class="fav-item-badge"><span class="badge-dot"></span><span style="margin-left:auto;font-size:.6rem;opacity:.4">${f.date||''}</span></div>
+      ${fImg?`<img class="card-img loaded" src="${fImg}" alt="" onerror="this.style.display='none'" style="margin-top:8px">`:''}
       <p class="fav-item-text">${f.text}</p>
       ${DEEP_DIVES[f.id]?`<button class="deep-dive-btn" onclick="haptic('light');showInlineDeepDive(this,'${f.id}')"><span class="dd-icon">🔎</span> ${_t('Creuser le sujet','Profundizar','Dig deeper')}</button><div class="deep-dive-container" style="display:none;"></div>`:''}
       <div class="fav-item-actions">
@@ -1296,7 +1303,8 @@ function toggleHistFav(id, cat, text){
     state.favs.splice(idx,1);
   } else {
     const label=(T[lang].catLabels||{})[cat]||cat;
-    state.favs.push({id, cat, label, text});
+    const _ephK=typeof EPHEMERIS!=='undefined'?Object.keys(EPHEMERIS).find(k=>EPHEMERIS[k].id===id):null;
+    state.favs.push({id, cat, label, text, img:(_ephK&&EPHEMERIS[_ephK].img)||null});
     setTimeout(()=>checkAchievements(),200);
   }
   saveState();
@@ -1488,7 +1496,7 @@ function openDailyOverlay() {
     const label = fact._thematic ? fact._thematic.label : (t.catLabels[fact.cat]||'');
     const icon = fact._thematic ? fact._thematic.icon : (CAT_ICONS[fact.cat]||'📅');
     if(!state.ephemHistory.some(h=>h.id===fact.id)){
-      state.ephemHistory.unshift({id:fact.id, cat, label, icon, text:displayText, date:new Date().toLocaleDateString(lang==='fr'?'fr-FR':lang==='es'?'es-ES':'en-US')});
+      state.ephemHistory.unshift({id:fact.id, cat, label, icon, text:displayText, img:ephemEntry&&ephemEntry.img?ephemEntry.img:null, date:new Date().toLocaleDateString(lang==='fr'?'fr-FR':lang==='es'?'es-ES':'en-US')});
       if(state.ephemHistory.length>100) state.ephemHistory.pop();
     }
   }
