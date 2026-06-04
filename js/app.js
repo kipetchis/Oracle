@@ -1002,10 +1002,20 @@ function showInlineDeepDive(btn, factId){
   btn.style.display = 'none';
   container.style.display = 'block';
   container.innerHTML = `
-    <div class="dd-header">${_t('🔎 Pour aller plus loin…','🔎 Para saber más…','🔎 Dig deeper…')}</div>
+    <div class="dd-header">${_t('🔎 Pour aller plus loin…','🔎 Para saber más…','🔎 Dig deeper…')}
+      <span onclick="closeInlineDeepDive(this)" style="float:right;cursor:pointer;opacity:.5;font-size:.8rem">✕</span>
+    </div>
     ${items.map((item,i) => `<div class="dd-item" style="animation-delay:${i*0.15}s"><span class="dd-bullet">✦</span><span class="dd-text">${item}</span></div>`).join('')}
   `;
+  history.pushState({screen:'inlineDD'}, '');
   setTimeout(()=>container.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
+}
+function closeInlineDeepDive(el){
+  const container = el.closest('.deep-dive-container');
+  if(!container) return;
+  container.style.display = 'none';
+  const btn = container.previousElementSibling;
+  if(btn && btn.classList.contains('deep-dive-btn')) btn.style.display = '';
 }
 
 // ── FAVS ──────────────────────────────────────────────────────────────────
@@ -2110,6 +2120,16 @@ window.addEventListener('popstate', function(e) {
   // If daily limit screen is active, close it instead of quitting
   const dl = document.getElementById('dailyLimitScreen');
   if (dl && dl.classList.contains('active')) { closeDailyLimit(); _backPressCount=0; history.pushState({screen:'app'}, ''); return; }
+  // Inline deep dive open → close it
+  const inlineDD = document.querySelector('.deep-dive-container[style*="display: block"],.deep-dive-container[style*="display:block"]');
+  if (inlineDD && inlineDD.closest('.fav-item,.history-item,.ephem-item')) {
+    inlineDD.style.display='none';
+    const iddBtn = inlineDD.previousElementSibling;
+    if(iddBtn && iddBtn.classList.contains('deep-dive-btn')) iddBtn.style.display='';
+    _backPressCount=0;
+    history.pushState({screen:'app'}, '');
+    return;
+  }
   // Deep dive open → close it
   const ddCard = document.querySelector('.card.dd-open');
   if (ddCard) {
