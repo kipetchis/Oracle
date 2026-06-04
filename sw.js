@@ -1,4 +1,4 @@
-const VERSION = 'oracle-v60';
+const VERSION = 'oracle-v61';
 
 // Fichiers critiques à pré-cacher à l'installation
 const PRECACHE = [
