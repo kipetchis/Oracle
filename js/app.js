@@ -983,7 +983,8 @@ function showDeepDive(){
   if(!container) return;
   if(btn) btn.style.display = 'none';
   const card = container.closest('.card');
-if(card) { card.classList.add('dd-open'); card.style.maxHeight='70vh'; card.style.overflowY='auto'; }  container.style.display = 'block';
+if(card) { card.classList.add('dd-open'); card.style.maxHeight='calc(100dvh - 100px)'; card.style.overflowY='auto'; }  container.style.display = 'block';
+  history.pushState({screen:'deepdive'}, '');
   container.innerHTML = `
     <div class="dd-header">${_t('🔎 Pour aller plus loin…','🔎 Para saber más…','🔎 Dig deeper…')}</div>
     ${items.map((item,i) => `<div class="dd-item" style="animation-delay:${i*0.15}s"><span class="dd-bullet">✦</span><span class="dd-text">${item}</span></div>`).join('')}
@@ -2070,8 +2071,9 @@ async function loadFromCloud(uid) {
       const data = doc.data();
       if(data.state) {
         const cloudState = JSON.parse(data.state);
-        // Merge: keep local favs + unlocked + read combined with cloud
-        state = Object.assign({}, state, cloudState);
+        // Merge intelligemment : garde le meilleur de local + cloud
+        const local = Object.assign({}, state);
+        state = mergeStates(local, cloudState);
         saveState();
       }
     }
@@ -2108,6 +2110,20 @@ window.addEventListener('popstate', function(e) {
   // If daily limit screen is active, close it instead of quitting
   const dl = document.getElementById('dailyLimitScreen');
   if (dl && dl.classList.contains('active')) { closeDailyLimit(); _backPressCount=0; history.pushState({screen:'app'}, ''); return; }
+  // Deep dive open → close it
+  const ddCard = document.querySelector('.card.dd-open');
+  if (ddCard) {
+    ddCard.classList.remove('dd-open');
+    ddCard.style.maxHeight='';
+    ddCard.style.overflowY='';
+    const ddC = document.getElementById('deepDiveContainer');
+    if(ddC) ddC.style.display='none';
+    const ddBtn = document.getElementById('deepDiveBtn');
+    if(ddBtn) ddBtn.style.display='';
+    _backPressCount=0;
+    history.pushState({screen:'app'}, '');
+    return;
+  }
   // If any panel is open, close it
   const panels = ['explorePanel','panelFavs','panelHistory','panelAchievements','statsPanel','sharePanel','planetPanel'];
   for (const id of panels) {
