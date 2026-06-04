@@ -286,5 +286,6 @@ function shareTo(platform){
 }
 async function shareNative(){
   haptic('light');if(!currentFact)return;
+  window._shareText=null;window._shareRaw=null;window._shareCat=null;
   openShare();
 }
