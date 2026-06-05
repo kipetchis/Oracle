@@ -7,6 +7,8 @@
 
 const THEMATIC_DAYS = {
   "01-01": {
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Earth_seen_from_Apollo_17.jpg/500px-The_Earth_seen_from_Apollo_17.jpg",
+
     fr: { label:"✦ Jour de l'An", icon:"🎆",
       text:"Le 1er janvier est devenu le premier jour de l'année dans le monde occidental grâce au calendrier grégorien, adopté progressivement depuis 1582 à la demande du pape Grégoire XIII pour corriger la dérive du calendrier julien.",
       src:{n:"Encyclopædia Britannica — Gregorian calendar", u:"https://www.britannica.com/science/Gregorian-calendar"}},
@@ -18,6 +20,8 @@ const THEMATIC_DAYS = {
       src:{n:"Encyclopædia Britannica — Gregorian calendar", u:"https://www.britannica.com/science/Gregorian-calendar"}}}
   },
   "01-27": {
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Auschwitz_I_entrance_snow.jpg/500px-Auschwitz_I_entrance_snow.jpg",
+
     fr: { label:"✦ Journée Mémoire Holocauste", icon:"🕯️",
       text:"Le 27 janvier est la Journée internationale dédiée à la mémoire des victimes de l'Holocauste, date choisie par l'ONU en 2005 car c'est le jour de la libération d'Auschwitz-Birkenau par l'Armée Rouge en 1945.",
       src:{n:"ONU — Résolution A/RES/60/7", u:"https://www.un.org/fr/observances/holocaust-remembrance"}},
@@ -73,6 +77,8 @@ const THEMATIC_DAYS = {
       src:{n:"UN — Resolution A/RES/66/281", u:"https://www.un.org/en/observances/happiness-day"}}}
   },
   "03-21": {
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Biogradska_suma.jpg/500px-Biogradska_suma.jpg",
+
     fr: { label:"✦ Journée mondiale de la forêt", icon:"🌲",
       text:"Le 21 mars, journée mondiale de la forêt, marque l'équinoxe de printemps dans l'hémisphère nord. Les forêts couvrent 31 % des terres émergées et abritent plus de 80 % de la biodiversité terrestre, selon la FAO.",
       src:{n:"FAO — État des forêts mondiales 2022", u:"https://www.fao.org/state-of-forests/"}},
@@ -84,6 +90,8 @@ const THEMATIC_DAYS = {
       src:{n:"FAO — The State of the World's Forests 2022", u:"https://www.fao.org/state-of-forests/"}}}
   },
   "03-22": {
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/Water_drop_001.jpg/500px-Water_drop_001.jpg",
+
     fr: { label:"✦ Journée mondiale de l'eau", icon:"💧",
       text:"La Journée mondiale de l'eau, créée par l'ONU en 1993, rappelle qu'un humain sur trois n'a pas accès à de l'eau potable sûre. L'eau douce ne représente que 2,5 % de l'eau de la planète, et les deux tiers sont emprisonnés dans les glaciers.",
       src:{n:"ONU-Eau / WHO — Water facts 2023", u:"https://www.unwater.org/world-water-day"}},
@@ -106,6 +114,8 @@ const THEMATIC_DAYS = {
       src:{n:"Historical Dictionary of the French Language — Alain Rey", u:"https://www.lerobert.com/"}}}
   },
   "04-22": {
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Earth_seen_from_Apollo_17.jpg/500px-The_Earth_seen_from_Apollo_17.jpg",
+
     fr: { label:"✦ Journée de la Terre", icon:"🌍",
       text:"La première Journée de la Terre a eu lieu le 22 avril 1970, initiée par le sénateur américain Gaylord Nelson après avoir été choqué par la marée noire de Santa Barbara en 1969. Elle a réuni 20 millions d'Américains et conduit à la création de l'EPA.",
       src:{n:"Earth Day Network — Official history", u:"https://www.earthday.org/history/"}},
@@ -150,6 +160,8 @@ const THEMATIC_DAYS = {
       src:{n:"African Union — Official history", u:"https://au.int/"}}}
   },
   "06-05": {
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/9/97/The_Earth_seen_from_Apollo_17.jpg/500px-The_Earth_seen_from_Apollo_17.jpg",
+
     fr: { label:"✦ Journée mondiale de l'environnement", icon:"🌿",
       text:"La Journée mondiale de l'environnement est la plus grande célébration mondiale pour la nature, créée par l'ONU en 1972 lors de la Conférence de Stockholm. Elle mobilise chaque année des millions de personnes dans plus de 143 pays.",
       src:{n:"PNUE — Histoire officielle", u:"https://www.unep.org/events/un-day/world-environment-day"}},
@@ -161,6 +173,8 @@ const THEMATIC_DAYS = {
       src:{n:"UNEP — Official history", u:"https://www.unep.org/events/un-day/world-environment-day"}}}
   },
   "06-21": {
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Guitare_classique.jpg/500px-Guitare_classique.jpg",
+
     fr: { label:"✦ Fête de la Musique", icon:"🎵",
       text:"La Fête de la Musique a été créée en France en 1982 par Jack Lang et Maurice Fleuret pour mettre la musique à la portée de tous le jour du solstice d'été. Aujourd'hui, elle est célébrée dans plus de 120 pays.",
       src:{n:"Ministère de la Culture français — Archives", u:"https://www.fetedelamusique.culture.gouv.fr/"}},
@@ -172,6 +186,8 @@ const THEMATIC_DAYS = {
       src:{n:"French Ministry of Culture — Archives", u:"https://www.fetedelamusique.culture.gouv.fr/"}}}
   },
   "07-04": {
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Fourth_of_July_fireworks_behind_the_Washington_Monument,_1986.jpg/500px-Fourth_of_July_fireworks_behind_the_Washington_Monument,_1986.jpg",
+
     fr: { label:"✦ Fête nationale américaine", icon:"🇺🇸",
       text:"Le 4 juillet 1776, les 13 colonies américaines ont officiellement adopté la Déclaration d'indépendance rédigée principalement par Thomas Jefferson. Deux de ses principaux auteurs, John Adams et Thomas Jefferson, sont tous deux morts le 4 juillet 1826 — exactement 50 ans plus tard.",
       src:{n:"National Archives US — Declaration of Independence", u:"https://www.archives.gov/founding-docs/declaration"}},
@@ -194,6 +210,8 @@ const THEMATIC_DAYS = {
       src:{n:"UN — Resolution A/RES/54/120", u:"https://www.un.org/en/observances/world-youth-day"}}}
   },
   "09-21": {
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Peace_dove.svg/400px-Peace_dove.svg.png",
+
     fr: { label:"✦ Journée internationale de la paix", icon:"☮️",
       text:"La Journée internationale de la paix, établie par l'ONU en 1981 et célébrée chaque 21 septembre depuis 2001, est marquée par une minute de silence à midi. Elle a pour symbole la cloche de la paix offerte au siège de l'ONU par le Japon en 1954.",
       src:{n:"ONU — Résolution A/RES/55/282", u:"https://www.un.org/fr/observances/international-day-peace"}},
@@ -227,6 +245,8 @@ const THEMATIC_DAYS = {
       src:{n:"WHO — World Mental Health Report 2022", u:"https://www.who.int/campaigns/world-mental-health-day"}}}
   },
   "10-31": {
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Jack-o'-Lantern_2003-10-31.jpg/500px-Jack-o'-Lantern_2003-10-31.jpg",
+
     fr: { label:"✦ Halloween", icon:"🎃",
       text:"Halloween est issu de la fête celtique de Samhain, célébrée le 1er novembre pour marquer la fin de la saison des récoltes. Les Celtes croyaient que la frontière entre le monde des vivants et des morts s'effaçait cette nuit-là — d'où les costumes pour se fondre parmi les esprits.",
       src:{n:"Encyclopædia Britannica — Samhain / Halloween", u:"https://www.britannica.com/topic/Halloween"}},
@@ -260,6 +280,8 @@ const THEMATIC_DAYS = {
       src:{n:"UNICEF / UN — Convention on the Rights of the Child", u:"https://www.unicef.org/child-rights-convention"}}}
   },
   "12-01": {
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/World_Aids_Day_Ribbon.svg/400px-World_Aids_Day_Ribbon.svg.png",
+
     fr: { label:"✦ Journée mondiale contre le SIDA", icon:"🎗️",
       text:"La Journée mondiale contre le SIDA, instaurée en 1988, est la première journée mondiale de santé proclamée par l'OMS. Le ruban rouge, symbole universel de la lutte contre le VIH, a été créé en 1991 par le collectif artistique Visual AIDS à New York.",
       src:{n:"OMS / ONUSIDA", u:"https://www.who.int/fr/campaigns/world-aids-day"}},
@@ -282,6 +304,8 @@ const THEMATIC_DAYS = {
       src:{n:"UN — UDHR 1948", u:"https://www.un.org/en/about-us/universal-declaration-of-human-rights"}}}
   },
   "12-25": {
+    img:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Christmas_tree_sbread.jpg/500px-Christmas_tree_sbread.jpg",
+
     fr: { label:"✦ Noël", icon:"🎄",
       text:"La date du 25 décembre pour Noël n'est pas mentionnée dans la Bible. Elle a été fixée au IVe siècle pour coïncider avec des fêtes romaines du solstice d'hiver. Le sapin de Noël est une tradition venue d'Alsace et popularisée en Europe au XVIe siècle.",
       src:{n:"Encyclopædia Britannica — Christmas history", u:"https://www.britannica.com/topic/Christmas"}},
@@ -322,7 +346,11 @@ function getThematicFact(date) {
   const key = `${mm}-${dd}`;
 
   // Fixed dates
-  if (THEMATIC_DAYS[key]) return THEMATIC_DAYS[key][lang] || THEMATIC_DAYS[key]['fr'];
+  if (THEMATIC_DAYS[key]) {
+    var data = Object.assign({}, THEMATIC_DAYS[key][lang] || THEMATIC_DAYS[key]['fr']);
+    if (THEMATIC_DAYS[key].img) data.img = THEMATIC_DAYS[key].img;
+    return data;
+  }
 
   // Easter-relative dates
   const year = date.getFullYear();
