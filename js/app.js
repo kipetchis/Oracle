@@ -1510,7 +1510,7 @@ function openDailyOverlay() {
     const label = fact._thematic ? fact._thematic.label : (t.catLabels[fact.cat]||'');
     const icon = fact._thematic ? fact._thematic.icon : (CAT_ICONS[fact.cat]||'📅');
     if(!state.ephemHistory.some(h=>h.id===fact.id)){
-      state.ephemHistory.unshift({id:fact.id, cat, label, icon, text:displayText, img:ephemEntry&&ephemEntry.img?ephemEntry.img:null, date:new Date().toLocaleDateString(lang==='fr'?'fr-FR':lang==='es'?'es-ES':'en-US')});
+      state.ephemHistory.unshift({id:fact.id, cat, label, icon, text:displayText, img:(fact._thematic&&fact._thematic.img)?fact._thematic.img:(ephemEntry&&ephemEntry.img?ephemEntry.img:null), date:new Date().toLocaleDateString(lang==='fr'?'fr-FR':lang==='es'?'es-ES':'en-US')});
       if(state.ephemHistory.length>100) state.ephemHistory.pop();
     }
   }
@@ -1537,7 +1537,7 @@ function openDailyOverlay() {
 
   // Image éphéméride optionnelle
   let dailyImgEl=document.getElementById('dailyFactImg');
-  const _di=ephemEntry&&ephemEntry.img?ephemEntry.img:null;
+  const _di=(isThematic&&fact._thematic&&fact._thematic.img)?fact._thematic.img:(ephemEntry&&ephemEntry.img)?ephemEntry.img:null;
   if(!dailyImgEl){
     dailyImgEl=document.createElement('img');
     dailyImgEl.id='dailyFactImg';dailyImgEl.className='daily-img';dailyImgEl.alt='';
