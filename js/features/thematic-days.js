@@ -359,6 +359,7 @@ function getThematicFact(date) {
 
   const easterRelative = {
     '-2': {
+      ddKey:'td_goodfriday',
       fr: { label:'✦ Vendredi Saint', icon:'✝️',
         text:"Le Vendredi Saint commémore la crucifixion de Jésus. C'est l'un des rares jours fériés communs à la plupart des chrétiens. Dans certains pays comme le Danemark et les Antilles, il marque aussi le début de la saison des brasseries de bière de Pâques.",
         src:{n:'Encyclopædia Britannica — Good Friday', u:'https://www.britannica.com/topic/Good-Friday'}},
@@ -370,6 +371,7 @@ function getThematicFact(date) {
       src:{n:'Encyclopædia Britannica — Good Friday', u:'https://www.britannica.com/topic/Good-Friday'}}}
     },
     '0': {
+      ddKey:'td_easter',
       fr: { label:'✦ Pâques', icon:'🐣',
         text:"Pâques est la fête chrétienne la plus ancienne et la plus importante. Sa date varie chaque année car elle suit le calendrier lunaire : c'est le premier dimanche après la pleine lune suivant l'équinoxe de printemps. La tradition des œufs de Pâques vient des communautés chrétiennes de Mésopotamie au IIe siècle.",
         src:{n:'Encyclopædia Britannica — Easter', u:'https://www.britannica.com/topic/Easter-holiday'}},
@@ -381,6 +383,7 @@ function getThematicFact(date) {
       src:{n:'Encyclopædia Britannica — Easter', u:'https://www.britannica.com/topic/Easter-holiday'}}}
     },
     '1': {
+      ddKey:'td_eastermonday',
       fr: { label:'✦ Lundi de Pâques', icon:'🐰',
         text:"Le lundi de Pâques prolonge la célébration de la résurrection du Christ. La tradition du lapin de Pâques — qui n'a aucune origine biblique — vient d'Allemagne au XVIe siècle. Le lièvre y symbolisait la fertilité printanière bien avant l'ère chrétienne.",
         src:{n:'Encyclopedia of Religion — Easter customs', u:'https://www.britannica.com/'}},
@@ -392,6 +395,7 @@ function getThematicFact(date) {
       src:{n:'Encyclopedia of Religion — Easter customs', u:'https://www.britannica.com/'}}}
     },
     '-46': {
+      ddKey:'td_ashwednesday',
       fr: { label:'✦ Mercredi des Cendres', icon:'⛪',
         text:"Le Mercredi des Cendres marque le début du Carême, 46 jours avant Pâques. La coutume de tracer une croix de cendres sur le front symbolise le memento mori (« souviens-toi que tu mourras »). Les cendres proviennent des palmes bénites de l'année précédente.",
         src:{n:'Encyclopædia Britannica — Ash Wednesday', u:'https://www.britannica.com/topic/Ash-Wednesday'}},
