@@ -196,6 +196,16 @@ const T={
 const CAT_ACH_IDS=['sci_5','sci_10','pos_5','pos_10','fun_5','fun_10','hist_5','hist_10','space_5','space_10','anim_5','anim_10','body_5','body_10','arts_5','arts_10','inv_5','inv_10','world_5','world_10','lang_5','lang_10','food_5','food_10','sport_5','sport_10','cel_5','cel_10','fic_5','fic_10','gam_5','gam_10','cin_5','cin_10','mus_5','mus_10','myth_5','myth_10','psy_5','psy_10','ocean_5','ocean_10','rec_5','rec_10','quote_5','quote_10','law_5','law_10','tale_5','tale_10','dino_5','dino_10','rel_5','rel_10'];
 
 function _t(fr,es,en){return lang==='fr'?fr:lang==='es'?es:en;}
+
+// Helper: get deep dive key (maps thematic IDs to td_ keys)
+function _ddKey(id, thematicData) {
+  if (thematicData && thematicData.ddKey && DEEP_DIVES[thematicData.ddKey]) return thematicData.ddKey;
+  if (id && id.startsWith('thematic_')) {
+    const mmdd = id.slice(-5).replace('-','');
+    if (DEEP_DIVES['td_' + mmdd]) return 'td_' + mmdd;
+  }
+  return id;
+}
 const buildAchDef=(lang)=>{
   const L=T[lang];
   const g=L.achGroups;
@@ -1576,7 +1586,7 @@ function openDailyOverlay() {
   ddContainer.style.display = 'none';
   ddContainer.innerHTML = '';
   ddBtn.style.display = 'inline-block';
-  const ddData = DEEP_DIVES[fact.id];
+  const ddData = DEEP_DIVES[_ddKey(fact.id, fact._thematic)];
   if(ddData && ((lang==='fr'?ddData.fr:lang==='es'?(ddData.es||ddData.en):ddData.en)||[]).length){
     ddBtn.style.display = 'inline-block';
     ddBtn.innerHTML = `🔎 <span id="dailyDdLabel">${_t('Creuser le sujet','Profundizar','Dig deeper')}</span>`;
@@ -1593,7 +1603,7 @@ function showDailyDeepDive(btn){
   haptic('light');
   const fact = window._dailyFactForShare;
   if(!fact) return;
-  const data = DEEP_DIVES[fact.id];
+  const data = DEEP_DIVES[_ddKey(fact.id, fact._thematic)];
   if(!data) return;
   const items = lang==='fr' ? data.fr : lang==='es' ? data.es : data.en;
   if(!items || !items.length) return;
