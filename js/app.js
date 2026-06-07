@@ -1213,7 +1213,7 @@ function renderSearchResults(results, query){
         + '<p class="fav-item-text">'+f.text+'</p>'
         + (DEEP_DIVES[f.id]?'<button class="deep-dive-btn" onclick="haptic(\'light\');showInlineDeepDive(this,\''+f.id+'\')"><span class="dd-icon">🔎</span> '+(_t('Creuser le sujet','Profundizar','Dig deeper'))+'</button><div class="deep-dive-container" style="display:none;"></div>':'')
         + '<div class="fav-item-actions">'
-        + '<button class="hist-fav-btn '+(isFav?'is-fav':'')+'" onclick="haptic();toggleHistFav(\''+f.id+'\',\''+f.cat+'\',\''+safeText+'\')">'+( isFav?'♥':'♡')+'</button>'
+        + '<button class="hist-fav-btn '+(isFav?'is-fav':'')+'" onclick="haptic();toggleHistFav(\''+f.id+'\',\''+f.cat+'\',\''+safeText+'\');saveState();var q=document.getElementById(\'favSearchInput\');if(q)onFavSearch(q.value);">'+( isFav?'♥':'♡')+'</button>'
         + '<button class="fav-share-btn" onclick="haptic();shareFav(\''+safeText+'\',\''+f.cat+'\')">↗ '+(_t('Partager','Compartir','Share'))+'</button>'
         + '</div></div>';
     }).join('');
