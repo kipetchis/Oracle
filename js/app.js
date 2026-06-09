@@ -301,6 +301,7 @@ const buildPlanets=(lang)=>[
   {id:'mercury',emoji:'☿️',cssClass:'planet-mercury',previewClass:'p-mercury',check:(s)=>(s.read.total||0)>=20,progress:(s)=>({val:Math.min(s.read.total||0,20),max:20,label:`${Math.min(s.read.total||0,20)} / 20`,fillClass:'pf-mercury'})},
   {id:'venus',emoji:'♀️',cssClass:'planet-venus',previewClass:'p-venus',check:(s)=>(s.ephemRead||0)>=30,progress:(s)=>({val:Math.min(s.ephemRead||0,30),max:30,label:`${Math.min(s.ephemRead||0,30)} / 30`,fillClass:'pf-venus'})},
   {id:'earth',emoji:'🌍',cssClass:'planet-earth',previewClass:'p-earth',check:()=>true,progress:()=>({val:1,max:1,label:''})},
+  {id:'earthnight',emoji:'🌃',cssClass:'planet-earthnight',previewClass:'p-earthnight',check:(s)=>(s.read.religion||0)>=20,progress:(s)=>({val:Math.min(s.read.religion||0,20),max:20,label:`${Math.min(s.read.religion||0,20)} / 20`,fillClass:'pf-earthnight'})},
   {id:'moon',emoji:'🌙',cssClass:'planet-moon',previewClass:'p-moon',check:(s)=>(s.read.total||0)>=50,progress:(s)=>({val:Math.min(s.read.total||0,50),max:50,label:`${Math.min(s.read.total||0,50)} / 50`,fillClass:'pf-moon'})},
   {id:'mars',emoji:'🔴',cssClass:'planet-mars',previewClass:'p-mars',check:(s)=>(s.streak||1)>=7,progress:(s)=>({val:Math.min(s.streak||1,7),max:7,label:`${Math.min(s.streak||1,7)} / 7`,fillClass:'pf-mars'})},
   {id:'jupiter',emoji:'🟠',cssClass:'planet-jupiter',previewClass:'p-jupiter',check:(s)=>{const cats=Object.keys(CAT_ICONS);return cats.every(c=>(s.read[c]||0)>=1);},progress:(s)=>{const cats=Object.keys(CAT_ICONS);const d=cats.filter(c=>(s.read[c]||0)>=1).length;return{val:d,max:cats.length,label:`${d} / ${cats.length}`,fillClass:'pf-jupiter'};}},
@@ -309,7 +310,6 @@ const buildPlanets=(lang)=>[
   {id:'neptune',emoji:'🛸',cssClass:'planet-neptune',previewClass:'p-neptune',check:(s)=>(s.planetFragments||0)>=5,progress:(s)=>({val:Math.min(s.planetFragments||0,5),max:5,label:`${Math.min(s.planetFragments||0,5)} / 5 🧩`,fillClass:'pf-neptune'})},
   {id:'pluto',emoji:'💀',cssClass:'planet-pluto',previewClass:'p-pluto',check:(s)=>(s.secretTaps||0)>=10,progress:(s)=>({val:Math.min(s.secretTaps||0,10),max:10,label:(s.secretTaps||0)>=10?'???':'???',fillClass:'pf-pluto'})},
   {id:'pangaea',emoji:'🦕',cssClass:'planet-pangaea',previewClass:'p-pangaea',check:(s)=>(s.read.dinosaurs||0)>=20,progress:(s)=>({val:Math.min(s.read.dinosaurs||0,20),max:20,label:`${Math.min(s.read.dinosaurs||0,20)} / 20`,fillClass:'pf-pangaea'})},
-  {id:'earthnight',emoji:'🌃',cssClass:'planet-earthnight',previewClass:'p-earthnight',check:(s)=>(s.read.religion||0)>=20,progress:(s)=>({val:Math.min(s.read.religion||0,20),max:20,label:`${Math.min(s.read.religion||0,20)} / 20`,fillClass:'pf-earthnight'})},
   {id:'sun',emoji:'☀️',cssClass:'planet-sun',previewClass:'p-sun',check:(s)=>CAT_ACH_IDS.every(id=>s.unlocked.includes(id)),progress:(s)=>{const d=CAT_ACH_IDS.filter(id=>s.unlocked.includes(id)).length;return{val:d,max:CAT_ACH_IDS.length,label:`${d} / ${CAT_ACH_IDS.length}`,fillClass:'pf-sun'};}},
 ];
 
