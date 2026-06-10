@@ -20,7 +20,7 @@
       --glow-body:#fb7185;--glow-arts:#f59e0b;--glow-inventions:#34d399;
       --glow-world:#22d3ee;--glow-language:#a78bfa;--glow-food:#f87171;
       --glow-sports:#86efac;
-      --text:#e8e0d0;--text-muted:#7a7060;--orb-size:min(56vw,280px);
+      --text:#e8e0d0;--text-muted:#7a7060;--orb-size:min(44vw,200px);
       --card-bg:rgba(255,255,255,.04);--card-border:rgba(255,255,255,.08);
       --topbar-bg:rgba(0,0,0,.25);--panel-bg:#0a0f1a;
       --btn-bg:rgba(255,255,255,.06);--btn-border:rgba(255,255,255,.12);
@@ -119,8 +119,8 @@
     .scene{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 24px 16px;overflow:hidden;}
     .card.dd-open{overflow-y:auto;max-height:calc(100vh - 160px);}
     .header{text-align:center;margin-bottom:20px;opacity:.85;}
-    .header h1{font-size:clamp(1.6rem,5.5vw,2.4rem);font-weight:400;letter-spacing:.35em;text-transform:uppercase;font-family:'Playfair Display',serif;}
-    .header p{font-style:italic;font-size:clamp(.85rem,2.8vw,1.1rem);color:var(--text-muted);margin-top:3px;letter-spacing:.1em;font-family:'Playfair Display',serif;font-weight:400;}
+    .header h1{font-size:clamp(1.4rem,4.5vw,1.9rem);font-weight:400;letter-spacing:.35em;text-transform:uppercase;font-family:'Playfair Display',serif;}
+    .header p{font-style:italic;font-size:clamp(.75rem,2.2vw,.9rem);color:var(--text-muted);margin-top:3px;letter-spacing:.1em;font-family:'Playfair Display',serif;font-weight:400;}
 
     .mute-btn{background:none;border:none;cursor:pointer;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s,opacity .2s;color:var(--text-muted);opacity:.7;}
     .mute-btn:active{background:rgba(255,255,255,.08);}
@@ -1066,6 +1066,7 @@
 
 </head>
 <body>
+<script>(function(){var vw=window.innerWidth,sw=screen.width;if(vw>sw*1.5){var m=document.querySelector('meta[name="viewport"]');if(m)m.setAttribute('content','width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=no');document.documentElement.style.maxWidth=sw+'px';document.documentElement.style.margin='0 auto';}})();</script>
 <canvas id="starfield"></canvas>
 
 <!-- LANGUAGE PICKER -->
