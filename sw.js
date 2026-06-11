@@ -1,8 +1,11 @@
-const VERSION = 'oracle-v78';
+const VERSION = 'oracle-v79'; // ⚠️ Incrémenter à CHAQUE déploiement
 
-// Fichiers critiques à pré-cacher à l'installation
+// Fichiers critiques à pré-cacher à l'installation (légers, indispensables au démarrage)
+// Les mp3 ne sont PLUS pré-cachés : ils sont mis en cache au vol à la première lecture
+// (installation plus rapide, et un seul 404 ne fait plus échouer toute l'installation)
 const PRECACHE = [
   '/Oracle/oracle.html',
+  '/Oracle/manifest.json',
   '/Oracle/js/data/facts-fr.js',
   '/Oracle/js/data/facts-en.js',
   '/Oracle/js/data/facts-es.js',
@@ -15,22 +18,8 @@ const PRECACHE = [
   '/Oracle/js/features/audio.js',
   '/Oracle/js/features/quiz.js',
   '/Oracle/js/features/space-game.js',
-  '/Oracle/js/features/starfield.js',
-  '/Oracle/audio/ambient-earth.mp3',
-  '/Oracle/audio/ambient-mars.mp3',
-  '/Oracle/audio/ambient-jupiter.mp3',
-  '/Oracle/audio/ambient-saturn.mp3',
-  '/Oracle/audio/ambient-neptune.mp3',
-  '/Oracle/audio/ambient-venus.mp3',
-  '/Oracle/audio/ambient-mercury.mp3',
-  '/Oracle/audio/ambient-pluto.mp3',
-  '/Oracle/audio/ambient-sun.mp3',
-  '/Oracle/audio/ambient-moon.mp3',
-  '/Oracle/audio/ambient-nebula.mp3',
-  '/Oracle/audio/ambient-pangaea.mp3'
+  '/Oracle/js/features/starfield.js'
 ];
-
-const IMAGES_CACHE = 'oracle-images-v1';
 
 // Domaines dont on cache les réponses au vol (Google Fonts)
 const RUNTIME_CACHE_HOSTS = [
@@ -38,19 +27,29 @@ const RUNTIME_CACHE_HOSTS = [
   'fonts.gstatic.com'
 ];
 
-// ── Installation : pré-cache des fichiers critiques ──
+// ── Installation : pré-cache résilient ──
+// Chaque fichier est mis en cache individuellement : un échec isolé
+// (404, réseau) ne bloque pas l'installation du Service Worker.
 self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open(VERSION).then(cache => cache.addAll(PRECACHE))
+    caches.open(VERSION).then(cache =>
+      Promise.allSettled(
+        PRECACHE.map(url =>
+          cache.add(url).catch(err => {
+            console.warn('[SW] Précache échoué pour', url, err);
+          })
+        )
+      )
+    )
   );
   self.skipWaiting();
 });
 
-// ── Activation : nettoyage des anciens caches (sauf images) ──
+// ── Activation : nettoyage des anciens caches ──
 self.addEventListener('activate', e => {
   e.waitUntil(
     caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== VERSION && k !== IMAGES_CACHE).map(k => caches.delete(k)))
+      Promise.all(keys.filter(k => k !== VERSION).map(k => caches.delete(k)))
     )
   );
   self.clients.claim();
@@ -58,32 +57,21 @@ self.addEventListener('activate', e => {
 
 // ── Fetch : stratégie selon le type de ressource ──
 self.addEventListener('fetch', e => {
+  // Ignorer les requêtes non-GET (POST Firestore, etc.)
+  if (e.request.method !== 'GET') return;
+
   const url = new URL(e.request.url);
 
-  // Images Wikimedia → cache-first progressif (hors ligne après 1er affichage)
-  if (url.hostname === 'upload.wikimedia.org') {
-    e.respondWith(
-      caches.open(IMAGES_CACHE).then(cache =>
-        cache.match(e.request).then(cached => {
-          if (cached) return cached;
-          return fetch(e.request).then(res => {
-            if (res.ok) cache.put(e.request, res.clone());
-            return res;
-          }).catch(() => new Response('', {status: 404}));
-        })
-      )
-    );
-    return;
-  }
-
-  // Google Fonts → cache-first (elles changent jamais)
+  // Google Fonts → cache-first (elles ne changent jamais)
   if (RUNTIME_CACHE_HOSTS.includes(url.hostname)) {
     e.respondWith(
       caches.match(e.request).then(cached => {
         if (cached) return cached;
         return fetch(e.request).then(res => {
-          const clone = res.clone();
-          caches.open(VERSION).then(c => c.put(e.request, clone));
+          if (res && res.status === 200) {
+            const clone = res.clone();
+            caches.open(VERSION).then(c => c.put(e.request, clone));
+          }
           return res;
         });
       })
@@ -92,11 +80,13 @@ self.addEventListener('fetch', e => {
   }
 
   // oracle.html et fichiers JS → network-first (toujours servir la dernière version si possible)
-  if (url.pathname.endsWith('oracle.html') || url.pathname.endsWith('.js') && url.pathname.startsWith('/Oracle/js/')) {
+  if (url.pathname.endsWith('oracle.html') || (url.pathname.endsWith('.js') && url.pathname.startsWith('/Oracle/js/'))) {
     e.respondWith(
       fetch(e.request).then(res => {
-        const clone = res.clone();
-        caches.open(VERSION).then(c => c.put(e.request, clone));
+        if (res && res.status === 200) {
+          const clone = res.clone();
+          caches.open(VERSION).then(c => c.put(e.request, clone));
+        }
         return res;
       }).catch(() => caches.match(e.request))
     );
@@ -109,7 +99,7 @@ self.addEventListener('fetch', e => {
       caches.match(e.request).then(cached => {
         if (cached) return cached;
         return fetch(e.request).then(res => {
-          if (res.status === 200) {
+          if (res && res.status === 200) {
             const clone = res.clone();
             caches.open(VERSION).then(c => c.put(e.request, clone));
           }
