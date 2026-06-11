@@ -382,7 +382,6 @@ const FACTS_EN=[
   // ── MUSIQUE (mus19→mus20)
   {id:'mus19',cat:'music',text:"Freddie Mercury had a vocal range of four octaves, one of the greatest ever recorded in rock music."},
   {id:'mus20',cat:'music',text:"The reference 'A' note used to tune instruments has been standardised at 440 Hz since 1939. Before this international standard, every country used a different frequency."},
-,
   // ── NEW CATEGORIES ──
   {id:'myth1',cat:'mythology',text:"In Greek mythology, Athena was born fully armored from Zeus's skull after a splitting headache."},
   {id:'myth2',cat:'mythology',text:"Thor's hammer Mjölnir has a short handle because a gadfly stung the dwarf blacksmith during its forging."},
@@ -544,7 +543,6 @@ const FACTS_EN=[
   {id:'dino18',cat:'dinosaurs',text:"In Argentina, the largest known dinosaur was found: Patagotitan, estimated at 70 tons and 37 meters long."},
   {id:'dino19',cat:'dinosaurs',text:"Dinosaurs laid eggs. The largest dinosaur egg ever found measures 60 cm — attributed to a titanosaur."},
   {id:'dino20',cat:'dinosaurs',text:"There were never dinosaurs in Antarctica... right? Actually, fossils have been found there — the continent was once temperate."},
-
   // ══════════════════════════════════════════════════════════════════════
   //  BATCH 3 — 10 new facts per category (21 → 30)
   // ══════════════════════════════════════════════════════════════════════
@@ -892,4 +890,35 @@ const FACTS_EN=[
   {id:'rel28', cat:'religion', text:"Angkor Wat in Cambodia is the largest religious monument in the world. Built as a Hindu temple, it became Buddhist in the 12th century."},
   {id:'rel29', cat:'religion', text:"Rastafarianism considers former Ethiopian Emperor Haile Selassie a divine incarnation, even though he himself identified as an Orthodox Christian."},
   {id:'rel30', cat:'religion', text:"Gaudí's Sagrada Família in Barcelona has been under construction since 1882. It is expected to be completed in 2026, 144 years after the first stone was laid."},
+
+  {id:'flo1',cat:'flora',text:"Trees communicate with each other through an underground fungal network called the 'Wood Wide Web' — they exchange nutrients and warning signals."},
+  {id:'flo2',cat:'flora',text:"The giant sequoia is the heaviest living organism on Earth: the specimen named General Sherman weighs approximately 1,385 tonnes."},
+  {id:'flo3',cat:'flora',text:"Orchids are the most diverse family of flowering plants: over 28,000 species exist, representing 10% of all flowering plants."},
+  {id:'flo4',cat:'flora',text:"Bamboo is the fastest-growing plant in the world: some species grow 91 cm in a single day."},
+  {id:'flo5',cat:'flora',text:"Vanilla is the only orchid cultivated for food use — outside Mexico, its pollination must be done by hand."},
+  {id:'flo6',cat:'flora',text:"Pando, a giant aspen in Utah, is considered the heaviest and oldest living organism: 80,000 years old and 6,000 tonnes."},
+  {id:'flo7',cat:'flora',text:"Cacti store water in their fleshy stems — a saguaro can absorb up to 750 liters of water after a single rainfall."},
+  {id:'flo8',cat:'flora',text:"Victoria amazonica, the giant Amazonian water lily, has leaves reaching 3 meters in diameter and can support the weight of a child."},
+  {id:'flo9',cat:'flora',text:"The Bristlecone pine Methuselah is the oldest known living tree: 4,855 years old, predating the pyramids of Giza."},
+  {id:'flo10',cat:'flora',text:"Cherry blossoms (sakura) last only 7 to 10 days — their ephemeral nature lies at the heart of the Japanese aesthetic of mono no aware."},
+  {id:'flo11',cat:'flora',text:"Rafflesia arnoldii produces the world's largest flower (up to 1 meter in diameter) and emits the smell of rotting meat to attract flies."},
+  {id:'flo12',cat:'flora',text:"Autumn leaves don't 'turn red' — they reveal pigments (anthocyanins, carotenoids) that were masked by green chlorophyll."},
+  {id:'flo13',cat:'flora',text:"Fern spores are so light they can travel across oceans carried by the wind — some species colonize islands thousands of kilometers away."},
+  {id:'flo14',cat:'flora',text:"The baobab can live over 2,000 years and store up to 120,000 liters of water in its sponge-like trunk — hence its nickname 'bottle tree'."},
+  {id:'flo15',cat:'flora',text:"Carnivorous plants evolved independently at least 12 times — a convergent adaptation to nitrogen-poor soils."},
+  {id:'flo16',cat:'flora',text:"Coffee comes from an Ethiopian plant discovered by a shepherd whose goats ate the berries and became hyperactive at night."},
+  {id:'flo17',cat:'flora',text:"Mangroves store up to 10 times more carbon per hectare than tropical forests — and protect coastlines from tsunamis and cyclones."},
+  {id:'flo18',cat:'flora',text:"The sensitive plant (Mimosa pudica) folds its leaves on contact within tenths of a second — a defensive mechanism against herbivores."},
+  {id:'flo19',cat:'flora',text:"Amazon rainforest trees generate their own clouds: they transpire so much water (a single tree can emit 500 liters/day) that it influences regional weather."},
+  {id:'flo20',cat:'flora',text:"Dandelion is one of the most complete medicinal plants: its flowers, leaves, and roots are all edible and used in herbal medicine for centuries."},
+  {id:'flo21',cat:'flora',text:"Some plants like Ephedra produce seeds without flowers — they have survived for 250 million years before the appearance of angiosperms."},
+  {id:'flo22',cat:'flora',text:"The Hallerbos forest in Belgium is covered with a carpet of bluebells every spring — a phenomenon that lasts only 2 to 3 weeks per year."},
+  {id:'flo23',cat:'flora',text:"The roots of a single adult tree can extend 40 meters horizontally — four times the tree's height."},
+  {id:'flo24',cat:'flora',text:"The truffle is the underground fruit of a fungus that lives in symbiosis with oaks, hazels, and hornbeams — it never grows without its host tree."},
+  {id:'flo25',cat:'flora',text:"The sacred lotus (Nelumbo nucifera) is capable of thermoregulation: it maintains its flowers at 30-35°C even when the outside temperature drops to 10°C."},
+  {id:'flo26',cat:'flora',text:"Lichens are actually two organisms in symbiosis (a fungus and an alga or cyanobacterium) — they have colonized rocky surfaces for 400 million years."},
+  {id:'flo27',cat:'flora',text:"Welwitschia mirabilis from the Namib Desert has only two leaves that grow throughout its life — it can live more than 1,500 years."},
+  {id:'flo28',cat:'flora',text:"Porcini mushrooms and chanterelles are not plants but fungi — a separate kingdom, evolutionarily closer to animals than plants."},
+  {id:'flo29',cat:'flora',text:"Henna (Lawsonia inermis) has been used for body dyeing for over 5,000 years in Egypt, India, and North Africa."},
+  {id:'flo30',cat:'flora',text:"Chlorophyll is green because it primarily absorbs red and blue light and reflects green — an 'inefficiency' that remains an evolutionary mystery."},
 ];
