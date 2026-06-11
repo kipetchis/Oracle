@@ -31,7 +31,7 @@ const T={
     unlockLabel:"Nouvelle planète débloquée !", unlockBtn:"Explorer",
     planetPanelTitle:"⬡ Skins de planète",
     planetActive:"Active", planetUnlocked:"✓ Débloquée", planetDefault:"Par défaut",
-    perk1:"Zéro publicité, pour toujours",
+    perk1:"Faits illimités, sans limite quotidienne",
     perk2:"Planètes Lune et Mars débloquées d'emblée",
     perk3:"Soutiens le développement d'Oracle",
     counter:(i,t)=>`${i} / ${t}`,
@@ -88,7 +88,7 @@ const T={
     unlockLabel:"New planet unlocked!", unlockBtn:"Explore",
     planetPanelTitle:"⬡ Planet skins",
     planetActive:"Active", planetUnlocked:"✓ Unlocked", planetDefault:"Default",
-    perk1:"Zero ads, forever",
+    perk1:"Unlimited facts, no daily limit",
     perk2:"Moon and Mars planets unlocked immediately",
     perk3:"Support Oracle's development",
     counter:(i,t)=>`${i} / ${t}`,
@@ -145,7 +145,7 @@ const T={
     unlockLabel:"¡Nuevo planeta desbloqueado!", unlockBtn:"Explorar",
     planetPanelTitle:"⬡ Skins de planeta",
     planetActive:"Activo", planetUnlocked:"✓ Desbloqueado", planetDefault:"Por defecto",
-    perk1:"Sin anuncios, para siempre",
+    perk1:"Datos ilimitados, sin límite diario",
     perk2:"Planetas Luna y Marte desbloqueados de inmediato",
     perk3:"Apoya el desarrollo de Oracle",
     counter:(i,t)=>`${i} / ${t}`,
@@ -395,9 +395,13 @@ function signInWithGoogle(){
   var provider = new firebase.auth.GoogleAuthProvider();
   fbAuth.signInWithPopup(provider).catch(function(e){
     console.warn('Google sign-in error:', e.code, e.message);
-    if(e.code === 'auth/popup-blocked'){
-      showToast(_t('Autorise les popups pour te connecter','Permite los popups para iniciar sesión','Allow popups to sign in'));
-    } else {
+    if(e.code === 'auth/popup-blocked' || e.code === 'auth/operation-not-supported-in-this-environment' || e.code === 'auth/cancelled-popup-request'){
+      // Contexte TWA / WebView : les popups sont souvent bloquées → fallback redirect
+      fbAuth.signInWithRedirect(provider).catch(function(e2){
+        console.warn('Google redirect error:', e2.code, e2.message);
+        showToast(_t('Erreur de connexion','Error de conexión','Sign-in error'));
+      });
+    } else if(e.code !== 'auth/popup-closed-by-user'){
       showToast(_t('Erreur de connexion','Error de conexión','Sign-in error'));
     }
   });
@@ -1933,183 +1937,33 @@ function toggleTheme(){
 
 
 
-// ── AUTH UI FUNCTIONS ──────────────────────────────────────────────────────
-function updateUserBadge(user){
-  const badge=document.getElementById('userBadge');
-  const loginBtn=document.getElementById('loginBtn');
-  if(!_isFirebaseConfigured) return;
-  if(user){
-    badge.style.display='flex';
-    loginBtn.style.display='none';
-    const name=user.displayName||user.email||'?';
-    const uba=document.getElementById('userBadgeAvatar'); if(uba) uba.textContent=name[0].toUpperCase();
-    const ubn=document.getElementById('userBadgeName'); if(ubn) ubn.textContent=name.split('@')[0].substring(0,12);
-  } else {
-    badge.style.display='none';
-    loginBtn.style.display='flex';
-  }
-}
-
-function showAuthScreen(){
-  const s=document.getElementById('authScreen');
-  if(s) { s.classList.remove('hidden'); applyAuthI18n(); }
-}
-function hideAuthScreen(){ document.getElementById('authScreen').classList.add('hidden'); }
-function skipAuth(){ haptic('light'); hideAuthScreen(); }
-
-function applyAuthI18n(){
-  if(!document.getElementById('authScreen')) return;
-  const fr=lang==='fr';
-  document.getElementById('authSub').innerHTML=lang==='fr'
-    ?'Crée un compte pour sauvegarder ta progression<br>et retrouver tes curiosités sur tous tes appareils.'
-    :lang==='es'?'Crea una cuenta para guardar tu progreso<br>y encontrar tus curiosidades en todos tus dispositivos.'
-    :'Create an account to save your progress<br>and find your curiosities on all your devices.';
-  document.getElementById('authEmail').placeholder='Email';
-  document.getElementById('authPassword').placeholder=_t('Mot de passe','Contraseña','Password');
-  if(document.getElementById('authForgot')) (document.getElementById('authForgot')||{}).textContent=_t('Mot de passe oublié ?','¿Contraseña olvidada?','Forgot password?');
-  if(document.getElementById('authMainBtn')) (document.getElementById('authMainBtn')||{}).textContent=_authMode==='register'
-    ?(_t('Créer un compte','Crear cuenta','Create account')):(_t('Se connecter','Iniciar sesión','Sign in'));
-  document.getElementById('authToggle').innerHTML=_authMode==='register'
-    ?(_t('Déjà un compte ? <span>Se connecter</span>','¿Ya tienes cuenta? <span>Iniciar sesión</span>','Already have an account? <span>Sign in</span>'))
-    :(_t('Pas encore de compte ? <span>Créer un compte</span>','¿No tienes cuenta? <span>Crear cuenta</span>',"Don't have an account? <span>Sign up</span>"));
-  if(document.getElementById('authDivider')) (document.getElementById('authDivider')||{}).textContent=_t('ou','o','or');
-  if(document.querySelector('.auth-skip')) (document.querySelector('.auth-skip')||{}).textContent=_t('Continuer sans compte →','Continuar sin cuenta →','Continue without account →');}
-
-function toggleAuthMode(){
-  haptic('light');
-  _authMode=_authMode==='register'?'login':'register';
-  applyAuthI18n();
-  if(document.getElementById('authError')) (document.getElementById('authError')||{}).textContent='';
-}
-
-function setAuthError(msg){ const ae=document.getElementById('authError'); if(ae) ae.textContent=msg; }
-
-async function handleAuthSubmit(){
-  haptic('light');
-  if(document.getElementById('authError')) (document.getElementById('authError')||{}).textContent='';
-  const email=document.getElementById('authEmail').value.trim();
-  const password=document.getElementById('authPassword').value;
-  const fr=lang==='fr';
-  if(!email||!password){setAuthError(_t('Remplis tous les champs.','Rellena todos los campos.','Please fill in all fields.'));return;}
-  if(password.length<6){setAuthError(_t('Mot de passe trop court (min. 6 caractères).','Contraseña muy corta (mín. 6 caracteres).','Password too short (min. 6 characters).'));return;}
-  if(!window._fbSignIn){setAuthError(_t('Service indisponible, réessaie.','Servicio no disponible, reintenta.','Service unavailable, please retry.'));return;}
+// ── ACCOUNT DELETION (exigence Google Play : suppression de compte) ───────
+async function deleteAccount(){
+  if(!fbAuth || !fbAuth.currentUser) return;
+  haptic('medium');
+  const ok = confirm(_t(
+    'Supprimer définitivement ton compte et tes données en ligne ?\nTa progression locale sera conservée sur cet appareil.\nCette action est irréversible.',
+    '¿Eliminar definitivamente tu cuenta y tus datos en línea?\nTu progreso local se conservará en este dispositivo.\nEsta acción es irreversible.',
+    'Permanently delete your account and online data?\nYour local progress will be kept on this device.\nThis action is irreversible.'));
+  if(!ok) return;
+  const user = fbAuth.currentUser;
   try{
-    if(_authMode==='register'){await window._fbRegister(email,password);}
-    else{await window._fbSignIn(email,password);}
-  }catch(err){
-    const fr2=lang==='fr';
-    const msgs={
-      'auth/email-already-in-use':_t('Email déjà utilisé.','Email ya en uso.','Email already in use.'),
-      'auth/user-not-found':_t('Compte introuvable.','Cuenta no encontrada.','Account not found.'),
-      'auth/wrong-password':_t('Mot de passe incorrect.','Contraseña incorrecta.','Wrong password.'),
-      'auth/invalid-email':_t('Email invalide.','Email inválido.','Invalid email.'),
-      'auth/too-many-requests':_t('Trop de tentatives. Réessaie plus tard.','Demasiados intentos. Inténtalo más tarde.','Too many attempts. Try again later.'),
-      'auth/network-request-failed':_t('Erreur réseau.','Error de red.','Network error.'),
-      'auth/invalid-credential':_t('Identifiants incorrects.','Credenciales incorrectas.','Invalid credentials.'),
-    };
-    console.error('Auth error:', err);
-    setAuthError(msgs[err.code]||(_t('Erreur : ','Error: ','Error: ')+(err.message||err.code||_t('inconnue','desconocido','unknown'))));
-  }
-}
-
-async function handleGoogleSignIn(){
-  haptic('light');
-  if(document.getElementById('authError')) (document.getElementById('authError')||{}).textContent='';
-  try{
-    if(!window._fbGoogleAuth){setAuthError(_t('Service indisponible.','Servicio no disponible.','Service unavailable.'));return;}
-    await window._fbGoogleAuth();
-  }
-  catch(err){if(err.code!=='auth/popup-closed-by-user')setAuthError(_t('Connexion Google échouée.','Error en la conexión de Google.','Google sign-in failed.'));}
-}
-
-async function handleForgot(){
-  haptic('light');
-  const email=document.getElementById('authEmail').value.trim();
-  const fr=lang==='fr';
-  if(!email){setAuthError(_t("Entre ton email d'abord.","Introduce tu email primero.",'Enter your email first.'));return;}
-  try{await window._fbResetPwd(email);showToast(_t('✓ Email de réinitialisation envoyé','✓ Email de restablecimiento enviado','✓ Reset email sent'));}
-  catch(e){setAuthError(_t('Email introuvable.','Email no encontrado.','Email not found.'));}
-}
-
-async function handleSignOut(){
-  haptic('light');
-  try{await fbAuth.signOut();closeAccountPanel();showToast(_t('Déconnecté','Desconectado','Signed out'));}
-  catch(e){}
-}
-
-async function forceSyncNow(){
-  haptic('light');
-  if(!_fbCurrentUser){showToast(_t('Non connecté','No conectado','Not signed in'));return;}
-  const s=document.getElementById('accountSyncStatus');
-  s.className='account-sync-status pending';
-  s.textContent=_t('↑ Synchronisation...','↑ Sincronizando...','↑ Syncing...');
-  await syncToCloud();
-  s.className='account-sync-status ok';
-  s.textContent=_t('✓ Progression sauvegardée','✓ Progreso guardado','✓ Progress saved');
-  showToast(_t('✓ Synchronisé','✓ Sincronizado','✓ Synced'));
-}
-
-function openAccountPanel(){
-  if(!document.getElementById('accountPanel')) return;
-  if(!_fbCurrentUser){showAuthScreen();return;}
-  const user=_fbCurrentUser;
-  const name=user.displayName||user.email||'?';
-  const apt=document.getElementById('accountPanelTitle'); if(apt) apt.textContent=_t('⬡ Mon compte','⬡ Mi cuenta','⬡ My account');
-  const aab=document.getElementById('accountAvatarBig'); if(aab) aab.textContent=name[0].toUpperCase();
-  const aed=document.getElementById('accountEmailDisplay'); if(aed) aed.textContent=user.email;
-  const asb=document.getElementById('accountSyncBtn'); if(asb) asb.textContent=_t('↑ Synchroniser maintenant','↑ Sincronizar ahora','↑ Sync now');
-  const aso=document.getElementById('accountSignOutBtn'); if(aso) aso.textContent=_t('Déconnexion','Cerrar sesión','Sign out');
-  document.getElementById('accountPanel').classList.add('open');
-}
-function closeAccountPanel(){ document.getElementById('accountPanel').classList.remove('open'); }
-
-// ── EXPOSE TO WINDOW (required for onclick= in type=module scripts) ────────
-// ── AUTH STATE ────────────────────────────────────────────────────────────
-// Auth state vars declared at top of script
-
-function checkFirebaseConfig(){
-  return _isFirebaseConfigured;
-}
-
-
-
-
-
-// ── CLOUD SYNC ────────────────────────────────────────────────────────────
-async function saveToCloud(uid) {
-  if(!fbDb || !uid) return;
-  try {
-    await fbDb.collection('users').doc(uid).set({
-      state: JSON.stringify(state),
-      updatedAt: new Date().toISOString()
-    });
-  } catch(e) { console.warn('Save cloud error:', e.message); }
-}
-
-async function loadFromCloud(uid) {
-  if(!fbDb || !uid) return;
-  try {
-    const doc = await fbDb.collection('users').doc(uid).get();
-    if(doc.exists) {
-      const data = doc.data();
-      if(data.state) {
-        const cloudState = JSON.parse(data.state);
-        // Merge intelligemment : garde le meilleur de local + cloud
-        const local = Object.assign({}, state);
-        state = mergeStates(local, cloudState);
-        saveState();
-      }
+    if(fbDb){ try{ await fbDb.collection('users').doc(user.uid).delete(); }catch(e){ console.warn('Firestore delete error:', e.message); } }
+    await user.delete();
+    _fbUser = null;
+    updateAuthUI();
+    closeAuthPanel();
+    showToast(_t('✓ Compte supprimé','✓ Cuenta eliminada','✓ Account deleted'));
+  }catch(e){
+    console.warn('Account deletion error:', e.code, e.message);
+    if(e.code === 'auth/requires-recent-login'){
+      showToast(_t('Par sécurité, reconnecte-toi puis réessaie la suppression','Por seguridad, vuelve a iniciar sesión e inténtalo de nuevo','For security, sign in again then retry deletion'));
+    } else {
+      showToast(_t('Erreur lors de la suppression','Error al eliminar','Deletion error'));
     }
-  } catch(e) { console.warn('Load cloud error:', e.message); }
+  }
 }
-
-// Debounced auto-save (3s after any state change)
-let _cloudSaveTimer = null;
-function scheduleCloudSave() {
-  if(!_fbCurrentUser) return;
-  clearTimeout(_cloudSaveTimer);
-  _cloudSaveTimer = setTimeout(() => saveToCloud(_fbCurrentUser.uid), 3000);
-}
+window.deleteAccount = deleteAccount;
 
 // ── BACK BUTTON HANDLER ─────────────────────────────────────────
 var _backPressCount = 0;
@@ -2173,12 +2027,10 @@ window.addEventListener('popstate', function(e) {
   // Nothing to close — double back to exit
   _backPressCount++;
   if(_backPressCount >= 2){
-    // Let the user leave
+    // Double retour → quitter (comportement Android standard, sans dialogue)
     _backPressCount = 0;
-    if(confirm(_t('Quitter Oracle ?','¿Salir de Oracle?','Leave Oracle?'))){
-      window.history.back();
-      return;
-    }
+    window.history.back();
+    return;
   }
   // First back — show toast and re-push
   showToast(_t('↩ Glisse encore pour quitter','↩ Desliza de nuevo para salir','↩ Swipe again to exit'));
@@ -2212,20 +2064,8 @@ history.pushState({screen:'app'}, '');
 })();
 
 // ── WINDOW EXPORTS (required for onclick= in HTML) ────────────────────────
-window.showAuthScreen=showAuthScreen;
 window.openExplorePanel=openExplorePanel;
 window.closeExplorePanel=closeExplorePanel;
 window.pickExplore=pickExplore;
 window.resetExploreBtn=resetExploreBtn;
 window.toggleExplore=toggleExplore;
-window.hideAuthScreen=hideAuthScreen;
-window.skipAuth=skipAuth;
-window.toggleAuthMode=toggleAuthMode;
-window.handleAuthSubmit=handleAuthSubmit;
-window.handleGoogleSignIn=handleGoogleSignIn;
-window.handleForgot=handleForgot;
-window.handleSignOut=handleSignOut;
-window.openAccountPanel=openAccountPanel;
-window.closeAccountPanel=closeAccountPanel;
-window.forceSyncNow=forceSyncNow;
-window.updateUserBadge=updateUserBadge;
