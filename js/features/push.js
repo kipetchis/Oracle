@@ -57,7 +57,7 @@ const PUSH_DEFAULT_LOCAL_HOUR = 9;
     }
     try{
       const perm = await Notification.requestPermission();
-      _setFlags({ prompted: true });
+      _setFlags({ prompted: true, promptedAt: Date.now() });
       if(perm !== 'granted'){
         if(typeof showToast === 'function') showToast(_t('Notifications refusées','Notificaciones rechazadas','Notifications declined'));
         return false;
@@ -128,7 +128,9 @@ const PUSH_DEFAULT_LOCAL_HOUR = 9;
   // ── Bannière d'invitation (après 10 faits lus, une seule fois) ──
   function _maybeShowPrompt(){
     const f = _flags();
-    if(f.prompted || f.enabled) return;
+    if(f.enabled) return;
+    // Re-proposer au plus tôt 72h après le dernier refus/report
+    if(f.promptedAt && (Date.now() - f.promptedAt) < 72*3600*1000) return;
     if(!_supported() || Notification.permission !== 'default') return;
     if(typeof state === 'undefined' || !state.read || (state.read.total||0) < 10) return;
     if(document.getElementById('pushPromptBanner')) return;
@@ -152,7 +154,7 @@ const PUSH_DEFAULT_LOCAL_HOUR = 9;
       enablePush();
     };
     document.getElementById('pushPromptLater').onclick = function(){
-      _setFlags({ prompted: true });
+      _setFlags({ prompted: true, promptedAt: Date.now() });
       div.remove();
     };
   }
@@ -173,5 +175,25 @@ const PUSH_DEFAULT_LOCAL_HOUR = 9;
     }
   }, 500);
 
-  window.oraclePush = { enable: enablePush, disable: disablePush, isEnabled: function(){ return !!_flags().enabled; } };
+  function _updateToggleLabel(){
+    const btn = document.getElementById('notifToggleBtn');
+    if(!btn) return;
+    if(_flags().enabled){
+      btn.textContent = _t('🔕 Désactiver les notifications quotidiennes','🔕 Desactivar las notificaciones diarias','🔕 Disable daily notifications');
+    } else {
+      btn.textContent = _t('🔔 Activer les notifications quotidiennes','🔔 Activar las notificaciones diarias','🔔 Enable daily notifications');
+    }
+  }
+
+  async function togglePush(){
+    if(_flags().enabled) await disablePush();
+    else await enablePush();
+    _updateToggleLabel();
+  }
+
+  // Met le libellé à jour à l'ouverture
+  document.addEventListener('DOMContentLoaded', _updateToggleLabel);
+  setTimeout(_updateToggleLabel, 2000);
+
+  window.oraclePush = { enable: enablePush, disable: disablePush, toggle: togglePush, isEnabled: function(){ return !!_flags().enabled; } };
 })();
