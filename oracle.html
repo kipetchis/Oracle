@@ -4,8 +4,7 @@
   <meta charset="UTF-8"/>
   <link rel="manifest" href="/Oracle/manifest.json">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <meta name="theme-color" content="#08080f">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="theme-color" content="#050a12"/>
   <meta name="mobile-web-app-capable" content="yes"/>
   <title>Oracle</title>
@@ -19,8 +18,8 @@
       --glow-history:#e0a060;--glow-space:#c084fc;--glow-animals:#f472b6;
       --glow-body:#fb7185;--glow-arts:#f59e0b;--glow-inventions:#34d399;
       --glow-world:#22d3ee;--glow-language:#a78bfa;--glow-food:#f87171;
-      --glow-sports:#86efac;--glow-flora:#4ade80;
-      --text:#e8e0d0;--text-muted:#7a7060;--orb-size:min(52vw,260px);
+      --glow-sports:#86efac;
+      --text:#e8e0d0;--text-muted:#7a7060;--orb-size:min(44vw,200px);
       --card-bg:rgba(255,255,255,.04);--card-border:rgba(255,255,255,.08);
       --topbar-bg:rgba(0,0,0,.25);--panel-bg:#0a0f1a;
       --btn-bg:rgba(255,255,255,.06);--btn-border:rgba(255,255,255,.12);
@@ -119,8 +118,8 @@
     .scene{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:8px 24px 16px;overflow:hidden;}
     .card.dd-open{overflow-y:auto;max-height:calc(100vh - 160px);}
     .header{text-align:center;margin-bottom:20px;opacity:.85;}
-    .header h1{font-size:clamp(1.6rem,5vw,2.2rem);font-weight:400;letter-spacing:.35em;text-transform:uppercase;font-family:'Playfair Display',serif;}
-    .header p{font-style:italic;font-size:clamp(.85rem,2.5vw,1rem);color:var(--text-muted);margin-top:5px;letter-spacing:.1em;font-family:'Playfair Display',serif;font-weight:400;}
+    .header h1{font-size:clamp(1.4rem,4.5vw,1.9rem);font-weight:400;letter-spacing:.35em;text-transform:uppercase;font-family:'Playfair Display',serif;}
+    .header p{font-style:italic;font-size:clamp(.75rem,2.2vw,.9rem);color:var(--text-muted);margin-top:3px;letter-spacing:.1em;font-family:'Playfair Display',serif;font-weight:400;}
 
     .mute-btn{background:none;border:none;cursor:pointer;width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;transition:background .2s,opacity .2s;color:var(--text-muted);opacity:.7;}
     .mute-btn:active{background:rgba(255,255,255,.08);}
@@ -165,6 +164,9 @@
     .support-icon{font-size:1.1rem;}
     .support-paypal{background:rgba(0,112,210,.1);color:#6db3f2;}
     .support-tipeee{background:rgba(232,76,94,.1);color:#f47b8a;}
+    .auth-delete-btn{display:block;width:100%;margin-top:10px;padding:9px 0;background:none;border:1px solid rgba(232,76,94,.25);border-radius:10px;color:rgba(232,76,94,.75);font-family:'Montserrat',sans-serif;font-size:.78rem;cursor:pointer;transition:background .2s;}
+    .auth-delete-btn:active{background:rgba(232,76,94,.08);}
+    .privacy-link{display:block;text-align:center;margin-top:14px;font-size:.7rem;color:rgba(255,255,255,.35);text-decoration:underline;font-family:'Montserrat',sans-serif;}
 
     /* ── PREMIUM BADGE ── */
     .premium-badge{display:inline-flex;align-items:center;gap:4px;background:linear-gradient(135deg,rgba(255,200,50,.2),rgba(255,150,0,.15));color:#ffd700;font-size:.7rem;font-weight:600;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,200,50,.25);font-family:'Montserrat',sans-serif;letter-spacing:.03em;}
@@ -1160,9 +1162,10 @@ if(typeof setLang==='undefined'){window._pendingLang=null;window.setLang=functio
         <div class="auth-sync-status" id="authSyncStatus">✓ Données synchronisées</div>
         <div class="premium-label" id="premiumLabel" style="display:none;">∞ Faits illimités débloqués</div>
         <button class="auth-signout-btn" onclick="signOutUser()">Se déconnecter</button>
+        <button class="auth-delete-btn" id="authDeleteBtn" onclick="deleteAccount()">Supprimer mon compte</button>
       </div>
-      <!-- Support section (always visible) -->
-      <div class="support-section">
+      <!-- Support section (masquée automatiquement dans l'app Android — politique Paiements Google Play) -->
+      <div class="support-section" id="supportSection">
         <div class="support-divider"></div>
         <p class="support-title" id="supportTitle">💜 Soutenir Oracle</p>
         <p class="support-desc" id="supportDesc">Si Oracle te plaît, tu peux soutenir son développement !</p>
@@ -1175,6 +1178,7 @@ if(typeof setLang==='undefined'){window._pendingLang=null;window.setLang=functio
           </a>
         </div>
       </div>
+      <a class="privacy-link" href="https://kipetchis.github.io/Oracle/privacy.html" target="_blank" rel="noopener" id="privacyLink">Politique de confidentialité</a>
     </div>
   </div>
 
@@ -1497,9 +1501,9 @@ if('serviceWorker' in navigator) {
   };
 
   const _acct = {
-    fr:{premium:'∞ Faits illimités débloqués',support:'💜 Soutenir Oracle',supportDesc:'Si Oracle te plaît, tu peux soutenir son développement !'},
-    en:{premium:'∞ Unlimited facts unlocked',support:'💜 Support Oracle',supportDesc:'If you enjoy Oracle, you can support its development!'},
-    es:{premium:'∞ Datos ilimitados desbloqueados',support:'💜 Apoyar a Oracle',supportDesc:'Si te gusta Oracle, ¡puedes apoyar su desarrollo!'}
+    fr:{premium:'∞ Faits illimités débloqués',support:'💜 Soutenir Oracle',supportDesc:'Si Oracle te plaît, tu peux soutenir son développement !',deleteAcc:'Supprimer mon compte',privacy:'Politique de confidentialité'},
+    en:{premium:'∞ Unlimited facts unlocked',support:'💜 Support Oracle',supportDesc:'If you enjoy Oracle, you can support its development!',deleteAcc:'Delete my account',privacy:'Privacy policy'},
+    es:{premium:'∞ Datos ilimitados desbloqueados',support:'💜 Apoyar a Oracle',supportDesc:'Si te gusta Oracle, ¡puedes apoyar su desarrollo!',deleteAcc:'Eliminar mi cuenta',privacy:'Política de privacidad'}
   };
 
   // Patch switchLang to also update HTML labels
@@ -1524,6 +1528,8 @@ if('serviceWorker' in navigator) {
     const pl = document.getElementById('premiumLabel'); if(pl) pl.textContent = a.premium;
     const st = document.getElementById('supportTitle'); if(st) st.textContent = a.support;
     const sd = document.getElementById('supportDesc'); if(sd) sd.textContent = a.supportDesc;
+    const dab = document.getElementById('authDeleteBtn'); if(dab) dab.textContent = a.deleteAcc;
+    const pvl = document.getElementById('privacyLink'); if(pvl) pvl.textContent = a.privacy;
   };
 
   // Also run on page load
@@ -1544,8 +1550,29 @@ if('serviceWorker' in navigator) {
       const pl = document.getElementById('premiumLabel'); if(pl) pl.textContent = a.premium;
       const st = document.getElementById('supportTitle'); if(st) st.textContent = a.support;
       const sd = document.getElementById('supportDesc'); if(sd) sd.textContent = a.supportDesc;
+      const dab = document.getElementById('authDeleteBtn'); if(dab) dab.textContent = a.deleteAcc;
+      const pvl = document.getElementById('privacyLink'); if(pvl) pvl.textContent = a.privacy;
     }, 200);
   });
+})();
+</script>
+
+<script>
+// ── TWA DETECTION : masque les liens de don dans l'app Android (politique Paiements Google Play)
+(function(){
+  try{
+    if(document.referrer && document.referrer.indexOf('android-app://') === 0){
+      localStorage.setItem('oracle_twa','1');
+    }
+    if(localStorage.getItem('oracle_twa') === '1'){
+      var hide = function(){
+        var s = document.getElementById('supportSection');
+        if(s) s.style.display = 'none';
+      };
+      if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', hide);
+      else hide();
+    }
+  }catch(e){}
 })();
 </script>
 
