@@ -1,4 +1,4 @@
-const VERSION = 'oracle-v80'; // ⚠️ Incrémenter à CHAQUE déploiement
+const VERSION = 'oracle-v81'; // ⚠️ Incrémenter à CHAQUE déploiement
 
 // Fichiers critiques à pré-cacher à l'installation (légers, indispensables au démarrage)
 // Les mp3 ne sont PLUS pré-cachés : ils sont mis en cache au vol à la première lecture
