@@ -167,6 +167,8 @@
     .auth-delete-btn{display:block;width:100%;margin-top:10px;padding:9px 0;background:none;border:1px solid rgba(232,76,94,.25);border-radius:10px;color:rgba(232,76,94,.75);font-family:'Montserrat',sans-serif;font-size:.78rem;cursor:pointer;transition:background .2s;}
     .auth-delete-btn:active{background:rgba(232,76,94,.08);}
     .privacy-link{display:block;text-align:center;margin-top:14px;font-size:.7rem;color:rgba(255,255,255,.35);text-decoration:underline;font-family:'Montserrat',sans-serif;}
+    .notif-toggle-btn{display:block;width:100%;margin-top:14px;padding:11px 0;background:rgba(120,140,255,.1);border:1px solid rgba(140,160,255,.3);border-radius:12px;color:#c4ceff;font-family:'Montserrat',sans-serif;font-size:.8rem;cursor:pointer;transition:background .2s;}
+    .notif-toggle-btn:active{background:rgba(120,140,255,.2);}
 
     /* ── PREMIUM BADGE ── */
     .premium-badge{display:inline-flex;align-items:center;gap:4px;background:linear-gradient(135deg,rgba(255,200,50,.2),rgba(255,150,0,.15));color:#ffd700;font-size:.7rem;font-weight:600;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,200,50,.25);font-family:'Montserrat',sans-serif;letter-spacing:.03em;}
@@ -1164,6 +1166,8 @@ if(typeof setLang==='undefined'){window._pendingLang=null;window.setLang=functio
         <button class="auth-signout-btn" onclick="signOutUser()">Se déconnecter</button>
         <button class="auth-delete-btn" id="authDeleteBtn" onclick="deleteAccount()">Supprimer mon compte</button>
       </div>
+      <!-- Notifications quotidiennes -->
+      <button class="notif-toggle-btn" id="notifToggleBtn" onclick="oraclePush.toggle()">🔔 Activer les notifications quotidiennes</button>
       <!-- Support section (masquée automatiquement dans l'app Android — politique Paiements Google Play) -->
       <div class="support-section" id="supportSection">
         <div class="support-divider"></div>
