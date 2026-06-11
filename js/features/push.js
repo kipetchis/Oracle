@@ -5,7 +5,7 @@
 
 // ⚠️ COLLE ICI ta clé VAPID (Firebase Console → Paramètres du projet →
 // Cloud Messaging → Certificats Web Push → "Paire de clés")
-const PUSH_VAPID_KEY = 'COLLE_TA_CLE_VAPID_ICI';
+const PUSH_VAPID_KEY = 'BG_23oAjrfq5PdkuhP_Vp0HfdiEEnZ2O-cBhXMFIZteuOQG_E227c7FNj2W9gCLQT7LfXWQijqzQEC8rXbFQT5w';
 
 // Heure locale par défaut d'envoi de la notification quotidienne
 const PUSH_DEFAULT_LOCAL_HOUR = 9;
