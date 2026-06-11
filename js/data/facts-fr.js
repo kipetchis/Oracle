@@ -392,7 +392,6 @@ const FACTS_FR=[
   // ── MUSIQUE (mus19→mus20)
   {id:'mus19',cat:'music',text:"Freddie Mercury avait une tessiture vocale de quatre octaves, l'une des plus grandes jamais enregistrées dans le rock."},
   {id:'mus20',cat:'music',text:"Le 'La' de référence, utilisé pour accorder les instruments, est fixé à 440 Hz depuis 1939. Avant cette norme internationale, chaque pays utilisait une fréquence différente."},
-,
   // ── NOUVELLES CATÉGORIES ──
   {id:'myth1',cat:'mythology',text:"Dans la mythologie grecque, Athéna est née toute armée du crâne de Zeus après un violent mal de tête."},
   {id:'myth2',cat:'mythology',text:"Le marteau de Thor, Mjölnir, a un manche trop court parce qu'un moucheron a piqué le nain forgeron pendant sa fabrication."},
@@ -554,7 +553,6 @@ const FACTS_FR=[
   {id:'dino18',cat:'dinosaurs',text:"En Argentine, on a découvert le plus grand dinosaure connu : le Patagotitan, estimé à 70 tonnes et 37 mètres de long."},
   {id:'dino19',cat:'dinosaurs',text:"Les dinosaures pondaient des œufs. Le plus gros œuf de dinosaure jamais trouvé mesure 60 cm — attribué à un titanosaure."},
   {id:'dino20',cat:'dinosaurs',text:"Il n'y a jamais eu de dinosaures en Antarctique... si ? En fait, des fossiles y ont été trouvés — le continent était autrefois tempéré."},
-
   // ══════════════════════════════════════════════════════════════════════
   //  BATCH 3 — 10 nouveaux faits par catégorie (21 → 30)
   // ══════════════════════════════════════════════════════════════════════
@@ -902,4 +900,35 @@ const FACTS_FR=[
   {id:'rel28', cat:'religion', text:"Angkor Wat au Cambodge est le plus grand monument religieux du monde. Construit comme temple hindou, il est devenu bouddhiste au XIIᵉ siècle."},
   {id:'rel29', cat:'religion', text:"Le rastafarisme considère l'ancien empereur éthiopien Haïlé Sélassié comme une incarnation divine, alors que lui-même se disait chrétien orthodoxe."},
   {id:'rel30', cat:'religion', text:"La Sagrada Família de Gaudí à Barcelone est en construction depuis 1882. Elle devrait être achevée en 2026, soit 144 ans après la pose de la première pierre."},
+
+  {id:'flo1',cat:'flora',text:"Les arbres communiquent entre eux via un réseau souterrain de champignons appelé « Wood Wide Web » — ils s'échangent des nutriments et des signaux d'alarme."},
+  {id:'flo2',cat:'flora',text:"Le séquoia géant est l'être vivant le plus lourd de la planète : le spécimen nommé General Sherman pèse environ 1 385 tonnes."},
+  {id:'flo3',cat:'flora',text:"Les orchidées sont la famille de plantes à fleurs la plus diversifiée : il en existe plus de 28 000 espèces, soit 10 % de toutes les plantes à fleurs."},
+  {id:'flo4',cat:'flora',text:"Le bambou est la plante qui pousse le plus vite au monde : certaines espèces grandissent de 91 cm en une seule journée."},
+  {id:'flo5',cat:'flora',text:"La vanille est la seule orchidée cultivée pour un usage alimentaire — sa pollinisation doit être faite à la main en dehors du Mexique."},
+  {id:'flo6',cat:'flora',text:"Le Pando, un tremble géant en Utah, est considéré comme l'organisme vivant le plus lourd et le plus ancien : 80 000 ans d'âge pour 6 000 tonnes."},
+  {id:'flo7',cat:'flora',text:"Les cactus stockent l'eau dans leurs tiges charnues — le saguaro peut absorber jusqu'à 750 litres d'eau après une pluie."},
+  {id:'flo8',cat:'flora',text:"La Victoria amazonica, nénuphar géant d'Amazonie, a des feuilles pouvant atteindre 3 mètres de diamètre et supporter le poids d'un enfant."},
+  {id:'flo9',cat:'flora',text:"Le pin Bristlecone Methuselah est l'arbre vivant le plus vieux connu : 4 855 ans, soit né avant les pyramides de Guiza."},
+  {id:'flo10',cat:'flora',text:"Les fleurs de cerisier (sakura) ne durent que 7 à 10 jours — ce caractère éphémère est au cœur de l'esthétique japonaise du mono no aware."},
+  {id:'flo11',cat:'flora',text:"La rafflésie arnoldii produit la plus grande fleur du monde (jusqu'à 1 mètre de diamètre) et dégage une odeur de viande en décomposition pour attirer les mouches."},
+  {id:'flo12',cat:'flora',text:"Les feuilles d'automne ne « rougissent » pas — elles révèlent les pigments (anthocyanes, caroténoïdes) qui étaient masqués par la chlorophylle verte."},
+  {id:'flo13',cat:'flora',text:"Les spores de fougère sont si légères qu'elles peuvent voyager à travers les océans emportées par le vent — certaines espèces colonisent des îles distantes de milliers de kilomètres."},
+  {id:'flo14',cat:'flora',text:"Le baobab peut vivre plus de 2 000 ans et stocker jusqu'à 120 000 litres d'eau dans son tronc éponge — d'où son surnom d'« arbre-bouteille »."},
+  {id:'flo15',cat:'flora',text:"Les plantes carnivores ont évolué indépendamment au moins 12 fois — une adaptation convergente à des sols pauvres en azote."},
+  {id:'flo16',cat:'flora',text:"Le café est issu d'une plante éthiopienne découverte par un berger dont ses chèvres mangeaient les baies et devenaient hyperactives la nuit."},
+  {id:'flo17',cat:'flora',text:"Les mangroves stockent jusqu'à 10 fois plus de carbone par hectare que les forêts tropicales terrestres — et protègent les côtes des tsunamis et cyclones."},
+  {id:'flo18',cat:'flora',text:"La sensitive (Mimosa pudica) replie ses feuilles au contact en quelques dixièmes de seconde — un mécanisme défensif contre les herbivores."},
+  {id:'flo19',cat:'flora',text:"Les arbres de la forêt amazonienne génèrent leurs propres nuages : ils transpirent tellement d'eau (un arbre peut émettre 500 litres/jour) que cela influence la météo régionale."},
+  {id:'flo20',cat:'flora',text:"Le pissenlit est l'une des plantes médicinales les plus complètes : ses fleurs, feuilles et racines sont toutes comestibles et utilisées en phytothérapie depuis des siècles."},
+  {id:'flo21',cat:'flora',text:"Certaines plantes comme l'Éphedra produisent des graines sans fleur — elles ont survécu depuis 250 millions d'années avant l'apparition des angiospermes."},
+  {id:'flo22',cat:'flora',text:"La forêt de Hallerbos en Belgique se couvre d'un tapis de jacinthes des bois chaque printemps — phénomène qui n'a lieu que 2 à 3 semaines par an."},
+  {id:'flo23',cat:'flora',text:"Les racines d'un seul arbre adulte peuvent s'étendre sur 40 mètres horizontalement, soit 4 fois plus que la hauteur de l'arbre."},
+  {id:'flo24',cat:'flora',text:"La truffe est le fruit souterrain d'un champignon qui vit en symbiose avec des chênes, noisetiers et charmes — elle ne pousse jamais sans son arbre hôte."},
+  {id:'flo25',cat:'flora',text:"Le lotus sacré (Nelumbo nucifera) est capable de thermorégulation : il maintient ses fleurs à 30-35°C même quand la température extérieure descend à 10°C."},
+  {id:'flo26',cat:'flora',text:"Les lichens sont en réalité deux organismes en symbiose (un champignon et une algue ou cyanobactérie) — ils colonisent les surfaces rocheuses depuis 400 millions d'années."},
+  {id:'flo27',cat:'flora',text:"La plante Welwitschia mirabilis du désert de Namib n'a que deux feuilles qui poussent toute sa vie — elle peut vivre plus de 1 500 ans."},
+  {id:'flo28',cat:'flora',text:"Les cèpes et girolles ne sont pas des plantes mais des champignons — un règne à part entière, plus proche des animaux que des végétaux sur le plan évolutif."},
+  {id:'flo29',cat:'flora',text:"Le henné (Lawsonia inermis) est utilisé pour la teinture corporelle depuis plus de 5 000 ans en Égypte, Inde et Afrique du Nord."},
+  {id:'flo30',cat:'flora',text:"La chlorophylle est verte car elle absorbe principalement la lumière rouge et bleue, et réfléchit le vert — une « inefficacité » qui reste un mystère évolutif."},
 ];
