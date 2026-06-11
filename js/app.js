@@ -10,7 +10,7 @@ const CAT_ICONS={
   world:'🗺️', language:'📖', food:'🍽️', sports:'🏆',
   celebrities:'🌟', fiction:'📚', gaming:'🎮', cinema:'🎬', music:'🎵',
   mythology:'🏛️', psychology:'🧠', oceans:'🌊', records:'🏅',
-  quotes:'💬', laws:'⚖️', tales:'🐉', dinosaurs:'🦕', religion:'🕊️'
+  quotes:'💬', laws:'⚖️', tales:'🐉', dinosaurs:'🦕', religion:'🕊️', flora:'🌿'
 };
 
 // ── I18N ──────────────────────────────────────────────────────────────────
@@ -42,7 +42,7 @@ const T={
       world:'✦ Monde & Curiosités', language:'✦ Mots & Langages', food:'✦ Cuisine & Saveurs', sports:'✦ Sports & Défis',
       celebrities:'✦ Célébrités', fiction:'✦ Fictions & Littérature', gaming:'✦ Jeux Vidéo', cinema:'✦ Cinéma', music:'✦ Musique',
       mythology:'✦ Mythologie', psychology:'✦ Psychologie', oceans:'✦ Océans & Abysses', records:'✦ Records & Extrêmes',
-      quotes:'✦ Citations célèbres', laws:'✦ Lois insolites', tales:'✦ Contes & Légendes', dinosaurs:'✦ Dinosaures', religion:'✦ Religions & Spiritualité'
+      quotes:'✦ Citations célèbres', laws:'✦ Lois insolites', tales:'✦ Contes & Légendes', dinosaurs:'✦ Dinosaures', religion:'✦ Religions & Spiritualité', flora:'✦ Flore & Botanique'
     },
     planets:{
       mercury:{name:'Mercure',cond:'Lire 20 faits',unlockDesc:"Rapide comme Mercure. 20 faits lus, la planète la plus proche du Soleil est à toi."},
@@ -68,7 +68,7 @@ const T={
       collection:'✦ Collection', sharing:'✦ Partage', fidelity:'✦ Fidélité', planets:'✦ Planètes',
       celebrities:'✦ Célébrités', fiction:'✦ Fictions', gaming:'✦ Jeux Vidéo', cinema_g:'✦ Cinéma', music_g:'✦ Musique',
       mythology_g:'✦ Mythologie', psychology_g:'✦ Psychologie', oceans_g:'✦ Océans', records_g:'✦ Records',
-      quotes_g:'✦ Citations', laws_g:'✦ Lois insolites', tales_g:'✦ Contes & Légendes', dinosaurs_g:'✦ Dinosaures', religion_g:'✦ Religions'
+      quotes_g:'✦ Citations', laws_g:'✦ Lois insolites', tales_g:'✦ Contes & Légendes', dinosaurs_g:'✦ Dinosaures', religion_g:'✦ Religions', flora_g:'✦ Flore & Botanique'
     },
     shareTag:"✨ Découvert avec Oracle — l'app des curiosités du monde"
   },
@@ -99,7 +99,7 @@ const T={
       world:'✦ World & Curiosities', language:'✦ Words & Languages', food:'✦ Food & Flavors', sports:'✦ Sports & Challenges',
       celebrities:'✦ Celebrities', fiction:'✦ Fiction & Literature', gaming:'✦ Video Games', cinema:'✦ Cinema', music:'✦ Music',
       mythology:'✦ Mythology', psychology:'✦ Psychology', oceans:'✦ Oceans & Abyss', records:'✦ Records & Extremes',
-      quotes:'✦ Famous Quotes', laws:'✦ Weird Laws', tales:'✦ Tales & Legends', dinosaurs:'✦ Dinosaurs', religion:'✦ Religions & Spirituality'
+      quotes:'✦ Famous Quotes', laws:'✦ Weird Laws', tales:'✦ Tales & Legends', dinosaurs:'✦ Dinosaurs', religion:'✦ Religions & Spirituality', flora:'✦ Flora & Botany'
     },
     planets:{
       mercury:{name:'Mercury',cond:'Read 20 facts',unlockDesc:"Swift as Mercury. 20 facts read, the closest planet to the Sun is yours."},
@@ -125,7 +125,7 @@ const T={
       collection:'✦ Collection', sharing:'✦ Sharing', fidelity:'✦ Loyalty', planets:'✦ Planets',
       celebrities:'✦ Celebrities', fiction:'✦ Fiction', gaming:'✦ Gaming', cinema_g:'✦ Cinema', music_g:'✦ Music',
       mythology_g:'✦ Mythology', psychology_g:'✦ Psychology', oceans_g:'✦ Oceans', records_g:'✦ Records',
-      quotes_g:'✦ Quotes', laws_g:'✦ Weird Laws', tales_g:'✦ Tales & Legends', dinosaurs_g:'✦ Dinosaurs', religion_g:'✦ Religions'
+      quotes_g:'✦ Quotes', laws_g:'✦ Weird Laws', tales_g:'✦ Tales & Legends', dinosaurs_g:'✦ Dinosaurs', religion_g:'✦ Religions', flora_g:'✦ Flora & Botany'
     },
     shareTag:"✨ Discovered with Oracle — the curiosity app"
   },
@@ -157,7 +157,7 @@ const T={
       celebrities:'✦ Celebridades', fiction:'✦ Ficción y Literatura', gaming:'✦ Videojuegos', cinema:'✦ Cine', music:'✦ Música',
       mythology:'✦ Mitología', psychology:'✦ Psicología', oceans:'✦ Océanos y Abismos', records:'✦ Récords y Extremos',
       quotes:'✦ Citas célebres', laws:'✦ Leyes insólitas', tales:'✦ Cuentos y Leyendas', dinosaurs:'✦ Dinosaurios',
-      religion:'✦ Religiones y Espiritualidad'
+      religion:'✦ Religiones y Espiritualidad', flora:'✦ Flora y Botánica'
     },
     planets:{
       mercury:{name:'Mercurio',cond:'Leer 20 datos',unlockDesc:"Rápido como Mercurio. 20 datos leídos, el planeta más cercano al Sol es tuyo."},
@@ -184,7 +184,7 @@ const T={
       celebrities:'✦ Celebridades', fiction:'✦ Ficción', gaming:'✦ Videojuegos', cinema_g:'✦ Cine', music_g:'✦ Música',
       mythology_g:'✦ Mitología', psychology_g:'✦ Psicología', oceans_g:'✦ Océanos', records_g:'✦ Récords',
       quotes_g:'✦ Citas', laws_g:'✦ Leyes insólitas', tales_g:'✦ Cuentos y Leyendas', dinosaurs_g:'✦ Dinosaurios',
-      religion_g:'✦ Religiones'
+      religion_g:'✦ Religiones', flora_g:'✦ Flora y Botánica'
     },
     shareTag:"✨ Descubierto con Oracle — la app de las curiosidades del mundo"
   }
@@ -278,6 +278,9 @@ const buildAchDef=(lang)=>{
     // ─ Religion
     {id:'rel_5',icon:'🕊️',name:_t('Apprenti spirituel','Aprendiz espiritual','Spiritual apprentice'),desc:_t('Lire 5 faits Religion','Leer 5 datos de Religión','Read 5 Religion facts'),type:'religion',target:5,group:g.religion_g},
     {id:'rel_10',icon:'🙏',name:_t('Érudit des croyances','Erudito de creencias','Belief scholar'),desc:_t('Lire 10 faits Religion','Leer 10 datos de Religión','Read 10 Religion facts'),type:'religion',target:10,group:g.religion_g},
+    // ─ Flore
+    {id:'flo_5',icon:'🌱',name:_t('Apprenti botaniste','Aprendiz de botánica','Botany apprentice'),desc:_t('Lire 5 faits Flore','Leer 5 datos de Flora','Read 5 Flora facts'),type:'flora',target:5,group:g.flora_g},
+    {id:'flo_10',icon:'🌿',name:_t('Naturaliste','Naturalista','Naturalist'),desc:_t('Lire 10 faits Flore','Leer 10 datos de Flora','Read 10 Flora facts'),type:'flora',target:10,group:g.flora_g},
     // ─ Planètes
     {id:'planet_mercury',icon:'☿️',name:_t('Messager de Mercure','Mensajero de Mercurio','Mercury Messenger'),desc:_t('Débloquer Mercure','Desbloquear Mercurio','Unlock Mercury'),type:'planet',target:'mercury',group:g.planets},
     {id:'planet_venus',icon:'♀️',name:_t('Étoile du berger','Estrella del pastor','Morning Star'),desc:_t('Débloquer Vénus','Desbloquear Venus','Unlock Venus'),type:'planet',target:'venus',group:g.planets},
