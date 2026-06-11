@@ -136,24 +136,6 @@
     applyParallax((e.gamma||0)/90, Math.max(-1,Math.min(1,((e.beta||0)-45)/45)));
   }
 
-  function setupGyro(){
-    if(!window.DeviceOrientationEvent){ setupMouseFallback(); return; }
-    if(typeof DeviceOrientationEvent.requestPermission === 'function'){
-      // iOS 13+ : permission requise, on attache au premier tap
-      document.addEventListener('touchend', function _req(){
-        DeviceOrientationEvent.requestPermission()
-          .then(r => { if(r==='granted') window.addEventListener('deviceorientation', onOrientation, {passive:true}); })
-          .catch(()=>{});
-        document.removeEventListener('touchend', _req);
-      }, {once:true});
-    } else {
-      // Android / desktop Chrome : pas de permission requise
-      window.addEventListener('deviceorientation', onOrientation, {passive:true});
-      // Diagnostic : si après 3s toujours pas de données, fallback souris
-      setTimeout(()=>{ if(!_gyroActive) setupMouseFallback(); }, 3000);
-    }
-  }
-
   // Fallback souris pour desktop / simulateur
   function setupMouseFallback(){
     document.addEventListener('mousemove', function(e){
