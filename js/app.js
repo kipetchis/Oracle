@@ -45,18 +45,18 @@ const T={
       quotes:'✦ Citations célèbres', laws:'✦ Lois insolites', tales:'✦ Contes & Légendes', dinosaurs:'✦ Dinosaures', religion:'✦ Religions & Spiritualité', flora:'✦ Flore & Botanique'
     },
     planets:{
-      mercury:{name:'Mercure',cond:'Lire 20 faits',unlockDesc:"Rapide comme Mercure. 20 faits lus, la planète la plus proche du Soleil est à toi."},
-      venus:{name:'Vénus',cond:'Lire 30 éphémérides',unlockDesc:"30 éphémérides consultées. Vénus, étoile du berger, brille pour toi."},
+      mercury:{name:'Mercure',cond:'Lire 40 faits',unlockDesc:"Rapide comme Mercure. 40 faits lus, la planète la plus proche du Soleil est à toi."},
+      venus:{name:'Vénus',cond:'Lire 50 éphémérides',unlockDesc:"50 éphémérides consultées. Vénus, étoile du berger, brille pour toi."},
       earth:{name:'Terre',cond:'Par défaut',unlockDesc:'Ta planète de départ. Toujours disponible.'},
-      moon:{name:'Lune',cond:'Atteindre 50 faits lus',unlockDesc:"Tu as consulté l'Oracle 50 fois. La Lune est à toi."},
-      mars:{name:'Mars',cond:"7 jours de suite",unlockDesc:"7 jours de curiosité d'affilée. Mars t'appartient."},
-      jupiter:{name:'Jupiter',cond:'1 fait par catégorie',unlockDesc:"Un fait dans chaque catégorie. Jupiter, roi des planètes, te couronne."},
-      saturn:{name:'Saturne',cond:'Partager 5 faits',unlockDesc:"5 partages dans le cosmos. Saturne t'accueille."},
+      moon:{name:'Lune',cond:'Atteindre 150 faits lus',unlockDesc:"Tu as consulté l'Oracle 150 fois. La Lune est à toi."},
+      mars:{name:'Mars',cond:"14 jours de suite",unlockDesc:"14 jours de curiosité d'affilée. Mars t'appartient."},
+      jupiter:{name:'Jupiter',cond:'3 faits par catégorie',unlockDesc:"Un fait dans chaque catégorie. Jupiter, roi des planètes, te couronne."},
+      saturn:{name:'Saturne',cond:'Partager 10 faits',unlockDesc:"10 partages dans le cosmos. Saturne t'accueille."},
       uranus:{name:'Uranus',cond:'50 bonnes réponses au quiz',unlockDesc:"50 bonnes réponses. Uranus, la mystérieuse, révèle ses secrets."},
-      neptune:{name:'Neptune',cond:'Collecter 5 fragments',unlockDesc:"Rencontre du 3ᵉ type. Neptune t'ouvre ses portes."},
+      neptune:{name:'Neptune',cond:'Collecter 8 fragments',unlockDesc:"Rencontre du 3ᵉ type. Neptune t'ouvre ses portes."},
       pluto:{name:'Pluton',cond:'???',unlockDesc:"Tu as trouvé le secret. Pluton, la planète oubliée, se souvient de toi."},
       pangaea:{name:'Pangée',cond:'Lire tous les faits Dinosaures',unlockDesc:"Un supercontinent oublié renaît. La Pangée, berceau des dinosaures, se dévoile."},
-      earthnight:{name:'Terre de nuit',cond:'Lire 20 faits Religions',unlockDesc:"Les lumières de l'humanité brillent dans la nuit. La Terre se révèle sous un nouveau jour."},
+      earthnight:{name:'Terre de nuit',cond:'Lire 35 faits Religions',unlockDesc:"Les lumières de l'humanité brillent dans la nuit. La Terre se révèle sous un nouveau jour."},
       sun:{name:'Soleil',cond:'Tous les succès de catégorie',unlockDesc:"Tu es devenu l'Oracle lui-même."}
     },
     achGroups:{
@@ -102,18 +102,18 @@ const T={
       quotes:'✦ Famous Quotes', laws:'✦ Weird Laws', tales:'✦ Tales & Legends', dinosaurs:'✦ Dinosaurs', religion:'✦ Religions & Spirituality', flora:'✦ Flora & Botany'
     },
     planets:{
-      mercury:{name:'Mercury',cond:'Read 20 facts',unlockDesc:"Swift as Mercury. 20 facts read, the closest planet to the Sun is yours."},
-      venus:{name:'Venus',cond:'Read 30 daily facts',unlockDesc:"30 daily facts consulted. Venus, the morning star, shines for you."},
+      mercury:{name:'Mercury',cond:'Read 40 facts',unlockDesc:"Swift as Mercury. 40 facts read, the closest planet to the Sun is yours."},
+      venus:{name:'Venus',cond:'Read 50 daily facts',unlockDesc:"50 daily facts consulted. Venus, the morning star, shines for you."},
       earth:{name:'Earth',cond:'Default',unlockDesc:'Your starting planet. Always available.'},
-      moon:{name:'Moon',cond:'Read 50 facts',unlockDesc:"You've consulted the Oracle 50 times. The Moon is yours."},
-      mars:{name:'Mars',cond:'7 days in a row',unlockDesc:"7 days of curiosity in a row. Mars belongs to you."},
-      jupiter:{name:'Jupiter',cond:'1 fact per category',unlockDesc:"A fact in every category. Jupiter, king of planets, crowns you."},
-      saturn:{name:'Saturn',cond:'Share 5 facts',unlockDesc:"5 shares across the cosmos. Saturn welcomes you."},
+      moon:{name:'Moon',cond:'Read 150 facts',unlockDesc:"You've consulted the Oracle 150 times. The Moon is yours."},
+      mars:{name:'Mars',cond:'14 days in a row',unlockDesc:"14 days of curiosity in a row. Mars belongs to you."},
+      jupiter:{name:'Jupiter',cond:'3 facts per category',unlockDesc:"A fact in every category. Jupiter, king of planets, crowns you."},
+      saturn:{name:'Saturn',cond:'Share 10 facts',unlockDesc:"10 shares across the cosmos. Saturn welcomes you."},
       uranus:{name:'Uranus',cond:'50 correct quiz answers',unlockDesc:"50 right answers. Uranus, the mysterious, reveals its secrets."},
-      neptune:{name:'Neptune',cond:'Collect 5 fragments',unlockDesc:"Close encounter of the third kind. Neptune opens its gates."},
+      neptune:{name:'Neptune',cond:'Collect 8 fragments',unlockDesc:"Close encounter of the third kind. Neptune opens its gates."},
       pluto:{name:'Pluto',cond:'???',unlockDesc:"You found the secret. Pluto, the forgotten planet, remembers you."},
       pangaea:{name:'Pangaea',cond:'Read all Dinosaur facts',unlockDesc:"A forgotten supercontinent reborn. Pangaea, cradle of dinosaurs, reveals itself."},
-      earthnight:{name:'Night Earth',cond:'Read 20 Religion facts',unlockDesc:"Humanity's lights shine through the darkness. Earth reveals itself in a new light."},
+      earthnight:{name:'Night Earth',cond:'Read 35 Religion facts',unlockDesc:"Humanity's lights shine through the darkness. Earth reveals itself in a new light."},
       sun:{name:'Sun',cond:'All category achievements',unlockDesc:"You have become the Oracle itself."}
     },
     achGroups:{
@@ -160,18 +160,18 @@ const T={
       religion:'✦ Religiones y Espiritualidad', flora:'✦ Flora y Botánica'
     },
     planets:{
-      mercury:{name:'Mercurio',cond:'Leer 20 datos',unlockDesc:"Rápido como Mercurio. 20 datos leídos, el planeta más cercano al Sol es tuyo."},
-      venus:{name:'Venus',cond:'Leer 30 efemérides',unlockDesc:"30 efemérides consultadas. Venus, la estrella del pastor, brilla para ti."},
+      mercury:{name:'Mercurio',cond:'Leer 40 datos',unlockDesc:"Rápido como Mercurio. 40 datos leídos, el planeta más cercano al Sol es tuyo."},
+      venus:{name:'Venus',cond:'Leer 50 efemérides',unlockDesc:"50 efemérides consultadas. Venus, la estrella del pastor, brilla para ti."},
       earth:{name:'Tierra',cond:'Por defecto',unlockDesc:'Tu planeta de inicio. Siempre disponible.'},
-      moon:{name:'Luna',cond:'Leer 50 datos',unlockDesc:"Has consultado el Oráculo 50 veces. La Luna es tuya."},
-      mars:{name:'Marte',cond:'7 días seguidos',unlockDesc:"7 días de curiosidad seguidos. Marte te pertenece."},
-      jupiter:{name:'Júpiter',cond:'1 dato por categoría',unlockDesc:"Un dato en cada categoría. Júpiter, rey de los planetas, te corona."},
-      saturn:{name:'Saturno',cond:'Compartir 5 datos',unlockDesc:"5 compartidos en el cosmos. Saturno te da la bienvenida."},
+      moon:{name:'Luna',cond:'Leer 150 datos',unlockDesc:"Has consultado el Oráculo 150 veces. La Luna es tuya."},
+      mars:{name:'Marte',cond:'14 días seguidos',unlockDesc:"14 días de curiosidad seguidos. Marte te pertenece."},
+      jupiter:{name:'Júpiter',cond:'3 datos por categoría',unlockDesc:"Un dato en cada categoría. Júpiter, rey de los planetas, te corona."},
+      saturn:{name:'Saturno',cond:'Compartir 10 datos',unlockDesc:"10 compartidos en el cosmos. Saturno te da la bienvenida."},
       uranus:{name:'Urano',cond:'50 respuestas correctas en el quiz',unlockDesc:"50 respuestas correctas. Urano, el misterioso, revela sus secretos."},
-      neptune:{name:'Neptuno',cond:'Coleccionar 5 fragmentos',unlockDesc:"Encuentro del tercer tipo. Neptuno te abre sus puertas."},
+      neptune:{name:'Neptuno',cond:'Coleccionar 8 fragmentos',unlockDesc:"Encuentro del tercer tipo. Neptuno te abre sus puertas."},
       pluto:{name:'Plutón',cond:'???',unlockDesc:"Has encontrado el secreto. Plutón, el planeta olvidado, te recuerda."},
       pangaea:{name:'Pangea',cond:'Leer todos los datos de Dinosaurios',unlockDesc:"Un supercontinente olvidado renace. Pangea, cuna de los dinosaurios, se revela."},
-      earthnight:{name:'Tierra de noche',cond:'Leer 20 datos de Religión',unlockDesc:"Las luces de la humanidad brillan en la oscuridad. La Tierra de noche es tuya."},
+      earthnight:{name:'Tierra de noche',cond:'Leer 35 datos de Religión',unlockDesc:"Las luces de la humanidad brillan en la oscuridad. La Tierra de noche es tuya."},
       sun:{name:'Sol',cond:'Todos los logros de categoría',unlockDesc:"Te has convertido en el Oráculo mismo."}
     },
     achGroups:{
@@ -292,7 +292,7 @@ const buildAchDef=(lang)=>{
     {id:'planet_moon',icon:'🌙',name:_t('Habitant de la Lune','Habitante de la Luna','Moon dweller'),desc:_t('Débloquer la Lune','Desbloquear la Luna','Unlock the Moon'),type:'planet',target:'moon',group:g.planets},
     {id:'planet_mars',icon:'🔴',name:_t('Conquistador de Mars','Conquistador de Marte','Mars conquistador'),desc:_t('Débloquer Mars','Desbloquear Marte','Unlock Mars'),type:'planet',target:'mars',group:g.planets},
     {id:'planet_saturn',icon:'🪐',name:_t('Seigneur de Saturne','Señor de Saturno','Lord of Saturn'),desc:_t('Débloquer Saturne','Desbloquear Saturno','Unlock Saturn'),type:'planet',target:'saturn',group:g.planets},
-    {id:'planet_neptune',icon:'🛸',name:_t('Rencontre du 3ᵉ type','Encuentro del tercer tipo','Close Encounter'),desc:_t('Collecter 5 fragments de planète','Coleccionar 5 fragmentos de planeta','Collect 5 planet fragments'),type:'planet',target:'neptune',group:g.planets},
+    {id:'planet_neptune',icon:'🛸',name:_t('Rencontre du 3ᵉ type','Encuentro del tercer tipo','Close Encounter'),desc:_t('Collecter 8 fragments de planète','Coleccionar 8 fragmentos de planeta','Collect 8 planet fragments'),type:'planet',target:'neptune',group:g.planets},
     {id:'planet_sun',icon:'☀️',name:_t("L'Oracle Solaire",'El Oráculo Solar','The Solar Oracle'),desc:_t('Débloquer le Soleil','Desbloquear el Sol','Unlock the Sun'),type:'planet',target:'sun',group:g.planets},
     {id:'ephem_1',icon:'📅',name:_t('Premier Éphéméride','Primera efeméride','First Ephemeris'),desc:_t('Lire ton premier fait du jour','Leer tu primer dato del día','Read your first daily fact'),type:'ephem',target:1,group:g.planets},
     {id:'ephem_7',icon:'🗓️',name:_t("Semaine d'Oracle",'Semana del Oráculo','Oracle Week'),desc:_t('Lire 7 éphémérides','Leer 7 efemérides','Read 7 daily facts'),type:'ephem',target:7,group:g.planets},
@@ -301,25 +301,25 @@ const buildAchDef=(lang)=>{
 
 // ── PLANETS ───────────────────────────────────────────────────────────────
 const buildPlanets=(lang)=>[
-  {id:'mercury',emoji:'☿️',cssClass:'planet-mercury',previewClass:'p-mercury',check:(s)=>(s.read.total||0)>=20,progress:(s)=>({val:Math.min(s.read.total||0,20),max:20,label:`${Math.min(s.read.total||0,20)} / 20`,fillClass:'pf-mercury'})},
-  {id:'venus',emoji:'♀️',cssClass:'planet-venus',previewClass:'p-venus',check:(s)=>(s.ephemRead||0)>=30,progress:(s)=>({val:Math.min(s.ephemRead||0,30),max:30,label:`${Math.min(s.ephemRead||0,30)} / 30`,fillClass:'pf-venus'})},
+  {id:'mercury',emoji:'☿️',cssClass:'planet-mercury',previewClass:'p-mercury',check:(s)=>(s.read.total||0)>=40,progress:(s)=>({val:Math.min(s.read.total||0,40),max:40,label:`${Math.min(s.read.total||0,40)} / 40`,fillClass:'pf-mercury'})},
+  {id:'venus',emoji:'♀️',cssClass:'planet-venus',previewClass:'p-venus',check:(s)=>(s.ephemRead||0)>=50,progress:(s)=>({val:Math.min(s.ephemRead||0,50),max:50,label:`${Math.min(s.ephemRead||0,50)} / 50`,fillClass:'pf-venus'})},
   {id:'earth',emoji:'🌍',cssClass:'planet-earth',previewClass:'p-earth',check:()=>true,progress:()=>({val:1,max:1,label:''})},
-  {id:'earthnight',emoji:'🌃',cssClass:'planet-earthnight',previewClass:'p-earthnight',check:(s)=>(s.read.religion||0)>=20,progress:(s)=>({val:Math.min(s.read.religion||0,20),max:20,label:`${Math.min(s.read.religion||0,20)} / 20`,fillClass:'pf-earthnight'})},
-  {id:'moon',emoji:'🌙',cssClass:'planet-moon',previewClass:'p-moon',check:(s)=>(s.read.total||0)>=50,progress:(s)=>({val:Math.min(s.read.total||0,50),max:50,label:`${Math.min(s.read.total||0,50)} / 50`,fillClass:'pf-moon'})},
-  {id:'mars',emoji:'🔴',cssClass:'planet-mars',previewClass:'p-mars',check:(s)=>(s.streak||1)>=7,progress:(s)=>({val:Math.min(s.streak||1,7),max:7,label:`${Math.min(s.streak||1,7)} / 7`,fillClass:'pf-mars'})},
-  {id:'jupiter',emoji:'🟠',cssClass:'planet-jupiter',previewClass:'p-jupiter',check:(s)=>{const cats=Object.keys(CAT_ICONS);return cats.every(c=>(s.read[c]||0)>=1);},progress:(s)=>{const cats=Object.keys(CAT_ICONS);const d=cats.filter(c=>(s.read[c]||0)>=1).length;return{val:d,max:cats.length,label:`${d} / ${cats.length}`,fillClass:'pf-jupiter'};}},
-  {id:'saturn',emoji:'🪐',cssClass:'planet-saturn',previewClass:'p-saturn',check:(s)=>(s.shares||0)>=5,progress:(s)=>({val:Math.min(s.shares||0,5),max:5,label:`${Math.min(s.shares||0,5)} / 5`,fillClass:'pf-saturn'})},
+  {id:'earthnight',emoji:'🌃',cssClass:'planet-earthnight',previewClass:'p-earthnight',check:(s)=>(s.read.religion||0)>=35,progress:(s)=>({val:Math.min(s.read.religion||0,35),max:35,label:`${Math.min(s.read.religion||0,35)} / 35`,fillClass:'pf-earthnight'})},
+  {id:'moon',emoji:'🌙',cssClass:'planet-moon',previewClass:'p-moon',check:(s)=>(s.read.total||0)>=150,progress:(s)=>({val:Math.min(s.read.total||0,150),max:150,label:`${Math.min(s.read.total||0,150)} / 150`,fillClass:'pf-moon'})},
+  {id:'mars',emoji:'🔴',cssClass:'planet-mars',previewClass:'p-mars',check:(s)=>(s.streak||1)>=14,progress:(s)=>({val:Math.min(s.streak||1,14),max:14,label:`${Math.min(s.streak||1,14)} / 14`,fillClass:'pf-mars'})},
+  {id:'jupiter',emoji:'🟠',cssClass:'planet-jupiter',previewClass:'p-jupiter',check:(s)=>{const cats=Object.keys(CAT_ICONS);return cats.every(c=>(s.read[c]||0)>=3);},progress:(s)=>{const cats=Object.keys(CAT_ICONS);const d=cats.filter(c=>(s.read[c]||0)>=3).length;return{val:d,max:cats.length,label:`${d} / ${cats.length}`,fillClass:'pf-jupiter'};}},
+  {id:'saturn',emoji:'🪐',cssClass:'planet-saturn',previewClass:'p-saturn',check:(s)=>(s.shares||0)>=10,progress:(s)=>({val:Math.min(s.shares||0,10),max:10,label:`${Math.min(s.shares||0,10)} / 10`,fillClass:'pf-saturn'})},
   {id:'uranus',emoji:'🔵',cssClass:'planet-uranus',previewClass:'p-uranus',check:(s)=>(s.quizCorrect||0)>=50,progress:(s)=>({val:Math.min(s.quizCorrect||0,50),max:50,label:`${Math.min(s.quizCorrect||0,50)} / 50`,fillClass:'pf-uranus'})},
-  {id:'neptune',emoji:'🛸',cssClass:'planet-neptune',previewClass:'p-neptune',check:(s)=>(s.planetFragments||0)>=5,progress:(s)=>({val:Math.min(s.planetFragments||0,5),max:5,label:`${Math.min(s.planetFragments||0,5)} / 5 🧩`,fillClass:'pf-neptune'})},
+  {id:'neptune',emoji:'🛸',cssClass:'planet-neptune',previewClass:'p-neptune',check:(s)=>(s.planetFragments||0)>=8,progress:(s)=>({val:Math.min(s.planetFragments||0,8),max:8,label:`${Math.min(s.planetFragments||0,8)} / 8 🧩`,fillClass:'pf-neptune'})},
   {id:'pluto',emoji:'💀',cssClass:'planet-pluto',previewClass:'p-pluto',check:(s)=>(s.secretTaps||0)>=10,progress:(s)=>({val:Math.min(s.secretTaps||0,10),max:10,label:(s.secretTaps||0)>=10?'???':'???',fillClass:'pf-pluto'})},
-  {id:'pangaea',emoji:'🦕',cssClass:'planet-pangaea',previewClass:'p-pangaea',check:(s)=>(s.read.dinosaurs||0)>=20,progress:(s)=>({val:Math.min(s.read.dinosaurs||0,20),max:20,label:`${Math.min(s.read.dinosaurs||0,20)} / 20`,fillClass:'pf-pangaea'})},
+  {id:'pangaea',emoji:'🦕',cssClass:'planet-pangaea',previewClass:'p-pangaea',check:(s)=>(s.read.dinosaurs||0)>=35,progress:(s)=>({val:Math.min(s.read.dinosaurs||0,35),max:35,label:`${Math.min(s.read.dinosaurs||0,35)} / 35`,fillClass:'pf-pangaea'})},
   {id:'sun',emoji:'☀️',cssClass:'planet-sun',previewClass:'p-sun',check:(s)=>CAT_ACH_IDS.every(id=>s.unlocked.includes(id)),progress:(s)=>{const d=CAT_ACH_IDS.filter(id=>s.unlocked.includes(id)).length;return{val:d,max:CAT_ACH_IDS.length,label:`${d} / ${CAT_ACH_IDS.length}`,fillClass:'pf-sun'};}},
 ];
 
 // ── STATE ─────────────────────────────────────────────────────────────────
 function loadState(){
   try{const s=localStorage.getItem('oracle_v7');if(s)return JSON.parse(s);}catch(e){}
-  return{favs:[],read:{},history:[],unlocked:[],streak:1,lastDate:null,shares:0,activePlanet:'earth',unlockedPlanets:['earth'],lang:null,lastDailyDate:null,quizTotal:0,quizCorrect:0,muted:false,mutedAmbient:false,mutedSfx:false,dailyCount:0,dailyCountDate:null,planetFragments:0,ephemRead:0,secretTaps:0,ephemHistory:[]};
+  return{favs:[],read:{},history:[],unlocked:[],streak:1,lastDate:null,shares:0,activePlanet:'earth',unlockedPlanets:['earth'],lang:null,lastDailyDate:null,quizTotal:0,quizCorrect:0,muted:false,mutedAmbient:false,mutedSfx:false,dailyCount:0,dailyCountDate:null,planetFragments:0,ephemRead:0,secretTaps:0,ephemHistory:[],factsSinceUfo:0,nextUfoInterval:0,factsSinceQuiz:0,nextQuizInterval:0};
 }
 function saveState(){
   try{localStorage.setItem('oracle_v7',JSON.stringify(state));}catch(e){}
@@ -379,6 +379,10 @@ function mergeStates(local, cloud){
   merged.quizCorrect = Math.max(merged.quizCorrect||0, local.quizCorrect||0);
   merged.dailyCount = Math.max(merged.dailyCount||0, local.dailyCount||0);
   merged.planetFragments = Math.max(merged.planetFragments||0, local.planetFragments||0);
+  merged.factsSinceUfo = Math.max(merged.factsSinceUfo||0, local.factsSinceUfo||0);
+  merged.factsSinceQuiz = Math.max(merged.factsSinceQuiz||0, local.factsSinceQuiz||0);
+  merged.nextUfoInterval = merged.nextUfoInterval||local.nextUfoInterval||0;
+  merged.nextQuizInterval = merged.nextQuizInterval||local.nextQuizInterval||0;
   merged.ephemRead = Math.max(merged.ephemRead||0, local.ephemRead||0);
   merged.secretTaps = Math.max(merged.secretTaps||0, local.secretTaps||0);
   merged.activePlanet = local.activePlanet || merged.activePlanet;
