@@ -1108,16 +1108,6 @@ if(typeof setLang==='undefined'){window._pendingLang=null;window.setLang=functio
 </div>
 
 <div class="app" id="mainApp" style="display:none">
-  <div class="topbar">
-    <div class="topbar-left">
-      <div class="planet-indicator" id="planetIndicator" onclick="haptic();openPlanetPanel()">
-        <span class="planet-indicator-emoji" id="planetIndicatorEmoji">🌍</span>
-        <span class="planet-indicator-name" id="planetIndicatorName">Terre</span>
-      </div>
-    </div>
-    <div class="topbar-actions">
-      <div class="icon-btn" id="themeToggle" onclick="toggleTheme()" title="Thème">🌙</div>
-      <div class="icon-btn" id="soundToggleBtn" onclick="haptic();toggleSoundMenu()" title="Audio">🔊</div>
       <div class="sound-menu" id="soundMenu">
         <div class="sound-menu-item" onclick="haptic();toggleAmbientFromMenu()">
           <span class="smi-icon">🎵</span>
@@ -1134,6 +1124,16 @@ if(typeof setLang==='undefined'){window._pendingLang=null;window.setLang=functio
           <span id="smiAllLabel">Tout couper</span>
         </div>
       </div>
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="planet-indicator" id="planetIndicator" onclick="haptic();openPlanetPanel()">
+        <span class="planet-indicator-emoji" id="planetIndicatorEmoji">🌍</span>
+        <span class="planet-indicator-name" id="planetIndicatorName">Terre</span>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <div class="icon-btn" id="themeToggle" onclick="toggleTheme()" title="Thème">🌙</div>
+      <div class="icon-btn" id="soundToggleBtn" onclick="haptic();toggleSoundMenu()" title="Audio">🔊</div>
       <div class="icon-btn" onclick="haptic();openStats()" title="Statistiques" style="font-size:13px">📊</div>
       <div class="icon-btn" id="favBtn" onclick="haptic();openPanel('favs')" title="Favoris">♡</div>
 
