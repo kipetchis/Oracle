@@ -13,12 +13,14 @@ let _cometEl = null;
 let _cometTimeout = null;
 
 function maybeShowQuiz() {
-  factsReadSinceQuiz++;
-  if (factsReadSinceQuiz >= _nextQuizInterval) {
-    factsReadSinceQuiz = 0;
-    _nextQuizInterval = QUIZ_INTERVALS[Math.floor(Math.random()*QUIZ_INTERVALS.length)];
+  if (!state.nextQuizInterval) state.nextQuizInterval = QUIZ_INTERVALS[Math.floor(Math.random()*QUIZ_INTERVALS.length)];
+  state.factsSinceQuiz = (state.factsSinceQuiz||0) + 1;
+  if (state.factsSinceQuiz >= state.nextQuizInterval) {
+    state.factsSinceQuiz = 0;
+    state.nextQuizInterval = QUIZ_INTERVALS[Math.floor(Math.random()*QUIZ_INTERVALS.length)];
     setTimeout(() => launchComet(), 600);
   }
+  saveState();
 }
 
 function launchComet() {
@@ -270,12 +272,14 @@ let _ufoEl = null;
 let _ufoTimeout = null;
 
 function maybeShowUfo() {
-  factsReadSinceUfo++;
-  if (factsReadSinceUfo >= _nextUfoInterval) {
-    factsReadSinceUfo = 0;
-    _nextUfoInterval = UFO_INTERVALS[Math.floor(Math.random()*UFO_INTERVALS.length)];
+  if (!state.nextUfoInterval) state.nextUfoInterval = UFO_INTERVALS[Math.floor(Math.random()*UFO_INTERVALS.length)];
+  state.factsSinceUfo = (state.factsSinceUfo||0) + 1;
+  if (state.factsSinceUfo >= state.nextUfoInterval) {
+    state.factsSinceUfo = 0;
+    state.nextUfoInterval = UFO_INTERVALS[Math.floor(Math.random()*UFO_INTERVALS.length)];
     setTimeout(() => launchUfo(), 1200);
   }
+  saveState();
 }
 
 function launchUfo() {
