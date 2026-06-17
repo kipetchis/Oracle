@@ -408,7 +408,7 @@ function endSpaceGame(survived) {
   canvas.removeEventListener('mousemove', _gameMouse);
 
   // Fragment logic: 50+ stars = 1 fragment (max 5)
-  const earnedFragment = score >= 50 && (state.planetFragments || 0) < 5;
+  const earnedFragment = score >= 100 && (state.planetFragments || 0) < 8;
   if (earnedFragment) {
     state.planetFragments = (state.planetFragments || 0) + 1;
     haptic('celebration');
@@ -438,8 +438,8 @@ function endSpaceGame(survived) {
     ctx.fillText(lang==='fr' ? '🧩 +1 Fragment de planète !' : lang==='es' ? '🧩 +1 ¡Fragmento de planeta!' : '🧩 +1 Planet fragment!', W/2, H*0.50);
     ctx.fillStyle = 'rgba(192,132,252,.7)';
     ctx.font = '400 16px Montserrat, sans-serif';
-    ctx.fillText(frags + ' / 5 ' + (lang==='fr' ? 'fragments' : lang==='es' ? 'fragmentos' : 'fragments'), W/2, H*0.55);
-  } else if (frags >= 5) {
+    ctx.fillText(frags + ' / 8 ' + (lang==='fr' ? 'fragments' : lang==='es' ? 'fragmentos' : 'fragments'), W/2, H*0.55);
+  } else if (frags >= 8) {
     ctx.fillStyle = '#6bff6b';
     ctx.font = '400 18px Montserrat, sans-serif';
     ctx.fillText(lang==='fr' ? '🪐 Neptune déjà débloquée !' : lang==='es' ? '🪐 ¡Neptuno ya desbloqueado!' : '🪐 Neptune already unlocked!', W/2, H*0.52);
@@ -447,9 +447,9 @@ function endSpaceGame(survived) {
     ctx.fillStyle = 'rgba(255,255,255,.5)';
     ctx.font = '400 16px Montserrat, sans-serif';
     const needed = lang==='fr'
-      ? `🧩 ${frags}/5 fragments — 50⭐ pour le prochain`
-      : lang==='es' ? `🧩 ${frags}/5 fragmentos — 50⭐ para el siguiente`
-      : `🧩 ${frags}/5 fragments — 50⭐ for the next one`;
+      ? `🧩 ${frags}/8 fragments — 100⭐ pour le prochain`
+      : lang==='es' ? `🧩 ${frags}/8 fragmentos — 100⭐ para el siguiente`
+      : `🧩 ${frags}/8 fragments — 100⭐ for the next one`;
     ctx.fillText(needed, W/2, H*0.52);
   }
 
