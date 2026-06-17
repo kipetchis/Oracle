@@ -1466,3 +1466,16 @@ const EPHEMERIS = {
     {id:"e732",cat:"world",fr:"Une petite ville à la frontière du Texas et du Nouveau-Mexique, Anthony, se proclame « capitale mondiale de l'année bissextile » et fête l'événement tous les quatre ans.",en:"A small town on the Texas-New Mexico border, Anthony, calls itself the 'Leap Year Capital of the World' and celebrates every four years.",es:"Una pequeña ciudad en la frontera de Texas y Nuevo México, Anthony, se proclama «capital mundial del año bisiesto» y lo celebra cada cuatro años.",src:"https://www.atlasobscura.com/"}
   ],
 };
+
+// ── Rotation annuelle ───────────────────────────────────
+// Chaque date est un tableau [série1, série2]. On le réduit ici au
+// fait de l'année courante, pour que tout le reste de l'app voie un
+// objet simple (entry.id, entry.fr, entry.en, entry.es, entry.src).
+(function(){
+  if (typeof EPHEMERIS === 'undefined') return;
+  var y = new Date().getFullYear();
+  for (var k in EPHEMERIS) {
+    var v = EPHEMERIS[k];
+    if (Array.isArray(v)) EPHEMERIS[k] = v[y % v.length];
+  }
+})();
