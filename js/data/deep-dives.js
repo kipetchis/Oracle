@@ -7576,4 +7576,1837 @@ const DEEP_DIVES = {
   en:["The ashes used come from the blessed palms of the previous year — they are burned and mixed with olive oil or holy water.","Lent lasts 46 days (40 days of fasting + 6 Sundays that don't count) — the number 40 refers to Jesus' 40 days in the desert.","Mardi Gras (Fat Tuesday), which precedes Ash Wednesday, is a feast of excess — the word carnival comes from the Latin carne levare (remove meat)."],
   es:["Las cenizas utilizadas provienen de las palmas bendecidas del año anterior — se queman y se mezclan con aceite de oliva o agua bendita.","La Cuaresma dura 46 días (40 días de ayuno + 6 domingos que no cuentan) — el número 40 remite a los 40 días de Jesús en el desierto.","El Martes de Carnaval que precede al Miércoles de Ceniza es una fiesta de excesos alimentarios — la palabra carnaval viene del latín carne levare (quitar la carne)."]
 },
+
+  // === ÉPHÉMÉRIDES SÉRIE 2 (rotation annuelle) ===
+  'e367': {
+    fr:["Ils promettaient à leurs dieux de rembourser leurs dettes.","Tenir parole devait leur attirer les faveurs divines.","Les Romains reprirent l'idée en l'honneur du dieu Janus."],
+    en:["They promised their gods to repay their debts.","Keeping their word was meant to earn divine favor.","The Romans took up the idea in honor of the god Janus."],
+    es:["Prometían a sus dioses saldar sus deudas.","Cumplir su palabra debía atraerles el favor divino.","Los romanos retomaron la idea en honor al dios Jano."]
+  },
+  'e368': {
+    fr:["Une petite cuillère en gallium fond si on la plonge dans le thé chaud.","Il reste pourtant solide à température ambiante normale.","On l'utilise dans l'électronique et certains semi-conducteurs."],
+    en:["A gallium spoon melts if you dip it into hot tea.","Yet it stays solid at normal room temperature.","It's used in electronics and some semiconductors."],
+    es:["Una cucharilla de galio se funde si se mete en té caliente.","Sin embargo, es sólido a temperatura ambiente normal.","Se usa en electrónica y algunos semiconductores."]
+  },
+  'e369': {
+    fr:["Le mathématicien Edward Kasner cherchait un nom pour ce nombre énorme.","Le moteur de recherche Google tire son nom d'une variante de ce mot.","Un « googolplex » est un 1 suivi d'un googol de zéros."],
+    en:["Mathematician Edward Kasner wanted a name for this huge number.","The search engine Google is named after a variant of this word.","A 'googolplex' is a 1 followed by a googol of zeros."],
+    es:["El matemático Edward Kasner buscaba un nombre para este número enorme.","El buscador Google debe su nombre a una variante de esta palabra.","Un «googolplex» es un 1 seguido de un googol de ceros."]
+  },
+  'e370': {
+    fr:["On le surnomme parfois « la Venise du Nord ».","De petits ponts en bois relient les maisons et les jardins.","Le silence n'y est troublé que par les bateaux électriques."],
+    en:["It's sometimes nicknamed the 'Venice of the North.'","Small wooden bridges link the houses and gardens.","The quiet is broken only by electric boats."],
+    es:["A veces se le apoda «la Venecia del Norte».","Pequeños puentes de madera unen las casas y los jardines.","El silencio solo lo rompen las barcas eléctricas."]
+  },
+  'e371': {
+    fr:["Étant strictement carnivores, le sucre ne leur est d'aucune utilité.","Un gène clé du goût sucré est inactif chez eux.","Quand un chat aime un dessert, c'est souvent pour le gras, pas le sucre."],
+    en:["As strict carnivores, sugar is of no use to them.","A key sweet-taste gene is inactive in cats.","When a cat likes a dessert, it's often for the fat, not the sugar."],
+    es:["Al ser estrictamente carnívoros, el azúcar no les sirve.","Un gen clave del sabor dulce está inactivo en ellos.","Cuando a un gato le gusta un postre, suele ser por la grasa, no el azúcar."]
+  },
+  'e372': {
+    fr:["Le fer prend plus de place quand sa température monte.","En hiver, la tour se rétracte d'autant.","Elle s'incline aussi légèrement du côté opposé au Soleil."],
+    en:["Iron takes up more space as its temperature rises.","In winter, the tower shrinks back by the same amount.","It also leans slightly away from the Sun."],
+    es:["El hierro ocupa más espacio cuando sube su temperatura.","En invierno, la torre se retrae otro tanto.","También se inclina ligeramente al lado opuesto al Sol."]
+  },
+  'e373': {
+    fr:["La forme cubique empêche les crottes de rouler hors de ses marquages.","Elle se forme grâce à l'élasticité variable de ses intestins.","Le wombat dépose ainsi ses repères sur des points hauts."],
+    en:["The cube shape keeps the droppings from rolling off its markers.","It forms thanks to the varying elasticity of its intestines.","The wombat places these markers on high points."],
+    es:["La forma cúbica evita que los excrementos rueden de sus marcas.","Se forma gracias a la elasticidad variable de sus intestinos.","El wómbat coloca así sus señales en puntos altos."]
+  },
+  'e374': {
+    fr:["La plupart descendent des mutins du navire Bounty.","Le territoire est si isolé qu'on n'y accède que par bateau, en plusieurs jours.","Sa minuscule population vote pourtant et possède un gouvernement local."],
+    en:["Most descend from the mutineers of the ship Bounty.","The territory is so remote it's reached only by boat, over several days.","Its tiny population still votes and has a local government."],
+    es:["La mayoría descienden de los amotinados del barco Bounty.","El territorio es tan aislado que solo se llega por barco, en varios días.","Su minúscula población vota y tiene un gobierno local."]
+  },
+  'e375': {
+    fr:["En néerlandais, c'est une « queue de singe ».","En italien, on l'appelle « chiocciola », l'escargot.","En français, son nom officiel est « arobase »."],
+    en:["In Dutch, it's a 'monkey tail.'","In Italian, it's called 'chiocciola,' the snail.","In French, its official name is 'arobase.'"],
+    es:["En neerlandés es una «cola de mono».","En italiano se llama «chiocciola», el caracol.","En francés, su nombre oficial es «arobase»."]
+  },
+  'e376': {
+    fr:["On avait lâché des centaines de lapins pour qu'il les chasse.","Mais les lapins, élevés en captivité, foncèrent vers lui pour réclamer à manger.","L'empereur dut battre en retraite vers sa voiture."],
+    en:["Hundreds of rabbits had been released for him to hunt.","But the rabbits, raised in captivity, charged at him expecting food.","The emperor had to retreat to his carriage."],
+    es:["Se habían soltado cientos de conejos para que los cazara.","Pero los conejos, criados en cautividad, corrieron hacia él pidiendo comida.","El emperador tuvo que retirarse a su carruaje."]
+  },
+  'e377': {
+    fr:["Ce bois rouge précieux servait à teindre les tissus.","Les premiers colons en exportaient en grande quantité.","Le pays a donc été baptisé d'après sa première ressource."],
+    en:["This precious red wood was used to dye fabrics.","The early colonists exported it in large amounts.","So the country was named after its first resource."],
+    es:["Esta preciosa madera roja servía para teñir telas.","Los primeros colonos la exportaban en gran cantidad.","Así, el país recibió el nombre de su primer recurso."]
+  },
+  'e378': {
+    fr:["Couler un tel volume de béton d'un coup l'aurait fait fissurer en refroidissant.","Les ingénieurs l'ont donc coulé en blocs parcourus de tuyaux réfrigérants.","Achevé en 1936, il alimente toujours des millions de personnes en électricité."],
+    en:["Pouring such a volume of concrete at once would have cracked it as it cooled.","Engineers poured it in blocks threaded with cooling pipes.","Finished in 1936, it still powers millions of people."],
+    es:["Verter tal volumen de hormigón de golpe lo habría agrietado al enfriarse.","Los ingenieros lo vertieron en bloques con tuberías de refrigeración.","Terminada en 1936, aún da electricidad a millones de personas."]
+  },
+  'e379': {
+    fr:["L'enseignement à Oxford remonte à la fin du XIe siècle.","L'Empire aztèque s'est formé au XIVe siècle.","Oxford est l'une des plus anciennes universités encore en activité."],
+    en:["Teaching at Oxford dates back to the late 11th century.","The Aztec Empire formed in the 14th century.","Oxford is one of the oldest universities still running."],
+    es:["La enseñanza en Oxford se remonta a finales del siglo XI.","El Imperio azteca se formó en el siglo XIV.","Oxford es una de las universidades más antiguas aún activas."]
+  },
+  'e380': {
+    fr:["Il comprend cinq voyelles et huit consonnes.","Il a été fixé par des missionnaires au XIXe siècle.","Cela donne une langue très riche en voyelles."],
+    en:["It has five vowels and eight consonants.","It was set down by missionaries in the 19th century.","This gives a language very rich in vowels."],
+    es:["Tiene cinco vocales y ocho consonantes.","Lo fijaron misioneros en el siglo XIX.","Esto da una lengua muy rica en vocales."]
+  },
+  'e381': {
+    fr:["Sans gravité, l'air chaud ne monte plus pour étirer la flamme.","Le feu brûle alors plus lentement et plus proprement.","La NASA étudie ces flammes pour mieux comprendre la combustion."],
+    en:["Without gravity, hot air no longer rises to stretch the flame.","The fire then burns more slowly and more cleanly.","NASA studies these flames to better understand combustion."],
+    es:["Sin gravedad, el aire caliente ya no sube para estirar la llama.","El fuego arde entonces más despacio y más limpio.","La NASA estudia estas llamas para entender mejor la combustión."]
+  },
+  'e382': {
+    fr:["Cette masse est répartie en gouttelettes minuscules et dispersées.","Chaque gouttelette est si légère qu'elle flotte dans l'air ascendant.","Le nuage « tient » donc en l'air malgré son poids colossal."],
+    en:["This mass is spread across tiny, scattered droplets.","Each droplet is so light it floats on rising air.","So the cloud 'stays up' despite its colossal weight."],
+    es:["Esa masa se reparte en gotitas diminutas y dispersas.","Cada gotita es tan ligera que flota en el aire ascendente.","Así la nube «se sostiene» pese a su peso colosal."]
+  },
+  'e383': {
+    fr:["Le caillou sert ensuite à bâtir le nid.","Chez certaines espèces, le plus beau galet emporte la décision.","Des vols de cailloux entre voisins sont parfois observés."],
+    en:["The pebble is then used to build the nest.","In some species, the finest stone wins the decision.","Pebble thefts between neighbors are sometimes seen."],
+    es:["El guijarro sirve luego para construir el nido.","En algunas especies, la mejor piedra decide.","A veces se observan robos de guijarros entre vecinos."]
+  },
+  'e384': {
+    fr:["Il est en langue maorie et raconte une petite histoire.","Il se termine souvent abrégé sur les panneaux.","Sa traduction évoque un homme jouant de la flûte à un être aimé."],
+    en:["It is in the Maori language and tells a little story.","It is often shortened on road signs.","Its translation evokes a man playing a flute to a loved one."],
+    es:["Está en lengua maorí y cuenta una pequeña historia.","Suele abreviarse en los carteles.","Su traducción evoca a un hombre tocando la flauta a un ser querido."]
+  },
+  'e385': {
+    fr:["Des personnes meurent en secouant l'appareil qui se renverse sur elles.","Les attaques mortelles de requins sont en réalité très rares.","Notre peur des dangers est souvent mal calibrée."],
+    en:["People die shaking the machine, which tips over onto them.","Fatal shark attacks are in fact very rare.","Our fear of dangers is often poorly calibrated."],
+    es:["Hay personas que mueren al sacudir la máquina, que les cae encima.","Los ataques mortales de tiburón son en realidad muy raros.","Nuestro miedo a los peligros suele estar mal calibrado."]
+  },
+  'e386': {
+    fr:["Cette forme leur permet de surveiller les prédateurs sur presque 320°.","Beaucoup d'animaux brouteurs partagent cette particularité.","Les pupilles restent horizontales même quand l'animal baisse la tête."],
+    en:["This shape lets them watch for predators across nearly 320°.","Many grazing animals share this feature.","The pupils stay horizontal even when the animal lowers its head."],
+    es:["Esta forma les permite vigilar a los depredadores en casi 320°.","Muchos animales que pastan comparten esta particularidad.","Las pupilas permanecen horizontales aunque el animal baje la cabeza."]
+  },
+  'e387': {
+    fr:["Le sculpteur proposait une paysanne égyptienne tenant une torche.","Le projet, jugé trop coûteux, fut abandonné.","L'idée fut ensuite retravaillée pour devenir le cadeau à New York."],
+    en:["The sculptor proposed an Egyptian peasant woman holding a torch.","The project, deemed too costly, was dropped.","The idea was then reworked into the gift to New York."],
+    es:["El escultor proponía una campesina egipcia con una antorcha.","El proyecto, considerado demasiado caro, se abandonó.","La idea se reelaboró luego como el regalo a Nueva York."]
+  },
+  'e388': {
+    fr:["Ses murs absorbent presque tout le son.","Le niveau sonore y est inférieur au silence ressenti normalement.","Y rester longtemps devient désorientant pour la plupart des gens."],
+    en:["Its walls absorb almost all sound.","The sound level is below normally perceived silence.","Staying long becomes disorienting for most people."],
+    es:["Sus paredes absorben casi todo el sonido.","El nivel de ruido es inferior al silencio que percibimos normalmente.","Permanecer mucho tiempo resulta desorientador para la mayoría."]
+  },
+  'e389': {
+    fr:["Ils savaient ensuite généraliser à des œuvres jamais vues.","L'expérience a été récompensée par un prix scientifique humoristique.","Elle montre des capacités visuelles insoupçonnées chez l'oiseau."],
+    en:["They could then generalize to works they had never seen.","The experiment won a humorous science prize.","It reveals unsuspected visual abilities in birds."],
+    es:["Luego sabían generalizar a obras nunca vistas.","El experimento ganó un premio científico humorístico.","Revela capacidades visuales insospechadas en el ave."]
+  },
+  'e390': {
+    fr:["Le « y » y joue le rôle de voyelle.","Beaucoup de langues utilisent ainsi des semi-voyelles.","Ces curiosités font le bonheur des amateurs de jeux de mots."],
+    en:["The 'y' plays the role of a vowel here.","Many languages use such semi-vowels.","These oddities delight word-game fans."],
+    es:["La «y» hace de vocal aquí.","Muchas lenguas usan así semivocales.","Estas curiosidades hacen las delicias de los aficionados a los juegos de palabras."]
+  },
+  'e391': {
+    fr:["Les instruments laissés par les missions Apollo les ont détectés.","Certains durent étonnamment longtemps, faute d'eau pour amortir.","Ils sont liés aux marées terrestres et au refroidissement de la Lune."],
+    en:["Instruments left by the Apollo missions detected them.","Some last surprisingly long, with no water to dampen them.","They are linked to Earth's tides and the Moon's cooling."],
+    es:["Los instrumentos dejados por las misiones Apolo los detectaron.","Algunos duran sorprendentemente mucho, sin agua que los amortigüe.","Se deben a las mareas terrestres y al enfriamiento de la Luna."]
+  },
+  'e392': {
+    fr:["Elle contient une substance, la myristicine, dangereuse en excès.","Quelques cuillères suffisent à provoquer un malaise sérieux.","En cuisine, les quantités utilisées restent parfaitement sûres."],
+    en:["It contains a substance, myristicin, dangerous in excess.","A few spoonfuls are enough to cause serious illness.","In cooking, the amounts used remain perfectly safe."],
+    es:["Contiene una sustancia, la miristicina, peligrosa en exceso.","Unas cucharadas bastan para provocar un malestar serio.","En la cocina, las cantidades usadas son perfectamente seguras."]
+  },
+  'e393': {
+    fr:["Un énorme morceau s'en est détaché avant même son installation.","Elle pèse près de 200 tonnes.","Elle trône aujourd'hui, fêlée, dans l'enceinte du Kremlin."],
+    en:["A huge piece broke off before it was ever installed.","It weighs nearly 200 tons.","It now sits, cracked, within the Kremlin grounds."],
+    es:["Un enorme trozo se desprendió antes de instalarla.","Pesa casi 200 toneladas.","Hoy descansa, agrietada, dentro del Kremlin."]
+  },
+  'e394': {
+    fr:["Ses principaux organes sont regroupés dans le céphalothorax.","Son système nerveux est, lui, réparti tout le long du corps.","Beaucoup de crustacés ont une anatomie très différente de la nôtre."],
+    en:["Its main organs are grouped in the cephalothorax.","Its nervous system, by contrast, runs along the whole body.","Many crustaceans have anatomy very unlike ours."],
+    es:["Sus órganos principales se agrupan en el cefalotórax.","Su sistema nervioso, en cambio, recorre todo el cuerpo.","Muchos crustáceos tienen una anatomía muy distinta de la nuestra."]
+  },
+  'e395': {
+    fr:["Son climat instable empêcherait le cycle de vie du moustique.","Les pays voisins, eux, en sont pourtant remplis.","Les scientifiques ne sont pas totalement sûrs de l'explication."],
+    en:["Its unstable climate is thought to block the mosquito's life cycle.","Neighboring countries, by contrast, are full of them.","Scientists are not entirely sure of the explanation."],
+    es:["Su clima inestable impediría el ciclo de vida del mosquito.","Los países vecinos, en cambio, están llenos de ellos.","Los científicos no están del todo seguros de la explicación."]
+  },
+  'e396': {
+    fr:["La salive entame la digestion avant même l'estomac.","Elle protège aussi les dents et facilite la parole.","On en avale l'essentiel sans même y penser."],
+    en:["Saliva begins digestion even before the stomach.","It also protects the teeth and helps us speak.","We swallow most of it without even noticing."],
+    es:["La saliva inicia la digestión antes incluso del estómago.","También protege los dientes y facilita el habla.","Tragamos la mayor parte sin darnos cuenta."]
+  },
+  'e397': {
+    fr:["Leur rythme cardiaque grimpe quand elles sont isolées d'une amie.","Elles passent plus de temps avec certaines congénères qu'avec d'autres.","Cela révèle une vie sociale plus riche qu'on ne le pensait."],
+    en:["Their heart rate rises when isolated from a friend.","They spend more time with certain herd-mates than others.","It reveals a richer social life than once believed."],
+    es:["Su ritmo cardíaco sube cuando se las aísla de una amiga.","Pasan más tiempo con ciertas compañeras que con otras.","Revela una vida social más rica de lo que se pensaba."]
+  },
+  'e398': {
+    fr:["Le changement a eu lieu le 3 septembre à 5 heures du matin.","Tout le pays a dû s'arrêter puis repartir du bon côté.","Contre toute attente, les accidents ont baissé les jours suivants, par prudence accrue."],
+    en:["The change happened on September 3rd at 5 a.m.","The whole country had to stop, then set off on the correct side.","Surprisingly, accidents dropped in the following days, due to extra caution."],
+    es:["El cambio ocurrió el 3 de septiembre a las 5 de la mañana.","Todo el país tuvo que detenerse y arrancar por el lado correcto.","Sorprendentemente, los accidentes bajaron los días siguientes, por mayor prudencia."]
+  },
+  'e399': {
+    fr:["Cette salamandre mexicaine garde toute sa vie sa forme juvénile.","Les scientifiques l'étudient pour comprendre la régénération.","Elle est pourtant en danger critique dans la nature."],
+    en:["This Mexican salamander keeps its juvenile form all its life.","Scientists study it to understand regeneration.","Yet it is critically endangered in the wild."],
+    es:["Esta salamandra mexicana conserva su forma juvenil toda la vida.","Los científicos la estudian para entender la regeneración.","Sin embargo, está en peligro crítico en la naturaleza."]
+  },
+  'e400': {
+    fr:["Le son voyage plus vite dans l'hélium, plus lentement dans ce gaz lourd.","La hauteur de la voix dépend de cette vitesse.","Inhaler ces gaz est cependant dangereux : ils chassent l'oxygène."],
+    en:["Sound travels faster in helium, slower in this heavy gas.","The pitch of the voice depends on that speed.","Inhaling these gases is dangerous, though: they push out oxygen."],
+    es:["El sonido viaja más rápido en el helio, más lento en este gas pesado.","El tono de la voz depende de esa velocidad.","Inhalar estos gases es peligroso: desplazan el oxígeno."]
+  },
+  'e401': {
+    fr:["On y compte plus de deux millions de lacs.","Ils couvrent une part énorme du territoire.","Beaucoup n'ont même pas de nom officiel."],
+    en:["There are more than two million lakes.","They cover a huge share of the territory.","Many don't even have an official name."],
+    es:["Hay más de dos millones de lagos.","Cubren una parte enorme del territorio.","Muchos ni siquiera tienen nombre oficial."]
+  },
+  'e402': {
+    fr:["Il combine les mots néerlandais pour « gonflé » et « citron ».","Le fruit nous est venu d'Asie via les comptoirs européens.","Beaucoup de noms de fruits voyagent ainsi de langue en langue."],
+    en:["It combines the Dutch words for 'swollen' and 'lemon'.","The fruit reached us from Asia via European trading posts.","Many fruit names travel like this from language to language."],
+    es:["Combina las palabras neerlandesas para «hinchado» y «limón».","La fruta nos llegó de Asia por los puestos comerciales europeos.","Muchos nombres de frutas viajan así de lengua en lengua."]
+  },
+  'e403': {
+    fr:["Cette planète, 55 Cancri e, est bien plus grosse que la Terre.","Sa composition reste une hypothèse à confirmer.","Elle orbite si près de son étoile qu'une année y dure moins d'un jour terrestre."],
+    en:["This planet, 55 Cancri e, is far larger than Earth.","Its composition is still a hypothesis to confirm.","It orbits so close to its star that a year lasts less than an Earth day."],
+    es:["Este planeta, 55 Cancri e, es mucho mayor que la Tierra.","Su composición sigue siendo una hipótesis por confirmar.","Orbita tan cerca de su estrella que un año dura menos de un día terrestre."]
+  },
+  'e404': {
+    fr:["Son inventeur américain voulait juste se lever tôt.","Il était impossible de régler une autre heure.","Les réveils ajustables ne sont venus que bien plus tard."],
+    en:["Its American inventor just wanted to get up early.","It was impossible to set any other time.","Adjustable alarm clocks came only much later."],
+    es:["Su inventor estadounidense solo quería levantarse temprano.","Era imposible ajustar otra hora.","Los despertadores regulables llegaron mucho más tarde."]
+  },
+  'e405': {
+    fr:["Le mot mêle des racines grecques et latines pour « cacahuète » et « beurre ».","Il s'agit plus d'une curiosité linguistique que d'une vraie phobie.","Le grec et le latin servent encore à forger des mots savants."],
+    en:["The word blends Greek and Latin roots for 'peanut' and 'butter'.","It's more of a linguistic curiosity than a real phobia.","Greek and Latin still serve to coin scholarly words."],
+    es:["La palabra mezcla raíces griegas y latinas para «cacahuete» y «mantequilla».","Es más una curiosidad lingüística que una fobia real.","El griego y el latín aún sirven para acuñar palabras cultas."]
+  },
+  'e406': {
+    fr:["Une musique lente réduirait leur stress.","Des morceaux rapides, eux, n'ont pas cet effet.","C'est un exemple du lien entre bien-être animal et production."],
+    en:["Slow music is thought to lower their stress.","Fast tunes, by contrast, have no such effect.","It's an example of the link between animal welfare and output."],
+    es:["La música lenta reduciría su estrés.","Las piezas rápidas, en cambio, no tienen ese efecto.","Es un ejemplo del vínculo entre el bienestar animal y la producción."]
+  },
+  'e407': {
+    fr:["La vague de bière a détruit des habitations.","On parle encore du « Grand Déluge de bière de Londres ».","Les cuves de l'époque pouvaient contenir des volumes énormes."],
+    en:["The wave of beer destroyed dwellings.","People still speak of the 'London Beer Flood'.","Vats of the time could hold enormous volumes."],
+    es:["La ola de cerveza destruyó viviendas.","Aún se habla de la «Gran Inundación de Cerveza de Londres».","Las cubas de la época podían contener volúmenes enormes."]
+  },
+  'e408': {
+    fr:["Une fine couche d'oxyde en surface crée ces couleurs.","Leurs formes en escalier viennent d'une croissance régulière.","Le bismuth est par ailleurs très peu toxique pour un métal lourd."],
+    en:["A thin oxide layer on the surface creates these colors.","Their stair-step shapes come from regular growth.","Bismuth is also unusually non-toxic for a heavy metal."],
+    es:["Una fina capa de óxido en la superficie crea esos colores.","Sus formas escalonadas vienen de un crecimiento regular.","El bismuto es además poco tóxico para ser un metal pesado."]
+  },
+  'e409': {
+    fr:["Dans la journée, la gravité comprime les disques de la colonne.","La nuit, allongé, ces disques se réhydratent et se détendent.","Le matin, on retrouve donc sa taille maximale."],
+    en:["During the day, gravity compresses the spinal discs.","At night, lying down, these discs rehydrate and relax.","So in the morning you regain your maximum height."],
+    es:["Durante el día, la gravedad comprime los discos de la columna.","De noche, tumbado, esos discos se rehidratan y relajan.","Por la mañana recuperas tu estatura máxima."]
+  },
+  'e410': {
+    fr:["Le permafrost conserve les corps presque intacts.","Des virus anciens pourraient même y survivre.","Les habitants en fin de vie sont donc transférés sur le continent."],
+    en:["The permafrost preserves bodies almost intact.","Ancient viruses could even survive there.","Residents near the end of life are moved to the mainland."],
+    es:["El permafrost conserva los cuerpos casi intactos.","Incluso virus antiguos podrían sobrevivir allí.","Los habitantes al final de su vida se trasladan al continente."]
+  },
+  'e411': {
+    fr:["On l'invoquait pour la douceur du miel et la santé des ruches.","Il est associé à de nombreuses causes très différentes.","Sa fête des amoureux ne s'est imposée que bien plus tard."],
+    en:["He was invoked for the sweetness of honey and healthy hives.","He is linked to many very different causes.","His lovers' feast day only took hold much later."],
+    es:["Se le invocaba por la dulzura de la miel y la salud de las colmenas.","Está asociado a muchas causas muy diferentes.","Su fiesta de los enamorados solo se impuso mucho después."]
+  },
+  'e412': {
+    fr:["« Strengths » aligne huit consonnes pour une seule voyelle.","L'anglais permet des grappes de consonnes inhabituelles.","Le français, lui, découpe davantage les syllabes."],
+    en:["'Strengths' lines up eight consonants around a single vowel.","English allows unusual consonant clusters.","French, by contrast, breaks words into more syllables."],
+    es:["«Strengths» alinea ocho consonantes en torno a una sola vocal.","El inglés permite grupos de consonantes inusuales.","El francés, en cambio, divide más las sílabas."]
+  },
+  'e413': {
+    fr:["Elle utilise ce caillou comme outil pour briser les coquillages.","Chaque loutre garde souvent le même galet longtemps.","Elle se nourrit en flottant sur le dos, l'outil posé sur le ventre."],
+    en:["It uses this rock as a tool to crack open shellfish.","Each otter often keeps the same stone for a long time.","It feeds floating on its back, the tool resting on its belly."],
+    es:["Usa esa piedra como herramienta para abrir mariscos.","Cada nutria suele conservar la misma piedra mucho tiempo.","Se alimenta flotando de espaldas, con la herramienta sobre el vientre."]
+  },
+  'e414': {
+    fr:["La planète tourne très lentement sur elle-même.","Mais elle file vite autour du Soleil.","Le jeu entre les deux donne ce résultat surprenant."],
+    en:["The planet spins very slowly on its axis.","But it races quickly around the Sun.","The interplay of the two gives this surprising result."],
+    es:["El planeta gira muy despacio sobre sí mismo.","Pero corre rápido alrededor del Sol.","El juego entre ambos da este resultado sorprendente."]
+  },
+  'e415': {
+    fr:["Le porteur franchit un parcours d'obstacles avec sa partenaire sur le dos.","Le prix est, traditionnellement, le poids de la partenaire en bière.","La discipline a essaimé dans plusieurs pays."],
+    en:["The carrier runs an obstacle course with his partner on his back.","The prize is, traditionally, the partner's weight in beer.","The sport has spread to several countries."],
+    es:["El porteador recorre una pista de obstáculos con su pareja a la espalda.","El premio es, tradicionalmente, el peso de la pareja en cerveza.","La disciplina se ha extendido a varios países."]
+  },
+  'e416': {
+    fr:["Il a perdu l'estomac au cours de l'évolution.","Son régime de petites proies molles ne nécessite pas de poche acide.","C'est l'un des rares mammifères dans ce cas."],
+    en:["It lost its stomach over the course of evolution.","Its diet of small, soft prey needs no acid pouch.","It's one of the few mammals in this situation."],
+    es:["Perdió el estómago a lo largo de la evolución.","Su dieta de pequeñas presas blandas no necesita una bolsa ácida.","Es uno de los pocos mamíferos en este caso."]
+  },
+  'e417': {
+    fr:["Sa paroi penche même légèrement vers l'intérieur.","Elle attire les grimpeurs les plus chevronnés.","Le site est très isolé, en pleine région arctique."],
+    en:["Its face even leans slightly inward.","It draws the most experienced climbers.","The site is very remote, deep in the Arctic."],
+    es:["Su pared incluso se inclina ligeramente hacia dentro.","Atrae a los escaladores más expertos.","El lugar es muy remoto, en plena región ártica."]
+  },
+  'e418': {
+    fr:["La scène a eu lieu dans un supermarché de l'Ohio.","Le paquet est aujourd'hui conservé dans un musée.","Le code-barres a depuis transformé tout le commerce."],
+    en:["The scene took place in an Ohio supermarket.","The pack is now kept in a museum.","The barcode has since transformed all of commerce."],
+    es:["La escena ocurrió en un supermercado de Ohio.","El paquete se conserva hoy en un museo.","El código de barras ha transformado desde entonces todo el comercio."]
+  },
+  'e419': {
+    fr:["L'usage stimule la circulation et la pousse de l'ongle.","Les ongles des mains poussent plus vite que ceux des pieds.","Ils poussent aussi plus vite en été qu'en hiver."],
+    en:["Use stimulates circulation and nail growth.","Fingernails grow faster than toenails.","They also grow faster in summer than in winter."],
+    es:["El uso estimula la circulación y el crecimiento de la uña.","Las uñas de las manos crecen más rápido que las de los pies.","También crecen más rápido en verano que en invierno."]
+  },
+  'e420': {
+    fr:["Le terme serait né chez des ingénieurs du téléphone.","Le préfixe « octo » renvoie à ses huit pointes.","On l'appelle aussi « dièse » ou, récemment, « hashtag »."],
+    en:["The term reportedly arose among telephone engineers.","The prefix 'octo' refers to its eight points.","It's also called 'pound', 'sharp', or, lately, 'hashtag'."],
+    es:["El término habría surgido entre ingenieros de telefonía.","El prefijo «octo» alude a sus ocho puntas.","También se llama «almohadilla» o, últimamente, «hashtag»."]
+  },
+  'e421': {
+    fr:["Leurs yeux sont des tubes fixes, trop gros pour pivoter.","Des vaisseaux spéciaux évitent de couper l'irrigation du cerveau quand ils tournent la tête.","Cette vision fixe leur donne une perception des distances très précise."],
+    en:["Their eyes are fixed tubes, too large to swivel.","Special blood vessels keep the brain supplied as they turn their head.","This fixed gaze gives them very precise depth perception."],
+    es:["Sus ojos son tubos fijos, demasiado grandes para girar.","Vasos especiales evitan cortar el riego del cerebro al girar la cabeza.","Esta mirada fija les da una percepción de distancias muy precisa."]
+  },
+  'e422': {
+    fr:["Cela se produit à une température et une pression bien précises.","Les trois états — solide, liquide, gaz — coexistent alors.","Ce point sert de repère pour définir les échelles de température."],
+    en:["This happens at one precise temperature and pressure.","The three states — solid, liquid, gas — then coexist.","This point is used as a reference to define temperature scales."],
+    es:["Esto ocurre a una temperatura y presión muy precisas.","Los tres estados — sólido, líquido, gas — coexisten entonces.","Este punto sirve de referencia para definir las escalas de temperatura."]
+  },
+  'e423': {
+    fr:["La noix pend sous ce fruit, à l'extérieur.","Sa coque contient une résine irritante qu'il faut éliminer.","La pomme de cajou est fragile et se transporte mal."],
+    en:["The nut hangs below this fruit, on the outside.","Its shell holds an irritating resin that must be removed.","The cashew apple is fragile and travels poorly."],
+    es:["La nuez cuelga bajo ese fruto, por fuera.","Su cáscara contiene una resina irritante que hay que eliminar.","La manzana de cajú es frágil y se transporta mal."]
+  },
+  'e424': {
+    fr:["En morse, c'est trois points, trois traits, trois points.","Cette suite est facile à émettre et à reconnaître.","Les phrases comme « Save Our Souls » ont été inventées après coup."],
+    en:["In Morse, it's three dots, three dashes, three dots.","This sequence is easy to send and to recognize.","Phrases like 'Save Our Souls' were invented afterward."],
+    es:["En morse son tres puntos, tres rayas, tres puntos.","Esta secuencia es fácil de emitir y reconocer.","Frases como «Save Our Souls» se inventaron después."]
+  },
+  'e425': {
+    fr:["On y retrace l'invention des nouilles instantanées en 1958.","Les visiteurs personnalisent leur sachet et son décor.","Le musée célèbre un aliment devenu mondial."],
+    en:["It traces the 1958 invention of instant noodles.","Visitors customize their own pack and its design.","The museum celebrates a food that went global."],
+    es:["Recorre la invención de los fideos instantáneos en 1958.","Los visitantes personalizan su paquete y su diseño.","El museo celebra un alimento que se volvió mundial."]
+  },
+  'e426': {
+    fr:["Cette statue géante de bronze dominait un port grec.","Renversée, elle resta couchée au sol pendant des siècles.","On la dit à l'origine de l'idée de la statue de la Liberté."],
+    en:["This giant bronze statue towered over a Greek harbor.","Once toppled, it lay on the ground for centuries.","It is said to have inspired the idea of the Statue of Liberty."],
+    es:["Esta estatua gigante de bronce dominaba un puerto griego.","Derribada, quedó tendida en el suelo durante siglos.","Se dice que inspiró la idea de la Estatua de la Libertad."]
+  },
+  'e427': {
+    fr:["La crevette entre même dans la gueule des prédateurs sans crainte.","Le poissons nettoyé ne la mange pas : le service vaut mieux qu'un repas.","C'est un bel exemple de coopération entre espèces."],
+    en:["The shrimp even enters predators' mouths without fear.","The cleaned fish won't eat it: the service beats a meal.","It's a fine example of cooperation between species."],
+    es:["El camarón entra incluso en la boca de los depredadores sin miedo.","El pez limpiado no se lo come: el servicio vale más que una comida.","Es un buen ejemplo de cooperación entre especies."]
+  },
+  'e428': {
+    fr:["C'est pourquoi on en faisait les filaments des ampoules.","Aucun autre métal pur n'a un point de fusion aussi élevé.","Son nom vient du suédois pour « pierre lourde »."],
+    en:["That's why it was used for light-bulb filaments.","No other pure metal has such a high melting point.","Its name comes from the Swedish for 'heavy stone'."],
+    es:["Por eso se usaba en los filamentos de las bombillas.","Ningún otro metal puro tiene un punto de fusión tan alto.","Su nombre viene del sueco para «piedra pesada»."]
+  },
+  'e429': {
+    fr:["La Bolivie a perdu son littoral lors d'une guerre au XIXe siècle.","Elle entretient pourtant toujours une marine, sur un lac et des fleuves.","Être enclavé complique beaucoup le commerce d'un pays."],
+    en:["Bolivia lost its coastline in a 19th-century war.","It still keeps a navy, on a lake and rivers.","Being landlocked greatly complicates a country's trade."],
+    es:["Bolivia perdió su litoral en una guerra del siglo XIX.","Aun así, mantiene una armada, en un lago y ríos.","No tener salida al mar complica mucho el comercio de un país."]
+  },
+  'e430': {
+    fr:["« Popty » signifie « four » en gallois.","« Ping » imite le son de fin de cuisson.","Le terme officiel est plus sérieux, mais celui-ci est resté populaire."],
+    en:["'Popty' means 'oven' in Welsh.","'Ping' mimics the end-of-cooking sound.","The official term is more serious, but this one stayed popular."],
+    es:["«Popty» significa «horno» en galés.","«Ping» imita el sonido de fin de cocción.","El término oficial es más serio, pero este se quedó popular."]
+  },
+  'e431': {
+    fr:["L'énorme pression transformerait le carbone de l'atmosphère en diamants.","Ces diamants couleraient lentement vers le cœur des planètes.","Des expériences en laboratoire ont recréé ce phénomène."],
+    en:["The enormous pressure would turn atmospheric carbon into diamonds.","These diamonds would slowly sink toward the planets' cores.","Lab experiments have recreated this phenomenon."],
+    es:["La enorme presión convertiría el carbono de la atmósfera en diamantes.","Estos diamantes se hundirían lentamente hacia el núcleo de los planetas.","Experimentos de laboratorio han recreado este fenómeno."]
+  },
+  'e432': {
+    fr:["Les bulles de gaz restent emprisonnées dans la pâte.","On les appelle d'ailleurs les « yeux » du fromage.","Moins de bactéries, c'est moins de trous : la taille se contrôle."],
+    en:["The gas bubbles stay trapped in the paste.","They are actually called the 'eyes' of the cheese.","Fewer bacteria means fewer holes: the size can be controlled."],
+    es:["Las burbujas de gas quedan atrapadas en la pasta.","De hecho, se les llama los «ojos» del queso.","Menos bacterias significa menos agujeros: el tamaño se controla."]
+  },
+  'e433': {
+    fr:["Darwin appelait cela « la plus humaine des expressions ».","Le rougissement est involontaire et difficile à cacher.","Il serait lié à notre vie sociale très développée."],
+    en:["Darwin called it 'the most human of expressions'.","Blushing is involuntary and hard to hide.","It is thought to be tied to our highly developed social life."],
+    es:["Darwin lo llamaba «la más humana de las expresiones».","El rubor es involuntario y difícil de ocultar.","Estaría ligado a nuestra vida social muy desarrollada."]
+  },
+  'e434': {
+    fr:["Il s'en sert pour racler sa nourriture comme une lime.","Certains escargots de mer en ont des dizaines de milliers.","Ce sont parmi les structures les plus dures du monde animal."],
+    en:["It uses it to scrape food like a file.","Some sea snails have tens of thousands of them.","These are among the hardest structures in the animal world."],
+    es:["La usa para raspar su comida como una lima.","Algunos caracoles marinos tienen decenas de miles.","Están entre las estructuras más duras del mundo animal."]
+  },
+  'e435': {
+    fr:["Ce revêtement poli reflétait la lumière comme un miroir.","Il a été arraché au fil des siècles pour construire ailleurs.","Les pyramides apparaissaient donc bien plus éclatantes qu'aujourd'hui."],
+    en:["This polished casing reflected light like a mirror.","It was stripped over the centuries to build elsewhere.","So the pyramids looked far more dazzling than they do today."],
+    es:["Este revestimiento pulido reflejaba la luz como un espejo.","Fue arrancado a lo largo de los siglos para construir en otros sitios.","Así, las pirámides parecían mucho más deslumbrantes que hoy."]
+  },
+  'e436': {
+    fr:["La viscosité de l'eau change avec la température.","Cela modifie la taille des bulles et donc le son.","Notre oreille distingue souvent les deux sans le savoir."],
+    en:["Water's viscosity changes with temperature.","This alters the size of the bubbles and thus the sound.","Our ear often tells the two apart without realizing it."],
+    es:["La viscosidad del agua cambia con la temperatura.","Esto altera el tamaño de las burbujas y por tanto el sonido.","Nuestro oído suele distinguir ambos sin saberlo."]
+  },
+  'e437': {
+    fr:["Aucun autre arbre ne poussait à des centaines de kilomètres.","Il servait de repère aux caravanes.","Il a hélas été abattu par un camion en 1973."],
+    en:["No other tree grew for hundreds of kilometers around.","It served as a landmark for caravans.","Sadly, it was knocked down by a truck in 1973."],
+    es:["Ningún otro árbol crecía en cientos de kilómetros a la redonda.","Servía de referencia a las caravanas.","Lamentablemente, fue derribado por un camión en 1973."]
+  },
+  'e438': {
+    fr:["Un muscle très puissant ferme l'entrée de leur estomac.","C'est pourquoi les coliques sont si dangereuses pour eux.","La nourriture ne peut circuler que dans un sens."],
+    en:["A very strong muscle seals the entrance to their stomach.","That's why colic is so dangerous for them.","Food can only travel one way."],
+    es:["Un músculo muy potente cierra la entrada de su estómago.","Por eso los cólicos son tan peligrosos para ellos.","La comida solo puede circular en un sentido."]
+  },
+  'e439': {
+    fr:["π est le rapport entre la circonférence et le diamètre d'un cercle.","Ses décimales ne s'arrêtent jamais et ne se répètent pas.","Les passionnés fêtent ce jour... souvent en mangeant une tarte (« pie »)."],
+    en:["π is the ratio of a circle's circumference to its diameter.","Its digits never end and never repeat.","Enthusiasts celebrate the day... often by eating pie."],
+    es:["π es la razón entre la circunferencia y el diámetro de un círculo.","Sus cifras no terminan nunca ni se repiten.","Los aficionados celebran el día... a menudo comiendo tarta («pie»)."]
+  },
+  'e440': {
+    fr:["Les Romains comptaient les jours à partir de repères, dont les ides.","Jules César y fut assassiné, ce qui rendit la date célèbre.","« Méfie-toi des ides de mars » vient d'une pièce de Shakespeare."],
+    en:["Romans counted days from fixed markers, including the Ides.","Julius Caesar was assassinated then, making the date famous.","'Beware the Ides of March' comes from a Shakespeare play."],
+    es:["Los romanos contaban los días desde puntos fijos, entre ellos los idus.","Julio César fue asesinado entonces, lo que hizo célebre la fecha.","«Cuídate de los idus de marzo» viene de una obra de Shakespeare."]
+  },
+  'e441': {
+    fr:["Le mot vient du grec pour « ruban ».","Le symbole a été introduit par un mathématicien au XVIIe siècle.","La même forme décrit certaines courbes mathématiques."],
+    en:["The word comes from the Greek for 'ribbon'.","The symbol was introduced by a mathematician in the 17th century.","The same shape describes certain mathematical curves."],
+    es:["La palabra viene del griego para «cinta».","El símbolo lo introdujo un matemático en el siglo XVII.","La misma forma describe ciertas curvas matemáticas."]
+  },
+  'e442': {
+    fr:["Il fut enlevé jeune et emmené comme esclave en Irlande.","Il y revint plus tard pour évangéliser l'île.","La légende du trèfle et des serpents chassés vint bien après."],
+    en:["He was kidnapped young and taken to Ireland as a slave.","He later returned to spread Christianity on the island.","The legend of the shamrock and banished snakes came much later."],
+    es:["Fue secuestrado joven y llevado como esclavo a Irlanda.","Más tarde regresó para evangelizar la isla.","La leyenda del trébol y las serpientes expulsadas vino mucho después."]
+  },
+  'e443': {
+    fr:["L'anglais regorge de noms de groupes pittoresques.","On parle aussi parfois d'un « bloom » de méduses.","Ces termes viennent souvent du vieux vocabulaire de la nature."],
+    en:["English is full of colorful collective nouns.","A 'bloom' of jellyfish is sometimes used too.","These terms often come from old nature vocabulary."],
+    es:["El inglés está lleno de nombres colectivos pintorescos.","También se usa a veces un «bloom» de medusas.","Estos términos vienen a menudo del viejo vocabulario de la naturaleza."]
+  },
+  'e444': {
+    fr:["Il ne « pourrit » pas comme la matière organique.","Heureusement, il se recycle sans perte de qualité.","Abandonné dans la nature, il reste donc des millénaires."],
+    en:["It does not 'rot' like organic matter.","Fortunately, it recycles with no loss of quality.","Left in nature, it therefore lasts for millennia."],
+    es:["No se «pudre» como la materia orgánica.","Por suerte, se recicla sin pérdida de calidad.","Abandonado en la naturaleza, permanece milenios."]
+  },
+  'e445': {
+    fr:["Le Soleil passe alors juste au-dessus de l'équateur.","Il y a deux équinoxes par an, au printemps et en automne.","Le mot signifie « nuit égale » en latin."],
+    en:["The Sun then passes directly over the equator.","There are two equinoxes a year, in spring and autumn.","The word means 'equal night' in Latin."],
+    es:["El Sol pasa entonces justo sobre el ecuador.","Hay dos equinoccios al año, en primavera y otoño.","La palabra significa «noche igual» en latín."]
+  },
+  'e446': {
+    fr:["La langue ne distingue que quelques goûts de base.","Tout le reste, l'« arôme », passe par le nez.","C'est pourquoi tout semble fade quand on est enrhumé."],
+    en:["The tongue only tells apart a few basic tastes.","Everything else, the 'aroma', comes through the nose.","That's why everything seems bland when you have a cold."],
+    es:["La lengua solo distingue unos pocos sabores básicos.","Todo lo demás, el «aroma», pasa por la nariz.","Por eso todo parece insípido cuando estás resfriado."]
+  },
+  'e447': {
+    fr:["Les premières carottes cultivées n'étaient pas orange.","Des cultivateurs néerlandais auraient favorisé la variété orange.","La couleur orange est due à des pigments, les carotènes."],
+    en:["The first cultivated carrots were not orange.","Dutch growers are said to have favored the orange variety.","The orange color comes from pigments called carotenes."],
+    es:["Las primeras zanahorias cultivadas no eran naranjas.","Cultivadores neerlandeses habrían favorecido la variedad naranja.","El color naranja se debe a pigmentos, los carotenos."]
+  },
+  'e448': {
+    fr:["Elle figure sur une tablette d'argile.","L'humour de toilette traverse manifestement les millénaires.","Beaucoup de blagues anciennes nous semblent encore familières."],
+    en:["It appears on a clay tablet.","Toilet humor clearly spans the millennia.","Many ancient jokes still feel familiar to us."],
+    es:["Aparece en una tablilla de arcilla.","El humor escatológico atraviesa claramente los milenios.","Muchos chistes antiguos aún nos resultan familiares."]
+  },
+  'e449': {
+    fr:["Ce nom sinistre vient de vieilles croyances sur ces oiseaux.","Les corbeaux étaient associés à la mort et au mauvais présage.","Ils comptent pourtant parmi les oiseaux les plus intelligents."],
+    en:["This grim name comes from old beliefs about these birds.","Crows were linked to death and ill omen.","Yet they are among the most intelligent birds."],
+    es:["Este nombre siniestro viene de viejas creencias sobre estas aves.","Los cuervos se asociaban a la muerte y al mal augurio.","Sin embargo, están entre las aves más inteligentes."]
+  },
+  'e450': {
+    fr:["Fondu et reformé, il redevient identique à lui-même.","Recycler du verre économise beaucoup d'énergie.","Le sable, sa matière première, reste pourtant abondant."],
+    en:["Melted and reformed, it becomes identical to itself again.","Recycling glass saves a great deal of energy.","Sand, its raw material, nonetheless remains abundant."],
+    es:["Fundido y reformado, vuelve a ser idéntico a sí mismo.","Reciclar vidrio ahorra mucha energía.","La arena, su materia prima, sigue siendo abundante."]
+  },
+  'e451': {
+    fr:["Le latin reste une langue officielle de l'État pontifical.","Les usagers peuvent y lire « Inserito scidulam »... en latin.","C'est le plus petit État du monde, mais plein de curiosités."],
+    en:["Latin remains an official language of the papal state.","Users can read 'Inserito scidulam'... in Latin.","It's the smallest state in the world, but full of curiosities."],
+    es:["El latín sigue siendo lengua oficial del Estado pontificio.","Los usuarios pueden leer «Inserito scidulam»... en latín.","Es el Estado más pequeño del mundo, pero lleno de curiosidades."]
+  },
+  'e452': {
+    fr:["Un dauphin peut appeler un autre en imitant son sifflement.","Ils retiennent ces signatures pendant des dizaines d'années.","C'est un signe d'une vie sociale très élaborée."],
+    en:["A dolphin can call another by imitating its whistle.","They remember these signatures for decades.","It's a sign of a highly elaborate social life."],
+    es:["Un delfín puede llamar a otro imitando su silbido.","Recuerdan estas firmas durante décadas.","Es señal de una vida social muy elaborada."]
+  },
+  'e453': {
+    fr:["Toutes ses lettres se trouvent à gauche du clavier.","La disposition QWERTY répartit mal les lettres entre les mains.","C'est un classique des jeux de dactylographie."],
+    en:["All its letters are on the left side of the keyboard.","The QWERTY layout splits letters unevenly between the hands.","It's a classic of typing games."],
+    es:["Todas sus letras están en el lado izquierdo del teclado.","La disposición QWERTY reparte mal las letras entre las manos.","Es un clásico de los juegos de mecanografía."]
+  },
+  'e454': {
+    fr:["Le froid ralentit le vieillissement du caoutchouc.","La chaleur et la lumière, elles, le font craqueler.","Le même principe vaut pour beaucoup d'objets en caoutchouc."],
+    en:["The cold slows the aging of rubber.","Heat and light, by contrast, make it crack.","The same principle holds for many rubber objects."],
+    es:["El frío ralentiza el envejecimiento del caucho.","El calor y la luz, en cambio, lo agrietan.","El mismo principio vale para muchos objetos de caucho."]
+  },
+  'e455': {
+    fr:["Sa torche symbolise la lumière de la liberté.","Elle fut offerte par la France aux États-Unis en 1886.","Les sept pointes de sa couronne représentent les continents et les mers."],
+    en:["Its torch symbolizes the light of liberty.","It was given by France to the United States in 1886.","The seven points of its crown represent the continents and seas."],
+    es:["Su antorcha simboliza la luz de la libertad.","Fue un regalo de Francia a Estados Unidos en 1886.","Las siete puntas de su corona representan los continentes y mares."]
+  },
+  'e456': {
+    fr:["Les températures y descendent bien en dessous de zéro.","Les touristes adorent s'y photographier devant le panneau.","« Hell » signifie en fait « chance » ou « prospérité » en vieux norrois."],
+    en:["Temperatures there drop well below freezing.","Tourists love to photograph themselves by the sign.","'Hell' actually means 'luck' or 'prosperity' in Old Norse."],
+    es:["Las temperaturas allí bajan muy por debajo de cero.","A los turistas les encanta fotografiarse junto al cartel.","«Hell» significa en realidad «suerte» o «prosperidad» en nórdico antiguo."]
+  },
+  'e457': {
+    fr:["On leur accrochait un poisson de papier dans le dos.","Le Nouvel An passa du printemps au 1er janvier.","Les retardataires devinrent la cible de farces."],
+    en:["A paper fish was stuck on their back.","New Year moved from spring to January 1st.","The latecomers became the target of pranks."],
+    es:["Se les pegaba un pez de papel en la espalda.","El Año Nuevo pasó de la primavera al 1 de enero.","Los rezagados se volvieron blanco de bromas."]
+  },
+  'e458': {
+    fr:["Cela leur permet de rester sous l'eau tout l'hiver.","L'eau riche en oxygène circule dans des tissus très irrigués.","Quelques espèces dépendent presque entièrement de cette respiration en hibernation."],
+    en:["It lets them stay underwater all winter.","Oxygen-rich water flows through richly veined tissue.","A few species rely almost entirely on this in hibernation."],
+    es:["Les permite quedarse bajo el agua todo el invierno.","El agua rica en oxígeno circula por tejidos muy irrigados.","Algunas especies dependen casi por completo de esto al hibernar."]
+  },
+  'e459': {
+    fr:["Un alchimiste cherchait en réalité à fabriquer de l'or.","Il obtint une substance qui brillait dans le noir.","« Phosphore » signifie d'ailleurs « porteur de lumière »."],
+    en:["An alchemist was actually trying to make gold.","He obtained a substance that glowed in the dark.","'Phosphorus' in fact means 'light-bearer'."],
+    es:["Un alquimista intentaba en realidad fabricar oro.","Obtuvo una sustancia que brillaba en la oscuridad.","«Fósforo» significa, de hecho, «portador de luz»."]
+  },
+  'e460': {
+    fr:["Le phosphate provenait d'accumulations de fientes d'oiseaux.","Une fois la ressource épuisée, l'économie s'est effondrée.","L'extraction a laissé l'île en grande partie inhabitable."],
+    en:["The phosphate came from accumulated bird droppings.","Once the resource ran out, the economy collapsed.","Mining left much of the island uninhabitable."],
+    es:["El fosfato provenía de acumulaciones de excrementos de aves.","Agotado el recurso, la economía se hundió.","La extracción dejó gran parte de la isla inhabitable."]
+  },
+  'e461': {
+    fr:["La « mare » provoquait, disait-on, une sensation d'étouffement.","Cela rappelle ce qu'on appelle aujourd'hui la paralysie du sommeil.","En français, le « mar » de cauchemar a la même origine."],
+    en:["The 'mare' was said to cause a feeling of suffocation.","It echoes what we now call sleep paralysis.","In French, the 'mar' of 'cauchemar' has the same root."],
+    es:["La «mare» provocaba, se decía, una sensación de asfixia.","Recuerda a lo que hoy llamamos parálisis del sueño.","En francés, el «mar» de «cauchemar» tiene el mismo origen."]
+  },
+  'e462': {
+    fr:["Cette odeur s'accroche aux combinaisons après une sortie.","Elle viendrait de molécules produites par les étoiles mourantes.","Personne ne peut bien sûr respirer le vide directement."],
+    en:["The smell clings to suits after a spacewalk.","It may come from molecules made by dying stars.","No one can, of course, breathe the vacuum directly."],
+    es:["El olor se adhiere a los trajes tras una caminata espacial.","Vendría de moléculas producidas por estrellas moribundas.","Nadie puede, por supuesto, respirar el vacío directamente."]
+  },
+  'e463': {
+    fr:["Un seul ananas pouvait valoir une petite fortune.","On le promenait de fête en fête jusqu'à ce qu'il pourrisse.","Il devint un symbole de richesse et d'hospitalité."],
+    en:["A single pineapple could be worth a small fortune.","It was paraded from party to party until it rotted.","It became a symbol of wealth and hospitality."],
+    es:["Una sola piña podía valer una pequeña fortuna.","Se paseaba de fiesta en fiesta hasta que se pudría.","Se convirtió en símbolo de riqueza y hospitalidad."]
+  },
+  'e464': {
+    fr:["Cette lumière naît de réactions chimiques dans nos cellules.","Elle est des milliers de fois trop faible pour notre vue.","Des caméras ultrasensibles ont pu la photographier."],
+    en:["This light comes from chemical reactions in our cells.","It is thousands of times too dim for our eyesight.","Ultra-sensitive cameras have managed to photograph it."],
+    es:["Esta luz nace de reacciones químicas en nuestras células.","Es miles de veces demasiado débil para nuestra vista.","Cámaras ultrasensibles han logrado fotografiarla."]
+  },
+  'e465': {
+    fr:["Les mâles perdent leurs bois en hiver, les femelles plus tard.","Les femelles gardent donc leurs bois pendant la gestation.","Cela les aide à dégager la neige pour trouver de la nourriture."],
+    en:["Males shed their antlers in winter, females later.","Females thus keep theirs through pregnancy.","It helps them clear snow to find food."],
+    es:["Los machos pierden las astas en invierno, las hembras después.","Las hembras las conservan durante la gestación.","Eso les ayuda a despejar la nieve para hallar comida."]
+  },
+  'e466': {
+    fr:["Elle opposa la France et l'Angleterre de 1337 à 1453.","Le nom n'est apparu que bien plus tard chez les historiens.","Jeanne d'Arc en marqua l'un des tournants."],
+    en:["It pitted France against England from 1337 to 1453.","The name only appeared much later among historians.","Joan of Arc marked one of its turning points."],
+    es:["Enfrentó a Francia e Inglaterra de 1337 a 1453.","El nombre solo apareció mucho después entre los historiadores.","Juana de Arco marcó uno de sus puntos de inflexión."]
+  },
+  'e467': {
+    fr:["Il se désintègre presque aussitôt formé.","On n'a jamais pu en réunir un échantillon visible.","Ses propriétés restent en partie théoriques."],
+    en:["It decays almost as soon as it forms.","No visible sample of it has ever been gathered.","Its properties remain partly theoretical."],
+    es:["Se desintegra casi en cuanto se forma.","Nunca se ha podido reunir una muestra visible.","Sus propiedades siguen siendo en parte teóricas."]
+  },
+  'e468': {
+    fr:["Il vit donc lever et coucher le Soleil le même jour, depuis l'orbite.","Le vol fut entièrement automatique, par prudence.","Cet exploit ouvrit l'ère des vols habités."],
+    en:["He thus saw the Sun rise and set the same day, from orbit.","The flight was fully automatic, as a precaution.","This feat opened the era of crewed spaceflight."],
+    es:["Vio así salir y ponerse el Sol el mismo día, desde la órbita.","El vuelo fue totalmente automático, por precaución.","Esta hazaña abrió la era de los vuelos tripulados."]
+  },
+  'e469': {
+    fr:["Aucune route n'y traverse la frontière Panama-Colombie.","Marécages et forêt dense y rendent la construction impossible.","Les véhicules doivent contourner la zone par bateau."],
+    en:["No road crosses the Panama-Colombia border there.","Swamps and dense forest make construction impossible.","Vehicles must bypass the zone by boat."],
+    es:["Ninguna carretera cruza allí la frontera Panamá-Colombia.","Pantanos y selva densa hacen imposible la construcción.","Los vehículos deben rodear la zona en barco."]
+  },
+  'e470': {
+    fr:["On le réservait à l'émerveillement, pas seulement au cri.","Sur les premières machines à écrire, il n'avait même pas de touche.","On le tapait avec un point, un retour arrière et une apostrophe."],
+    en:["It was reserved for wonder, not just shouting.","On early typewriters it had no key at all.","It was typed with a period, a backspace and an apostrophe."],
+    es:["Se reservaba para el asombro, no solo para el grito.","En las primeras máquinas de escribir no tenía tecla.","Se tecleaba con un punto, un retroceso y un apóstrofo."]
+  },
+  'e471': {
+    fr:["Il ravagea des milliers de maisons en quelques jours.","Il aurait aussi anéanti les rats porteurs de la peste.","La ville fut reconstruite en pierre plutôt qu'en bois."],
+    en:["It razed thousands of houses in a few days.","It is said to have wiped out plague-carrying rats too.","The city was rebuilt in stone rather than wood."],
+    es:["Arrasó miles de casas en pocos días.","También habría aniquilado a las ratas portadoras de la peste.","La ciudad se reconstruyó en piedra en vez de madera."]
+  },
+  'e472': {
+    fr:["Une molécule odorante en est responsable.","Les soigneurs de zoo connaissent bien cette particularité.","Le tigre s'en sert pour marquer son territoire."],
+    en:["A single aroma molecule is responsible.","Zoo keepers know this quirk well.","The tiger uses it to mark its territory."],
+    es:["Una molécula aromática es la responsable.","Los cuidadores de zoo conocen bien esta peculiaridad.","El tigre la usa para marcar su territorio."]
+  },
+  'e473': {
+    fr:["Des formes exotiques de carbone dépassent sa dureté.","Le diamant reste cependant le plus dur des matériaux naturels.","La dureté mesure la résistance aux rayures."],
+    en:["Exotic forms of carbon exceed its hardness.","Diamond still remains the hardest natural material.","Hardness measures resistance to scratching."],
+    es:["Formas exóticas de carbono superan su dureza.","El diamante sigue siendo el material natural más duro.","La dureza mide la resistencia a los arañazos."]
+  },
+  'e474': {
+    fr:["On le fabriquait en laissant fermenter des entrailles de poisson au soleil.","Son odeur était si forte qu'on l'interdisait parfois en ville.","C'était pourtant un produit de luxe, vendu très cher."],
+    en:["It was made by letting fish guts ferment in the sun.","Its smell was so strong it was sometimes banned in town.","Yet it was a luxury product, sold at high prices."],
+    es:["Se hacía dejando fermentar vísceras de pescado al sol.","Su olor era tan fuerte que a veces se prohibía en la ciudad.","Sin embargo, era un producto de lujo, vendido muy caro."]
+  },
+  'e475': {
+    fr:["Les maisons utilisent la roche comme toit naturel.","Cela maintient les habitations fraîches en été.","Le village s'est développé le long d'une gorge de rivière."],
+    en:["The houses use the rock as a natural roof.","It keeps the homes cool in summer.","The village grew along a river gorge."],
+    es:["Las casas usan la roca como techo natural.","Eso mantiene las viviendas frescas en verano.","El pueblo creció a lo largo de un desfiladero fluvial."]
+  },
+  'e476': {
+    fr:["Les poules domestiques sont trop lourdes pour voler longtemps.","Elles ne peuvent que planer sur de courtes distances.","Leurs ancêtres sauvages volaient un peu mieux."],
+    en:["Domestic hens are too heavy to fly for long.","They can only glide over short distances.","Their wild ancestors flew somewhat better."],
+    es:["Las gallinas domésticas son demasiado pesadas para volar mucho.","Solo pueden planear distancias cortas.","Sus antepasados salvajes volaban algo mejor."]
+  },
+  'e477': {
+    fr:["La date est célébrée chaque année comme l'anniversaire de la ville.","La légende attribue la fondation aux jumeaux Romulus et Rémus.","Rome a depuis traversé près de 28 siècles."],
+    en:["The date is celebrated each year as the city's birthday.","Legend credits the twins Romulus and Remus with the founding.","Rome has since spanned nearly 28 centuries."],
+    es:["La fecha se celebra cada año como el cumpleaños de la ciudad.","La leyenda atribuye la fundación a los gemelos Rómulo y Remo.","Roma ha atravesado desde entonces casi 28 siglos."]
+  },
+  'e478': {
+    fr:["Sa rotation projette la matière vers l'extérieur à l'équateur.","On parle d'un « géoïde » plutôt que d'une sphère.","Le sommet le plus éloigné du centre de la Terre n'est pas l'Everest, mais le Chimborazo."],
+    en:["Its rotation flings matter outward at the equator.","We speak of a 'geoid' rather than a sphere.","The point farthest from Earth's center is not Everest but Chimborazo."],
+    es:["Su rotación lanza la materia hacia fuera en el ecuador.","Se habla de un «geoide» más que de una esfera.","El punto más alejado del centro de la Tierra no es el Everest, sino el Chimborazo."]
+  },
+  'e479': {
+    fr:["Il assemblait des mots, en détournait d'autres, en forgeait de nouveaux.","Des termes courants comme « lonely » lui sont attribués.","Son influence sur l'anglais reste sans égale."],
+    en:["He combined words, repurposed others, coined new ones.","Common terms like 'lonely' are credited to him.","His influence on English remains unmatched."],
+    es:["Combinaba palabras, reutilizaba otras, acuñaba nuevas.","Términos comunes como «lonely» se le atribuyen.","Su influencia en el inglés sigue siendo inigualable."]
+  },
+  'e480': {
+    fr:["Ses articulations se « verrouillent » naturellement.","Tenir sur une patte serait même plus stable pour lui.","Cela limiterait aussi la perte de chaleur dans l'eau froide."],
+    en:["Its joints 'lock' into place naturally.","Standing on one leg may even be more stable for it.","It may also reduce heat loss in cold water."],
+    es:["Sus articulaciones se «bloquean» de forma natural.","Sostenerse en una pata sería incluso más estable para él.","También reduciría la pérdida de calor en agua fría."]
+  },
+  'e481': {
+    fr:["C'est le plus grand volcan connu du système solaire.","Sa base couvrirait une bonne partie de la France.","Ses pentes sont si douces qu'on y monterait sans s'en rendre compte."],
+    en:["It's the largest known volcano in the solar system.","Its base would cover much of a country like France.","Its slopes are so gentle you'd climb without realizing."],
+    es:["Es el mayor volcán conocido del sistema solar.","Su base cubriría buena parte de un país como Francia.","Sus laderas son tan suaves que subirías sin darte cuenta."]
+  },
+  'e482': {
+    fr:["Pour éviter toute amende, ils ajoutaient un pain en plus.","Les lois médiévales sur le pain étaient très sévères.","Donner treize au lieu de douze garantissait le bon poids."],
+    en:["To avoid any fine, they added one extra loaf.","Medieval bread laws were very strict.","Giving thirteen instead of twelve guaranteed the weight."],
+    es:["Para evitar multas, añadían un pan de más.","Las leyes medievales sobre el pan eran muy estrictas.","Dar trece en vez de doce garantizaba el peso."]
+  },
+  'e483': {
+    fr:["Le poumon gauche n'a que deux lobes, le droit en a trois.","Il présente même une encoche où se loge le cœur.","Notre corps n'est pas tout à fait symétrique à l'intérieur."],
+    en:["The left lung has only two lobes, the right has three.","It even has a notch where the heart fits.","Our body isn't quite symmetrical on the inside."],
+    es:["El pulmón izquierdo tiene solo dos lóbulos, el derecho tres.","Incluso presenta una muesca donde se aloja el corazón.","Nuestro cuerpo no es del todo simétrico por dentro."]
+  },
+  'e484': {
+    fr:["Elle a bâti et entretenu des temples pendant près de quatorze siècles.","Elle a traversé guerres, séismes et crises.","Elle a fini absorbée par un groupe plus grand au XXIe siècle."],
+    en:["It built and maintained temples for nearly fourteen centuries.","It weathered wars, earthquakes and crises.","It was finally absorbed by a larger group in the 21st century."],
+    es:["Construyó y mantuvo templos durante casi catorce siglos.","Sobrevivió a guerras, terremotos y crisis.","Acabó absorbida por un grupo mayor en el siglo XXI."]
+  },
+  'e485': {
+    fr:["Chaque bras explore le fond de façon presque autonome.","La pieuvre identifie ainsi une proie sans la voir.","Ses bras contiennent une grande part de ses neurones."],
+    en:["Each arm explores the seabed almost independently.","The octopus can thus identify prey without seeing it.","Its arms hold a large share of its neurons."],
+    es:["Cada brazo explora el fondo casi de forma autónoma.","El pulpo identifica así una presa sin verla.","Sus brazos contienen gran parte de sus neuronas."]
+  },
+  'e486': {
+    fr:["La ligne de changement de date passe entre les deux îles.","On les surnomme « l'île d'Hier » et « l'île de Demain ».","En hiver, la mer gelée les relie presque."],
+    en:["The international date line runs between the two islands.","They are nicknamed 'Yesterday Isle' and 'Tomorrow Isle'.","In winter, frozen sea almost links them."],
+    es:["La línea internacional de cambio de fecha pasa entre ambas islas.","Se las apoda «Isla de Ayer» e «Isla de Mañana».","En invierno, el mar helado casi las une."]
+  },
+  'e487': {
+    fr:["Un opérateur radio londonien l'a proposé dans les années 1920.","Il fallait un mot clair, compréhensible des deux côtés de la Manche.","On le répète trois fois pour éviter toute confusion."],
+    en:["A London radio operator proposed it in the 1920s.","A clear word was needed, understood on both sides of the Channel.","It's repeated three times to avoid any confusion."],
+    es:["Un operador de radio londinense lo propuso en los años 1920.","Hacía falta una palabra clara, entendible a ambos lados del Canal.","Se repite tres veces para evitar confusiones."]
+  },
+  'e488': {
+    fr:["Il est tombé dans le Dakota du Sud lors d'un violent orage.","Il pesait près d'un kilo.","Les gros grêlons se forment en montant plusieurs fois dans le nuage."],
+    en:["It fell in South Dakota during a violent storm.","It weighed nearly a kilogram.","Large hailstones form by rising several times within the cloud."],
+    es:["Cayó en Dakota del Sur durante una tormenta violenta.","Pesaba casi un kilo.","El granizo grande se forma subiendo varias veces dentro de la nube."]
+  },
+  'e489': {
+    fr:["La cabane peut se tourner et se déplacer toute seule.","Baba Yaga voyage dans un mortier qu'elle dirige avec un pilon.","Tantôt menaçante, tantôt aidante, elle est très ambivalente."],
+    en:["The hut can turn and move about on its own.","Baba Yaga travels in a mortar she steers with a pestle.","Now threatening, now helpful, she is deeply ambivalent."],
+    es:["La cabaña puede girar y moverse por sí sola.","Baba Yagá viaja en un mortero que dirige con una mano de mortero.","Ya amenazante, ya servicial, es muy ambivalente."]
+  },
+  'e490': {
+    fr:["Aucun dinosaure n'ayant été entendu, tout fut inventé.","Le concepteur sonore a mélangé et ralenti ces cris.","Le résultat semble pourtant parfaitement « réel »."],
+    en:["Since no dinosaur was ever heard, everything was invented.","The sound designer mixed and slowed these calls.","Yet the result sounds perfectly 'real'."],
+    es:["Como nunca se oyó un dinosaurio, todo se inventó.","El diseñador de sonido mezcló y ralentizó esos sonidos.","El resultado parece, sin embargo, perfectamente «real»."]
+  },
+  'e491': {
+    fr:["C'est un sous-produit du brassage de la bière.","Leur goût très puissant divise profondément les gens.","Riches en vitamines B, elles sont très populaires au Royaume-Uni et en Australie."],
+    en:["It's a by-product of brewing beer.","Their very strong taste deeply divides people.","Rich in B vitamins, they're popular in the UK and Australia."],
+    es:["Es un subproducto de la elaboración de cerveza.","Su sabor muy fuerte divide profundamente a la gente.","Ricas en vitaminas B, son muy populares en el Reino Unido y Australia."]
+  },
+  'e492': {
+    fr:["Elle mesure la « cible » qu'offre un noyau atomique.","Les physiciens l'ont nommée ainsi par humour : viser un noyau est aussi dur que rater une grange.","Une grange se dit « barn » en anglais."],
+    en:["It measures the 'target' an atomic nucleus offers.","Physicists named it as a joke: hitting a nucleus is as hard as missing a barn.","'Barn' means a farm building in English."],
+    es:["Mide el «blanco» que ofrece un núcleo atómico.","Los físicos lo nombraron en broma: acertar a un núcleo es tan difícil como fallar a un granero.","«Barn» significa granero en inglés."]
+  },
+  'e493': {
+    fr:["La règle vaut aussi pour d'autres animaux grégaires.","Des services proposent même de « louer » un compagnon temporaire.","Le pays est réputé pour ses lois sur le bien-être animal."],
+    en:["The rule also applies to other social animals.","Services even offer to 'rent' a temporary companion.","The country is known for its animal-welfare laws."],
+    es:["La regla vale también para otros animales gregarios.","Algunos servicios incluso «alquilan» un compañero temporal.","El país es conocido por sus leyes de bienestar animal."]
+  },
+  'e494': {
+    fr:["N'ayant pas de graisse isolante épaisse, elle compte sur sa fourrure.","L'air emprisonné entre les poils la garde au chaud et la fait flotter.","Elle passe un temps fou à entretenir ce pelage."],
+    en:["With no thick layer of fat, it relies on its fur.","Air trapped between the hairs keeps it warm and afloat.","It spends huge amounts of time grooming this coat."],
+    es:["Al no tener una capa gruesa de grasa, depende de su pelaje.","El aire atrapado entre los pelos la mantiene caliente y a flote.","Pasa muchísimo tiempo acicalando ese pelaje."]
+  },
+  'e495': {
+    fr:["L'équateur et le méridien de Greenwich la traversent tous deux.","Aucun autre continent n'a cette particularité.","Cela illustre son immense étendue."],
+    en:["Both the equator and the Greenwich meridian cross it.","No other continent has this feature.","It illustrates its immense extent."],
+    es:["Tanto el ecuador como el meridiano de Greenwich la cruzan.","Ningún otro continente tiene esta particularidad.","Ilustra su inmensa extensión."]
+  },
+  'e496': {
+    fr:["On parle de « nous » inclusif et exclusif.","Le tagalog des Philippines fait par exemple cette distinction.","Le français, lui, se contente d'un seul « nous »."],
+    en:["These are called inclusive and exclusive 'we'.","Tagalog in the Philippines, for instance, makes this distinction.","French, by contrast, gets by with a single 'we'."],
+    es:["Se habla de «nosotros» inclusivo y exclusivo.","El tagalo de Filipinas, por ejemplo, hace esta distinción.","El francés, en cambio, se conforma con un solo «nosotros»."]
+  },
+  'e497': {
+    fr:["Les dirigeants craignaient les débats agités dans les cafés.","Ces lieux étaient vus comme des foyers d'idées contestataires.","L'engouement pour le café finit toujours par l'emporter."],
+    en:["Rulers feared the heated debates in coffeehouses.","These places were seen as hotbeds of dissent.","The love of coffee always won out in the end."],
+    es:["Los gobernantes temían los debates acalorados en los cafés.","Esos lugares se veían como focos de ideas contestatarias.","El entusiasmo por el café siempre acababa imponiéndose."]
+  },
+  'e498': {
+    fr:["Elle inventa des diagrammes pour montrer les causes de décès.","Ses graphiques prouvèrent que l'hygiène sauvait des vies.","Elle fut l'une des premières femmes membres d'une société de statistique."],
+    en:["She devised diagrams to show causes of death.","Her charts proved that hygiene saved lives.","She was among the first women in a statistical society."],
+    es:["Ideó diagramas para mostrar las causas de muerte.","Sus gráficos demostraron que la higiene salvaba vidas.","Fue de las primeras mujeres en una sociedad estadística."]
+  },
+  'e499': {
+    fr:["La plupart de ces microbes nous sont totalement inconnus.","Ils recyclent la matière morte et nourrissent les plantes.","Sous nos pieds se cache l'un des écosystèmes les plus riches."],
+    en:["Most of these microbes are completely unknown to us.","They recycle dead matter and feed plants.","Beneath our feet hides one of the richest ecosystems."],
+    es:["La mayoría de estos microbios nos son totalmente desconocidos.","Reciclan la materia muerta y alimentan a las plantas.","Bajo nuestros pies se esconde uno de los ecosistemas más ricos."]
+  },
+  'e500': {
+    fr:["On croyait ce talent réservé aux espèces qui imitent les sons.","Une otarie nommée Ronan a surpris les scientifiques.","Cela éclaire l'origine du rythme, peut-être plus répandu qu'on ne pensait."],
+    en:["This talent was thought reserved for sound-imitating species.","A sea lion named Ronan surprised scientists.","It sheds light on the origin of rhythm, perhaps more widespread than thought."],
+    es:["Se creía este talento reservado a especies que imitan sonidos.","Una leona marina llamada Ronan sorprendió a los científicos.","Aclara el origen del ritmo, quizá más extendido de lo que se creía."]
+  },
+  'e501': {
+    fr:["Le castoréum a un parfum doux qui rappelle la vanille.","Son usage alimentaire est aujourd'hui devenu très rare.","Récolter cette sécrétion est compliqué, d'où sa quasi-disparition."],
+    en:["Castoreum has a sweet scent reminiscent of vanilla.","Its use in food has now become very rare.","Harvesting it is awkward, hence its near disappearance."],
+    es:["El castóreo tiene un aroma dulce que recuerda a la vainilla.","Su uso alimentario es hoy muy raro.","Recolectarlo es complicado, de ahí su casi desaparición."]
+  },
+  'e502': {
+    fr:["La côte californienne s'incurve fortement vers l'est en descendant au sud.","La géographie joue souvent des tours à notre intuition.","On le vérifie facilement sur une carte précise."],
+    en:["The California coast curves sharply eastward as it goes south.","Geography often plays tricks on our intuition.","It's easy to verify on an accurate map."],
+    es:["La costa de California se curva mucho hacia el este al bajar al sur.","La geografía juega a menudo con nuestra intuición.","Se comprueba fácilmente en un mapa preciso."]
+  },
+  'e503': {
+    fr:["Il a en partie été forgé pour battre un record.","Il décrit une maladie causée par l'inhalation de poussière de silice.","La plupart des médecins emploient un terme bien plus court."],
+    en:["It was partly coined to set a record.","It describes a disease caused by inhaling silica dust.","Most doctors use a far shorter term."],
+    es:["En parte se acuñó para batir un récord.","Describe una enfermedad por inhalar polvo de sílice.","La mayoría de los médicos usan un término mucho más corto."]
+  },
+  'e504': {
+    fr:["Elle figure dans un hymne à la déesse de la bière.","La bière était une boisson de base de la vie quotidienne.","On l'aspirait souvent à la paille pour éviter les résidus."],
+    en:["It appears in a hymn to the goddess of beer.","Beer was a staple of everyday life.","It was often sipped through a straw to avoid the dregs."],
+    es:["Aparece en un himno a la diosa de la cerveza.","La cerveza era una bebida básica de la vida diaria.","Se sorbía a menudo con paja para evitar los posos."]
+  },
+  'e505': {
+    fr:["Il faut aussi une forte pression pour le rendre solide.","À très basse température, il devient même superfluide.","C'est l'élément au point d'ébullition le plus bas."],
+    en:["High pressure is also needed to make it solid.","At very low temperatures, it even turns superfluid.","It is the element with the lowest boiling point."],
+    es:["Hace falta además alta presión para volverlo sólido.","A muy baja temperatura, se vuelve incluso superfluido.","Es el elemento con el punto de ebullición más bajo."]
+  },
+  'e506': {
+    fr:["L'oiseau frappe le bois des milliers de fois par jour.","Cette langue très longue amortit et stabilise l'impact.","Elle lui sert aussi à attraper les insectes au fond des trous."],
+    en:["The bird hammers wood thousands of times a day.","This very long tongue cushions and steadies the impact.","It also helps catch insects deep in holes."],
+    es:["El ave golpea la madera miles de veces al día.","Esta lengua muy larga amortigua y estabiliza el impacto.","También le sirve para atrapar insectos en el fondo de los agujeros."]
+  },
+  'e507': {
+    fr:["On y dénombre des millions de saunas pour 5,5 millions d'habitants.","Le sauna fait partie intégrante de la culture finlandaise.","On en trouve dans les maisons, les bureaux, et même le Parlement."],
+    en:["There are millions of saunas for 5.5 million people.","The sauna is central to Finnish culture.","They're found in homes, offices, and even Parliament."],
+    es:["Hay millones de saunas para 5,5 millones de habitantes.","La sauna es parte esencial de la cultura finlandesa.","Las hay en casas, oficinas e incluso en el Parlamento."]
+  },
+  'e508': {
+    fr:["Niké était représentée avec des ailes, prête à couronner les vainqueurs.","Le logo de la marque évoquerait une de ses ailes.","La victoire était une notion presque divine chez les Grecs."],
+    en:["Nike was depicted with wings, ready to crown the victors.","The brand's logo is said to evoke one of her wings.","Victory was an almost divine concept for the Greeks."],
+    es:["Niké se representaba con alas, lista para coronar a los vencedores.","El logo de la marca evocaría una de sus alas.","La victoria era una noción casi divina para los griegos."]
+  },
+  'e509': {
+    fr:["Toute vie sur Terre repose sur les mêmes briques de base.","Beaucoup de gènes gèrent des fonctions cellulaires universelles.","Cela ne fait pas de nous des demi-bananes pour autant !"],
+    en:["All life on Earth rests on the same basic building blocks.","Many genes run universal cellular functions.","That doesn't make us half-banana, though!"],
+    es:["Toda la vida en la Tierra se basa en los mismos ladrillos básicos.","Muchos genes gestionan funciones celulares universales.","¡Eso no nos convierte en medio plátano!"]
+  },
+  'e510': {
+    fr:["L'un d'eux aurait revendu le pont deux fois par semaine.","Les victimes croyaient pouvoir y percevoir des péages.","D'où l'expression anglaise « vouloir vendre le pont de Brooklyn »."],
+    en:["One of them reportedly resold the bridge twice a week.","Victims believed they could collect tolls on it.","Hence the English saying about 'selling the Brooklyn Bridge'."],
+    es:["Uno de ellos habría revendido el puente dos veces por semana.","Las víctimas creían poder cobrar peajes en él.","De ahí el dicho inglés de «vender el puente de Brooklyn»."]
+  },
+  'e511': {
+    fr:["La bande laiteuse dans le ciel a inspiré ce nom.","Une légende grecque y voyait le lait de la déesse Héra.","Le même mot a donné « lactique » et « galactique »."],
+    en:["The milky band in the sky inspired this name.","A Greek legend saw it as the milk of the goddess Hera.","The same root gave 'lactic' and 'galactic'."],
+    es:["La banda lechosa en el cielo inspiró este nombre.","Una leyenda griega veía en ella la leche de la diosa Hera.","La misma raíz dio «láctico» y «galáctico»."]
+  },
+  'e512': {
+    fr:["Un atome est presque entièrement constitué de vide.","Toute la matière dense se concentre dans le minuscule noyau.","Notre solidité n'est qu'une affaire de forces électriques."],
+    en:["An atom is almost entirely empty space.","All the dense matter is packed in the tiny nucleus.","Our solidity is just a matter of electric forces."],
+    es:["Un átomo está hecho casi por completo de vacío.","Toda la materia densa se concentra en el diminuto núcleo.","Nuestra solidez es solo cuestión de fuerzas eléctricas."]
+  },
+  'e513': {
+    fr:["Elle digère ainsi sa proie hors de son propre corps.","Cela lui permet d'avaler des proies bien plus grandes que sa bouche.","Elle ramène ensuite l'estomac, et le repas, à l'intérieur."],
+    en:["It thus digests its prey outside its own body.","This lets it consume prey far larger than its mouth.","It then pulls the stomach, and the meal, back inside."],
+    es:["Así digiere a su presa fuera de su propio cuerpo.","Esto le permite consumir presas mucho mayores que su boca.","Luego retrae el estómago, y la comida, hacia dentro."]
+  },
+  'e514': {
+    fr:["L'eau y vient surtout du dessalement de la mer et de nappes souterraines.","Les rares pluies créent des cours d'eau temporaires, les « oueds ».","Gérer l'eau y est un défi majeur."],
+    en:["Its water comes mainly from desalination and underground aquifers.","Rare rains create temporary streams, the 'wadis'.","Managing water there is a major challenge."],
+    es:["Su agua viene sobre todo de la desalación y de acuíferos subterráneos.","Las raras lluvias crean cauces temporales, los «uadis».","Gestionar el agua allí es un reto enorme."]
+  },
+  'e515': {
+    fr:["Les baies fermes et bonnes rebondissent ; les molles restent au sol.","Des machines à étages utilisent ce principe pour le tri.","C'est pourquoi on les surnomme parfois « baies sauteuses »."],
+    en:["Firm, good berries bounce; soft ones stay down.","Stepped machines use this principle to sort them.","That's why they're sometimes called 'bounceberries'."],
+    es:["Las bayas firmes y buenas rebotan; las blandas se quedan abajo.","Máquinas escalonadas usan este principio para clasificarlas.","Por eso a veces se las llama «bayas saltarinas»."]
+  },
+  'e516': {
+    fr:["Il jugeait son nom difficile à prononcer pour les locaux.","Il préférait garder les noms locaux des montagnes.","Le nom lui fut tout de même attribué par ses successeurs."],
+    en:["He thought his name was hard for locals to pronounce.","He preferred to keep mountains' local names.","The name was given to it anyway by his successors."],
+    es:["Pensaba que su nombre era difícil de pronunciar para los locales.","Prefería conservar los nombres locales de las montañas.","El nombre se le puso de todos modos por sus sucesores."]
+  },
+  'e517': {
+    fr:["Des peintures rupestres y montrent des hippopotames et des troupeaux.","Un léger changement de l'orbite terrestre a modifié les pluies.","Le désert pourrait reverdir dans plusieurs milliers d'années."],
+    en:["Rock paintings there show hippos and herds.","A slight shift in Earth's orbit changed the rains.","The desert could turn green again in several thousand years."],
+    es:["Pinturas rupestres allí muestran hipopótamos y rebaños.","Un leve cambio en la órbita terrestre alteró las lluvias.","El desierto podría reverdecer dentro de varios miles de años."]
+  },
+  'e518': {
+    fr:["Le passage au calendrier grégorien a tout réaligné.","On a même « sauté » onze jours cette année-là.","Certains pays ont mis des siècles à adopter le même calendrier."],
+    en:["The switch to the Gregorian calendar realigned everything.","Eleven days were even 'skipped' that year.","Some countries took centuries to adopt the same calendar."],
+    es:["El cambio al calendario gregoriano lo realineó todo.","Ese año incluso se «saltaron» once días.","Algunos países tardaron siglos en adoptar el mismo calendario."]
+  },
+  'e519': {
+    fr:["C'est l'une des citations mal rapportées les plus célèbres.","Le « Luke » a été ajouté par la mémoire collective.","On parle d'« effet Mandela » pour ces faux souvenirs partagés."],
+    en:["It's one of the most famous misquotations.","'Luke' was added by collective memory.","Such shared false memories are called the 'Mandela effect'."],
+    es:["Es una de las citas mal recordadas más famosas.","El «Luke» lo añadió la memoria colectiva.","A estos falsos recuerdos compartidos se les llama «efecto Mandela»."]
+  },
+  'e520': {
+    fr:["On estime leur nombre à plusieurs millions de milliards.","Elles sont présentes sur presque tous les continents.","Leur rôle dans les écosystèmes est considérable."],
+    en:["Their number is estimated in the millions of billions.","They are found on nearly every continent.","Their role in ecosystems is enormous."],
+    es:["Se estima su número en varios millones de billones.","Están presentes en casi todos los continentes.","Su papel en los ecosistemas es considerable."]
+  },
+  'e521': {
+    fr:["Sa population permanente est minuscule, mais les visiteurs affluent.","Le moindre vol fait donc grimper le taux par habitant.","Les statistiques par habitant peuvent être trompeuses."],
+    en:["Its permanent population is tiny, but visitors pour in.","A single theft thus sends the per-capita rate soaring.","Per-capita statistics can be misleading."],
+    es:["Su población permanente es minúscula, pero los visitantes abundan.","Un solo robo dispara así la tasa por habitante.","Las estadísticas per cápita pueden ser engañosas."]
+  },
+  'e522': {
+    fr:["Ce cycle long déjoue les prédateurs, incapables de s'y adapter.","Des milliards d'insectes surgissent alors en quelques jours.","Dix-sept est un nombre premier, ce qui ne serait pas un hasard."],
+    en:["This long cycle outwits predators, which can't adapt to it.","Billions of insects then emerge within days.","Seventeen is a prime number, which may be no accident."],
+    es:["Este ciclo largo burla a los depredadores, incapaces de adaptarse.","Miles de millones de insectos surgen entonces en pocos días.","Diecisiete es un número primo, lo que no sería casual."]
+  },
+  'e523': {
+    fr:["Une gardienne de phare transmit des données cruciales.","Elles révélèrent une brève accalmie dans la tempête.","Le report d'un jour fut décisif pour l'opération."],
+    en:["A lighthouse keeper passed on crucial data.","It revealed a brief lull in the storm.","The one-day delay proved decisive for the operation."],
+    es:["Una farera transmitió datos cruciales.","Revelaron una breve calma en la tormenta.","El retraso de un día resultó decisivo para la operación."]
+  },
+  'e524': {
+    fr:["Le français dit « surlendemain », l'allemand « übermorgen ».","« Overmorrow » a peu à peu disparu de l'usage courant.","Les langues perdent et gagnent des mots au fil du temps."],
+    en:["French says 'surlendemain', German 'übermorgen'.","'Overmorrow' gradually fell out of common use.","Languages lose and gain words over time."],
+    es:["El francés dice «surlendemain», el alemán «übermorgen».","«Overmorrow» fue desapareciendo del uso corriente.","Las lenguas pierden y ganan palabras con el tiempo."]
+  },
+  'e525': {
+    fr:["On les appelle des « bassins de saumure ».","Ils ont même des « rives » et des « vagues ».","S'y aventurer serait fatal pour la plupart des animaux marins."],
+    en:["They are called 'brine pools'.","They even have 'shores' and 'waves'.","Venturing in would be fatal for most marine animals."],
+    es:["Se les llama «piscinas de salmuera».","Incluso tienen «orillas» y «olas».","Adentrarse en ellas sería fatal para la mayoría de los animales marinos."]
+  },
+  'e526': {
+    fr:["La dégradation de la chlorophylle produit cette fluorescence.","Plus la banane mûrit, plus le bleu est marqué.","Certains animaux verraient peut-être les bananes différemment de nous."],
+    en:["The breakdown of chlorophyll produces this fluorescence.","The riper the banana, the stronger the blue.","Some animals may see bananas differently from us."],
+    es:["La degradación de la clorofila produce esta fluorescencia.","Cuanto más madura la banana, más marcado es el azul.","Algunos animales quizá vean los plátanos distinto a nosotros."]
+  },
+  'e527': {
+    fr:["Il s'est documenté dans des bibliothèques anglaises.","Le personnage s'inspire en partie d'un prince roumain bien réel.","Le château associé au mythe attire pourtant les touristes."],
+    en:["He did his research in English libraries.","The character is partly inspired by a very real Romanian prince.","Yet the castle linked to the myth draws tourists."],
+    es:["Se documentó en bibliotecas inglesas.","El personaje se inspira en parte en un príncipe rumano muy real.","Aun así, el castillo ligado al mito atrae turistas."]
+  },
+  'e528': {
+    fr:["Cette immense surface tient grâce à des millions de minuscules alvéoles.","Elle permet d'échanger l'oxygène très efficacement.","Tout cela est replié dans ta cage thoracique."],
+    en:["This vast surface comes from millions of tiny air sacs.","It allows very efficient oxygen exchange.","All of it is folded inside your chest."],
+    es:["Esta enorme superficie se debe a millones de diminutos alvéolos.","Permite intercambiar oxígeno de forma muy eficiente.","Todo ello está plegado dentro de tu tórax."]
+  },
+  'e529': {
+    fr:["Le royaume de Koush en a bâti des centaines.","Elles sont plus petites et aux flancs plus raides.","Ces sites restent bien moins visités que ceux d'Égypte."],
+    en:["The Kingdom of Kush built hundreds of them.","They are smaller, with steeper sides.","These sites remain far less visited than Egypt's."],
+    es:["El reino de Kush construyó cientos de ellas.","Son más pequeñas y de lados más empinados.","Estos sitios siguen siendo mucho menos visitados que los de Egipto."]
+  },
+  'e530': {
+    fr:["On a longtemps cru les homards presque « sans âge ».","De fines bandes s'accumulent comme les cernes d'un arbre.","Cette découverte est assez récente."],
+    en:["Lobsters were long thought to be almost 'ageless'.","Thin bands build up like the rings of a tree.","This discovery is fairly recent."],
+    es:["Mucho tiempo se creyó a las langostas casi «sin edad».","Finas bandas se acumulan como los anillos de un árbol.","Este descubrimiento es bastante reciente."]
+  },
+  'e531': {
+    fr:["Il ressemble à un morceau de brouillard solide et bleuté.","Il isole si bien qu'une fleur posée dessus ne brûle pas sous une flamme.","La NASA l'a utilisé pour capturer de la poussière de comète."],
+    en:["It looks like a piece of solid, bluish fog.","It insulates so well a flower on it won't burn under a flame.","NASA used it to capture comet dust."],
+    es:["Parece un trozo de niebla sólida y azulada.","Aísla tan bien que una flor sobre él no se quema bajo una llama.","La NASA lo usó para capturar polvo de cometa."]
+  },
+  'e532': {
+    fr:["L'inventeur, Héron d'Alexandrie, vécut au Ier siècle.","La pièce actionnait un mécanisme libérant un peu d'eau.","C'était sans doute le premier distributeur de l'histoire."],
+    en:["The inventor, Hero of Alexandria, lived in the 1st century.","The coin triggered a mechanism releasing a little water.","It was likely the first vending machine in history."],
+    es:["El inventor, Herón de Alejandría, vivió en el siglo I.","La moneda accionaba un mecanismo que liberaba algo de agua.","Fue probablemente la primera máquina expendedora de la historia."]
+  },
+  'e533': {
+    fr:["Le sujet « you » y est sous-entendu.","Un verbe à l'impératif suffit à former une phrase.","En français, « Va ! » joue le même rôle."],
+    en:["The subject 'you' is implied.","An imperative verb alone is enough to form a sentence.","In French, 'Va!' plays the same role."],
+    es:["El sujeto «you» está sobrentendido.","Un verbo en imperativo basta para formar una oración.","En español, «¡Ve!» cumple el mismo papel."]
+  },
+  'e534': {
+    fr:["C'est là que se concentre la capsaïcine, molécule du piquant.","Les graines ne sont brûlantes que par contact avec elle.","Retirer cette membrane adoucit nettement le piment."],
+    en:["That's where capsaicin, the heat molecule, concentrates.","The seeds are only hot from contact with it.","Removing this membrane noticeably tames the chili."],
+    es:["Ahí se concentra la capsaicina, la molécula del picor.","Las semillas solo pican por contacto con ella.","Quitar esa membrana suaviza mucho el chile."]
+  },
+  'e535': {
+    fr:["Le Soleil filait trop vite pour qu'on puisse travailler.","Māui le frappa jusqu'à ce qu'il promette d'aller plus lentement.","Ce héros rusé est célèbre dans tout le Pacifique."],
+    en:["The Sun raced by too fast for anyone to work.","Māui beat it until it promised to move more slowly.","This cunning hero is famous across the Pacific."],
+    es:["El Sol pasaba demasiado rápido para poder trabajar.","Māui lo golpeó hasta que prometió ir más despacio.","Este héroe astuto es célebre en todo el Pacífico."]
+  },
+  'e536': {
+    fr:["Le cuivre tire vers le rouge-orangé, l'or vers le jaune.","Ces teintes viennent de la façon dont leurs électrons absorbent la lumière.","Tous les autres métaux purs paraissent gris ou blancs."],
+    en:["Copper leans red-orange, gold leans yellow.","These hues come from how their electrons absorb light.","All other pure metals look grey or white."],
+    es:["El cobre tira a rojo-anaranjado, el oro a amarillo.","Estos tonos vienen de cómo sus electrones absorben la luz.","Todos los demás metales puros parecen grises o blancos."]
+  },
+  'e537': {
+    fr:["Le sel est rare dans leur régime à base de nectar.","Les reptiles, eux, semblent tolérer ces visiteurs.","On a observé le phénomène en Amazonie."],
+    en:["Salt is scarce in their nectar-based diet.","The reptiles, for their part, seem to tolerate these visitors.","The phenomenon has been observed in the Amazon."],
+    es:["La sal es escasa en su dieta a base de néctar.","Los reptiles, por su parte, parecen tolerar a estos visitantes.","El fenómeno se ha observado en la Amazonía."]
+  },
+  'e538': {
+    fr:["Le morceau a commencé en 2001 et finira vers 2640.","Un changement de note peut n'arriver qu'après des années.","Des orgues spéciaux tiennent les notes sans interruption."],
+    en:["The piece began in 2001 and will end around 2640.","A single note change may come only after years.","Special organs hold the notes without interruption."],
+    es:["La pieza empezó en 2001 y terminará hacia 2640.","Un cambio de nota puede llegar solo tras años.","Órganos especiales sostienen las notas sin interrupción."]
+  },
+  'e539': {
+    fr:["Nichée au fond d'une vallée, elle reste des mois dans l'ombre.","Trois miroirs géants suivent la course du Soleil.","Les habitants peuvent enfin se réchauffer au soleil sur la place."],
+    en:["Nestled deep in a valley, it stays in shadow for months.","Three giant mirrors track the Sun's path.","Residents can finally enjoy sunlight on the square."],
+    es:["Enclavada en el fondo de un valle, queda meses en sombra.","Tres espejos gigantes siguen el recorrido del Sol.","Los habitantes pueden por fin disfrutar del sol en la plaza."]
+  },
+  'e540': {
+    fr:["En anglais, « cleave » signifie à la fois « fendre » et « adhérer ».","Le contexte seul permet de trancher le sens.","Ces mots fascinent les amateurs de langue."],
+    en:["In English, 'cleave' means both 'to split' and 'to cling'.","Only context settles the meaning.","These words fascinate language lovers."],
+    es:["En inglés, «cleave» significa a la vez «partir» y «adherirse».","Solo el contexto decide el sentido.","Estas palabras fascinan a los amantes de la lengua."]
+  },
+  'e541': {
+    fr:["Il avait été jeté lors d'une étude scientifique sur les courants.","La bouteille fut retrouvée sur une plage australienne.","Le papier à l'intérieur était resté lisible."],
+    en:["It had been thrown during a scientific study of ocean currents.","The bottle was found on an Australian beach.","The paper inside had stayed legible."],
+    es:["Se había lanzado durante un estudio científico de las corrientes.","La botella se encontró en una playa australiana.","El papel del interior seguía siendo legible."]
+  },
+  'e542': {
+    fr:["C'est l'endroit non polaire le plus sec de la planète.","Son sol ressemble tant à Mars qu'on y teste des robots.","Certaines stations météo n'y ont jamais vu une goutte."],
+    en:["It's the driest non-polar place on the planet.","Its soil so resembles Mars that robots are tested there.","Some weather stations there have never seen a drop."],
+    es:["Es el lugar no polar más seco del planeta.","Su suelo se parece tanto a Marte que allí se prueban robots.","Algunas estaciones meteorológicas nunca han visto una gota."]
+  },
+  'e543': {
+    fr:["La forme de sa bouche lui donne cet air joyeux.","Il vit surtout sur une île au large de Perth.","Les selfies avec les quokkas y sont devenus une attraction."],
+    en:["The shape of its mouth gives it this cheerful look.","It lives mainly on an island off Perth.","Selfies with quokkas have become an attraction there."],
+    es:["La forma de su boca le da ese aire alegre.","Vive sobre todo en una isla frente a Perth.","Los selfis con quokkas se han vuelto una atracción allí."]
+  },
+  'e544': {
+    fr:["Les larves ramollissent la pâte en la digérant.","Le fromage est officiellement interdit à la vente.","Il reste pourtant un mets traditionnel local."],
+    en:["The larvae soften the paste by digesting it.","The cheese is officially banned from sale.","It nonetheless remains a traditional local delicacy."],
+    es:["Las larvas ablandan la pasta al digerirla.","El queso está oficialmente prohibido para la venta.","Aun así, sigue siendo un manjar tradicional local."]
+  },
+  'e545': {
+    fr:["La pose durait plusieurs minutes.","Tout ce qui bougeait dans la rue est devenu invisible.","Seul cet homme immobile est resté assez longtemps pour s'imprimer."],
+    en:["The exposure lasted several minutes.","Everything moving in the street became invisible.","Only this still man stayed long enough to register."],
+    es:["La exposición duraba varios minutos.","Todo lo que se movía en la calle se volvió invisible.","Solo ese hombre quieto permaneció lo bastante para registrarse."]
+  },
+  'e546': {
+    fr:["Les molécules sont d'une petitesse vertigineuse.","Même un objet minuscule en contient des quantités colossales.","C'est un bon moyen de saisir l'échelle de l'infiniment petit."],
+    en:["Molecules are dizzyingly small.","Even a tiny object holds colossal numbers of them.","It's a good way to grasp the scale of the very small."],
+    es:["Las moléculas son de una pequeñez vertiginosa.","Incluso un objeto diminuto contiene cantidades colosales.","Es una buena forma de captar la escala de lo muy pequeño."]
+  },
+  'e547': {
+    fr:["L'explosion a libéré l'énergie de centaines de bombes atomiques.","Aucun cratère n'a été retrouvé : l'objet a explosé en altitude.","C'est le plus grand impact de ce type de l'histoire récente."],
+    en:["The blast released the energy of hundreds of atomic bombs.","No crater was found: the object exploded in mid-air.","It's the largest such impact in recent history."],
+    es:["La explosión liberó la energía de cientos de bombas atómicas.","No se halló cráter: el objeto explotó en el aire.","Es el mayor impacto de este tipo de la historia reciente."]
+  },
+  'e548': {
+    fr:["Chaque camp y déposait une bouteille d'alcool national et son drapeau.","Aucun coup de feu ne fut jamais tiré.","Le différend a été réglé à l'amiable en 2022."],
+    en:["Each side left a bottle of its national liquor and its flag.","Not a single shot was ever fired.","The dispute was settled amicably in 2022."],
+    es:["Cada bando dejaba una botella de su licor nacional y su bandera.","Nunca se disparó un solo tiro.","La disputa se resolvió amistosamente en 2022."]
+  },
+  'e549': {
+    fr:["L'homme concerné hoquetait des millions de fois par jour.","Cela a commencé après un accident en 1922.","Il a malgré tout mené une vie quasi normale."],
+    en:["The man hiccuped millions of times a day.","It started after an accident in 1922.","He still lived an almost normal life."],
+    es:["El hombre tenía hipo millones de veces al día.","Empezó tras un accidente en 1922.","Aun así llevó una vida casi normal."]
+  },
+  'e550': {
+    fr:["Les droits passaient par l'État soviétique de l'époque.","Plusieurs entreprises se sont livré une bataille juridique féroce.","Tetris est devenu l'un des jeux les plus vendus de l'histoire."],
+    en:["The rights ran through the Soviet state of the time.","Several companies fought a fierce legal battle.","Tetris became one of the best-selling games in history."],
+    es:["Los derechos pasaban por el Estado soviético de la época.","Varias empresas libraron una feroz batalla legal.","Tetris se convirtió en uno de los juegos más vendidos de la historia."]
+  },
+  'e551': {
+    fr:["John Adams et Thomas Jefferson moururent à quelques heures d'intervalle.","C'était jour pour jour le 50e anniversaire de l'Indépendance.","Une coïncidence qui a beaucoup frappé les Américains."],
+    en:["John Adams and Thomas Jefferson died hours apart.","It was exactly the 50th anniversary of Independence.","A coincidence that deeply struck Americans."],
+    es:["John Adams y Thomas Jefferson murieron con horas de diferencia.","Era justo el 50.º aniversario de la Independencia.","Una coincidencia que impactó mucho a los estadounidenses."]
+  },
+  'e552': {
+    fr:["Elle peut se faire passer pour une sole, un serpent de mer ou une méduse.","Elle choisit son imitation selon le prédateur présent.","C'est l'un des maîtres du déguisement du monde animal."],
+    en:["It can pose as a flatfish, a sea snake, or a jellyfish.","It picks its impression depending on the predator nearby.","It's one of the animal world's masters of disguise."],
+    es:["Puede hacerse pasar por un lenguado, una serpiente marina o una medusa.","Elige su imitación según el depredador presente.","Es uno de los maestros del disfraz del mundo animal."]
+  },
+  'e553': {
+    fr:["On les conserve sous huile pour les isoler de l'air et de l'eau.","Jetés dans l'eau, ils s'enflamment violemment.","Ce sont pourtant des éléments très courants dans la nature, sous forme de sels."],
+    en:["They are stored under oil to isolate them from air and water.","Thrown in water, they ignite violently.","Yet they are very common in nature, as salts."],
+    es:["Se conservan bajo aceite para aislarlos del aire y del agua.","Arrojados al agua, se inflaman violentamente.","Sin embargo, son elementos muy comunes en la naturaleza, como sales."]
+  },
+  'e554': {
+    fr:["Un palindrome se lit identiquement de gauche à droite et de droite à gauche.","En français, « ressasser » en est un bel exemple.","Construire de longues phrases palindromes est un art."],
+    en:["A palindrome reads the same left to right and right to left.","In French, 'ressasser' is a fine example.","Building long palindrome sentences is an art."],
+    es:["Un palíndromo se lee igual de izquierda a derecha y al revés.","En español, «reconocer» es un buen ejemplo.","Construir largas frases palíndromas es todo un arte."]
+  },
+  'e555': {
+    fr:["L'enjeu était fiscal : les chips étaient taxées différemment.","Le produit ne contient qu'une part de pomme de terre.","Les tribunaux ont longuement débattu de sa vraie nature."],
+    en:["The stake was tax-related: crisps were taxed differently.","The product contains only part potato.","Courts long debated its true nature."],
+    es:["El motivo era fiscal: las patatas fritas tributaban distinto.","El producto contiene solo una parte de patata.","Los tribunales debatieron largamente su verdadera naturaleza."]
+  },
+  'e556': {
+    fr:["Sans cela, croyait-on, le monde s'arrêterait.","Ce mythe justifiait des rituels sacrificiels.","Le Soleil était au cœur de toute leur cosmologie."],
+    en:["Without it, they believed, the world would stop.","This myth justified sacrificial rituals.","The Sun was at the heart of all their cosmology."],
+    es:["Sin ello, creían, el mundo se detendría.","Este mito justificaba rituales de sacrificio.","El Sol estaba en el centro de toda su cosmología."]
+  },
+  'e557': {
+    fr:["Il disait tester mentalement ses machines avant de les construire.","Sa mémoire visuelle aurait été exceptionnelle.","Il a déposé des centaines de brevets au cours de sa vie."],
+    en:["He said he tested his machines mentally before building them.","His visual memory was reportedly exceptional.","He filed hundreds of patents during his life."],
+    es:["Decía probar sus máquinas mentalmente antes de construirlas.","Su memoria visual habría sido excepcional.","Registró cientos de patentes a lo largo de su vida."]
+  },
+  'e558': {
+    fr:["Elle est presque entièrement couverte de glace.","Personne n'y vit en permanence.","Elle possède pourtant son propre domaine internet."],
+    en:["It is almost entirely covered in ice.","No one lives there permanently.","Yet it has its own internet domain."],
+    es:["Está casi por completo cubierta de hielo.","Nadie vive allí de forma permanente.","Sin embargo, tiene su propio dominio de internet."]
+  },
+  'e559': {
+    fr:["Ses grandes pattes et sa lourde queue gênent tout recul.","On dit qu'il figure pour cela sur les armoiries australiennes, symbole d'avancée.","L'émeu, autre emblème du pays, ne recule pas non plus."],
+    en:["Its large feet and heavy tail block any backward step.","It's said to feature on Australia's coat of arms for this, a symbol of moving forward.","The emu, another national emblem, can't go backwards either."],
+    es:["Sus grandes patas y su pesada cola impiden retroceder.","Se dice que por eso figura en el escudo de Australia, símbolo de avance.","El emú, otro emblema del país, tampoco retrocede."]
+  },
+  'e560': {
+    fr:["Le claquement crée un repère visuel et sonore commun.","Au montage, on aligne le bruit du clap sur son image.","Le tableau indique aussi la scène et la prise."],
+    en:["The clap makes a shared visual and audio marker.","In editing, the clap sound is aligned with its image.","The board also shows the scene and take number."],
+    es:["El golpe crea una referencia visual y sonora común.","En el montaje, se alinea el sonido de la claqueta con su imagen.","La pizarra indica además la escena y la toma."]
+  },
+  'e561': {
+    fr:["La forteresse était surtout un symbole du pouvoir royal.","Les assaillants cherchaient en réalité de la poudre et des armes.","Sa prise est devenue le symbole de la Révolution française."],
+    en:["The fortress was mainly a symbol of royal power.","The attackers were really after gunpowder and weapons.","Its fall became the symbol of the French Revolution."],
+    es:["La fortaleza era sobre todo un símbolo del poder real.","Los asaltantes buscaban en realidad pólvora y armas.","Su toma se convirtió en símbolo de la Revolución francesa."]
+  },
+  'e562': {
+    fr:["Le mercure est liquide à température ambiante.","Le fer, pourtant lourd, est moins dense que lui.","Le mercure est toxique : on le manipule avec précaution."],
+    en:["Mercury is liquid at room temperature.","Iron, though heavy, is less dense than it.","Mercury is toxic: it's handled with care."],
+    es:["El mercurio es líquido a temperatura ambiente.","El hierro, aunque pesado, es menos denso que él.","El mercurio es tóxico: se manipula con cuidado."]
+  },
+  'e563': {
+    fr:["Il avait emporté un peu de pain et de vin.","La NASA resta discrète pour des raisons légales.","Armstrong, à côté, l'observa en silence."],
+    en:["He had brought a little bread and wine.","NASA kept it quiet for legal reasons.","Armstrong, beside him, watched in silence."],
+    es:["Había llevado un poco de pan y vino.","La NASA fue discreta por razones legales.","Armstrong, a su lado, lo observó en silencio."]
+  },
+  'e564': {
+    fr:["Une grande partie du fromage produit serait dérobée.","Il se revend facilement et se conserve bien.","Des bandes organisées ciblent parfois les entrepôts."],
+    en:["A large share of the cheese produced is reportedly stolen.","It resells easily and keeps well.","Organized gangs sometimes target warehouses."],
+    es:["Una gran parte del queso producido sería robado.","Se revende con facilidad y se conserva bien.","Bandas organizadas atacan a veces los almacenes."]
+  },
+  'e565': {
+    fr:["On dira par exemple « ta jambe nord » au lieu de « gauche ».","Ces locuteurs gardent un sens de l'orientation remarquable.","Cela montre comment la langue peut façonner la pensée."],
+    en:["One might say 'your north leg' instead of 'left'.","These speakers keep a remarkable sense of direction.","It shows how language can shape thought."],
+    es:["Se dirá por ejemplo «tu pierna norte» en vez de «izquierda».","Estos hablantes conservan un notable sentido de la orientación.","Muestra cómo la lengua puede moldear el pensamiento."]
+  },
+  'e566': {
+    fr:["Ce mucus forme un coussin lubrifiant sous son corps.","Il l'aide aussi à grimper et à retenir l'humidité.","Sans lui, l'escargot s'abîmerait sur la moindre aspérité."],
+    en:["This mucus forms a lubricating cushion beneath its body.","It also helps it climb and retain moisture.","Without it, the snail would scrape on the slightest roughness."],
+    es:["Este moco forma un cojín lubricante bajo su cuerpo.","También le ayuda a trepar y a retener la humedad.","Sin él, el caracol se dañaría en la menor aspereza."]
+  },
+  'e567': {
+    fr:["Ils devaient alléger le module pour rapporter des roches.","Des scientifiques aimeraient les récupérer pour étudier les microbes.","La Lune garde ainsi des traces très concrètes de notre passage."],
+    en:["They had to lighten the module to bring back rocks.","Scientists would love to retrieve them to study microbes.","The Moon thus keeps very concrete traces of our visit."],
+    es:["Tenían que aligerar el módulo para traer rocas.","A los científicos les gustaría recuperarlas para estudiar microbios.","La Luna guarda así huellas muy concretas de nuestro paso."]
+  },
+  'e568': {
+    fr:["Le natron absorbait l'eau et empêchait la putréfaction.","Le corps restait sous le sel pendant une quarantaine de jours.","Ce procédé a permis de conserver des momies des millénaires."],
+    en:["Natron absorbed water and prevented decay.","The body stayed under the salt for about forty days.","This process preserved mummies for millennia."],
+    es:["El natrón absorbía el agua e impedía la putrefacción.","El cuerpo permanecía bajo la sal unos cuarenta días.","Este proceso conservó momias durante milenios."]
+  },
+  'e569': {
+    fr:["22 divisé par 7 donne environ 3,1428.","C'est une approximation pratique, connue depuis l'Antiquité.","Les vrais puristes préfèrent fêter Pi le 14 mars."],
+    en:["22 divided by 7 gives about 3.1428.","It's a handy approximation, known since antiquity.","True purists prefer to celebrate Pi on March 14th."],
+    es:["22 dividido entre 7 da aproximadamente 3,1428.","Es una aproximación práctica, conocida desde la Antigüedad.","Los puristas prefieren celebrar Pi el 14 de marzo."]
+  },
+  'e570': {
+    fr:["Monaco tient sur environ deux kilomètres carrés.","C'est le deuxième plus petit État du monde.","Sa densité de population est l'une des plus fortes de la planète."],
+    en:["Monaco covers about two square kilometers.","It's the second-smallest state in the world.","Its population density is among the highest on Earth."],
+    es:["Mónaco ocupa unos dos kilómetros cuadrados.","Es el segundo Estado más pequeño del mundo.","Su densidad de población es de las más altas del planeta."]
+  },
+  'e571': {
+    fr:["Il a fait plusieurs fois le tour de la planète.","Près du volcan, le bruit aurait crevé des tympans.","C'est l'un des sons les plus forts jamais documentés."],
+    en:["It circled the planet several times.","Near the volcano, the noise reportedly burst eardrums.","It's one of the loudest sounds ever documented."],
+    es:["Dio varias veces la vuelta al planeta.","Cerca del volcán, el ruido habría reventado tímpanos.","Es uno de los sonidos más fuertes jamás documentados."]
+  },
+  'e572': {
+    fr:["Même nos cousins disparus, comme Neandertal, n'en avaient pas.","Son rôle exact reste débattu par les scientifiques.","Il serait peut-être lié à la mastication ou à la parole."],
+    en:["Even our extinct cousins, like Neanderthals, lacked one.","Its exact role is still debated by scientists.","It may be linked to chewing or to speech."],
+    es:["Incluso nuestros parientes extintos, como los neandertales, no lo tenían.","Su papel exacto sigue siendo debatido por los científicos.","Podría estar ligado a la masticación o al habla."]
+  },
+  'e573': {
+    fr:["Il fonctionnait au gaz et était actionné à la main.","L'incident refroidit l'idée pour plusieurs décennies.","Les feux électriques ne s'imposèrent qu'au XXe siècle."],
+    en:["It ran on gas and was operated by hand.","The accident cooled the idea for several decades.","Electric lights only took hold in the 20th century."],
+    es:["Funcionaba con gas y se accionaba a mano.","El incidente enfrió la idea durante varias décadas.","Los semáforos eléctricos solo se impusieron en el siglo XX."]
+  },
+  'e574': {
+    fr:["Le bourdonnement suffit souvent à les faire fuir.","Cela évite des conflits entre éléphants et agriculteurs.","Les ruches fournissent en prime du miel aux villageois."],
+    en:["The buzzing alone is often enough to scare them off.","It avoids conflict between elephants and farmers.","The hives also provide honey to villagers as a bonus."],
+    es:["El zumbido basta a menudo para ahuyentarlos.","Esto evita conflictos entre elefantes y agricultores.","Las colmenas dan además miel a los aldeanos."]
+  },
+  'e575': {
+    fr:["Cette enzyme « digère » les protéines qui font figer la gelée.","Cuit, le fruit perd ce pouvoir et la gelée prend alors.","C'est pourquoi on évite l'ananas frais dans certaines recettes."],
+    en:["This enzyme 'digests' the proteins that set the jelly.","Cooked, the fruit loses this power and the jelly then sets.","That's why fresh pineapple is avoided in some recipes."],
+    es:["Esta enzima «digiere» las proteínas que cuajan la gelatina.","Cocido, el fruto pierde ese poder y la gelatina cuaja.","Por eso se evita la piña fresca en algunas recetas."]
+  },
+  'e576': {
+    fr:["Les poètes doivent ruser avec des rimes approchées.","Ces mots sont devenus des défis classiques.","Chaque langue a ainsi ses mots « orphelins » de rime."],
+    en:["Poets must resort to near-rhymes.","These words have become classic challenges.","Every language has its rhyme-orphan words like this."],
+    es:["Los poetas deben recurrir a rimas aproximadas.","Estas palabras se han vuelto desafíos clásicos.","Cada lengua tiene así sus palabras «huérfanas» de rima."]
+  },
+  'e577': {
+    fr:["Un dieu était censé le maintenir immobile avec une pierre.","Quand il se relâchait, la terre tremblait.","Namazu apparaît dans de nombreuses estampes anciennes."],
+    en:["A god was supposed to hold it still with a stone.","When he relaxed, the earth shook.","Namazu appears in many old prints."],
+    es:["Un dios debía mantenerlo quieto con una piedra.","Cuando se relajaba, la tierra temblaba.","Namazu aparece en numerosos grabados antiguos."]
+  },
+  'e578': {
+    fr:["Elle n'avait pourtant pas de deuxième prénom commençant par K.","Elle a emprunté le « K » à une grand-mère.","Le manuscrit avait d'abord été refusé par plusieurs éditeurs."],
+    en:["She didn't even have a middle name starting with K.","She borrowed the 'K' from a grandmother.","The manuscript had first been rejected by several publishers."],
+    es:["Ni siquiera tenía un segundo nombre que empezara por K.","Tomó prestada la «K» de una abuela.","El manuscrito había sido rechazado primero por varias editoriales."]
+  },
+  'e579': {
+    fr:["Le but était de couper les voies d'accès à un envahisseur.","Le pays mise depuis longtemps sur une défense « du réduit ».","Beaucoup de ces dispositifs auraient été démantelés depuis."],
+    en:["The goal was to cut off an invader's access routes.","The country has long relied on a 'redoubt' defense.","Many of these devices have reportedly been dismantled since."],
+    es:["El objetivo era cortar las vías de acceso a un invasor.","El país confía desde hace mucho en una defensa «de reducto».","Muchos de estos dispositivos se habrían desmantelado desde entonces."]
+  },
+  'e580': {
+    fr:["Ce moment au sol est le plus risqué de sa vie.","Il peut alors perdre une grande partie de son poids d'un coup.","On ignore encore pourquoi il prend ce risque plutôt que de le faire en hauteur."],
+    en:["This moment on the ground is the riskiest of its life.","It can shed a large part of its weight at once.","It's still unclear why it takes this risk rather than going up high."],
+    es:["Este momento en el suelo es el más arriesgado de su vida.","Puede perder gran parte de su peso de golpe.","Aún se ignora por qué corre este riesgo en vez de hacerlo en lo alto."]
+  },
+  'e581': {
+    fr:["Il est fait de minuscules tubes de carbone qui piègent la lumière.","L'œil ne perçoit plus aucun relief sur la surface.","On l'utilise notamment en optique et dans l'espace."],
+    en:["It's made of tiny carbon tubes that trap light.","The eye can no longer perceive any contour on the surface.","It's used notably in optics and in space."],
+    es:["Está hecho de diminutos tubos de carbono que atrapan la luz.","El ojo ya no percibe ningún relieve en la superficie.","Se usa sobre todo en óptica y en el espacio."]
+  },
+  'e582': {
+    fr:["Le procédé existe depuis l'Antiquité grecque.","On l'utilise surtout pour insister ou plaisanter.","Le mot « tmèse » vient du grec pour « couper »."],
+    en:["The device dates back to ancient Greece.","It's used mostly for emphasis or humor.","The word 'tmesis' comes from the Greek for 'to cut'."],
+    es:["El recurso existe desde la antigua Grecia.","Se usa sobre todo para enfatizar o bromear.","La palabra «tmesis» viene del griego para «cortar»."]
+  },
+  'e583': {
+    fr:["Il a réussi à dissoudre du gaz carbonique dans l'eau.","On pensait alors que l'eau pétillante avait des vertus médicales.","De là sont nées toutes les sodas modernes."],
+    en:["He managed to dissolve carbon dioxide in water.","Fizzy water was then thought to have medical virtues.","From this all modern sodas were born."],
+    es:["Logró disolver dióxido de carbono en agua.","Se creía entonces que el agua con gas tenía virtudes medicinales.","De ahí nacieron todos los refrescos modernos."]
+  },
+  'e584': {
+    fr:["Certains se trouvaient à quelques centaines de mètres de l'impact.","Ils ont reverdi malgré des troncs calcinés.","Ils sont devenus des symboles de résilience et de paix."],
+    en:["Some stood just a few hundred meters from the blast.","They put out new leaves despite charred trunks.","They have become symbols of resilience and peace."],
+    es:["Algunos estaban a pocos cientos de metros del impacto.","Reverdecieron pese a sus troncos calcinados.","Se han convertido en símbolos de resiliencia y paz."]
+  },
+  'e585': {
+    fr:["Une île artificielle assure la transition entre les deux.","Le tunnel évite de gêner le trafic aérien et maritime.","On passe ainsi d'un pays à l'autre en voiture ou en train."],
+    en:["An artificial island makes the transition between the two.","The tunnel avoids disrupting air and sea traffic.","You cross from one country to the other by car or train."],
+    es:["Una isla artificial hace la transición entre ambos.","El túnel evita estorbar el tráfico aéreo y marítimo.","Así se pasa de un país a otro en coche o en tren."]
+  },
+  'e586': {
+    fr:["Cette allure s'appelle l'« amble ».","Elle réduit le risque de se croiser les pattes.","La plupart des autres mammifères marchent en diagonale."],
+    en:["This gait is called 'pacing'.","It lowers the risk of the legs crossing.","Most other mammals walk diagonally."],
+    es:["Este andar se llama «ambladura».","Reduce el riesgo de cruzar las patas.","La mayoría de los demás mamíferos caminan en diagonal."]
+  },
+  'e587': {
+    fr:["La banshee est décrite comme une femme aux longs cheveux.","Son nom signifie « femme des collines » en irlandais.","On l'entendrait gémir la nuit, près des maisons."],
+    en:["The banshee is described as a woman with long hair.","Her name means 'woman of the fairy mounds' in Irish.","She is said to be heard wailing at night, near houses."],
+    es:["La banshee se describe como una mujer de largos cabellos.","Su nombre significa «mujer de las colinas» en irlandés.","Se la oiría gemir de noche, cerca de las casas."]
+  },
+  'e588': {
+    fr:["L'agitation thermique désorganise les aimants microscopiques internes.","En refroidissant, le matériau peut redevenir magnétique.","Ce seuil porte le nom du physicien Pierre Curie."],
+    en:["Heat agitation scrambles the internal microscopic magnets.","On cooling, the material can become magnetic again.","The threshold is named after physicist Pierre Curie."],
+    es:["La agitación térmica desordena los imanes microscópicos internos.","Al enfriarse, el material puede volver a ser magnético.","Este umbral lleva el nombre del físico Pierre Curie."]
+  },
+  'e589': {
+    fr:["Il a fallu des années pour percer si profond.","La chaleur croissante a fini par stopper le forage.","On n'a même pas traversé la croûte terrestre."],
+    en:["It took years to drill that deep.","Rising heat eventually halted the drilling.","Even so, the Earth's crust was not pierced through."],
+    es:["Hicieron falta años para perforar tan hondo.","El calor creciente acabó deteniendo la perforación.","Ni siquiera se atravesó la corteza terrestre."]
+  },
+  'e590': {
+    fr:["Sur Terre, le cœur travaille contre la pesanteur.","En apesanteur, il se relâche et change de forme.","Il retrouve sa forme normale après le retour."],
+    en:["On Earth, the heart works against gravity.","In weightlessness, it relaxes and changes shape.","It returns to its normal shape after coming back."],
+    es:["En la Tierra, el corazón trabaja contra la gravedad.","En ingravidez, se relaja y cambia de forma.","Recupera su forma normal tras el regreso."]
+  },
+  'e591': {
+    fr:["La main droite était jugée la plus habile.","Être adroit des deux mains, c'était donc avoir « deux droites ».","À l'inverse, « gauche » a pris un sens de maladresse."],
+    en:["The right hand was considered the more skillful.","Being skilled with both hands meant having 'two rights'.","Conversely, 'left' took on a sense of clumsiness."],
+    es:["La mano derecha se consideraba la más hábil.","Ser diestro con ambas manos era tener «dos derechas».","A la inversa, «izquierdo» tomó un sentido de torpeza."]
+  },
+  'e592': {
+    fr:["Une légende prête ce geste à Cléopâtre.","Le vinaigre fort peut effectivement dissoudre une perle.","C'était une façon spectaculaire de « boire une fortune »."],
+    en:["A legend attributes this gesture to Cleopatra.","Strong vinegar can indeed dissolve a pearl.","It was a spectacular way to 'drink a fortune'."],
+    es:["Una leyenda atribuye este gesto a Cleopatra.","El vinagre fuerte puede en efecto disolver una perla.","Era una forma espectacular de «beberse una fortuna»."]
+  },
+  'e593': {
+    fr:["Très peu de personnes en connaîtraient la formule complète.","Le secret fait partie de la légende de la marque.","Beaucoup ont tenté, sans succès certain, de la reconstituer."],
+    en:["Very few people are said to know the full formula.","The secret is part of the brand's legend.","Many have tried, without certain success, to reconstruct it."],
+    es:["Muy pocas personas conocerían la fórmula completa.","El secreto forma parte de la leyenda de la marca.","Muchos han intentado, sin éxito seguro, reconstruirla."]
+  },
+  'e594': {
+    fr:["Ses énormes yeux lui offrent une vue perçante.","Elle repère un prédateur à très longue distance.","C'est le plus grand œil de tous les animaux terrestres."],
+    en:["Its huge eyes give it sharp vision.","It can spot a predator from very far away.","It's the largest eye of any land animal."],
+    es:["Sus enormes ojos le dan una vista aguda.","Detecta a un depredador a muy larga distancia.","Es el ojo más grande de todos los animales terrestres."]
+  },
+  'e595': {
+    fr:["Un métallurgiste remarqua qu'un alliage refusé ne rouillait pas.","L'ajout de chrome protège l'acier de la corrosion.","Cette découverte a transformé la cuisine et l'industrie."],
+    en:["A metallurgist noticed that a rejected alloy did not rust.","Adding chromium protects the steel from corrosion.","This discovery transformed kitchens and industry."],
+    es:["Un metalúrgico notó que una aleación descartada no se oxidaba.","Añadir cromo protege el acero de la corrosión.","Este descubrimiento transformó la cocina y la industria."]
+  },
+  'e596': {
+    fr:["Les pluies remplissent les creux entre les dunes.","Des poissons apparaissent dans ces lagons saisonniers.","Le paysage change radicalement selon la saison."],
+    en:["Rains fill the hollows between the dunes.","Fish appear in these seasonal lagoons.","The landscape changes dramatically with the season."],
+    es:["Las lluvias llenan los huecos entre las dunas.","Aparecen peces en estas lagunas estacionales.","El paisaje cambia radicalmente según la estación."]
+  },
+  'e597': {
+    fr:["C'était probablement une suite de lettres sans importance.","Il a aussi popularisé l'usage du signe « @ » dans les adresses.","Le message reliait deux ordinateurs côte à côte."],
+    en:["It was probably a meaningless string of letters.","He also popularized the use of '@' in addresses.","The message linked two computers side by side."],
+    es:["Probablemente era una serie de letras sin importancia.","También popularizó el uso del signo «@» en las direcciones.","El mensaje conectaba dos ordenadores uno al lado del otro."]
+  },
+  'e598': {
+    fr:["Il compte de nombreuses voyelles et consonnes distinctes.","Il s'écrit sans espace entre les mots.","Il descend d'écritures venues d'Inde."],
+    en:["It has many distinct vowels and consonants.","It is written with no spaces between words.","It descends from scripts that came from India."],
+    es:["Tiene muchas vocales y consonantes distintas.","Se escribe sin espacios entre palabras.","Desciende de escrituras llegadas de la India."]
+  },
+  'e599': {
+    fr:["Il travaille jour et nuit pendant plusieurs jours.","Le motif peut mesurer plus d'un mètre de diamètre.","La femelle choisit selon la qualité du dessin."],
+    en:["It works day and night for several days.","The pattern can be over a meter across.","The female chooses based on the quality of the design."],
+    es:["Trabaja día y noche durante varios días.","El motivo puede medir más de un metro de diámetro.","La hembra elige según la calidad del dibujo."]
+  },
+  'e600': {
+    fr:["Mais ces lacs et rivières sont faits de méthane, pas d'eau.","Il y règne un froid extrême, bien en dessous de zéro.","Titan possède une atmosphère épaisse, fait rare pour une lune."],
+    en:["But these lakes and rivers are made of methane, not water.","Extreme cold reigns there, far below zero.","Titan has a thick atmosphere, rare for a moon."],
+    es:["Pero esos lagos y ríos son de metano, no de agua.","Allí reina un frío extremo, muy por debajo de cero.","Titán posee una atmósfera densa, algo raro en una luna."]
+  },
+  'e601': {
+    fr:["On les appelle aussi « perles de tapioca ».","Elles sont moelleuses et sans goût marqué.","La boisson est née à Taïwan dans les années 1980."],
+    en:["They're also called 'tapioca pearls'.","They're chewy and have little taste of their own.","The drink was born in Taiwan in the 1980s."],
+    es:["También se llaman «perlas de tapioca».","Son masticables y de sabor poco marcado.","La bebida nació en Taiwán en los años 1980."]
+  },
+  'e602': {
+    fr:["Les corps avaient disparu, mais leur empreinte demeurait.","Le plâtre a figé leurs postures du dernier instant.","La technique fut imaginée par un archéologue au XIXe siècle."],
+    en:["The bodies had vanished, but their imprint remained.","The plaster froze their poses from the final moment.","The technique was devised by a 19th-century archaeologist."],
+    es:["Los cuerpos habían desaparecido, pero su huella permanecía.","El yeso fijó sus posturas del último instante.","La técnica la ideó un arqueólogo del siglo XIX."]
+  },
+  'e603': {
+    fr:["Ces composés peuvent attirer des prédateurs des insectes nuisibles.","Ils alertent aussi les plantes voisines.","Ce que nous trouvons agréable est, pour l'herbe, une alarme."],
+    en:["These compounds can attract predators of harmful insects.","They also alert neighboring plants.","What we find pleasant is, for the grass, an alarm."],
+    es:["Estos compuestos pueden atraer a depredadores de insectos dañinos.","También alertan a las plantas vecinas.","Lo que nos resulta agradable es, para la hierba, una alarma."]
+  },
+  'e604': {
+    fr:["Il compte 27 lettres et vient du latin.","Il apparaît dans la comédie « Peines d'amour perdues ».","C'est un clin d'œil savant glissé dans une réplique."],
+    en:["It has 27 letters and comes from Latin.","It appears in the comedy 'Love's Labour's Lost'.","It's a scholarly wink slipped into a line."],
+    es:["Tiene 27 letras y viene del latín.","Aparece en la comedia «Trabajos de amor perdidos».","Es un guiño culto deslizado en un diálogo."]
+  },
+  'e605': {
+    fr:["Son métabolisme très lent économise l'énergie.","Elle ralentit encore davantage quand la nourriture manque.","Elle a en revanche besoin d'un peu d'eau régulièrement."],
+    en:["Its very slow metabolism conserves energy.","It slows down even more when food is scarce.","It does, however, need a little water regularly."],
+    es:["Su metabolismo muy lento ahorra energía.","Se ralentiza aún más cuando escasea la comida.","En cambio, necesita un poco de agua con regularidad."]
+  },
+  'e606': {
+    fr:["Sa couleur viendrait de micro-organismes et de sel.","Le rose persiste, ce qui exclut un simple reflet du ciel.","Le lac est bordé d'une forêt verte, créant un contraste saisissant."],
+    en:["Its color is thought to come from micro-organisms and salt.","The pink persists, which rules out a mere reflection of the sky.","The lake is rimmed by green forest, a striking contrast."],
+    es:["Su color vendría de microorganismos y sal.","El rosa persiste, lo que descarta un simple reflejo del cielo.","El lago está rodeado de bosque verde, un contraste llamativo."]
+  },
+  'e607': {
+    fr:["Le fondateur, incrédule, contacta l'acheteur.","Celui-ci répondit qu'il collectionnait les pointeurs cassés.","Le commerce en ligne partait pourtant pour révolutionner le monde."],
+    en:["The founder, incredulous, contacted the buyer.","He replied that he collected broken laser pointers.","Yet online commerce was about to transform the world."],
+    es:["El fundador, incrédulo, contactó al comprador.","Este respondió que coleccionaba punteros rotos.","Aun así, el comercio en línea iba a transformar el mundo."]
+  },
+  'e608': {
+    fr:["On la mâche dans plusieurs régions d'Afrique de l'Ouest.","Elle est amère et stimulante.","Les colas modernes utilisent surtout des arômes de synthèse."],
+    en:["It is chewed in several parts of West Africa.","It is bitter and stimulating.","Modern colas mostly use synthetic flavorings."],
+    es:["Se masca en varias regiones de África Occidental.","Es amarga y estimulante.","Las colas modernas usan sobre todo aromas sintéticos."]
+  },
+  'e609': {
+    fr:["Le mercure est un métal, le brome un non-métal.","Quelques autres éléments fondent à peine au-dessus de la température ambiante.","Le brome dégage des vapeurs rougeâtres irritantes."],
+    en:["Mercury is a metal, bromine a non-metal.","A few other elements melt just above room temperature.","Bromine gives off irritating reddish vapors."],
+    es:["El mercurio es un metal, el bromo un no metal.","Algunos otros elementos se funden apenas por encima de la temperatura ambiente.","El bromo desprende vapores rojizos irritantes."]
+  },
+  'e610': {
+    fr:["La mie absorbait le graphite sans abîmer le papier.","La gomme en caoutchouc n'est apparue qu'au XVIIIe siècle.","Certains dessinateurs utilisent encore une gomme « mie de pain »."],
+    en:["The crumb soaked up graphite without damaging the paper.","The rubber eraser only appeared in the 18th century.","Some artists still use a soft 'bread-like' kneaded eraser."],
+    es:["La miga absorbía el grafito sin dañar el papel.","La goma de caucho solo apareció en el siglo XVIII.","Algunos dibujantes aún usan una goma blanda tipo «miga»."]
+  },
+  'e611': {
+    fr:["On lui a appris à passer dans des cerceaux ou à pousser des leviers.","L'idée d'une mémoire de trois secondes est fausse.","Il reconnaît même la personne qui le nourrit."],
+    en:["It has been taught to swim through hoops or push levers.","The idea of a three-second memory is false.","It even recognizes the person who feeds it."],
+    es:["Se le ha enseñado a pasar por aros o empujar palancas.","La idea de una memoria de tres segundos es falsa.","Incluso reconoce a la persona que lo alimenta."]
+  },
+  'e612': {
+    fr:["Elle voulait rendre tangible une durée invisible.","Cela aidait à comprendre pourquoi les ordinateurs ont des limites de vitesse.","Même la lumière ne va pas infiniment vite."],
+    en:["She wanted to make an invisible duration tangible.","It helped explain why computers have speed limits.","Even light does not travel infinitely fast."],
+    es:["Quería hacer tangible una duración invisible.","Ayudaba a entender por qué los ordenadores tienen límites de velocidad.","Ni siquiera la luz va infinitamente rápido."]
+  },
+  'e613': {
+    fr:["La mousson y déverse des trombes d'eau pendant des mois.","Les habitants fabriquent des abris en feuilles pour se protéger.","C'est plus de dix fois la pluviométrie de Paris."],
+    en:["The monsoon dumps torrents of water there for months.","Locals make leaf shelters to protect themselves.","It's more than ten times the rainfall of Paris."],
+    es:["El monzón descarga allí trombas de agua durante meses.","Los habitantes fabrican refugios de hojas para protegerse.","Es más de diez veces la pluviometría de París."]
+  },
+  'e614': {
+    fr:["Des mots existent pour la neige tourbillonnante ou fondante.","Une langue reflète souvent l'environnement de ceux qui la parlent.","Le mythe des « cent mots inuits » est, lui, exagéré."],
+    en:["There are words for swirling or melting snow.","A language often mirrors the environment of its speakers.","The myth of the 'hundred Inuit words' is, by contrast, overblown."],
+    es:["Hay palabras para la nieve que se arremolina o se derrite.","Una lengua refleja a menudo el entorno de quienes la hablan.","El mito de las «cien palabras inuit» está, en cambio, exagerado."]
+  },
+  'e615': {
+    fr:["Une campagne vanta les carottes pour brouiller les pistes.","Le vrai secret était une technologie de détection.","La légende « la carotte rend la vue perçante » en est restée."],
+    en:["A campaign praised carrots to throw the enemy off.","The real secret was a detection technology.","The legend that 'carrots sharpen sight' stuck from this."],
+    es:["Una campaña ensalzó las zanahorias para despistar.","El verdadero secreto era una tecnología de detección.","De ahí quedó la leyenda de que «la zanahoria agudiza la vista»."]
+  },
+  'e616': {
+    fr:["Elles attiraient les marins par leur chant, perchées sur des rochers.","La version « femme-poisson » est venue bien plus tard.","Ulysse se fit attacher au mât pour résister à leur chant."],
+    en:["They lured sailors with their song, perched on rocks.","The 'fish-woman' version came much later.","Odysseus had himself tied to the mast to resist their song."],
+    es:["Atraían a los marineros con su canto, posadas en rocas.","La versión «mujer-pez» llegó mucho después.","Ulises se hizo atar al mástil para resistir su canto."]
+  },
+  'e617': {
+    fr:["Ce renfort leur permet de ronger des arbres entiers.","Leurs incisives poussent toute leur vie.","Le fer joue ici le rôle d'un émail renforcé."],
+    en:["This reinforcement lets them gnaw through whole trees.","Their incisors grow throughout their life.","The iron here acts like a reinforced enamel."],
+    es:["Este refuerzo les permite roer árboles enteros.","Sus incisivos crecen toda la vida.","El hierro hace aquí de esmalte reforzado."]
+  },
+  'e618': {
+    fr:["Ce nombre permet de compter les atomes par paquets pratiques.","On le fête le 23 octobre, le « jour de la mole ».","Sans lui, peser des atomes un par un serait impossible."],
+    en:["This number lets us count atoms in convenient batches.","It's celebrated on October 23rd, 'Mole Day'.","Without it, weighing atoms one by one would be impossible."],
+    es:["Este número permite contar átomos en lotes prácticos.","Se celebra el 23 de octubre, el «día del mol».","Sin él, pesar átomos uno a uno sería imposible."]
+  },
+  'e619': {
+    fr:["Il aurait été gravé à la hâte sur un objet.","Un testament n'a pas besoin d'être long pour être valable.","Sa clarté a suffi à le rendre incontestable."],
+    en:["It was reportedly scratched in haste onto an object.","A will need not be long to be valid.","Its clarity was enough to make it indisputable."],
+    es:["Habría sido grabado a toda prisa en un objeto.","Un testamento no necesita ser largo para ser válido.","Su claridad bastó para hacerlo indiscutible."]
+  },
+  'e620': {
+    fr:["Les chaînes et plateformes vidéo s'arrachent ce suffixe.","Cela représente une part notable du budget du pays.","Tuvalu est par ailleurs l'un des pays les plus menacés par la montée des eaux."],
+    en:["TV channels and video platforms covet this suffix.","It makes up a notable share of the country's budget.","Tuvalu is also one of the countries most threatened by rising seas."],
+    es:["Cadenas y plataformas de vídeo se disputan ese sufijo.","Representa una parte notable del presupuesto del país.","Tuvalu es además uno de los países más amenazados por la subida del mar."]
+  },
+  'e621': {
+    fr:["Les fourmis caressent les pucerons pour les faire sécréter.","Elles les défendent contre les prédateurs.","C'est une forme d'élevage vieille de millions d'années."],
+    en:["The ants stroke the aphids to make them secrete.","They defend them against predators.","It's a form of farming millions of years old."],
+    es:["Las hormigas acarician a los pulgones para que secreten.","Los defienden de los depredadores.","Es una forma de ganadería de millones de años."]
+  },
+  'e622': {
+    fr:["Le contact suffit à transférer des microbes.","L'humidité de l'aliment accélère encore le phénomène.","Mieux vaut ne pas s'y fier."],
+    en:["Contact alone is enough to transfer microbes.","The food's moisture speeds the process up further.","It's best not to rely on it."],
+    es:["El contacto basta para transferir microbios.","La humedad del alimento acelera aún más el proceso.","Más vale no fiarse de ella."]
+  },
+  'e623': {
+    fr:["Elle a été adoptée en 1948.","Ce record figure même dans les livres de records.","Aucun autre texte n'a été rendu accessible dans autant de langues."],
+    en:["It was adopted in 1948.","This record even appears in record books.","No other text has been made available in so many languages."],
+    es:["Fue adoptada en 1948.","Este récord figura incluso en los libros de récords.","Ningún otro texto se ha hecho accesible en tantos idiomas."]
+  },
+  'e624': {
+    fr:["La muscade est la graine séchée et broyée.","Le macis est l'arille rouge qui enveloppe cette graine.","Leurs saveurs sont proches mais distinctes."],
+    en:["Nutmeg is the dried, ground seed.","Mace is the red aril that wraps this seed.","Their flavors are close but distinct."],
+    es:["La nuez moscada es la semilla seca y molida.","La macis es el arilo rojo que envuelve esa semilla.","Sus sabores son próximos pero distintos."]
+  },
+  'e625': {
+    fr:["La fine poussière martienne diffuse surtout la lumière rouge.","Le bleu se concentre alors autour du Soleil couchant.","Sur Terre, c'est l'inverse qui donne nos couchers rougeoyants."],
+    en:["The fine Martian dust scatters mostly red light.","Blue then concentrates around the setting Sun.","On Earth, the reverse gives our reddish sunsets."],
+    es:["El polvo fino marciano dispersa sobre todo la luz roja.","El azul se concentra entonces alrededor del Sol poniente.","En la Tierra, lo contrario da nuestros atardeceres rojizos."]
+  },
+  'e626': {
+    fr:["Son créateur voulait évoquer un effet « explosif ».","Le vêtement fit en effet sensation à sa sortie en 1946.","L'atoll, lui, reste marqué par ces essais."],
+    en:["Its creator wanted to evoke an 'explosive' effect.","The garment did cause a sensation when it appeared in 1946.","The atoll itself remains scarred by those tests."],
+    es:["Su creador quería evocar un efecto «explosivo».","La prenda causó sensación al aparecer en 1946.","El atolón, en cambio, sigue marcado por esos ensayos."]
+  },
+  'e627': {
+    fr:["Des bandes lumineuses semblent rouler le long de son corps.","La proie, fascinée, ne réagit pas à temps.","La seiche change de couleur plus vite qu'un écran."],
+    en:["Bands of light seem to roll along its body.","The mesmerized prey fails to react in time.","The cuttlefish changes color faster than a screen."],
+    es:["Bandas de luz parecen rodar por su cuerpo.","La presa, fascinada, no reacciona a tiempo.","La sepia cambia de color más rápido que una pantalla."]
+  },
+  'e628': {
+    fr:["Il répondait avec humour à une question posée dans son titre.","La réponse était simplement « non ».","Il est resté célèbre pour sa concision record."],
+    en:["It humorously answered a question posed in its title.","The answer was simply 'no'.","It remains famous for its record brevity."],
+    es:["Respondía con humor a una pregunta planteada en su título.","La respuesta era simplemente «no».","Sigue siendo célebre por su concisión récord."]
+  },
+  'e629': {
+    fr:["Il s'étend sur plusieurs kilomètres de long.","Il est pourtant bien moins connu qu'Uluru.","C'est un « monolithe » émergeant d'une plaine désertique."],
+    en:["It stretches several kilometers long.","It is, however, far less famous than Uluru.","It's a 'monolith' rising from a desert plain."],
+    es:["Se extiende varios kilómetros de largo.","Sin embargo, es mucho menos conocido que Uluru.","Es un «monolito» que emerge de una llanura desértica."]
+  },
+  'e630': {
+    fr:["Les colonnes se lisent de gauche à droite.","Cette écriture descend d'anciens alphabets d'Asie.","Elle est encore utilisée en Mongolie-Intérieure."],
+    en:["The columns are read from left to right.","This script descends from old Asian alphabets.","It is still used in Inner Mongolia."],
+    es:["Las columnas se leen de izquierda a derecha.","Esta escritura desciende de antiguos alfabetos de Asia.","Aún se usa en Mongolia Interior."]
+  },
+  'e631': {
+    fr:["On parlait de personnes riches comme de « sacs à poivre ».","Les routes commerciales des épices ont façonné l'histoire.","Le poivre a poussé à explorer le monde."],
+    en:["Wealthy people were called 'pepper sacks'.","The spice trade routes shaped history.","Pepper drove the exploration of the world."],
+    es:["A los ricos se les llamaba «sacos de pimienta».","Las rutas comerciales de las especias moldearon la historia.","La pimienta impulsó la exploración del mundo."]
+  },
+  'e632': {
+    fr:["Elle a été relevée dans une station scientifique russe.","À ce froid, le métal devient cassant comme du verre.","Des mesures par satellite ont depuis trouvé encore plus froid."],
+    en:["It was recorded at a Russian research station.","At this cold, metal becomes brittle as glass.","Satellite readings have since found even colder spots."],
+    es:["Se registró en una estación científica rusa.","Con este frío, el metal se vuelve quebradizo como el vidrio.","Mediciones por satélite han hallado desde entonces lugares aún más fríos."]
+  },
+  'e633': {
+    fr:["Il couve l'œuf sous un repli de peau, au chaud.","Les mâles se serrent en groupe pour résister au froid.","La femelle revient nourrir le poussin à l'éclosion."],
+    en:["It keeps the egg warm under a fold of skin.","The males huddle together to survive the cold.","The female returns to feed the chick when it hatches."],
+    es:["Mantiene el huevo caliente bajo un pliegue de piel.","Los machos se apiñan en grupo para resistir el frío.","La hembra regresa a alimentar al polluelo al eclosionar."]
+  },
+  'e634': {
+    fr:["Il a été imprimé à l'aide de blocs de bois gravés.","Cela précède l'imprimerie de Gutenberg de près de six siècles.","Il a été retrouvé scellé dans une grotte."],
+    en:["It was printed using carved wooden blocks.","This predates Gutenberg's press by nearly six centuries.","It was found sealed in a cave."],
+    es:["Se imprimió con bloques de madera tallados.","Precede a la imprenta de Gutenberg en casi seis siglos.","Se halló sellado en una cueva."]
+  },
+  'e635': {
+    fr:["Chaque texte officiel doit être traduit dans toutes ces langues.","Cela représente un travail de traduction colossal.","L'Europe compte par ailleurs des dizaines de langues régionales."],
+    en:["Every official text must be translated into all of them.","This represents a colossal translation effort.","Europe also has dozens of regional languages."],
+    es:["Cada texto oficial debe traducirse a todas ellas.","Esto supone un trabajo de traducción colosal.","Europa tiene además decenas de lenguas regionales."]
+  },
+  'e636': {
+    fr:["Le gel très rapide forme de minuscules cristaux de glace.","Cela préserve mieux la texture et le goût.","Cette idée a transformé toute l'alimentation moderne."],
+    en:["Very fast freezing forms tiny ice crystals.","This better preserves texture and taste.","This idea transformed all of modern food."],
+    es:["La congelación muy rápida forma cristales de hielo diminutos.","Esto preserva mejor la textura y el sabor.","Esta idea transformó toda la alimentación moderna."]
+  },
+  'e637': {
+    fr:["Un gaz s'était transformé en une poudre étonnamment glissante.","Rien n'y adhérait, même les substances les plus collantes.","Il a fini par révolutionner les poêles de cuisine."],
+    en:["A gas had turned into a surprisingly slippery powder.","Nothing stuck to it, even the stickiest substances.","It ended up revolutionizing kitchen pans."],
+    es:["Un gas se había convertido en un polvo sorprendentemente resbaladizo.","Nada se le adhería, ni las sustancias más pegajosas.","Acabó revolucionando las sartenes de cocina."]
+  },
+  'e638': {
+    fr:["Le bleu devait être effacé après la promotion.","Mais le tourisme afflua, et le village garda sa couleur.","C'est devenu un « village bleu » unique."],
+    en:["The blue was meant to be removed after the promotion.","But tourists flocked in, and the village kept its color.","It became a unique 'blue village'."],
+    es:["El azul debía borrarse tras la promoción.","Pero llegaron los turistas y el pueblo conservó su color.","Se convirtió en un «pueblo azul» único."]
+  },
+  'e639': {
+    fr:["Il sécrète un venin par une glande située sous le bras.","Il le mélange à sa salive avant de mordre.","Ses grands yeux et sa lenteur cachent une vraie défense."],
+    en:["It secretes venom from a gland under its arm.","It mixes it with its saliva before biting.","Its big eyes and slowness hide a real defense."],
+    es:["Segrega veneno por una glándula bajo el brazo.","Lo mezcla con su saliva antes de morder.","Sus grandes ojos y su lentitud ocultan una verdadera defensa."]
+  },
+  'e640': {
+    fr:["À l'ouest du pays, le Soleil se lève donc très tard à l'horloge.","Le pays s'étend pourtant sur l'équivalent de cinq fuseaux.","Cette unité était voulue comme un symbole d'unité nationale."],
+    en:["In the west, the Sun thus rises very late by the clock.","Yet the country spans the equivalent of five time zones.","This single time was meant as a symbol of national unity."],
+    es:["En el oeste, el Sol sale por tanto muy tarde según el reloj.","Sin embargo, el país abarca el equivalente a cinco husos.","Esta unidad se quiso como símbolo de unidad nacional."]
+  },
+  'e641': {
+    fr:["La girafe broute des heures, langue exposée au soleil.","Le pigment foncé agirait comme un écran naturel.","Sa langue peut mesurer une cinquantaine de centimètres."],
+    en:["The giraffe browses for hours with its tongue out in the sun.","The dark pigment may act as a natural sunscreen.","Its tongue can be around fifty centimeters long."],
+    es:["La jirafa ramonea horas con la lengua al sol.","El pigmento oscuro actuaría como protector natural.","Su lengua puede medir unos cincuenta centímetros."]
+  },
+  'e642': {
+    fr:["L'allemand assemble facilement des mots pour créer des concepts.","Beaucoup de ces mots composés sont intraduisibles d'un seul tenant.","Ils décrivent des sentiments très précis."],
+    en:["German easily stitches words together to coin concepts.","Many of these compound words are untranslatable in one piece.","They describe very precise feelings."],
+    es:["El alemán une fácilmente palabras para crear conceptos.","Muchas de estas palabras compuestas son intraducibles de una pieza.","Describen sentimientos muy precisos."]
+  },
+  'e643': {
+    fr:["On y entend des salutations en dizaines de langues.","Il contient aussi de la musique et des bruits de la nature.","Les sondes ont quitté le système solaire depuis des années."],
+    en:["It includes greetings in dozens of languages.","It also holds music and sounds of nature.","The probes left the solar system years ago."],
+    es:["Incluye saludos en decenas de idiomas.","También contiene música y sonidos de la naturaleza.","Las sondas dejaron el sistema solar hace años."]
+  },
+  'e644': {
+    fr:["Le piquant extrême peut provoquer de réelles douleurs.","La capsaïcine trompe le cerveau en imitant une brûlure.","Boire de l'eau n'aide pas : mieux vaut du lait."],
+    en:["Extreme heat can cause real pain.","Capsaicin tricks the brain by mimicking a burn.","Water doesn't help: milk works better."],
+    es:["El picor extremo puede causar verdadero dolor.","La capsaicina engaña al cerebro imitando una quemadura.","Beber agua no ayuda: mejor leche."]
+  },
+  'e645': {
+    fr:["Il faut ensuite un moment avant de pouvoir refaire craquer.","Contrairement à la croyance, cela ne cause pas d'arthrose.","Le liquide articulaire contient des gaz dissous."],
+    en:["It then takes a while before you can crack it again.","Contrary to belief, it doesn't cause arthritis.","Joint fluid contains dissolved gases."],
+    es:["Luego pasa un rato antes de poder hacerlo crujir de nuevo.","Al contrario de la creencia, no causa artrosis.","El líquido articular contiene gases disueltos."]
+  },
+  'e646': {
+    fr:["Le dieu Khépri était représenté avec une tête de scarabée.","Les Égyptiens portaient des amulettes en forme de scarabée.","Le scarabée symbolisait aussi la renaissance."],
+    en:["The god Khepri was depicted with a scarab head.","Egyptians wore scarab-shaped amulets.","The scarab also symbolized rebirth."],
+    es:["El dios Jepri se representaba con cabeza de escarabajo.","Los egipcios llevaban amuletos con forma de escarabajo.","El escarabajo simbolizaba también el renacimiento."]
+  },
+  'e647': {
+    fr:["Elle traverse un désert plat à perte de vue.","Conduire dessus serait, dit-on, hypnotique.","L'absence de relief a permis ce tracé rectiligne."],
+    en:["It crosses a flat desert as far as the eye can see.","Driving it is said to be hypnotic.","The lack of relief allowed this dead-straight route."],
+    es:["Atraviesa un desierto plano hasta donde alcanza la vista.","Conducir por ella sería, dicen, hipnótico.","La falta de relieve permitió este trazado recto."]
+  },
+  'e648': {
+    fr:["Le ronronnement, lui, reste un mystère partiel.","Le miaulement servirait surtout à communiquer avec l'humain.","Entre eux, les chats adultes miaulent peu."],
+    en:["The purr, for its part, remains partly a mystery.","Meowing seems mainly to communicate with humans.","Among themselves, adult cats rarely meow."],
+    es:["El ronroneo sigue siendo en parte un misterio.","El maullido serviría sobre todo para comunicarse con el humano.","Entre ellos, los gatos adultos maúllan poco."]
+  },
+  'e649': {
+    fr:["On parle de « placebo en ouvert ».","Le rituel de prendre un soin semble aider en lui-même.","Cela montre la puissance de l'esprit sur le corps."],
+    en:["This is called an 'open-label placebo'.","The ritual of taking a treatment seems to help in itself.","It shows the power of the mind over the body."],
+    es:["Se habla de «placebo abierto».","El ritual de tomar un tratamiento parece ayudar por sí mismo.","Muestra el poder de la mente sobre el cuerpo."]
+  },
+  'e650': {
+    fr:["Le souverain est mort ou a abdiqué presque aussitôt.","Plusieurs cas se disputent ce triste record.","Certains n'ont jamais été couronnés officiellement."],
+    en:["The ruler died or abdicated almost at once.","Several cases vie for this sad record.","Some were never officially crowned."],
+    es:["El soberano murió o abdicó casi de inmediato.","Varios casos se disputan este triste récord.","Algunos nunca fueron coronados oficialmente."]
+  },
+  'e651': {
+    fr:["Les moines copistes l'utilisaient dans les manuscrits.","On le retrouve aujourd'hui dans les logiciels de traitement de texte.","Son nom français évoque la forme d'un petit animal."],
+    en:["Medieval scribes used it in manuscripts.","It's found today in word-processing software.","Its shape recalls a reversed letter P."],
+    es:["Los monjes copistas lo usaban en los manuscritos.","Hoy se encuentra en los procesadores de texto.","Su forma recuerda a una P invertida."]
+  },
+  'e652': {
+    fr:["Chaque « écaille » correspond à une fleur d'origine.","C'est ce qu'on appelle un fruit « composé ».","La plante ne donne qu'un seul ananas à la fois."],
+    en:["Each 'scale' corresponds to one original flower.","This is what's called a 'multiple' fruit.","The plant yields only one pineapple at a time."],
+    es:["Cada «escama» corresponde a una flor original.","Es lo que se llama un fruto «múltiple».","La planta da una sola piña a la vez."]
+  },
+  'e653': {
+    fr:["Il s'était blessé à cheval quelques jours avant.","Il craignait qu'on lui retire le vol.","Il a même bricolé un manche pour fermer la verrière malgré la douleur."],
+    en:["He had hurt himself on horseback days before.","He feared being pulled from the flight.","He even rigged a tool to close the canopy despite the pain."],
+    es:["Se había lesionado a caballo días antes.","Temía que le retiraran del vuelo.","Incluso improvisó un mango para cerrar la cabina pese al dolor."]
+  },
+  'e654': {
+    fr:["Cette danse renforce le lien du couple.","C'est le mâle qui porte les petits dans une poche.","Ils s'accrochent par la queue pour ne pas dériver."],
+    en:["This dance strengthens the pair's bond.","It's the male that carries the young in a pouch.","They hook tails together so as not to drift apart."],
+    es:["Este baile refuerza el vínculo de la pareja.","Es el macho quien lleva las crías en una bolsa.","Se enganchan por la cola para no ir a la deriva."]
+  },
+  'e655': {
+    fr:["Il remarqua qu'un écran s'illuminait sans raison apparente.","Il vit bientôt les os de sa propre main à travers la peau.","« X » désignait l'inconnu, comme en mathématiques."],
+    en:["He noticed a screen glowing for no apparent reason.","He soon saw the bones of his own hand through the skin.","'X' stood for the unknown, as in mathematics."],
+    es:["Notó que una pantalla se iluminaba sin razón aparente.","Pronto vio los huesos de su propia mano a través de la piel.","«X» designaba lo desconocido, como en matemáticas."]
+  },
+  'e656': {
+    fr:["Il enjambe un mince ruisseau frontalier.","On change de pays en quelques pas.","Les deux rives sont à des fuseaux horaires différents."],
+    en:["It spans a thin border stream.","You change countries in a few steps.","The two banks are in different time zones."],
+    es:["Cruza un fino arroyo fronterizo.","Se cambia de país en unos pasos.","Las dos orillas están en husos horarios distintos."]
+  },
+  'e657': {
+    fr:["À l'inverse, « long » est un mot court : il n'est pas autologique.","Ce jeu mène à de curieux paradoxes logiques.","Les amateurs de langue adorent les débusquer."],
+    en:["Conversely, 'long' is a short word: it isn't autological.","This game leads to curious logical paradoxes.","Language lovers delight in hunting them down."],
+    es:["A la inversa, «largo» es una palabra corta: no es autológica.","Este juego lleva a curiosas paradojas lógicas.","A los amantes de la lengua les encanta rastrearlas."]
+  },
+  'e658': {
+    fr:["La vraie vanille reste rare et coûteuse.","La vanilline de synthèse imite son goût à bas prix.","Elle peut être tirée de sous-produits industriels."],
+    en:["Real vanilla remains rare and costly.","Synthetic vanillin mimics its taste cheaply.","It can be drawn from industrial by-products."],
+    es:["La vainilla real sigue siendo rara y cara.","La vainillina sintética imita su sabor a bajo precio.","Puede obtenerse de subproductos industriales."]
+  },
+  'e659': {
+    fr:["Sa gorge n'a pas la structure permettant le rugissement.","Il miaule, glapit et émet même une sorte de gazouillis.","Les grands félins rugissants forment un autre groupe."],
+    en:["Its throat lacks the structure needed to roar.","It meows, yelps, and even makes a kind of chirp.","The roaring big cats form a separate group."],
+    es:["Su garganta carece de la estructura para rugir.","Maúlla, gañe e incluso emite una especie de gorjeo.","Los grandes felinos que rugen forman otro grupo."]
+  },
+  'e660': {
+    fr:["Plusieurs inventeurs avaient déjà fait briller des filaments.","Edison trouva un filament durable et un système complet.","Son vrai génie fut d'industrialiser l'éclairage électrique."],
+    en:["Several inventors had already made filaments glow.","Edison found a durable filament and a complete system.","His real genius was industrializing electric lighting."],
+    es:["Varios inventores ya habían hecho brillar filamentos.","Edison halló un filamento duradero y un sistema completo.","Su verdadero genio fue industrializar la iluminación eléctrica."]
+  },
+  'e661': {
+    fr:["On la surnomme l'« ampoule centenaire ».","Elle a survécu à d'innombrables ampoules modernes.","Sa longévité reste un petit mystère technique."],
+    en:["It's nicknamed the 'Centennial Light'.","It has outlived countless modern bulbs.","Its longevity remains a small technical mystery."],
+    es:["Se la apoda la «bombilla centenaria».","Ha sobrevivido a innumerables bombillas modernas.","Su longevidad sigue siendo un pequeño misterio técnico."]
+  },
+  'e662': {
+    fr:["Les éclairs « ascendants » partent souvent de structures hautes.","La décharge cherche le chemin le plus facile, dans les deux sens.","Les gratte-ciel déclenchent parfois eux-mêmes l'éclair."],
+    en:["'Upward' lightning often starts from tall structures.","The discharge seeks the easiest path, in either direction.","Skyscrapers sometimes trigger the lightning themselves."],
+    es:["Los rayos «ascendentes» parten a menudo de estructuras altas.","La descarga busca el camino más fácil, en ambos sentidos.","Los rascacielos a veces desencadenan ellos mismos el rayo."]
+  },
+  'e663': {
+    fr:["Il se compose de deux fanions triangulaires superposés.","Ils représentent l'Himalaya, le Soleil et la Lune.","Sa forme est précisément définie par la loi népalaise."],
+    en:["It is made of two stacked triangular pennants.","They represent the Himalayas, the Sun, and the Moon.","Its shape is precisely defined by Nepali law."],
+    es:["Se compone de dos banderines triangulares superpuestos.","Representan el Himalaya, el Sol y la Luna.","Su forma está definida con precisión por la ley nepalí."]
+  },
+  'e664': {
+    fr:["Les dix soleils étaient apparus tous ensemble.","La chaleur menaçait de détruire toute vie.","L'archer Yi sauva ainsi la Terre, dit la légende."],
+    en:["The ten suns had appeared all at once.","Their heat threatened to destroy all life.","The archer Yi thus saved the Earth, says the legend."],
+    es:["Los diez soles habían aparecido todos a la vez.","Su calor amenazaba con destruir toda la vida.","El arquero Yi salvó así la Tierra, dice la leyenda."]
+  },
+  'e665': {
+    fr:["Sa peau épaisse et lâche le protège des attaques.","Il peut s'attaquer à bien plus gros que lui.","Il résiste même à certains venins."],
+    en:["Its thick, loose skin protects it from attacks.","It will take on prey far bigger than itself.","It even resists certain venoms."],
+    es:["Su piel gruesa y holgada lo protege de los ataques.","Puede enfrentarse a presas mucho mayores que él.","Resiste incluso a ciertos venenos."]
+  },
+  'e666': {
+    fr:["On y lisait les journaux et discutait sciences et politique.","Certains cafés ont donné naissance à des entreprises célèbres.","C'étaient de véritables foyers d'échange intellectuel."],
+    en:["People read newspapers and discussed science and politics.","Some coffee houses gave rise to famous companies.","They were true hubs of intellectual exchange."],
+    es:["Se leían los periódicos y se discutía de ciencia y política.","Algunos cafés dieron origen a empresas célebres.","Eran auténticos focos de intercambio intelectual."]
+  },
+  'e667': {
+    fr:["À l'origine, la statue était de la couleur cuivrée d'un sou neuf.","Une fine couche, le vert-de-gris, s'est formée en surface.","Cette couche protège ensuite le métal."],
+    en:["Originally, the statue was the copper color of a new penny.","A thin layer, verdigris, formed on the surface.","This layer then protects the metal."],
+    es:["Originalmente, la estatua tenía el color cobrizo de una moneda nueva.","Una fina capa, el cardenillo, se formó en la superficie.","Esa capa protege luego el metal."]
+  },
+  'e668': {
+    fr:["Une baie est un fruit charnu issu d'un seul ovaire.","Beaucoup de « légumes » sont en réalité des fruits.","La cuisine et la botanique ne classent pas les aliments pareil."],
+    en:["A berry is a fleshy fruit from a single ovary.","Many 'vegetables' are really fruits.","Cooking and botany classify foods differently."],
+    es:["Una baya es un fruto carnoso de un solo ovario.","Muchas «verduras» son en realidad frutas.","La cocina y la botánica no clasifican igual los alimentos."]
+  },
+  'e669': {
+    fr:["Ils utilisaient de longues perches ou des sarbacanes.","Le métier a existé jusqu'au XXe siècle en Angleterre.","Une vraie question demeurait : qui réveillait le réveilleur ?"],
+    en:["They used long poles or even pea-shooters.","The job lasted into the 20th century in England.","One real question remained: who woke the waker?"],
+    es:["Usaban largas pértigas o cerbatanas.","El oficio existió hasta el siglo XX en Inglaterra.","Quedaba una pregunta: ¿quién despertaba al despertador?"]
+  },
+  'e670': {
+    fr:["On y plaçait une braise pour éloigner les esprits.","En arrivant en Amérique, on adopta la citrouille, plus grosse.","Le navet creusé donnait un visage bien plus inquiétant."],
+    en:["A glowing ember was placed inside to ward off spirits.","On reaching America, the bigger pumpkin was adopted.","The carved turnip made a far creepier face."],
+    es:["Se colocaba una brasa dentro para alejar a los espíritus.","Al llegar a América, se adoptó la calabaza, más grande.","El nabo tallado daba un rostro mucho más inquietante."]
+  },
+  'e671': {
+    fr:["Leur couleur orange vif évoque le Soleil.","On en sème les pétales en chemins jusqu'aux autels.","La fête mêle traditions indigènes et catholiques."],
+    en:["Their bright orange evokes the Sun.","Petals are strewn in paths leading to the altars.","The festival blends indigenous and Catholic traditions."],
+    es:["Su naranja intenso evoca al Sol.","Se esparcen sus pétalos en caminos hasta los altares.","La fiesta mezcla tradiciones indígenas y católicas."]
+  },
+  'e672': {
+    fr:["Ils sembleraient ainsi apprendre à repérer les dangers.","Ils mémorisent les lieux et les circonstances de la mort.","Cela révèle leur grande intelligence sociale."],
+    en:["They may thus be learning to recognize dangers.","They memorize the places and circumstances of the death.","It reveals their great social intelligence."],
+    es:["Así aprenderían a reconocer los peligros.","Memorizan los lugares y circunstancias de la muerte.","Revela su gran inteligencia social."]
+  },
+  'e673': {
+    fr:["Elle avait été recueillie dans les rues de Moscou.","La technologie de retour n'existait pas encore.","Son vol a ouvert la voie aux humains dans l'espace."],
+    en:["She had been picked up from the streets of Moscow.","Return technology did not yet exist.","Her flight paved the way for humans in space."],
+    es:["Había sido recogida en las calles de Moscú.","La tecnología de regreso aún no existía.","Su vuelo abrió el camino a los humanos en el espacio."]
+  },
+  'e674': {
+    fr:["Chacune de ses lettres n'apparaît qu'une seule fois.","De tels mots sont appelés « isogrammes ».","Les amateurs de jeux de lettres les collectionnent."],
+    en:["Each of its letters appears only once.","Such words are called 'isograms'.","Word-game fans collect them."],
+    es:["Cada una de sus letras aparece una sola vez.","Tales palabras se llaman «isogramas».","Los aficionados a los juegos de letras las coleccionan."]
+  },
+  'e675': {
+    fr:["On y trouve caviar, truffe et homard.","La feuille d'or est comestible mais sans goût.","Il faut parfois la commander des jours à l'avance."],
+    en:["It features caviar, truffle, and lobster.","The gold leaf is edible but tasteless.","It sometimes must be ordered days in advance."],
+    es:["Lleva caviar, trufa y langosta.","El pan de oro es comestible pero sin sabor.","A veces hay que encargarla con días de antelación."]
+  },
+  'e676': {
+    fr:["L'Utah, le Colorado, l'Arizona et le Nouveau-Mexique s'y rejoignent.","C'est le seul point de ce type dans le pays.","Les visiteurs s'y photographient à quatre pattes, un membre par État."],
+    en:["Utah, Colorado, Arizona, and New Mexico meet there.","It's the only such point in the country.","Visitors photograph themselves spread across all four."],
+    es:["Utah, Colorado, Arizona y Nuevo México se unen allí.","Es el único punto de este tipo en el país.","Los visitantes se fotografían repartidos entre los cuatro."]
+  },
+  'e677': {
+    fr:["Des physiciens l'ont mesurée en suivant la lumière traversant une molécule.","À cette échelle, même la lumière ne parcourt qu'une fraction d'atome.","Cela repousse les limites de la mesure du temps."],
+    en:["Physicists measured it by tracking light crossing a molecule.","At this scale, even light travels only a fraction of an atom.","It pushes the limits of measuring time."],
+    es:["Los físicos lo midieron siguiendo la luz al cruzar una molécula.","A esta escala, ni la luz recorre más que una fracción de átomo.","Empuja los límites de la medición del tiempo."]
+  },
+  'e678': {
+    fr:["Chaque espèce a son propre « rythme » de vibration.","Cela permet à la femelle de reconnaître un partenaire.","Un mauvais signal peut être pris pour une proie."],
+    en:["Each species has its own vibration 'rhythm'.","It lets the female recognize a suitor.","A wrong signal may be mistaken for prey."],
+    es:["Cada especie tiene su propio «ritmo» de vibración.","Permite a la hembra reconocer a un pretendiente.","Una señal equivocada puede confundirse con una presa."]
+  },
+  'e679': {
+    fr:["Le mur est tombé dans la nuit du 9 novembre 1989.","La demande de fragments a vite dépassé l'offre réelle.","De vrais pans colorés sont exposés dans des musées."],
+    en:["The wall fell on the night of November 9, 1989.","Demand for fragments soon outstripped the real supply.","Genuine painted sections are displayed in museums."],
+    es:["El muro cayó la noche del 9 de noviembre de 1989.","La demanda de fragmentos superó pronto la oferta real.","Auténticas secciones pintadas se exhiben en museos."]
+  },
+  'e680': {
+    fr:["Le mot a été allongé exprès pour l'effet comique.","Sa racine renvoie à la longueur et aux mots savants.","Bien peu de gens parviennent à le prononcer."],
+    en:["The word was lengthened on purpose for comic effect.","Its root refers to length and scholarly words.","Very few people manage to pronounce it."],
+    es:["La palabra se alargó a propósito por el efecto cómico.","Su raíz alude a la longitud y a las palabras cultas.","Muy pocas personas logran pronunciarla."]
+  },
+  'e681': {
+    fr:["La terre bouleversée par les obus favorisait sa pousse.","Un poème célèbre a fixé cette image dans les mémoires.","On le porte aujourd'hui lors des commémorations."],
+    en:["Soil churned by shells favored its growth.","A famous poem fixed this image in memory.","It is worn today during remembrance ceremonies."],
+    es:["La tierra removida por los obuses favorecía su crecimiento.","Un poema célebre fijó esta imagen en la memoria.","Hoy se lleva en las conmemoraciones."]
+  },
+  'e682': {
+    fr:["Le diamant est en effet du carbone pur.","Il ne laisse alors aucune cendre derrière lui.","C'est l'une des rares « disparitions » totales d'une pierre précieuse."],
+    en:["A diamond is in fact pure carbon.","It then leaves no ash behind.","It's one of the few total 'disappearances' of a gemstone."],
+    es:["El diamante es, en efecto, carbono puro.","No deja entonces ninguna ceniza tras de sí.","Es una de las raras «desapariciones» totales de una gema."]
+  },
+  'e683': {
+    fr:["Elle tient sur un terrain privé du Nevada.","Elle a son drapeau, sa monnaie et son « président ».","Aucun pays ne la reconnaît officiellement."],
+    en:["It sits on a private plot in Nevada.","It has its own flag, currency, and 'president'.","No country officially recognizes it."],
+    es:["Se asienta en una finca privada de Nevada.","Tiene su bandera, su moneda y su «presidente».","Ningún país la reconoce oficialmente."]
+  },
+  'e684': {
+    fr:["L'hexagone pave l'espace sans le moindre vide.","Les abeilles « résolvent » ainsi un vrai problème de géométrie.","La nature privilégie souvent les formes économes."],
+    en:["The hexagon tiles space with no gaps at all.","Bees thus 'solve' a real geometry problem.","Nature often favors economical shapes."],
+    es:["El hexágono cubre el espacio sin ningún hueco.","Las abejas «resuelven» así un verdadero problema de geometría.","La naturaleza suele favorecer las formas económicas."]
+  },
+  'e685': {
+    fr:["La femelle produit alors des petits à partir de ses seuls ovules.","Ce phénomène se nomme la parthénogenèse.","Cela peut sauver une espèce isolée sur une île."],
+    en:["The female then produces young from her eggs alone.","This phenomenon is called parthenogenesis.","It can save a species stranded on an island."],
+    es:["La hembra produce entonces crías solo a partir de sus óvulos.","Este fenómeno se llama partenogénesis.","Puede salvar a una especie aislada en una isla."]
+  },
+  'e686': {
+    fr:["Ils se forment à la limite de l'espace, vers 80 km d'altitude.","Le Soleil, déjà couché pour nous, les éclaire encore.","Ils apparaissent comme de fins filaments bleu argenté."],
+    en:["They form at the edge of space, around 80 km up.","The Sun, already set for us, still lights them.","They appear as fine silvery-blue filaments."],
+    es:["Se forman al borde del espacio, hacia los 80 km de altura.","El Sol, ya puesto para nosotros, aún las ilumina.","Aparecen como finos filamentos azul plateado."]
+  },
+  'e687': {
+    fr:["On y insérait des chèques spéciaux, faute de cartes.","Le code secret comptait déjà parmi les innovations.","La machine a transformé notre rapport à l'argent liquide."],
+    en:["Special vouchers were inserted, as cards didn't exist yet.","The secret PIN was already among the innovations.","The machine transformed our relationship with cash."],
+    es:["Se insertaban vales especiales, al no haber tarjetas.","El código secreto ya figuraba entre las innovaciones.","La máquina transformó nuestra relación con el efectivo."]
+  },
+  'e688': {
+    fr:["L'épouse du créateur trouva ce nom trop pompeux.","Elle proposa un prénom plus simple et chaleureux.","Le personnage est devenu une icône mondiale."],
+    en:["The creator's wife found that name too pompous.","She suggested a simpler, warmer name.","The character became a global icon."],
+    es:["La esposa del creador halló ese nombre demasiado pomposo.","Propuso un nombre más sencillo y cálido.","El personaje se convirtió en un icono mundial."]
+  },
+  'e689': {
+    fr:["L'oubykh, du Caucase, s'est éteint en 1992.","Son dernier locuteur emporta avec lui ces sons rares.","La diversité des langues humaines est immense."],
+    en:["Ubykh, from the Caucasus, died out in 1992.","Its last speaker took these rare sounds with him.","The diversity of human languages is immense."],
+    es:["El ubijé, del Cáucaso, se extinguió en 1992.","Su último hablante se llevó consigo esos sonidos raros.","La diversidad de las lenguas humanas es inmensa."]
+  },
+  'e690': {
+    fr:["Ces couleurs trahissent l'excitation ou le stress.","La peau nue de la tête est très irriguée en sang.","Le mâle s'en sert aussi pour séduire."],
+    en:["These colors betray excitement or stress.","The bare skin of the head is richly supplied with blood.","The male also uses them to court."],
+    es:["Estos colores delatan excitación o estrés.","La piel desnuda de la cabeza está muy irrigada.","El macho también los usa para cortejar."]
+  },
+  'e691': {
+    fr:["On voulait tester si l'altitude était dangereuse.","Les trois animaux atterrirent sains et saufs.","Des humains s'envolèrent peu de temps après."],
+    en:["The aim was to test whether altitude was dangerous.","The three animals landed safe and sound.","Humans took flight shortly afterward."],
+    es:["Se quería probar si la altitud era peligrosa.","Los tres animales aterrizaron sanos y salvos.","Los humanos volaron poco después."]
+  },
+  'e692': {
+    fr:["Les cultivateurs sélectionnent des variétés géantes.","La citrouille peut prendre des dizaines de kilos par jour.","Ces records se battent presque chaque année."],
+    en:["Growers select giant varieties.","The pumpkin can gain dozens of kilos a day.","These records are broken almost every year."],
+    es:["Los cultivadores seleccionan variedades gigantes.","La calabaza puede ganar decenas de kilos al día.","Estos récords se baten casi cada año."]
+  },
+  'e693': {
+    fr:["Ce motif persiste depuis des décennies.","Il naîtrait de la façon dont tournent les vents.","Aucun autre phénomène connu ne lui ressemble vraiment."],
+    en:["This pattern has persisted for decades.","It may arise from the way the winds rotate.","No other known phenomenon really resembles it."],
+    es:["Este patrón persiste desde hace décadas.","Surgiría de la forma en que rotan los vientos.","Ningún otro fenómeno conocido se le parece realmente."]
+  },
+  'e694': {
+    fr:["Le livre exposait sa théorie de l'évolution.","Il déclencha aussitôt d'intenses débats.","Il reste l'un des ouvrages les plus influents de la science."],
+    en:["The book laid out his theory of evolution.","It immediately sparked intense debate.","It remains one of the most influential works in science."],
+    es:["El libro exponía su teoría de la evolución.","Desató de inmediato intensos debates.","Sigue siendo una de las obras más influyentes de la ciencia."]
+  },
+  'e695': {
+    fr:["Cela arrive quand ils chassent en groupe mixte.","Le coup chasserait un partenaire jugé indésirable.","Les pieuvres montrent une vie sociale complexe."],
+    en:["It happens when they hunt in mixed groups.","The blow may drive off a partner deemed unwelcome.","Octopuses show a complex social life."],
+    es:["Ocurre cuando cazan en grupos mixtos.","El golpe ahuyentaría a un compañero no deseado.","Los pulpos muestran una vida social compleja."]
+  },
+  'e696': {
+    fr:["Sa courbe brutale crée une illusion d'optique.","On dirait une rampe se terminant dans le ciel.","La route serpente en réalité d'île en île."],
+    en:["Its sharp curve creates an optical illusion.","It looks like a ramp ending in the sky.","The road actually winds from island to island."],
+    es:["Su curva brusca crea una ilusión óptica.","Parece una rampa que termina en el cielo.","La carretera serpentea en realidad de isla en isla."]
+  },
+  'e697': {
+    fr:["Un chercheur japonais l'avait pourtant identifié dès 1908.","C'est le goût « savoureux » du bouillon, du parmesan ou de la tomate mûre.","Il est dû à un acide aminé, le glutamate."],
+    en:["A Japanese researcher had identified it back in 1908.","It's the 'savory' taste of broth, parmesan, or ripe tomato.","It comes from an amino acid, glutamate."],
+    es:["Un investigador japonés ya lo había identificado en 1908.","Es el sabor «sabroso» del caldo, el parmesano o el tomate maduro.","Se debe a un aminoácido, el glutamato."]
+  },
+  'e698': {
+    fr:["On ignorait encore le rôle des microbes dans les infections.","Une blouse très tachée signalait un praticien « chevronné ».","L'hygiène moderne a totalement renversé cette idée."],
+    en:["The role of germs in infection was still unknown.","A heavily stained coat marked a 'seasoned' practitioner.","Modern hygiene completely overturned this idea."],
+    es:["Aún se ignoraba el papel de los microbios en las infecciones.","Una bata muy manchada señalaba a un médico «veterano».","La higiene moderna invirtió por completo esta idea."]
+  },
+  'e699': {
+    fr:["Les copistes antiques l'utilisaient déjà comme repère.","Sa forme évoque effectivement une étoile.","On s'en sert pour signaler une note ou une omission."],
+    en:["Ancient scribes already used it as a marker.","Its shape does indeed evoke a star.","It's used to flag a note or an omission."],
+    es:["Los copistas antiguos ya lo usaban como marca.","Su forma evoca en efecto una estrella.","Se usa para señalar una nota o una omisión."]
+  },
+  'e700': {
+    fr:["Sans eux, la pâte gonflerait de façon irrégulière.","Ces trous s'appellent des « docks ».","Ils assurent une cuisson plate et régulière."],
+    en:["Without them, the dough would puff up unevenly.","These holes are called 'docking' holes.","They ensure a flat, even bake."],
+    es:["Sin ellos, la masa se hincharía de forma irregular.","Estos agujeros se llaman de «picado».","Aseguran un horneado plano y uniforme."]
+  },
+  'e701': {
+    fr:["L'angle entre les liaisons de l'eau favorise la symétrie six.","Chaque flocon se forme dans des conditions uniques.","C'est pourquoi on dit que deux flocons ne sont jamais identiques."],
+    en:["The angle of water's bonds favors six-fold symmetry.","Each flake forms under unique conditions.","That's why no two flakes are said to be alike."],
+    es:["El ángulo de los enlaces del agua favorece la simetría seis.","Cada copo se forma en condiciones únicas.","Por eso se dice que no hay dos copos iguales."]
+  },
+  'e702': {
+    fr:["La neige réfléchit l'UV, mais le lichen et la fourrure l'absorbent.","Ces éléments apparaissent donc en sombre à ses yeux.","Peu de mammifères perçoivent l'ultraviolet."],
+    en:["Snow reflects UV, but lichen and fur absorb it.","These then appear dark to the reindeer's eyes.","Few mammals can perceive ultraviolet."],
+    es:["La nieve refleja el UV, pero el liquen y el pelaje lo absorben.","Estos aparecen así oscuros a sus ojos.","Pocos mamíferos perciben el ultravioleta."]
+  },
+  'e703': {
+    fr:["L'opération eut lieu en Afrique du Sud.","Le patient survécut dix-huit jours.","Cet exploit a ouvert toute une branche de la médecine."],
+    en:["The operation took place in South Africa.","The patient survived eighteen days.","This feat opened a whole branch of medicine."],
+    es:["La operación tuvo lugar en Sudáfrica.","El paciente sobrevivió dieciocho días.","Esta hazaña abrió toda una rama de la medicina."]
+  },
+  'e704': {
+    fr:["Septembre, octobre et novembre suivent la même logique.","Deux mois furent ajoutés plus tard en début d'année.","Les noms sont restés malgré le décalage."],
+    en:["September, October, and November follow the same logic.","Two months were later added at the start of the year.","The names stuck despite the shift."],
+    es:["Septiembre, octubre y noviembre siguen la misma lógica.","Dos meses se añadieron después al inicio del año.","Los nombres quedaron pese al desfase."]
+  },
+  'e705': {
+    fr:["Le conte met en garde contre la gourmandise.","Les artisans rivalisent de décorations en sucre.","C'est devenu une tradition de Noël dans de nombreux pays."],
+    en:["The tale warns against greed.","Bakers compete with elaborate sugar decorations.","It became a Christmas tradition in many countries."],
+    es:["El cuento advierte contra la gula.","Los artesanos compiten con decoraciones de azúcar.","Se ha vuelto una tradición navideña en muchos países."]
+  },
+  'e706': {
+    fr:["La légende veut qu'il aidât discrètement les pauvres.","Sa générosité a inspiré la figure du Père Noël.","Son nom néerlandais, « Sinterklaas », a donné « Santa Claus »."],
+    en:["Legend says he quietly helped the poor.","His generosity inspired the figure of Santa Claus.","His Dutch name, 'Sinterklaas', gave 'Santa Claus'."],
+    es:["La leyenda dice que ayudaba discretamente a los pobres.","Su generosidad inspiró la figura de Papá Noel.","Su nombre neerlandés, «Sinterklaas», dio «Santa Claus»."]
+  },
+  'e707': {
+    fr:["Des ondes sonores intenses créent des points immobiles dans l'air.","Une gouttelette ou un grain peut y rester suspendu.","Les chercheurs s'en servent pour manipuler sans contact."],
+    en:["Intense sound waves create still points in the air.","A droplet or grain can stay suspended there.","Researchers use it to handle things without contact."],
+    es:["Ondas sonoras intensas crean puntos inmóviles en el aire.","Una gotita o un grano puede quedar suspendido ahí.","Los investigadores lo usan para manipular sin contacto."]
+  },
+  'e708': {
+    fr:["C'est le mammifère au sang le plus froid jamais mesuré.","Son corps évite de former des cristaux de glace.","Il se réchauffe brièvement de temps en temps pour survivre."],
+    en:["It's the coldest-bodied mammal ever measured.","Its body avoids forming ice crystals.","It briefly warms up now and then to survive."],
+    es:["Es el mamífero de sangre más fría jamás medido.","Su cuerpo evita formar cristales de hielo.","Se calienta brevemente de vez en cuando para sobrevivir."]
+  },
+  'e709': {
+    fr:["Cette légende encourageait à finir le travail de la laine à temps.","Le chat géant rôderait dans la neige la nuit de Noël.","C'est l'une des traditions de Noël les plus inquiétantes."],
+    en:["This legend encouraged finishing the wool work in time.","The giant cat supposedly prowls the snow on Christmas night.","It's one of the eeriest Christmas traditions."],
+    es:["Esta leyenda animaba a terminar el trabajo de la lana a tiempo.","El gato gigante merodearía por la nieve la noche de Navidad.","Es una de las tradiciones navideñas más inquietantes."]
+  },
+  'e710': {
+    fr:["Un journal publia par erreur sa nécrologie de son vivant.","On l'y qualifiait de « marchand de mort ».","Bouleversé, il consacra sa fortune à récompenser le progrès humain."],
+    en:["A newspaper mistakenly published his obituary while he lived.","It called him a 'merchant of death'.","Shaken, he devoted his fortune to rewarding human progress."],
+    es:["Un periódico publicó por error su obituario en vida.","Lo llamaba «mercader de la muerte».","Conmocionado, dedicó su fortuna a premiar el progreso humano."]
+  },
+  'e711': {
+    fr:["Sa couleur blanche et rouge a inspiré bien des symboles.","Son origine exacte reste discutée.","Il est devenu une friandise emblématique des fêtes."],
+    en:["Its red-and-white coloring has inspired many symbols.","Its exact origin remains debated.","It became an iconic holiday treat."],
+    es:["Su color blanco y rojo ha inspirado muchos símbolos.","Su origen exacto sigue siendo discutido.","Se ha vuelto una golosina emblemática de las fiestas."]
+  },
+  'e712': {
+    fr:["Les crabes traversent routes et forêts vers la mer.","On ferme des routes et on bâtit des ponts pour eux.","C'est l'une des plus grandes migrations animales terrestres."],
+    en:["The crabs cross roads and forests toward the sea.","Roads are closed and bridges built for them.","It's one of the largest land animal migrations."],
+    es:["Los cangrejos cruzan carreteras y bosques hacia el mar.","Se cierran carreteras y se construyen puentes para ellos.","Es una de las mayores migraciones de animales terrestres."]
+  },
+  'e713': {
+    fr:["La fête de la Sainte-Lucie est une fête de la lumière.","En Suède, on y porte des couronnes de bougies.","Elle tombe près du moment le plus sombre de l'année."],
+    en:["Saint Lucia's Day is a festival of light.","In Sweden, crowns of candles are worn.","It falls near the darkest point of the year."],
+    es:["El Día de Santa Lucía es una fiesta de la luz.","En Suecia se llevan coronas de velas.","Cae cerca del momento más oscuro del año."]
+  },
+  'e714': {
+    fr:["La Terre traverse les débris laissés par cet astéroïde.","Ces poussières brûlent en entrant dans l'atmosphère.","C'est l'une des plus belles pluies d'étoiles de l'année."],
+    en:["Earth passes through the debris left by this asteroid.","These dust grains burn up entering the atmosphere.","It's one of the finest meteor showers of the year."],
+    es:["La Tierra atraviesa los restos dejados por ese asteroide.","Estos granos de polvo arden al entrar en la atmósfera.","Es una de las lluvias de estrellas más bellas del año."]
+  },
+  'e715': {
+    fr:["Très peu de chaleur s'échappe vers l'extérieur.","Seuls son souffle et ses yeux apparaissent à la caméra.","C'est un isolant naturel d'une efficacité redoutable."],
+    en:["Very little heat escapes to the outside.","Only its breath and eyes show up on camera.","It's a natural insulator of formidable efficiency."],
+    es:["Muy poco calor escapa al exterior.","Solo su aliento y sus ojos aparecen en la cámara.","Es un aislante natural de una eficacia tremenda."]
+  },
+  'e716': {
+    fr:["Les clavecins antérieurs ne variaient pas le volume.","La force de la frappe sur la touche change l'intensité du son.","Cette nuance a transformé la musique."],
+    en:["Earlier harpsichords couldn't vary their volume.","How hard you strike the key changes the loudness.","This nuance transformed music."],
+    es:["Los clavicémbalos anteriores no variaban el volumen.","La fuerza del golpe en la tecla cambia la intensidad.","Este matiz transformó la música."]
+  },
+  'e717': {
+    fr:["Cette couleur tranche sur les débris et l'eau.","La boîte est aussi conçue pour résister aux chocs et au feu.","Le nom « boîte noire » viendrait de son rôle mystérieux."],
+    en:["This color stands out against debris and water.","The box is also built to survive impact and fire.","The name 'black box' may come from its mysterious role."],
+    es:["Este color destaca sobre los restos y el agua.","La caja también resiste impactos y fuego.","El nombre «caja negra» vendría de su papel misterioso."]
+  },
+  'e718': {
+    fr:["Une seule plante peut en porter une trentaine.","On les récolte de bas en haut au fil de la saison.","Le froid leur donne un goût plus doux."],
+    en:["A single plant can bear about thirty.","They're picked from the bottom up over the season.","Cold gives them a sweeter taste."],
+    es:["Una sola planta puede llevar unas treinta.","Se cosechan de abajo arriba a lo largo de la temporada.","El frío les da un sabor más dulce."]
+  },
+  'e719': {
+    fr:["Il puise l'eau et les nutriments de l'arbre qui le porte.","Ses graines gluantes s'accrochent à l'écorce.","Sous le gui, une vieille tradition invite à s'embrasser."],
+    en:["It draws water and nutrients from its host tree.","Its gummy seeds cling to the bark.","Under the mistletoe, an old tradition invites a kiss."],
+    es:["Extrae agua y nutrientes del árbol que lo sostiene.","Sus semillas pegajosas se adhieren a la corteza.","Bajo el muérdago, una vieja tradición invita a besarse."]
+  },
+  'e720': {
+    fr:["Elle se trouve au bord du cercle polaire arctique.","On peut y « rencontrer » le Père Noël toute l'année.","Le tourisme de Noël y est une activité majeure."],
+    en:["It lies right on the Arctic Circle.","You can 'meet' Santa there all year round.","Christmas tourism is a major activity there."],
+    es:["Se encuentra justo en el círculo polar ártico.","Allí se puede «conocer» a Papá Noel todo el año.","El turismo navideño es una actividad importante."]
+  },
+  'e721': {
+    fr:["La planète semble « rouler » autour du Soleil.","Une collision géante pourrait l'avoir basculée.","Une année y dure 84 ans terrestres."],
+    en:["The planet seems to 'roll' around the Sun.","A giant collision may have tipped it over.","A year there lasts 84 Earth years."],
+    es:["El planeta parece «rodar» alrededor del Sol.","Una colisión gigante podría haberlo volcado.","Un año allí dura 84 años terrestres."]
+  },
+  'e722': {
+    fr:["Les Romains n'avaient tout simplement pas de symbole pour le zéro.","Le concept de zéro nous est venu plus tard, d'Inde via le monde arabe.","Il a fallu des siècles pour qu'il s'impose en Europe."],
+    en:["The Romans simply had no symbol for zero.","The concept of zero reached us later, from India via the Arab world.","It took centuries to take hold in Europe."],
+    es:["Los romanos simplemente no tenían símbolo para el cero.","El concepto de cero nos llegó después, de la India vía el mundo árabe.","Tardó siglos en imponerse en Europa."]
+  },
+  'e723': {
+    fr:["Sa pâte est travaillée et repliée à de nombreuses reprises.","Il est riche en beurre, fruits confits et raisins secs.","Sa texture moelleuse et filante en fait sa réputation."],
+    en:["Its dough is worked and folded many times over.","It's rich in butter, candied fruit, and raisins.","Its soft, stringy texture is its claim to fame."],
+    es:["Su masa se trabaja y se pliega muchas veces.","Es rico en mantequilla, fruta confitada y pasas.","Su textura esponjosa y filamentosa es su fama."]
+  },
+  'e724': {
+    fr:["Des enfants appelèrent par erreur un centre de défense.","Un officier joua le jeu et donna la « position » du Père Noël.","La tradition se poursuit aujourd'hui en ligne."],
+    en:["Children mistakenly called a defense center.","An officer played along and gave Santa's 'position'.","The tradition continues today online."],
+    es:["Unos niños llamaron por error a un centro de defensa.","Un oficial siguió el juego y dio la «posición» de Papá Noel.","La tradición continúa hoy en línea."]
+  },
+  'e725': {
+    fr:["L'Angleterre utilisait encore le vieux calendrier julien.","Avec notre calendrier actuel, sa naissance tombe en janvier.","Il a posé les lois de la gravitation et du mouvement."],
+    en:["England still used the old Julian calendar.","By our current calendar, his birth falls in January.","He laid down the laws of gravitation and motion."],
+    es:["Inglaterra usaba aún el viejo calendario juliano.","Con nuestro calendario actual, su nacimiento cae en enero.","Estableció las leyes de la gravitación y el movimiento."]
+  },
+  'e726': {
+    fr:["Son chant porte étonnamment loin dans les bois.","Il enchaîne des dizaines de notes par seconde.","Sa puissance vocale rapportée à son poids est exceptionnelle."],
+    en:["Its song carries surprisingly far through the woods.","It strings together dozens of notes per second.","Its vocal power relative to its weight is exceptional."],
+    es:["Su canto llega sorprendentemente lejos en el bosque.","Encadena decenas de notas por segundo.","Su potencia vocal en relación con su peso es excepcional."]
+  },
+  'e727': {
+    fr:["Il a mis au point le vaccin contre la rage.","Chauffer doucement un liquide tue ses microbes nuisibles.","Ses travaux ont sauvé d'innombrables vies."],
+    en:["He developed the vaccine against rabies.","Gently heating a liquid kills its harmful microbes.","His work has saved countless lives."],
+    es:["Desarrolló la vacuna contra la rabia.","Calentar suavemente un líquido mata sus microbios dañinos.","Su trabajo ha salvado incontables vidas."]
+  },
+  'e728': {
+    fr:["On y fait des farces et des canulars.","Les médias publient parfois de fausses nouvelles ce jour-là.","Celui qui se fait piéger est appelé un « innocent »."],
+    en:["People play pranks and hoaxes.","The media sometimes publish fake news that day.","The one who's fooled is called an 'innocent'."],
+    es:["Se hacen bromas y engaños.","Los medios publican a veces noticias falsas ese día.","Al que cae en la broma se le llama «inocente»."]
+  },
+  'e729': {
+    fr:["Le Népal utilise le calendrier Bikram Sambat.","Une année y commence en avril, pas en janvier.","Quand on est en 2025 ailleurs, le Népal est déjà en 2082."],
+    en:["Nepal uses the Bikram Sambat calendar.","A year there starts in April, not January.","When it's 2025 elsewhere, Nepal is already in 2082."],
+    es:["Nepal usa el calendario Bikram Sambat.","Un año allí empieza en abril, no en enero.","Cuando en otros sitios es 2025, Nepal ya está en 2082."]
+  },
+  'e730': {
+    fr:["Chaque grain est censé porter chance pour un mois de l'année.","Il faut suivre le rythme rapide des cloches.","La tradition daterait du début du XXe siècle."],
+    en:["Each grape is meant to bring luck for one month of the year.","You must keep up with the fast chiming.","The tradition reportedly dates to the early 20th century."],
+    es:["Cada uva trae suerte para un mes del año.","Hay que seguir el rápido ritmo de las campanadas.","La tradición se remontaría a principios del siglo XX."]
+  },
+  'e731': {
+    fr:["La boule descend lentement le long d'un mât.","Son arrivée en bas marque le passage à la nouvelle année.","Des centaines de milliers de personnes s'y rassemblent."],
+    en:["The ball slides slowly down a pole.","Its arrival at the bottom marks the new year.","Hundreds of thousands of people gather for it."],
+    es:["La bola baja lentamente por un mástil.","Su llegada abajo marca el cambio de año.","Cientos de miles de personas se reúnen para verlo."]
+  },
+  'e732': {
+    fr:["L'idée vient de deux habitantes nées un 29 février.","On y organise un grand festival pour les « bissextiles ».","Des gens y viennent du monde entier fêter leur rare anniversaire."],
+    en:["The idea came from two residents born on February 29.","A big festival is held there for the 'leaplings'.","People come from around the world to mark their rare birthday."],
+    es:["La idea vino de dos vecinas nacidas un 29 de febrero.","Se organiza allí un gran festival para los «bisiestos».","Vienen personas de todo el mundo a celebrar su raro cumpleaños."]
+  },
+
 };
