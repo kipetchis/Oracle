@@ -1245,8 +1245,8 @@ if(typeof setLang==='undefined'){window._pendingLang=null;window.setLang=functio
   </div>
 
   <div class="daily-limit-btns">
-    <button class="daily-limit-favs-btn" onclick="haptic();closeDailyLimit();openPanel('favs');switchFavTab('favs')" id="dlFavsBtn">♡ Relire mes favoris</button>
-    <button class="daily-limit-favs-btn" onclick="haptic();closeDailyLimit();openPanel('favs');switchFavTab('history')" id="dlHistoryBtn">📖 Faits découverts</button>
+    <button class="daily-limit-favs-btn" onclick="haptic();leaveDailyLimitTo(function(){openPanel('favs');switchFavTab('favs');})" id="dlFavsBtn">♡ Relire mes favoris</button>
+    <button class="daily-limit-favs-btn" onclick="haptic();leaveDailyLimitTo(function(){openPanel('favs');switchFavTab('history');})" id="dlHistoryBtn">📖 Faits découverts</button>
   </div>
 </div>
 
