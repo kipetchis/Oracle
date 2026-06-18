@@ -878,7 +878,7 @@ function showFact(){
   }
   if(!state.history.some(h=>h.id===currentFact.id)){
     state.history.unshift({id:currentFact.id,cat:currentFact.cat,label:(T[lang].catLabels||{})[currentFact.cat]||currentFact.cat,text:currentFact.text,date:new Date().toLocaleDateString(lang==='fr'?'fr-FR':lang==='es'?'es-ES':'en-US')});
-    if(state.history.length>50) state.history.pop();
+    if(state.history.length>1500) state.history.pop();
   }
   saveState();
   const isFav=state.favs.some(f=>f.id===currentFact.id);
@@ -1137,11 +1137,20 @@ function openCatFacts(cat, mode){
         </div>
       </div>`;
     }).join('')}`;
+  // Remonter en haut de la liste (le conteneur scrollable est le panel-body parent)
+  const scroller = el.closest('.panel-body') || el;
+  if(scroller) scroller.scrollTop = 0;
+  el.scrollTop = 0;
 }
 
 function renderCatView(mode){
   if(mode==='favs') renderFavs();
   else renderHistory();
+  // Remonter en haut au retour à la grille de catégories
+  const elId = mode==='favs' ? 'favsList' : 'historyListInline';
+  const el = document.getElementById(elId);
+  const scroller = el ? (el.closest('.panel-body') || el) : null;
+  if(scroller) scroller.scrollTop = 0;
 }
 
 // ── RECHERCHE DANS FAVORIS/HISTORIQUE/ÉPHÉMÉRIDES ────────────────────────
@@ -1393,6 +1402,7 @@ function openPanel(type){
 // ── LIMITE QUOTIDIENNE ────────────────────────────────────────────────────
 const DAILY_LIMIT = 5;
 let _dlTimerInterval = null;
+let _suppressNextPop = false;
 
 
 function renderDailyLimitStats() {
@@ -1408,11 +1418,11 @@ function renderDailyLimitStats() {
   // Stats grid
   const sg = document.getElementById('dlStatsGrid');
   if(sg) sg.innerHTML = `
-    <div class="dl-stat-item dl-stat-link" onclick="haptic();closeDailyLimit();openPanel('favs');switchFavTab('history')"><div class="dl-stat-val">${total}</div><div class="dl-stat-label">${_t('FAITS LUS','DATOS LEÍDOS','FACTS READ')}</div></div>
+    <div class="dl-stat-item dl-stat-link" onclick="haptic();leaveDailyLimitTo(function(){openPanel('favs');switchFavTab('history');})"><div class="dl-stat-val">${total}</div><div class="dl-stat-label">${_t('FAITS LUS','DATOS LEÍDOS','FACTS READ')}</div></div>
     <div class="dl-stat-item"><div class="dl-stat-val">${streak}</div><div class="dl-stat-label">${_t("JOURS D'AFFILÉE",'DÍAS SEGUIDOS','DAY STREAK')}</div></div>
     <div class="dl-stat-item"><div class="dl-stat-val">${pct}%</div><div class="dl-stat-label">${_t('AU QUIZ','EN EL QUIZ','QUIZ SCORE')}</div></div>
-    <div class="dl-stat-item dl-stat-link" onclick="haptic();closeDailyLimit();openPanel('favs');switchFavTab('favs')"><div class="dl-stat-val">${favCount}</div><div class="dl-stat-label">${_t('FAVORIS','FAVORITOS','FAVORITES')}</div></div>
-    <div class="dl-stat-item dl-stat-link" onclick="haptic();closeDailyLimit();openPlanetPanel()"><div class="dl-stat-val">${planetsCount}</div><div class="dl-stat-label">${_t('PLANÈTES','PLANETAS','PLANETS')}</div></div>
+    <div class="dl-stat-item dl-stat-link" onclick="haptic();leaveDailyLimitTo(function(){openPanel('favs');switchFavTab('favs');})"><div class="dl-stat-val">${favCount}</div><div class="dl-stat-label">${_t('FAVORIS','FAVORITOS','FAVORITES')}</div></div>
+    <div class="dl-stat-item dl-stat-link" onclick="haptic();leaveDailyLimitTo(function(){openPlanetPanel();})"><div class="dl-stat-val">${planetsCount}</div><div class="dl-stat-label">${_t('PLANÈTES','PLANETAS','PLANETS')}</div></div>
     <div class="dl-stat-item"><div class="dl-stat-val">${state.shares||0}</div><div class="dl-stat-label">${_t('PARTAGES','COMPARTIDOS','SHARES')}</div></div>
   `;
 
@@ -1449,6 +1459,22 @@ function showDailyLimit(){
 function closeDailyLimit(){
   document.getElementById('dailyLimitScreen').classList.remove('active');
   if(_dlTimerInterval){clearInterval(_dlTimerInterval);_dlTimerInterval=null;}
+}
+
+// Quitte proprement l'écran de décompte vers une destination interne (favs/history/planète).
+// Consomme l'entrée d'historique poussée par showDailyLimit() pour éviter la désync de la pile.
+function leaveDailyLimitTo(fn){
+  const dl = document.getElementById('dailyLimitScreen');
+  const wasActive = dl && dl.classList.contains('active');
+  closeDailyLimit();
+  if(wasActive){
+    // Retire l'entrée {screen:'dailyLimit'} de la pile, puis exécute la destination
+    _suppressNextPop = true;
+    history.back();
+    setTimeout(fn, 60);
+  } else {
+    fn();
+  }
 }
 
 function startDlTimer(){
@@ -1974,6 +2000,8 @@ var _backPressCount = 0;
 var _backPressTimer = null;
 
 window.addEventListener('popstate', function(e) {
+  // back() programmatique (sortie de l'écran de décompte) : on l'ignore une fois
+  if (_suppressNextPop) { _suppressNextPop = false; return; }
   // Si comète visible, la rejeter
   if (_cometEl) { dismissComet(); _backPressCount=0; history.pushState({screen:'app'}, ''); return; }
   // Auth overlay
