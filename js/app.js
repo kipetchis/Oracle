@@ -813,12 +813,12 @@ function runPostFactChecks(deferForEndOfDay){
     _pendingEndOfDayChecks = true;
     return;
   }
-  checkAchievements();checkPlanetUnlocks();maybeShowQuiz();maybeShowUfo();
+  checkAchievements();checkPlanetUnlocks();if(typeof _eventTriggeredThisFact!=='undefined')_eventTriggeredThisFact=false;maybeShowQuiz();maybeShowUfo();
 }
 function flushPendingEndOfDayChecks(){
   if(!_pendingEndOfDayChecks) return;
   _pendingEndOfDayChecks = false;
-  checkAchievements();checkPlanetUnlocks();maybeShowQuiz();maybeShowUfo();
+  checkAchievements();checkPlanetUnlocks();if(typeof _eventTriggeredThisFact!=='undefined')_eventTriggeredThisFact=false;maybeShowQuiz();maybeShowUfo();
 }
 function showFact(){
   haptic('medium');
