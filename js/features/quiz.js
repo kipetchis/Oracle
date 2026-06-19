@@ -12,12 +12,16 @@ let _nextQuizInterval = QUIZ_INTERVALS[Math.floor(Math.random()*QUIZ_INTERVALS.l
 let _cometEl = null;
 let _cometTimeout = null;
 
+// Drapeau partagé : empêche soucoupe + quiz d'apparaître sur le même fait
+let _eventTriggeredThisFact = false;
+
 function maybeShowQuiz() {
   if (!state.nextQuizInterval) state.nextQuizInterval = QUIZ_INTERVALS[Math.floor(Math.random()*QUIZ_INTERVALS.length)];
   state.factsSinceQuiz = (state.factsSinceQuiz||0) + 1;
   if (state.factsSinceQuiz >= state.nextQuizInterval) {
     state.factsSinceQuiz = 0;
     state.nextQuizInterval = QUIZ_INTERVALS[Math.floor(Math.random()*QUIZ_INTERVALS.length)];
+    _eventTriggeredThisFact = true;
     setTimeout(() => launchComet(), 600);
   }
   saveState();
@@ -275,8 +279,16 @@ function maybeShowUfo() {
   if (!state.nextUfoInterval) state.nextUfoInterval = UFO_INTERVALS[Math.floor(Math.random()*UFO_INTERVALS.length)];
   state.factsSinceUfo = (state.factsSinceUfo||0) + 1;
   if (state.factsSinceUfo >= state.nextUfoInterval) {
+    // Si le quiz vient de se déclencher sur ce même fait, on cède la priorité :
+    // la soucoupe attendra le prochain fait au lieu d'apparaître en même temps.
+    if (_eventTriggeredThisFact) {
+      state.factsSinceUfo = state.nextUfoInterval - 1;
+      saveState();
+      return;
+    }
     state.factsSinceUfo = 0;
     state.nextUfoInterval = UFO_INTERVALS[Math.floor(Math.random()*UFO_INTERVALS.length)];
+    _eventTriggeredThisFact = true;
     setTimeout(() => launchUfo(), 1200);
   }
   saveState();
