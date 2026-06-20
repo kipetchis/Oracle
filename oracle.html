@@ -1411,13 +1411,7 @@ if(typeof setLang==='undefined'){window._pendingLang=null;window.setLang=functio
 
 <script>
 if('serviceWorker' in navigator) {
-  if(window.caches) {
-    caches.keys().then(keys => keys.forEach(k => caches.delete(k)));
-  }
-  navigator.serviceWorker.getRegistrations().then(regs => {
-    regs.forEach(r => r.unregister());
-    navigator.serviceWorker.register('/Oracle/sw.js').catch(()=>{});
-  });
+  navigator.serviceWorker.register('/Oracle/sw.js').catch(()=>{});
 }
 </script>
 
