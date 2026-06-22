@@ -1,4 +1,19 @@
 // Main Oracle application logic. Data files are loaded before this file.
+
+// ── STOCKAGE PERSISTANT ─────────────────────────────────────────────────────
+// Demande au navigateur de NE PAS effacer le stockage sous pression mémoire.
+// Sans ça, Android/Chrome peut évincer tout localStorage (= perte de progression)
+// pour récupérer de l'espace. Crucial pour les utilisateurs sans compte.
+(function(){
+  try{
+    if(navigator.storage && navigator.storage.persist){
+      navigator.storage.persisted().then(function(p){
+        if(!p) navigator.storage.persist().catch(function(){});
+      }).catch(function(){});
+    }
+  }catch(e){}
+})();
+
 // ── HAPTIC ────────────────────────────────────────────────────────────────
 function haptic(s='light'){if(!navigator.vibrate)return;const p={light:[10],medium:[20],celebration:[20,30,20,30,40]};navigator.vibrate(p[s]||[10]);}
 
@@ -319,10 +334,17 @@ const buildPlanets=(lang)=>[
 // ── STATE ─────────────────────────────────────────────────────────────────
 function loadState(){
   try{const s=localStorage.getItem('oracle_v7');if(s)return JSON.parse(s);}catch(e){}
+  // Clé principale absente ou illisible → on tente la copie de secours
+  // (protège contre une corruption ; ne protège PAS contre une éviction totale)
+  try{const b=localStorage.getItem('oracle_v7_bak');if(b)return JSON.parse(b);}catch(e){}
   return{favs:[],read:{},history:[],unlocked:[],streak:1,lastDate:null,shares:0,activePlanet:'earth',unlockedPlanets:['earth'],lang:null,lastDailyDate:null,quizTotal:0,quizCorrect:0,muted:false,mutedAmbient:false,mutedSfx:false,dailyCount:0,dailyCountDate:null,planetFragments:0,ephemRead:0,secretTaps:0,ephemHistory:[],factsSinceUfo:0,nextUfoInterval:0,factsSinceQuiz:0,nextQuizInterval:0};
 }
 function saveState(){
-  try{localStorage.setItem('oracle_v7',JSON.stringify(state));}catch(e){}
+  try{
+    var json=JSON.stringify(state);
+    localStorage.setItem('oracle_v7',json);
+    localStorage.setItem('oracle_v7_bak',json); // copie de secours anti-corruption
+  }catch(e){}
   syncToFirestore();
 }
 
