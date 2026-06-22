@@ -433,6 +433,112 @@ function signInWithGoogle(){
   });
 }
 
+// ── AUTH EMAIL / MOT DE PASSE ─────────────────────────────────────────────
+// Fournisseur séparé de Google. Accepte n'importe quelle adresse email.
+// Prérequis console : Authentication → Sign-in method → Email/Password activé.
+function _authError(e){
+  console.warn('Auth error:', e && e.code, e && e.message);
+  var msg;
+  switch(e && e.code){
+    case 'auth/email-already-in-use': msg=_t('Cet email a déjà un compte. Connecte-toi plutôt.','Este email ya tiene cuenta. Inicia sesión.','This email already has an account. Sign in instead.'); break;
+    case 'auth/invalid-email': msg=_t('Adresse email invalide','Email inválido','Invalid email'); break;
+    case 'auth/weak-password': msg=_t('Mot de passe trop faible (6 caractères min.)','Contraseña débil (mín. 6 caracteres)','Password too weak (6 chars min.)'); break;
+    case 'auth/wrong-password':
+    case 'auth/invalid-credential': msg=_t('Email ou mot de passe incorrect','Email o contraseña incorrectos','Wrong email or password'); break;
+    case 'auth/user-not-found': msg=_t('Aucun compte avec cet email','Ninguna cuenta con este email','No account with this email'); break;
+    case 'auth/too-many-requests': msg=_t('Trop de tentatives, réessaie plus tard','Demasiados intentos, inténtalo más tarde','Too many attempts, try later'); break;
+    case 'auth/network-request-failed': msg=_t('Erreur réseau, vérifie ta connexion','Error de red, comprueba tu conexión','Network error, check your connection'); break;
+    default: msg=_t('Erreur de connexion','Error de conexión','Sign-in error');
+  }
+  showToast(msg);
+}
+
+function _setAuthBusy(b){
+  var form=document.getElementById('authEmailForm');
+  if(!form) return;
+  form.querySelectorAll('button').forEach(function(btn){ btn.disabled=b; btn.style.opacity=b?'.6':''; });
+}
+
+function signUpWithEmail(email, password){
+  if(!fbAuth){ showToast(_t('Connexion indisponible','Conexión no disponible','Sign-in unavailable')); return; }
+  if(!email || !password){ showToast(_t('Email et mot de passe requis','Email y contraseña requeridos','Email and password required')); return; }
+  if(password.length < 6){ showToast(_t('Mot de passe : 6 caractères minimum','Contraseña: mínimo 6 caracteres','Password: 6 characters minimum')); return; }
+  _setAuthBusy(true);
+  fbAuth.createUserWithEmailAndPassword(email, password).then(function(){
+    showToast(_t('✓ Compte créé ! Ta progression est sauvegardée.','✓ ¡Cuenta creada! Tu progreso está guardado.','✓ Account created! Your progress is saved.'));
+    closeAuthPanel();
+  }).catch(_authError).finally(function(){ _setAuthBusy(false); });
+}
+
+function signInWithEmail(email, password){
+  if(!fbAuth){ showToast(_t('Connexion indisponible','Conexión no disponible','Sign-in unavailable')); return; }
+  if(!email || !password){ showToast(_t('Email et mot de passe requis','Email y contraseña requeridos','Email and password required')); return; }
+  _setAuthBusy(true);
+  fbAuth.signInWithEmailAndPassword(email, password).then(function(){
+    showToast(_t('✓ Connecté','✓ Conectado','✓ Signed in'));
+    closeAuthPanel();
+  }).catch(_authError).finally(function(){ _setAuthBusy(false); });
+}
+
+function resetPassword(email){
+  if(!fbAuth) return;
+  if(!email){ showToast(_t("Entre ton email d'abord","Introduce tu email primero","Enter your email first")); return; }
+  fbAuth.sendPasswordResetEmail(email).then(function(){
+    showToast(_t('✓ Email de réinitialisation envoyé','✓ Email de restablecimiento enviado','✓ Reset email sent'));
+  }).catch(_authError);
+}
+
+// Lecteurs des champs du formulaire (appelés par les onclick du HTML)
+function _emailFormSubmit(mode){
+  var emailEl=document.getElementById('authEmailInput');
+  var passEl=document.getElementById('authPassInput');
+  var email=emailEl ? emailEl.value.trim() : '';
+  var pass=passEl ? passEl.value : '';
+  if(mode==='signup') signUpWithEmail(email, pass);
+  else signInWithEmail(email, pass);
+}
+function _emailFormReset(){
+  var emailEl=document.getElementById('authEmailInput');
+  resetPassword(emailEl ? emailEl.value.trim() : '');
+}
+
+// ── INVITE CRÉATION DE COMPTE (après 20 faits lus, si non connecté) ────────
+const ACCT_PROMPT_THRESHOLD = 20;
+function maybeShowAccountPrompt(){
+  if(_fbUser) return;                          // déjà connecté
+  if(!window._authResolved) return;            // état d'auth pas encore déterminé
+  if(!fbAuth) return;                          // Firebase pas prêt
+  if((state.read.total||0) < ACCT_PROMPT_THRESHOLD) return;
+  // Ne pas reproposer avant 72h après un "plus tard"
+  if(state.acctPromptAt && (Date.now()-state.acctPromptAt) < 72*3600*1000) return;
+  if(document.getElementById('acctPromptBanner')) return;
+
+  var div=document.createElement('div');
+  div.id='acctPromptBanner';
+  div.style.cssText='position:fixed;left:50%;bottom:24px;transform:translateX(-50%);z-index:9998;background:rgba(14,16,32,.97);border:1px solid rgba(140,160,255,.35);border-radius:16px;padding:16px 18px;width:min(92vw,360px);box-shadow:0 8px 32px rgba(0,0,0,.5);font-family:Montserrat,sans-serif;';
+  var msg=_t('Sauvegarde ta progression ! Crée un compte pour ne jamais perdre tes faits, favoris et planètes — et les retrouver sur tous tes appareils.',
+             '¡Guarda tu progreso! Crea una cuenta para no perder nunca tus datos, favoritos y planetas — y recuperarlos en todos tus dispositivos.',
+             'Save your progress! Create an account so you never lose your facts, favorites and planets — and find them on all your devices.');
+  var yes=_t('Créer un compte','Crear una cuenta','Create account');
+  var later=_t('Plus tard','Más tarde','Later');
+  div.innerHTML='<div style="font-size:.86rem;color:#dfe3ff;line-height:1.45;margin-bottom:12px;">💾 '+msg+'</div>'
+    +'<div style="display:flex;gap:10px;">'
+    +'<button id="acctPromptYes" style="flex:1;padding:10px 0;border:none;border-radius:10px;background:linear-gradient(135deg,#6b7cff,#9b6bff);color:#fff;font-size:.82rem;cursor:pointer;font-family:inherit;">'+yes+'</button>'
+    +'<button id="acctPromptLater" style="flex:1;padding:10px 0;border:1px solid rgba(255,255,255,.2);border-radius:10px;background:none;color:rgba(255,255,255,.6);font-size:.82rem;cursor:pointer;font-family:inherit;">'+later+'</button>'
+    +'</div>';
+  document.body.appendChild(div);
+  document.getElementById('acctPromptYes').onclick=function(){
+    div.remove(); state.acctPromptAt=Date.now(); saveState(); openAuthPanel();
+  };
+  document.getElementById('acctPromptLater').onclick=function(){
+    div.remove(); state.acctPromptAt=Date.now(); saveState();
+  };
+}
+function _removeAccountPrompt(){
+  var b=document.getElementById('acctPromptBanner');
+  if(b) b.remove();
+}
+
 function signOutUser(){
   if(!fbAuth) return;
   fbAuth.signOut().then(()=>{
@@ -462,6 +568,7 @@ function updateAuthUI(){
     if(nameEl) nameEl.textContent = _fbUser.displayName || '';
     if(emailEl) emailEl.textContent = _fbUser.email || '';
     if(photoEl && _fbUser.photoURL) photoEl.src = _fbUser.photoURL;
+    if(typeof _removeAccountPrompt==='function') _removeAccountPrompt();
   } else {
     if(avatarImg){avatarImg.style.display='none';}
     if(avatarDefault){avatarDefault.style.display='block';}
@@ -835,12 +942,12 @@ function runPostFactChecks(deferForEndOfDay){
     _pendingEndOfDayChecks = true;
     return;
   }
-  checkAchievements();checkPlanetUnlocks();if(typeof _eventTriggeredThisFact!=='undefined')_eventTriggeredThisFact=false;maybeShowQuiz();maybeShowUfo();
+  checkAchievements();checkPlanetUnlocks();if(typeof _eventTriggeredThisFact!=='undefined')_eventTriggeredThisFact=false;maybeShowQuiz();maybeShowUfo();maybeShowAccountPrompt();
 }
 function flushPendingEndOfDayChecks(){
   if(!_pendingEndOfDayChecks) return;
   _pendingEndOfDayChecks = false;
-  checkAchievements();checkPlanetUnlocks();if(typeof _eventTriggeredThisFact!=='undefined')_eventTriggeredThisFact=false;maybeShowQuiz();maybeShowUfo();
+  checkAchievements();checkPlanetUnlocks();if(typeof _eventTriggeredThisFact!=='undefined')_eventTriggeredThisFact=false;maybeShowQuiz();maybeShowUfo();maybeShowAccountPrompt();
 }
 function showFact(){
   haptic('medium');
@@ -2123,3 +2230,9 @@ window.closeExplorePanel=closeExplorePanel;
 window.pickExplore=pickExplore;
 window.resetExploreBtn=resetExploreBtn;
 window.toggleExplore=toggleExplore;
+// Auth email / mot de passe (appelés par les onclick du panneau de compte)
+window.signUpWithEmail=signUpWithEmail;
+window.signInWithEmail=signInWithEmail;
+window.resetPassword=resetPassword;
+window._emailFormSubmit=_emailFormSubmit;
+window._emailFormReset=_emailFormReset;
