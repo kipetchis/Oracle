@@ -269,7 +269,7 @@ function closeQuiz() {
 }
 
 // ── UFO MINI-GAME ────────────────────────────────────────────────────────
-const UFO_INTERVALS = [10, 20, 30];
+const UFO_INTERVALS = [15, 25, 40]; // espacé : ~27 faits en moyenne (avant : 10/20/30, ~20)
 let factsReadSinceUfo = 0;
 let _nextUfoInterval = UFO_INTERVALS[Math.floor(Math.random()*UFO_INTERVALS.length)];
 let _ufoEl = null;
