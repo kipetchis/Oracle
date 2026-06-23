@@ -62,7 +62,7 @@ function startSpaceGame() {
   // Difficulty ramp
   setTimeout(() => { if (_game) _game.difficulty = 1.3; }, 10000);
   setTimeout(() => { if (_game) _game.difficulty = 1.7; }, 20000);
-  setTimeout(() => { if (_game) _game.difficulty = 2.2; }, 35000);
+  setTimeout(() => { if (_game) _game.difficulty = 1.9; }, 35000); // ↓ de 2.2 → fin de partie moins brutale
 
   // Start loop
   _game.animFrame = requestAnimationFrame(gameLoop);
@@ -97,7 +97,7 @@ function gameLoop(ts) {
 
   // Spawn asteroids
   _game.spawnTimer += dt;
-  const spawnRate = 0.45 / _game.difficulty;
+  const spawnRate = 0.55 / _game.difficulty; // ↑ de 0.45 → moins d'astéroïdes
   while (_game.spawnTimer >= spawnRate) {
     _game.spawnTimer -= spawnRate;
     const size = 14 + Math.random()*20;
