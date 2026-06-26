@@ -1859,7 +1859,7 @@ function getCuriosityProfile() {
     sports:'#86efac',celebrities:'#ffd700',fiction:'#a0c4ff',gaming:'#ff6b9d',
     cinema:'#e879f9',music:'#4ade80',
     mythology:'#d4a574',psychology:'#818cf8',oceans:'#06b6d4',records:'#ef4444',
-    quotes:'#fbbf24',laws:'#94a3b8',tales:'#a78bfa',dinosaurs:'#84cc16',religion:'#b39ddb'
+    quotes:'#fbbf24',laws:'#94a3b8',tales:'#a78bfa',dinosaurs:'#84cc16',religion:'#b39ddb',flora:'#8fbf6a'
   };
   // Score = faits lus × 1 + favoris × 2
   const scores = {};
@@ -1943,7 +1943,7 @@ function renderStats() {
     inventions:'#34d399',world:'#22d3ee',language:'#a78bfa',food:'#f87171',sports:'#86efac',
     celebrities:'#ffd700',fiction:'#a0c4ff',gaming:'#ff6b9d',cinema:'#e879f9',music:'#4ade80',
     mythology:'#d4a574',psychology:'#818cf8',oceans:'#06b6d4',records:'#ef4444',
-    quotes:'#fbbf24',laws:'#94a3b8',tales:'#a78bfa',dinosaurs:'#84cc16'
+    quotes:'#fbbf24',laws:'#94a3b8',tales:'#a78bfa',dinosaurs:'#84cc16',religion:'#b39ddb',flora:'#8fbf6a'
   };
   const catKeys = Object.keys(CAT_ICONS);
   const maxCat = Math.max(1, ...catKeys.map(k => state.read[k] || 0));
