@@ -1476,6 +1476,7 @@ const EPHEMERIS = {
   var y = new Date().getFullYear();
   for (var k in EPHEMERIS) {
     var v = EPHEMERIS[k];
-    if (Array.isArray(v)) EPHEMERIS[k] = v[y % v.length];
+    // +1 : 2026 (annee paire) -> serie 2 (ephemerides datees). 2027 -> serie 1, etc.
+    if (Array.isArray(v)) EPHEMERIS[k] = v[(y + 1) % v.length];
   }
 })();
