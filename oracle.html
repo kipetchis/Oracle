@@ -1584,24 +1584,7 @@ if('serviceWorker' in navigator) {
 })();
 </script>
 
-<script>
-// ── TWA DETECTION : masque les liens de don dans l'app Android (politique Paiements Google Play)
-(function(){
-  try{
-    if(document.referrer && document.referrer.indexOf('android-app://') === 0){
-      localStorage.setItem('oracle_twa','1');
-    }
-    if(localStorage.getItem('oracle_twa') === '1'){
-      var hide = function(){
-        var s = document.getElementById('supportSection');
-        if(s) s.style.display = 'none';
-      };
-      if(document.readyState === 'loading') document.addEventListener('DOMContentLoaded', hide);
-      else hide();
-    }
-  }catch(e){}
-})();
-</script>
+<!-- (section de dons toujours visible : script de masquage TWA retiré) -->
 
 </body>
 </html>
