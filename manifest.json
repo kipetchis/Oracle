@@ -23,6 +23,34 @@
       "purpose": "any maskable"
     }
   ],
+  "shortcuts": [
+    {
+      "name": "Fait du jour",
+      "short_name": "Fait du jour",
+      "description": "Voir l'éphéméride du jour",
+      "url": "/Oracle/oracle.html?shortcut=today",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Favoris",
+      "short_name": "Favoris",
+      "description": "Voir mes faits favoris",
+      "url": "/Oracle/oracle.html?shortcut=favorites",
+      "icons": [
+        {
+          "src": "icons/icon-192.png",
+          "sizes": "192x192",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
   "screenshots": [],
   "categories": ["education", "entertainment"]
 }
