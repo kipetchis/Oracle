@@ -51,6 +51,16 @@ const FACTS_EN=[
   {id:'s48',cat:'science',text:"The Eiffel Tower grows about 15 cm taller in summer: heat expands the iron, and the structure can also lean slightly away from the Sun."},
   {id:'s49',cat:'science',text:"Two 'entangled' particles stay linked no matter the distance: measuring one instantly sets the state of the other, even across the universe."},
   {id:'s50',cat:'science',text:"If you could fold a single sheet of paper in half 42 times, its thickness would, in theory, reach the Moon."},
+  {id:'s51',cat:'science',text:"Earth's magnetic field has flipped hundreds of times: north and south swapped places, most recently about 780,000 years ago."},
+  {id:'s52',cat:'science',text:"Bees sense the electric field of flowers: their hairs pick up charge in flight and reveal whether a bloom has already been visited."},
+  {id:'s53',cat:'science',text:"A honey fungus in Oregon spreads its mycelium across nearly 9 km²: one of the largest known living organisms, thousands of years old."},
+  {id:'s54',cat:'science',text:"Metallic glass exists: cooled fast enough, some alloys freeze their atoms in disorder and become far tougher than ordinary steel."},
+  {id:'s55',cat:'science',text:"Mantis shrimp have up to sixteen types of photoreceptor, against three in humans, and can perceive polarised light."},
+  {id:'s56',cat:'science',text:"Helium-3, rare on Earth, is abundant in lunar soil: researchers see it as a possible fuel for future fusion reactors."},
+  {id:'s57',cat:'science',text:"Absolute zero cannot be reached: the laws of thermodynamics forbid it, allowing only an endless approach."},
+  {id:'s58',cat:'science',text:"Some bacteria breathe metal: they trade electrons with iron minerals instead of using oxygen."},
+  {id:'s59',cat:'science',text:"Table salt is made from two dangerous substances: a metal that ignites in water and a toxic gas, harmless once bonded."},
+  {id:'s60',cat:'science',text:"Leafcutter ants have farmed for millions of years: they cultivate a fungus and feed it chewed leaves."},
   // <<< SCIENCE
   // >>> POSITIVE (50 faits)
   {id:'p1',cat:'positive',text:"The green sea turtle officially moved to 'least concern' status in 2025 — its populations have grown 28% since 1970."},
