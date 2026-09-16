@@ -51,6 +51,16 @@ const FACTS_FR=[
   {id:'s48',cat:'science',text:"La tour Eiffel grandit d'environ 15 cm en été : la chaleur dilate le fer, et la structure peut aussi pencher légèrement à l'opposé du Soleil."},
   {id:'s49',cat:'science',text:"Deux particules « intriquées » restent liées quelle que soit la distance : mesurer l'une fixe instantanément l'état de l'autre, même à l'autre bout de l'univers."},
   {id:'s50',cat:'science',text:"Si l'on pouvait plier une simple feuille de papier 42 fois sur elle-même, son épaisseur suffirait, en théorie, à atteindre la Lune."},
+  {id:'s51',cat:'science',text:"Le champ magnétique terrestre s'est inversé des centaines de fois : le nord et le sud ont échangé leur place, la dernière fois il y a environ 780 000 ans."},
+  {id:'s52',cat:'science',text:"Les abeilles détectent le champ électrique des fleurs : leurs poils se chargent en vol et perçoivent si une fleur a déjà été visitée."},
+  {id:'s53',cat:'science',text:"Le mycélium d'un armillaire de l'Oregon s'étend sur près de 9 km² : c'est l'un des plus grands organismes vivants connus, âgé de plusieurs millénaires."},
+  {id:'s54',cat:'science',text:"Le verre métallique existe : refroidis assez vite, certains alliages figent leurs atomes en désordre et deviennent bien plus résistants que l'acier classique."},
+  {id:'s55',cat:'science',text:"Les mantes-crevettes possèdent jusqu'à seize types de photorécepteurs, contre trois chez l'humain, et perçoivent la lumière polarisée."},
+  {id:'s56',cat:'science',text:"L'hélium-3, rare sur Terre, est abondant dans le sol lunaire : il intéresse les chercheurs pour d'éventuels réacteurs à fusion."},
+  {id:'s57',cat:'science',text:"Le zéro absolu est inatteignable : les lois de la thermodynamique interdisent d'y parvenir, on ne peut que s'en approcher indéfiniment."},
+  {id:'s58',cat:'science',text:"Certaines bactéries respirent du métal : elles échangent des électrons avec des minéraux de fer au lieu d'utiliser de l'oxygène."},
+  {id:'s59',cat:'science',text:"Le sel de table est le produit de deux substances dangereuses : un métal qui s'enflamme dans l'eau et un gaz toxique, inoffensifs une fois liés."},
+  {id:'s60',cat:'science',text:"Les fourmis coupe-feuilles pratiquent l'agriculture depuis des millions d'années : elles cultivent un champignon qu'elles nourrissent de feuilles mâchées."},
   // <<< SCIENCE
   // >>> POSITIVE (50 faits)
   {id:'p1',cat:'positive',text:"La tortue verte marine est officiellement passée en 2025 dans la catégorie préoccupation mineure — ses populations ont augmenté de 28 % depuis 1970."},
