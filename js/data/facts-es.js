@@ -51,6 +51,16 @@ const FACTS_ES=[
   {id:'s48',cat:'science',text:"La Torre Eiffel crece unos 15 cm en verano: el calor dilata el hierro, y la estructura también puede inclinarse ligeramente en sentido opuesto al Sol."},
   {id:'s49',cat:'science',text:"Dos partículas «entrelazadas» permanecen unidas sin importar la distancia: medir una fija al instante el estado de la otra, incluso al otro lado del universo."},
   {id:'s50',cat:'science',text:"Si se pudiera doblar una simple hoja de papel 42 veces sobre sí misma, su grosor bastaría, en teoría, para llegar a la Luna."},
+  {id:'s51',cat:'science',text:"El campo magnético terrestre se ha invertido cientos de veces: el norte y el sur intercambiaron su lugar, la última vez hace unos 780 000 años."},
+  {id:'s52',cat:'science',text:"Las abejas detectan el campo eléctrico de las flores: sus pelos se cargan en vuelo y perciben si una flor ya fue visitada."},
+  {id:'s53',cat:'science',text:"El micelio de una armilaria de Oregón se extiende por casi 9 km²: es uno de los mayores organismos vivos conocidos, con milenios de antigüedad."},
+  {id:'s54',cat:'science',text:"El vidrio metálico existe: enfriadas muy rápido, ciertas aleaciones congelan sus átomos en desorden y superan en resistencia al acero clásico."},
+  {id:'s55',cat:'science',text:"Los camarones mantis tienen hasta dieciséis tipos de fotorreceptores, frente a tres en el ser humano, y perciben la luz polarizada."},
+  {id:'s56',cat:'science',text:"El helio-3, escaso en la Tierra, abunda en el suelo lunar: interesa a los investigadores para posibles reactores de fusión."},
+  {id:'s57',cat:'science',text:"El cero absoluto es inalcanzable: las leyes de la termodinámica lo impiden, solo cabe acercarse indefinidamente."},
+  {id:'s58',cat:'science',text:"Algunas bacterias respiran metal: intercambian electrones con minerales de hierro en lugar de usar oxígeno."},
+  {id:'s59',cat:'science',text:"La sal de mesa nace de dos sustancias peligrosas: un metal que arde en el agua y un gas tóxico, inofensivos una vez unidos."},
+  {id:'s60',cat:'science',text:"Las hormigas cortadoras de hojas cultivan desde hace millones de años: crían un hongo al que alimentan con hojas masticadas."},
   // <<< SCIENCE
   // >>> POSITIVE (50 faits)
   {id:'p1',cat:'positive',text:"La tortuga verde marina pasó oficialmente en 2025 a la categoría de preocupación menor — sus poblaciones han aumentado un 28 % desde 1970."},
