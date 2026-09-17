@@ -1,0 +1,2522 @@
+[
+ {
+  "id": "s51",
+  "cat": "science",
+  "marker": "SCIENCE",
+  "fr": "Le champ magnétique terrestre s'est inversé des centaines de fois : le nord et le sud ont échangé leur place, la dernière fois il y a environ 780 000 ans.",
+  "en": "Earth's magnetic field has flipped hundreds of times: north and south swapped places, most recently about 780,000 years ago.",
+  "es": "El campo magnético terrestre se ha invertido cientos de veces: el norte y el sur intercambiaron su lugar, la última vez hace unos 780 000 años.",
+  "src": "https://en.wikipedia.org/wiki/Geomagnetic_reversal"
+ },
+ {
+  "id": "s52",
+  "cat": "science",
+  "marker": "SCIENCE",
+  "fr": "Les abeilles détectent le champ électrique des fleurs : leurs poils se chargent en vol et perçoivent si une fleur a déjà été visitée.",
+  "en": "Bees sense the electric field of flowers: their hairs pick up charge in flight and reveal whether a bloom has already been visited.",
+  "es": "Las abejas detectan el campo eléctrico de las flores: sus pelos se cargan en vuelo y perciben si una flor ya fue visitada.",
+  "src": "https://en.wikipedia.org/wiki/Electroreception"
+ },
+ {
+  "id": "s53",
+  "cat": "science",
+  "marker": "SCIENCE",
+  "fr": "Le mycélium d'un armillaire de l'Oregon s'étend sur près de 9 km² : c'est l'un des plus grands organismes vivants connus, âgé de plusieurs millénaires.",
+  "en": "A honey fungus in Oregon spreads its mycelium across nearly 9 km²: one of the largest known living organisms, thousands of years old.",
+  "es": "El micelio de una armilaria de Oregón se extiende por casi 9 km²: es uno de los mayores organismos vivos conocidos, con milenios de antigüedad.",
+  "src": "https://en.wikipedia.org/wiki/Armillaria_ostoyae"
+ },
+ {
+  "id": "s54",
+  "cat": "science",
+  "marker": "SCIENCE",
+  "fr": "Le verre métallique existe : refroidis assez vite, certains alliages figent leurs atomes en désordre et deviennent bien plus résistants que l'acier classique.",
+  "en": "Metallic glass exists: cooled fast enough, some alloys freeze their atoms in disorder and become far tougher than ordinary steel.",
+  "es": "El vidrio metálico existe: enfriadas muy rápido, ciertas aleaciones congelan sus átomos en desorden y superan en resistencia al acero clásico.",
+  "src": "https://en.wikipedia.org/wiki/Amorphous_metal"
+ },
+ {
+  "id": "s55",
+  "cat": "science",
+  "marker": "SCIENCE",
+  "fr": "Les mantes-crevettes possèdent jusqu'à seize types de photorécepteurs, contre trois chez l'humain, et perçoivent la lumière polarisée.",
+  "en": "Mantis shrimp have up to sixteen types of photoreceptor, against three in humans, and can perceive polarised light.",
+  "es": "Los camarones mantis tienen hasta dieciséis tipos de fotorreceptores, frente a tres en el ser humano, y perciben la luz polarizada.",
+  "src": "https://en.wikipedia.org/wiki/Mantis_shrimp"
+ },
+ {
+  "id": "s56",
+  "cat": "science",
+  "marker": "SCIENCE",
+  "fr": "L'hélium-3, rare sur Terre, est abondant dans le sol lunaire : il intéresse les chercheurs pour d'éventuels réacteurs à fusion.",
+  "en": "Helium-3, rare on Earth, is abundant in lunar soil: researchers see it as a possible fuel for future fusion reactors.",
+  "es": "El helio-3, escaso en la Tierra, abunda en el suelo lunar: interesa a los investigadores para posibles reactores de fusión.",
+  "src": "https://en.wikipedia.org/wiki/Helium-3"
+ },
+ {
+  "id": "s57",
+  "cat": "science",
+  "marker": "SCIENCE",
+  "fr": "Le zéro absolu est inatteignable : les lois de la thermodynamique interdisent d'y parvenir, on ne peut que s'en approcher indéfiniment.",
+  "en": "Absolute zero cannot be reached: the laws of thermodynamics forbid it, allowing only an endless approach.",
+  "es": "El cero absoluto es inalcanzable: las leyes de la termodinámica lo impiden, solo cabe acercarse indefinidamente.",
+  "src": "https://en.wikipedia.org/wiki/Absolute_zero"
+ },
+ {
+  "id": "s58",
+  "cat": "science",
+  "marker": "SCIENCE",
+  "fr": "Certaines bactéries respirent du métal : elles échangent des électrons avec des minéraux de fer au lieu d'utiliser de l'oxygène.",
+  "en": "Some bacteria breathe metal: they trade electrons with iron minerals instead of using oxygen.",
+  "es": "Algunas bacterias respiran metal: intercambian electrones con minerales de hierro en lugar de usar oxígeno.",
+  "src": "https://en.wikipedia.org/wiki/Geobacter"
+ },
+ {
+  "id": "s59",
+  "cat": "science",
+  "marker": "SCIENCE",
+  "fr": "Le sel de table est le produit de deux substances dangereuses : un métal qui s'enflamme dans l'eau et un gaz toxique, inoffensifs une fois liés.",
+  "en": "Table salt is made from two dangerous substances: a metal that ignites in water and a toxic gas, harmless once bonded.",
+  "es": "La sal de mesa nace de dos sustancias peligrosas: un metal que arde en el agua y un gas tóxico, inofensivos una vez unidos.",
+  "src": "https://en.wikipedia.org/wiki/Sodium_chloride"
+ },
+ {
+  "id": "s60",
+  "cat": "science",
+  "marker": "SCIENCE",
+  "fr": "Les fourmis coupe-feuilles pratiquent l'agriculture depuis des millions d'années : elles cultivent un champignon qu'elles nourrissent de feuilles mâchées.",
+  "en": "Leafcutter ants have farmed for millions of years: they cultivate a fungus and feed it chewed leaves.",
+  "es": "Las hormigas cortadoras de hojas cultivan desde hace millones de años: crían un hongo al que alimentan con hojas masticadas.",
+  "src": "https://en.wikipedia.org/wiki/Leafcutter_ant"
+ },
+ {
+  "id": "p51",
+  "cat": "positive",
+  "marker": "POSITIVE",
+  "fr": "Le bison d'Europe, éteint à l'état sauvage en 1927, a été réintroduit à partir de quelques individus de zoos : plusieurs milliers vivent aujourd'hui en liberté.",
+  "en": "The European bison, extinct in the wild in 1927, was reintroduced from a handful of zoo animals: several thousand now roam free.",
+  "es": "El bisonte europeo, extinto en libertad en 1927, fue reintroducido a partir de unos pocos ejemplares de zoo: hoy viven varios miles en libertad.",
+  "src": "https://en.wikipedia.org/wiki/European_bison"
+ },
+ {
+  "id": "p52",
+  "cat": "positive",
+  "marker": "POSITIVE",
+  "fr": "La Tamise, déclarée biologiquement morte en 1957, abrite de nouveau des phoques, des hippocampes et des centaines d'espèces de poissons.",
+  "en": "The Thames, declared biologically dead in 1957, is home again to seals, seahorses and hundreds of fish species.",
+  "es": "El Támesis, declarado biológicamente muerto en 1957, alberga de nuevo focas, caballitos de mar y cientos de especies de peces.",
+  "src": "https://en.wikipedia.org/wiki/River_Thames"
+ },
+ {
+  "id": "p53",
+  "cat": "positive",
+  "marker": "POSITIVE",
+  "fr": "Le bouquetin des Alpes, réduit à une centaine de bêtes au XIXᵉ siècle, dépasse aujourd'hui les 50 000 individus.",
+  "en": "The Alpine ibex, down to about a hundred animals in the 19th century, now numbers more than 50,000.",
+  "es": "La cabra montés de los Alpes, reducida a un centenar de ejemplares en el siglo XIX, supera hoy los 50 000.",
+  "src": "https://en.wikipedia.org/wiki/Alpine_ibex"
+ },
+ {
+  "id": "p54",
+  "cat": "positive",
+  "marker": "POSITIVE",
+  "fr": "L'Éthiopie a interdit l'importation de voitures thermiques en 2024, devenant le premier pays au monde à franchir ce pas.",
+  "en": "Ethiopia banned imports of petrol and diesel cars in 2024, becoming the first country in the world to take that step.",
+  "es": "Etiopía prohibió en 2024 la importación de coches de gasolina y diésel, siendo el primer país del mundo en dar ese paso.",
+  "src": "https://en.wikipedia.org/wiki/Electric_car_use_by_country"
+ },
+ {
+  "id": "p55",
+  "cat": "positive",
+  "marker": "POSITIVE",
+  "fr": "Le castor européen, qui ne comptait que 1 200 individus vers 1900, dépasse aujourd'hui le million grâce à la protection légale.",
+  "en": "The European beaver, reduced to some 1,200 animals around 1900, now exceeds one million thanks to legal protection.",
+  "es": "El castor europeo, con apenas 1 200 ejemplares hacia 1900, supera hoy el millón gracias a la protección legal.",
+  "src": "https://en.wikipedia.org/wiki/Eurasian_beaver"
+ },
+ {
+  "id": "p56",
+  "cat": "positive",
+  "marker": "POSITIVE",
+  "fr": "La couche d'ozone n'est pas seule à se réparer : les pluies acides ont fortement reculé en Europe et en Amérique du Nord après les accords sur le soufre.",
+  "en": "The ozone layer is not alone in healing: acid rain fell sharply in Europe and North America after agreements on sulphur emissions.",
+  "es": "La capa de ozono no es la única que se recupera: la lluvia ácida retrocedió con fuerza en Europa y Norteamérica tras los acuerdos sobre el azufre.",
+  "src": "https://en.wikipedia.org/wiki/Acid_rain"
+ },
+ {
+  "id": "p57",
+  "cat": "positive",
+  "marker": "POSITIVE",
+  "fr": "Le Bhoutan absorbe plus de carbone qu'il n'en émet : sa Constitution impose de conserver au moins 60 % du territoire boisé.",
+  "en": "Bhutan absorbs more carbon than it emits: its constitution requires at least 60% of the country to stay forested.",
+  "es": "Bután absorbe más carbono del que emite: su Constitución obliga a mantener al menos el 60 % del territorio cubierto de bosque.",
+  "src": "https://en.wikipedia.org/wiki/Climate_change_in_Bhutan"
+ },
+ {
+  "id": "p58",
+  "cat": "positive",
+  "marker": "POSITIVE",
+  "fr": "Le loup est revenu naturellement dans la plupart des pays européens : il était absent de régions entières il y a seulement quarante ans.",
+  "en": "Wolves have returned naturally to most European countries, after being absent from entire regions only forty years ago.",
+  "es": "El lobo ha vuelto de forma natural a la mayoría de países europeos, tras faltar en regiones enteras hace solo cuarenta años.",
+  "src": "https://en.wikipedia.org/wiki/Wolf_reintroduction"
+ },
+ {
+  "id": "p59",
+  "cat": "positive",
+  "marker": "POSITIVE",
+  "fr": "Les banques alimentaires et associations récupèrent chaque année des millions de tonnes d'invendus qui finissaient autrefois en décharge.",
+  "en": "Food banks and charities recover millions of tonnes of unsold food each year that once went straight to landfill.",
+  "es": "Los bancos de alimentos recuperan cada año millones de toneladas de excedentes que antes acababan en el vertedero.",
+  "src": "https://en.wikipedia.org/wiki/Food_bank"
+ },
+ {
+  "id": "p60",
+  "cat": "positive",
+  "marker": "POSITIVE",
+  "fr": "Le nombre de pays ayant aboli la peine de mort est passé d'une poignée dans les années 1970 à plus de 110 aujourd'hui.",
+  "en": "The number of countries that have abolished the death penalty has risen from a handful in the 1970s to more than 110 today.",
+  "es": "El número de países que han abolido la pena de muerte pasó de un puñado en los años setenta a más de 110 en la actualidad.",
+  "src": "https://en.wikipedia.org/wiki/Capital_punishment_by_country"
+ },
+ {
+  "id": "u51",
+  "cat": "fun",
+  "marker": "FUN",
+  "fr": "Les bulles de savon éclatent en un dixième de millième de seconde : trop rapide pour l'œil, il faut une caméra ultra-rapide pour voir le film se déchirer.",
+  "en": "Soap bubbles burst in a ten-thousandth of a second: too fast for the eye, only a high-speed camera catches the film tearing.",
+  "es": "Las pompas de jabón estallan en una diezmilésima de segundo: demasiado rápido para el ojo, solo una cámara ultrarrápida capta la película rompiéndose.",
+  "src": "https://en.wikipedia.org/wiki/Soap_bubble"
+ },
+ {
+  "id": "u52",
+  "cat": "fun",
+  "marker": "FUN",
+  "fr": "Un nuage de vapeur d'eau chaude au-dessus d'une tasse de thé contient des milliards de gouttelettes — mais moins d'eau qu'une seule cuillère.",
+  "en": "The steam cloud above a hot cup of tea holds billions of droplets — yet less water than a single spoonful.",
+  "es": "La nube de vapor sobre una taza de té caliente contiene miles de millones de gotitas, pero menos agua que una sola cucharada.",
+  "src": "https://en.wikipedia.org/wiki/Water_vapor"
+ },
+ {
+  "id": "u53",
+  "cat": "fun",
+  "marker": "FUN",
+  "fr": "Les vaches ont des accents régionaux : des chercheurs ont constaté que leurs meuglements varient selon le troupeau et la région d'élevage.",
+  "en": "Cows have regional accents: researchers found their moos vary depending on the herd and the area where they are raised.",
+  "es": "Las vacas tienen acentos regionales: los investigadores comprobaron que sus mugidos varían según el rebaño y la zona de cría.",
+  "src": "https://en.wikipedia.org/wiki/Cattle"
+ },
+ {
+  "id": "u54",
+  "cat": "fun",
+  "marker": "FUN",
+  "fr": "Le mot « ambulance » est écrit à l'envers à l'avant du véhicule pour qu'il se lise correctement dans le rétroviseur des automobilistes.",
+  "en": "The word 'ambulance' is written backwards on the front of the vehicle so it reads correctly in drivers' rear-view mirrors.",
+  "es": "La palabra «ambulancia» se escribe al revés en la parte delantera del vehículo para leerse bien en el retrovisor de los conductores.",
+  "src": "https://en.wikipedia.org/wiki/Mirror_writing"
+ },
+ {
+  "id": "u55",
+  "cat": "fun",
+  "marker": "FUN",
+  "fr": "Il est impossible de fredonner en se bouchant le nez : le son a besoin de sortir par les narines pour exister.",
+  "en": "It is impossible to hum while holding your nose: the sound needs to escape through the nostrils to exist at all.",
+  "es": "Es imposible tararear tapándose la nariz: el sonido necesita salir por las fosas nasales para existir.",
+  "src": "https://en.wikipedia.org/wiki/Humming"
+ },
+ {
+  "id": "u56",
+  "cat": "fun",
+  "marker": "FUN",
+  "fr": "Les manchots offrent des cailloux à leur partenaire : chez certaines espèces, le mâle cherche le plus lisse possible pour le nid.",
+  "en": "Penguins offer pebbles to their partner: in some species the male hunts for the smoothest one he can find for the nest.",
+  "es": "Los pingüinos regalan piedrecitas a su pareja: en algunas especies el macho busca la más lisa posible para el nido.",
+  "src": "https://en.wikipedia.org/wiki/Gentoo_penguin"
+ },
+ {
+  "id": "u57",
+  "cat": "fun",
+  "marker": "FUN",
+  "fr": "Le ketchup était vendu comme médicament aux États-Unis dans les années 1830, censé soigner la diarrhée et les indigestions.",
+  "en": "Ketchup was sold as medicine in the United States in the 1830s, promoted as a cure for diarrhoea and indigestion.",
+  "es": "El kétchup se vendía como medicamento en Estados Unidos en la década de 1830, presentado como remedio para la diarrea y la indigestión.",
+  "src": "https://en.wikipedia.org/wiki/Ketchup"
+ },
+ {
+  "id": "u58",
+  "cat": "fun",
+  "marker": "FUN",
+  "fr": "Les papillons goûtent avec leurs pattes : des récepteurs situés sous leurs pieds leur indiquent si une plante convient à leurs chenilles.",
+  "en": "Butterflies taste with their feet: receptors under their legs tell them whether a plant suits their caterpillars.",
+  "es": "Las mariposas saborean con las patas: unos receptores bajo sus pies les indican si una planta sirve para sus orugas.",
+  "src": "https://en.wikipedia.org/wiki/Butterfly"
+ },
+ {
+  "id": "u59",
+  "cat": "fun",
+  "marker": "FUN",
+  "fr": "Un pissenlit peut libérer jusqu'à 400 graines munies de parachutes capables de voler plusieurs kilomètres.",
+  "en": "A single dandelion can release up to 400 seeds, each fitted with a parachute able to travel several kilometres.",
+  "es": "Un solo diente de león puede liberar hasta 400 semillas provistas de paracaídas capaces de volar varios kilómetros.",
+  "src": "https://en.wikipedia.org/wiki/Taraxacum"
+ },
+ {
+  "id": "u60",
+  "cat": "fun",
+  "marker": "FUN",
+  "fr": "Le Tetris a été créé en 1984 par un informaticien soviétique qui n'a touché aucun droit dessus pendant des années : les revenus allaient à l'État.",
+  "en": "Tetris was created in 1984 by a Soviet computer scientist who earned nothing from it for years: the revenue went to the state.",
+  "es": "Tetris fue creado en 1984 por un informático soviético que durante años no cobró nada por él: los ingresos iban al Estado.",
+  "src": "https://en.wikipedia.org/wiki/Tetris"
+ },
+ {
+  "id": "h51",
+  "cat": "history",
+  "marker": "HISTORY",
+  "fr": "Le royaume de Koush, en Nubie, a conquis l'Égypte au VIIIᵉ siècle av. J.-C. : ses souverains ont régné comme pharaons pendant près d'un siècle.",
+  "en": "The Kingdom of Kush, in Nubia, conquered Egypt in the 8th century BC: its rulers reigned as pharaohs for close to a century.",
+  "es": "El reino de Kush, en Nubia, conquistó Egipto en el siglo VIII a. C.: sus soberanos reinaron como faraones durante casi un siglo.",
+  "src": "https://en.wikipedia.org/wiki/Kingdom_of_Kush"
+ },
+ {
+  "id": "h52",
+  "cat": "history",
+  "marker": "HISTORY",
+  "fr": "Hatchepsout a gouverné l'Égypte comme pharaon pendant une vingtaine d'années : après sa mort, son successeur fit marteler son nom sur les monuments.",
+  "en": "Hatshepsut ruled Egypt as pharaoh for some twenty years: after her death, her successor had her name chiselled off the monuments.",
+  "es": "Hatshepsut gobernó Egipto como faraón unos veinte años: tras su muerte, su sucesor mandó borrar su nombre de los monumentos.",
+  "src": "https://en.wikipedia.org/wiki/Hatshepsut"
+ },
+ {
+  "id": "h53",
+  "cat": "history",
+  "marker": "HISTORY",
+  "fr": "L'Empire du Mali disposait d'une des plus grandes bibliothèques du monde à Tombouctou : des dizaines de milliers de manuscrits y étaient copiés et vendus.",
+  "en": "The Mali Empire held one of the world's great libraries at Timbuktu: tens of thousands of manuscripts were copied and traded there.",
+  "es": "El Imperio de Malí albergaba una de las mayores bibliotecas del mundo en Tombuctú: allí se copiaban y vendían decenas de miles de manuscritos.",
+  "src": "https://en.wikipedia.org/wiki/Timbuktu_Manuscripts"
+ },
+ {
+  "id": "h54",
+  "cat": "history",
+  "marker": "HISTORY",
+  "fr": "La cité de Çatal Höyük, en Anatolie, comptait des milliers d'habitants il y a 9 000 ans — sans rues : on circulait par les toits.",
+  "en": "The city of Çatalhöyük in Anatolia housed thousands of people 9,000 years ago — with no streets: people moved across the rooftops.",
+  "es": "La ciudad de Çatalhöyük, en Anatolia, tenía miles de habitantes hace 9 000 años y carecía de calles: se circulaba por los tejados.",
+  "src": "https://en.wikipedia.org/wiki/%C3%87atalh%C3%B6y%C3%BCk"
+ },
+ {
+  "id": "h55",
+  "cat": "history",
+  "marker": "HISTORY",
+  "fr": "Les Romains connaissaient un béton qui durcit au contact de l'eau de mer : leurs ports antiques tiennent encore debout après deux millénaires.",
+  "en": "The Romans had a concrete that hardens in contact with seawater: their ancient harbours are still standing two millennia later.",
+  "es": "Los romanos conocían un hormigón que endurece en contacto con el agua de mar: sus puertos antiguos siguen en pie dos milenios después.",
+  "src": "https://en.wikipedia.org/wiki/Roman_concrete"
+ },
+ {
+  "id": "h56",
+  "cat": "history",
+  "marker": "HISTORY",
+  "fr": "L'écriture de la civilisation de l'Indus n'a jamais été déchiffrée : ses milliers de courtes inscriptions restent muettes malgré un siècle de recherches.",
+  "en": "The script of the Indus civilisation has never been deciphered: its thousands of short inscriptions stay silent despite a century of study.",
+  "es": "La escritura de la civilización del Indo nunca ha sido descifrada: sus miles de breves inscripciones siguen mudas pese a un siglo de investigación.",
+  "src": "https://en.wikipedia.org/wiki/Indus_script"
+ },
+ {
+  "id": "h57",
+  "cat": "history",
+  "marker": "HISTORY",
+  "fr": "L'éruption du Tambora en 1815 a provoqué « l'année sans été » : récoltes perdues et neige en juin jusqu'en Europe et en Amérique du Nord.",
+  "en": "The 1815 eruption of Tambora caused 'the year without a summer': ruined harvests and snow in June across Europe and North America.",
+  "es": "La erupción del Tambora en 1815 provocó «el año sin verano»: cosechas perdidas y nieve en junio en Europa y Norteamérica.",
+  "src": "https://en.wikipedia.org/wiki/Year_Without_a_Summer"
+ },
+ {
+  "id": "h58",
+  "cat": "history",
+  "marker": "HISTORY",
+  "fr": "Le Zimbabwe tire son nom du Grand Zimbabwe, une cité de pierre bâtie sans mortier entre le XIᵉ et le XVᵉ siècle.",
+  "en": "Zimbabwe takes its name from Great Zimbabwe, a stone city built without mortar between the 11th and 15th centuries.",
+  "es": "Zimbabue debe su nombre al Gran Zimbabue, una ciudad de piedra levantada sin mortero entre los siglos XI y XV.",
+  "src": "https://en.wikipedia.org/wiki/Great_Zimbabwe"
+ },
+ {
+  "id": "h59",
+  "cat": "history",
+  "marker": "HISTORY",
+  "fr": "La Ligue hanséatique, alliance de villes marchandes autour de la Baltique, a dominé le commerce nordique pendant près de quatre siècles sans être un État.",
+  "en": "The Hanseatic League, an alliance of trading towns around the Baltic, dominated northern commerce for nearly four centuries without being a state.",
+  "es": "La Liga Hanseática, alianza de ciudades mercantes del Báltico, dominó el comercio nórdico durante casi cuatro siglos sin ser un Estado.",
+  "src": "https://en.wikipedia.org/wiki/Hanseatic_League"
+ },
+ {
+  "id": "h60",
+  "cat": "history",
+  "marker": "HISTORY",
+  "fr": "Le calendrier grégorien a fait disparaître dix jours en 1582 : on est passé du 4 au 15 octobre, et certains pays ont attendu des siècles pour l'adopter.",
+  "en": "The Gregorian calendar erased ten days in 1582: 4 October was followed by 15 October, and some countries waited centuries to adopt it.",
+  "es": "El calendario gregoriano hizo desaparecer diez días en 1582: del 4 se pasó al 15 de octubre, y algunos países tardaron siglos en adoptarlo.",
+  "src": "https://en.wikipedia.org/wiki/Gregorian_calendar"
+ },
+ {
+  "id": "sp51",
+  "cat": "space",
+  "marker": "SPACE",
+  "fr": "Les diamants de l'espace existent bel et bien : certaines météorites contiennent des grains formés avant même la naissance du système solaire.",
+  "en": "Diamonds from space are real: some meteorites carry grains that formed before the solar system itself existed.",
+  "es": "Los diamantes del espacio existen: algunos meteoritos contienen granos formados antes incluso de que naciera el sistema solar.",
+  "src": "https://en.wikipedia.org/wiki/Presolar_grains"
+ },
+ {
+  "id": "sp52",
+  "cat": "space",
+  "marker": "SPACE",
+  "fr": "Il existe des étoiles qui n'ont jamais brillé : les naines brunes, trop peu massives pour allumer la fusion de l'hydrogène en leur cœur.",
+  "en": "Some stars never shone: brown dwarfs are too light to ignite hydrogen fusion in their cores.",
+  "es": "Hay estrellas que nunca brillaron: las enanas marrones son demasiado ligeras para encender la fusión del hidrógeno en su núcleo.",
+  "src": "https://en.wikipedia.org/wiki/Brown_dwarf"
+ },
+ {
+  "id": "sp53",
+  "cat": "space",
+  "marker": "SPACE",
+  "fr": "La Terre possède des « quasi-lunes » : des astéroïdes qui l'accompagnent autour du Soleil sans jamais être capturés par sa gravité.",
+  "en": "Earth has 'quasi-moons': asteroids that travel with it around the Sun without ever being captured by its gravity.",
+  "es": "La Tierra tiene «cuasilunas»: asteroides que la acompañan alrededor del Sol sin ser capturados nunca por su gravedad.",
+  "src": "https://en.wikipedia.org/wiki/Quasi-satellite"
+ },
+ {
+  "id": "sp54",
+  "cat": "space",
+  "marker": "SPACE",
+  "fr": "Le vent solaire souffle en permanence sur la magnétosphère terrestre : sans ce bouclier magnétique, notre atmosphère s'échapperait peu à peu.",
+  "en": "The solar wind blows constantly against Earth's magnetosphere: without that magnetic shield, our atmosphere would slowly escape.",
+  "es": "El viento solar sopla sin cesar contra la magnetosfera terrestre: sin ese escudo magnético, nuestra atmósfera se escaparía poco a poco.",
+  "src": "https://en.wikipedia.org/wiki/Magnetosphere"
+ },
+ {
+  "id": "sp55",
+  "cat": "space",
+  "marker": "SPACE",
+  "fr": "Certaines galaxies se sont éteintes : à court de gaz, elles ne fabriquent plus aucune étoile et vieillissent en rougissant lentement.",
+  "en": "Some galaxies have switched off: out of gas, they make no new stars and slowly redden as they age.",
+  "es": "Algunas galaxias se han apagado: sin gas, ya no fabrican estrellas y envejecen enrojeciendo lentamente.",
+  "src": "https://en.wikipedia.org/wiki/Galaxy_quenching"
+ },
+ {
+  "id": "sp56",
+  "cat": "space",
+  "marker": "SPACE",
+  "fr": "L'astéroïde Psyché est presque entièrement métallique : il pourrait être le noyau mis à nu d'une planète avortée.",
+  "en": "The asteroid Psyche is almost entirely metallic: it may be the stripped core of a planet that never formed.",
+  "es": "El asteroide Psique es casi enteramente metálico: podría ser el núcleo desnudo de un planeta que nunca llegó a formarse.",
+  "src": "https://en.wikipedia.org/wiki/16_Psyche"
+ },
+ {
+  "id": "sp57",
+  "cat": "space",
+  "marker": "SPACE",
+  "fr": "Il neige sur Pluton, mais à l'envers : le méthane se dépose sur les sommets au lieu de recouvrir les vallées.",
+  "en": "It snows on Pluto, but the wrong way round: methane settles on the peaks instead of filling the valleys.",
+  "es": "En Plutón nieva, pero al revés: el metano se deposita en las cumbres en lugar de cubrir los valles.",
+  "src": "https://en.wikipedia.org/wiki/Atmosphere_of_Pluto"
+ },
+ {
+  "id": "sp58",
+  "cat": "space",
+  "marker": "SPACE",
+  "fr": "Les aurores ne sont pas réservées à la Terre : Jupiter en produit de gigantesques, des centaines de fois plus puissantes que les nôtres.",
+  "en": "Auroras are not just an Earth phenomenon: Jupiter produces vast ones, hundreds of times more powerful than ours.",
+  "es": "Las auroras no son exclusivas de la Tierra: Júpiter produce unas gigantescas, cientos de veces más potentes que las nuestras.",
+  "src": "https://en.wikipedia.org/wiki/Aurora"
+ },
+ {
+  "id": "sp59",
+  "cat": "space",
+  "marker": "SPACE",
+  "fr": "La station Mir est restée habitée presque en continu pendant une décennie avant d'être volontairement précipitée dans le Pacifique en 2001.",
+  "en": "The Mir station stayed almost continuously crewed for a decade before being deliberately brought down into the Pacific in 2001.",
+  "es": "La estación Mir estuvo habitada casi sin interrupción durante una década antes de ser precipitada voluntariamente al Pacífico en 2001.",
+  "src": "https://en.wikipedia.org/wiki/Mir"
+ },
+ {
+  "id": "sp60",
+  "cat": "space",
+  "marker": "SPACE",
+  "fr": "Le fond diffus cosmologique est la plus vieille lumière de l'univers : émise environ 380 000 ans après le Big Bang, elle baigne encore tout le ciel.",
+  "en": "The cosmic microwave background is the oldest light in the universe: released about 380,000 years after the Big Bang, it still bathes the whole sky.",
+  "es": "El fondo cósmico de microondas es la luz más antigua del universo: emitida unos 380 000 años tras el Big Bang, aún baña todo el cielo.",
+  "src": "https://en.wikipedia.org/wiki/Cosmic_microwave_background"
+ },
+ {
+  "id": "a51",
+  "cat": "animals",
+  "marker": "ANIMALS",
+  "fr": "Le poisson-perroquet dort enveloppé dans un cocon de mucus qu'il sécrète lui-même : cette bulle masque son odeur et le protège des parasites.",
+  "en": "Parrotfish sleep wrapped in a cocoon of mucus they secrete themselves: the bubble hides their scent and keeps parasites away.",
+  "es": "El pez loro duerme envuelto en un capullo de mucosidad que él mismo segrega: esa burbuja oculta su olor y lo protege de los parásitos.",
+  "src": "https://en.wikipedia.org/wiki/Parrotfish"
+ },
+ {
+  "id": "a52",
+  "cat": "animals",
+  "marker": "ANIMALS",
+  "fr": "Les suricates ont des instituteurs : les adultes apportent aux jeunes des scorpions dont le dard est retiré, pour leur apprendre à chasser par étapes.",
+  "en": "Meerkats run lessons: adults bring youngsters scorpions with the sting removed, teaching them to hunt step by step.",
+  "es": "Las suricatas dan clases: los adultos llevan a las crías escorpiones sin aguijón para enseñarles a cazar por etapas.",
+  "src": "https://en.wikipedia.org/wiki/Meerkat"
+ },
+ {
+  "id": "a53",
+  "cat": "animals",
+  "marker": "ANIMALS",
+  "fr": "Les éléphants de mer plongent plus de 1 500 mètres et restent sous l'eau près de deux heures, plus profond que la plupart des baleines.",
+  "en": "Elephant seals dive beyond 1,500 metres and stay under for nearly two hours, deeper than most whales.",
+  "es": "Los elefantes marinos bucean más de 1 500 metros y permanecen sumergidos casi dos horas, más hondo que la mayoría de las ballenas.",
+  "src": "https://en.wikipedia.org/wiki/Southern_elephant_seal"
+ },
+ {
+  "id": "a54",
+  "cat": "animals",
+  "marker": "ANIMALS",
+  "fr": "Certaines fourmis explosent volontairement : elles rompent leur propre abdomen pour libérer une substance collante et bloquer un intrus.",
+  "en": "Some ants explode on purpose: they rupture their own abdomen to release a sticky substance and stop an intruder.",
+  "es": "Algunas hormigas estallan voluntariamente: revientan su propio abdomen para liberar una sustancia pegajosa y frenar a un intruso.",
+  "src": "https://en.wikipedia.org/wiki/Colobopsis_explodens"
+ },
+ {
+  "id": "a55",
+  "cat": "animals",
+  "marker": "ANIMALS",
+  "fr": "Le cochon d'Inde ne fabrique pas sa vitamine C, comme l'humain : il doit la trouver dans son alimentation sous peine de tomber malade.",
+  "en": "Guinea pigs cannot make their own vitamin C, just like humans: they must get it from food or fall ill.",
+  "es": "El cobaya no fabrica su vitamina C, igual que el ser humano: debe obtenerla de la alimentación o enfermará.",
+  "src": "https://en.wikipedia.org/wiki/Guinea_pig"
+ },
+ {
+  "id": "a56",
+  "cat": "animals",
+  "marker": "ANIMALS",
+  "fr": "Les pies se reconnaissent dans un miroir : marquées d'une tache, elles tentent de l'enlever sur elles-mêmes, signe rare de conscience de soi.",
+  "en": "Magpies recognise themselves in a mirror: marked with a spot, they try to remove it from their own body, a rare sign of self-awareness.",
+  "es": "Las urracas se reconocen en un espejo: marcadas con una mancha, intentan quitársela del propio cuerpo, señal poco común de autoconciencia.",
+  "src": "https://en.wikipedia.org/wiki/Mirror_test"
+ },
+ {
+  "id": "a57",
+  "cat": "animals",
+  "marker": "ANIMALS",
+  "fr": "La sterne arctique effectue la plus longue migration connue : elle relie l'Arctique à l'Antarctique et voit deux étés par an.",
+  "en": "The Arctic tern makes the longest known migration: it travels from the Arctic to the Antarctic and sees two summers a year.",
+  "es": "El charrán ártico realiza la migración más larga conocida: une el Ártico con la Antártida y ve dos veranos al año.",
+  "src": "https://en.wikipedia.org/wiki/Arctic_tern"
+ },
+ {
+  "id": "a58",
+  "cat": "animals",
+  "marker": "ANIMALS",
+  "fr": "Le poisson-lune pond des centaines de millions d'œufs en une saison, plus que tout autre vertébré connu.",
+  "en": "The ocean sunfish lays hundreds of millions of eggs in a season, more than any other known vertebrate.",
+  "es": "El pez luna pone cientos de millones de huevos en una temporada, más que cualquier otro vertebrado conocido.",
+  "src": "https://en.wikipedia.org/wiki/Ocean_sunfish"
+ },
+ {
+  "id": "a59",
+  "cat": "animals",
+  "marker": "ANIMALS",
+  "fr": "Les chiens de prairie ont un langage d'alerte détaillé : leurs cris distinguent le type de prédateur, sa taille et même la couleur de ses vêtements.",
+  "en": "Prairie dogs have a detailed alarm language: their calls distinguish the kind of predator, its size and even the colour of its clothing.",
+  "es": "Los perritos de las praderas tienen un lenguaje de alarma detallado: sus chillidos distinguen el tipo de depredador, su tamaño e incluso el color de su ropa.",
+  "src": "https://en.wikipedia.org/wiki/Prairie_dog"
+ },
+ {
+  "id": "a60",
+  "cat": "animals",
+  "marker": "ANIMALS",
+  "fr": "Le scarabée bombardier projette un jet chimique bouillant depuis son abdomen, produit par une réaction déclenchée au moment du tir.",
+  "en": "The bombardier beetle sprays a boiling chemical jet from its abdomen, produced by a reaction triggered at the moment of firing.",
+  "es": "El escarabajo bombardero lanza un chorro químico hirviendo desde su abdomen, producto de una reacción desencadenada en el momento del disparo.",
+  "src": "https://en.wikipedia.org/wiki/Bombardier_beetle"
+ },
+ {
+  "id": "b51",
+  "cat": "body",
+  "marker": "BODY",
+  "fr": "Le corps humain porte les traces de virus anciens : environ 8 % de notre ADN provient de rétrovirus intégrés il y a des millions d'années.",
+  "en": "The human body carries traces of ancient viruses: about 8% of our DNA comes from retroviruses that embedded themselves millions of years ago.",
+  "es": "El cuerpo humano guarda huellas de virus antiguos: cerca del 8 % de nuestro ADN procede de retrovirus integrados hace millones de años.",
+  "src": "https://en.wikipedia.org/wiki/Endogenous_retrovirus"
+ },
+ {
+  "id": "b52",
+  "cat": "body",
+  "marker": "BODY",
+  "fr": "Certaines personnes possèdent un muscle supplémentaire à l'avant-bras, le long palmaire : il manque chez une partie de la population sans aucune conséquence.",
+  "en": "Some people have an extra forearm muscle, the palmaris longus: a share of the population lacks it entirely with no consequences.",
+  "es": "Algunas personas tienen un músculo extra en el antebrazo, el palmar largo: parte de la población carece de él sin ninguna consecuencia.",
+  "src": "https://en.wikipedia.org/wiki/Palmaris_longus_muscle"
+ },
+ {
+  "id": "b53",
+  "cat": "body",
+  "marker": "BODY",
+  "fr": "Le rein filtre environ 180 litres de sang par jour, mais en réabsorbe presque tout : il n'en sort qu'un à deux litres d'urine.",
+  "en": "The kidneys filter around 180 litres of blood a day but reabsorb nearly all of it: only one or two litres leave as urine.",
+  "es": "Los riñones filtran unos 180 litros de sangre al día, pero reabsorben casi todo: solo salen uno o dos litros de orina.",
+  "src": "https://en.wikipedia.org/wiki/Kidney"
+ },
+ {
+  "id": "b54",
+  "cat": "body",
+  "marker": "BODY",
+  "fr": "Le nerf vague relie le cerveau à la plupart des organes internes et joue un rôle clé dans la digestion et le rythme cardiaque.",
+  "en": "The vagus nerve links the brain to most internal organs and plays a key role in digestion and heart rate.",
+  "es": "El nervio vago conecta el cerebro con la mayoría de los órganos internos y es clave en la digestión y el ritmo cardíaco.",
+  "src": "https://en.wikipedia.org/wiki/Vagus_nerve"
+ },
+ {
+  "id": "b55",
+  "cat": "body",
+  "marker": "BODY",
+  "fr": "Les cellules de l'intestin se renouvellent en quelques jours seulement : c'est l'un des tissus qui se régénère le plus vite du corps.",
+  "en": "Cells lining the gut renew in only a few days: it is one of the fastest-regenerating tissues in the body.",
+  "es": "Las células del intestino se renuevan en pocos días: es uno de los tejidos que más rápido se regenera del cuerpo.",
+  "src": "https://en.wikipedia.org/wiki/Intestinal_epithelium"
+ },
+ {
+  "id": "b56",
+  "cat": "body",
+  "marker": "BODY",
+  "fr": "Le mal des transports naît d'un conflit d'informations : l'oreille interne perçoit un mouvement que les yeux ne confirment pas.",
+  "en": "Motion sickness comes from conflicting signals: the inner ear senses movement that the eyes do not confirm.",
+  "es": "El mareo por movimiento nace de un conflicto de señales: el oído interno percibe un movimiento que los ojos no confirman.",
+  "src": "https://en.wikipedia.org/wiki/Motion_sickness"
+ },
+ {
+  "id": "b57",
+  "cat": "body",
+  "marker": "BODY",
+  "fr": "La peau met environ un mois à se renouveler entièrement : les cellules naissent en profondeur et remontent lentement vers la surface.",
+  "en": "Skin takes about a month to renew completely: cells are born deep down and slowly rise to the surface.",
+  "es": "La piel tarda aproximadamente un mes en renovarse por completo: las células nacen en profundidad y ascienden despacio.",
+  "src": "https://en.wikipedia.org/wiki/Human_skin"
+ },
+ {
+  "id": "b58",
+  "cat": "body",
+  "marker": "BODY",
+  "fr": "La rate sert de réservoir de sang et de filtre : elle retire de la circulation les globules rouges usés.",
+  "en": "The spleen acts as both a blood reservoir and a filter: it removes worn-out red blood cells from circulation.",
+  "es": "El bazo funciona como depósito de sangre y como filtro: retira de la circulación los glóbulos rojos gastados.",
+  "src": "https://en.wikipedia.org/wiki/Spleen"
+ },
+ {
+  "id": "b59",
+  "cat": "body",
+  "marker": "BODY",
+  "fr": "Le rythme circadien est réglé par une horloge interne située dans l'hypothalamus, recalée chaque jour par la lumière du matin.",
+  "en": "The circadian rhythm is set by an internal clock in the hypothalamus, reset each day by morning light.",
+  "es": "El ritmo circadiano lo regula un reloj interno situado en el hipotálamo, reajustado cada día por la luz de la mañana.",
+  "src": "https://en.wikipedia.org/wiki/Circadian_rhythm"
+ },
+ {
+  "id": "b60",
+  "cat": "body",
+  "marker": "BODY",
+  "fr": "Les os produisent une hormone, l'ostéocalcine, qui influence le métabolisme : le squelette n'est pas qu'une charpente passive.",
+  "en": "Bones release a hormone, osteocalcin, that influences metabolism: the skeleton is more than a passive frame.",
+  "es": "Los huesos producen una hormona, la osteocalcina, que influye en el metabolismo: el esqueleto no es solo una estructura pasiva.",
+  "src": "https://en.wikipedia.org/wiki/Osteocalcin"
+ },
+ {
+  "id": "ar51",
+  "cat": "arts",
+  "marker": "ARTS",
+  "fr": "Le Colosse de Rhodes n'a tenu debout que 54 ans : renversé par un séisme, ses débris sont restés à terre pendant huit siècles.",
+  "en": "The Colossus of Rhodes stood for only 54 years: toppled by an earthquake, its remains lay on the ground for eight centuries.",
+  "es": "El Coloso de Rodas se mantuvo en pie solo 54 años: derribado por un terremoto, sus restos quedaron en el suelo durante ocho siglos.",
+  "src": "https://en.wikipedia.org/wiki/Colossus_of_Rhodes"
+ },
+ {
+  "id": "ar52",
+  "cat": "arts",
+  "marker": "ARTS",
+  "fr": "Johannes Vermeer n'a laissé qu'une trentaine de tableaux authentifiés : oublié après sa mort, il n'a été redécouvert qu'au XIXᵉ siècle.",
+  "en": "Johannes Vermeer left only about thirty authenticated paintings: forgotten after his death, he was rediscovered in the 19th century.",
+  "es": "Johannes Vermeer dejó apenas una treintena de cuadros autentificados: olvidado tras su muerte, fue redescubierto en el siglo XIX.",
+  "src": "https://en.wikipedia.org/wiki/Johannes_Vermeer"
+ },
+ {
+  "id": "ar53",
+  "cat": "arts",
+  "marker": "ARTS",
+  "fr": "Le théâtre kabuki japonais était joué par des femmes à ses débuts, avant qu'un édit du XVIIᵉ siècle ne réserve la scène aux hommes.",
+  "en": "Japanese kabuki theatre was performed by women at first, until a 17th-century edict reserved the stage for men.",
+  "es": "El teatro kabuki japonés lo interpretaban mujeres en sus inicios, hasta que un edicto del siglo XVII reservó la escena a los hombres.",
+  "src": "https://en.wikipedia.org/wiki/Kabuki"
+ },
+ {
+  "id": "ar54",
+  "cat": "arts",
+  "marker": "ARTS",
+  "fr": "La Sagrada Família de Barcelone est en chantier depuis 1882 : Gaudí savait qu'il ne la verrait jamais achevée.",
+  "en": "Barcelona's Sagrada Família has been under construction since 1882: Gaudí knew he would never see it finished.",
+  "es": "La Sagrada Familia de Barcelona lleva en obras desde 1882: Gaudí sabía que jamás la vería terminada.",
+  "src": "https://en.wikipedia.org/wiki/Sagrada_Fam%C3%ADlia"
+ },
+ {
+  "id": "ar55",
+  "cat": "arts",
+  "marker": "ARTS",
+  "fr": "Le pigment « jaune indien » venait, dit-on, de l'urine de vaches nourries de feuilles de manguier : sa production fut interdite au début du XXᵉ siècle.",
+  "en": "The pigment 'Indian yellow' was said to come from the urine of cows fed on mango leaves: its production was banned in the early 20th century.",
+  "es": "El pigmento «amarillo indio» procedía, según se cuenta, de la orina de vacas alimentadas con hojas de mango: su producción se prohibió a principios del siglo XX.",
+  "src": "https://en.wikipedia.org/wiki/Indian_yellow"
+ },
+ {
+  "id": "ar56",
+  "cat": "arts",
+  "marker": "ARTS",
+  "fr": "Les masques du théâtre grec antique servaient aussi de porte-voix : leur bouche ouverte projetait le son vers les gradins.",
+  "en": "Masks in ancient Greek theatre doubled as megaphones: their open mouths projected the voice towards the tiers.",
+  "es": "Las máscaras del teatro griego antiguo servían también de megáfono: su boca abierta proyectaba el sonido hacia las gradas.",
+  "src": "https://en.wikipedia.org/wiki/Theatre_of_ancient_Greece"
+ },
+ {
+  "id": "ar57",
+  "cat": "arts",
+  "marker": "ARTS",
+  "fr": "Le Bauhaus n'a existé que quatorze ans, de 1919 à 1933, mais son enseignement a façonné le design mondial pour un siècle.",
+  "en": "The Bauhaus lasted only fourteen years, from 1919 to 1933, yet its teaching shaped design worldwide for a century.",
+  "es": "La Bauhaus existió solo catorce años, de 1919 a 1933, pero su enseñanza marcó el diseño mundial durante un siglo.",
+  "src": "https://en.wikipedia.org/wiki/Bauhaus"
+ },
+ {
+  "id": "ar58",
+  "cat": "arts",
+  "marker": "ARTS",
+  "fr": "La plus ancienne partition musicale complète connue est un chant grec gravé sur une stèle funéraire, l'épitaphe de Seikilos.",
+  "en": "The oldest known complete piece of musical notation is a Greek song carved on a funeral stele, the Seikilos epitaph.",
+  "es": "La partitura musical completa más antigua que se conoce es un canto griego grabado en una estela funeraria, el epitafio de Seikilos.",
+  "src": "https://en.wikipedia.org/wiki/Seikilos_epitaph"
+ },
+ {
+  "id": "ar59",
+  "cat": "arts",
+  "marker": "ARTS",
+  "fr": "Les estampes japonaises ont profondément marqué les impressionnistes : Van Gogh en collectionnait des centaines et en a copié plusieurs.",
+  "en": "Japanese prints deeply influenced the Impressionists: Van Gogh collected hundreds of them and copied several.",
+  "es": "Las estampas japonesas influyeron hondamente en los impresionistas: Van Gogh coleccionó cientos y copió varias.",
+  "src": "https://en.wikipedia.org/wiki/Japonisme"
+ },
+ {
+  "id": "ar60",
+  "cat": "arts",
+  "marker": "ARTS",
+  "fr": "Le Théâtre du Globe de Shakespeare a brûlé en 1613 pendant une représentation : un canon de scène avait mis le feu au toit de chaume.",
+  "en": "Shakespeare's Globe Theatre burned down in 1613 during a performance: a stage cannon set the thatched roof alight.",
+  "es": "El Teatro del Globo de Shakespeare ardió en 1613 durante una función: un cañón de escena prendió fuego al tejado de paja.",
+  "src": "https://en.wikipedia.org/wiki/Globe_Theatre"
+ },
+ {
+  "id": "inv51",
+  "cat": "inventions",
+  "marker": "INVENTIONS",
+  "fr": "L'imprimerie à caractères mobiles existait en Asie bien avant Gutenberg : la Corée imprimait déjà avec des caractères métalliques au XIIIᵉ siècle.",
+  "en": "Movable-type printing existed in Asia long before Gutenberg: Korea was printing with metal type in the 13th century.",
+  "es": "La imprenta de tipos móviles existía en Asia mucho antes que Gutenberg: Corea ya imprimía con caracteres metálicos en el siglo XIII.",
+  "src": "https://en.wikipedia.org/wiki/Movable_type"
+ },
+ {
+  "id": "inv52",
+  "cat": "inventions",
+  "marker": "INVENTIONS",
+  "fr": "Le thermomètre à mercure a servi pendant trois siècles avant d'être progressivement interdit pour sa toxicité.",
+  "en": "The mercury thermometer served for three centuries before being gradually banned for its toxicity.",
+  "es": "El termómetro de mercurio se usó durante tres siglos antes de ser prohibido progresivamente por su toxicidad.",
+  "src": "https://en.wikipedia.org/wiki/Mercury-in-glass_thermometer"
+ },
+ {
+  "id": "inv53",
+  "cat": "inventions",
+  "marker": "INVENTIONS",
+  "fr": "Le premier réfrigérateur domestique électrique date des années 1910 : avant lui, on livrait des blocs de glace à domicile.",
+  "en": "The first electric home refrigerator dates from the 1910s: before it, blocks of ice were delivered to the door.",
+  "es": "El primer frigorífico doméstico eléctrico data de la década de 1910: antes se repartían bloques de hielo a domicilio.",
+  "src": "https://en.wikipedia.org/wiki/Refrigerator"
+ },
+ {
+  "id": "inv54",
+  "cat": "inventions",
+  "marker": "INVENTIONS",
+  "fr": "La boîte de conserve a été inventée près de cinquante ans avant l'ouvre-boîte : on l'ouvrait au marteau et au burin.",
+  "en": "The tin can was invented nearly fifty years before the can opener: people opened them with a hammer and chisel.",
+  "es": "La lata de conserva se inventó casi cincuenta años antes que el abrelatas: se abría a martillo y cincel.",
+  "src": "https://en.wikipedia.org/wiki/Can_opener"
+ },
+ {
+  "id": "inv55",
+  "cat": "inventions",
+  "marker": "INVENTIONS",
+  "fr": "Le stylo à bille doit son succès à l'aviation : il ne fuyait pas en altitude, contrairement aux plumes à réservoir.",
+  "en": "The ballpoint pen owes its success to aviation: it did not leak at altitude, unlike fountain pens.",
+  "es": "El bolígrafo debe su éxito a la aviación: no goteaba en altura, al contrario que las plumas estilográficas.",
+  "src": "https://en.wikipedia.org/wiki/Ballpoint_pen"
+ },
+ {
+  "id": "inv56",
+  "cat": "inventions",
+  "marker": "INVENTIONS",
+  "fr": "L'ampoule à filament n'a pas été inventée par un seul homme : une vingtaine de chercheurs y ont travaillé avant qu'Edison n'en fasse un produit fiable.",
+  "en": "The filament bulb was not invented by one man: some twenty researchers worked on it before Edison made it reliable.",
+  "es": "La bombilla de filamento no la inventó un solo hombre: una veintena de investigadores trabajaron en ella antes de que Edison la hiciera fiable.",
+  "src": "https://en.wikipedia.org/wiki/Incandescent_light_bulb"
+ },
+ {
+  "id": "inv57",
+  "cat": "inventions",
+  "marker": "INVENTIONS",
+  "fr": "Le ciment moderne, dit Portland, a été breveté en 1824 : il tire son nom de sa ressemblance avec la pierre de l'île de Portland.",
+  "en": "Modern Portland cement was patented in 1824: it takes its name from its likeness to stone from the Isle of Portland.",
+  "es": "El cemento moderno, llamado Portland, se patentó en 1824: debe su nombre al parecido con la piedra de la isla de Portland.",
+  "src": "https://en.wikipedia.org/wiki/Portland_cement"
+ },
+ {
+  "id": "inv58",
+  "cat": "inventions",
+  "marker": "INVENTIONS",
+  "fr": "La souris d'ordinateur a été présentée en 1968 lors d'une démonstration qui montrait aussi le clic, les fenêtres et le travail à distance.",
+  "en": "The computer mouse was unveiled in 1968 in a demonstration that also showed clicking, windows and remote collaboration.",
+  "es": "El ratón de ordenador se presentó en 1968 en una demostración que mostraba también el clic, las ventanas y el trabajo a distancia.",
+  "src": "https://en.wikipedia.org/wiki/The_Mother_of_All_Demos"
+ },
+ {
+  "id": "inv59",
+  "cat": "inventions",
+  "marker": "INVENTIONS",
+  "fr": "Le parachute a été dessiné par Léonard de Vinci vers 1485 : un modèle construit selon ses plans a été testé avec succès cinq siècles plus tard.",
+  "en": "Leonardo da Vinci sketched a parachute around 1485: a model built to his drawings was successfully tested five centuries later.",
+  "es": "Leonardo da Vinci dibujó un paracaídas hacia 1485: un modelo construido según sus planos se probó con éxito cinco siglos después.",
+  "src": "https://en.wikipedia.org/wiki/Parachute"
+ },
+ {
+  "id": "inv60",
+  "cat": "inventions",
+  "marker": "INVENTIONS",
+  "fr": "La fibre optique transporte la lumière par réflexion totale, un principe démontré dès le XIXᵉ siècle avec un simple jet d'eau.",
+  "en": "Optical fibre carries light by total internal reflection, a principle demonstrated in the 19th century using a simple jet of water.",
+  "es": "La fibra óptica transporta la luz por reflexión total, un principio demostrado ya en el siglo XIX con un simple chorro de agua.",
+  "src": "https://en.wikipedia.org/wiki/Optical_fiber"
+ },
+ {
+  "id": "w51",
+  "cat": "world",
+  "marker": "WORLD",
+  "fr": "Le Chili s'étire sur plus de 4 000 km du nord au sud pour une largeur moyenne d'à peine 180 km : c'est le pays le plus étiré du monde.",
+  "en": "Chile stretches more than 4,000 km from north to south while averaging barely 180 km wide: the most elongated country in the world.",
+  "es": "Chile se extiende más de 4 000 km de norte a sur con una anchura media de apenas 180 km: es el país más alargado del mundo.",
+  "src": "https://en.wikipedia.org/wiki/Geography_of_Chile"
+ },
+ {
+  "id": "w52",
+  "cat": "world",
+  "marker": "WORLD",
+  "fr": "Singapour gagne du terrain sur la mer : son territoire a grandi d'environ un quart depuis son indépendance grâce aux remblais.",
+  "en": "Singapore keeps gaining land from the sea: its territory has grown by roughly a quarter since independence through reclamation.",
+  "es": "Singapur sigue ganando terreno al mar: su territorio ha crecido cerca de un cuarto desde la independencia gracias a los rellenos.",
+  "src": "https://en.wikipedia.org/wiki/Land_reclamation_in_Singapore"
+ },
+ {
+  "id": "w53",
+  "cat": "world",
+  "marker": "WORLD",
+  "fr": "Le Danemark possède le plus vieux drapeau national encore en usage : le Dannebrog est attesté depuis le XIVᵉ siècle.",
+  "en": "Denmark has the oldest national flag still in use: the Dannebrog is attested from the 14th century.",
+  "es": "Dinamarca posee la bandera nacional más antigua aún en uso: el Dannebrog está documentado desde el siglo XIV.",
+  "src": "https://en.wikipedia.org/wiki/Flag_of_Denmark"
+ },
+ {
+  "id": "w54",
+  "cat": "world",
+  "marker": "WORLD",
+  "fr": "En Islande, les habitants ne portent pas de nom de famille au sens classique : le nom se forme à partir du prénom du parent.",
+  "en": "Icelanders do not carry family names in the usual sense: the name is formed from a parent's first name.",
+  "es": "En Islandia no se usan apellidos en el sentido clásico: el nombre se forma a partir del nombre de pila del progenitor.",
+  "src": "https://en.wikipedia.org/wiki/Icelandic_name"
+ },
+ {
+  "id": "w55",
+  "cat": "world",
+  "marker": "WORLD",
+  "fr": "Le Yémen abrite Shibam, surnommée « la Manhattan du désert » : ses tours de terre crue s'élèvent depuis le XVIᵉ siècle.",
+  "en": "Yemen is home to Shibam, nicknamed 'the Manhattan of the desert': its mud-brick towers have stood since the 16th century.",
+  "es": "Yemen alberga Shibam, apodada «la Manhattan del desierto»: sus torres de adobe se alzan desde el siglo XVI.",
+  "src": "https://en.wikipedia.org/wiki/Shibam"
+ },
+ {
+  "id": "w56",
+  "cat": "world",
+  "marker": "WORLD",
+  "fr": "La Bolivie possède deux capitales : Sucre est la capitale constitutionnelle, La Paz le siège du gouvernement.",
+  "en": "Bolivia has two capitals: Sucre is the constitutional capital, La Paz the seat of government.",
+  "es": "Bolivia tiene dos capitales: Sucre es la capital constitucional y La Paz la sede del gobierno.",
+  "src": "https://en.wikipedia.org/wiki/Sucre"
+ },
+ {
+  "id": "w57",
+  "cat": "world",
+  "marker": "WORLD",
+  "fr": "Le Salar d'Uyuni, en Bolivie, se transforme en miroir géant à la saison des pluies : une fine pellicule d'eau reflète le ciel sur des kilomètres.",
+  "en": "The Salar de Uyuni in Bolivia turns into a giant mirror in the rainy season: a thin film of water reflects the sky for kilometres.",
+  "es": "El Salar de Uyuni, en Bolivia, se convierte en un espejo gigante en la época de lluvias: una fina lámina de agua refleja el cielo durante kilómetros.",
+  "src": "https://en.wikipedia.org/wiki/Salar_de_Uyuni"
+ },
+ {
+  "id": "w58",
+  "cat": "world",
+  "marker": "WORLD",
+  "fr": "L'Australie compte une clôture de plus de 5 000 km, construite pour protéger les troupeaux des dingos.",
+  "en": "Australia has a fence more than 5,000 km long, built to protect livestock from dingoes.",
+  "es": "Australia cuenta con una valla de más de 5 000 km, construida para proteger el ganado de los dingos.",
+  "src": "https://en.wikipedia.org/wiki/Dingo_Fence"
+ },
+ {
+  "id": "w59",
+  "cat": "world",
+  "marker": "WORLD",
+  "fr": "Le Portugal et l'Espagne se partagent la plus vieille frontière stable d'Europe, quasiment inchangée depuis le XIIIᵉ siècle.",
+  "en": "Portugal and Spain share Europe's oldest stable border, almost unchanged since the 13th century.",
+  "es": "Portugal y España comparten la frontera estable más antigua de Europa, casi inalterada desde el siglo XIII.",
+  "src": "https://en.wikipedia.org/wiki/Portugal%E2%80%93Spain_border"
+ },
+ {
+  "id": "w60",
+  "cat": "world",
+  "marker": "WORLD",
+  "fr": "Les Philippines comptent plus de 7 000 îles, et une bonne partie n'a toujours pas de nom officiel.",
+  "en": "The Philippines has more than 7,000 islands, and a good share of them still have no official name.",
+  "es": "Filipinas tiene más de 7 000 islas, y buena parte de ellas sigue sin nombre oficial.",
+  "src": "https://en.wikipedia.org/wiki/List_of_islands_of_the_Philippines"
+ },
+ {
+  "id": "l51",
+  "cat": "language",
+  "marker": "LANGUAGE",
+  "fr": "Le mot « bougie » vient de Béjaïa, ville algérienne d'où l'Europe médiévale importait la cire des chandelles.",
+  "en": "The French word for candle, 'bougie', comes from Béjaïa, the Algerian city from which medieval Europe imported candle wax.",
+  "es": "La palabra francesa «bougie» (vela) viene de Bugía, la ciudad argelina de la que la Europa medieval importaba la cera.",
+  "src": "https://en.wikipedia.org/wiki/B%C3%A9ja%C3%AFa"
+ },
+ {
+  "id": "l52",
+  "cat": "language",
+  "marker": "LANGUAGE",
+  "fr": "Le turc, le finnois et le hongrois collent les suffixes les uns derrière les autres : un seul mot peut équivaloir à une phrase entière.",
+  "en": "Turkish, Finnish and Hungarian stack suffix upon suffix: a single word can carry the meaning of a whole sentence.",
+  "es": "El turco, el finés y el húngaro encadenan sufijos uno tras otro: una sola palabra puede equivaler a una frase entera.",
+  "src": "https://en.wikipedia.org/wiki/Agglutinative_language"
+ },
+ {
+  "id": "l53",
+  "cat": "language",
+  "marker": "LANGUAGE",
+  "fr": "Le mot « algèbre » vient de l'arabe « al-jabr », qui désignait la réduction d'une équation dans un traité du IXᵉ siècle.",
+  "en": "'Algebra' comes from the Arabic 'al-jabr', a term for reducing an equation in a 9th-century treatise.",
+  "es": "La palabra «álgebra» viene del árabe «al-yabr», que designaba la reducción de una ecuación en un tratado del siglo IX.",
+  "src": "https://en.wikipedia.org/wiki/Algebra"
+ },
+ {
+  "id": "l54",
+  "cat": "language",
+  "marker": "LANGUAGE",
+  "fr": "Certaines langues du Pacifique n'utilisent ni « gauche » ni « droite » : on s'y oriente uniquement par les points cardinaux.",
+  "en": "Some Pacific languages use no 'left' or 'right': speakers orient themselves only by compass directions.",
+  "es": "Algunas lenguas del Pacífico no usan «izquierda» ni «derecha»: sus hablantes se orientan solo por los puntos cardinales.",
+  "src": "https://en.wikipedia.org/wiki/Absolute_and_relative_direction"
+ },
+ {
+  "id": "l55",
+  "cat": "language",
+  "marker": "LANGUAGE",
+  "fr": "Le mot « bizarre » aurait transité par l'italien et l'espagnol avant d'arriver en français, en changeant de sens au passage.",
+  "en": "The word 'bizarre' is thought to have passed through Italian and Spanish before reaching French, shifting meaning along the way.",
+  "es": "Se cree que la palabra «bizarro» pasó por el italiano y el español antes de llegar al francés, cambiando de sentido por el camino.",
+  "src": "https://en.wiktionary.org/wiki/bizarre"
+ },
+ {
+  "id": "l56",
+  "cat": "language",
+  "marker": "LANGUAGE",
+  "fr": "Le pluriel anglais « children » garde la trace de deux marques de pluriel superposées, héritées du vieil anglais.",
+  "en": "The English plural 'children' preserves two stacked plural markers inherited from Old English.",
+  "es": "El plural inglés «children» conserva dos marcas de plural superpuestas, heredadas del inglés antiguo.",
+  "src": "https://en.wikipedia.org/wiki/English_plurals"
+ },
+ {
+  "id": "l57",
+  "cat": "language",
+  "marker": "LANGUAGE",
+  "fr": "Le mot « chocolat » vient du nahuatl, la langue des Aztèques, comme « tomate », « cacahuète » et « coyote ».",
+  "en": "'Chocolate' comes from Nahuatl, the language of the Aztecs, as do 'tomato', 'peanut' and 'coyote'.",
+  "es": "«Chocolate» viene del náhuatl, la lengua de los aztecas, igual que «tomate», «cacahuete» y «coyote».",
+  "src": "https://en.wikipedia.org/wiki/Nahuatl"
+ },
+ {
+  "id": "l58",
+  "cat": "language",
+  "marker": "LANGUAGE",
+  "fr": "Une langue disparaît environ toutes les deux semaines : sur les 7 000 recensées, près de la moitié pourrait s'éteindre en un siècle.",
+  "en": "A language disappears roughly every two weeks: of the 7,000 recorded, nearly half could die out within a century.",
+  "es": "Una lengua desaparece cada dos semanas aproximadamente: de las 7 000 registradas, casi la mitad podría extinguirse en un siglo.",
+  "src": "https://en.wikipedia.org/wiki/Language_death"
+ },
+ {
+  "id": "l59",
+  "cat": "language",
+  "marker": "LANGUAGE",
+  "fr": "Le mot « bureau » désignait d'abord une étoffe de laine grossière dont on recouvrait les tables, avant de nommer la table elle-même.",
+  "en": "The French word 'bureau' first meant a coarse woollen cloth laid over tables, before naming the table itself.",
+  "es": "La palabra francesa «bureau» designaba primero un paño de lana basta que cubría las mesas, antes de nombrar la mesa misma.",
+  "src": "https://en.wiktionary.org/wiki/bureau"
+ },
+ {
+  "id": "l60",
+  "cat": "language",
+  "marker": "LANGUAGE",
+  "fr": "L'hébreu est la seule langue morte redevenue langue maternelle courante : il n'était plus parlé au quotidien depuis des siècles.",
+  "en": "Hebrew is the only dead language to become a common mother tongue again: it had not been spoken daily for centuries.",
+  "es": "El hebreo es la única lengua muerta que ha vuelto a ser lengua materna corriente: llevaba siglos sin hablarse a diario.",
+  "src": "https://en.wikipedia.org/wiki/Revival_of_the_Hebrew_language"
+ },
+ {
+  "id": "f51",
+  "cat": "food",
+  "marker": "FOOD",
+  "fr": "Le sirop d'érable demande environ quarante litres de sève pour produire un seul litre : tout le reste s'évapore à la cuisson.",
+  "en": "Maple syrup takes about forty litres of sap to yield a single litre: the rest boils away.",
+  "es": "El jarabe de arce necesita unos cuarenta litros de savia para dar un solo litro: todo lo demás se evapora al cocer.",
+  "src": "https://en.wikipedia.org/wiki/Maple_syrup"
+ },
+ {
+  "id": "f52",
+  "cat": "food",
+  "marker": "FOOD",
+  "fr": "Le fromage bleu doit ses veines à un champignon du genre Penicillium, cousin de celui qui a donné la pénicilline.",
+  "en": "Blue cheese owes its veins to a Penicillium mould, a cousin of the one that gave us penicillin.",
+  "es": "El queso azul debe sus vetas a un hongo del género Penicillium, primo del que dio la penicilina.",
+  "src": "https://en.wikipedia.org/wiki/Blue_cheese"
+ },
+ {
+  "id": "f53",
+  "cat": "food",
+  "marker": "FOOD",
+  "fr": "Le riz est l'aliment de base de plus de la moitié de l'humanité, avec des milliers de variétés cultivées.",
+  "en": "Rice is the staple food of more than half of humanity, grown in thousands of varieties.",
+  "es": "El arroz es el alimento básico de más de la mitad de la humanidad, con miles de variedades cultivadas.",
+  "src": "https://en.wikipedia.org/wiki/Rice"
+ },
+ {
+  "id": "f54",
+  "cat": "food",
+  "marker": "FOOD",
+  "fr": "L'umami a été identifié au Japon en 1908 : cette cinquième saveur vient du glutamate présent dans les tomates, le parmesan ou les algues.",
+  "en": "Umami was identified in Japan in 1908: this fifth taste comes from glutamate found in tomatoes, parmesan and seaweed.",
+  "es": "El umami fue identificado en Japón en 1908: este quinto sabor procede del glutamato presente en tomates, parmesano o algas.",
+  "src": "https://en.wikipedia.org/wiki/Umami"
+ },
+ {
+  "id": "f55",
+  "cat": "food",
+  "marker": "FOOD",
+  "fr": "Le pain au levain ne contient pas de levure ajoutée : il lève grâce à des bactéries et levures sauvages présentes dans la farine et l'air.",
+  "en": "Sourdough bread uses no added yeast: it rises thanks to wild bacteria and yeasts present in the flour and the air.",
+  "es": "El pan de masa madre no lleva levadura añadida: sube gracias a bacterias y levaduras silvestres presentes en la harina y el aire.",
+  "src": "https://en.wikipedia.org/wiki/Sourdough"
+ },
+ {
+  "id": "f56",
+  "cat": "food",
+  "marker": "FOOD",
+  "fr": "La noix de muscade a déclenché des guerres coloniales : elle ne poussait que sur quelques îles des Moluques.",
+  "en": "Nutmeg triggered colonial wars: it grew only on a handful of islands in the Moluccas.",
+  "es": "La nuez moscada desató guerras coloniales: solo crecía en unas pocas islas de las Molucas.",
+  "src": "https://en.wikipedia.org/wiki/Nutmeg"
+ },
+ {
+  "id": "f57",
+  "cat": "food",
+  "marker": "FOOD",
+  "fr": "Le sucre était vendu chez l'apothicaire au Moyen Âge, considéré comme une épice médicinale plutôt qu'un aliment.",
+  "en": "Sugar was sold by apothecaries in the Middle Ages, treated as a medicinal spice rather than a food.",
+  "es": "El azúcar se vendía en la botica durante la Edad Media, considerado una especia medicinal más que un alimento.",
+  "src": "https://en.wikipedia.org/wiki/History_of_sugar"
+ },
+ {
+  "id": "f58",
+  "cat": "food",
+  "marker": "FOOD",
+  "fr": "Le kimchi se décline en centaines de recettes régionales en Corée, bien au-delà de la version au chou blanc connue à l'étranger.",
+  "en": "Kimchi comes in hundreds of regional recipes across Korea, far beyond the cabbage version known abroad.",
+  "es": "El kimchi tiene cientos de recetas regionales en Corea, mucho más allá de la versión de col conocida en el extranjero.",
+  "src": "https://en.wikipedia.org/wiki/Kimchi"
+ },
+ {
+  "id": "f59",
+  "cat": "food",
+  "marker": "FOOD",
+  "fr": "L'huître change de sexe plusieurs fois au cours de sa vie, ce qui complique l'élevage sélectif.",
+  "en": "Oysters change sex several times over their life, which complicates selective breeding.",
+  "es": "La ostra cambia de sexo varias veces a lo largo de su vida, lo que complica la cría selectiva.",
+  "src": "https://en.wikipedia.org/wiki/Oyster"
+ },
+ {
+  "id": "f60",
+  "cat": "food",
+  "marker": "FOOD",
+  "fr": "Le poivre du Sichuan ne pique pas vraiment : il provoque un léger engourdissement électrique dû à une molécule agissant sur les nerfs tactiles.",
+  "en": "Sichuan pepper is not really hot: it causes a faint electric numbness from a molecule that acts on touch nerves.",
+  "es": "La pimienta de Sichuan no pica realmente: provoca un leve adormecimiento eléctrico por una molécula que actúa sobre los nervios táctiles.",
+  "src": "https://en.wikipedia.org/wiki/Sichuan_pepper"
+ },
+ {
+  "id": "sp051",
+  "cat": "sports",
+  "marker": "SPORTS",
+  "fr": "Le rugby doit son nom à un collège anglais : la légende veut qu'un élève y ait pris le ballon à la main en plein match de football.",
+  "en": "Rugby takes its name from an English school: legend says a pupil there picked up the ball during a football match.",
+  "es": "El rugby debe su nombre a un colegio inglés: la leyenda cuenta que un alumno cogió allí el balón con las manos durante un partido de fútbol.",
+  "src": "https://en.wikipedia.org/wiki/Rugby_School"
+ },
+ {
+  "id": "sp052",
+  "cat": "sports",
+  "marker": "SPORTS",
+  "fr": "Le judo a été fondé en 1882 par Jigoro Kano, qui voulait un art martial fondé sur l'esquive plutôt que sur la force brute.",
+  "en": "Judo was founded in 1882 by Jigoro Kano, who wanted a martial art built on evasion rather than brute strength.",
+  "es": "El judo fue fundado en 1882 por Jigoro Kano, que buscaba un arte marcial basado en la esquiva más que en la fuerza bruta.",
+  "src": "https://en.wikipedia.org/wiki/Judo"
+ },
+ {
+  "id": "sp053",
+  "cat": "sports",
+  "marker": "SPORTS",
+  "fr": "Les Jeux paralympiques sont nés d'une compétition organisée en 1948 dans un hôpital britannique pour des vétérans blessés.",
+  "en": "The Paralympic Games grew out of a 1948 competition held at a British hospital for wounded veterans.",
+  "es": "Los Juegos Paralímpicos nacieron de una competición organizada en 1948 en un hospital británico para veteranos heridos.",
+  "src": "https://en.wikipedia.org/wiki/Paralympic_Games"
+ },
+ {
+  "id": "sp054",
+  "cat": "sports",
+  "marker": "SPORTS",
+  "fr": "Le Tour de France a longtemps interdit l'assistance mécanique : un coureur devait réparer son vélo seul, y compris souder son cadre.",
+  "en": "The Tour de France long banned mechanical help: a rider had to repair his own bike, welding the frame included.",
+  "es": "El Tour de Francia prohibió durante mucho tiempo la asistencia mecánica: el corredor debía reparar su bici solo, incluso soldar el cuadro.",
+  "src": "https://en.wikipedia.org/wiki/Eug%C3%A8ne_Christophe"
+ },
+ {
+  "id": "sp055",
+  "cat": "sports",
+  "marker": "SPORTS",
+  "fr": "L'escrime, l'athlétisme et la natation figurent parmi les rares sports présents à toutes les éditions des Jeux modernes.",
+  "en": "Fencing, athletics and swimming are among the few sports featured at every edition of the modern Games.",
+  "es": "La esgrima, el atletismo y la natación figuran entre los pocos deportes presentes en todas las ediciones de los Juegos modernos.",
+  "src": "https://en.wikipedia.org/wiki/Olympic_sports"
+ },
+ {
+  "id": "sp056",
+  "cat": "sports",
+  "marker": "SPORTS",
+  "fr": "Le surf était pratiqué à Hawaï bien avant l'arrivée des Européens : les chefs disposaient de planches réservées, taillées dans des bois précieux.",
+  "en": "Surfing was practised in Hawaii long before Europeans arrived: chiefs had reserved boards carved from prized woods.",
+  "es": "El surf se practicaba en Hawái mucho antes de la llegada de los europeos: los jefes tenían tablas reservadas, talladas en maderas preciadas.",
+  "src": "https://en.wikipedia.org/wiki/Surfing"
+ },
+ {
+  "id": "sp057",
+  "cat": "sports",
+  "marker": "SPORTS",
+  "fr": "Le ballon de football moderne à panneaux hexagonaux et pentagonaux n'est apparu qu'en 1970, pour mieux ressortir à la télévision en noir et blanc.",
+  "en": "The modern football with hexagonal and pentagonal panels only appeared in 1970, to show up better on black-and-white television.",
+  "es": "El balón de fútbol moderno con paneles hexagonales y pentagonales apareció en 1970, para verse mejor en la televisión en blanco y negro.",
+  "src": "https://en.wikipedia.org/wiki/Adidas_Telstar"
+ },
+ {
+  "id": "sp058",
+  "cat": "sports",
+  "marker": "SPORTS",
+  "fr": "Le marathon de Boston, créé en 1897, est la plus ancienne course annuelle de ce type encore disputée.",
+  "en": "The Boston Marathon, founded in 1897, is the oldest annual race of its kind still being run.",
+  "es": "El maratón de Boston, creado en 1897, es la carrera anual más antigua de su tipo que sigue disputándose.",
+  "src": "https://en.wikipedia.org/wiki/Boston_Marathon"
+ },
+ {
+  "id": "sp059",
+  "cat": "sports",
+  "marker": "SPORTS",
+  "fr": "Les arbitres de football n'ont utilisé de cartons jaunes et rouges qu'à partir de 1970 : l'idée est venue d'un feu de circulation.",
+  "en": "Football referees only began using yellow and red cards in 1970: the idea came from traffic lights.",
+  "es": "Los árbitros de fútbol no usaron tarjetas amarillas y rojas hasta 1970: la idea vino de un semáforo.",
+  "src": "https://en.wikipedia.org/wiki/Penalty_card"
+ },
+ {
+  "id": "sp060",
+  "cat": "sports",
+  "marker": "SPORTS",
+  "fr": "Le record du monde de l'heure à vélo se dispute sur piste : le coureur tourne seul pendant soixante minutes, sans repère ni adversaire.",
+  "en": "The cycling hour record is set on a track: the rider goes round alone for sixty minutes, with no marker and no opponent.",
+  "es": "El récord de la hora en ciclismo se disputa en pista: el corredor gira solo durante sesenta minutos, sin referencia ni rival.",
+  "src": "https://en.wikipedia.org/wiki/Hour_record"
+ },
+ {
+  "id": "cel51",
+  "cat": "celebrities",
+  "marker": "CELEBRITIES",
+  "fr": "Avant de devenir romancier, Haruki Murakami tenait un club de jazz à Tokyo : il a commencé à écrire à trente ans, en pleine gestion de son bar.",
+  "en": "Before becoming a novelist, Haruki Murakami ran a jazz club in Tokyo: he started writing at thirty, while still managing the bar.",
+  "es": "Antes de ser novelista, Haruki Murakami regentaba un club de jazz en Tokio: empezó a escribir a los treinta, mientras llevaba el bar.",
+  "src": "https://en.wikipedia.org/wiki/Haruki_Murakami"
+ },
+ {
+  "id": "cel52",
+  "cat": "celebrities",
+  "marker": "CELEBRITIES",
+  "fr": "Brian May, guitariste de Queen, a soutenu un doctorat en astrophysique plus de trente ans après avoir interrompu sa thèse.",
+  "en": "Brian May, Queen's guitarist, completed a doctorate in astrophysics more than thirty years after abandoning his thesis.",
+  "es": "Brian May, guitarrista de Queen, defendió un doctorado en astrofísica más de treinta años después de interrumpir su tesis.",
+  "src": "https://en.wikipedia.org/wiki/Brian_May"
+ },
+ {
+  "id": "cel53",
+  "cat": "celebrities",
+  "marker": "CELEBRITIES",
+  "fr": "Avant de fonder sa maison de couture, Coco Chanel chantait dans des cafés-concerts de province.",
+  "en": "Before founding her fashion house, Coco Chanel sang in provincial music halls.",
+  "es": "Antes de fundar su casa de moda, Coco Chanel cantaba en cafés-concierto de provincias.",
+  "src": "https://en.wikipedia.org/wiki/Coco_Chanel"
+ },
+ {
+  "id": "cel54",
+  "cat": "celebrities",
+  "marker": "CELEBRITIES",
+  "fr": "Stephen King a écrit ses premiers romans en enseignant l'anglais au lycée, et vivait avec sa famille dans une caravane.",
+  "en": "Stephen King wrote his first novels while teaching high-school English, living with his family in a trailer.",
+  "es": "Stephen King escribió sus primeras novelas mientras daba clases de inglés en un instituto y vivía con su familia en una caravana.",
+  "src": "https://en.wikipedia.org/wiki/Stephen_King"
+ },
+ {
+  "id": "cel55",
+  "cat": "celebrities",
+  "marker": "CELEBRITIES",
+  "fr": "Avant d'être écrivain, Agatha Christie a été préparatrice en pharmacie : c'est là qu'elle a acquis sa connaissance des poisons.",
+  "en": "Before becoming a writer, Agatha Christie worked as a pharmacy dispenser: that is where she gained her knowledge of poisons.",
+  "es": "Antes de ser escritora, Agatha Christie trabajó como auxiliar de farmacia: allí adquirió su conocimiento de los venenos.",
+  "src": "https://en.wikipedia.org/wiki/Agatha_Christie"
+ },
+ {
+  "id": "cel56",
+  "cat": "celebrities",
+  "marker": "CELEBRITIES",
+  "fr": "Le peintre Henri Rousseau était employé d'octroi à Paris : il a peint toute sa vie sans jamais quitter la France, s'inspirant du jardin des plantes.",
+  "en": "The painter Henri Rousseau worked as a Paris toll collector: he painted all his life without leaving France, drawing on the botanical gardens.",
+  "es": "El pintor Henri Rousseau era empleado de aduanas en París: pintó toda su vida sin salir de Francia, inspirándose en el jardín botánico.",
+  "src": "https://en.wikipedia.org/wiki/Henri_Rousseau"
+ },
+ {
+  "id": "cel57",
+  "cat": "celebrities",
+  "marker": "CELEBRITIES",
+  "fr": "Avant de devenir cinéaste, Akira Kurosawa se destinait à la peinture : il dessinait lui-même les storyboards de ses films.",
+  "en": "Before becoming a filmmaker, Akira Kurosawa trained as a painter: he drew the storyboards for his films himself.",
+  "es": "Antes de ser cineasta, Akira Kurosawa se formó como pintor: él mismo dibujaba los storyboards de sus películas.",
+  "src": "https://en.wikipedia.org/wiki/Akira_Kurosawa"
+ },
+ {
+  "id": "cel58",
+  "cat": "celebrities",
+  "marker": "CELEBRITIES",
+  "fr": "Le compositeur Antonio Vivaldi était prêtre, surnommé « le prêtre roux » : il enseignait la musique dans un orphelinat de filles à Venise.",
+  "en": "The composer Antonio Vivaldi was a priest, nicknamed 'the red priest': he taught music at a girls' orphanage in Venice.",
+  "es": "El compositor Antonio Vivaldi era sacerdote, apodado «el cura rojo»: enseñaba música en un orfanato de niñas en Venecia.",
+  "src": "https://en.wikipedia.org/wiki/Antonio_Vivaldi"
+ },
+ {
+  "id": "cel59",
+  "cat": "celebrities",
+  "marker": "CELEBRITIES",
+  "fr": "Avant de fonder Patagonia, Yvon Chouinard forgeait des pitons d'escalade à la main et les vendait depuis le coffre de sa voiture.",
+  "en": "Before founding Patagonia, Yvon Chouinard forged climbing pitons by hand and sold them from the boot of his car.",
+  "es": "Antes de fundar Patagonia, Yvon Chouinard forjaba clavos de escalada a mano y los vendía desde el maletero de su coche.",
+  "src": "https://en.wikipedia.org/wiki/Yvon_Chouinard"
+ },
+ {
+  "id": "cel60",
+  "cat": "celebrities",
+  "marker": "CELEBRITIES",
+  "fr": "Le peintre Paul Gauguin a été agent de change à Paris pendant plus de dix ans avant de tout quitter pour la peinture, à trente-cinq ans passés.",
+  "en": "The painter Paul Gauguin worked as a Paris stockbroker for more than ten years before giving it all up for painting, past the age of thirty-five.",
+  "es": "El pintor Paul Gauguin fue agente de bolsa en París durante más de diez años antes de dejarlo todo por la pintura, pasados los treinta y cinco.",
+  "src": "https://en.wikipedia.org/wiki/Paul_Gauguin"
+ },
+ {
+  "id": "fic51",
+  "cat": "fiction",
+  "marker": "FICTION",
+  "fr": "Le Dit du Genji, écrit au Japon vers l'an 1000 par Murasaki Shikibu, est souvent présenté comme le premier roman psychologique de l'histoire.",
+  "en": "The Tale of Genji, written in Japan around the year 1000 by Murasaki Shikibu, is often called the first psychological novel.",
+  "es": "La historia de Genji, escrita en Japón hacia el año 1000 por Murasaki Shikibu, suele considerarse la primera novela psicológica.",
+  "src": "https://en.wikipedia.org/wiki/The_Tale_of_Genji"
+ },
+ {
+  "id": "fic52",
+  "cat": "fiction",
+  "marker": "FICTION",
+  "fr": "Les frères Grimm n'écrivaient pas pour les enfants : leur premier recueil était un travail d'érudition sur les traditions orales allemandes.",
+  "en": "The Brothers Grimm were not writing for children: their first collection was a scholarly work on German oral traditions.",
+  "es": "Los hermanos Grimm no escribían para niños: su primera recopilación era un trabajo erudito sobre las tradiciones orales alemanas.",
+  "src": "https://en.wikipedia.org/wiki/Grimms%27_Fairy_Tales"
+ },
+ {
+  "id": "fic53",
+  "cat": "fiction",
+  "marker": "FICTION",
+  "fr": "Kafka avait demandé que ses manuscrits soient brûlés à sa mort : son ami Max Brod a désobéi et publié Le Procès et Le Château.",
+  "en": "Kafka asked for his manuscripts to be burned after his death: his friend Max Brod disobeyed and published The Trial and The Castle.",
+  "es": "Kafka pidió que quemaran sus manuscritos tras su muerte: su amigo Max Brod desobedeció y publicó El proceso y El castillo.",
+  "src": "https://en.wikipedia.org/wiki/Max_Brod"
+ },
+ {
+  "id": "fic54",
+  "cat": "fiction",
+  "marker": "FICTION",
+  "fr": "L'Épopée de Gilgamesh, gravée sur tablettes il y a environ 4 000 ans, est le plus ancien récit littéraire conservé.",
+  "en": "The Epic of Gilgamesh, carved on tablets some 4,000 years ago, is the oldest surviving work of literature.",
+  "es": "La Epopeya de Gilgamesh, grabada en tablillas hace unos 4 000 años, es la obra literaria conservada más antigua.",
+  "src": "https://en.wikipedia.org/wiki/Epic_of_Gilgamesh"
+ },
+ {
+  "id": "fic55",
+  "cat": "fiction",
+  "marker": "FICTION",
+  "fr": "Le nom « Wendy » était très rare avant Peter Pan : le succès de la pièce de J.M. Barrie l'a largement popularisé.",
+  "en": "The name 'Wendy' was very rare before Peter Pan: the success of J.M. Barrie's play made it widely popular.",
+  "es": "El nombre «Wendy» era muy raro antes de Peter Pan: el éxito de la obra de J.M. Barrie lo popularizó ampliamente.",
+  "src": "https://en.wikipedia.org/wiki/Wendy_(given_name)"
+ },
+ {
+  "id": "fic56",
+  "cat": "fiction",
+  "marker": "FICTION",
+  "fr": "Les Mille et Une Nuits n'ont pas de version unique : Aladin et Ali Baba n'apparaissent pas dans les manuscrits arabes les plus anciens.",
+  "en": "One Thousand and One Nights has no single version: Aladdin and Ali Baba do not appear in the oldest Arabic manuscripts.",
+  "es": "Las mil y una noches no tienen una versión única: Aladino y Alí Babá no figuran en los manuscritos árabes más antiguos.",
+  "src": "https://en.wikipedia.org/wiki/One_Thousand_and_One_Nights"
+ },
+ {
+  "id": "fic57",
+  "cat": "fiction",
+  "marker": "FICTION",
+  "fr": "Émile Zola a bâti Les Rougon-Macquart sur un arbre généalogique établi à l'avance, sur vingt romans.",
+  "en": "Émile Zola built Les Rougon-Macquart on a family tree drawn up in advance, spanning twenty novels.",
+  "es": "Émile Zola construyó Los Rougon-Macquart sobre un árbol genealógico trazado de antemano, a lo largo de veinte novelas.",
+  "src": "https://en.wikipedia.org/wiki/Les_Rougon-Macquart"
+ },
+ {
+  "id": "fic58",
+  "cat": "fiction",
+  "marker": "FICTION",
+  "fr": "Le roman épistolaire a dominé le XVIIIᵉ siècle : des œuvres entières étaient composées uniquement de lettres échangées entre personnages.",
+  "en": "The epistolary novel dominated the 18th century: whole works were made up solely of letters exchanged between characters.",
+  "es": "La novela epistolar dominó el siglo XVIII: obras enteras se componían solo de cartas intercambiadas entre personajes.",
+  "src": "https://en.wikipedia.org/wiki/Epistolary_novel"
+ },
+ {
+  "id": "fic59",
+  "cat": "fiction",
+  "marker": "FICTION",
+  "fr": "Alexandre Dumas travaillait avec des collaborateurs, dont Auguste Maquet, qui préparait la documentation et des ébauches de ses romans.",
+  "en": "Alexandre Dumas worked with collaborators, notably Auguste Maquet, who prepared research and drafts for his novels.",
+  "es": "Alexandre Dumas trabajaba con colaboradores, entre ellos Auguste Maquet, que preparaba la documentación y borradores de sus novelas.",
+  "src": "https://en.wikipedia.org/wiki/Auguste_Maquet"
+ },
+ {
+  "id": "fic60",
+  "cat": "fiction",
+  "marker": "FICTION",
+  "fr": "Le terme « science-fiction » ne s'est imposé que dans les années 1920 : avant, on parlait de romans « scientifiques » ou « merveilleux ».",
+  "en": "The term 'science fiction' only took hold in the 1920s: before that, such books were called 'scientific' or 'marvellous' romances.",
+  "es": "El término «ciencia ficción» no se impuso hasta los años veinte: antes se hablaba de novelas «científicas» o «maravillosas».",
+  "src": "https://en.wikipedia.org/wiki/History_of_science_fiction"
+ },
+ {
+  "id": "gam51",
+  "cat": "gaming",
+  "marker": "GAMING",
+  "fr": "Le krach du jeu vidéo de 1983 a presque anéanti le marché américain : la reprise est venue du Japon avec la NES, vendue au début comme un jouet.",
+  "en": "The 1983 video game crash nearly wiped out the American market: recovery came from Japan with the NES, initially sold as a toy.",
+  "es": "El crac del videojuego de 1983 casi aniquiló el mercado estadounidense: la recuperación llegó de Japón con la NES, vendida al principio como un juguete.",
+  "src": "https://en.wikipedia.org/wiki/Video_game_crash_of_1983"
+ },
+ {
+  "id": "gam52",
+  "cat": "gaming",
+  "marker": "GAMING",
+  "fr": "Myst a longtemps été le jeu PC le plus vendu au monde, avant d'être détrôné par Les Sims.",
+  "en": "Myst was long the best-selling PC game in the world, until The Sims took the crown.",
+  "es": "Myst fue durante mucho tiempo el juego de PC más vendido del mundo, hasta que Los Sims le quitó el puesto.",
+  "src": "https://en.wikipedia.org/wiki/Myst"
+ },
+ {
+  "id": "gam53",
+  "cat": "gaming",
+  "marker": "GAMING",
+  "fr": "Le personnage de Samus Aran dans Metroid a surpris les joueurs en 1986 : son armure dissimulait une héroïne, révélée à la fin du jeu.",
+  "en": "Samus Aran surprised players in 1986: the Metroid armour concealed a heroine, revealed at the end of the game.",
+  "es": "Samus Aran sorprendió a los jugadores en 1986: la armadura de Metroid ocultaba a una heroína, revelada al final del juego.",
+  "src": "https://en.wikipedia.org/wiki/Samus_Aran"
+ },
+ {
+  "id": "gam54",
+  "cat": "gaming",
+  "marker": "GAMING",
+  "fr": "La cartouche de Pokémon Rouge et Vert contenait si peu de mémoire que Mew y a été ajouté en dernier, dans l'espace resté libre.",
+  "en": "The Pokémon Red and Green cartridge had so little memory that Mew was added last, in whatever space was left.",
+  "es": "El cartucho de Pokémon Rojo y Verde tenía tan poca memoria que Mew se añadió el último, en el espacio que quedaba libre.",
+  "src": "https://en.wikipedia.org/wiki/Mew_(Pok%C3%A9mon)"
+ },
+ {
+  "id": "gam55",
+  "cat": "gaming",
+  "marker": "GAMING",
+  "fr": "Le mot « avatar » au sens de personnage numérique s'est répandu grâce aux jeux en ligne des années 1980-1990, emprunté au sanskrit.",
+  "en": "The word 'avatar' for a digital character spread through online games of the 1980s and 1990s, borrowed from Sanskrit.",
+  "es": "La palabra «avatar» como personaje digital se difundió gracias a los juegos en línea de los años ochenta y noventa, tomada del sánscrito.",
+  "src": "https://en.wikipedia.org/wiki/Avatar_(computing)"
+ },
+ {
+  "id": "gam56",
+  "cat": "gaming",
+  "marker": "GAMING",
+  "fr": "Les jeux d'aventure textuels ont précédé les graphismes : Zork, sorti en 1980, se jouait entièrement au clavier en tapant des phrases.",
+  "en": "Text adventures came before graphics: Zork, released in 1980, was played entirely by typing sentences.",
+  "es": "Las aventuras de texto precedieron a los gráficos: Zork, de 1980, se jugaba enteramente escribiendo frases con el teclado.",
+  "src": "https://en.wikipedia.org/wiki/Zork"
+ },
+ {
+  "id": "gam57",
+  "cat": "gaming",
+  "marker": "GAMING",
+  "fr": "Les manettes à vibration se sont généralisées avec la Nintendo 64 : l'accessoire nécessitait ses propres piles pour fonctionner.",
+  "en": "Rumble controllers went mainstream with the Nintendo 64: the add-on needed its own batteries to work.",
+  "es": "Los mandos con vibración se generalizaron con la Nintendo 64: el accesorio necesitaba sus propias pilas para funcionar.",
+  "src": "https://en.wikipedia.org/wiki/Rumble_Pak"
+ },
+ {
+  "id": "gam58",
+  "cat": "gaming",
+  "marker": "GAMING",
+  "fr": "Le premier jeu à avoir dépassé le milliard de dollars de recettes était un jeu d'arcade : Space Invaders, au Japon.",
+  "en": "The first game to pass a billion dollars in revenue was an arcade title: Space Invaders, in Japan.",
+  "es": "El primer juego que superó los mil millones de dólares de ingresos fue de recreativas: Space Invaders, en Japón.",
+  "src": "https://en.wikipedia.org/wiki/Space_Invaders"
+ },
+ {
+  "id": "gam59",
+  "cat": "gaming",
+  "marker": "GAMING",
+  "fr": "Les cartes mémoire ont disparu des consoles modernes, mais elles étaient indispensables sur PlayStation : sans elles, aucune sauvegarde n'était possible.",
+  "en": "Memory cards have vanished from modern consoles, but they were essential on PlayStation: without one, saving was impossible.",
+  "es": "Las tarjetas de memoria desaparecieron de las consolas modernas, pero eran imprescindibles en PlayStation: sin ellas no se podía guardar.",
+  "src": "https://en.wikipedia.org/wiki/PlayStation_Memory_Card"
+ },
+ {
+  "id": "gam60",
+  "cat": "gaming",
+  "marker": "GAMING",
+  "fr": "Le speedrunning a donné naissance à des catégories très codifiées : certains records se jouent à quelques millièmes de seconde près.",
+  "en": "Speedrunning has produced tightly codified categories: some records come down to a few thousandths of a second.",
+  "es": "El speedrunning ha creado categorías muy codificadas: algunos récords se deciden por milésimas de segundo.",
+  "src": "https://en.wikipedia.org/wiki/Speedrun"
+ },
+ {
+  "id": "cin51",
+  "cat": "cinema",
+  "marker": "CINEMA",
+  "fr": "Le Cuirassé Potemkine a rendu célèbre le montage par choc d'images : sa scène d'escalier a été imitée pendant un siècle.",
+  "en": "Battleship Potemkin made montage by clashing images famous: its staircase sequence has been imitated for a century.",
+  "es": "El acorazado Potemkin popularizó el montaje por choque de imágenes: su escena de la escalinata lleva un siglo siendo imitada.",
+  "src": "https://en.wikipedia.org/wiki/Battleship_Potemkin"
+ },
+ {
+  "id": "cin52",
+  "cat": "cinema",
+  "marker": "CINEMA",
+  "fr": "Le Technicolor à trois bandes exigeait une caméra énorme et un éclairage brûlant : les acteurs jouaient sous une chaleur difficilement supportable.",
+  "en": "Three-strip Technicolor required a huge camera and scorching lights: actors performed in barely bearable heat.",
+  "es": "El Technicolor de tres bandas exigía una cámara enorme y una iluminación abrasadora: los actores trabajaban con un calor difícil de soportar.",
+  "src": "https://en.wikipedia.org/wiki/Technicolor"
+ },
+ {
+  "id": "cin53",
+  "cat": "cinema",
+  "marker": "CINEMA",
+  "fr": "Les frères Lumière ne croyaient pas à l'avenir du cinéma : ils y voyaient une curiosité scientifique sans débouché commercial.",
+  "en": "The Lumière brothers did not believe cinema had a future: they saw it as a scientific curiosity with no commercial prospects.",
+  "es": "Los hermanos Lumière no creían en el futuro del cine: lo veían como una curiosidad científica sin salida comercial.",
+  "src": "https://en.wikipedia.org/wiki/Auguste_and_Louis_Lumi%C3%A8re"
+ },
+ {
+  "id": "cin54",
+  "cat": "cinema",
+  "marker": "CINEMA",
+  "fr": "Le film muet n'était jamais silencieux : un pianiste, un orchestre ou un bonimenteur accompagnait la projection en salle.",
+  "en": "Silent films were never silent: a pianist, an orchestra or a live narrator accompanied the screening.",
+  "es": "El cine mudo nunca fue silencioso: un pianista, una orquesta o un narrador en vivo acompañaban la proyección.",
+  "src": "https://en.wikipedia.org/wiki/Silent_film"
+ },
+ {
+  "id": "cin55",
+  "cat": "cinema",
+  "marker": "CINEMA",
+  "fr": "Le premier long-métrage d'animation conservé est sorti en 1926 : Les Aventures du prince Ahmed, réalisé en silhouettes découpées.",
+  "en": "The first surviving full-length animated feature came out in 1926: The Adventures of Prince Achmed, made with cut-out silhouettes.",
+  "es": "El primer largometraje de animación conservado se estrenó en 1926: Las aventuras del príncipe Achmed, realizado con siluetas recortadas.",
+  "src": "https://en.wikipedia.org/wiki/The_Adventures_of_Prince_Achmed"
+ },
+ {
+  "id": "cin56",
+  "cat": "cinema",
+  "marker": "CINEMA",
+  "fr": "La Nouvelle Vague française a imposé le tournage en décors réels et en lumière naturelle, faute de moyens autant que par choix.",
+  "en": "The French New Wave embraced real locations and natural light, as much from lack of money as from choice.",
+  "es": "La Nouvelle Vague francesa impuso el rodaje en escenarios reales y con luz natural, tanto por falta de medios como por elección.",
+  "src": "https://en.wikipedia.org/wiki/French_New_Wave"
+ },
+ {
+  "id": "cin57",
+  "cat": "cinema",
+  "marker": "CINEMA",
+  "fr": "Le format CinemaScope a été lancé dans les années 1950 pour concurrencer la télévision : il fallait offrir ce que le petit écran ne pouvait pas.",
+  "en": "CinemaScope launched in the 1950s to fight television: cinemas had to offer what the small screen could not.",
+  "es": "El formato CinemaScope se lanzó en los años cincuenta para competir con la televisión: había que ofrecer lo que la pantalla pequeña no podía.",
+  "src": "https://en.wikipedia.org/wiki/CinemaScope"
+ },
+ {
+  "id": "cin58",
+  "cat": "cinema",
+  "marker": "CINEMA",
+  "fr": "Le studio Ghibli tire son nom d'un mot désignant un vent chaud du Sahara, choisi pour évoquer un souffle nouveau sur l'animation.",
+  "en": "Studio Ghibli takes its name from a word for a hot Saharan wind, chosen to suggest a fresh breeze through animation.",
+  "es": "El estudio Ghibli debe su nombre a una palabra que designa un viento cálido del Sáhara, elegida para evocar un aire nuevo en la animación.",
+  "src": "https://en.wikipedia.org/wiki/Studio_Ghibli"
+ },
+ {
+  "id": "cin59",
+  "cat": "cinema",
+  "marker": "CINEMA",
+  "fr": "Le clap de tournage sert autant à l'image qu'au son : son claquement permet de synchroniser les deux enregistrements au montage.",
+  "en": "The clapperboard serves picture and sound alike: its snap lets both recordings be synchronised in the edit.",
+  "es": "La claqueta sirve tanto a la imagen como al sonido: su chasquido permite sincronizar ambas grabaciones en el montaje.",
+  "src": "https://en.wikipedia.org/wiki/Clapperboard"
+ },
+ {
+  "id": "cin60",
+  "cat": "cinema",
+  "marker": "CINEMA",
+  "fr": "Une grande partie des films muets a disparu : faute de conservation, on estime que la majorité de la production des années 1910-1920 est perdue.",
+  "en": "A large share of silent cinema is gone: with no preservation, most of the output of the 1910s and 1920s is considered lost.",
+  "es": "Gran parte del cine mudo ha desaparecido: sin conservación, se estima perdida la mayoría de la producción de los años diez y veinte.",
+  "src": "https://en.wikipedia.org/wiki/Lost_film"
+ },
+ {
+  "id": "mus51",
+  "cat": "music",
+  "marker": "MUSIC",
+  "fr": "Le chef d'orchestre Toscanini dirigeait entièrement de mémoire : une forte myopie l'empêchait de lire la partition sur le pupitre.",
+  "en": "Toscanini conducted from memory: severe short-sightedness kept him from reading the score on the stand.",
+  "es": "Toscanini dirigía de memoria: una fuerte miopía le impedía leer la partitura en el atril.",
+  "src": "https://en.wikipedia.org/wiki/Arturo_Toscanini"
+ },
+ {
+  "id": "mus52",
+  "cat": "music",
+  "marker": "MUSIC",
+  "fr": "Le blues a donné naissance au rock, mais aussi au jazz et à la soul : ses douze mesures restent une structure de base encore aujourd'hui.",
+  "en": "The blues gave birth to rock, but also to jazz and soul: its twelve bars remain a basic structure to this day.",
+  "es": "El blues dio origen al rock, pero también al jazz y al soul: sus doce compases siguen siendo una estructura básica hoy.",
+  "src": "https://en.wikipedia.org/wiki/Twelve-bar_blues"
+ },
+ {
+  "id": "mus53",
+  "cat": "music",
+  "marker": "MUSIC",
+  "fr": "Le sitar indien possède des cordes sympathiques qui vibrent seules, sans être pincées, pour enrichir le son.",
+  "en": "The Indian sitar has sympathetic strings that vibrate on their own, unplucked, to enrich the sound.",
+  "es": "El sitar indio tiene cuerdas simpáticas que vibran solas, sin ser pulsadas, para enriquecer el sonido.",
+  "src": "https://en.wikipedia.org/wiki/Sitar"
+ },
+ {
+  "id": "mus54",
+  "cat": "music",
+  "marker": "MUSIC",
+  "fr": "Le chant diphonique mongol permet à un seul chanteur d'émettre deux sons simultanément, une note grave et une harmonique sifflée.",
+  "en": "Mongolian throat singing lets one singer produce two sounds at once, a low drone and a whistled harmonic.",
+  "es": "El canto difónico mongol permite a un solo cantante emitir dos sonidos a la vez, una nota grave y un armónico silbado.",
+  "src": "https://en.wikipedia.org/wiki/Overtone_singing"
+ },
+ {
+  "id": "mus55",
+  "cat": "music",
+  "marker": "MUSIC",
+  "fr": "Le magnétophone à bande a rendu possible le montage sonore : couper et coller de la musique n'était pas envisageable avant lui.",
+  "en": "Tape recording made sound editing possible: cutting and splicing music was unthinkable before it.",
+  "es": "El magnetófono de cinta hizo posible el montaje sonoro: cortar y pegar música era impensable antes de él.",
+  "src": "https://en.wikipedia.org/wiki/Magnetic_tape"
+ },
+ {
+  "id": "mus56",
+  "cat": "music",
+  "marker": "MUSIC",
+  "fr": "Le violon Stradivarius doit peut-être sa sonorité au bois : les arbres ont poussé pendant un petit âge glaciaire, produisant un grain très dense.",
+  "en": "A Stradivarius violin may owe its tone to the wood: the trees grew during a little ice age, producing a very dense grain.",
+  "es": "El violín Stradivarius quizá deba su sonoridad a la madera: los árboles crecieron durante una pequeña edad de hielo, con un grano muy denso.",
+  "src": "https://en.wikipedia.org/wiki/Stradivarius"
+ },
+ {
+  "id": "mus57",
+  "cat": "music",
+  "marker": "MUSIC",
+  "fr": "L'opéra est né à Florence vers 1600 : un groupe de lettrés voulait retrouver la manière dont les Grecs anciens déclamaient leurs tragédies.",
+  "en": "Opera was born in Florence around 1600: a circle of scholars wanted to recover how ancient Greeks declaimed their tragedies.",
+  "es": "La ópera nació en Florencia hacia 1600: un grupo de eruditos quería recuperar el modo en que los griegos declamaban sus tragedias.",
+  "src": "https://en.wikipedia.org/wiki/Florentine_Camerata"
+ },
+ {
+  "id": "mus58",
+  "cat": "music",
+  "marker": "MUSIC",
+  "fr": "Le gamelan indonésien s'accorde par ensemble entier : deux orchestres différents ne peuvent pas échanger leurs instruments.",
+  "en": "Indonesian gamelan is tuned as a whole ensemble: two different orchestras cannot swap instruments.",
+  "es": "El gamelán indonesio se afina por conjunto entero: dos orquestas distintas no pueden intercambiar sus instrumentos.",
+  "src": "https://en.wikipedia.org/wiki/Gamelan"
+ },
+ {
+  "id": "mus59",
+  "cat": "music",
+  "marker": "MUSIC",
+  "fr": "Le format MP3 a été mis au point en Allemagne : il supprime les sons que l'oreille humaine perçoit mal pour alléger les fichiers.",
+  "en": "The MP3 format was developed in Germany: it discards sounds the human ear barely registers to shrink the file.",
+  "es": "El formato MP3 se desarrolló en Alemania: elimina los sonidos que el oído humano apenas percibe para aligerar el archivo.",
+  "src": "https://en.wikipedia.org/wiki/MP3"
+ },
+ {
+  "id": "mus60",
+  "cat": "music",
+  "marker": "MUSIC",
+  "fr": "Les castrats dominaient l'opéra européen aux XVIIᵉ et XVIIIᵉ siècles : la pratique a été interdite, et le dernier a été enregistré au début du XXᵉ siècle.",
+  "en": "Castrati dominated European opera in the 17th and 18th centuries: the practice was banned, and the last one was recorded in the early 20th century.",
+  "es": "Los castrati dominaron la ópera europea en los siglos XVII y XVIII: la práctica fue prohibida y el último fue grabado a principios del siglo XX.",
+  "src": "https://en.wikipedia.org/wiki/Castrato"
+ },
+ {
+  "id": "myth51",
+  "cat": "mythology",
+  "marker": "MYTHOLOGY",
+  "fr": "Dans la mythologie mésopotamienne, la déesse Inanna descend aux Enfers et doit abandonner un vêtement à chacune des sept portes.",
+  "en": "In Mesopotamian myth, the goddess Inanna descends to the underworld and must give up a garment at each of the seven gates.",
+  "es": "En la mitología mesopotámica, la diosa Inanna desciende al inframundo y debe dejar una prenda en cada una de las siete puertas.",
+  "src": "https://en.wikipedia.org/wiki/Inanna%27s_Descent_to_the_Netherworld"
+ },
+ {
+  "id": "myth52",
+  "cat": "mythology",
+  "marker": "MYTHOLOGY",
+  "fr": "Dans la mythologie yoruba, Ogun est le dieu du fer et des forgerons : il ouvre les chemins à coups de machette.",
+  "en": "In Yoruba mythology, Ogun is the god of iron and blacksmiths: he clears the paths with his machete.",
+  "es": "En la mitología yoruba, Ogún es el dios del hierro y de los herreros: abre los caminos a golpes de machete.",
+  "src": "https://en.wikipedia.org/wiki/Ogun"
+ },
+ {
+  "id": "myth53",
+  "cat": "mythology",
+  "marker": "MYTHOLOGY",
+  "fr": "Dans la mythologie slave, Perun est le dieu du tonnerre : on lui attribuait les chênes foudroyés, considérés comme sacrés.",
+  "en": "In Slavic myth, Perun is the thunder god: oaks struck by lightning were attributed to him and considered sacred.",
+  "es": "En la mitología eslava, Perún es el dios del trueno: se le atribuían los robles fulminados por el rayo, considerados sagrados.",
+  "src": "https://en.wikipedia.org/wiki/Perun"
+ },
+ {
+  "id": "myth54",
+  "cat": "mythology",
+  "marker": "MYTHOLOGY",
+  "fr": "Dans la mythologie finnoise, le Kalevala raconte la quête du Sampo, un objet magique qui produit richesse et abondance sans jamais s'épuiser.",
+  "en": "In Finnish mythology, the Kalevala tells of the quest for the Sampo, a magical object producing endless wealth and plenty.",
+  "es": "En la mitología finlandesa, el Kalevala narra la búsqueda del Sampo, un objeto mágico que produce riqueza sin agotarse jamás.",
+  "src": "https://en.wikipedia.org/wiki/Sampo"
+ },
+ {
+  "id": "myth55",
+  "cat": "mythology",
+  "marker": "MYTHOLOGY",
+  "fr": "Dans la mythologie grecque, Écho fut condamnée à ne pouvoir que répéter les derniers mots entendus.",
+  "en": "In Greek myth, Echo was condemned to repeat only the last words she heard.",
+  "es": "En la mitología griega, Eco fue condenada a repetir solo las últimas palabras que oía.",
+  "src": "https://en.wikipedia.org/wiki/Echo_(mythology)"
+ },
+ {
+  "id": "myth56",
+  "cat": "mythology",
+  "marker": "MYTHOLOGY",
+  "fr": "Dans la mythologie aborigène australienne, le Temps du Rêve désigne l'époque de création où les ancêtres ont façonné le paysage.",
+  "en": "In Aboriginal Australian tradition, the Dreaming refers to the creation era when ancestral beings shaped the landscape.",
+  "es": "En la tradición aborigen australiana, el Tiempo del Sueño designa la época de creación en que los ancestros modelaron el paisaje.",
+  "src": "https://en.wikipedia.org/wiki/Dreamtime"
+ },
+ {
+  "id": "myth57",
+  "cat": "mythology",
+  "marker": "MYTHOLOGY",
+  "fr": "Dans la mythologie inca, Viracocha aurait créé les premiers humains à partir de pierre avant de disparaître sur l'océan.",
+  "en": "In Inca myth, Viracocha is said to have made the first humans out of stone before vanishing across the ocean.",
+  "es": "En la mitología inca, Viracocha habría creado a los primeros humanos a partir de piedra antes de desaparecer por el océano.",
+  "src": "https://en.wikipedia.org/wiki/Viracocha"
+ },
+ {
+  "id": "myth58",
+  "cat": "mythology",
+  "marker": "MYTHOLOGY",
+  "fr": "Dans la mythologie nordique, Heimdall veille sur le pont arc-en-ciel Bifröst et entend pousser l'herbe.",
+  "en": "In Norse myth, Heimdall guards the rainbow bridge Bifröst and can hear the grass grow.",
+  "es": "En la mitología nórdica, Heimdall vigila el puente arcoíris Bifröst y puede oír crecer la hierba.",
+  "src": "https://en.wikipedia.org/wiki/Heimdall"
+ },
+ {
+  "id": "myth59",
+  "cat": "mythology",
+  "marker": "MYTHOLOGY",
+  "fr": "Dans la mythologie grecque, les Moires filaient, mesuraient puis coupaient le fil de chaque vie humaine.",
+  "en": "In Greek myth, the Fates spun, measured and then cut the thread of every human life.",
+  "es": "En la mitología griega, las Moiras hilaban, medían y luego cortaban el hilo de cada vida humana.",
+  "src": "https://en.wikipedia.org/wiki/Moirai"
+ },
+ {
+  "id": "myth60",
+  "cat": "mythology",
+  "marker": "MYTHOLOGY",
+  "fr": "Dans le folklore juif, le golem est une créature d'argile animée par un mot inscrit, incapable de parler.",
+  "en": "In Jewish folklore, the golem is a clay creature animated by an inscribed word and unable to speak.",
+  "es": "En el folclore judío, el gólem es una criatura de arcilla animada por una palabra inscrita e incapaz de hablar.",
+  "src": "https://en.wikipedia.org/wiki/Golem"
+ },
+ {
+  "id": "psy51",
+  "cat": "psychology",
+  "marker": "PSYCHOLOGY",
+  "fr": "L'effet de supériorité de l'image : on retient bien mieux une information vue en image qu'exprimée uniquement par des mots.",
+  "en": "The picture superiority effect: information seen as an image is remembered far better than the same information given in words alone.",
+  "es": "El efecto de superioridad de la imagen: se recuerda mucho mejor una información vista en imagen que expresada solo con palabras.",
+  "src": "https://en.wikipedia.org/wiki/Picture_superiority_effect"
+ },
+ {
+  "id": "psy52",
+  "cat": "psychology",
+  "marker": "PSYCHOLOGY",
+  "fr": "La méthode des lieux consiste à ranger mentalement ce qu'on veut retenir dans les pièces d'un bâtiment familier : les champions de mémoire l'utilisent tous.",
+  "en": "The method of loci means mentally storing what you want to recall in the rooms of a familiar building: every memory champion uses it.",
+  "es": "El método de los loci consiste en guardar mentalmente lo que se quiere recordar en las estancias de un edificio familiar: lo usan todos los campeones de memoria.",
+  "src": "https://en.wikipedia.org/wiki/Method_of_loci"
+ },
+ {
+  "id": "psy53",
+  "cat": "psychology",
+  "marker": "PSYCHOLOGY",
+  "fr": "Le conformisme d'Asch : placé face à un groupe qui donne une réponse manifestement fausse, une partie des gens s'y rallie quand même.",
+  "en": "Asch conformity: faced with a group giving an obviously wrong answer, a share of people go along with it anyway.",
+  "es": "El conformismo de Asch: ante un grupo que da una respuesta claramente falsa, una parte de las personas se suma igualmente.",
+  "src": "https://en.wikipedia.org/wiki/Asch_conformity_experiments"
+ },
+ {
+  "id": "psy54",
+  "cat": "psychology",
+  "marker": "PSYCHOLOGY",
+  "fr": "L'effet de génération : on mémorise mieux une réponse qu'on a produite soi-même qu'une réponse qu'on a simplement lue.",
+  "en": "The generation effect: an answer you produced yourself is remembered better than one you simply read.",
+  "es": "El efecto de generación: se memoriza mejor una respuesta producida por uno mismo que una simplemente leída.",
+  "src": "https://en.wikipedia.org/wiki/Generation_effect"
+ },
+ {
+  "id": "psy55",
+  "cat": "psychology",
+  "marker": "PSYCHOLOGY",
+  "fr": "La courbe de l'oubli montre que l'essentiel d'un apprentissage s'efface dans les premiers jours, sauf si on le révise par intervalles.",
+  "en": "The forgetting curve shows that most of what we learn fades within days, unless it is reviewed at spaced intervals.",
+  "es": "La curva del olvido muestra que lo esencial de un aprendizaje se borra en los primeros días, salvo que se repase a intervalos.",
+  "src": "https://en.wikipedia.org/wiki/Forgetting_curve"
+ },
+ {
+  "id": "psy56",
+  "cat": "psychology",
+  "marker": "PSYCHOLOGY",
+  "fr": "Le biais rétrospectif nous fait croire, après coup, qu'on avait « toujours su » comment les choses allaient tourner.",
+  "en": "Hindsight bias makes us believe, after the fact, that we 'knew all along' how things would turn out.",
+  "es": "El sesgo retrospectivo nos hace creer, a posteriori, que «siempre supimos» cómo iban a salir las cosas.",
+  "src": "https://en.wikipedia.org/wiki/Hindsight_bias"
+ },
+ {
+  "id": "psy57",
+  "cat": "psychology",
+  "marker": "PSYCHOLOGY",
+  "fr": "L'effet de contexte : on retrouve plus facilement un souvenir dans le lieu où on l'a formé, un phénomène observé jusque sous l'eau chez des plongeurs.",
+  "en": "Context-dependent memory: a memory is easier to retrieve in the place where it was formed, an effect observed even underwater with divers.",
+  "es": "La memoria dependiente del contexto: un recuerdo se recupera mejor en el lugar donde se formó, algo observado incluso bajo el agua con buceadores.",
+  "src": "https://en.wikipedia.org/wiki/Context-dependent_memory"
+ },
+ {
+  "id": "psy58",
+  "cat": "psychology",
+  "marker": "PSYCHOLOGY",
+  "fr": "L'effet Flynn désigne la hausse continue des scores moyens aux tests d'intelligence au fil du XXᵉ siècle, obligeant à réétalonner régulièrement les tests.",
+  "en": "The Flynn effect describes the steady rise in average intelligence test scores across the 20th century, forcing regular re-standardisation.",
+  "es": "El efecto Flynn designa el alza continua de las puntuaciones medias en los test de inteligencia durante el siglo XX, lo que obliga a recalibrarlos.",
+  "src": "https://en.wikipedia.org/wiki/Flynn_effect"
+ },
+ {
+  "id": "psy59",
+  "cat": "psychology",
+  "marker": "PSYCHOLOGY",
+  "fr": "Le biais d'autocomplaisance nous pousse à attribuer nos réussites à nos qualités et nos échecs aux circonstances.",
+  "en": "Self-serving bias leads us to credit our successes to our qualities and blame our failures on circumstances.",
+  "es": "El sesgo de autocomplacencia nos lleva a atribuir los éxitos a nuestras cualidades y los fracasos a las circunstancias.",
+  "src": "https://en.wikipedia.org/wiki/Self-serving_bias"
+ },
+ {
+  "id": "psy60",
+  "cat": "psychology",
+  "marker": "PSYCHOLOGY",
+  "fr": "L'effet de récence et de primauté : dans une liste, on retient surtout le début et la fin, et beaucoup moins le milieu.",
+  "en": "Primacy and recency effects: in a list, we mostly remember the beginning and the end, and far less the middle.",
+  "es": "Efectos de primacía y recencia: en una lista se recuerda sobre todo el principio y el final, y mucho menos el medio.",
+  "src": "https://en.wikipedia.org/wiki/Serial-position_effect"
+ },
+ {
+  "id": "ocean51",
+  "cat": "oceans",
+  "marker": "OCEANS",
+  "fr": "Les sources hydrothermales abritent une vie qui ne dépend pas du Soleil : des bactéries y tirent leur énergie du soufre, à des kilomètres sous la surface.",
+  "en": "Hydrothermal vents host life that does not depend on the Sun: bacteria there draw energy from sulphur, kilometres below the surface.",
+  "es": "Las fuentes hidrotermales albergan vida que no depende del Sol: allí las bacterias obtienen energía del azufre, a kilómetros bajo la superficie.",
+  "src": "https://en.wikipedia.org/wiki/Hydrothermal_vent"
+ },
+ {
+  "id": "ocean52",
+  "cat": "oceans",
+  "marker": "OCEANS",
+  "fr": "Le krill antarctique forme des bancs si denses qu'ils comptent parmi les plus grandes concentrations animales de la planète.",
+  "en": "Antarctic krill form swarms so dense they rank among the largest animal concentrations on the planet.",
+  "es": "El krill antártico forma bancos tan densos que figuran entre las mayores concentraciones animales del planeta.",
+  "src": "https://en.wikipedia.org/wiki/Antarctic_krill"
+ },
+ {
+  "id": "ocean53",
+  "cat": "oceans",
+  "marker": "OCEANS",
+  "fr": "La mer des Sargasses est la seule mer sans côtes : elle est délimitée uniquement par des courants océaniques.",
+  "en": "The Sargasso Sea is the only sea with no coastline: it is bounded solely by ocean currents.",
+  "es": "El mar de los Sargazos es el único mar sin costas: lo delimitan únicamente corrientes oceánicas.",
+  "src": "https://en.wikipedia.org/wiki/Sargasso_Sea"
+ },
+ {
+  "id": "ocean54",
+  "cat": "oceans",
+  "marker": "OCEANS",
+  "fr": "Les anguilles d'Europe traversent l'Atlantique pour se reproduire dans la mer des Sargasses, un voyage resté longtemps mystérieux.",
+  "en": "European eels cross the Atlantic to breed in the Sargasso Sea, a journey that stayed mysterious for a long time.",
+  "es": "Las anguilas europeas cruzan el Atlántico para reproducirse en el mar de los Sargazos, un viaje que fue un misterio durante mucho tiempo.",
+  "src": "https://en.wikipedia.org/wiki/European_eel"
+ },
+ {
+  "id": "ocean55",
+  "cat": "oceans",
+  "marker": "OCEANS",
+  "fr": "Le narval porte une longue défense torsadée qui est en réalité une dent percée de millions de terminaisons nerveuses.",
+  "en": "The narwhal's long spiral tusk is in fact a tooth threaded with millions of nerve endings.",
+  "es": "El largo colmillo en espiral del narval es en realidad un diente atravesado por millones de terminaciones nerviosas.",
+  "src": "https://en.wikipedia.org/wiki/Narwhal"
+ },
+ {
+  "id": "ocean56",
+  "cat": "oceans",
+  "marker": "OCEANS",
+  "fr": "Les manchots empereurs plongent à plus de 500 mètres et restent sous l'eau plus de vingt minutes.",
+  "en": "Emperor penguins dive beyond 500 metres and stay underwater for more than twenty minutes.",
+  "es": "Los pingüinos emperador bucean más de 500 metros y permanecen bajo el agua más de veinte minutos.",
+  "src": "https://en.wikipedia.org/wiki/Emperor_penguin"
+ },
+ {
+  "id": "ocean57",
+  "cat": "oceans",
+  "marker": "OCEANS",
+  "fr": "Les baleines à bosse composent des chants qui évoluent d'année en année, et une nouvelle version peut se propager d'une population à l'autre.",
+  "en": "Humpback whales compose songs that change from year to year, and a new version can spread from one population to another.",
+  "es": "Las ballenas jorobadas componen cantos que cambian de un año a otro, y una versión nueva puede propagarse de una población a otra.",
+  "src": "https://en.wikipedia.org/wiki/Whale_vocalization"
+ },
+ {
+  "id": "ocean58",
+  "cat": "oceans",
+  "marker": "OCEANS",
+  "fr": "La couche de diffusion profonde monte et descend chaque jour : des milliards d'organismes remontent la nuit pour se nourrir, c'est la plus grande migration animale du monde.",
+  "en": "The deep scattering layer rises and falls every day: billions of organisms come up at night to feed, the largest animal migration on Earth.",
+  "es": "La capa de dispersión profunda sube y baja cada día: miles de millones de organismos ascienden de noche para alimentarse, la mayor migración animal del mundo.",
+  "src": "https://en.wikipedia.org/wiki/Deep_scattering_layer"
+ },
+ {
+  "id": "ocean59",
+  "cat": "oceans",
+  "marker": "OCEANS",
+  "fr": "L'acidification des océans vient du CO₂ absorbé par l'eau, ce qui fragilise les coquilles et les squelettes calcaires.",
+  "en": "Ocean acidification comes from CO₂ absorbed by seawater, which weakens shells and calcium skeletons.",
+  "es": "La acidificación de los océanos procede del CO₂ absorbido por el agua, lo que debilita conchas y esqueletos calcáreos.",
+  "src": "https://en.wikipedia.org/wiki/Ocean_acidification"
+ },
+ {
+  "id": "ocean60",
+  "cat": "oceans",
+  "marker": "OCEANS",
+  "fr": "Les forêts de kelp poussent jusqu'à un demi-mètre par jour et forment des écosystèmes aussi riches que les récifs coralliens.",
+  "en": "Kelp forests grow up to half a metre a day and form ecosystems as rich as coral reefs.",
+  "es": "Los bosques de kelp crecen hasta medio metro al día y forman ecosistemas tan ricos como los arrecifes de coral.",
+  "src": "https://en.wikipedia.org/wiki/Kelp_forest"
+ },
+ {
+  "id": "rec51",
+  "cat": "records",
+  "marker": "RECORDS",
+  "fr": "Le lieu habité le plus froid est Oïmiakon, en Sibérie : le thermomètre y est descendu sous les −67 °C, et l'école ferme rarement.",
+  "en": "The coldest inhabited place is Oymyakon in Siberia: the thermometer has dropped below −67 °C, and school rarely closes.",
+  "es": "El lugar habitado más frío es Oimiakón, en Siberia: el termómetro ha bajado de −67 °C y la escuela rara vez cierra.",
+  "src": "https://en.wikipedia.org/wiki/Oymyakon"
+ },
+ {
+  "id": "rec52",
+  "cat": "records",
+  "marker": "RECORDS",
+  "fr": "L'endroit le plus sec du monde est le désert d'Atacama : certaines stations n'y ont jamais enregistré la moindre pluie.",
+  "en": "The driest place on Earth is the Atacama Desert: some stations there have never recorded any rain at all.",
+  "es": "El sitio más seco del mundo es el desierto de Atacama: algunas estaciones nunca han registrado lluvia alguna.",
+  "src": "https://en.wikipedia.org/wiki/Atacama_Desert"
+ },
+ {
+  "id": "rec53",
+  "cat": "records",
+  "marker": "RECORDS",
+  "fr": "La mer Morte est le point terrestre le plus bas : ses rives se situent à plus de 400 mètres sous le niveau de la mer.",
+  "en": "The Dead Sea is the lowest point on land: its shores lie more than 400 metres below sea level.",
+  "es": "El mar Muerto es el punto terrestre más bajo: sus orillas están a más de 400 metros bajo el nivel del mar.",
+  "src": "https://en.wikipedia.org/wiki/Dead_Sea"
+ },
+ {
+  "id": "rec54",
+  "cat": "records",
+  "marker": "RECORDS",
+  "fr": "Le trou le plus profond jamais foré est le puits de Kola, en Russie : il atteint plus de 12 kilomètres et n'a percé qu'une fraction de la croûte.",
+  "en": "The deepest hole ever drilled is the Kola borehole in Russia: it reaches over 12 kilometres and pierced only a fraction of the crust.",
+  "es": "El agujero más profundo jamás perforado es el pozo de Kola, en Rusia: alcanza más de 12 kilómetros y solo atravesó una fracción de la corteza.",
+  "src": "https://en.wikipedia.org/wiki/Kola_Superdeep_Borehole"
+ },
+ {
+  "id": "rec55",
+  "cat": "records",
+  "marker": "RECORDS",
+  "fr": "Le pont le plus haut du monde franchit une gorge à plusieurs centaines de mètres au-dessus du vide, en Chine.",
+  "en": "The world's highest bridge spans a gorge several hundred metres above the void, in China.",
+  "es": "El puente más alto del mundo cruza un desfiladero a varios cientos de metros sobre el vacío, en China.",
+  "src": "https://en.wikipedia.org/wiki/List_of_highest_bridges"
+ },
+ {
+  "id": "rec56",
+  "cat": "records",
+  "marker": "RECORDS",
+  "fr": "La substance naturelle la plus dure reste le diamant, mais des matériaux de synthèse la dépassent désormais en dureté.",
+  "en": "Diamond remains the hardest natural substance, though synthetic materials now surpass it in hardness.",
+  "es": "El diamante sigue siendo la sustancia natural más dura, aunque algunos materiales sintéticos ya la superan.",
+  "src": "https://en.wikipedia.org/wiki/Diamond"
+ },
+ {
+  "id": "rec57",
+  "cat": "records",
+  "marker": "RECORDS",
+  "fr": "L'animal terrestre le plus lent est le paresseux : il parcourt quelques mètres par minute, et digère une feuille en plusieurs semaines.",
+  "en": "The slowest land animal is the sloth: it covers a few metres a minute and takes weeks to digest a leaf.",
+  "es": "El animal terrestre más lento es el perezoso: recorre unos metros por minuto y tarda semanas en digerir una hoja.",
+  "src": "https://en.wikipedia.org/wiki/Sloth"
+ },
+ {
+  "id": "rec58",
+  "cat": "records",
+  "marker": "RECORDS",
+  "fr": "L'escalier le plus long du monde longe un funiculaire suisse et compte près de 11 700 marches.",
+  "en": "The longest staircase in the world runs alongside a Swiss funicular and has nearly 11,700 steps.",
+  "es": "La escalera más larga del mundo acompaña a un funicular suizo y cuenta con casi 11 700 peldaños.",
+  "src": "https://en.wikipedia.org/wiki/Niesenbahn"
+ },
+ {
+  "id": "rec59",
+  "cat": "records",
+  "marker": "RECORDS",
+  "fr": "La graine la plus lourde est celle du cocotier de mer des Seychelles : elle peut dépasser quinze kilogrammes.",
+  "en": "The heaviest seed belongs to the coco de mer of the Seychelles: it can weigh over fifteen kilograms.",
+  "es": "La semilla más pesada es la del coco de mar de Seychelles: puede superar los quince kilogramos.",
+  "src": "https://en.wikipedia.org/wiki/Lodoicea"
+ },
+ {
+  "id": "rec60",
+  "cat": "records",
+  "marker": "RECORDS",
+  "fr": "L'endroit le plus venteux de la planète est la côte antarctique : des vents catabatiques y soufflent presque sans interruption.",
+  "en": "The windiest place on the planet is the Antarctic coast, where katabatic winds blow almost without pause.",
+  "es": "El lugar más ventoso del planeta es la costa antártica, donde los vientos catabáticos soplan casi sin descanso.",
+  "src": "https://en.wikipedia.org/wiki/Katabatic_wind"
+ },
+ {
+  "id": "quote51",
+  "cat": "quotes",
+  "marker": "QUOTES",
+  "fr": "Montaigne a donné à son œuvre une devise en forme de question : « Que sais-je ? » — qu'il fit graver sur une médaille.",
+  "en": "Montaigne gave his work a motto shaped as a question: 'What do I know?' — which he had engraved on a medal.",
+  "es": "Montaigne dio a su obra un lema en forma de pregunta: «¿Qué sé yo?», que hizo grabar en una medalla.",
+  "src": "https://en.wikipedia.org/wiki/Michel_de_Montaigne"
+ },
+ {
+  "id": "quote52",
+  "cat": "quotes",
+  "marker": "QUOTES",
+  "fr": "Épictète, ancien esclave devenu philosophe, enseignait à distinguer ce qui dépend de nous de ce qui n'en dépend pas.",
+  "en": "Epictetus, a former slave turned philosopher, taught his students to separate what is in our control from what is not.",
+  "es": "Epicteto, esclavo liberto convertido en filósofo, enseñaba a distinguir lo que depende de nosotros de lo que no.",
+  "src": "https://en.wikipedia.org/wiki/Epictetus"
+ },
+ {
+  "id": "quote53",
+  "cat": "quotes",
+  "marker": "QUOTES",
+  "fr": "Marc Aurèle écrivait ses Pensées pour lui seul : ce journal d'un empereur n'était pas destiné à être publié.",
+  "en": "Marcus Aurelius wrote his Meditations for himself alone: an emperor's journal never meant for publication.",
+  "es": "Marco Aurelio escribió sus Meditaciones solo para sí mismo: el diario de un emperador que no pensaba publicar.",
+  "src": "https://en.wikipedia.org/wiki/Meditations"
+ },
+ {
+  "id": "quote54",
+  "cat": "quotes",
+  "marker": "QUOTES",
+  "fr": "Blaise Pascal s'excusait d'avoir écrit une longue lettre faute d'avoir eu le temps de la faire plus courte.",
+  "en": "Blaise Pascal apologised for writing a long letter because he had not had time to make it shorter.",
+  "es": "Blaise Pascal se disculpó por escribir una carta larga porque no había tenido tiempo de hacerla más corta.",
+  "src": "https://en.wikipedia.org/wiki/Lettres_provinciales"
+ },
+ {
+  "id": "quote55",
+  "cat": "quotes",
+  "marker": "QUOTES",
+  "fr": "La formule « Liberté, Égalité, Fraternité » n'est devenue devise officielle de la France qu'au XIXᵉ siècle.",
+  "en": "'Liberty, Equality, Fraternity' only became France's official motto in the 19th century.",
+  "es": "«Libertad, Igualdad, Fraternidad» no se convirtió en lema oficial de Francia hasta el siglo XIX.",
+  "src": "https://en.wikipedia.org/wiki/Libert%C3%A9,_%C3%A9galit%C3%A9,_fraternit%C3%A9"
+ },
+ {
+  "id": "quote56",
+  "cat": "quotes",
+  "marker": "QUOTES",
+  "fr": "Victor Hugo disait qu'aucune armée n'arrête une idée dont l'heure est venue — une phrase reprise dans le monde entier.",
+  "en": "Victor Hugo said no army can stop an idea whose time has come — a line quoted worldwide ever since.",
+  "es": "Victor Hugo decía que ningún ejército detiene una idea cuya hora ha llegado, una frase citada en todo el mundo.",
+  "src": "https://en.wikipedia.org/wiki/Victor_Hugo"
+ },
+ {
+  "id": "quote57",
+  "cat": "quotes",
+  "marker": "QUOTES",
+  "fr": "Le « Connais-toi toi-même » n'est pas de Socrate : la maxime était gravée au fronton du temple de Delphes.",
+  "en": "'Know thyself' is not Socrates': the maxim was inscribed on the temple at Delphi.",
+  "es": "«Conócete a ti mismo» no es de Sócrates: la máxima estaba grabada en el templo de Delfos.",
+  "src": "https://en.wikipedia.org/wiki/Know_thyself"
+ },
+ {
+  "id": "quote58",
+  "cat": "quotes",
+  "marker": "QUOTES",
+  "fr": "Kant résumait les Lumières par un mot d'ordre latin : « Sapere aude », ose savoir.",
+  "en": "Kant summed up the Enlightenment in a Latin rallying cry: 'Sapere aude', dare to know.",
+  "es": "Kant resumió la Ilustración en una consigna latina: «Sapere aude», atrévete a saber.",
+  "src": "https://en.wikipedia.org/wiki/Answering_the_Question:_What_Is_Enlightenment%3F"
+ },
+ {
+  "id": "quote59",
+  "cat": "quotes",
+  "marker": "QUOTES",
+  "fr": "Rosa Luxemburg défendait avant tout la liberté de celui qui pense autrement.",
+  "en": "Rosa Luxemburg argued above all for the freedom of the one who thinks differently.",
+  "es": "Rosa Luxemburgo defendía ante todo la libertad de quien piensa de otro modo.",
+  "src": "https://en.wikipedia.org/wiki/Rosa_Luxemburg"
+ },
+ {
+  "id": "quote60",
+  "cat": "quotes",
+  "marker": "QUOTES",
+  "fr": "La phrase « L'enfer, c'est les autres » vient d'une pièce de Sartre, et non d'un de ses essais philosophiques.",
+  "en": "The line 'Hell is other people' comes from a Sartre play, not from one of his philosophical essays.",
+  "es": "La frase «El infierno son los otros» procede de una obra de teatro de Sartre, no de uno de sus ensayos filosóficos.",
+  "src": "https://en.wikipedia.org/wiki/No_Exit"
+ },
+ {
+  "id": "law51",
+  "cat": "laws",
+  "marker": "LAWS",
+  "fr": "En Islande, un comité officiel valide les prénoms : ils doivent pouvoir se décliner selon la grammaire islandaise.",
+  "en": "In Iceland, an official committee approves first names: they must be able to take Icelandic grammatical endings.",
+  "es": "En Islandia, un comité oficial valida los nombres propios: deben poder declinarse según la gramática islandesa.",
+  "src": "https://en.wikipedia.org/wiki/Icelandic_Naming_Committee"
+ },
+ {
+  "id": "law52",
+  "cat": "laws",
+  "marker": "LAWS",
+  "fr": "En Norvège, les déclarations de revenus sont publiques : n'importe qui peut consulter ce que gagne son voisin.",
+  "en": "In Norway, tax returns are public: anyone can look up what their neighbour earns.",
+  "es": "En Noruega, las declaraciones de la renta son públicas: cualquiera puede consultar lo que gana su vecino.",
+  "src": "https://en.wikipedia.org/wiki/Taxation_in_Norway"
+ },
+ {
+  "id": "law53",
+  "cat": "laws",
+  "marker": "LAWS",
+  "fr": "Aux Pays-Bas, un bateau amarré peut servir de résidence officielle : des milliers de péniches ont une adresse postale.",
+  "en": "In the Netherlands, a moored boat can serve as an official residence: thousands of houseboats have a postal address.",
+  "es": "En los Países Bajos, un barco amarrado puede ser residencia oficial: miles de casas flotantes tienen dirección postal.",
+  "src": "https://en.wikipedia.org/wiki/Houseboat"
+ },
+ {
+  "id": "law54",
+  "cat": "laws",
+  "marker": "LAWS",
+  "fr": "En Belgique, le vote est obligatoire : s'abstenir sans motif valable expose théoriquement à une amende.",
+  "en": "In Belgium, voting is compulsory: abstaining without valid reason can in theory bring a fine.",
+  "es": "En Bélgica el voto es obligatorio: abstenerse sin motivo válido expone en teoría a una multa.",
+  "src": "https://en.wikipedia.org/wiki/Compulsory_voting"
+ },
+ {
+  "id": "law55",
+  "cat": "laws",
+  "marker": "LAWS",
+  "fr": "En Corée du Sud, les numéros d'étage sautent parfois le quatrième : le chiffre se prononce comme le mot « mort ».",
+  "en": "In South Korea, floor numbers sometimes skip the fourth: the digit sounds like the word for 'death'.",
+  "es": "En Corea del Sur los números de planta a veces se saltan el cuarto: la cifra suena como la palabra «muerte».",
+  "src": "https://en.wikipedia.org/wiki/Tetraphobia"
+ },
+ {
+  "id": "law56",
+  "cat": "laws",
+  "marker": "LAWS",
+  "fr": "En Allemagne, plusieurs Länder interdisent les déménagements et travaux bruyants les jours fériés dits « silencieux ».",
+  "en": "In Germany, several states ban removals and noisy works on so-called 'silent' public holidays.",
+  "es": "En Alemania, varios estados prohíben mudanzas y obras ruidosas en los festivos llamados «silenciosos».",
+  "src": "https://en.wikipedia.org/wiki/Public_holidays_in_Germany"
+ },
+ {
+  "id": "law57",
+  "cat": "laws",
+  "marker": "LAWS",
+  "fr": "En Espagne, certaines communes ont réglementé la sieste en imposant le silence l'après-midi.",
+  "en": "In Spain, some municipalities have regulated the siesta by imposing afternoon quiet hours.",
+  "es": "En España, algunos municipios han regulado la siesta imponiendo silencio por la tarde.",
+  "src": "https://en.wikipedia.org/wiki/Siesta"
+ },
+ {
+  "id": "law58",
+  "cat": "laws",
+  "marker": "LAWS",
+  "fr": "En Italie, il est interdit de s'asseoir sur les marches des monuments à Rome, une règle appliquée aux abords du Panthéon.",
+  "en": "In Italy, sitting on monument steps is banned in Rome, a rule enforced around the Pantheon.",
+  "es": "En Italia está prohibido sentarse en las escalinatas de los monumentos de Roma, norma aplicada junto al Panteón.",
+  "src": "https://en.wikipedia.org/wiki/Pantheon,_Rome"
+ },
+ {
+  "id": "law59",
+  "cat": "laws",
+  "marker": "LAWS",
+  "fr": "Au Royaume-Uni, une loi médiévale rarement appliquée réserve encore certains cygnes de la Tamise à la Couronne.",
+  "en": "In the UK, a rarely enforced medieval law still reserves certain swans on the Thames for the Crown.",
+  "es": "En el Reino Unido, una ley medieval rara vez aplicada aún reserva ciertos cisnes del Támesis a la Corona.",
+  "src": "https://en.wikipedia.org/wiki/Swan_upping"
+ },
+ {
+  "id": "law60",
+  "cat": "laws",
+  "marker": "LAWS",
+  "fr": "En France, un maire a interdit par arrêté de mourir dans sa commune, faute de place au cimetière — une décision symbolique.",
+  "en": "In France, a mayor once issued a decree banning people from dying in his town for lack of cemetery space — a symbolic move.",
+  "es": "En Francia, un alcalde prohibió por decreto morir en su municipio por falta de espacio en el cementerio: una decisión simbólica.",
+  "src": "https://en.wikipedia.org/wiki/Cugnaux"
+ },
+ {
+  "id": "tale51",
+  "cat": "tales",
+  "marker": "TALES",
+  "fr": "La légende du Roi des Aulnes, popularisée par un poème de Goethe, vient d'une erreur de traduction : le roi des elfes est devenu roi des aulnes.",
+  "en": "The Erlking legend, made famous by a Goethe poem, stems from a mistranslation: the elf king became the alder king.",
+  "es": "La leyenda del Rey de los Alisos, popularizada por un poema de Goethe, nace de un error de traducción: el rey de los elfos pasó a ser rey de los alisos.",
+  "src": "https://en.wikipedia.org/wiki/Erlking"
+ },
+ {
+  "id": "tale52",
+  "cat": "tales",
+  "marker": "TALES",
+  "fr": "Le conte de Blanche-Neige existait bien avant les Grimm : des versions circulaient dans toute l'Europe avec des fruits, des peignes ou des lacets empoisonnés.",
+  "en": "Snow White existed long before the Grimms: versions circulated across Europe with poisoned fruit, combs or laces.",
+  "es": "Blancanieves existía mucho antes que los Grimm: circulaban versiones por toda Europa con frutas, peines o cordones envenenados.",
+  "src": "https://en.wikipedia.org/wiki/Snow_White"
+ },
+ {
+  "id": "tale53",
+  "cat": "tales",
+  "marker": "TALES",
+  "fr": "Les nains du folklore scandinave n'étaient pas de gentils mineurs : ce sont des êtres habiles et rusés, forgerons des objets magiques des dieux.",
+  "en": "Dwarfs in Norse folklore were no kindly miners: they are skilled, cunning beings who forged the gods' magical objects.",
+  "es": "Los enanos del folclore nórdico no eran amables mineros: son seres hábiles y astutos, forjadores de los objetos mágicos de los dioses.",
+  "src": "https://en.wikipedia.org/wiki/Dwarf_(folklore)"
+ },
+ {
+  "id": "tale54",
+  "cat": "tales",
+  "marker": "TALES",
+  "fr": "La légende chinoise du bouvier et de la tisserande raconte deux amants séparés par la Voie lactée, réunis une seule nuit par an.",
+  "en": "The Chinese legend of the cowherd and the weaver girl tells of two lovers parted by the Milky Way, reunited one night a year.",
+  "es": "La leyenda china del pastor y la tejedora narra dos amantes separados por la Vía Láctea, reunidos una sola noche al año.",
+  "src": "https://en.wikipedia.org/wiki/Qixi_Festival"
+ },
+ {
+  "id": "tale55",
+  "cat": "tales",
+  "marker": "TALES",
+  "fr": "Le mythe du vampire s'est diffusé en Europe au XVIIIᵉ siècle après des enquêtes officielles menées dans les Balkans.",
+  "en": "The vampire myth spread across Europe in the 18th century after official investigations in the Balkans.",
+  "es": "El mito del vampiro se difundió por Europa en el siglo XVIII tras varias investigaciones oficiales en los Balcanes.",
+  "src": "https://en.wikipedia.org/wiki/Vampire"
+ },
+ {
+  "id": "tale56",
+  "cat": "tales",
+  "marker": "TALES",
+  "fr": "Le conte du Vilain Petit Canard est souvent lu comme une transposition de la jeunesse d'Andersen, moqué pour son allure et ses origines modestes.",
+  "en": "The Ugly Duckling is often read as a version of Andersen's own youth, mocked for his looks and humble origins.",
+  "es": "El patito feo suele leerse como una transposición de la juventud de Andersen, del que se burlaban por su aspecto y su origen humilde.",
+  "src": "https://en.wikipedia.org/wiki/The_Ugly_Duckling"
+ },
+ {
+  "id": "tale57",
+  "cat": "tales",
+  "marker": "TALES",
+  "fr": "Dans le folklore alpin, les dahus seraient des animaux aux pattes plus courtes d'un côté : une farce servie aux nouveaux venus.",
+  "en": "In Alpine folklore, the dahu supposedly has shorter legs on one side: a prank played on newcomers.",
+  "es": "En el folclore alpino, el dahu tendría las patas más cortas de un lado: una broma reservada a los recién llegados.",
+  "src": "https://en.wikipedia.org/wiki/Dahu"
+ },
+ {
+  "id": "tale58",
+  "cat": "tales",
+  "marker": "TALES",
+  "fr": "La légende de Guillaume Tell et de la pomme n'apparaît dans les chroniques suisses que longtemps après les faits supposés.",
+  "en": "The legend of William Tell and the apple appears in Swiss chronicles only long after the events it describes.",
+  "es": "La leyenda de Guillermo Tell y la manzana solo aparece en las crónicas suizas mucho después de los hechos supuestos.",
+  "src": "https://en.wikipedia.org/wiki/William_Tell"
+ },
+ {
+  "id": "tale59",
+  "cat": "tales",
+  "marker": "TALES",
+  "fr": "Le folklore islandais accorde encore une place aux elfes : des chantiers ont été déviés pour contourner des rochers réputés habités.",
+  "en": "Icelandic folklore still leaves room for elves: road works have been rerouted around boulders said to be inhabited.",
+  "es": "El folclore islandés aún reserva un lugar a los elfos: se han desviado obras para rodear rocas consideradas habitadas.",
+  "src": "https://en.wikipedia.org/wiki/Huldufolk"
+ },
+ {
+  "id": "tale60",
+  "cat": "tales",
+  "marker": "TALES",
+  "fr": "La légende du Graal a d'abord été un simple plat dans le récit de Chrétien de Troyes, avant de devenir une coupe sacrée chez ses continuateurs.",
+  "en": "The Grail began as a simple serving dish in Chrétien de Troyes' tale, before his continuators turned it into a sacred cup.",
+  "es": "El Grial fue al principio una simple fuente en el relato de Chrétien de Troyes, antes de que sus continuadores lo convirtieran en copa sagrada.",
+  "src": "https://en.wikipedia.org/wiki/Holy_Grail"
+ },
+ {
+  "id": "dino51",
+  "cat": "dinosaurs",
+  "marker": "DINOSAURS",
+  "fr": "Le Deinocheirus n'a longtemps été connu que par deux bras géants : il a fallu presque cinquante ans pour retrouver le reste du squelette.",
+  "en": "Deinocheirus was long known only from two giant arms: it took nearly fifty years to find the rest of the skeleton.",
+  "es": "Deinocheirus se conoció durante mucho tiempo solo por dos brazos gigantes: hicieron falta casi cincuenta años para hallar el resto del esqueleto.",
+  "src": "https://en.wikipedia.org/wiki/Deinocheirus"
+ },
+ {
+  "id": "dino52",
+  "cat": "dinosaurs",
+  "marker": "DINOSAURS",
+  "fr": "Le Nigersaurus avait plus de cinq cents dents alignées en râteau à l'avant de la mâchoire, remplacées en permanence.",
+  "en": "Nigersaurus had more than five hundred teeth lined up like a rake at the front of its jaw, replaced continuously.",
+  "es": "Nigersaurus tenía más de quinientos dientes alineados como un rastrillo en la parte delantera de la mandíbula, sustituidos sin cesar.",
+  "src": "https://en.wikipedia.org/wiki/Nigersaurus"
+ },
+ {
+  "id": "dino53",
+  "cat": "dinosaurs",
+  "marker": "DINOSAURS",
+  "fr": "Le Borealopelta, découvert au Canada, est si bien conservé qu'on distingue encore ses plaques et les pigments de sa peau.",
+  "en": "Borealopelta, found in Canada, is so well preserved that its plates and skin pigments can still be made out.",
+  "es": "Borealopelta, hallado en Canadá, está tan bien conservado que aún se distinguen sus placas y los pigmentos de su piel.",
+  "src": "https://en.wikipedia.org/wiki/Borealopelta"
+ },
+ {
+  "id": "dino54",
+  "cat": "dinosaurs",
+  "marker": "DINOSAURS",
+  "fr": "Le Concavenator portait une étrange bosse triangulaire au-dessus des hanches, dont la fonction reste débattue.",
+  "en": "Concavenator bore a strange triangular hump above its hips, whose purpose is still debated.",
+  "es": "Concavenator lucía una extraña joroba triangular sobre las caderas, cuya función sigue debatiéndose.",
+  "src": "https://en.wikipedia.org/wiki/Concavenator"
+ },
+ {
+  "id": "dino55",
+  "cat": "dinosaurs",
+  "marker": "DINOSAURS",
+  "fr": "Des empreintes fossiles montrent des troupeaux entiers marchant dans la même direction, preuve d'un déplacement collectif.",
+  "en": "Fossil trackways show entire herds walking in the same direction, evidence of group movement.",
+  "es": "Las huellas fósiles muestran manadas enteras caminando en la misma dirección, prueba de un desplazamiento colectivo.",
+  "src": "https://en.wikipedia.org/wiki/Trace_fossil"
+ },
+ {
+  "id": "dino56",
+  "cat": "dinosaurs",
+  "marker": "DINOSAURS",
+  "fr": "Le Psittacosaurus avait un ventre plus clair que son dos, un camouflage typique des animaux vivant en sous-bois.",
+  "en": "Psittacosaurus had a paler belly than its back, the classic camouflage of animals living under forest cover.",
+  "es": "Psittacosaurus tenía el vientre más claro que el dorso, un camuflaje típico de los animales que viven en el sotobosque.",
+  "src": "https://en.wikipedia.org/wiki/Psittacosaurus"
+ },
+ {
+  "id": "dino57",
+  "cat": "dinosaurs",
+  "marker": "DINOSAURS",
+  "fr": "L'Oviraptor, longtemps accusé de voler des œufs, couvait en réalité les siens : le fossile fautif était celui d'un parent sur son nid.",
+  "en": "Oviraptor, long accused of stealing eggs, was in fact brooding its own: the incriminating fossil was a parent on its nest.",
+  "es": "Oviraptor, acusado durante mucho tiempo de robar huevos, en realidad incubaba los suyos: el fósil incriminatorio era un progenitor sobre su nido.",
+  "src": "https://en.wikipedia.org/wiki/Oviraptor"
+ },
+ {
+  "id": "dino58",
+  "cat": "dinosaurs",
+  "marker": "DINOSAURS",
+  "fr": "Le Yutyrannus, cousin du T-Rex pesant plus d'une tonne, portait des plumes filamenteuses sur tout le corps.",
+  "en": "Yutyrannus, a relative of T. rex weighing over a tonne, was covered in filamentous feathers.",
+  "es": "Yutyrannus, pariente del T. rex de más de una tonelada, estaba cubierto de plumas filamentosas.",
+  "src": "https://en.wikipedia.org/wiki/Yutyrannus"
+ },
+ {
+  "id": "dino59",
+  "cat": "dinosaurs",
+  "marker": "DINOSAURS",
+  "fr": "Des anneaux de croissance dans les os permettent d'estimer l'âge d'un dinosaure, comme on compte ceux d'un arbre.",
+  "en": "Growth rings in bone allow a dinosaur's age to be estimated, much like counting the rings of a tree.",
+  "es": "Los anillos de crecimiento en los huesos permiten estimar la edad de un dinosaurio, como se cuentan los de un árbol.",
+  "src": "https://en.wikipedia.org/wiki/Skeletochronology"
+ },
+ {
+  "id": "dino60",
+  "cat": "dinosaurs",
+  "marker": "DINOSAURS",
+  "fr": "Le site de Ghost Ranch, au Nouveau-Mexique, a livré des centaines de Coelophysis entassés, probablement piégés par une crue.",
+  "en": "The Ghost Ranch site in New Mexico yielded hundreds of Coelophysis piled together, probably trapped by a flood.",
+  "es": "El yacimiento de Ghost Ranch, en Nuevo México, aportó cientos de Coelophysis amontonados, probablemente atrapados por una riada.",
+  "src": "https://en.wikipedia.org/wiki/Ghost_Ranch"
+ },
+ {
+  "id": "rel51",
+  "cat": "religion",
+  "marker": "RELIGION",
+  "fr": "La grande synagogue de Cochin, en Inde, témoigne d'une présence juive ancienne sur la côte de Malabar, remontant à plus de mille ans.",
+  "en": "The Paradesi Synagogue in Kochi, India, attests to an ancient Jewish presence on the Malabar coast going back over a thousand years.",
+  "es": "La sinagoga Paradesi de Kochi, en India, atestigua una antigua presencia judía en la costa de Malabar, de más de mil años.",
+  "src": "https://en.wikipedia.org/wiki/Paradesi_Synagogue"
+ },
+ {
+  "id": "rel52",
+  "cat": "religion",
+  "marker": "RELIGION",
+  "fr": "Les églises de Lalibela, en Éthiopie, ont été taillées d'un seul bloc dans la roche, de haut en bas, sans être construites pierre par pierre.",
+  "en": "The churches of Lalibela in Ethiopia were carved from single blocks of rock, top down, rather than built stone by stone.",
+  "es": "Las iglesias de Lalibela, en Etiopía, se tallaron en un solo bloque de roca, de arriba abajo, sin construirse piedra a piedra.",
+  "src": "https://en.wikipedia.org/wiki/Rock-Hewn_Churches,_Lalibela"
+ },
+ {
+  "id": "rel53",
+  "cat": "religion",
+  "marker": "RELIGION",
+  "fr": "Le confucianisme est davantage une philosophie morale et sociale qu'une religion : il n'a ni clergé ni dieu à prier.",
+  "en": "Confucianism is more a moral and social philosophy than a religion: it has neither clergy nor a god to pray to.",
+  "es": "El confucianismo es más una filosofía moral y social que una religión: no tiene clero ni un dios al que rezar.",
+  "src": "https://en.wikipedia.org/wiki/Confucianism"
+ },
+ {
+  "id": "rel54",
+  "cat": "religion",
+  "marker": "RELIGION",
+  "fr": "Les Yézidis d'Irak pratiquent une religion très ancienne, transmise oralement, distincte de l'islam et du christianisme.",
+  "en": "The Yazidis of Iraq follow a very old religion, passed on orally, distinct from Islam and Christianity.",
+  "es": "Los yazidíes de Irak practican una religión muy antigua, transmitida oralmente, distinta del islam y del cristianismo.",
+  "src": "https://en.wikipedia.org/wiki/Yazidis"
+ },
+ {
+  "id": "rel55",
+  "cat": "religion",
+  "marker": "RELIGION",
+  "fr": "Le stupa bouddhiste abrite des reliques et se contourne toujours dans le sens des aiguilles d'une montre.",
+  "en": "A Buddhist stupa holds relics and is always walked around in a clockwise direction.",
+  "es": "La estupa budista alberga reliquias y siempre se rodea en el sentido de las agujas del reloj.",
+  "src": "https://en.wikipedia.org/wiki/Stupa"
+ },
+ {
+  "id": "rel56",
+  "cat": "religion",
+  "marker": "RELIGION",
+  "fr": "Dans l'islam, la calligraphie a pris une place centrale dans l'art religieux, l'écriture devenant elle-même un motif décoratif.",
+  "en": "In Islam, calligraphy became central to religious art, with writing itself turned into decorative pattern.",
+  "es": "En el islam, la caligrafía ocupó un lugar central en el arte religioso, convirtiendo la escritura misma en motivo decorativo.",
+  "src": "https://en.wikipedia.org/wiki/Islamic_calligraphy"
+ },
+ {
+  "id": "rel57",
+  "cat": "religion",
+  "marker": "RELIGION",
+  "fr": "Les Quakers pratiquent un culte sans prêtre ni liturgie : l'assemblée reste en silence jusqu'à ce que quelqu'un se sente inspiré de parler.",
+  "en": "Quakers worship without priest or liturgy: the meeting stays silent until someone feels moved to speak.",
+  "es": "Los cuáqueros practican un culto sin sacerdote ni liturgia: la asamblea permanece en silencio hasta que alguien se siente inspirado a hablar.",
+  "src": "https://en.wikipedia.org/wiki/Quakers"
+ },
+ {
+  "id": "rel58",
+  "cat": "religion",
+  "marker": "RELIGION",
+  "fr": "Le Nouvel An juif, Roch Hachana, se célèbre en automne : le calendrier hébraïque est lunaire, ajusté au cycle solaire par des mois supplémentaires.",
+  "en": "The Jewish New Year, Rosh Hashanah, falls in autumn: the Hebrew calendar is lunar, kept in step with the solar year by extra months.",
+  "es": "El Año Nuevo judío, Rosh Hashaná, se celebra en otoño: el calendario hebreo es lunar, ajustado al ciclo solar con meses adicionales.",
+  "src": "https://en.wikipedia.org/wiki/Hebrew_calendar"
+ },
+ {
+  "id": "rel59",
+  "cat": "religion",
+  "marker": "RELIGION",
+  "fr": "Le culte des ancêtres occupe une place centrale dans plusieurs traditions d'Asie et d'Afrique, où les défunts restent membres actifs de la famille.",
+  "en": "Ancestor veneration is central to several Asian and African traditions, where the dead remain active members of the family.",
+  "es": "El culto a los antepasados es central en varias tradiciones de Asia y África, donde los difuntos siguen siendo miembros activos de la familia.",
+  "src": "https://en.wikipedia.org/wiki/Veneration_of_the_dead"
+ },
+ {
+  "id": "rel60",
+  "cat": "religion",
+  "marker": "RELIGION",
+  "fr": "Le monastère Sainte-Catherine, au Sinaï, fonctionne sans interruption depuis le VIᵉ siècle et abrite l'une des plus anciennes bibliothèques du monde.",
+  "en": "Saint Catherine's Monastery in Sinai has operated without interruption since the 6th century and holds one of the world's oldest libraries.",
+  "es": "El monasterio de Santa Catalina, en el Sinaí, funciona sin interrupción desde el siglo VI y alberga una de las bibliotecas más antiguas del mundo.",
+  "src": "https://en.wikipedia.org/wiki/Saint_Catherine%27s_Monastery"
+ },
+ {
+  "id": "flo51",
+  "cat": "flora",
+  "marker": "FLORA",
+  "fr": "La cannelle est une écorce : on la prélève sur de jeunes branches qui s'enroulent en séchant pour former les bâtons.",
+  "en": "Cinnamon is a bark: it is stripped from young branches that curl as they dry to form the sticks.",
+  "es": "La canela es una corteza: se extrae de ramas jóvenes que se enrollan al secarse formando los bastones.",
+  "src": "https://en.wikipedia.org/wiki/Cinnamon"
+ },
+ {
+  "id": "flo52",
+  "cat": "flora",
+  "marker": "FLORA",
+  "fr": "Le poivrier grimpe sur d'autres arbres : le poivre noir, blanc et vert vient d'un même fruit récolté à des stades différents.",
+  "en": "The pepper vine climbs other trees: black, white and green pepper all come from the same fruit picked at different stages.",
+  "es": "La pimentera trepa por otros árboles: la pimienta negra, blanca y verde procede del mismo fruto recogido en distintas fases.",
+  "src": "https://en.wikipedia.org/wiki/Black_pepper"
+ },
+ {
+  "id": "flo53",
+  "cat": "flora",
+  "marker": "FLORA",
+  "fr": "Les prêles sont des plantes anciennes dont les tiges contiennent tant de silice qu'on s'en servait autrefois pour récurer les casseroles.",
+  "en": "Horsetails are ancient plants whose stems hold so much silica that they were once used to scour pans.",
+  "es": "Las colas de caballo son plantas antiguas cuyos tallos contienen tanta sílice que antaño servían para fregar cazuelas.",
+  "src": "https://en.wikipedia.org/wiki/Equisetum"
+ },
+ {
+  "id": "flo54",
+  "cat": "flora",
+  "marker": "FLORA",
+  "fr": "Le safran est l'épice la plus chère du monde : il faut des dizaines de milliers de fleurs cueillies à la main pour un seul kilo.",
+  "en": "Saffron is the world's most expensive spice: tens of thousands of hand-picked flowers are needed for a single kilo.",
+  "es": "El azafrán es la especia más cara del mundo: hacen falta decenas de miles de flores recogidas a mano para un solo kilo.",
+  "src": "https://en.wikipedia.org/wiki/Saffron"
+ },
+ {
+  "id": "flo55",
+  "cat": "flora",
+  "marker": "FLORA",
+  "fr": "L'ortie se défend avec des poils creux qui se brisent au contact et injectent leur contenu comme des micro-seringues.",
+  "en": "Nettles defend themselves with hollow hairs that snap on contact and inject their contents like tiny syringes.",
+  "es": "La ortiga se defiende con pelos huecos que se rompen al contacto e inyectan su contenido como microjeringas.",
+  "src": "https://en.wikipedia.org/wiki/Urtica_dioica"
+ },
+ {
+  "id": "flo56",
+  "cat": "flora",
+  "marker": "FLORA",
+  "fr": "Le liège se récolte sans abattre l'arbre : l'écorce du chêne-liège repousse et se prélève à nouveau une dizaine d'années plus tard.",
+  "en": "Cork is harvested without felling the tree: the bark of the cork oak regrows and can be stripped again a decade later.",
+  "es": "El corcho se recolecta sin talar el árbol: la corteza del alcornoque vuelve a crecer y se extrae de nuevo una década después.",
+  "src": "https://en.wikipedia.org/wiki/Cork_(material)"
+ },
+ {
+  "id": "flo57",
+  "cat": "flora",
+  "marker": "FLORA",
+  "fr": "L'avocatier ne s'autoféconde presque jamais : ses fleurs s'ouvrent en femelle puis en mâle à des moments décalés de la journée.",
+  "en": "Avocado trees hardly ever self-pollinate: their flowers open as female then as male at different times of day.",
+  "es": "El aguacate casi nunca se autofecunda: sus flores se abren en fase femenina y luego masculina en momentos distintos del día.",
+  "src": "https://en.wikipedia.org/wiki/Avocado"
+ },
+ {
+  "id": "flo58",
+  "cat": "flora",
+  "marker": "FLORA",
+  "fr": "Les graines de coquelicot peuvent rester dormantes des décennies dans le sol et germer dès qu'un labour les ramène à la lumière.",
+  "en": "Poppy seeds can lie dormant in the soil for decades and germinate as soon as ploughing brings them back to the light.",
+  "es": "Las semillas de amapola pueden permanecer latentes décadas en el suelo y germinar en cuanto un arado las devuelve a la luz.",
+  "src": "https://en.wikipedia.org/wiki/Papaver_rhoeas"
+ },
+ {
+  "id": "flo59",
+  "cat": "flora",
+  "marker": "FLORA",
+  "fr": "Le cacaoyer fait pousser ses fruits directement sur le tronc, une particularité appelée cauliflorie.",
+  "en": "The cacao tree grows its pods straight from the trunk, a trait known as cauliflory.",
+  "es": "El cacaotero hace crecer sus frutos directamente en el tronco, una particularidad llamada caulifloria.",
+  "src": "https://en.wikipedia.org/wiki/Cauliflory"
+ },
+ {
+  "id": "flo60",
+  "cat": "flora",
+  "marker": "FLORA",
+  "fr": "Les sphaignes des tourbières acidifient l'eau et bloquent la décomposition : elles ont conservé intacts des corps vieux de plusieurs millénaires.",
+  "en": "Peat bog mosses acidify the water and halt decay: they have preserved bodies intact for thousands of years.",
+  "es": "Los esfagnos de las turberas acidifican el agua y frenan la descomposición: han conservado intactos cuerpos de hace milenios.",
+  "src": "https://en.wikipedia.org/wiki/Sphagnum"
+ }
+]
